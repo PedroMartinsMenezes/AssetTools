@@ -332,7 +332,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -470,41 +471,29 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 35,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                    "SubPathString": "UserConstructionScript",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
@@ -563,15 +552,9 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "ffbe30ba-40b3-c0c8-bf3a-69adafc866ad"
         },
@@ -651,14 +634,8 @@
         "__type": "USceneComponent",
         "Members": {
           "obj 'Template'": -23,
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 34,
-            "StructName": "ActorComponentTickFunction",
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            }
+          "struct ActorComponentTickFunction 34 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "bIsCooked": false

@@ -16,7 +16,7 @@ namespace AssetTool
 
         public BasePropertyJsonArray(FPropertyTag tag)
         {
-            string key = BasePropertyJson.BuildKey(Name, tag);
+            string key = new BasePropertyJson().BuildKey(Name, tag);
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
             Add(key, values);
         }
@@ -34,7 +34,6 @@ namespace AssetTool
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
-            EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
             List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
             int size = 4 + values.Count * Size;
 
@@ -48,7 +47,6 @@ namespace AssetTool
                     Size = size - 4,
                     StructName = new FName(StructName, transfer),
                     PropertyTagFlags = propertyTagFlags,
-                    SerializeType = serializeType,
                 };
 
                 size += maybeInnerTag.HeaderSize(transfer);
@@ -69,7 +67,6 @@ namespace AssetTool
                 MaybeInnerTag = maybeInnerTag,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
-                SerializeType = serializeType,
             };
         }
 

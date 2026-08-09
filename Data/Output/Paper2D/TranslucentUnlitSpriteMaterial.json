@@ -239,7 +239,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -267,71 +268,53 @@
             },
             "Value": [
               {
-                "AtlasData": {
-                  "Name": "AtlasData",
-                  "Type": "StructProperty",
-                  "Size": 108,
-                  "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": {
-                    "bool 'bIsUsedAsAtlasPosition'": false,
-                    "Curve": {
-                      "Name": "Curve",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
-                    },
-                    "Atlas": {
-                      "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
                     }
                   }
                 },
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "RefractionDepthBias",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 20,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 20,
+                  "int 'Index'": -1
                 },
                 "float 'ParameterValue'": 0,
                 "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
               }
             ]
           },
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 171,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "bool 'bOverride_BlendMode'": true,
-              "bool 'TwoSided'": true,
-              "byte64 (EBlendMode) 'BlendMode'": 7,
-              "byte64 (EMaterialShadingModel) 'ShadingModel'": 27,
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 171 'BasePropertyOverrides'": {
+            "bool 'bOverride_BlendMode'": true,
+            "bool 'TwoSided'": true,
+            "byte64 (EBlendMode) 'BlendMode'": 7,
+            "byte64 (EMaterialShadingModel) 'ShadingModel'": 27,
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",

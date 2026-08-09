@@ -8,15 +8,14 @@ namespace AssetTool
     //[TransferableStruct("Transform")]
     public class FTransform3ElegantJson : ITagConverter, IValueConverter
     {
-        public object TagToDerived
-            (object value, int size)
+        public object TagToDerived(object value, int size)
         {
             var dict = value as Dictionary<string, object>;
             for (int i = 0; i < dict.Count - 1; i++)
             {
                 if (dict.ElementAt(i).Value is FPropertyTag propertyTag)
                 {
-                    var itemKey = BasePropertyJson.BuildKey(propertyTag.StructName.Value, propertyTag);
+                    var itemKey = new BasePropertyJson().BuildKey(propertyTag.StructName.Value, propertyTag);
                     var itemValue = propertyTag.Value;
                     dict.Add(itemKey, itemValue);
                 }

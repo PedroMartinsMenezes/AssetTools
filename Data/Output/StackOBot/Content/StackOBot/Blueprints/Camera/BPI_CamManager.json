@@ -732,6 +732,20 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty KismetUserDeclaredFunctionMetadata": {
+        "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
+      }
     }
   },
   "Objects": [
@@ -759,8 +773,7 @@
             "Value": [
               "None"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -771,152 +784,71 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                      "AssetName": "BPI_CamManager"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -851.5981,
-                    "Y": -573.4584
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -851.5981,
+                  "Y": -573.4584
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                      "AssetName": "BPI_CamManager"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -746.7655,
-                    "Y": -578.4584
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -746.7655,
+                  "Y": -578.4584
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 2,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                      "AssetName": "BPI_CamManager"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 2,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -977.5981,
-                    "Y": -608.4584
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -977.5981,
+                  "Y": -608.4584
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 3,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                      "AssetName": "BPI_CamManager"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 3,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -967.7648,
-                    "Y": -593.625
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -967.7648,
+                  "Y": -593.625
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 25,
           "obj 'GeneratedClass'": 2,
@@ -1422,17 +1354,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetCameraState"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCameraState"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "de3c8918-4a7b-fc42-8347-92a02b4063c6"
@@ -1453,38 +1376,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetLockedCamera"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetLockedCamera"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "e2196aa2-43bb-5c20-2141-88aa5069631e"
@@ -1506,17 +1410,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetPlayerCamera"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetPlayerCamera"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "b4b92dd0-46b8-374f-e2db-40bf83288f55"
@@ -1538,17 +1433,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ResetCamera"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "ResetCamera"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "b0a2f923-4293-d02c-eedf-9ea0b6e796f5"
@@ -1569,38 +1455,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SetCameraState"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "SetCameraState"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "3c434cc3-4fdb-f136-258c-eab656a4fa5f"
@@ -1633,17 +1500,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "UsePresetAngle"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "UsePresetAngle"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "508c45cd-4f0f-c6d4-8bb2-7bb055149eef"
@@ -1692,17 +1550,8 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetCameraState"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCameraState"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
@@ -1735,17 +1584,8 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetLockedCamera"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetLockedCamera"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
@@ -1798,17 +1638,8 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetPlayerCamera"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetPlayerCamera"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,

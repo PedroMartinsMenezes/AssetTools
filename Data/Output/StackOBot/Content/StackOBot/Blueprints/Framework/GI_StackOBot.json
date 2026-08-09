@@ -2024,6 +2024,29 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty KismetUserDeclaredFunctionMetadata": {
+        "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
+      },
+      "StructProperty GraphReference": {
+        "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -2053,17 +2076,7 @@
               {
                 "name 'VarName'": "OnCoinsUpdated",
                 "guid 'VarGuid' /Script/CoreUObject": "ecc99496-4d92-2031-2561-66a0670d1029",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "mcdelegate",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "mcdelegate",
                 "string 'FriendlyName'": "On Coins Updated",
                 "Category": {
                   "Name": "Category",
@@ -2071,8 +2084,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 17592454545413,
                 "name 'RepNotifyFunc'": "None",
@@ -2090,25 +2102,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "SaveGameSlotName",
                 "guid 'VarGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "string",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "string",
                 "string 'FriendlyName'": "Save Game Slot Name",
                 "Category": {
                   "Name": "Category",
@@ -2116,8 +2117,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2135,25 +2135,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "PlayerInventorySaveGame",
                 "guid 'VarGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "object obj(`-6`) isUObjectWrapperBool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "object obj(`-6`) isUObjectWrapperBool",
                 "string 'FriendlyName'": "Player Inventory Save Game",
                 "Category": {
                   "Name": "Category",
@@ -2161,8 +2150,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2180,25 +2168,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Music",
                 "guid 'VarGuid' /Script/CoreUObject": "3e500351-4ead-9818-6075-9986d65274dc",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "object obj(`-28`)",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "object obj(`-28`)",
                 "string 'FriendlyName'": "Music",
                 "Category": {
                   "Name": "Category",
@@ -2206,8 +2183,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2225,25 +2201,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "OnObjectiveCompleted",
                 "guid 'VarGuid' /Script/CoreUObject": "08e7b6eb-42ca-1519-0814-2595635e77e9",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "mcdelegate",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "mcdelegate",
                 "string 'FriendlyName'": "On Objective Completed",
                 "Category": {
                   "Name": "Category",
@@ -2251,8 +2216,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 17592454545413,
                 "name 'RepNotifyFunc'": "None",
@@ -2265,25 +2229,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Music Playing",
                 "guid 'VarGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "bool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "bool",
                 "string 'FriendlyName'": "Music Playing",
                 "Category": {
                   "Name": "Category",
@@ -2291,8 +2244,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2305,25 +2257,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Audio",
                 "guid 'VarGuid' /Script/CoreUObject": "245993a5-4bb4-0bec-767e-bcbfcb9f55b7",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "object obj(`-28`)",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "object obj(`-28`)",
                 "string 'FriendlyName'": "Audio",
                 "Category": {
                   "Name": "Category",
@@ -2331,8 +2272,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2345,25 +2285,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "LoadingWidget",
                 "guid 'VarGuid' /Script/CoreUObject": "23c213c7-48d4-e16a-4731-53a8e8c6f805",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "object obj(`-98`)",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "object obj(`-98`)",
                 "string 'FriendlyName'": "Loading Widget",
                 "Category": {
                   "Name": "Category",
@@ -2371,8 +2300,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -2385,14 +2313,12 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
           },
           "CategorySorting": {
             "Name": "CategorySorting",
@@ -2406,8 +2332,7 @@
               "Default",
               "None"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "ImplementedInterfaces": {
             "Name": "ImplementedInterfaces",
@@ -2422,8 +2347,7 @@
                 "obj[] 'Graphs'": "10 4"
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -2434,44 +2358,23 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Framework/GI_StackOBot",
-                      "AssetName": "GI_StackOBot"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Framework/GI_StackOBot",
+                    "AssetName": "GI_StackOBot"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -1360.1829,
-                    "Y": -164.90651
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -1360.1829,
+                  "Y": -164.90651
                 },
                 "float 'SavedZoomAmount'": 0.375
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 146,
           "obj 'GeneratedClass'": 2,
@@ -2534,8 +2437,7 @@
               "MetaDataMap": {}
             },
             "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-32] GameInstance",
@@ -4699,18 +4601,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 207,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 207,
+            "UberGraphFunctionKey": 0
           },
           "OnCoinsUpdated": {
             "Name": "OnCoinsUpdated",
@@ -4734,8 +4627,7 @@
               "MetaDataMap": {}
             },
             "TypeName": "MulticastInlineDelegateProperty 0",
-            "PropertyTagFlags": "HasPropertyGuid",
-            "SerializeType": "Property"
+            "PropertyTagFlags": "HasPropertyGuid"
           },
           "string 'SaveGameSlotName' {58ddf95e-44d1-eaac-3884-95a6c11f1719}": "PlayerInventory",
           "OnObjectiveCompleted": {
@@ -4760,8 +4652,7 @@
               "MetaDataMap": {}
             },
             "TypeName": "MulticastInlineDelegateProperty 0",
-            "PropertyTagFlags": "HasPropertyGuid",
-            "SerializeType": "Property"
+            "PropertyTagFlags": "HasPropertyGuid"
           }
         },
         "Children": 0,
@@ -4818,19 +4709,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "DelegateReference": {
-            "Name": "DelegateReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "OnCoinsUpdated",
-              "guid 'MemberGuid' /Script/CoreUObject": "ecc99496-4d92-2031-2561-66a0670d1029",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'DelegateReference'": {
+            "name 'MemberName'": "OnCoinsUpdated",
+            "guid 'MemberGuid' /Script/CoreUObject": "ecc99496-4d92-2031-2561-66a0670d1029",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 768,
           "int 'NodePosY'": 1008,
@@ -4854,18 +4736,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -35,
-              "name 'MemberName'": "DelayUntilNextTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -35,
+            "name 'MemberName'": "DelayUntilNextTick"
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": 208,
@@ -4890,19 +4763,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "InitPlayerSaveData",
-              "guid 'MemberGuid' /Script/CoreUObject": "bef97cda-4f63-7c5e-cbea-faa17c170dc0",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "InitPlayerSaveData",
+            "guid 'MemberGuid' /Script/CoreUObject": "bef97cda-4f63-7c5e-cbea-faa17c170dc0",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 192,
@@ -4925,19 +4789,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameToSlots",
-              "guid 'MemberGuid' /Script/CoreUObject": "4c3f9eb0-4392-d840-656f-f3a6cc1ee10a",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "SaveGameToSlots",
+            "guid 'MemberGuid' /Script/CoreUObject": "4c3f9eb0-4392-d840-656f-f3a6cc1ee10a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 1296,
@@ -4960,18 +4815,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -35,
-              "name 'MemberName'": "QuitGame"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -35,
+            "name 'MemberName'": "QuitGame"
           },
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 2288,
@@ -4998,18 +4844,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "OpenLevel"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "OpenLevel"
           },
           "int 'NodePosX'": 1003,
           "int 'NodePosY'": 2045,
@@ -5037,18 +4874,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -35,
-              "name 'MemberName'": "Delay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -35,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": 731,
           "int 'NodePosY'": 1981,
@@ -5074,18 +4902,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "SetGamePaused"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "SetGamePaused"
           },
           "int 'NodePosX'": 475,
           "int 'NodePosY'": 1981,
@@ -5111,19 +4930,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Play Audio",
-              "guid 'MemberGuid' /Script/CoreUObject": "3e261781-45f9-8d5f-8ffe-018f96db92be",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "Play Audio",
+            "guid 'MemberGuid' /Script/CoreUObject": "3e261781-45f9-8d5f-8ffe-018f96db92be",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 592,
@@ -5148,19 +4958,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameToSlots",
-              "guid 'MemberGuid' /Script/CoreUObject": "4c3f9eb0-4392-d840-656f-f3a6cc1ee10a",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "SaveGameToSlots",
+            "guid 'MemberGuid' /Script/CoreUObject": "4c3f9eb0-4392-d840-656f-f3a6cc1ee10a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 2272,
@@ -5183,19 +4984,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ToggleLoadingScreen",
-              "guid 'MemberGuid' /Script/CoreUObject": "5509ffd1-45d9-3313-7dea-3f906eb80936",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "ToggleLoadingScreen",
+            "guid 'MemberGuid' /Script/CoreUObject": "5509ffd1-45d9-3313-7dea-3f906eb80936",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 251,
           "int 'NodePosY'": 1965,
@@ -5219,19 +5011,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -98,
-              "name 'MemberName'": "Fade In",
-              "guid 'MemberGuid' /Script/CoreUObject": "fe6fc8e0-44c0-cabb-aa73-57b48f9d4c88"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -98,
+            "name 'MemberName'": "Fade In",
+            "guid 'MemberGuid' /Script/CoreUObject": "fe6fc8e0-44c0-cabb-aa73-57b48f9d4c88"
           },
           "int 'NodePosX'": 496,
           "int 'NodePosY'": 1584,
@@ -5254,19 +5037,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -98,
-              "name 'MemberName'": "Fade Out",
-              "guid 'MemberGuid' /Script/CoreUObject": "2c595a22-4041-6d14-9df9-738927634694"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -98,
+            "name 'MemberName'": "Fade Out",
+            "guid 'MemberGuid' /Script/CoreUObject": "2c595a22-4041-6d14-9df9-738927634694"
           },
           "int 'NodePosX'": 496,
           "int 'NodePosY'": 1712,
@@ -5290,18 +5064,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "GetObjectClass"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetObjectClass"
           },
           "int 'NodePosX'": 1936,
           "int 'NodePosY'": 384,
@@ -5325,18 +5090,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "GetTransform"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "GetTransform"
           },
           "int 'NodePosX'": 1936,
           "int 'NodePosY'": 448,
@@ -5358,18 +5114,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "DoesSaveGameExist"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "DoesSaveGameExist"
           },
           "int 'NodePosX'": -128,
           "int 'NodePosY'": -16,
@@ -5395,18 +5142,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "LoadGameFromSlot"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "LoadGameFromSlot"
           },
           "int 'NodePosX'": 528,
           "int 'NodePosY'": -128,
@@ -5432,18 +5170,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "GetCurrentLevelName"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetCurrentLevelName"
           },
           "int 'NodePosX'": -384,
           "int 'NodePosY'": -16,
@@ -5470,18 +5199,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "CreateSaveGameObject"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "CreateSaveGameObject"
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": 320,
@@ -5506,18 +5226,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "GetAllActorsOfClass"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetAllActorsOfClass"
           },
           "int 'NodePosX'": 1360,
           "int 'NodePosY'": -128,
@@ -5544,19 +5255,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "AddCollectable",
-              "guid 'MemberGuid' /Script/CoreUObject": "13f3fcff-465b-675f-a9f9-17aa3146bb84"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "AddCollectable",
+            "guid 'MemberGuid' /Script/CoreUObject": "13f3fcff-465b-675f-a9f9-17aa3146bb84"
           },
           "int 'NodePosX'": 2176,
           "int 'NodePosY'": 304,
@@ -5582,18 +5284,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "GetAllActorsOfClass"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetAllActorsOfClass"
           },
           "int 'NodePosX'": 1344,
           "int 'NodePosY'": 320,
@@ -5620,18 +5313,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "K2_DestroyActor"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "K2_DestroyActor"
           },
           "int 'NodePosX'": 1888,
           "int 'NodePosY'": -144,
@@ -5655,19 +5339,10 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "GetCollectablesOnMap",
-              "guid 'MemberGuid' /Script/CoreUObject": "fcf6bf03-469d-f58d-506e-fd9b2c38409d"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "GetCollectablesOnMap",
+            "guid 'MemberGuid' /Script/CoreUObject": "fcf6bf03-469d-f58d-506e-fd9b2c38409d"
           },
           "int 'NodePosX'": 2336,
           "int 'NodePosY'": 16,
@@ -5689,18 +5364,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "CreateSaveGameObject"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "CreateSaveGameObject"
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": 176,
@@ -5725,18 +5391,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "DoesSaveGameExist"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "DoesSaveGameExist"
           },
           "int 'NodePosX'": -16,
           "int 'NodePosY'": -16,
@@ -5762,18 +5419,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "LoadGameFromSlot"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "LoadGameFromSlot"
           },
           "int 'NodePosX'": 528,
           "int 'NodePosY'": -128,
@@ -5799,18 +5447,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Play"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Play"
           },
           "int 'NodePosX'": 960,
           "int 'NodePosY'": -96,
@@ -5834,18 +5473,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "CreateSound2D"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "CreateSound2D"
           },
           "int 'NodePosX'": 256,
           "int 'NodePosY'": -80,
@@ -5878,18 +5508,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "SetGlobalBusMixValue"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "SetGlobalBusMixValue"
           },
           "int 'NodePosX'": -528,
           "int 'NodePosY'": -80,
@@ -5916,18 +5537,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "SetGlobalBusMixValue"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "SetGlobalBusMixValue"
           },
           "int 'NodePosX'": -144,
           "int 'NodePosY'": -80,
@@ -5954,18 +5566,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "DeleteGameInSlot"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "DeleteGameInSlot"
           },
           "int 'NodePosX'": -80,
           "guid 'NodeGuid' /Script/CoreUObject": "f4b00573-4a77-5648-e8dc-3cb3003af566"
@@ -5990,18 +5593,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "DoesSaveGameExist"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "DoesSaveGameExist"
           },
           "int 'NodePosX'": -624,
           "guid 'NodeGuid' /Script/CoreUObject": "6f7aec89-4459-145e-b50e-d19b9f8ef95e"
@@ -6026,18 +5620,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "DeleteGameInSlot"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "DeleteGameInSlot"
           },
           "int 'NodePosX'": 192,
           "guid 'NodeGuid' /Script/CoreUObject": "181ee9ba-4a70-18f0-d92b-8d9b00ebf34b"
@@ -6062,18 +5647,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "SaveGameToSlot"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "SaveGameToSlot"
           },
           "int 'NodePosX'": 416,
           "guid 'NodeGuid' /Script/CoreUObject": "4ea810c5-440a-1957-ecc5-03b0fb54e617"
@@ -6099,18 +5675,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "SetGlobalBusMixValue"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "SetGlobalBusMixValue"
           },
           "int 'NodePosX'": 512,
           "int 'NodePosY'": -16,
@@ -6138,18 +5705,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "Add_IntInt"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "Add_IntInt"
           },
           "int 'NodePosX'": 400,
           "int 'NodePosY'": 1072,
@@ -6174,18 +5732,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "BooleanAND"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "BooleanAND"
           },
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 144,
@@ -6285,18 +5834,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -32,
-              "name 'MemberName'": "ReceiveInit"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -32,
+            "name 'MemberName'": "ReceiveInit"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -16,
@@ -6320,19 +5860,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "AsyncSave",
-              "guid 'MemberGuid' /Script/CoreUObject": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "AsyncSave",
+            "guid 'MemberGuid' /Script/CoreUObject": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 464,
@@ -6356,19 +5887,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "SaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "9567958f-4558-5718-2796-d79c2ca48f07"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "SaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "9567958f-4558-5718-2796-d79c2ca48f07"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -16,
@@ -6392,19 +5914,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "UpdateCoins",
-              "guid 'MemberGuid' /Script/CoreUObject": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "UpdateCoins",
+            "guid 'MemberGuid' /Script/CoreUObject": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 144,
@@ -6429,19 +5942,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "OpenLevel",
-              "guid 'MemberGuid' /Script/CoreUObject": "a6064e7b-487c-3284-9eae-e4b289ed715f"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "OpenLevel",
+            "guid 'MemberGuid' /Script/CoreUObject": "a6064e7b-487c-3284-9eae-e4b289ed715f"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -37,
@@ -6466,19 +5970,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "Quit",
-              "guid 'MemberGuid' /Script/CoreUObject": "b01cad6c-4120-19e7-f112-c695254de4aa"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "Quit",
+            "guid 'MemberGuid' /Script/CoreUObject": "b01cad6c-4120-19e7-f112-c695254de4aa"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -16,
@@ -6502,19 +5997,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "PlayMusic",
-              "guid 'MemberGuid' /Script/CoreUObject": "b9c52097-48c6-2747-b10e-03bd6a129b7b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "PlayMusic",
+            "guid 'MemberGuid' /Script/CoreUObject": "b9c52097-48c6-2747-b10e-03bd6a129b7b"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -48,
@@ -6539,19 +6025,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "ToggleLoadingScreen",
-              "guid 'MemberGuid' /Script/CoreUObject": "a2522242-4080-90e7-a311-0bbb227eb06b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "ToggleLoadingScreen",
+            "guid 'MemberGuid' /Script/CoreUObject": "a2522242-4080-90e7-a311-0bbb227eb06b"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -16,
@@ -6576,19 +6053,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "Get Coins",
-              "guid 'MemberGuid' /Script/CoreUObject": "267593ef-4195-249d-48f7-a7a079912e58"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "Get Coins",
+            "guid 'MemberGuid' /Script/CoreUObject": "267593ef-4195-249d-48f7-a7a079912e58"
           },
           "guid 'NodeGuid' /Script/CoreUObject": "f5606159-407c-ada1-9003-4ea69ea0b8ce"
         },
@@ -6608,38 +6076,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "InitLevelSaveData"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "InitLevelSaveData"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -640,
@@ -6662,38 +6111,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "InitPlayerSaveData"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "InitPlayerSaveData"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -240,
@@ -6717,17 +6147,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "OnCoinsUpdated"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "OnCoinsUpdated"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "b0c4489a-4a88-3c36-971b-9f91deedb9cf"
@@ -6759,17 +6180,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "OnObjectiveCompleted"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "OnObjectiveCompleted"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "164c0d9f-4422-64a5-e13f-b09d3ab543c0"
@@ -6790,38 +6202,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Play Audio"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Play Audio"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -2032,
@@ -6864,19 +6257,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "ResetSaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "ResetSaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
           },
           "int 'NodePosX'": -832,
           "guid 'NodeGuid' /Script/CoreUObject": "6020820f-47f9-9cef-a030-1490bd54a6eb"
@@ -6898,38 +6282,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameToSlots"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "SaveGameToSlots"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 192,
@@ -6951,38 +6316,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 79,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 46,
-                "BoolVal": 0,
-                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Stop Audio"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Stop Audio"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 96,
@@ -7005,19 +6351,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "Get Coins",
-              "guid 'MemberGuid' /Script/CoreUObject": "267593ef-4195-249d-48f7-a7a079912e58"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "Get Coins",
+            "guid 'MemberGuid' /Script/CoreUObject": "267593ef-4195-249d-48f7-a7a079912e58"
           },
           "int 'NodePosX'": 256,
           "guid 'NodeGuid' /Script/CoreUObject": "05e274d0-4ee5-0e83-c353-39a0200af9ed"
@@ -7039,19 +6376,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "ResetSaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "ResetSaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
           },
           "int 'NodePosX'": -80,
           "int 'NodePosY'": 208,
@@ -7074,19 +6402,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -3,
-              "name 'MemberName'": "ResetSaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -3,
+            "name 'MemberName'": "ResetSaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
           },
           "int 'NodePosX'": 656,
           "guid 'NodeGuid' /Script/CoreUObject": "e5bb9361-49dd-ae4b-6a4c-e98a8af44c2c"
@@ -7297,31 +6616,12 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -47,
-              "obj 'GraphBlueprint'": -2,
-              "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -47,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
           },
-          "ResolvedWildcardType": {
-            "Name": "ResolvedWildcardType",
-            "Type": "StructProperty",
-            "Size": 69,
-            "StructName": "EdGraphPinType",
-            "BoolVal": 0,
-            "Value": "struct obj(`-97`) container(`Array`)",
-            "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
-          },
+          "class EdGraphPinType 69 'ResolvedWildcardType'": "struct obj(`-97`) container(`Array`)",
           "int 'NodePosX'": 2576,
           "int 'NodePosY'": -32,
           "guid 'NodeGuid' /Script/CoreUObject": "65416dba-44c9-b403-19b5-789729b8ab7b"
@@ -7349,31 +6649,12 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -47,
-              "obj 'GraphBlueprint'": -2,
-              "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -47,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
           },
-          "ResolvedWildcardType": {
-            "Name": "ResolvedWildcardType",
-            "Type": "StructProperty",
-            "Size": 69,
-            "StructName": "EdGraphPinType",
-            "BoolVal": 0,
-            "Value": "object obj(`-4`) container(`Array`)",
-            "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
-          },
+          "class EdGraphPinType 69 'ResolvedWildcardType'": "object obj(`-4`) container(`Array`)",
           "int 'NodePosX'": 1664,
           "int 'NodePosY'": 320,
           "guid 'NodeGuid' /Script/CoreUObject": "573bc4af-4d1b-6d42-27ed-d082e432fea3"
@@ -7399,31 +6680,12 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -47,
-              "obj 'GraphBlueprint'": -2,
-              "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -47,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid' /Script/CoreUObject": "99dbfd55-40a7-9604-1f72-a5a9da655026"
           },
-          "ResolvedWildcardType": {
-            "Name": "ResolvedWildcardType",
-            "Type": "StructProperty",
-            "Size": 69,
-            "StructName": "EdGraphPinType",
-            "BoolVal": 0,
-            "Value": "object obj(`-4`) container(`Array`)",
-            "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
-          },
+          "class EdGraphPinType 69 'ResolvedWildcardType'": "object obj(`-4`) container(`Array`)",
           "int 'NodePosX'": 1680,
           "int 'NodePosY'": -128,
           "guid 'NodeGuid' /Script/CoreUObject": "35b45846-4164-2668-b056-df8108de3100"
@@ -7477,19 +6739,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerInventorySaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerInventorySaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 1392,
@@ -7511,19 +6764,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerInventorySaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerInventorySaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -64,
           "int 'NodePosY'": 1120,
@@ -7545,19 +6789,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameSlotName",
-              "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "SaveGameSlotName",
+            "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 496,
           "int 'NodePosY'": 1440,
@@ -7579,19 +6814,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "Orbs",
-              "guid 'MemberGuid' /Script/CoreUObject": "411a17c3-41df-753b-f76c-239e91a5ee74"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'VariableReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "Orbs",
+            "guid 'MemberGuid' /Script/CoreUObject": "411a17c3-41df-753b-f76c-239e91a5ee74"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 118,
           "int 'NodePosX'": 176,
@@ -7614,19 +6840,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "LoadingWidget",
-              "guid 'MemberGuid' /Script/CoreUObject": "23c213c7-48d4-e16a-4731-53a8e8c6f805",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "LoadingWidget",
+            "guid 'MemberGuid' /Script/CoreUObject": "23c213c7-48d4-e16a-4731-53a8e8c6f805",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 496,
           "int 'NodePosY'": 1824,
@@ -7648,19 +6865,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameSlotName",
-              "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "SaveGameSlotName",
+            "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -16,
           "int 'NodePosY'": 128,
@@ -7682,19 +6890,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameSlotName",
-              "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "SaveGameSlotName",
+            "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 528,
           "int 'NodePosY'": 16,
@@ -7716,19 +6915,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Music Playing",
-              "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Music Playing",
+            "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1328,
           "int 'NodePosY'": 16,
@@ -7751,19 +6941,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameSlotName",
-              "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "SaveGameSlotName",
+            "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 192,
           "int 'NodePosY'": -32,
@@ -7785,19 +6966,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerInventorySaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerInventorySaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": 64,
@@ -7819,19 +6991,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SaveGameSlotName",
-              "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "SaveGameSlotName",
+            "guid 'MemberGuid' /Script/CoreUObject": "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 112,
@@ -7853,19 +7016,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "Orbs",
-              "guid 'MemberGuid' /Script/CoreUObject": "411a17c3-41df-753b-f76c-239e91a5ee74"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'VariableReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "Orbs",
+            "guid 'MemberGuid' /Script/CoreUObject": "411a17c3-41df-753b-f76c-239e91a5ee74"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 118,
           "int 'NodePosX'": 576,
@@ -7891,19 +7045,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "LoadingWidget",
-              "guid 'MemberGuid' /Script/CoreUObject": "23c213c7-48d4-e16a-4731-53a8e8c6f805",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "LoadingWidget",
+            "guid 'MemberGuid' /Script/CoreUObject": "23c213c7-48d4-e16a-4731-53a8e8c6f805",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 960,
           "int 'NodePosY'": 224,
@@ -7929,19 +7074,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerInventorySaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerInventorySaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 880,
           "int 'NodePosY'": 192,
@@ -7966,19 +7102,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerInventorySaveGame",
-              "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerInventorySaveGame",
+            "guid 'MemberGuid' /Script/CoreUObject": "d792f946-410c-42c5-1dfe-e78fab496a31",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1136,
           "int 'NodePosY'": -112,
@@ -8003,19 +7130,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Audio",
-              "guid 'MemberGuid' /Script/CoreUObject": "245993a5-4bb4-0bec-767e-bcbfcb9f55b7",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Audio",
+            "guid 'MemberGuid' /Script/CoreUObject": "245993a5-4bb4-0bec-767e-bcbfcb9f55b7",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 720,
           "int 'NodePosY'": -64,
@@ -8040,19 +7158,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Music Playing",
-              "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Music Playing",
+            "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1248,
           "int 'NodePosY'": -64,
@@ -8078,19 +7187,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Music Playing",
-              "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Music Playing",
+            "guid 'MemberGuid' /Script/CoreUObject": "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 256,
           "guid 'NodeGuid' /Script/CoreUObject": "2ddfdd5e-4522-b007-0309-688a2c481eb9"

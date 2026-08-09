@@ -330,7 +330,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -344,14 +345,8 @@
         "__type": "UMaterial",
         "Members": {
           "byte64 (EMaterialShadingModel) 'ShadingModel'": 39,
-          "ShadingModels": {
-            "Name": "ShadingModels",
-            "Type": "StructProperty",
-            "Size": 35,
-            "StructName": "MaterialShadingModelField",
-            "Value": {
-              "ushort 'ShadingModelField'": 1
-            }
+          "struct MaterialShadingModelField 35 'ShadingModels'": {
+            "ushort 'ShadingModelField'": 1
           },
           "bool 'bUsedWithStaticLighting'": true,
           "int 'EditorX'": 1024,
@@ -377,34 +372,22 @@
       "Obj": {
         "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
-          "EmissiveColor": {
-            "Name": "EmissiveColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "0 0 0 0",
-              "Expression": 19,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'EmissiveColor'": {
+            "UseConstant": false,
+            "Constant": "0 0 0 0",
+            "Expression": 19,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "ExpressionCollection": {
-            "Name": "ExpressionCollection",
-            "Type": "StructProperty",
-            "Size": 162,
-            "StructName": "MaterialExpressionCollection",
-            "Value": {
-              "obj[] 'Expressions'": "19 7 18 20 14 22 9 8 12 3 16 10 17 11 21 13 15",
-              "obj[] 'EditorComments'": "4 5 6"
-            }
+          "struct MaterialExpressionCollection 162 'ExpressionCollection'": {
+            "obj[] 'Expressions'": "19 7 18 20 14 22 9 8 12 3 16 10 17 11 21 13 15",
+            "obj[] 'EditorComments'": "4 5 6"
           }
         },
         "bSavedCachedExpressionData": false
@@ -420,39 +403,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 14,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 14,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 22,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 22,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -902,
           "int 'MaterialExpressionEditorY'": -109,
@@ -583,39 +554,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 13,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 13,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 17,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 17,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -48,
           "guid 'MaterialExpressionGuid'": "54123385-47d1-21f4-21ca-6b871780121b",
@@ -633,39 +592,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 10,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 10,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 21,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 21,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": 40,
           "int 'MaterialExpressionEditorY'": 90,
@@ -684,22 +631,16 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "VectorInput": {
-            "Name": "VectorInput",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'VectorInput'": {
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -784,
           "int 'MaterialExpressionEditorY'": -112,
@@ -718,39 +659,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "Base": {
-            "Name": "Base",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 20,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Base'": {
+            "Expression": 20,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Exponent": {
-            "Name": "Exponent",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 15,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Exponent'": {
+            "Expression": 15,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -167,
           "int 'MaterialExpressionEditorY'": -133,
@@ -769,73 +698,49 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "NormalizedRotationAxis": {
-            "Name": "NormalizedRotationAxis",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 9,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'NormalizedRotationAxis'": {
+            "Expression": 9,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "RotationAngle": {
-            "Name": "RotationAngle",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 16,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'RotationAngle'": {
+            "Expression": 16,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "PivotPoint": {
-            "Name": "PivotPoint",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 8,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'PivotPoint'": {
+            "Expression": 8,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Position": {
-            "Name": "Position",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 22,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Position'": {
+            "Expression": 22,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -1224,
           "int 'MaterialExpressionEditorY'": -272,
@@ -932,56 +837,38 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 11,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 11,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 7,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 7,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Value": {
-            "Name": "Value",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 18,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Value'": {
+            "Expression": 18,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": 763,
           "int 'MaterialExpressionEditorY'": 207,
@@ -1002,22 +889,16 @@
         "Members": {
           "name 'ParameterName'": "HDRI_Cubemap",
           "guid 'ExpressionGUID'": "db1c437f-4487-6223-0ed8-b6abd33f41d5",
-          "Coordinates": {
-            "Name": "Coordinates",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 12,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Coordinates'": {
+            "Expression": 12,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "obj 'Texture'": -23,
           "int 'MaterialExpressionEditorX'": -480,

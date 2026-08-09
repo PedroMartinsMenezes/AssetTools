@@ -815,6 +815,23 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty ComponentKey": {
+        "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0"
+      },
+      "StructProperty BlueprintCookedComponentInstancingData": {
+        "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -845,8 +862,7 @@
               "None",
               "Event Graph"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -857,80 +873,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
-                      "AssetName": "BP_FloatingPlatform_Small"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
+                    "AssetName": "BP_FloatingPlatform_Small"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
-                      "AssetName": "BP_FloatingPlatform_Small"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
+                    "AssetName": "BP_FloatingPlatform_Small"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -388,
-                    "Y": -197
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -388,
+                  "Y": -197
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1055,129 +1030,71 @@
               {
                 "obj 'ComponentClass'": -16,
                 "obj 'ComponentTemplate'": 20,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": "MovingComp",
-                    "guid 'AssociatedGuid' /Script/CoreUObject": "944b4e7a-4acb-26dd-ea62-c18cb1e7d4b1"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "MovingComp",
+                  "guid 'AssociatedGuid' /Script/CoreUObject": "944b4e7a-4acb-26dd-ea62-c18cb1e7d4b1"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               },
               {
                 "obj 'ComponentClass'": -16,
                 "obj 'ComponentTemplate'": 18,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": " 2",
-                    "guid 'AssociatedGuid' /Script/CoreUObject": "64e085c9-4834-7be1-f998-308052bb492d"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": " 2",
+                  "guid 'AssociatedGuid' /Script/CoreUObject": "64e085c9-4834-7be1-f998-308052bb492d"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               },
               {
                 "obj 'ComponentClass'": -16,
                 "obj 'ComponentTemplate'": 19,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": " ",
-                    "guid 'AssociatedGuid' /Script/CoreUObject": "5843fcc7-4409-d9b8-dedc-499cd9546e2c"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": " ",
+                  "guid 'AssociatedGuid' /Script/CoreUObject": "5843fcc7-4409-d9b8-dedc-499cd9546e2c"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
           }
         }
       }
@@ -1192,19 +1109,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -1,
-              "name 'MemberName'": "ReceiveBeginPlay",
-              "guid 'MemberGuid' /Script/CoreUObject": "79fe6279-40f1-4b52-6d29-c0b682d14a69"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -1,
+            "name 'MemberName'": "ReceiveBeginPlay",
+            "guid 'MemberGuid' /Script/CoreUObject": "79fe6279-40f1-4b52-6d29-c0b682d14a69"
           },
           "int 'NodePosX'": 200,
           "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
@@ -1228,18 +1136,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "ReceiveActorBeginOverlap"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
           },
           "int 'NodePosX'": 200,
           "int 'NodePosY'": 208,
@@ -1265,18 +1164,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "ReceiveTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "ReceiveTick"
           },
           "int 'NodePosX'": 200,
           "int 'NodePosY'": 416,
@@ -1302,19 +1192,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -1,
-              "name 'MemberName'": "UserConstructionScript",
-              "guid 'MemberGuid' /Script/CoreUObject": "635587c7-4f9d-8fbb-c767-1cb7ec497e44"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -1,
+            "name 'MemberName'": "UserConstructionScript",
+            "guid 'MemberGuid' /Script/CoreUObject": "635587c7-4f9d-8fbb-c767-1cb7ec497e44"
           },
           "int 'NodePosX'": 200,
           "guid 'NodeGuid' /Script/CoreUObject": "218bc8b6-4d84-7876-ae14-e8b674e44a02"
@@ -1336,18 +1217,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
@@ -1373,18 +1245,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "ReceiveActorBeginOverlap"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
@@ -1412,18 +1275,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "ReceiveTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "ReceiveTick"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
@@ -1451,18 +1305,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid' /Script/CoreUObject": "95a2f619-438f-ca43-e2cd-5fbde84e95ec"
         },
@@ -1506,8 +1351,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "1bd65c04-4fc8-0f70-427d-0693ecea493b",
           "name 'InternalVariableName'": "DefaultSceneRoot"

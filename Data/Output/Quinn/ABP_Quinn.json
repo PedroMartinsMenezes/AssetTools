@@ -515,7 +515,8 @@
           "Words": "0"
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -528,33 +529,15 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "Value": {
-              "RawPointer": 127,
-              "UberGraphFunctionKey": 0
-            }
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 127,
+            "UberGraphFunctionKey": 0
           },
-          "AnimGraphNode_BlendSpacePlayer": {
-            "Name": "AnimGraphNode_BlendSpacePlayer",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "AnimNode_BlendSpacePlayer",
-            "Value": {
-              "obj 'BlendSpace'": -4
-            }
+          "struct AnimNode_BlendSpacePlayer 37 'AnimGraphNode_BlendSpacePlayer'": {
+            "obj 'BlendSpace'": -4
           },
-          "AnimGraphNode_SequencePlayer\"3": {
-            "Name": "AnimGraphNode_SequencePlayer\"3",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "AnimNode_SequencePlayer",
-            "Value": {
-              "obj 'Sequence'": -3
-            }
+          "struct AnimNode_SequencePlayer 37 'AnimGraphNode_SequencePlayer\"3'": {
+            "obj 'Sequence'": -3
           },
           "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": false
         },
@@ -655,21 +638,15 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-198.08771118929928 -231.8163413266539",
                 "float 'SavedZoomAmount'": 0.875
@@ -2772,15 +2749,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "TryGetPawnOwner",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "TryGetPawnOwner",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 43,
           "int 'NodePosY'": 283,
@@ -2804,16 +2775,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -2,
-              "name 'MemberName'": "BlueprintUpdateAnimation",
-              "guid 'MemberGuid'": "70de4b27-48df-df78-8756-33a7c07ec4de"
-            }
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "BlueprintUpdateAnimation",
+            "guid 'MemberGuid'": "70de4b27-48df-df78-8756-33a7c07ec4de"
           },
           "int 'NodePosX'": 336,
           "int 'NodePosY'": 176,
@@ -2839,15 +2804,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -14,
-              "name 'MemberName'": "BlueprintUpdateAnimation"
-            }
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "BlueprintUpdateAnimation"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 43,

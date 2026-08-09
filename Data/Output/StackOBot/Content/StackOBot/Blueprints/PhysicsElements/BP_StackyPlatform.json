@@ -765,6 +765,32 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorTickFunction": {
+        "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorComponentTickFunction": {
+        "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
+      },
+      "StructProperty CollisionResponse": {
+        "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
+      },
+      "StructProperty BodyInstance": {
+        "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -795,8 +821,7 @@
               "None",
               "Event Graph"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -807,80 +832,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_StackyPlatform",
-                      "AssetName": "BP_StackyPlatform"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_StackyPlatform",
+                    "AssetName": "BP_StackyPlatform"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -429.84656,
-                    "Y": -96.43567
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -429.84656,
+                  "Y": -96.43567
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_StackyPlatform",
-                      "AssetName": "BP_StackyPlatform"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_StackyPlatform",
+                    "AssetName": "BP_StackyPlatform"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -876.92065,
-                    "Y": -1226.4713
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -876.92065,
+                  "Y": -1226.4713
                 },
                 "float 'SavedZoomAmount'": 0.5
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "ComponentTemplateNameIndex": {
             "Name": "ComponentTemplateNameIndex",
@@ -908,8 +892,7 @@
               "HasMetaData": false,
               "MetaDataMap": {}
             },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1072,30 +1055,12 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 126,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 126,
+            "UberGraphFunctionKey": 0
           },
-          "PrimaryActorTick": {
-            "Name": "PrimaryActorTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorTickFunction 33 'PrimaryActorTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "Tags": {
             "Name": "Tags",
@@ -1107,8 +1072,7 @@
             "Value": [
               "GRAB"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           }
         },
         "Children": 0,
@@ -1523,18 +1487,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "VSize"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "VSize"
           },
           "int 'NodePosX'": -416,
           "int 'NodePosY'": -112,
@@ -1557,18 +1512,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -15,
-              "name 'MemberName'": "PlaySoundAtLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -15,
+            "name 'MemberName'": "PlaySoundAtLocation"
           },
           "int 'NodePosX'": 32,
           "int 'NodePosY'": -336,
@@ -1603,18 +1549,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -11,
-              "name 'MemberName'": "ReceiveHit"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -11,
+            "name 'MemberName'": "ReceiveHit"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -896,
@@ -1646,18 +1583,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -11,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -11,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": -32,
@@ -1743,18 +1671,9 @@
         "Members": {
           "name 'OperationName'": "Greater",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "Greater_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "Greater_DoubleDouble"
           },
           "int 'NodePosX'": -416,
           "int 'NodePosY'": -192,
@@ -1778,17 +1697,8 @@
       "Obj": {
         "__type": "UActorComponent",
         "Members": {
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "UCSModifiedProperties": []
@@ -1828,8 +1738,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "1e1e87d6-46a6-f00f-719b-edad4c722c40",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -1854,8 +1763,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "23 22 20",
           "guid 'VariableGuid'": "944b4e7a-4acb-26dd-ea62-c18cb1e7d4b1",
@@ -1881,8 +1789,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "f4502e01-4792-8dee-7fd9-fbab2ba6812a",
           "name 'InternalVariableName'": "SM_CylinderBevel2"
@@ -1907,8 +1814,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "7f2a4612-431b-07cf-a2f5-48b2273807a6",
           "name 'InternalVariableName'": "NavModifier"
@@ -1933,8 +1839,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "c6efdc7f-4ae7-909c-0433-1c875113593e",
           "name 'InternalVariableName'": "SM_CylinderBevel"
@@ -1959,8 +1864,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "22039f40-4433-c29c-ee93-92a8d2a01409",
           "name 'InternalVariableName'": "SM_CylinderBevel1"
@@ -1996,67 +1900,39 @@
           "obj 'StaticMesh'": -52,
           "bool 'bEnableVertexColorMeshPainting'": false,
           "bool 'bEnableTextureColorMeshPainting'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 553,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 62,
-              "bool 'bNotifyRigidBodyCollision'": true,
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 269,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 553 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 62,
+            "bool 'bNotifyRigidBodyCollision'": true,
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 269 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 200,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 200,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Trigger",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 69
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Trigger",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 69
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
-              },
-              "float 'LinearDamping'": 0.1,
-              "float 'AngularDamping'": 0.5,
-              "float 'MassScale'": 0.1,
-              "bool 'bSimulatePhysics'": true
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
+              }
             },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "float 'LinearDamping'": 0.1,
+            "float 'AngularDamping'": 0.5,
+            "float 'MassScale'": 0.1,
+            "bool 'bSimulatePhysics'": true
           },
           "Vector 'RelativeScale3D'": "0.5 0.5 0.5",
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "bool 'bCanEverAffectNavigation'": false
         },
@@ -2077,65 +1953,37 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj 'StaticMesh'": -50,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 473,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
-              "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
-              "name 'CollisionProfileName'": "NoCollision",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 269,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 473 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
+            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
+            "name 'CollisionProfileName'": "NoCollision",
+            "struct CollisionResponse 269 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 200,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 200,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "Vector 'RelativeLocation'": "9.1779134235181054E-07 1.3767351528587952E-12 0.304159338564574",
           "Rotator 'RelativeRotation'": "6.9717214808389676E-07 0 0",
           "Vector 'RelativeScale3D'": "0.987622 0.987622 0.987622",
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "bool 'bCanEverAffectNavigation'": false
         },
@@ -2157,65 +2005,37 @@
         "Members": {
           "obj 'StaticMesh'": -51,
           "obj[] 'OverrideMaterials'": "-33",
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 473,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
-              "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
-              "name 'CollisionProfileName'": "NoCollision",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 269,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 473 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
+            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
+            "name 'CollisionProfileName'": "NoCollision",
+            "struct CollisionResponse 269 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 200,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 200,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "Vector 'RelativeLocation'": "2.4992869262476781E-06 1.1368683772161603E-12 -95.211968272482778",
           "Rotator 'RelativeRotation'": "9.9999999999999953E-07 0 0",
           "Vector 'RelativeScale3D'": "1.0192369736312479 1.0192369736312479 1.9498435039120317",
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "bool 'bCanEverAffectNavigation'": false
         },
@@ -2236,65 +2056,37 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj 'StaticMesh'": -50,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 473,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
-              "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
-              "name 'CollisionProfileName'": "NoCollision",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 269,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 473 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 63,
+            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 66,
+            "name 'CollisionProfileName'": "NoCollision",
+            "struct CollisionResponse 269 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 200,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 200,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 68
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "Vector 'RelativeLocation'": "2.2765270735469745E-06 -9.0745948327774669E-13 -249.73705635909198",
           "Rotator 'RelativeRotation'": "-1.3943449630460226E-06 180 180",
           "Vector 'RelativeScale3D'": "0.86755708965938538 0.86755708965938538 0.98762186977546662",
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "bool 'bCanEverAffectNavigation'": false
         },

@@ -551,6 +551,26 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty ComponentKey": {
+        "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0"
+      },
+      "StructProperty BlueprintCookedComponentInstancingData": {
+        "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty NiagaraUserRedirectionParameterStore": {
+        "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0"
+      }
     }
   },
   "Objects": [
@@ -582,8 +602,7 @@
               "None",
               "Event Graph"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -594,80 +613,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
-                      "AssetName": "BP_Hazard_ConduitCurved"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                    "AssetName": "BP_Hazard_ConduitCurved"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -362.54025,
-                    "Y": -277.75797
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -362.54025,
+                  "Y": -277.75797
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
-                      "AssetName": "BP_Hazard_ConduitCurved"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                    "AssetName": "BP_Hazard_ConduitCurved"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 362.59122,
-                    "Y": -461.67453
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 362.59122,
+                  "Y": -461.67453
                 },
                 "float 'SavedZoomAmount'": 0.5
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -791,170 +769,93 @@
               {
                 "obj 'ComponentClass'": -16,
                 "obj 'ComponentTemplate'": 8,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": "Niagara",
-                    "guid 'AssociatedGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "Niagara",
+                  "guid 'AssociatedGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               },
               {
                 "obj 'ComponentClass'": -14,
                 "obj 'ComponentTemplate'": 13,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": "Sphere",
-                    "guid 'AssociatedGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "Sphere",
+                  "guid 'AssociatedGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               },
               {
                 "obj 'ComponentClass'": -15,
                 "obj 'ComponentTemplate'": 14,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": "StaticMesh",
-                    "guid 'AssociatedGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "StaticMesh",
+                  "guid 'AssociatedGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               },
               {
                 "obj 'ComponentClass'": -11,
                 "obj 'ComponentTemplate'": 10,
-                "ComponentKey": {
-                  "Name": "ComponentKey",
-                  "Type": "StructProperty",
-                  "Size": 135,
-                  "StructName": "ComponentKey",
-                  "BoolVal": 0,
-                  "Value": {
-                    "obj 'OwnerClass'": -1,
-                    "name 'SCSVariableName'": "DefaultSceneRoot",
-                    "guid 'AssociatedGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039"
-                  },
-                  "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "DefaultSceneRoot",
+                  "guid 'AssociatedGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039"
                 },
-                "CookedComponentInstancingData": {
-                  "Name": "CookedComponentInstancingData",
-                  "Type": "StructProperty",
-                  "Size": 98,
-                  "StructName": "BlueprintCookedComponentInstancingData",
-                  "BoolVal": 0,
-                  "Value": {
-                    "ChangedPropertyList": {
-                      "Name": "ChangedPropertyList",
-                      "Type": "ArrayProperty",
-                      "Size": 4,
-                      "StructName": "BlueprintComponentChangedPropertyInfo",
-                      "BoolVal": 0,
-                      "InnerType": "StructProperty",
-                      "Value": [],
-                      "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0",
-                      "SerializeType": "Property"
-                    },
-                    "bool 'bHasValidCookedData'": false
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
                   },
-                  "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "bool 'bHasValidCookedData'": false
                 }
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
           }
         }
       }
@@ -969,18 +870,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "da2f88fc-4cc4-f1b2-4c2d-5786e5f6263f"
         },
@@ -1000,16 +892,7 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "OverrideParameters": {
-            "Name": "OverrideParameters",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "NiagaraUserRedirectionParameterStore",
-            "BoolVal": 0,
-            "Value": {},
-            "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0",
-            "SerializeType": "Property"
-          }
+          "struct NiagaraUserRedirectionParameterStore 8 'OverrideParameters'": {}
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []
@@ -1065,8 +948,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039",
           "name 'InternalVariableName'": "DefaultSceneRoot"

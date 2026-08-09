@@ -203,7 +203,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -229,20 +230,14 @@
       "Obj": {
         "__type": "UTexture2D",
         "Members": {
-          "Source": {
-            "Name": "Source",
-            "Type": "StructProperty",
-            "Size": 249,
-            "StructName": "TextureSource",
-            "Value": {
-              "guid 'Id'": "737be4c1-4ffb-bce6-e4dd-4f89ee3eb5d0",
-              "int 'SizeX'": 16,
-              "int 'SizeY'": 16,
-              "int 'NumSlices'": 1,
-              "int 'NumMips'": 1,
-              "bool 'bPNGCompressed'": true,
-              "byte64 (ETextureSourceFormat) 'Format'": 36
-            }
+          "struct TextureSource 249 'Source'": {
+            "guid 'Id'": "737be4c1-4ffb-bce6-e4dd-4f89ee3eb5d0",
+            "int 'SizeX'": 16,
+            "int 'SizeY'": 16,
+            "int 'NumSlices'": 1,
+            "int 'NumMips'": 1,
+            "bool 'bPNGCompressed'": true,
+            "byte64 (ETextureSourceFormat) 'Format'": 36
           },
           "guid 'LightingGuid'": "33eaaba1-459c-1080-dde0-76bef5b108c2",
           "string 'SourceFilePath'": "C:/Users/michael.noland/Desktop/FlatNormalMap.tga",

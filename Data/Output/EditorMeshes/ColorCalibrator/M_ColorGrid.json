@@ -253,7 +253,8 @@
           "Words": "0"
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -303,20 +304,14 @@
                 "float 'SamplingScale'": 1,
                 "int 'UVChannelIndex'": 0,
                 "name 'TextureName'": "Color_checker",
-                "TextureReference": {
-                  "Name": "TextureReference",
-                  "Type": "StructProperty",
-                  "Size": 12,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker",
-                    "AssetPath": {
-                      "PackageName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 12 'TextureReference'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker",
+                  "AssetPath": {
+                    "PackageName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker"
+                  },
+                  "SaveNum": 0
                 }
               }
             ]
@@ -340,71 +335,47 @@
       "Obj": {
         "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
-          "BaseColor": {
-            "Name": "BaseColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "128 128 128 255",
-              "Expression": 5,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Specular": {
-            "Name": "Specular",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0.5,
-              "Expression": 4,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Specular'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 4,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Roughness": {
-            "Name": "Roughness",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0.5,
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "ExpressionCollection": {
-            "Name": "ExpressionCollection",
-            "Type": "StructProperty",
-            "Size": 57,
-            "StructName": "MaterialExpressionCollection",
-            "Value": {
-              "obj[] 'Expressions'": "5 4 3"
-            }
+          "struct MaterialExpressionCollection 57 'ExpressionCollection'": {
+            "obj[] 'Expressions'": "5 4 3"
           }
         },
         "bSavedCachedExpressionData": false

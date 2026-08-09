@@ -209,7 +209,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -223,15 +224,9 @@
         "__type": "UMaterialInstance",
         "Members": {
           "obj 'Parent'": -5,
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "byte64 (EMaterialShadingModel) 'ShadingModel'": 8,
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 78 'BasePropertyOverrides'": {
+            "byte64 (EMaterialShadingModel) 'ShadingModel'": 8,
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "obj 'EditorOnlyData'": 2,
           "obj 'ThumbnailInfo'": 4,

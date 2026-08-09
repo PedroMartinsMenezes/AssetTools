@@ -703,6 +703,23 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty InstancedPropertyBag": {
+        "TypeName": "StructProperty 1 | InstancedPropertyBag 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty PCGOverrideInstancedPropertyBag": {
+        "TypeName": "StructProperty 1 | PCGOverrideInstancedPropertyBag 1 | /Script/PCG 0"
+      }
     }
   },
   "Objects": [
@@ -733,8 +750,7 @@
               "None",
               "Event Graph"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -745,80 +761,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
-                      "AssetName": "PCG_BP_FenceSpline"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                    "AssetName": "PCG_BP_FenceSpline"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
-                      "AssetName": "PCG_BP_FenceSpline"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                    "AssetName": "PCG_BP_FenceSpline"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -942,18 +917,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
@@ -979,18 +945,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "ReceiveActorBeginOverlap"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
@@ -1018,18 +975,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "ReceiveTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveTick"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
@@ -1057,18 +1005,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "1d97f3d9-42d5-ae2f-8943-ad8824b86861"
         },
@@ -1130,134 +1069,115 @@
         "__type": "UObject",
         "Members": {
           "obj 'Graph'": -22,
-          "ParametersOverrides": {
-            "Name": "ParametersOverrides",
-            "Type": "StructProperty",
-            "Size": 489,
-            "StructName": "PCGOverrideInstancedPropertyBag",
-            "BoolVal": 0,
-            "Value": {
-              "Parameters": {
-                "Name": "Parameters",
-                "Type": "StructProperty",
-                "Size": 432,
-                "StructName": "InstancedPropertyBag",
-                "BoolVal": 0,
-                "Value": {
-                  "Version": "SerializeStructSize",
-                  "bHasData": true,
-                  "PropertyDescs": [
+          "struct PCGOverrideInstancedPropertyBag 489 'ParametersOverrides'": {
+            "class InstancedPropertyBag 432 'Parameters'": {
+              "Version": "SerializeStructSize",
+              "bHasData": true,
+              "PropertyDescs": [
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "330ac9e2-4240-f9bc-ddb8-98acd46f8370",
+                  "Name": "PostDistance",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
                     {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "330ac9e2-4240-f9bc-ddb8-98acd46f8370",
-                      "Name": "PostDistance",
-                      "ValueType": "Double",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": true,
-                      "MetaData": [
-                        {
-                          "Key": "Category",
-                          "Value": "General"
-                        },
-                        {
-                          "Key": "EnableCategories"
-                        }
-                      ],
-                      "MetaClass": "ImportIndex[0] ",
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
+                      "Key": "Category",
+                      "Value": "General"
                     },
                     {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "1eb86da9-4131-2550-4f5a-07933d3d2304",
-                      "Name": "HeightOffset",
-                      "ValueType": "Double",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": true,
-                      "MetaData": [
-                        {
-                          "Key": "Category",
-                          "Value": "General"
-                        },
-                        {
-                          "Key": "EnableCategories"
-                        }
-                      ],
-                      "MetaClass": "ImportIndex[0] ",
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
-                    },
-                    {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "efb79ad0-4bc8-4807-4237-6abc997378b8",
-                      "Name": "bUseCurvedEndCaps",
-                      "ValueType": "Bool",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": true,
-                      "MetaData": [
-                        {
-                          "Key": "Category",
-                          "Value": "EndCaps"
-                        },
-                        {
-                          "Key": "EnableCategories"
-                        }
-                      ],
-                      "MetaClass": "ImportIndex[0] ",
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
-                    },
-                    {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "74396a9d-4ba9-8e42-1789-75834f23ed60",
-                      "Name": "bEndOnlyCap",
-                      "ValueType": "Bool",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": true,
-                      "MetaData": [
-                        {
-                          "Key": "Category",
-                          "Value": "EndCaps"
-                        },
-                        {
-                          "Key": "EnableCategories"
-                        }
-                      ],
-                      "MetaClass": "ImportIndex[0] ",
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
+                      "Key": "EnableCategories"
                     }
                   ],
-                  "SerialSize": 124,
-                  "BagStruct": {
-                    "Members": {
-                      "double 'PostDistance'": 500,
-                      "double 'HeightOffset'": 0,
-                      "bool 'bUseCurvedEndCaps'": false,
-                      "bool 'bEndOnlyCap'": false
-                    },
-                    "Children": 0,
-                    "StructFlags": "STRUCT_NoFlags",
-                    "UseNativeSerialization": false,
-                    "UseBinarySerialization": false,
-                    "Next": 0
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
                   }
                 },
-                "TypeName": "StructProperty 1 | InstancedPropertyBag 1 | /Script/CoreUObject 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "1eb86da9-4131-2550-4f5a-07933d3d2304",
+                  "Name": "HeightOffset",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "General"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "efb79ad0-4bc8-4807-4237-6abc997378b8",
+                  "Name": "bUseCurvedEndCaps",
+                  "ValueType": "Bool",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "EndCaps"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "74396a9d-4ba9-8e42-1789-75834f23ed60",
+                  "Name": "bEndOnlyCap",
+                  "ValueType": "Bool",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "EndCaps"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                }
+              ],
+              "SerialSize": 124,
+              "BagStruct": {
+                "Members": {
+                  "double 'PostDistance'": 500,
+                  "double 'HeightOffset'": 0,
+                  "bool 'bUseCurvedEndCaps'": false,
+                  "bool 'bEndOnlyCap'": false
+                },
+                "Children": 0,
+                "StructFlags": "STRUCT_NoFlags",
+                "UseNativeSerialization": false,
+                "UseBinarySerialization": false,
+                "Next": 0
               }
-            },
-            "TypeName": "StructProperty 1 | PCGOverrideInstancedPropertyBag 1 | /Script/PCG 0",
-            "SerializeType": "Property"
+            }
           }
         }
       }
@@ -1296,8 +1216,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "30890f52-4073-6c87-aba6-678dfe0ff694",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -1322,8 +1241,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "2bcb9f24-4368-d2ec-e40b-94aaf38d67f1",
           "name 'InternalVariableName'": "FenceSpline"
@@ -1348,8 +1266,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "95b5fcf0-44c3-72f4-c16f-54849c71dae2",
           "name 'InternalVariableName'": "PCG"

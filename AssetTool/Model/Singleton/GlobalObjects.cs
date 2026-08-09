@@ -68,6 +68,8 @@
 
         public Dictionary<long, FPropertyTag> MemberSizes { get; set; } = [];
 
+        public Dictionary<string, GlobalTypeName> GlobalTypeNames { get; set; }
+
         #endregion
 
         public int CustomVer(Guid guid)

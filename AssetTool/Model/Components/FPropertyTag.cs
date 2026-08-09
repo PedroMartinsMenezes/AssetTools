@@ -22,12 +22,14 @@ namespace AssetTool
         public FName ValueType;
         public FPropertyTag MaybeInnerTag;
         public object Value;
+        #endregion
+
+        #region JsonIgnore: Saved in GlobalTypeNames
         public FPropertyTypeName TypeName;
         public EPropertyTagExtension? PropertyTagExtensions;
         public EOverriddenPropertyOperation? OverrideOperation;
         public FBool? bExperimentalOverridableLogic;
         public EPropertyTagFlags? PropertyTagFlags;
-        public EPropertyTagSerializeType? SerializeType;
         #endregion
 
         #region JsonIgnore
@@ -65,6 +67,7 @@ namespace AssetTool
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public ITransferable Move(Transfer transfer)
         {
+            //ReadFromGlobalTypes(transfer);
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
                 return LoadPropertyTagNoFullType(transfer);
 
@@ -98,12 +101,6 @@ namespace AssetTool
             BoolVal = propertyTagFlags.HasFlag(EPropertyTagFlags.BoolTrue) ? (byte)1 : (byte)0;
 
             HasPropertyGuid = propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyGuid) ? 1 : null;
-
-            SerializeType = propertyTagFlags.HasFlag(EPropertyTagFlags.SkippedSerialize)
-                ? EPropertyTagSerializeType.Skipped
-                : propertyTagFlags.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize)
-                    ? EPropertyTagSerializeType.BinaryOrNative
-                    : EPropertyTagSerializeType.Property;
 
             if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasArrayIndex))
                 transfer.Move(ref ArrayIndex);
@@ -140,8 +137,50 @@ namespace AssetTool
             {
                 TypeNamespace = default;
             }
+            //WriteToGlobalTypes(transfer);
             return this;
         }
+
+        #region GlobalTypeNames
+        //private void WriteToGlobalTypes(Transfer transfer)
+        //{
+        //    if (transfer.IsReading)
+        //    {
+        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}"; //{HeaderOffset} with this always work
+        //        if (!transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
+        //        {
+        //            transfer.GlobalObjects.GlobalTypeNames[key] = new GlobalTypeName
+        //            {
+        //                TypeName = TypeName,
+        //            };
+        //        }
+        //        else
+        //        {
+        //            //checar se os valores são iguais, se não forem, lançar exceção
+        //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
+                    
+        //            string typeName = globalTypeName.TypeName.ToJson();
+        //            string currentTypeName = TypeName.ToJson();
+        //            if (typeName != currentTypeName)
+        //                throw new InvalidOperationException($"GlobalTypeNames mismatch for key: {key}. Existing: {typeName}, Current: {currentTypeName}");
+        //        }
+        //    }
+        //}
+
+        //private void ReadFromGlobalTypes(Transfer transfer)
+        //{
+        //    if (transfer.IsWriting && transfer.FromJson)
+        //    {
+        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}";  //{HeaderOffset} with this always work
+        //        if (transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
+        //        {
+        //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
+
+        //            //TypeName = globalTypeName.TypeName;
+        //        }
+        //    }
+        //}
+        #endregion
 
         private FPropertyTag LoadPropertyTagNoFullType(Transfer transfer)
         {
@@ -262,7 +301,7 @@ namespace AssetTool
         }
     }
 
-    public static class FPropertyTagExt
+public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
@@ -311,7 +350,7 @@ namespace AssetTool
                 {
                     if (tag.Name.IsFilled())
                     {
-                        var item = tag.Name.IsFilled() && indent >= 0 ? DerivedTag(tag) : tag;
+                        var item = tag.Name.IsFilled() && indent >= 0 ? DerivedTag(transfer, tag) : tag;
                         if (item is Dictionary<string, object> dict)
                         {
                             string suffix = members.ContainsKey(dict.Keys.First()) ? $"{FName.DOUBLE_SEPARATOR}{tag.ValueOffset.ToString()}" : string.Empty;
@@ -338,7 +377,7 @@ namespace AssetTool
         #endregion
 
         #region DerivedTag
-        private static object DerivedTag(FPropertyTag tag)
+        private static object DerivedTag(Transfer transfer, FPropertyTag tag)
         {
             if (tag is { } && DerivedConstructors.TryGetValue(tag.JsonKey, out var func))
             {
@@ -346,6 +385,12 @@ namespace AssetTool
             }
 
             if (tag == default || !tag.Type.IsFilled()) return tag;
+
+            //struct types
+            if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
+            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
+
+            //primitive types
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new SoftObjectPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().FromNative(tag);
@@ -365,7 +410,8 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
+
+            //array types
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray(tag);
@@ -401,7 +447,12 @@ namespace AssetTool
                     return func(transfer, key, value);
                 }
 
-                if (type == "soft") return new SoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                //struct types
+                if (type == "struct" || type == "class") return new FStructPropertyJson().GetNative(transfer, key, value);
+                else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
+
+                //scalar types
+                else if (type == "soft") return new SoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "bool") return new FBoolPropertyJson().GetNative(transfer, key, value.ToObject<bool>(transfer));
                 else if (type == "byte") return new FBytePropertyJson().GetNative(transfer, key, value.ToObject<TUInt8>(transfer));
                 else if (type == "int8") return new FInt8PropertyJson().GetNative(transfer, key, value.ToObject<TInt8>(transfer));
@@ -420,7 +471,8 @@ namespace AssetTool
                 else if (type == "uint") return new FUInt32PropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "long") return new FInt64PropertyJson().GetNative(transfer, key, value.ToObject<TInt64>(transfer));
                 else if (type == "ulong") return new FUInt64PropertyJson().GetNative(transfer, key, value.ToObject<TUInt64>(transfer));
-                else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
+
+                //array types
                 else if (type == "obj[]") return new FObjectPropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "bool[]") return new FBoolPropertyJsonArray().GetNative(transfer, key, value.ToString());
                 else if (type == "int[]") return new FIntPropertyJsonArray().GetNative(transfer, key, value.ToString());
@@ -687,7 +739,7 @@ namespace AssetTool
                     DerivedConstructors.Add(t.Item2.TypeName, (tag) =>
                     {
                         string type = t.Item2.TypeName;
-                        string key = BasePropertyJson.BuildKey(type, tag);
+                        string key = new BasePropertyJson().BuildKey(type, tag);
                         object value = tag.Value;
                         return new Dictionary<string, object> { { key, value } };
                     });
@@ -715,7 +767,6 @@ namespace AssetTool
                         int arrayIndex = index is { } ? int.Parse(index) : 0;
                         FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, default, default, name, enumInnerType, typeNamespace);
                         EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, structName);
-                        EPropertyTagSerializeType serializeType = BasePropertyJson.ExtractSerializeType(propertyTagFlags);
                         object tagValue = default;
                         int size = 0;
 
@@ -771,7 +822,6 @@ namespace AssetTool
                             PropertyGuid = guid is { } ? new FGuid(guid) : default,
                             TypeName = typeName,
                             PropertyTagFlags = propertyTagFlags,
-                            SerializeType = serializeType,
                         };
                     }));
                 }

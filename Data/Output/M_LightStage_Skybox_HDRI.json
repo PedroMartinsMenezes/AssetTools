@@ -248,7 +248,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -276,53 +277,41 @@
             },
             "Value": [
               {
-                "AtlasData": {
-                  "Name": "AtlasData",
-                  "Type": "StructProperty",
-                  "Size": 108,
-                  "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": {
-                    "bool 'bIsUsedAsAtlasPosition'": false,
-                    "Curve": {
-                      "Name": "Curve",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
-                    },
-                    "Atlas": {
-                      "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
                     }
                   }
                 },
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "RefractionDepthBias",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                  "int 'Index'": -1
                 },
                 "float 'ParameterValue'": 0,
                 "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
@@ -342,31 +331,19 @@
             },
             "Value": [
               {
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "HDRI_Cubemap",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "HDRI_Cubemap",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                  "int 'Index'": -1
                 },
                 "obj 'ParameterValue'": -11,
                 "guid 'ExpressionGUID'": "db1c437f-4487-6223-0ed8-b6abd33f41d5"
               }
             ]
           },
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "byte64 (EMaterialShadingModel) 'ShadingModel'": 25,
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 78 'BasePropertyOverrides'": {
+            "byte64 (EMaterialShadingModel) 'ShadingModel'": 25,
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",
@@ -405,42 +382,30 @@
       "Obj": {
         "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
-          "StaticParameters": {
-            "Name": "StaticParameters",
-            "Type": "StructProperty",
-            "Size": 379,
-            "StructName": "StaticParameterSetEditorOnlyData",
-            "Value": {
-              "StaticSwitchParameters": {
+          "struct StaticParameterSetEditorOnlyData 379 'StaticParameters'": {
+            "StaticSwitchParameters": {
+              "Name": "StaticSwitchParameters",
+              "Type": "ArrayProperty",
+              "Size": 338,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
                 "Name": "StaticSwitchParameters",
-                "Type": "ArrayProperty",
-                "Size": 338,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "StaticSwitchParameters",
-                  "Type": "StructProperty",
-                  "Size": 285,
-                  "StructName": "StaticSwitchParameter"
-                },
-                "Value": [
-                  {
-                    "bool 'Value'": true,
-                    "ParameterInfo": {
-                      "Name": "ParameterInfo",
-                      "Type": "StructProperty",
-                      "Size": 111,
-                      "StructName": "MaterialParameterInfo",
-                      "Value": {
-                        "name 'Name'": "HDRI",
-                        "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                        "int 'Index'": -1
-                      }
-                    },
-                    "bool 'bOverride'": true,
-                    "guid 'ExpressionGUID'": "54300bef-4537-c2e1-95c7-ec8cd016b29f"
-                  }
-                ]
-              }
+                "Type": "StructProperty",
+                "Size": 285,
+                "StructName": "StaticSwitchParameter"
+              },
+              "Value": [
+                {
+                  "bool 'Value'": true,
+                  "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                    "name 'Name'": "HDRI",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                    "int 'Index'": -1
+                  },
+                  "bool 'bOverride'": true,
+                  "guid 'ExpressionGUID'": "54300bef-4537-c2e1-95c7-ec8cd016b29f"
+                }
+              ]
             }
           }
         },

@@ -789,7 +789,8 @@
           "Words": "0"
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -858,39 +859,27 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
-                      "AssetName": "BP_ThirdPersonCharacter"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
+                    "AssetName": "BP_ThirdPersonCharacter"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-536 -551",
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
-                      "AssetName": "BP_ThirdPersonCharacter"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
+                    "AssetName": "BP_ThirdPersonCharacter"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-394.0950930132204 -2640.3641684455897",
                 "float 'SavedZoomAmount'": 0.375
@@ -1017,15 +1006,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "Value": {
-              "RawPointer": 202,
-              "UberGraphFunctionKey": 0
-            }
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 202,
+            "UberGraphFunctionKey": 0
           },
           "obj 'Mesh'": 58,
           "obj 'CharacterMovement'": 7,
@@ -1106,15 +1089,9 @@
           "Rotator 'RotationRate'": "0 500 0",
           "bool 'bUseSeparateBrakingFriction'": true,
           "bool 'bOrientRotationToMovement'": true,
-          "NavAgentProps": {
-            "Name": "NavAgentProps",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "NavAgentProperties",
-            "Value": {
-              "float 'AgentRadius'": 42,
-              "float 'AgentHeight'": 192
-            }
+          "struct NavAgentProperties 66 'NavAgentProps'": {
+            "float 'AgentRadius'": 42,
+            "float 'AgentHeight'": 192
           },
           "float 'FixedPathBrakingDistance'": 200,
           "bool 'bUseAccelerationForPaths'": true,
@@ -2818,15 +2795,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Jump",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "Jump",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 688,
           "int 'NodePosY'": -704,
@@ -2851,15 +2822,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "GetRightVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "GetRightVector"
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": -1261,
@@ -2887,15 +2852,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GetControlRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "GetControlRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1456,
           "int 'NodePosY'": -1271,
@@ -2921,15 +2880,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "GetForwardVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "GetForwardVector"
           },
           "int 'NodePosX'": 1760,
           "int 'NodePosY'": -1262,
@@ -2956,15 +2909,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsInterfaceCall'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -42,
-              "name 'MemberName'": "AddMappingContext"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -42,
+            "name 'MemberName'": "AddMappingContext"
           },
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": -2336,
@@ -2990,15 +2937,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddMovementInput",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddMovementInput",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2144,
           "int 'NodePosY'": -1344,
@@ -3025,15 +2966,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddMovementInput",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddMovementInput",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1216,
           "int 'NodePosY'": -1344,
@@ -3062,15 +2997,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GetControlRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "GetControlRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 544,
           "int 'NodePosY'": -1276,
@@ -3095,15 +3024,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddControllerYawInput",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddControllerYawInput",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": -1920,
@@ -3128,15 +3051,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddControllerPitchInput",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddControllerPitchInput",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 928,
           "int 'NodePosY'": -1920,
@@ -3163,15 +3080,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GetController",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "GetController",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 240,
           "int 'NodePosY'": -2224,
@@ -3193,15 +3104,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "StopJumping",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "StopJumping",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 688,
           "int 'NodePosY'": -528,
@@ -3343,15 +3248,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            }
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 240,
@@ -3376,15 +3275,9 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosX'": -128,
           "int 'NodePosY'": -208,
@@ -3547,16 +3440,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "Value": {
-              "obj 'MacroGraph'": -49,
-              "obj 'GraphBlueprint'": -3,
-              "guid 'GraphGuid'": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
-            }
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -49,
+            "obj 'GraphBlueprint'": -3,
+            "guid 'GraphGuid'": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
           },
           "int 'NodePosX'": 1184,
           "int 'NodePosY'": -2320,
@@ -3746,14 +3633,8 @@
           "obj 'ClothingSimulationFactory'": -15,
           "obj 'SkeletalMesh'": -88,
           "obj 'SkinnedAsset'": -88,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "BodyInstance",
-            "Value": {
-              "float 'MassInKgOverride'": 85.8125
-            }
+          "struct BodyInstance 37 'BodyInstance'": {
+            "float 'MassInKgOverride'": 85.8125
           },
           "obj 'AttachParent'": 6,
           "Vector 'RelativeLocation'": "0 0 -89",

@@ -367,7 +367,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -380,115 +381,91 @@
       "Obj": {
         "__type": "UBodySetup",
         "Members": {
-          "AggGeom": {
-            "Name": "AggGeom",
-            "Type": "StructProperty",
-            "Size": 2322,
-            "StructName": "KAggregateGeom",
-            "Value": {
-              "ConvexElems": {
+          "struct KAggregateGeom 2322 'AggGeom'": {
+            "ConvexElems": {
+              "Name": "ConvexElems",
+              "Type": "ArrayProperty",
+              "Size": 2281,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
                 "Name": "ConvexElems",
-                "Type": "ArrayProperty",
-                "Size": 2281,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "ConvexElems",
-                  "Type": "StructProperty",
-                  "Size": 2228,
-                  "StructName": "KConvexElem"
-                },
-                "Value": [
-                  {
-                    "VertexData": {
+                "Type": "StructProperty",
+                "Size": 2228,
+                "StructName": "KConvexElem"
+              },
+              "Value": [
+                {
+                  "VertexData": {
+                    "Name": "VertexData",
+                    "Type": "ArrayProperty",
+                    "Size": 869,
+                    "InnerType": "StructProperty",
+                    "MaybeInnerTag": {
                       "Name": "VertexData",
-                      "Type": "ArrayProperty",
-                      "Size": 869,
-                      "InnerType": "StructProperty",
-                      "MaybeInnerTag": {
-                        "Name": "VertexData",
-                        "Type": "StructProperty",
-                        "Size": 816,
-                        "StructName": "Vector"
-                      },
-                      "Value": [
-                        "4096.10009765625 1696.651611328125 -1696.649658203125",
-                        "4096.10009765625 -1696.650390625 -1696.64990234375",
-                        "4096.10009765625 -1696.650634765625 1696.651123046875",
-                        "4096.10009765625 1696.65087890625 1696.6510009765625",
-                        "-4096.10009765625 -1696.64990234375 -1696.6500244140625",
-                        "-4096.10009765625 1696.650146484375 -1696.64990234375",
-                        "-4096.10009765625 1696.64990234375 1696.6497802734375",
-                        "-4096.10009765625 -1696.64990234375 1696.6502685546875",
-                        "-1696.650390625 4096.10009765625 -1696.649169921875",
-                        "1696.65087890625 4096.10009765625 -1696.6494140625",
-                        "1696.650634765625 4096.10009765625 1696.650146484375",
-                        "-1696.64990234375 4096.10009765625 1696.650390625",
-                        "1696.65087890625 -4096.10009765625 -1696.6488037109375",
-                        "-1696.64990234375 -4096.10009765625 -1696.6494140625",
-                        "-1696.650390625 -4096.10009765625 1696.649658203125",
-                        "1696.651123046875 -4096.10009765625 1696.6502685546875",
-                        "-1696.650390625 1696.6502685546875 4096.10009765625",
-                        "1696.65087890625 1696.6500244140625 4096.10009765625",
-                        "1696.65087890625 -1696.650390625 4096.10009765625",
-                        "-1696.650390625 -1696.6497802734375 4096.10009765625",
-                        "-1696.650390625 -1696.6494140625 -4096.10009765625",
-                        "1696.650390625 -1696.6488037109375 -4096.10009765625",
-                        "1696.650146484375 1696.649658203125 -4096.10009765625",
-                        "-1696.64990234375 1696.64990234375 -4096.10009765625",
-                        "-1696.5810546875 4096.1689453125 1696.580810546875",
-                        "2896.3759765625 2896.375 2896.375",
-                        "-2896.375 2896.374755859375 2896.375244140625",
-                        "2896.375732421875 -2896.37548828125 -2896.37451171875",
-                        "-2896.37548828125 -2896.37451171875 -2896.374755859375",
-                        "-2896.375 2896.374755859375 -2896.37548828125",
-                        "2896.375732421875 2896.37548828125 -2896.37451171875",
-                        "1696.58203125 4096.16943359375 -1696.580810546875",
-                        "2896.37646484375 -2896.37451171875 2896.37451171875",
-                        "-2896.375244140625 -2896.37451171875 2896.375"
-                      ]
-                    },
-                    "int[] 'IndexData'": "19 18 16 19 14 18 8 5 6 30 22 23 17 10 11 17 25 10 27 32 15 32 2 18 15 32 18 15 14 12 15 18 14 28 13 14 13 12 14 27 2 32 5 7 6 26 6 7 11 24 8 25 0 31 3 0 25 3 2 0 29 23 20 27 12 13 27 1 2 30 29 31 30 31 0 11 26 16 11 6 26 17 11 16 4 7 5 4 14 7 27 15 12 29 20 4 1 0 2 28 20 13 30 0 1 30 23 29 29 4 5 29 5 8 28 4 20 28 14 4 27 30 1 29 8 31 22 20 23 21 22 30 21 20 22 27 21 30 27 20 21 27 13 20 24 31 8 10 24 11 11 8 6 26 7 16 17 18 2 17 16 18 10 31 24 10 25 31 33 19 7 19 16 7 33 14 19 33 7 14 17 3 25 17 2 3",
-                    "ElemBox": {
-                      "Name": "ElemBox",
                       "Type": "StructProperty",
-                      "Size": 49,
-                      "StructName": "Box",
-                      "Value": {
-                        "Min": "-4096.10009765625 -4096.10009765625 -4096.10009765625",
-                        "Max": "4096.10009765625 4096.16943359375 4096.10009765625",
-                        "IsValid": 1
-                      }
+                      "Size": 816,
+                      "StructName": "Vector"
                     },
-                    "Transform": {
-                      "Name": "Transform",
-                      "Type": "StructProperty",
-                      "Size": 235,
-                      "StructName": "Transform",
-                      "Value": {
-                        "Quat 'Rotation'": "0 0 0 1",
-                        "Vector 'Translation'": "0 0 0",
-                        "Vector 'Scale3D'": "1 1 1"
-                      }
-                    },
-                    "float 'RestOffset'": 0,
-                    "bool 'bIsGenerated'": false,
-                    "name 'Name'": "None",
-                    "bool 'bContributeToMass'": true,
-                    "byte64 (ECollisionEnabled) 'CollisionEnabled'": 55
-                  }
-                ]
-              }
+                    "Value": [
+                      "4096.10009765625 1696.651611328125 -1696.649658203125",
+                      "4096.10009765625 -1696.650390625 -1696.64990234375",
+                      "4096.10009765625 -1696.650634765625 1696.651123046875",
+                      "4096.10009765625 1696.65087890625 1696.6510009765625",
+                      "-4096.10009765625 -1696.64990234375 -1696.6500244140625",
+                      "-4096.10009765625 1696.650146484375 -1696.64990234375",
+                      "-4096.10009765625 1696.64990234375 1696.6497802734375",
+                      "-4096.10009765625 -1696.64990234375 1696.6502685546875",
+                      "-1696.650390625 4096.10009765625 -1696.649169921875",
+                      "1696.65087890625 4096.10009765625 -1696.6494140625",
+                      "1696.650634765625 4096.10009765625 1696.650146484375",
+                      "-1696.64990234375 4096.10009765625 1696.650390625",
+                      "1696.65087890625 -4096.10009765625 -1696.6488037109375",
+                      "-1696.64990234375 -4096.10009765625 -1696.6494140625",
+                      "-1696.650390625 -4096.10009765625 1696.649658203125",
+                      "1696.651123046875 -4096.10009765625 1696.6502685546875",
+                      "-1696.650390625 1696.6502685546875 4096.10009765625",
+                      "1696.65087890625 1696.6500244140625 4096.10009765625",
+                      "1696.65087890625 -1696.650390625 4096.10009765625",
+                      "-1696.650390625 -1696.6497802734375 4096.10009765625",
+                      "-1696.650390625 -1696.6494140625 -4096.10009765625",
+                      "1696.650390625 -1696.6488037109375 -4096.10009765625",
+                      "1696.650146484375 1696.649658203125 -4096.10009765625",
+                      "-1696.64990234375 1696.64990234375 -4096.10009765625",
+                      "-1696.5810546875 4096.1689453125 1696.580810546875",
+                      "2896.3759765625 2896.375 2896.375",
+                      "-2896.375 2896.374755859375 2896.375244140625",
+                      "2896.375732421875 -2896.37548828125 -2896.37451171875",
+                      "-2896.37548828125 -2896.37451171875 -2896.374755859375",
+                      "-2896.375 2896.374755859375 -2896.37548828125",
+                      "2896.375732421875 2896.37548828125 -2896.37451171875",
+                      "1696.58203125 4096.16943359375 -1696.580810546875",
+                      "2896.37646484375 -2896.37451171875 2896.37451171875",
+                      "-2896.375244140625 -2896.37451171875 2896.375"
+                    ]
+                  },
+                  "int[] 'IndexData'": "19 18 16 19 14 18 8 5 6 30 22 23 17 10 11 17 25 10 27 32 15 32 2 18 15 32 18 15 14 12 15 18 14 28 13 14 13 12 14 27 2 32 5 7 6 26 6 7 11 24 8 25 0 31 3 0 25 3 2 0 29 23 20 27 12 13 27 1 2 30 29 31 30 31 0 11 26 16 11 6 26 17 11 16 4 7 5 4 14 7 27 15 12 29 20 4 1 0 2 28 20 13 30 0 1 30 23 29 29 4 5 29 5 8 28 4 20 28 14 4 27 30 1 29 8 31 22 20 23 21 22 30 21 20 22 27 21 30 27 20 21 27 13 20 24 31 8 10 24 11 11 8 6 26 7 16 17 18 2 17 16 18 10 31 24 10 25 31 33 19 7 19 16 7 33 14 19 33 7 14 17 3 25 17 2 3",
+                  "struct Box 49 'ElemBox'": {
+                    "Min": "-4096.10009765625 -4096.10009765625 -4096.10009765625",
+                    "Max": "4096.10009765625 4096.16943359375 4096.10009765625",
+                    "IsValid": 1
+                  },
+                  "struct Transform 235 'Transform'": {
+                    "Quat 'Rotation'": "0 0 0 1",
+                    "Vector 'Translation'": "0 0 0",
+                    "Vector 'Scale3D'": "1 1 1"
+                  },
+                  "float 'RestOffset'": 0,
+                  "bool 'bIsGenerated'": false,
+                  "name 'Name'": "None",
+                  "bool 'bContributeToMass'": true,
+                  "byte64 (ECollisionEnabled) 'CollisionEnabled'": 55
+                }
+              ]
             }
           },
-          "DefaultInstance": {
-            "Name": "DefaultInstance",
-            "Type": "StructProperty",
-            "Size": 82,
-            "StructName": "BodyInstance",
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType'": 52,
-              "name 'CollisionProfileName'": "BlockAll"
-            }
+          "struct BodyInstance 82 'DefaultInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType'": 52,
+            "name 'CollisionProfileName'": "BlockAll"
           },
           "byte64 (EPhysicsType) 'PhysicsType'": 102
         },
@@ -583,165 +560,129 @@
             "Value": [
               {
                 "obj 'StaticMeshDescriptionBulkData'": 8,
-                "BuildSettings": {
-                  "Name": "BuildSettings",
-                  "Type": "StructProperty",
-                  "Size": 567,
-                  "StructName": "MeshBuildSettings",
-                  "Value": {
-                    "bool 'bUseMikkTSpace'": true,
-                    "bool 'bRecomputeNormals'": true,
-                    "bool 'bRecomputeTangents'": true,
-                    "bool 'bComputeWeightedNormals'": false,
-                    "bool 'bRemoveDegenerates'": true,
-                    "bool 'bBuildReversedIndexBuffer'": true,
-                    "bool 'bUseHighPrecisionTangentBasis'": false,
-                    "bool 'bUseFullPrecisionUVs'": false,
-                    "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
-                    "bool 'bGenerateLightmapUVs'": false,
-                    "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
-                    "bool 'bSupportFaceRemap'": false,
-                    "int 'MinLightmapResolution'": 64,
-                    "int 'SrcLightmapIndex'": 0,
-                    "int 'DstLightmapIndex'": 1,
-                    "Vector 'BuildScale3D'": "1 1 1",
-                    "float 'DistanceFieldResolutionScale'": 1,
-                    "obj 'DistanceFieldReplacementMesh'": 0,
-                    "int 'MaxLumenMeshCards'": 12
-                  }
+                "struct MeshBuildSettings 567 'BuildSettings'": {
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bRecomputeNormals'": true,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bBuildReversedIndexBuffer'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "bool 'bGenerateLightmapUVs'": false,
+                  "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
+                  "bool 'bSupportFaceRemap'": false,
+                  "int 'MinLightmapResolution'": 64,
+                  "int 'SrcLightmapIndex'": 0,
+                  "int 'DstLightmapIndex'": 1,
+                  "Vector 'BuildScale3D'": "1 1 1",
+                  "float 'DistanceFieldResolutionScale'": 1,
+                  "obj 'DistanceFieldReplacementMesh'": 0,
+                  "int 'MaxLumenMeshCards'": 12
                 },
-                "ReductionSettings": {
-                  "Name": "ReductionSettings",
-                  "Type": "StructProperty",
-                  "Size": 587,
-                  "StructName": "MeshReductionSettings",
-                  "Value": {
-                    "float 'PercentTriangles'": 1,
-                    "float 'PercentVertices'": 1,
-                    "float 'MaxDeviation'": 0,
-                    "float 'PixelError'": 8,
-                    "float 'WeldingThreshold'": 0,
-                    "float 'HardAngleThreshold'": 45,
-                    "int 'BaseLODModel'": 0,
-                    "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 60,
-                    "byte64 (EMeshFeatureImportance) 'TextureImportance'": 60,
-                    "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 60,
-                    "bool 'bRecalculateNormals'": false,
-                    "bool 'bGenerateUniqueLightmapUVs'": false,
-                    "bool 'bKeepSymmetry'": false,
-                    "bool 'bVisibilityAided'": false,
-                    "bool 'bCullOccluded'": false,
-                    "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 65,
-                    "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 59,
-                    "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 61
-                  }
+                "struct MeshReductionSettings 587 'ReductionSettings'": {
+                  "float 'PercentTriangles'": 1,
+                  "float 'PercentVertices'": 1,
+                  "float 'MaxDeviation'": 0,
+                  "float 'PixelError'": 8,
+                  "float 'WeldingThreshold'": 0,
+                  "float 'HardAngleThreshold'": 45,
+                  "int 'BaseLODModel'": 0,
+                  "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 60,
+                  "byte64 (EMeshFeatureImportance) 'TextureImportance'": 60,
+                  "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 60,
+                  "bool 'bRecalculateNormals'": false,
+                  "bool 'bGenerateUniqueLightmapUVs'": false,
+                  "bool 'bKeepSymmetry'": false,
+                  "bool 'bVisibilityAided'": false,
+                  "bool 'bCullOccluded'": false,
+                  "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 65,
+                  "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 59,
+                  "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 61
                 },
-                "ScreenSize": {
-                  "Name": "ScreenSize",
-                  "Type": "StructProperty",
-                  "Size": 12,
-                  "StructName": "PerPlatformFloat",
-                  "Value": {
-                    "bCooked": false,
-                    "Value": 1,
-                    "PerPlatform": {}
-                  }
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
                 },
                 "string 'SourceImportFilename'": "",
                 "bool 'bImportWithBaseMesh'": false
               }
             ]
           },
-          "HiResSourceModel": {
-            "Name": "HiResSourceModel",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "StaticMeshSourceModel",
-            "Value": {
-              "obj 'StaticMeshDescriptionBulkData'": 7
-            }
+          "struct StaticMeshSourceModel 37 'HiResSourceModel'": {
+            "obj 'StaticMeshDescriptionBulkData'": 7
           },
-          "SectionInfoMap": {
-            "Name": "SectionInfoMap",
-            "Type": "StructProperty",
-            "Size": 228,
-            "StructName": "MeshSectionInfoMap",
-            "Value": {
-              "Map": {
-                "Name": "Map",
-                "Type": "MapProperty",
-                "Size": 179,
-                "InnerType": "UInt32Property",
-                "ValueType": "StructProperty",
-                "Value": {
-                  "__type": "FMapProperty",
-                  "TypeName": "MapProperty",
-                  "NumKeysToRemove": 0,
-                  "NumEntries": 1,
-                  "KeyProp": [
-                    0
-                  ],
-                  "ValueProp": [
-                    {
-                      "int 'MaterialIndex'": 0,
-                      "bool 'bEnableCollision'": false,
-                      "bool 'bCastShadow'": false,
-                      "bool 'bVisibleInRayTracing'": true,
-                      "bool 'bAffectDistanceFieldLighting'": true,
-                      "bool 'bForceOpaque'": false
-                    }
-                  ],
-                  "ArrayDim": 0,
-                  "ElementSize": 0,
-                  "PropertyFlags": "CPF_None",
-                  "RepIndex": 0,
-                  "BlueprintReplicationCondition": 0,
-                  "FlagsPrivate": "RF_NoFlags",
-                  "HasMetaData": false,
-                  "MetaDataMap": {}
-                }
+          "struct MeshSectionInfoMap 228 'SectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 179,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": false,
+                    "bool 'bCastShadow'": false,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bAffectDistanceFieldLighting'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
               }
             }
           },
-          "OriginalSectionInfoMap": {
-            "Name": "OriginalSectionInfoMap",
-            "Type": "StructProperty",
-            "Size": 228,
-            "StructName": "MeshSectionInfoMap",
-            "Value": {
-              "Map": {
-                "Name": "Map",
-                "Type": "MapProperty",
-                "Size": 179,
-                "InnerType": "UInt32Property",
-                "ValueType": "StructProperty",
-                "Value": {
-                  "__type": "FMapProperty",
-                  "TypeName": "MapProperty",
-                  "NumKeysToRemove": 0,
-                  "NumEntries": 1,
-                  "KeyProp": [
-                    0
-                  ],
-                  "ValueProp": [
-                    {
-                      "int 'MaterialIndex'": 0,
-                      "bool 'bEnableCollision'": false,
-                      "bool 'bCastShadow'": false,
-                      "bool 'bVisibleInRayTracing'": true,
-                      "bool 'bAffectDistanceFieldLighting'": true,
-                      "bool 'bForceOpaque'": false
-                    }
-                  ],
-                  "ArrayDim": 0,
-                  "ElementSize": 0,
-                  "PropertyFlags": "CPF_None",
-                  "RepIndex": 0,
-                  "BlueprintReplicationCondition": 0,
-                  "FlagsPrivate": "RF_NoFlags",
-                  "HasMetaData": false,
-                  "MetaDataMap": {}
-                }
+          "struct MeshSectionInfoMap 228 'OriginalSectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 179,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": false,
+                    "bool 'bCastShadow'": false,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bAffectDistanceFieldLighting'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
               }
             }
           },
@@ -761,19 +702,13 @@
                 "obj 'MaterialInterface'": -8,
                 "name 'MaterialSlotName'": "SkySphereMaterial",
                 "name 'ImportedMaterialSlotName'": "SkySphereMaterial",
-                "UVChannelData": {
-                  "Name": "UVChannelData",
-                  "Type": "StructProperty",
-                  "Size": 176,
-                  "StructName": "MeshUVChannelInfo",
-                  "Value": {
-                    "bool 'bInitialized'": true,
-                    "bool 'bOverrideDensities'": false,
-                    "float 'LocalUVDensities'": 10800.839,
-                    "float 'LocalUVDensities'[1]": 11566.595,
-                    "float 'LocalUVDensities'[2]": 12096.157,
-                    "float 'LocalUVDensities'[3]": 10269.145
-                  }
+                "struct MeshUVChannelInfo 176 'UVChannelData'": {
+                  "bool 'bInitialized'": true,
+                  "bool 'bOverrideDensities'": false,
+                  "float 'LocalUVDensities'": 10800.839,
+                  "float 'LocalUVDensities'[1]": 11566.595,
+                  "float 'LocalUVDensities'[2]": 12096.157,
+                  "float 'LocalUVDensities'[3]": 10269.145
                 }
               }
             ]
@@ -783,26 +718,14 @@
           "int 'LightMapCoordinateIndex'": 3,
           "obj 'AssetImportData'": 2,
           "obj 'ThumbnailInfo'": 5,
-          "EditorCameraPosition": {
-            "Name": "EditorCameraPosition",
-            "Type": "StructProperty",
-            "Size": 180,
-            "StructName": "AssetEditorOrbitCameraPosition",
-            "Value": {
-              "bool 'bIsSet'": true,
-              "Vector 'CamOrbitZoom'": "-7506.22802734375 -0.00044740608427673578 -0",
-              "Rotator 'CamOrbitRotation'": "0 5.919572231505299E-06 0"
-            }
+          "struct AssetEditorOrbitCameraPosition 180 'EditorCameraPosition'": {
+            "bool 'bIsSet'": true,
+            "Vector 'CamOrbitZoom'": "-7506.22802734375 -0.00044740608427673578 -0",
+            "Rotator 'CamOrbitRotation'": "0 5.919572231505299E-06 0"
           },
-          "ExtendedBounds": {
-            "Name": "ExtendedBounds",
-            "Type": "StructProperty",
-            "Size": 114,
-            "StructName": "BoxSphereBounds",
-            "Value": {
-              "Vector 'BoxExtent'": "4096 4096 4096",
-              "double 'SphereRadius'": 4096
-            }
+          "struct BoxSphereBounds 114 'ExtendedBounds'": {
+            "Vector 'BoxExtent'": "4096 4096 4096",
+            "double 'SphereRadius'": 4096
           }
         },
         "StripFlags": {

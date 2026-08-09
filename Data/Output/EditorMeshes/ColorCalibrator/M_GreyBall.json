@@ -230,7 +230,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -267,52 +268,34 @@
       "Obj": {
         "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
-          "BaseColor": {
-            "Name": "BaseColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "128 128 128 255",
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Roughness": {
-            "Name": "Roughness",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0.5,
-              "Expression": 5,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "ExpressionCollection": {
-            "Name": "ExpressionCollection",
-            "Type": "StructProperty",
-            "Size": 57,
-            "StructName": "MaterialExpressionCollection",
-            "Value": {
-              "obj[] 'Expressions'": "3 5 4"
-            }
+          "struct MaterialExpressionCollection 57 'ExpressionCollection'": {
+            "obj[] 'Expressions'": "3 5 4"
           }
         },
         "bSavedCachedExpressionData": false

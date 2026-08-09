@@ -215,7 +215,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -261,22 +262,16 @@
             "X": 128,
             "Y": 128
           },
-          "Source": {
-            "Name": "Source",
-            "Type": "StructProperty",
-            "Size": 342,
-            "StructName": "TextureSource",
-            "Value": {
-              "guid 'Id'": "584a79b6-4659-8242-3406-428f0d776880",
-              "int 'SizeX'": 128,
-              "int 'SizeY'": 128,
-              "int 'NumSlices'": 1,
-              "int 'NumMips'": 1,
-              "bool 'bPNGCompressed'": true,
-              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 28,
-              "byte64 (ETextureSourceFormat) 'Format'": 29,
-              "long[] 'BlockDataOffsets'": "0"
-            }
+          "struct TextureSource 342 'Source'": {
+            "guid 'Id'": "584a79b6-4659-8242-3406-428f0d776880",
+            "int 'SizeX'": 128,
+            "int 'SizeY'": 128,
+            "int 'NumSlices'": 1,
+            "int 'NumMips'": 1,
+            "bool 'bPNGCompressed'": true,
+            "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 28,
+            "byte64 (ETextureSourceFormat) 'Format'": 29,
+            "long[] 'BlockDataOffsets'": "0"
           },
           "guid 'LightingGuid'": "aaaa6161-4b18-f969-5b27-b5ae6379cd47",
           "obj 'AssetImportData'": 1,
