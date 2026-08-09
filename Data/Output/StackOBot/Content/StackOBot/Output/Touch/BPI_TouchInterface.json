@@ -806,6 +806,20 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty KismetUserDeclaredFunctionMetadata": {
+        "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -834,8 +848,7 @@
               "None",
               "Touch"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -846,116 +859,55 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                      "AssetName": "BPI_TouchInterface"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                    "AssetName": "BPI_TouchInterface"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -1033.2941,
-                    "Y": -454.60498
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -1033.2941,
+                  "Y": -454.60498
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                      "AssetName": "BPI_TouchInterface"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                    "AssetName": "BPI_TouchInterface"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -1004.79407,
-                    "Y": -439.60498
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -1004.79407,
+                  "Y": -439.60498
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 2,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                      "AssetName": "BPI_TouchInterface"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 2,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                    "AssetName": "BPI_TouchInterface"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -957.7648,
-                    "Y": -569.625
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -957.7648,
+                  "Y": -569.625
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1395,38 +1347,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 90,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 57,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`943DFAED4FB9D1711242EFBA85758D84` Namespace=`\\0` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 90 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 57,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`943DFAED4FB9D1711242EFBA85758D84` Namespace=`\\0` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Interact"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Interact"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "58c2f024-42b0-1023-691d-939337022beb"
@@ -1447,38 +1380,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 90,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 57,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`D67EDDD0418F9215D18D40AAD6C4463F` Namespace=`\\0` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 90 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 57,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`D67EDDD0418F9215D18D40AAD6C4463F` Namespace=`\\0` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Pause"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Pause"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "05d5096b-49e6-928e-809a-8796ddf29442"
@@ -1499,38 +1413,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 90,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 57,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`8559F14B440E503D694EBF9896120A31` Namespace=`\\0` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 90 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 57,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`8559F14B440E503D694EBF9896120A31` Namespace=`\\0` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Primary Thumbstick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Primary Thumbstick"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "2d720c2a-4cee-b758-abaa-7a8af1e4d0a5"
@@ -1561,38 +1456,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 45,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 78 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 45,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Secondary Thumbstick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Secondary Thumbstick"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "04f86364-46d2-f054-2da0-dab8b712c3ab"
@@ -1623,38 +1499,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 90,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 57,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`A1B0FCF641A46F5745783D855D027476` Namespace=`\\0` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 90 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 57,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`A1B0FCF641A46F5745783D855D027476` Namespace=`\\0` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ThirdPersonActive"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "ThirdPersonActive"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "6dc94763-46bb-a817-5a86-02b1cb9f5f76"
@@ -1685,38 +1542,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 45,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 78 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 45,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Touch Jump End"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Touch Jump End"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "aa244730-4a69-0210-168a-d4afd76eb5d9"
@@ -1737,38 +1575,19 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MetaData": {
-            "Name": "MetaData",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "KismetUserDeclaredFunctionMetadata",
-            "BoolVal": 0,
-            "Value": {
-              "Category": {
-                "Name": "Category",
-                "Type": "TextProperty",
-                "Size": 45,
-                "BoolVal": 0,
-                "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
-                "TypeName": "TextProperty 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0",
-            "SerializeType": "Property"
+          "struct KismetUserDeclaredFunctionMetadata 78 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 45,
+              "BoolVal": 0,
+              "Value": "text-base header=`None` Key=`Touch` Namespace=`UObjectCategory` SourceString=`Touch`",
+              "TypeName": "TextProperty 0"
+            }
           },
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Touch Jump Start"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Touch Jump Start"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "b3812c13-4e22-ec71-ad5d-bf815e82c2c6"

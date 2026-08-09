@@ -308,7 +308,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -377,70 +378,52 @@
             },
             "Value": [
               {
-                "ScreenSize": {
-                  "Name": "ScreenSize",
-                  "Type": "StructProperty",
-                  "Size": 12,
-                  "StructName": "PerPlatformFloat",
-                  "Value": {
-                    "bCooked": false,
-                    "Value": 1,
-                    "PerPlatform": {}
-                  }
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
                 },
                 "float 'LODHysteresis'": 0.02,
                 "int[] 'LODMaterialMap'": "",
-                "BuildSettings": {
-                  "Name": "BuildSettings",
-                  "Type": "StructProperty",
-                  "Size": 332,
-                  "StructName": "SkeletalMeshBuildSettings",
-                  "Value": {
-                    "bool 'bRecomputeNormals'": true,
-                    "bool 'bRecomputeTangents'": true,
-                    "bool 'bUseMikkTSpace'": true,
-                    "bool 'bComputeWeightedNormals'": false,
-                    "bool 'bRemoveDegenerates'": true,
-                    "bool 'bUseHighPrecisionTangentBasis'": false,
-                    "bool 'bUseFullPrecisionUVs'": false,
-                    "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
-                    "float 'ThresholdPosition'": 2E-05,
-                    "float 'ThresholdTangentNormal'": 2E-05,
-                    "float 'ThresholdUV'": 0.0009765625,
-                    "float 'MorphThresholdPosition'": 0.015
-                  }
+                "struct SkeletalMeshBuildSettings 332 'BuildSettings'": {
+                  "bool 'bRecomputeNormals'": true,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "float 'ThresholdPosition'": 2E-05,
+                  "float 'ThresholdTangentNormal'": 2E-05,
+                  "float 'ThresholdUV'": 0.0009765625,
+                  "float 'MorphThresholdPosition'": 0.015
                 },
-                "ReductionSettings": {
-                  "Name": "ReductionSettings",
-                  "Type": "StructProperty",
-                  "Size": 758,
-                  "StructName": "SkeletalMeshOptimizationSettings",
-                  "Value": {
-                    "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 83,
-                    "float 'NumOfTrianglesPercentage'": 1,
-                    "float 'NumOfVertPercentage'": 0.5,
-                    "uint 'MaxNumOfTriangles'": 4,
-                    "uint 'MaxNumOfVerts'": 6,
-                    "uint 'MaxNumOfTrianglesPercentage'": 4294967295,
-                    "uint 'MaxNumOfVertsPercentage'": 4294967295,
-                    "float 'MaxDeviationPercentage'": 0,
-                    "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 82,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 81,
-                    "bool 'bRemapMorphTargets'": false,
-                    "bool 'bRecalcNormals'": true,
-                    "float 'WeldingThreshold'": 0.1,
-                    "float 'NormalsThreshold'": 60,
-                    "int 'MaxBonesPerVertex'": 4,
-                    "bool 'bEnforceBoneBoundaries'": false,
-                    "bool 'bMergeCoincidentVertBones'": true,
-                    "float 'VolumeImportance'": 1,
-                    "bool 'bLockEdges'": false,
-                    "bool 'bLockColorBounaries'": false,
-                    "int 'BaseLOD'": 0
-                  }
+                "struct SkeletalMeshOptimizationSettings 758 'ReductionSettings'": {
+                  "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 83,
+                  "float 'NumOfTrianglesPercentage'": 1,
+                  "float 'NumOfVertPercentage'": 0.5,
+                  "uint 'MaxNumOfTriangles'": 4,
+                  "uint 'MaxNumOfVerts'": 6,
+                  "uint 'MaxNumOfTrianglesPercentage'": 4294967295,
+                  "uint 'MaxNumOfVertsPercentage'": 4294967295,
+                  "float 'MaxDeviationPercentage'": 0,
+                  "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 82,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 81,
+                  "bool 'bRemapMorphTargets'": false,
+                  "bool 'bRecalcNormals'": true,
+                  "float 'WeldingThreshold'": 0.1,
+                  "float 'NormalsThreshold'": 60,
+                  "int 'MaxBonesPerVertex'": 4,
+                  "bool 'bEnforceBoneBoundaries'": false,
+                  "bool 'bMergeCoincidentVertBones'": true,
+                  "float 'VolumeImportance'": 1,
+                  "bool 'bLockEdges'": false,
+                  "bool 'bLockColorBounaries'": false,
+                  "int 'BaseLOD'": 0
                 },
                 "BonesToRemove": {
                   "Name": "BonesToRemove",
@@ -516,40 +499,28 @@
               }
             ]
           },
-          "SamplingInfo": {
-            "Name": "SamplingInfo",
-            "Type": "StructProperty",
-            "Size": 163,
-            "StructName": "SkeletalMeshSamplingInfo",
-            "Value": {
-              "BuiltData": {
-                "Name": "BuiltData",
-                "Type": "StructProperty",
-                "Size": 106,
-                "StructName": "SkeletalMeshSamplingBuiltData",
-                "Value": {
-                  "WholeMeshBuiltData": {
-                    "Name": "WholeMeshBuiltData",
-                    "Type": "ArrayProperty",
-                    "Size": 65,
-                    "InnerType": "StructProperty",
-                    "MaybeInnerTag": {
-                      "Name": "WholeMeshBuiltData",
-                      "Type": "StructProperty",
-                      "Size": 12,
-                      "StructName": "SkeletalMeshSamplingLODBuiltData"
-                    },
-                    "Value": [
-                      {
-                        "AreaWeightedSampler": {
-                          "Prob": "",
-                          "Alias": "",
-                          "TotalWeight": 0
-                        }
-                      }
-                    ]
+          "struct SkeletalMeshSamplingInfo 163 'SamplingInfo'": {
+            "struct SkeletalMeshSamplingBuiltData 106 'BuiltData'": {
+              "WholeMeshBuiltData": {
+                "Name": "WholeMeshBuiltData",
+                "Type": "ArrayProperty",
+                "Size": 65,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
+                  "Name": "WholeMeshBuiltData",
+                  "Type": "StructProperty",
+                  "Size": 12,
+                  "StructName": "SkeletalMeshSamplingLODBuiltData"
+                },
+                "Value": [
+                  {
+                    "AreaWeightedSampler": {
+                      "Prob": "",
+                      "Alias": "",
+                      "TotalWeight": 0
+                    }
                   }
-                }
+                ]
               }
             }
           }

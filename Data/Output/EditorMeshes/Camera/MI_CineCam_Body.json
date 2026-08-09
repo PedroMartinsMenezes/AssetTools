@@ -226,7 +226,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -253,53 +254,41 @@
             },
             "Value": [
               {
-                "AtlasData": {
-                  "Name": "AtlasData",
-                  "Type": "StructProperty",
-                  "Size": 108,
-                  "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": {
-                    "bool 'bIsUsedAsAtlasPosition'": false,
-                    "Curve": {
-                      "Name": "Curve",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
-                    },
-                    "Atlas": {
-                      "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
                     }
                   }
                 },
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "RefractionDepthBias",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
                 },
                 "float 'ParameterValue'": 0,
                 "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
@@ -319,30 +308,18 @@
             },
             "Value": [
               {
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "Color",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "Color",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
                 },
                 "LinearColor 'ParameterValue'": "0.588 0.588 0.588 1",
                 "guid 'ExpressionGUID'": "5e26e355-44ef-b707-df57-eaade4b425e8"
               }
             ]
           },
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 37 'BasePropertyOverrides'": {
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "obj 'ThumbnailInfo'": 3,
           "guid 'LightingGuid'": "4df7ae44-47a3-9350-5b6d-2d8ee9846ed4"

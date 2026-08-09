@@ -792,6 +792,26 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty BoxSphereBounds": {
+        "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty BoundsCacheElement": {
+        "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0"
+      },
+      "StructProperty BodyInstance": {
+        "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -820,116 +840,55 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
-                      "AssetName": "BPP_PLA_Platform_Small_01_C"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
+                    "AssetName": "BPP_PLA_Platform_Small_01_C"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": -1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
-                      "AssetName": "BPP_PLA_Platform_Small_01"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
+                    "AssetName": "BPP_PLA_Platform_Small_01"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": -1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 2,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
-                      "AssetName": "BPP_PLA_Platform_Small_01"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 2,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_01",
+                    "AssetName": "BPP_PLA_Platform_Small_01"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": -1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1102,104 +1061,37 @@
         "Members": {
           "int 'InstancingRandomSeed'": 31239,
           "bool 'bInheritPerInstanceData'": true,
-          "CachedBounds": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 806638895,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "134.65518590070894 134.65518590070894 8.8972497284774761",
-                  "double 'SphereRadius'": 190.63892370824973
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
+              "Vector 'BoxExtent' /Script/CoreUObject": "134.65518590070894 134.65518590070894 8.8972497284774761",
+              "double 'SphereRadius'": 190.63892370824973
+            }
           },
-          "CachedBounds\"\"29112": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 1,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 2021631092,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "134.68211693788908 134.68211693788908 8.9043675284774793",
-                  "double 'SphereRadius'": 190.6773007120267
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[1]": {
+            "uint 'Hash'": 2021631092,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
+              "Vector 'BoxExtent' /Script/CoreUObject": "134.68211693788908 134.68211693788908 8.9043675284774793",
+              "double 'SphereRadius'": 190.6773007120267
+            }
           },
-          "CachedBounds\"\"29438": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 2,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 806638895,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "134.65518590070894 134.65518590070894 8.8972497284774761",
-                  "double 'SphereRadius'": 190.63892370824973
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[2]": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "-1.0833499999994274 -0.90903899999989335 76.344993233726441",
+              "Vector 'BoxExtent' /Script/CoreUObject": "134.65518590070894 134.65518590070894 8.8972497284774761",
+              "double 'SphereRadius'": 190.63892370824973
+            }
           },
           "obj 'StaticMesh'": -29,
           "bool 'bUseDefaultCollision'": true,
           "obj[] 'OverrideMaterials'": "-16",
           "bool 'bGenerateOverlapEvents'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 98,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
-              "name 'CollisionProfileName'": "BlockAll"
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BodyInstance 98 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
+            "name 'CollisionProfileName'": "BlockAll"
           },
           "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 52,
           "ComponentTags": {
@@ -1212,8 +1104,7 @@
             "Value": [
               "PackedComponent"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "bool 'bEditableWhenInherited'": false
         },
@@ -1252,104 +1143,37 @@
         "Members": {
           "int 'InstancingRandomSeed'": 27122,
           "bool 'bInheritPerInstanceData'": true,
-          "CachedBounds": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 806638895,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590768",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "215.69453109590486 215.69453109590486 37.499998855590817",
-                  "double 'SphereRadius'": 307.3345268653261
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590768",
+              "Vector 'BoxExtent' /Script/CoreUObject": "215.69453109590486 215.69453109590486 37.499998855590817",
+              "double 'SphereRadius'": 307.3345268653261
+            }
           },
-          "CachedBounds\"\"30719": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 1,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 2021631092,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590761",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "215.73767000212405 215.73767000212405 37.529998855590819",
-                  "double 'SphereRadius'": 307.3987399616196
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[1]": {
+            "uint 'Hash'": 2021631092,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590761",
+              "Vector 'BoxExtent' /Script/CoreUObject": "215.73767000212405 215.73767000212405 37.529998855590819",
+              "double 'SphereRadius'": 307.3987399616196
+            }
           },
-          "CachedBounds\"\"31045": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 2,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 806638895,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590768",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "215.69453109590486 215.69453109590486 37.499998855590817",
-                  "double 'SphereRadius'": 307.3345268653261
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[2]": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 37.499998855590768",
+              "Vector 'BoxExtent' /Script/CoreUObject": "215.69453109590486 215.69453109590486 37.499998855590817",
+              "double 'SphereRadius'": 307.3345268653261
+            }
           },
           "obj 'StaticMesh'": -29,
           "bool 'bUseDefaultCollision'": true,
           "obj[] 'OverrideMaterials'": "-17",
           "bool 'bGenerateOverlapEvents'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 98,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
-              "name 'CollisionProfileName'": "BlockAll"
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BodyInstance 98 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
+            "name 'CollisionProfileName'": "BlockAll"
           },
           "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 52,
           "ComponentTags": {
@@ -1362,8 +1186,7 @@
             "Value": [
               "PackedComponent"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "bool 'bEditableWhenInherited'": false
         },
@@ -1402,104 +1225,37 @@
         "Members": {
           "int 'InstancingRandomSeed'": 7658,
           "bool 'bInheritPerInstanceData'": true,
-          "CachedBounds": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 849644626,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.088749647140446",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "148.67034769727303 148.67034769727303 6.2590153217315674",
-                  "double 'SphereRadius'": 210.3447642363693
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'": {
+            "uint 'Hash'": 849644626,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.088749647140446",
+              "Vector 'BoxExtent' /Script/CoreUObject": "148.67034769727303 148.67034769727303 6.2590153217315674",
+              "double 'SphereRadius'": 210.3447642363693
+            }
           },
-          "CachedBounds\"\"32326": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 1,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 1362689423,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.305299043655339",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "148.7000817668125 148.7000817668125 6.5755647182464543",
-                  "double 'SphereRadius'": 210.39645122073065
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[1]": {
+            "uint 'Hash'": 1362689423,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.305299043655339",
+              "Vector 'BoxExtent' /Script/CoreUObject": "148.7000817668125 148.7000817668125 6.5755647182464543",
+              "double 'SphereRadius'": 210.39645122073065
+            }
           },
-          "CachedBounds\"\"32652": {
-            "Name": "CachedBounds",
-            "Type": "StructProperty",
-            "Size": 273,
-            "ArrayIndex": 2,
-            "StructName": "BoundsCacheElement",
-            "BoolVal": 0,
-            "Value": {
-              "uint 'Hash'": 849644626,
-              "Value": {
-                "Name": "Value",
-                "Type": "StructProperty",
-                "Size": 187,
-                "StructName": "BoxSphereBounds",
-                "BoolVal": 0,
-                "Value": {
-                  "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.088749647140446",
-                  "Vector 'BoxExtent' /Script/CoreUObject": "148.67034769727303 148.67034769727303 6.2590153217315674",
-                  "double 'SphereRadius'": 210.3447642363693
-                },
-                "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasArrayIndex",
-            "SerializeType": "Property"
+          "struct BoundsCacheElement 273 'CachedBounds'[2]": {
+            "uint 'Hash'": 849644626,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "4.5474735088646412E-13 0 75.088749647140446",
+              "Vector 'BoxExtent' /Script/CoreUObject": "148.67034769727303 148.67034769727303 6.2590153217315674",
+              "double 'SphereRadius'": 210.3447642363693
+            }
           },
           "obj 'StaticMesh'": -28,
           "bool 'bUseDefaultCollision'": true,
           "obj[] 'OverrideMaterials'": "-18",
           "bool 'bGenerateOverlapEvents'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 98,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
-              "name 'CollisionProfileName'": "BlockAll"
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct BodyInstance 98 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
+            "name 'CollisionProfileName'": "BlockAll"
           },
           "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 52,
           "ComponentTags": {
@@ -1512,8 +1268,7 @@
             "Value": [
               "PackedComponent"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "bool 'bEditableWhenInherited'": false
         },
@@ -1550,18 +1305,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 58,
@@ -1587,18 +1333,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "ReceiveActorBeginOverlap"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
@@ -1626,18 +1363,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "ReceiveTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveTick"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
@@ -1665,18 +1393,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid' /Script/CoreUObject": "a5dcc69e-43bc-a968-9191-3f963d230145"
         },
@@ -1734,8 +1453,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "06ee33e9-4d62-0cbe-41bf-edb800ba2a70",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -1760,8 +1478,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "name 'ParentComponentOrVariableName'": "Root",
           "bool 'bIsParentComponentNative'": true,
@@ -1788,8 +1505,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "name 'ParentComponentOrVariableName'": "Root",
           "bool 'bIsParentComponentNative'": true,
@@ -1816,8 +1532,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "name 'ParentComponentOrVariableName'": "Root",
           "bool 'bIsParentComponentNative'": true,

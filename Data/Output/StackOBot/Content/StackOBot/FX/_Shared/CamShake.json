@@ -389,6 +389,20 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty FOscillator": {
+        "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0"
+      },
+      "StructProperty VOscillator": {
+        "TypeName": "StructProperty 1 | VOscillator 1 | /Script/EngineCameras 0"
+      }
     }
   },
   "Objects": [
@@ -414,44 +428,23 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/FX/_Shared/CamShake",
-                      "AssetName": "CamShake"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/FX/_Shared/CamShake",
+                    "AssetName": "CamShake"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 6,
           "obj 'GeneratedClass'": 2,
@@ -508,57 +501,21 @@
           "float 'OscillationDuration'": 0.1,
           "float 'OscillationBlendInTime'": 0.01,
           "float 'OscillationBlendOutTime'": 0.05,
-          "LocOscillation": {
-            "Name": "LocOscillation",
-            "Type": "StructProperty",
-            "Size": 479,
-            "StructName": "VOscillator",
-            "BoolVal": 0,
-            "Value": {
-              "X": {
-                "Name": "X",
-                "Type": "StructProperty",
-                "Size": 66,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 3,
-                  "float 'Frequency'": 1
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              },
-              "Y": {
-                "Name": "Y",
-                "Type": "StructProperty",
-                "Size": 66,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 3,
-                  "float 'Frequency'": 1
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              },
-              "Z": {
-                "Name": "Z",
-                "Type": "StructProperty",
-                "Size": 192,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 12,
-                  "float 'Frequency'": 8,
-                  "byte64 (EInitialOscillatorOffset) 'InitialOffset' /Script/EngineCameras": 22,
-                  "enum64 (EOscillatorWaveform) 'Waveform' ByteProperty /Script/EngineCameras": 24
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              }
+          "struct VOscillator 479 'LocOscillation'": {
+            "struct FOscillator 66 'X'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
             },
-            "TypeName": "StructProperty 1 | VOscillator 1 | /Script/EngineCameras 0",
-            "SerializeType": "Property"
+            "struct FOscillator 66 'Y'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
+            },
+            "struct FOscillator 192 'Z'": {
+              "float 'Amplitude'": 12,
+              "float 'Frequency'": 8,
+              "byte64 (EInitialOscillatorOffset) 'InitialOffset' /Script/EngineCameras": 22,
+              "enum64 (EOscillatorWaveform) 'Waveform' ByteProperty /Script/EngineCameras": 24
+            }
           },
           "obj 'RootShakePattern'": 5
         },

@@ -331,7 +331,8 @@
           "Words": "0"
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -362,13 +363,7 @@
               {
                 "name 'VarName'": "Orbs",
                 "guid 'VarGuid'": "411a17c3-41df-753b-f76c-239e91a5ee74",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "Value": "int"
-                },
+                "struct EdGraphPinType 69 'VarType'": "int",
                 "string 'FriendlyName'": "Orbs",
                 "Category": {
                   "Name": "Category",
@@ -423,21 +418,15 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 31,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/SaveGame/PlayerSaveObject",
-                      "AssetName": "PlayerSaveObject"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 31 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/PlayerSaveObject",
+                    "AssetName": "PlayerSaveObject"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "165 50",
                 "float 'SavedZoomAmount'": 1
@@ -668,15 +657,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "Value": {
-              "RawPointer": 51,
-              "UberGraphFunctionKey": 0
-            }
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 51,
+            "UberGraphFunctionKey": 0
           }
         },
         "Children": 0,

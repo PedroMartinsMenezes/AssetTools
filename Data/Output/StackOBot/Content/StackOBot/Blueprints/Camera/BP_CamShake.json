@@ -365,6 +365,20 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty FOscillator": {
+        "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0"
+      },
+      "StructProperty ROscillator": {
+        "TypeName": "StructProperty 1 | ROscillator 1 | /Script/EngineCameras 0"
+      }
     }
   },
   "Objects": [
@@ -390,44 +404,23 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_CamShake",
-                      "AssetName": "BP_CamShake"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_CamShake",
+                    "AssetName": "BP_CamShake"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -2484.7778,
-                    "Y": -697.96423
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -2484.7778,
+                  "Y": -697.96423
                 },
                 "float 'SavedZoomAmount'": 0.5
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -481,29 +474,11 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "float 'OscillationDuration'": 0.25,
-          "RotOscillation": {
-            "Name": "RotOscillation",
-            "Type": "StructProperty",
-            "Size": 123,
-            "StructName": "ROscillator",
-            "BoolVal": 0,
-            "Value": {
-              "Roll": {
-                "Name": "Roll",
-                "Type": "StructProperty",
-                "Size": 66,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 10,
-                  "float 'Frequency'": 20
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              }
-            },
-            "TypeName": "StructProperty 1 | ROscillator 1 | /Script/EngineCameras 0",
-            "SerializeType": "Property"
+          "struct ROscillator 123 'RotOscillation'": {
+            "struct FOscillator 66 'Roll'": {
+              "float 'Amplitude'": 10,
+              "float 'Frequency'": 20
+            }
           },
           "obj 'RootShakePattern'": 5
         },

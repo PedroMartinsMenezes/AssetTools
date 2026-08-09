@@ -1394,6 +1394,59 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorTickFunction": {
+        "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty NiagaraUserRedirectionParameterStore": {
+        "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0"
+      },
+      "StructProperty LinearConstraint": {
+        "TypeName": "StructProperty 1 | LinearConstraint 1 | /Script/Engine 0"
+      },
+      "StructProperty ConeConstraint": {
+        "TypeName": "StructProperty 1 | ConeConstraint 1 | /Script/Engine 0"
+      },
+      "StructProperty TwistConstraint": {
+        "TypeName": "StructProperty 1 | TwistConstraint 1 | /Script/Engine 0"
+      },
+      "StructProperty ConstraintDrive": {
+        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0"
+      },
+      "StructProperty LinearDriveConstraint": {
+        "TypeName": "StructProperty 1 | LinearDriveConstraint 1 | /Script/Engine 0"
+      },
+      "StructProperty AngularDriveConstraint": {
+        "TypeName": "StructProperty 1 | AngularDriveConstraint 1 | /Script/Engine 0"
+      },
+      "StructProperty ConstraintProfileProperties": {
+        "TypeName": "StructProperty 1 | ConstraintProfileProperties 1 | /Script/Engine 0"
+      },
+      "StructProperty ConstraintInstance": {
+        "TypeName": "StructProperty 1 | ConstraintInstance 1 | /Script/Engine 0"
+      },
+      "StructProperty CollisionResponse": {
+        "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
+      },
+      "StructProperty BodyInstance": {
+        "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -1423,17 +1476,7 @@
               {
                 "name 'VarName'": "Active",
                 "guid 'VarGuid' /Script/CoreUObject": "a16eff24-4b70-2e0c-d899-2ebb182fb9b6",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "bool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "bool",
                 "string 'FriendlyName'": "Active",
                 "Category": {
                   "Name": "Category",
@@ -1441,8 +1484,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -1460,25 +1502,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Activate On Touch",
                 "guid 'VarGuid' /Script/CoreUObject": "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "bool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "bool",
                 "string 'FriendlyName'": "Activate on Touch",
                 "Category": {
                   "Name": "Category",
@@ -1486,8 +1517,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -1500,25 +1530,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Speed",
                 "guid 'VarGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "real-double",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "real-double",
                 "string 'FriendlyName'": "Speed",
                 "Category": {
                   "Name": "Category",
@@ -1526,8 +1545,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -1540,25 +1558,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Position",
                 "guid 'VarGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "real-double",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "real-double",
                 "string 'FriendlyName'": "Position",
                 "Category": {
                   "Name": "Category",
@@ -1566,8 +1573,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -1580,25 +1586,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Pause",
                 "guid 'VarGuid' /Script/CoreUObject": "58e6ad24-4e50-52d4-e196-69abdaa35135",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "real-float",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "real-float",
                 "string 'FriendlyName'": "Pause",
                 "Category": {
                   "Name": "Category",
@@ -1606,8 +1601,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -1620,25 +1614,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Pausing",
                 "guid 'VarGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "bool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "bool",
                 "string 'FriendlyName'": "Pausing",
                 "Category": {
                   "Name": "Category",
@@ -1646,8 +1629,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -1660,14 +1642,12 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
           },
           "CategorySorting": {
             "Name": "CategorySorting",
@@ -1682,8 +1662,7 @@
               "Event Graph",
               "BP Moving Platform"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -1694,80 +1673,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_MovingPlatform",
-                      "AssetName": "BP_MovingPlatform"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_MovingPlatform",
+                    "AssetName": "BP_MovingPlatform"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -2922.4893,
-                    "Y": -1572.9558
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -2922.4893,
+                  "Y": -1572.9558
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_MovingPlatform",
-                      "AssetName": "BP_MovingPlatform"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_MovingPlatform",
+                    "AssetName": "BP_MovingPlatform"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 86.5061,
-                    "Y": -384.20468
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 86.5061,
+                  "Y": -384.20468
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 99,
           "obj 'GeneratedClass'": 2,
@@ -1828,8 +1766,7 @@
               "MetaDataMap": {}
             },
             "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-17] Actor",
@@ -2190,32 +2127,14 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 244,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 244,
+            "UberGraphFunctionKey": 0
           },
           "double 'Speed' {af7bd664-4ef2-fe91-62b1-c788af3ea0d9}": 500,
           "float 'Pause' {58e6ad24-4e50-52d4-e196-69abdaa35135}": 1,
-          "PrimaryActorTick": {
-            "Name": "PrimaryActorTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bCanEverTick'": true
-            },
-            "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorTickFunction 33 'PrimaryActorTick'": {
+            "bool 'bCanEverTick'": true
           },
           "string 'ActorLabel'": "BP_MovingPlatform-1",
           "bool 'bIsSpatiallyLoaded'": false
@@ -2292,8 +2211,7 @@
                 "name 'FunctionNameToBind'": "BndEvt__BP_MovingPlatform_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature"
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0"
           }
         }
       }
@@ -3356,19 +3274,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "TogglePlatform",
-              "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "TogglePlatform",
+            "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1360,
           "int 'NodePosY'": -896,
@@ -3392,19 +3301,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "TogglePlatform",
-              "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "TogglePlatform",
+            "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3655,
           "int 'NodePosY'": -1280,
@@ -3428,19 +3328,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "TogglePlatform",
-              "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "TogglePlatform",
+            "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -192,
           "int 'NodePosY'": -880,
@@ -3465,18 +3356,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
           },
           "int 'NodePosX'": -2224,
           "int 'NodePosY'": -32,
@@ -3500,18 +3382,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "DelayUntilNextTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "DelayUntilNextTick"
           },
           "int 'NodePosX'": -2176,
           "int 'NodePosY'": -1264,
@@ -3536,18 +3409,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -25,
-              "name 'MemberName'": "SetConstrainedComponents"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -25,
+            "name 'MemberName'": "SetConstrainedComponents"
           },
           "int 'NodePosX'": -1360,
           "int 'NodePosY'": -1280,
@@ -3574,18 +3438,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetSimulatePhysics"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetSimulatePhysics"
           },
           "int 'NodePosX'": -1952,
           "int 'NodePosY'": -1280,
@@ -3609,18 +3464,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetCustomPrimitiveDataFloat"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetCustomPrimitiveDataFloat"
           },
           "int 'NodePosX'": -2624,
           "int 'NodePosY'": -656,
@@ -3646,18 +3492,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
           },
           "int 'NodePosX'": -3088,
           "int 'NodePosY'": -1056,
@@ -3681,18 +3518,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "SetActorTickEnabled",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "SetActorTickEnabled",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2880,
           "int 'NodePosY'": -656,
@@ -3716,18 +3544,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "Delay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": -1152,
           "int 'NodePosY'": -49,
@@ -3753,18 +3572,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "K2_SetRelativeLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "K2_SetRelativeLocation"
           },
           "int 'NodePosX'": -2992,
           "int 'NodePosY'": -1280,
@@ -3793,18 +3603,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "SelectFloat"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "SelectFloat"
           },
           "int 'NodePosX'": -2912,
           "int 'NodePosY'": -512,
@@ -3829,18 +3630,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "SetActive"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "SetActive"
           },
           "int 'NodePosX'": -2272,
           "int 'NodePosY'": -656,
@@ -3866,18 +3658,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "GetSplineLength"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "GetSplineLength"
           },
           "int 'NodePosX'": -2288,
           "int 'NodePosY'": 160,
@@ -3899,18 +3682,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "K2_SetRelativeLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "K2_SetRelativeLocation"
           },
           "int 'NodePosX'": -2464,
           "int 'NodePosY'": -1280,
@@ -3937,18 +3711,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "K2_SetRelativeLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "K2_SetRelativeLocation"
           },
           "int 'NodePosX'": -2112,
           "int 'NodePosY'": -272,
@@ -3976,19 +3741,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "TogglePlatform",
-              "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'FunctionReference'": {
+            "name 'MemberName'": "TogglePlatform",
+            "guid 'MemberGuid' /Script/CoreUObject": "d5a4228c-4235-7411-e25e-6795507e97fb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1376,
           "int 'NodePosY'": -656,
@@ -4013,18 +3769,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "GetSplineLength"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "GetSplineLength"
           },
           "int 'NodePosX'": -32,
           "int 'NodePosY'": 144,
@@ -4047,18 +3794,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "GetLocationAtDistanceAlongSpline"
           },
           "int 'NodePosX'": 480,
           "int 'NodePosY'": 160,
@@ -4082,18 +3820,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "K2_SetRelativeLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "K2_SetRelativeLocation"
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": -64,
@@ -4122,18 +3851,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "FClamp"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "FClamp"
           },
           "int 'NodePosX'": 48,
           "int 'NodePosY'": 16,
@@ -4158,18 +3878,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "SetHiddenInGame"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "SetHiddenInGame"
           },
           "int 'NodePosX'": 1136,
           "int 'NodePosY'": -64,
@@ -4194,18 +3905,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetCollisionEnabled"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetCollisionEnabled"
           },
           "int 'NodePosX'": 1456,
           "int 'NodePosY'": -64,
@@ -4232,19 +3934,10 @@
           "name 'DelegatePropertyName'": "Trigger Complete",
           "obj 'DelegateOwnerClass'": -2,
           "name 'ComponentPropertyName'": "BPC_InteractionHandler",
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -2,
-              "name 'MemberName'": "Trigger Complete__DelegateSignature",
-              "guid 'MemberGuid' /Script/CoreUObject": "dbc800d5-4d0e-d0b3-82e7-3eb982a791fb"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "Trigger Complete__DelegateSignature",
+            "guid 'MemberGuid' /Script/CoreUObject": "dbc800d5-4d0e-d0b3-82e7-3eb982a791fb"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_MovingPlatform_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature",
@@ -4272,19 +3965,10 @@
           "name 'DelegatePropertyName'": "Trigger Reverse",
           "obj 'DelegateOwnerClass'": -2,
           "name 'ComponentPropertyName'": "BPC_InteractionHandler",
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -2,
-              "name 'MemberName'": "Trigger Reverse__DelegateSignature",
-              "guid 'MemberGuid' /Script/CoreUObject": "3a055fb6-4afe-60a9-6294-159112e3b8a5"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "Trigger Reverse__DelegateSignature",
+            "guid 'MemberGuid' /Script/CoreUObject": "3a055fb6-4afe-60a9-6294-159112e3b8a5"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_MovingPlatform_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature",
@@ -4312,18 +3996,9 @@
           "name 'DelegatePropertyName'": "OnComponentBeginOverlap",
           "obj 'DelegateOwnerClass'": -26,
           "name 'ComponentPropertyName'": "Sphere1",
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -69,
-              "name 'MemberName'": "ComponentBeginOverlapSignature__DelegateSignature"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -69,
+            "name 'MemberName'": "ComponentBeginOverlapSignature__DelegateSignature"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_MovingPlatform_Sphere1_K2Node_ComponentBoundEvent_3_ComponentBeginOverlapSignature__DelegateSignature",
@@ -4386,18 +4061,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "ReceiveTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "ReceiveTick"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -3072,
@@ -4422,18 +4088,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -3888,
@@ -4457,18 +4114,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosX'": 96,
           "int 'NodePosY'": -48,
@@ -4600,18 +4248,9 @@
         "Members": {
           "name 'OperationName'": "Multiply",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "Multiply_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "Multiply_DoubleDouble"
           },
           "int 'NodePosX'": -2832,
           "int 'NodePosY'": -128,
@@ -4636,18 +4275,9 @@
         "Members": {
           "name 'OperationName'": "Add",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "Add_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "Add_DoubleDouble"
           },
           "int 'NodePosX'": -2656,
           "int 'NodePosY'": -96,
@@ -4672,18 +4302,9 @@
         "Members": {
           "name 'OperationName'": "GreaterEqual",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "GreaterEqual_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "GreaterEqual_DoubleDouble"
           },
           "int 'NodePosX'": -2010,
           "int 'NodePosY'": 160,
@@ -4709,18 +4330,9 @@
         "Members": {
           "name 'OperationName'": "LessEqual",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "LessEqual_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "LessEqual_DoubleDouble"
           },
           "int 'NodePosX'": -2038,
           "int 'NodePosY'": 248,
@@ -4746,18 +4358,9 @@
         "Members": {
           "name 'OperationName'": "Multiply",
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "Multiply_DoubleDouble"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "Multiply_DoubleDouble"
           },
           "int 'NodePosX'": -928,
           "int 'NodePosY'": 64,
@@ -4780,17 +4383,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "IndexPinType": {
-            "Name": "IndexPinType",
-            "Type": "StructProperty",
-            "Size": 69,
-            "StructName": "EdGraphPinType",
-            "BoolVal": 0,
-            "Value": "bool",
-            "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
-          },
+          "class EdGraphPinType 69 'IndexPinType'": "bool",
           "int 'NodePosX'": 1408,
           "int 'NodePosY'": 96,
           "guid 'NodeGuid' /Script/CoreUObject": "a4c8a730-4ba6-c52f-a514-62ae0b1cc56f"
@@ -4813,19 +4406,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Activate On Touch",
-              "guid 'MemberGuid' /Script/CoreUObject": "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Activate On Touch",
+            "guid 'MemberGuid' /Script/CoreUObject": "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -416,
           "int 'NodePosY'": -768,
@@ -4847,18 +4431,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "StartingMarker",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "StartingMarker",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2624,
           "int 'NodePosY'": -464,
@@ -4880,18 +4455,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlatformMesh",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PlatformMesh",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3216,
           "int 'NodePosY'": -1152,
@@ -4913,19 +4479,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Speed",
-              "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Speed",
+            "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1072,
           "int 'NodePosY'": 63,
@@ -4947,18 +4504,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "RelativeLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "RelativeLocation"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo' /Script/BlueprintGraph": 161,
           "int 'NodePosX'": -2448,
@@ -4981,19 +4529,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Pause",
-              "guid 'MemberGuid' /Script/CoreUObject": "58e6ad24-4e50-52d4-e196-69abdaa35135",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Pause",
+            "guid 'MemberGuid' /Script/CoreUObject": "58e6ad24-4e50-52d4-e196-69abdaa35135",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1232,
           "int 'NodePosY'": 64,
@@ -5015,18 +4554,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PhysicsConstraint",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PhysicsConstraint",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1552,
           "int 'NodePosY'": -1216,
@@ -5048,18 +4578,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlatformMesh",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PlatformMesh",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1536,
           "int 'NodePosY'": -1152,
@@ -5081,18 +4602,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Marker",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Marker",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1536,
           "int 'NodePosY'": -1096,
@@ -5114,18 +4626,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Marker",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Marker",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2368,
           "int 'NodePosY'": -176,
@@ -5147,18 +4650,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Spline",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Spline",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2384,
           "guid 'NodeGuid' /Script/CoreUObject": "6031fdb9-47af-48bc-2c6e-a88980ea2c56"
@@ -5179,18 +4673,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "NS_Path",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "NS_Path",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2288,
           "int 'NodePosY'": -464,
@@ -5212,18 +4697,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Spline",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Spline",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3232,
           "int 'NodePosY'": -1024,
@@ -5245,18 +4721,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlatformMesh",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PlatformMesh",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1872,
           "int 'NodePosY'": -1136,
@@ -5278,19 +4745,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Pausing",
-              "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Pausing",
+            "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2832,
           "int 'NodePosY'": -176,
@@ -5313,19 +4771,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Active",
-              "guid 'MemberGuid' /Script/CoreUObject": "a16eff24-4b70-2e0c-d899-2ebb182fb9b6",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Active",
+            "guid 'MemberGuid' /Script/CoreUObject": "a16eff24-4b70-2e0c-d899-2ebb182fb9b6",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3655,
           "int 'NodePosY'": -1142,
@@ -5347,19 +4796,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Position",
-              "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Position",
+            "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3248,
           "int 'NodePosY'": -976,
@@ -5381,19 +4821,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Speed",
-              "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Speed",
+            "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2992,
           "int 'NodePosY'": -64,
@@ -5415,18 +4846,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Marker",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Marker",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2336,
           "int 'NodePosY'": -1072,
@@ -5448,19 +4870,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Position",
-              "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Position",
+            "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2816,
           "int 'NodePosY'": -48,
@@ -5482,18 +4895,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlatformMesh",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PlatformMesh",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2608,
           "int 'NodePosY'": -1024,
@@ -5515,18 +4919,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "StartingMarker",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "StartingMarker",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 128,
@@ -5548,19 +4943,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Activate On Touch",
-              "guid 'MemberGuid' /Script/CoreUObject": "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Activate On Touch",
+            "guid 'MemberGuid' /Script/CoreUObject": "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1072,
           "int 'NodePosY'": 224,
@@ -5582,18 +4968,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlatformMesh",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "PlatformMesh",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 352,
           "int 'NodePosY'": 64,
@@ -5615,18 +4992,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Spline",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Spline",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -32,
           "int 'NodePosY'": 224,
@@ -5648,19 +5016,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Position",
-              "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Position",
+            "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -48,
           "int 'NodePosY'": 272,
@@ -5682,19 +5041,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Position",
-              "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Position",
+            "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2608,
           "int 'NodePosY'": -240,
@@ -5719,19 +5069,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Speed",
-              "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Speed",
+            "guid 'MemberGuid' /Script/CoreUObject": "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -896,
           "int 'NodePosY'": -33,
@@ -5756,19 +5097,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Pausing",
-              "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Pausing",
+            "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -720,
           "int 'NodePosY'": -33,
@@ -5793,19 +5125,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Pausing",
-              "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Pausing",
+            "guid 'MemberGuid' /Script/CoreUObject": "272363ee-4c9d-4512-8bc2-9fb87df67a74",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1392,
           "int 'NodePosY'": -33,
@@ -5830,19 +5153,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Position",
-              "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Position",
+            "guid 'MemberGuid' /Script/CoreUObject": "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 336,
           "int 'NodePosY'": -32,
@@ -5868,95 +5182,45 @@
         "__type": "USceneComponent",
         "Members": {
           "obj 'Asset'": -60,
-          "OverrideParameters": {
-            "Name": "OverrideParameters",
-            "Type": "StructProperty",
-            "Size": 529,
-            "StructName": "NiagaraUserRedirectionParameterStore",
-            "BoolVal": 0,
-            "Value": {
-              "UserParameterRedirects": {
-                "Name": "UserParameterRedirects",
-                "Type": "MapProperty",
-                "Size": 212,
-                "BoolVal": 0,
-                "ValueType": "StructProperty",
-                "Value": {
-                  "__type": "FMapProperty",
-                  "TypeName": "MapProperty",
-                  "NumKeysToRemove": 0,
-                  "NumEntries": 1,
-                  "KeyProp": [
-                    {
-                      "VarData": "",
-                      "Name": "Spline",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -35,
-                              "ushort 'UnderlyingType'": 1,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    }
-                  ],
-                  "ValueProp": [
-                    {
-                      "VarData": "",
-                      "Name": "User.Spline",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -35,
-                              "ushort 'UnderlyingType'": 1,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    }
-                  ],
-                  "ArrayDim": 0,
-                  "ElementSize": 0,
-                  "PropertyFlags": "CPF_None",
-                  "RepIndex": 0,
-                  "BlueprintReplicationCondition": 0,
-                  "FlagsPrivate": "RF_NoFlags",
-                  "HasMetaData": false,
-                  "MetaDataMap": {}
-                },
-                "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
-              },
-              "SortedParameterOffsets": {
-                "Name": "SortedParameterOffsets",
-                "Type": "ArrayProperty",
-                "Size": 106,
-                "StructName": "NiagaraVariableWithOffset",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
+          "struct NiagaraUserRedirectionParameterStore 529 'OverrideParameters'": {
+            "UserParameterRedirects": {
+              "Name": "UserParameterRedirects",
+              "Type": "MapProperty",
+              "Size": 212,
+              "BoolVal": 0,
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
                   {
-                    "Offset": 0,
+                    "VarData": "",
+                    "Name": "Spline",
+                    "TypeDefHandle": {
+                      "TypeDef": {
+                        "scriptStruct": {
+                          "Members": {
+                            "obj 'ClassStructOrEnum'": -35,
+                            "ushort 'UnderlyingType'": 1,
+                            "byte 'Flags'": 0
+                          },
+                          "Children": 0,
+                          "StructFlags": "STRUCT_NoFlags",
+                          "UseNativeSerialization": false,
+                          "UseBinarySerialization": false,
+                          "Next": 0
+                        },
+                        "ClassStructOrEnum": 0,
+                        "UnderlyingType": 0
+                      }
+                    }
+                  }
+                ],
+                "ValueProp": [
+                  {
+                    "VarData": "",
                     "Name": "User.Spline",
                     "TypeDefHandle": {
                       "TypeDef": {
@@ -5978,14 +5242,53 @@
                     }
                   }
                 ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
               },
-              "obj[] 'DataInterfaces'": "95"
+              "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
+              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
             },
-            "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0",
-            "SerializeType": "Property"
+            "SortedParameterOffsets": {
+              "Name": "SortedParameterOffsets",
+              "Type": "ArrayProperty",
+              "Size": 106,
+              "StructName": "NiagaraVariableWithOffset",
+              "BoolVal": 0,
+              "InnerType": "StructProperty",
+              "Value": [
+                {
+                  "Offset": 0,
+                  "Name": "User.Spline",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -35,
+                          "ushort 'UnderlyingType'": 1,
+                          "byte 'Flags'": 0
+                        },
+                        "Children": 0,
+                        "StructFlags": "STRUCT_NoFlags",
+                        "UseNativeSerialization": false,
+                        "UseBinarySerialization": false,
+                        "Next": 0
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                }
+              ],
+              "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0",
+              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+            },
+            "obj[] 'DataInterfaces'": "95"
           },
           "bool 'bAutoActivate'": false
         },
@@ -6017,171 +5320,53 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "ConstraintInstance": {
-            "Name": "ConstraintInstance",
-            "Type": "StructProperty",
-            "Size": 1474,
-            "StructName": "ConstraintInstance",
-            "BoolVal": 0,
-            "Value": {
-              "ProfileInstance": {
-                "Name": "ProfileInstance",
-                "Type": "StructProperty",
-                "Size": 1417,
-                "StructName": "ConstraintProfileProperties",
-                "BoolVal": 0,
-                "Value": {
-                  "LinearLimit": {
-                    "Name": "LinearLimit",
-                    "Type": "StructProperty",
-                    "Size": 208,
-                    "StructName": "LinearConstraint",
-                    "BoolVal": 0,
-                    "Value": {
-                      "float 'Limit'": 100,
-                      "byte64 (ELinearConstraintMotion) 'XMotion' /Script/PhysicsCore": 203,
-                      "byte64 (ELinearConstraintMotion) 'YMotion' /Script/PhysicsCore": 203,
-                      "byte64 (ELinearConstraintMotion) 'ZMotion' /Script/PhysicsCore": 203
-                    },
-                    "TypeName": "StructProperty 1 | LinearConstraint 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
-                  },
-                  "ConeLimit": {
-                    "Name": "ConeLimit",
-                    "Type": "StructProperty",
-                    "Size": 180,
-                    "StructName": "ConeConstraint",
-                    "BoolVal": 0,
-                    "Value": {
-                      "float 'Swing1LimitDegrees'": 2,
-                      "float 'Swing2LimitDegrees'": 2,
-                      "byte64 (EAngularConstraintMotion) 'Swing1Motion' /Script/PhysicsCore": 11,
-                      "byte64 (EAngularConstraintMotion) 'Swing2Motion' /Script/PhysicsCore": 11
-                    },
-                    "TypeName": "StructProperty 1 | ConeConstraint 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
-                  },
-                  "TwistLimit": {
-                    "Name": "TwistLimit",
-                    "Type": "StructProperty",
-                    "Size": 94,
-                    "StructName": "TwistConstraint",
-                    "BoolVal": 0,
-                    "Value": {
-                      "float 'TwistLimitDegrees'": 2,
-                      "byte64 (EAngularConstraintMotion) 'TwistMotion' /Script/PhysicsCore": 11
-                    },
-                    "TypeName": "StructProperty 1 | TwistConstraint 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
-                  },
-                  "bool 'bDisableCollision'": true,
-                  "bool 'bParentDominates'": true,
-                  "LinearDrive": {
-                    "Name": "LinearDrive",
-                    "Type": "StructProperty",
-                    "Size": 341,
-                    "StructName": "LinearDriveConstraint",
-                    "BoolVal": 0,
-                    "Value": {
-                      "XDrive": {
-                        "Name": "XDrive",
-                        "Type": "StructProperty",
-                        "Size": 62,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 200,
-                          "bool 'bEnablePositionDrive'": true
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      },
-                      "YDrive": {
-                        "Name": "YDrive",
-                        "Type": "StructProperty",
-                        "Size": 62,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 200,
-                          "bool 'bEnablePositionDrive'": true
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      },
-                      "ZDrive": {
-                        "Name": "ZDrive",
-                        "Type": "StructProperty",
-                        "Size": 62,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 200,
-                          "bool 'bEnablePositionDrive'": true
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      }
-                    },
-                    "TypeName": "StructProperty 1 | LinearDriveConstraint 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
-                  },
-                  "AngularDrive": {
-                    "Name": "AngularDrive",
-                    "Type": "StructProperty",
-                    "Size": 291,
-                    "StructName": "AngularDriveConstraint",
-                    "BoolVal": 0,
-                    "Value": {
-                      "TwistDrive": {
-                        "Name": "TwistDrive",
-                        "Type": "StructProperty",
-                        "Size": 37,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 500
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      },
-                      "SwingDrive": {
-                        "Name": "SwingDrive",
-                        "Type": "StructProperty",
-                        "Size": 37,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 500
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      },
-                      "SlerpDrive": {
-                        "Name": "SlerpDrive",
-                        "Type": "StructProperty",
-                        "Size": 62,
-                        "StructName": "ConstraintDrive",
-                        "BoolVal": 0,
-                        "Value": {
-                          "float 'Stiffness'": 500,
-                          "bool 'bEnablePositionDrive'": true
-                        },
-                        "TypeName": "StructProperty 1 | ConstraintDrive 1 | /Script/Engine 0",
-                        "SerializeType": "Property"
-                      }
-                    },
-                    "TypeName": "StructProperty 1 | AngularDriveConstraint 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
-                  }
+          "class ConstraintInstance 1474 'ConstraintInstance'": {
+            "struct ConstraintProfileProperties 1417 'ProfileInstance'": {
+              "struct LinearConstraint 208 'LinearLimit'": {
+                "float 'Limit'": 100,
+                "byte64 (ELinearConstraintMotion) 'XMotion' /Script/PhysicsCore": 203,
+                "byte64 (ELinearConstraintMotion) 'YMotion' /Script/PhysicsCore": 203,
+                "byte64 (ELinearConstraintMotion) 'ZMotion' /Script/PhysicsCore": 203
+              },
+              "struct ConeConstraint 180 'ConeLimit'": {
+                "float 'Swing1LimitDegrees'": 2,
+                "float 'Swing2LimitDegrees'": 2,
+                "byte64 (EAngularConstraintMotion) 'Swing1Motion' /Script/PhysicsCore": 11,
+                "byte64 (EAngularConstraintMotion) 'Swing2Motion' /Script/PhysicsCore": 11
+              },
+              "struct TwistConstraint 94 'TwistLimit'": {
+                "float 'TwistLimitDegrees'": 2,
+                "byte64 (EAngularConstraintMotion) 'TwistMotion' /Script/PhysicsCore": 11
+              },
+              "bool 'bDisableCollision'": true,
+              "bool 'bParentDominates'": true,
+              "struct LinearDriveConstraint 341 'LinearDrive'": {
+                "struct ConstraintDrive 62 'XDrive'": {
+                  "float 'Stiffness'": 200,
+                  "bool 'bEnablePositionDrive'": true
                 },
-                "TypeName": "StructProperty 1 | ConstraintProfileProperties 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                "struct ConstraintDrive 62 'YDrive'": {
+                  "float 'Stiffness'": 200,
+                  "bool 'bEnablePositionDrive'": true
+                },
+                "struct ConstraintDrive 62 'ZDrive'": {
+                  "float 'Stiffness'": 200,
+                  "bool 'bEnablePositionDrive'": true
+                }
+              },
+              "struct AngularDriveConstraint 291 'AngularDrive'": {
+                "struct ConstraintDrive 37 'TwistDrive'": {
+                  "float 'Stiffness'": 500
+                },
+                "struct ConstraintDrive 37 'SwingDrive'": {
+                  "float 'Stiffness'": 500
+                },
+                "struct ConstraintDrive 62 'SlerpDrive'": {
+                  "float 'Stiffness'": 500,
+                  "bool 'bEnablePositionDrive'": true
+                }
               }
-            },
-            "TypeName": "StructProperty 1 | ConstraintInstance 1 | /Script/Engine 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            }
           },
           "Vector 'RelativeScale3D' /Script/CoreUObject": "0.47783939377404749 0.47783939377404749 0.12964133141213097"
         },
@@ -6249,8 +5434,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "d81c74e9-4a6b-6cbd-b3d1-ac848e9d39ce",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -6275,8 +5459,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "42942bb5-42dc-5609-d8cf-1eb342a4c384",
           "name 'InternalVariableName'": "BPC_InteractionHandler"
@@ -6301,8 +5484,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "300f214b-4ffd-823e-f556-e186469a6520",
           "name 'InternalVariableName'": "StartingMarker"
@@ -6327,8 +5509,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "c17441f8-4420-5f07-682c-e6a7d382f5b0",
           "name 'InternalVariableName'": "NS_Path"
@@ -6353,8 +5534,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "103",
           "guid 'VariableGuid' /Script/CoreUObject": "74a3ca55-46a0-d11d-805d-2daa6ff9ec08",
@@ -6380,8 +5560,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "1c2089ea-47c2-e3a6-da35-e3bc1fdbc299",
           "name 'InternalVariableName'": "Marker"
@@ -6406,8 +5585,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "defc42bd-429d-b770-16d6-219655eb2091",
           "name 'InternalVariableName'": "PhysicsConstraint"
@@ -6432,8 +5610,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "104 108 105 106 102",
           "guid 'VariableGuid' /Script/CoreUObject": "0f7d2164-4af7-bdd4-6e59-eaa4980a70dd",
@@ -6459,8 +5636,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "109 110",
           "guid 'VariableGuid' /Script/CoreUObject": "a7dba9ae-444c-ff48-fd38-e3bbad9e696c",
@@ -6486,8 +5662,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "41dba473-4f97-3adc-f596-74a6dab3a2b4",
           "name 'InternalVariableName'": "StaticMesh1"
@@ -6512,8 +5687,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "5e092416-4ffc-38d1-ce7f-5db5f3515c2a",
           "name 'InternalVariableName'": "Sphere1"
@@ -6548,76 +5722,57 @@
         "Members": {
           "float 'SphereRadius'": 5,
           "obj 'AreaClass'": -33,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 1045,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 955,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 1045 'BodyInstance'": {
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 955 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 886,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 886,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "WorldStatic",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "WorldDynamic",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Pawn",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "PhysicsBody",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Vehicle",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Destructible",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Trigger",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "WorldStatic",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "WorldDynamic",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Pawn",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "PhysicsBody",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Vehicle",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Destructible",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Trigger",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "bool 'bCanEverAffectNavigation'": false
         },
@@ -6637,76 +5792,57 @@
         "Members": {
           "float 'SphereRadius'": 1469.5635,
           "obj 'AreaClass'": -33,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 1045,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 955,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 1045 'BodyInstance'": {
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 955 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 886,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 886,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Pawn",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Vehicle",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "WorldStatic",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "WorldDynamic",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "PhysicsBody",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Destructible",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Trigger",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Pawn",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Vehicle",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "WorldStatic",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "WorldDynamic",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "PhysicsBody",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Destructible",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Trigger",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           }
         },
         "bIsCooked": false,
@@ -6740,44 +5876,25 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj 'StaticMesh'": -78,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 261,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 171,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 261 'BodyInstance'": {
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 171 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 102,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 102,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Trigger",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Trigger",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "Vector 'RelativeScale3D' /Script/CoreUObject": "0.37191899702884257 0.37191899702884257 0.12964133141213097",
           "bool 'bCanEverAffectNavigation'": false
@@ -6821,50 +5938,31 @@
           "obj 'StaticMesh'": -77,
           "obj[] 'OverrideMaterials'": "-59",
           "bool 'bUseAsOccluder'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 473,
-            "StructName": "BodyInstance",
-            "BoolVal": 0,
-            "Value": {
-              "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 142,
-              "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 145,
-              "name 'CollisionProfileName'": "NoCollision",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 269,
-                "StructName": "CollisionResponse",
+          "struct BodyInstance 473 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 142,
+            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 145,
+            "name 'CollisionProfileName'": "NoCollision",
+            "struct CollisionResponse 269 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 200,
+                "StructName": "ResponseChannel",
                 "BoolVal": 0,
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 200,
-                    "StructName": "ResponseChannel",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
-                      }
-                    ],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0",
-                    "SerializeType": "Property"
+                "InnerType": "StructProperty",
+                "Value": [
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 147
                   }
-                },
-                "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0",
-                "SerializeType": "Property"
+                ],
+                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
               }
-            },
-            "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            }
           },
           "Vector 'RelativeLocation' /Script/CoreUObject": "2.0093919487559986E-07 0 1.3558155632349936E-06",
           "Vector 'RelativeScale3D' /Script/CoreUObject": "1.0192072611855965 1.0192072611855965 9.8772013698632257",

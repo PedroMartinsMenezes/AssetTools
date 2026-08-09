@@ -791,6 +791,32 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty AISenseAffiliationFilter": {
+        "TypeName": "StructProperty 1 | AISenseAffiliationFilter 1 | /Script/AIModule 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty GraphReference": {
+        "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0"
+      },
+      "StructProperty InstancedPropertyBag": {
+        "TypeName": "StructProperty 1 | InstancedPropertyBag 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty StateTreeReference": {
+        "TypeName": "StructProperty 1 | StateTreeReference 1 | /Script/StateTreeModule 0"
+      }
     }
   },
   "Objects": [
@@ -821,18 +847,9 @@
         "Members": {
           "float 'SightRadius'": 1000,
           "float 'LoseSightRadius'": 2500,
-          "DetectionByAffiliation": {
-            "Name": "DetectionByAffiliation",
-            "Type": "StructProperty",
-            "Size": 58,
-            "StructName": "AISenseAffiliationFilter",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bDetectNeutrals'": true,
-              "bool 'bDetectFriendlies'": true
-            },
-            "TypeName": "StructProperty 1 | AISenseAffiliationFilter 1 | /Script/AIModule 0",
-            "SerializeType": "Property"
+          "struct AISenseAffiliationFilter 58 'DetectionByAffiliation'": {
+            "bool 'bDetectNeutrals'": true,
+            "bool 'bDetectFriendlies'": true
           },
           "float 'AutoSuccessRangeFromLastSeenLocation'": 500,
           "float 'MaxAge'": 3
@@ -866,8 +883,7 @@
               "Event Graph",
               "Default"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -878,80 +894,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/AI/BP_AIController",
-                      "AssetName": "BP_AIController"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/AI/BP_AIController",
+                    "AssetName": "BP_AIController"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/AI/BP_AIController",
-                      "AssetName": "BP_AIController"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/AI/BP_AIController",
+                    "AssetName": "BP_AIController"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -1366.8574,
-                    "Y": -3133.6704
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -1366.8574,
+                  "Y": -3133.6704
                 },
                 "float 'SavedZoomAmount'": 0.25
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 23,
           "obj 'GeneratedClass'": 4,
@@ -1066,18 +1041,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 96,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 96,
+            "UberGraphFunctionKey": 0
           },
           "obj 'PathFollowingComponent'": 20,
           "obj 'TransformComponent'": 22,
@@ -1369,18 +1335,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "DelegateReference": {
-            "Name": "DelegateReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "OnPossessedPawnChanged",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'DelegateReference'": {
+            "name 'MemberName'": "OnPossessedPawnChanged",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": -768,
@@ -1404,18 +1361,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -6,
-              "name 'MemberName'": "StartLogic"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "StartLogic"
           },
           "int 'NodePosX'": 1664,
           "int 'NodePosY'": -1280,
@@ -1439,18 +1387,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "K2_GetPawn",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetPawn",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 512,
           "int 'NodePosY'": -512,
@@ -1512,18 +1451,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": -768,
@@ -1546,18 +1476,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid' /Script/CoreUObject": "88d24d26-4e19-babc-2f4c-bbb964b6285f"
         },
@@ -1577,19 +1498,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -31,
-              "obj 'GraphBlueprint'": -2,
-              "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -31,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
           },
           "int 'NodePosX'": 512,
           "int 'NodePosY'": -1264,
@@ -1614,19 +1526,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -31,
-              "obj 'GraphBlueprint'": -2,
-              "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -31,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
           },
           "int 'NodePosX'": 912,
           "int 'NodePosY'": -768,
@@ -1651,18 +1554,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "StateTreeAI",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "StateTreeAI",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1408,
           "int 'NodePosY'": -1056,
@@ -1747,8 +1641,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "21ddc984-4046-eca0-560b-0cb82b7c2ec1",
           "name 'InternalVariableName'": "DefaultSceneRoot"
@@ -1773,8 +1666,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "d6207851-4076-b910-3c37-b8b4292d8423",
           "name 'InternalVariableName'": "StateTreeAI"
@@ -1799,8 +1691,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "8b5de49f-4164-ee39-f975-a4ab12b46e07",
           "name 'InternalVariableName'": "AIPerception"
@@ -1833,83 +1724,63 @@
       "Obj": {
         "__type": "UActorComponent",
         "Members": {
-          "StateTreeRef": {
-            "Name": "StateTreeRef",
-            "Type": "StructProperty",
-            "Size": 347,
-            "StructName": "StateTreeReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'StateTree'": -47,
-              "Parameters": {
-                "Name": "Parameters",
-                "Type": "StructProperty",
-                "Size": 261,
-                "StructName": "InstancedPropertyBag",
-                "BoolVal": 0,
-                "Value": {
-                  "Version": "SerializeStructSize",
-                  "bHasData": true,
-                  "PropertyDescs": [
-                    {
-                      "ValueTypeObject": "ImportIndex[-45] Vector",
-                      "ID": "f3b707b3-4002-4dcd-f8b7-8fbac780e530",
-                      "Name": "Target_Move_Location",
-                      "ValueType": "Struct",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": false,
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
-                    },
-                    {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "64cac437-454b-ed0b-29e3-a8b2b463ae0c",
-                      "Name": "Max_Leash_Distance_From_Spawn_Point",
-                      "ValueType": "Double",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": false,
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
-                    },
-                    {
-                      "ValueTypeObject": "ImportIndex[0] ",
-                      "ID": "3f5c0e8d-41eb-2d8e-4bec-ec92d97dc40a",
-                      "Name": "Min_Leash_Distance_from_Spawn_Point",
-                      "ValueType": "Double",
-                      "TmpContainerType": "None",
-                      "bHasMetaData": false,
-                      "ContainerTypes": {
-                        "NumContainers": 0,
-                        "Types": []
-                      }
-                    }
-                  ],
-                  "SerialSize": 147,
-                  "BagStruct": {
-                    "Members": {
-                      "Vector 'Target_Move_Location' /Script/CoreUObject": "0 0 0",
-                      "double 'Max_Leash_Distance_From_Spawn_Point'": 1500,
-                      "double 'Min_Leash_Distance_from_Spawn_Point'": 500
-                    },
-                    "Children": 0,
-                    "StructFlags": "STRUCT_NoFlags",
-                    "UseNativeSerialization": false,
-                    "UseBinarySerialization": false,
-                    "Next": 0
+          "class StateTreeReference 347 'StateTreeRef'": {
+            "obj 'StateTree'": -47,
+            "class InstancedPropertyBag 261 'Parameters'": {
+              "Version": "SerializeStructSize",
+              "bHasData": true,
+              "PropertyDescs": [
+                {
+                  "ValueTypeObject": "ImportIndex[-45] Vector",
+                  "ID": "f3b707b3-4002-4dcd-f8b7-8fbac780e530",
+                  "Name": "Target_Move_Location",
+                  "ValueType": "Struct",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": false,
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
                   }
                 },
-                "TypeName": "StructProperty 1 | InstancedPropertyBag 1 | /Script/CoreUObject 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "64cac437-454b-ed0b-29e3-a8b2b463ae0c",
+                  "Name": "Max_Leash_Distance_From_Spawn_Point",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": false,
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "3f5c0e8d-41eb-2d8e-4bec-ec92d97dc40a",
+                  "Name": "Min_Leash_Distance_from_Spawn_Point",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": false,
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                }
+              ],
+              "SerialSize": 147,
+              "BagStruct": {
+                "Members": {
+                  "Vector 'Target_Move_Location' /Script/CoreUObject": "0 0 0",
+                  "double 'Max_Leash_Distance_From_Spawn_Point'": 1500,
+                  "double 'Min_Leash_Distance_from_Spawn_Point'": 500
+                },
+                "Children": 0,
+                "StructFlags": "STRUCT_NoFlags",
+                "UseNativeSerialization": false,
+                "UseBinarySerialization": false,
+                "Next": 0
               }
-            },
-            "TypeName": "StructProperty 1 | StateTreeReference 1 | /Script/StateTreeModule 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            }
           },
           "bool 'bStartLogicAutomatically'": false
         },

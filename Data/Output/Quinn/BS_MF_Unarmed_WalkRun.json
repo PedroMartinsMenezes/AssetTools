@@ -228,7 +228,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -241,14 +242,8 @@
       "Obj": {
         "__type": "UBlendSpace1D",
         "Members": {
-          "InterpolationParam": {
-            "Name": "InterpolationParam",
-            "Type": "StructProperty",
-            "Size": 49,
-            "StructName": "InterpolationParameter",
-            "Value": {
-              "byte64 (EFilterInterpolationType) 'InterpolationType'": 8
-            }
+          "struct InterpolationParameter 49 'InterpolationParam'": {
+            "byte64 (EFilterInterpolationType) 'InterpolationType'": 8
           },
           "float 'TargetWeightInterpolationSpeedPerSec'": 5,
           "float 'AnimLength'": 2.7333333,
@@ -282,49 +277,37 @@
               }
             ]
           },
-          "BlendSpaceData": {
-            "Name": "BlendSpaceData",
-            "Type": "StructProperty",
-            "Size": 342,
-            "StructName": "BlendSpaceData",
-            "Value": {
-              "Segments": {
+          "struct BlendSpaceData 342 'BlendSpaceData'": {
+            "Segments": {
+              "Name": "Segments",
+              "Type": "ArrayProperty",
+              "Size": 301,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
                 "Name": "Segments",
-                "Type": "ArrayProperty",
-                "Size": 301,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "Segments",
-                  "Type": "StructProperty",
-                  "Size": 248,
-                  "StructName": "BlendSpaceSegment"
+                "Type": "StructProperty",
+                "Size": 248,
+                "StructName": "BlendSpaceSegment"
+              },
+              "Value": [
+                {
+                  "int 'SampleIndices'": 2,
+                  "int 'SampleIndices'[1]": 1,
+                  "float 'Vertices'": 0,
+                  "float 'Vertices'[1]": 0.46
                 },
-                "Value": [
-                  {
-                    "int 'SampleIndices'": 2,
-                    "int 'SampleIndices'[1]": 1,
-                    "float 'Vertices'": 0,
-                    "float 'Vertices'[1]": 0.46
-                  },
-                  {
-                    "int 'SampleIndices'": 1,
-                    "int 'SampleIndices'[1]": 0,
-                    "float 'Vertices'": 0.46,
-                    "float 'Vertices'[1]": 1
-                  }
-                ]
-              }
+                {
+                  "int 'SampleIndices'": 1,
+                  "int 'SampleIndices'[1]": 0,
+                  "float 'Vertices'": 0.46,
+                  "float 'Vertices'[1]": 1
+                }
+              ]
             }
           },
-          "BlendParameters": {
-            "Name": "BlendParameters",
-            "Type": "StructProperty",
-            "Size": 72,
-            "StructName": "BlendParameter",
-            "Value": {
-              "string 'DisplayName'": "Speed",
-              "float 'Max'": 500
-            }
+          "struct BlendParameter 72 'BlendParameters'": {
+            "string 'DisplayName'": "Speed",
+            "float 'Max'": 500
           },
           "obj 'Skeleton'": -14,
           "obj 'ThumbnailInfo'": 3

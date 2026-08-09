@@ -736,6 +736,32 @@
           }
         ]
       }
+    },
+    "GlobalTypeNames": {
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorTickFunction": {
+        "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty NiagaraUserRedirectionParameterStore": {
+        "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0"
+      },
+      "StructProperty ActorComponentTickFunction": {
+        "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -765,17 +791,7 @@
               {
                 "name 'VarName'": "Knockback Strength",
                 "guid 'VarGuid'": "2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "real-double",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "real-double",
                 "string 'FriendlyName'": "Knockback Strength",
                 "Category": {
                   "Name": "Category",
@@ -783,8 +799,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -797,25 +812,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Inv Frames Time",
                 "guid 'VarGuid'": "55f8e08d-40c4-1a10-8617-b2b607619809",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "real-double",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "real-double",
                 "string 'FriendlyName'": "Inv Frames Time",
                 "Category": {
                   "Name": "Category",
@@ -823,8 +827,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 5,
                 "name 'RepNotifyFunc'": "None",
@@ -837,14 +840,12 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
           },
           "CategorySorting": {
             "Name": "CategorySorting",
@@ -858,8 +859,7 @@
               "None",
               "Event Graph"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -870,80 +870,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_EnviromentalHazard",
-                      "AssetName": "BP_EnviromentalHazard"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_EnviromentalHazard",
+                    "AssetName": "BP_EnviromentalHazard"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 119.85271,
-                    "Y": -493.61035
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 119.85271,
+                  "Y": -493.61035
                 },
                 "float 'SavedZoomAmount'": 0.75
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_EnviromentalHazard",
-                      "AssetName": "BP_EnviromentalHazard"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_EnviromentalHazard",
+                    "AssetName": "BP_EnviromentalHazard"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -995,8 +954,7 @@
               "MetaDataMap": {}
             },
             "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-13] Actor",
@@ -1156,32 +1114,14 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 135,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 135,
+            "UberGraphFunctionKey": 0
           },
           "double 'Knockback Strength' {2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6}": 2000,
           "double 'Inv Frames Time' {55f8e08d-40c4-1a10-8617-b2b607619809}": 1,
-          "PrimaryActorTick": {
-            "Name": "PrimaryActorTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorTickFunction 33 'PrimaryActorTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "Children": 0,
@@ -1222,8 +1162,7 @@
                 "name 'FunctionNameToBind'": "BndEvt__BP_ExposedConduit_Curved_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature"
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0"
           }
         }
       }
@@ -1638,18 +1577,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -22,
-              "name 'MemberName'": "K2_GetComponentLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -22,
+            "name 'MemberName'": "K2_GetComponentLocation"
           },
           "int 'NodePosX'": 1232,
           "int 'NodePosY'": 256,
@@ -1672,18 +1602,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "GetPlayerCharacter"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "GetPlayerCharacter"
           },
           "int 'NodePosX'": 1216,
           "int 'NodePosY'": 144,
@@ -1708,18 +1629,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -20,
-              "name 'MemberName'": "DoesImplementInterface"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "DoesImplementInterface"
           },
           "int 'NodePosX'": 800,
           "int 'NodePosY'": 64,
@@ -1746,18 +1658,9 @@
           "name 'DelegatePropertyName'": "OnComponentBeginOverlap",
           "obj 'DelegateOwnerClass'": -21,
           "name 'ComponentPropertyName'": "Sphere",
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -41,
-              "name 'MemberName'": "ComponentBeginOverlapSignature__DelegateSignature"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -41,
+            "name 'MemberName'": "ComponentBeginOverlapSignature__DelegateSignature"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_ExposedConduit_Curved_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature",
@@ -1787,18 +1690,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -13,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -13,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "d4469986-46ad-d62a-c793-75b5bac1399d"
         },
@@ -1839,19 +1733,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -2,
-              "name 'MemberName'": "RecieveDamage",
-              "guid 'MemberGuid'": "8c529092-4dee-8b55-d647-ed9fe181d06f"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "RecieveDamage",
+            "guid 'MemberGuid'": "8c529092-4dee-8b55-d647-ed9fe181d06f"
           },
           "int 'NodePosX'": 1568,
           "int 'NodePosY'": -16,
@@ -1878,18 +1763,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Sphere",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'VariableReference'": {
+            "name 'MemberName'": "Sphere",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1072,
           "int 'NodePosY'": 295,
@@ -1911,19 +1787,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Knockback Strength",
-              "guid 'MemberGuid'": "2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Knockback Strength",
+            "guid 'MemberGuid'": "2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1248,
           "int 'NodePosY'": 368,
@@ -1945,19 +1812,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Inv Frames Time",
-              "guid 'MemberGuid'": "55f8e08d-40c4-1a10-8617-b2b607619809",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Inv Frames Time",
+            "guid 'MemberGuid'": "55f8e08d-40c4-1a10-8617-b2b607619809",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1264,
           "int 'NodePosY'": 416,
@@ -1980,227 +1838,111 @@
         "__type": "USceneComponent",
         "Members": {
           "obj 'Asset'": -35,
-          "OverrideParameters": {
-            "Name": "OverrideParameters",
-            "Type": "StructProperty",
-            "Size": 1491,
-            "StructName": "NiagaraUserRedirectionParameterStore",
-            "BoolVal": 0,
-            "Value": {
-              "UserParameterRedirects": {
-                "Name": "UserParameterRedirects",
-                "Type": "MapProperty",
-                "Size": 824,
-                "BoolVal": 0,
-                "ValueType": "StructProperty",
-                "Value": {
-                  "__type": "FMapProperty",
-                  "TypeName": "MapProperty",
-                  "NumKeysToRemove": 0,
-                  "NumEntries": 4,
-                  "KeyProp": [
-                    {
-                      "VarData": "",
-                      "Name": "Color",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -45,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "Gravity",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -48,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "Hue Shift Range",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -47,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "Scale RGB",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -48,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    }
-                  ],
-                  "ValueProp": [
-                    {
-                      "VarData": "",
-                      "Name": "User.Color",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -45,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "User.Gravity",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -48,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "User.Hue Shift Range",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -47,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    },
-                    {
-                      "VarData": "",
-                      "Name": "User.Scale RGB",
-                      "TypeDefHandle": {
-                        "TypeDef": {
-                          "scriptStruct": {
-                            "Members": {
-                              "obj 'ClassStructOrEnum'": -48,
-                              "ushort 'UnderlyingType'": 2,
-                              "byte 'Flags'": 0
-                            },
-                            "Children": 0,
-                            "StructFlags": "STRUCT_NoFlags",
-                            "UseNativeSerialization": false,
-                            "UseBinarySerialization": false,
-                            "Next": 0
-                          },
-                          "ClassStructOrEnum": 0,
-                          "UnderlyingType": 0
-                        }
-                      }
-                    }
-                  ],
-                  "ArrayDim": 0,
-                  "ElementSize": 0,
-                  "PropertyFlags": "CPF_None",
-                  "RepIndex": 0,
-                  "BlueprintReplicationCondition": 0,
-                  "FlagsPrivate": "RF_NoFlags",
-                  "HasMetaData": false,
-                  "MetaDataMap": {}
-                },
-                "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
-              },
-              "SortedParameterOffsets": {
-                "Name": "SortedParameterOffsets",
-                "Type": "ArrayProperty",
-                "Size": 412,
-                "StructName": "NiagaraVariableWithOffset",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
+          "struct NiagaraUserRedirectionParameterStore 1491 'OverrideParameters'": {
+            "UserParameterRedirects": {
+              "Name": "UserParameterRedirects",
+              "Type": "MapProperty",
+              "Size": 824,
+              "BoolVal": 0,
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 4,
+                "KeyProp": [
                   {
-                    "Offset": 0,
+                    "VarData": "",
+                    "Name": "Color",
+                    "TypeDefHandle": {
+                      "TypeDef": {
+                        "scriptStruct": {
+                          "Members": {
+                            "obj 'ClassStructOrEnum'": -45,
+                            "ushort 'UnderlyingType'": 2,
+                            "byte 'Flags'": 0
+                          },
+                          "Children": 0,
+                          "StructFlags": "STRUCT_NoFlags",
+                          "UseNativeSerialization": false,
+                          "UseBinarySerialization": false,
+                          "Next": 0
+                        },
+                        "ClassStructOrEnum": 0,
+                        "UnderlyingType": 0
+                      }
+                    }
+                  },
+                  {
+                    "VarData": "",
+                    "Name": "Gravity",
+                    "TypeDefHandle": {
+                      "TypeDef": {
+                        "scriptStruct": {
+                          "Members": {
+                            "obj 'ClassStructOrEnum'": -48,
+                            "ushort 'UnderlyingType'": 2,
+                            "byte 'Flags'": 0
+                          },
+                          "Children": 0,
+                          "StructFlags": "STRUCT_NoFlags",
+                          "UseNativeSerialization": false,
+                          "UseBinarySerialization": false,
+                          "Next": 0
+                        },
+                        "ClassStructOrEnum": 0,
+                        "UnderlyingType": 0
+                      }
+                    }
+                  },
+                  {
+                    "VarData": "",
+                    "Name": "Hue Shift Range",
+                    "TypeDefHandle": {
+                      "TypeDef": {
+                        "scriptStruct": {
+                          "Members": {
+                            "obj 'ClassStructOrEnum'": -47,
+                            "ushort 'UnderlyingType'": 2,
+                            "byte 'Flags'": 0
+                          },
+                          "Children": 0,
+                          "StructFlags": "STRUCT_NoFlags",
+                          "UseNativeSerialization": false,
+                          "UseBinarySerialization": false,
+                          "Next": 0
+                        },
+                        "ClassStructOrEnum": 0,
+                        "UnderlyingType": 0
+                      }
+                    }
+                  },
+                  {
+                    "VarData": "",
+                    "Name": "Scale RGB",
+                    "TypeDefHandle": {
+                      "TypeDef": {
+                        "scriptStruct": {
+                          "Members": {
+                            "obj 'ClassStructOrEnum'": -48,
+                            "ushort 'UnderlyingType'": 2,
+                            "byte 'Flags'": 0
+                          },
+                          "Children": 0,
+                          "StructFlags": "STRUCT_NoFlags",
+                          "UseNativeSerialization": false,
+                          "UseBinarySerialization": false,
+                          "Next": 0
+                        },
+                        "ClassStructOrEnum": 0,
+                        "UnderlyingType": 0
+                      }
+                    }
+                  }
+                ],
+                "ValueProp": [
+                  {
+                    "VarData": "",
                     "Name": "User.Color",
                     "TypeDefHandle": {
                       "TypeDef": {
@@ -2222,7 +1964,7 @@
                     }
                   },
                   {
-                    "Offset": 36,
+                    "VarData": "",
                     "Name": "User.Gravity",
                     "TypeDefHandle": {
                       "TypeDef": {
@@ -2244,7 +1986,7 @@
                     }
                   },
                   {
-                    "Offset": 16,
+                    "VarData": "",
                     "Name": "User.Hue Shift Range",
                     "TypeDefHandle": {
                       "TypeDef": {
@@ -2266,7 +2008,7 @@
                     }
                   },
                   {
-                    "Offset": 24,
+                    "VarData": "",
                     "Name": "User.Scale RGB",
                     "TypeDefHandle": {
                       "TypeDef": {
@@ -2288,14 +2030,119 @@
                     }
                   }
                 ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0",
-                "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                "SerializeType": "BinaryOrNative"
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
               },
-              "byte[] 'ParameterData'": "0 0 128 66 0 0 128 65 0 8 155 58 0 0 128 63 10 215 35 188 0 0 0 0 0 0 160 65 0 0 160 65 0 0 160 65 0 0 0 0 0 0 0 0 0 0 250 196"
+              "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
+              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
             },
-            "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0",
-            "SerializeType": "Property"
+            "SortedParameterOffsets": {
+              "Name": "SortedParameterOffsets",
+              "Type": "ArrayProperty",
+              "Size": 412,
+              "StructName": "NiagaraVariableWithOffset",
+              "BoolVal": 0,
+              "InnerType": "StructProperty",
+              "Value": [
+                {
+                  "Offset": 0,
+                  "Name": "User.Color",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -45,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        },
+                        "Children": 0,
+                        "StructFlags": "STRUCT_NoFlags",
+                        "UseNativeSerialization": false,
+                        "UseBinarySerialization": false,
+                        "Next": 0
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "Offset": 36,
+                  "Name": "User.Gravity",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        },
+                        "Children": 0,
+                        "StructFlags": "STRUCT_NoFlags",
+                        "UseNativeSerialization": false,
+                        "UseBinarySerialization": false,
+                        "Next": 0
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "Offset": 16,
+                  "Name": "User.Hue Shift Range",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -47,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        },
+                        "Children": 0,
+                        "StructFlags": "STRUCT_NoFlags",
+                        "UseNativeSerialization": false,
+                        "UseBinarySerialization": false,
+                        "Next": 0
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "Offset": 24,
+                  "Name": "User.Scale RGB",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        },
+                        "Children": 0,
+                        "StructFlags": "STRUCT_NoFlags",
+                        "UseNativeSerialization": false,
+                        "UseBinarySerialization": false,
+                        "Next": 0
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                }
+              ],
+              "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0",
+              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+            },
+            "byte[] 'ParameterData'": "0 0 128 66 0 0 128 65 0 8 155 58 0 0 128 63 10 215 35 188 0 0 0 0 0 0 160 65 0 0 160 65 0 0 160 65 0 0 0 0 0 0 0 0 0 0 250 196"
           },
           "Vector 'RelativeLocation'": "143.78454926979617 0 202.47566229890754"
         },
@@ -2314,17 +2161,8 @@
         "__type": "USceneComponent",
         "Members": {
           "bool 'bVisualizeComponent'": true,
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "bIsCooked": false,
@@ -2349,8 +2187,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "23 24",
           "guid 'VariableGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039",
@@ -2376,8 +2213,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b",
           "name 'InternalVariableName'": "StaticMesh"
@@ -2402,8 +2238,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "25",
           "guid 'VariableGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042",
@@ -2429,8 +2264,7 @@
             "Size": 37,
             "BoolVal": 0,
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c",
           "name 'InternalVariableName'": "Sphere"
@@ -2466,17 +2300,8 @@
           "obj 'AreaClass'": -27,
           "Vector 'RelativeLocation'": "-27.086509175226411 0 -8.5201656758120521",
           "Vector 'RelativeScale3D'": "2.5141577493050136 2.5141577493050136 2.5141577493050136",
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "bool 'bCanEverAffectNavigation'": false
         },
@@ -2496,17 +2321,8 @@
         "Members": {
           "obj 'StaticMesh'": -51,
           "bool 'bUseAsOccluder'": false,
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "LODData": [],

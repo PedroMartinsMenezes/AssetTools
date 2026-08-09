@@ -1265,7 +1265,8 @@
           "Words": "0"
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -1335,13 +1336,7 @@
               {
                 "name 'VarName'": "GlobalBrightness",
                 "guid 'VarGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Global Brightness",
                 "Category": {
                   "Name": "Category",
@@ -1370,13 +1365,7 @@
               {
                 "name 'VarName'": "Use_HDRI",
                 "guid 'VarGuid'": "53b41b5d-4361-eb54-d7dd-53a079dd8e1f",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Use HDRI",
                 "Category": {
                   "Name": "Category",
@@ -1405,13 +1394,7 @@
               {
                 "name 'VarName'": "UseSunLight",
                 "guid 'VarGuid'": "2e97b9bc-4602-7f79-084a-6abe4da0d35e",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Use Sun Light",
                 "Category": {
                   "Name": "Category",
@@ -1440,13 +1423,7 @@
               {
                 "name 'VarName'": "SunBrightness",
                 "guid 'VarGuid'": "889375e4-4160-e51d-1e05-bd9cf29e1dcb",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Sun Brightness",
                 "Category": {
                   "Name": "Category",
@@ -1475,13 +1452,7 @@
               {
                 "name 'VarName'": "SunTint",
                 "guid 'VarGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-117`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
                 "string 'FriendlyName'": "Sun Tint",
                 "Category": {
                   "Name": "Category",
@@ -1510,13 +1481,7 @@
               {
                 "name 'VarName'": "StationaryLightForSun",
                 "guid 'VarGuid'": "d42af7d8-482f-4714-de1a-50996d7204eb",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Stationary Light for Sun",
                 "Category": {
                   "Name": "Category",
@@ -1545,13 +1510,7 @@
               {
                 "name 'VarName'": "SunDirectionalLight",
                 "guid 'VarGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-24`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-24`)",
                 "string 'FriendlyName'": "Sun Directional Light",
                 "Category": {
                   "Name": "Category",
@@ -1580,13 +1539,7 @@
               {
                 "name 'VarName'": "UseAtmosphere",
                 "guid 'VarGuid'": "4877fe6d-4dcb-e9f8-d64a-52b671eee283",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Use Atmosphere",
                 "Category": {
                   "Name": "Category",
@@ -1615,13 +1568,7 @@
               {
                 "name 'VarName'": "AtmosphereBrightness",
                 "guid 'VarGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Brightness",
                 "Category": {
                   "Name": "Category",
@@ -1650,13 +1597,7 @@
               {
                 "name 'VarName'": "AtmosphereTint",
                 "guid 'VarGuid'": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-117`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
                 "string 'FriendlyName'": "Atmosphere Tint",
                 "Category": {
                   "Name": "Category",
@@ -1685,13 +1626,7 @@
               {
                 "name 'VarName'": "PrevisArrowMaterial",
                 "guid 'VarGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-31`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
                 "string 'FriendlyName'": "Previs Arrow Material",
                 "Category": {
                   "Name": "Category",
@@ -1720,13 +1655,7 @@
               {
                 "name 'VarName'": "LightColor",
                 "guid 'VarGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-117`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
                 "string 'FriendlyName'": "Light Color",
                 "Category": {
                   "Name": "Category",
@@ -1755,13 +1684,7 @@
               {
                 "name 'VarName'": "SunColorCurve",
                 "guid 'VarGuid'": "f52475bd-4483-1b9b-743f-1fb28c55f29d",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-23`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-23`)",
                 "string 'FriendlyName'": "Sun Color Curve",
                 "Category": {
                   "Name": "Category",
@@ -1790,13 +1713,7 @@
               {
                 "name 'VarName'": "OverrideSunColor",
                 "guid 'VarGuid'": "8af81d70-4cca-875a-2b39-78aed8bccbf8",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Override Sun Color",
                 "Category": {
                   "Name": "Category",
@@ -1825,13 +1742,7 @@
               {
                 "name 'VarName'": "AtmosphereDensityMultiplier",
                 "guid 'VarGuid'": "8e03d106-4baa-ed8b-6379-ea8ccc2133d1",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Density Multiplier",
                 "Category": {
                   "Name": "Category",
@@ -1860,13 +1771,7 @@
               {
                 "name 'VarName'": "AtmosphereAltitude",
                 "guid 'VarGuid'": "d293d5cd-40db-55f5-4010-d1862e5b9684",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Altitude",
                 "Category": {
                   "Name": "Category",
@@ -1895,13 +1800,7 @@
               {
                 "name 'VarName'": "DisableSunDisk",
                 "guid 'VarGuid'": "75ae9e1f-482b-a0dd-a866-93aff9c69ba1",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Disable Sun Disk",
                 "Category": {
                   "Name": "Category",
@@ -1930,13 +1829,7 @@
               {
                 "name 'VarName'": "UseFog",
                 "guid 'VarGuid'": "065d7e83-4510-76eb-5d22-c9bc7117c048",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Use Fog",
                 "Category": {
                   "Name": "Category",
@@ -1965,13 +1858,7 @@
               {
                 "name 'VarName'": "FogBrightness",
                 "guid 'VarGuid'": "cc070653-4cbd-a998-a8cd-30b35c6d4908",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Brightness",
                 "Category": {
                   "Name": "Category",
@@ -2000,13 +1887,7 @@
               {
                 "name 'VarName'": "FogTint",
                 "guid 'VarGuid'": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-117`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
                 "string 'FriendlyName'": "Fog Tint",
                 "Category": {
                   "Name": "Category",
@@ -2035,13 +1916,7 @@
               {
                 "name 'VarName'": "FogAltitude",
                 "guid 'VarGuid'": "9cfc5cb7-48a6-3f1d-ae73-88b602e3e059",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Altitude",
                 "Category": {
                   "Name": "Category",
@@ -2070,13 +1945,7 @@
               {
                 "name 'VarName'": "FogMaxOpacity",
                 "guid 'VarGuid'": "bb638858-4e13-7b83-42c6-56ad34f64693",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Max Opacity",
                 "Category": {
                   "Name": "Category",
@@ -2105,13 +1974,7 @@
               {
                 "name 'VarName'": "FogHeightFalloff",
                 "guid 'VarGuid'": "192eaf5e-4f08-b760-1126-e58af5d1bf57",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Height Falloff",
                 "Category": {
                   "Name": "Category",
@@ -2140,13 +2003,7 @@
               {
                 "name 'VarName'": "FogDensity",
                 "guid 'VarGuid'": "7c31fab5-4277-2ac2-37da-78aa8040d1e3",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Density",
                 "Category": {
                   "Name": "Category",
@@ -2175,13 +2032,7 @@
               {
                 "name 'VarName'": "FogBrightnessCurve",
                 "guid 'VarGuid'": "52d69615-4521-7b3a-9b81-b890bba9ea5b",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-22`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-22`)",
                 "string 'FriendlyName'": "Fog Brightness Curve",
                 "Category": {
                   "Name": "Category",
@@ -2210,13 +2061,7 @@
               {
                 "name 'VarName'": "FogStartDistance",
                 "guid 'VarGuid'": "8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Fog Start Distance",
                 "Category": {
                   "Name": "Category",
@@ -2245,13 +2090,7 @@
               {
                 "name 'VarName'": "DisableGroundScattering",
                 "guid 'VarGuid'": "6ad3bb01-48fc-ef07-a856-52a0a244117d",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Disable Ground Scattering",
                 "Category": {
                   "Name": "Category",
@@ -2280,13 +2119,7 @@
               {
                 "name 'VarName'": "AtmosphereDistanceScale",
                 "guid 'VarGuid'": "873f2ce8-4c36-b25f-5f0c-f19666b6c2c5",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Distance Scale",
                 "Category": {
                   "Name": "Category",
@@ -2315,13 +2148,7 @@
               {
                 "name 'VarName'": "SkyboxMaterial",
                 "guid 'VarGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-31`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
                 "string 'FriendlyName'": "Skybox Material",
                 "Category": {
                   "Name": "Category",
@@ -2350,13 +2177,7 @@
               {
                 "name 'VarName'": "HDRI_Brightness",
                 "guid 'VarGuid'": "cc85d4e9-4de8-835b-83f4-5c890197f4bc",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "HDRI Brightness",
                 "Category": {
                   "Name": "Category",
@@ -2385,13 +2206,7 @@
               {
                 "name 'VarName'": "HDRI_Contrast",
                 "guid 'VarGuid'": "3e26660f-46a2-e559-1448-6d983ff0c6fe",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "HDRI Contrast",
                 "Category": {
                   "Name": "Category",
@@ -2420,13 +2235,7 @@
               {
                 "name 'VarName'": "HDRI_Tint",
                 "guid 'VarGuid'": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-117`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
                 "string 'FriendlyName'": "HDRI Tint",
                 "Category": {
                   "Name": "Category",
@@ -2455,13 +2264,7 @@
               {
                 "name 'VarName'": "HDRI_Cubemap",
                 "guid 'VarGuid'": "50c68971-4b56-38ff-9bf8-e1b006ce0a0f",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-39`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-39`)",
                 "string 'FriendlyName'": "HDRI Cubemap",
                 "Category": {
                   "Name": "Category",
@@ -2490,13 +2293,7 @@
               {
                 "name 'VarName'": "HDRI_Rotation",
                 "guid 'VarGuid'": "ade074f9-4ea0-52d5-9398-10bcbb2d0122",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "HDRI Rotation",
                 "Category": {
                   "Name": "Category",
@@ -2525,13 +2322,7 @@
               {
                 "name 'VarName'": "AtmosphereOpacityHorizon",
                 "guid 'VarGuid'": "d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Opacity Horizon",
                 "Category": {
                   "Name": "Category",
@@ -2560,13 +2351,7 @@
               {
                 "name 'VarName'": "AtmosphereOpacityZenith",
                 "guid 'VarGuid'": "bc38043d-4343-1754-30bd-3aa77303275a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Opacity Zenith",
                 "Category": {
                   "Name": "Category",
@@ -2595,13 +2380,7 @@
               {
                 "name 'VarName'": "HighDensityAtmosphere",
                 "guid 'VarGuid'": "41c593a0-4ba1-47e7-1ce4-b594972df5ed",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "High Density Atmosphere",
                 "Category": {
                   "Name": "Category",
@@ -2630,13 +2409,7 @@
               {
                 "name 'VarName'": "AtmosphericFog",
                 "guid 'VarGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-19`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-19`)",
                 "string 'FriendlyName'": "Atmospheric Fog",
                 "Category": {
                   "Name": "Category",
@@ -2665,13 +2438,7 @@
               {
                 "name 'VarName'": "UseSkylight",
                 "guid 'VarGuid'": "160b4703-4c72-62c6-eea7-5fbd477b3899",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Use Skylight",
                 "Category": {
                   "Name": "Category",
@@ -2700,13 +2467,7 @@
               {
                 "name 'VarName'": "Shadowdistance",
                 "guid 'VarGuid'": "10b2b565-4a70-330d-7937-27baa46b6bb0",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Shadowdistance",
                 "Category": {
                   "Name": "Category",
@@ -2735,13 +2496,7 @@
               {
                 "name 'VarName'": "LightShaftBloom",
                 "guid 'VarGuid'": "81d8a358-4c98-14f9-3c8a-28bbb88a9c8c",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Light Shaft Bloom",
                 "Category": {
                   "Name": "Category",
@@ -2770,13 +2525,7 @@
               {
                 "name 'VarName'": "LightShaftOcclusion",
                 "guid 'VarGuid'": "9d886557-4d6d-288c-38ac-7fa404e3f344",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "bool"
-                },
+                "struct EdGraphPinType 65 'VarType'": "bool",
                 "string 'FriendlyName'": "Light Shaft Occlusion",
                 "Category": {
                   "Name": "Category",
@@ -2805,13 +2554,7 @@
               {
                 "name 'VarName'": "OcclusionMaskDarkness",
                 "guid 'VarGuid'": "43306466-4da0-1920-0e1d-3eb3fc6a66bd",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Occlusion Mask Darkness",
                 "Category": {
                   "Name": "Category",
@@ -2840,13 +2583,7 @@
               {
                 "name 'VarName'": "BloomScale",
                 "guid 'VarGuid'": "ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Bloom Scale",
                 "Category": {
                   "Name": "Category",
@@ -2875,13 +2612,7 @@
               {
                 "name 'VarName'": "BloomThreshold",
                 "guid 'VarGuid'": "1c5bab01-40c0-92bb-9b8b-44a6f13db12a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Bloom Threshold",
                 "Category": {
                   "Name": "Category",
@@ -2910,13 +2641,7 @@
               {
                 "name 'VarName'": "BloomTint",
                 "guid 'VarGuid'": "ef774934-4224-db6b-4a33-769b09425cf2",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "struct obj(`-116`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "struct obj(`-116`)",
                 "string 'FriendlyName'": "Bloom Tint",
                 "Category": {
                   "Name": "Category",
@@ -2945,13 +2670,7 @@
               {
                 "name 'VarName'": "AtmosphereFogMultiplier",
                 "guid 'VarGuid'": "1f3bf6ed-49c5-cbd4-cee5-4280988fbde1",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Fog Multiplier",
                 "Category": {
                   "Name": "Category",
@@ -2980,13 +2699,7 @@
               {
                 "name 'VarName'": "AtmosphereDensityHeight",
                 "guid 'VarGuid'": "59086404-49c3-cbdb-fe91-219f04ac5dcb",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 65 'VarType'": "float",
                 "string 'FriendlyName'": "Atmosphere Density Height",
                 "Category": {
                   "Name": "Category",
@@ -3015,13 +2728,7 @@
               {
                 "name 'VarName'": "AtmosphereMaxScatteringOrder",
                 "guid 'VarGuid'": "ea61632e-4960-ae59-1b96-b9a18444c606",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "int"
-                },
+                "struct EdGraphPinType 65 'VarType'": "int",
                 "string 'FriendlyName'": "Atmosphere Max Scattering Order",
                 "Category": {
                   "Name": "Category",
@@ -3050,13 +2757,7 @@
               {
                 "name 'VarName'": "AtmosphereAltitudeSampleNumber",
                 "guid 'VarGuid'": "2d5b3e7f-4d53-13ec-49bf-25b5f9149634",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "int"
-                },
+                "struct EdGraphPinType 65 'VarType'": "int",
                 "string 'FriendlyName'": "Atmosphere Altitude Sample Number",
                 "Category": {
                   "Name": "Category",
@@ -3085,13 +2786,7 @@
               {
                 "name 'VarName'": "LightFunctionMaterial",
                 "guid 'VarGuid'": "95e17178-4350-ec83-c8b6-a7925237571f",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-32`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-32`)",
                 "string 'FriendlyName'": "Light Function Material",
                 "Category": {
                   "Name": "Category",
@@ -3120,13 +2815,7 @@
               {
                 "name 'VarName'": "MIC_Black",
                 "guid 'VarGuid'": "9e65df5f-4dd9-cf65-0611-1bb8baf54fc3",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-30`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
                 "string 'FriendlyName'": "MIC Black",
                 "Category": {
                   "Name": "Category",
@@ -3155,13 +2844,7 @@
               {
                 "name 'VarName'": "MIC_HDRI",
                 "guid 'VarGuid'": "2996f42d-4aa8-3a57-8754-6daa8c60a9b5",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 65,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-30`)"
-                },
+                "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
                 "string 'FriendlyName'": "MIC HDRI",
                 "Category": {
                   "Name": "Category",
@@ -3220,121 +2903,85 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 31,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "NormalizedSunAngle",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 31 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "NormalizedSunAngle",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-1216.253662109375 -285.4281005859375",
                 "float 'SavedZoomAmount'": 0.75
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "1301.662109375 -10780.37890625",
                 "float 'SavedZoomAmount'": 0.2
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 24,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "SunMobility",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 24 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "SunMobility",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-515.0170288085938 -580.7666625976562",
                 "float 'SavedZoomAmount'": 0.75
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 30,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "AtmosphereDensity",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 30 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "AtmosphereDensity",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-108.1142349243164 -386.8019714355469",
                 "float 'SavedZoomAmount'": 0.675
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 30,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "CalculateSunColor",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 30 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "CalculateSunColor",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-822.1336669921875 -1432.414794921875",
                 "float 'SavedZoomAmount'": 0.25
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 35,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                    "SubPathString": "UserConstructionScript",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "4840.76708984375 301.88018798828125",
                 "float 'SavedZoomAmount'": 1
@@ -4672,15 +4319,7 @@
           "bool 'UseSkylight' {160b4703-4c72-62c6-eea7-5fbd477b3899}": true,
           "float 'OcclusionMaskDarkness' {43306466-4da0-1920-0e1d-3eb3fc6a66bd}": 0.05,
           "float 'BloomScale' {ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99}": 0.2,
-          "BloomTint": {
-            "Name": "BloomTint",
-            "Type": "StructProperty",
-            "Size": 4,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "ef774934-4224-db6b-4a33-769b09425cf2",
-            "StructName": "Color",
-            "Value": "255 255 255 0"
-          },
+          "struct Color 4 'BloomTint' {ef774934-4224-db6b-4a33-769b09425cf2}": "255 255 255 0",
           "float 'AtmosphereFogMultiplier' {1f3bf6ed-49c5-cbd4-cee5-4280988fbde1}": 1,
           "float 'AtmosphereDensityHeight' {59086404-49c3-cbdb-fe91-219f04ac5dcb}": 0.5,
           "int 'AtmosphereMaxScatteringOrder' {ea61632e-4960-ae59-1b96-b9a18444c606}": 4,
@@ -6116,15 +5755,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -19,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddComponent",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": -32,
@@ -6154,15 +5787,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -19,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddComponent",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 128,
@@ -6192,15 +5819,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -24,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddComponent",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 352,
           "int 'NodePosY'": -64,
@@ -6230,15 +5851,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'TemplateType'": -24,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AddComponent",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 352,
           "int 'NodePosY'": 112,
@@ -6267,15 +5882,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetPrecomputeParams"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetPrecomputeParams"
           },
           "int 'NodePosX'": 1664,
           "int 'NodePosY'": -48,
@@ -6302,16 +5911,10 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "NormalizedSunAngle",
-              "guid 'MemberGuid'": "04f310d6-4a99-0eed-be7b-42aa1f1bb8d0",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "NormalizedSunAngle",
+            "guid 'MemberGuid'": "04f310d6-4a99-0eed-be7b-42aa1f1bb8d0",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 48,
           "int 'NodePosY'": 256,
@@ -6336,15 +5939,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -23,
-              "name 'MemberName'": "GetLinearColorValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -23,
+            "name 'MemberName'": "GetLinearColorValue"
           },
           "int 'NodePosX'": 304,
           "int 'NodePosY'": 208,
@@ -6368,15 +5965,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_LinearColorLinearColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_LinearColorLinearColor"
           },
           "int 'NodePosX'": 1216,
           "int 'NodePosY'": 368,
@@ -6401,15 +5992,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "SelectColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "SelectColor"
           },
           "int 'NodePosX'": 1504,
           "int 'NodePosY'": 208,
@@ -6435,15 +6020,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "BreakColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "BreakColor"
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": 256,
@@ -6470,15 +6049,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "MakeColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "MakeColor"
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 256,
@@ -6506,15 +6079,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -912,
           "int 'NodePosY'": 144,
@@ -6537,15 +6104,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "BreakRotator"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "BreakRotator"
           },
           "int 'NodePosX'": -640,
           "int 'NodePosY'": 160,
@@ -6571,15 +6132,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Divide_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Divide_FloatFloat"
           },
           "int 'NodePosX'": -144,
           "int 'NodePosY'": 208,
@@ -6604,15 +6159,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Abs"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Abs"
           },
           "int 'NodePosY'": 208,
           "guid 'NodeGuid'": "0d8bd10f-481c-9865-063d-d6b35979d54a"
@@ -6635,15 +6184,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Subtract_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Subtract_FloatFloat"
           },
           "int 'NodePosX'": -416,
           "int 'NodePosY'": 192,
@@ -6668,15 +6211,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Abs"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Abs"
           },
           "int 'NodePosX'": -288,
           "int 'NodePosY'": 192,
@@ -6699,15 +6236,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "SetVisibility"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "SetVisibility"
           },
           "int 'NodePosX'": 3488,
           "int 'NodePosY'": -1136,
@@ -6732,15 +6263,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "DisableSunDisk"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "DisableSunDisk"
           },
           "int 'NodePosX'": 4288,
           "int 'NodePosY'": -240,
@@ -6764,15 +6289,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetDistanceScale"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetDistanceScale"
           },
           "int 'NodePosX'": 6080,
           "int 'NodePosY'": -176,
@@ -6797,15 +6316,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetSunMultiplier"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetSunMultiplier"
           },
           "int 'NodePosX'": 5072,
           "int 'NodePosY'": -224,
@@ -6830,15 +6343,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "BreakRotator"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "BreakRotator"
           },
           "int 'NodePosX'": 5184,
           "int 'NodePosY'": -672,
@@ -6863,15 +6370,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "SetMaterial"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "SetMaterial"
           },
           "int 'NodePosX'": 4128,
           "int 'NodePosY'": -1184,
@@ -6898,15 +6399,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -22,
-              "name 'MemberName'": "GetFloatValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -22,
+            "name 'MemberName'": "GetFloatValue"
           },
           "int 'NodePosX'": 2368,
           "int 'NodePosY'": 1888,
@@ -6930,16 +6425,10 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "NormalizedSunAngle",
-              "guid 'MemberGuid'": "04f310d6-4a99-0eed-be7b-42aa1f1bb8d0",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "NormalizedSunAngle",
+            "guid 'MemberGuid'": "04f310d6-4a99-0eed-be7b-42aa1f1bb8d0",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2144,
           "int 'NodePosY'": 1952,
@@ -6962,15 +6451,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetScalarParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetScalarParameterValue"
           },
           "int 'NodePosX'": 4656,
           "int 'NodePosY'": -1200,
@@ -6995,15 +6478,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -37,
-              "name 'MemberName'": "RecaptureSky"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -37,
+            "name 'MemberName'": "RecaptureSky"
           },
           "int 'NodePosX'": 2178,
           "int 'NodePosY'": 2443,
@@ -7027,15 +6504,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "LinearColorLerp"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "LinearColorLerp"
           },
           "int 'NodePosX'": 3488,
           "int 'NodePosY'": 1824,
@@ -7060,15 +6531,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "SetAtmosphereSunLight"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "SetAtmosphereSunLight"
           },
           "int 'NodePosX'": 5296,
           "int 'NodePosY'": 576,
@@ -7094,15 +6559,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "K2_GetComponentRotation"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "K2_GetComponentRotation"
           },
           "int 'NodePosX'": 4960,
           "int 'NodePosY'": -672,
@@ -7124,15 +6583,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetTextureParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetTextureParameterValue"
           },
           "int 'NodePosX'": 5472,
           "int 'NodePosY'": -1184,
@@ -7157,15 +6610,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetVectorParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetVectorParameterValue"
           },
           "int 'NodePosX'": 3904,
           "int 'NodePosY'": 896,
@@ -7190,15 +6637,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -33,
-              "name 'MemberName'": "SetMaterial"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "SetMaterial"
           },
           "int 'NodePosX'": 3456,
           "int 'NodePosY'": 896,
@@ -7223,15 +6664,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetScalarParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetScalarParameterValue"
           },
           "int 'NodePosX'": 7152,
           "int 'NodePosY'": -1152,
@@ -7256,15 +6691,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetScalarParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetScalarParameterValue"
           },
           "int 'NodePosX'": 6016,
           "int 'NodePosY'": -1152,
@@ -7289,15 +6718,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetVectorParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetVectorParameterValue"
           },
           "int 'NodePosX'": 5008,
           "int 'NodePosY'": -1184,
@@ -7322,15 +6745,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetFogHeightFalloff"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetFogHeightFalloff"
           },
           "int 'NodePosX'": 5344,
           "int 'NodePosY'": 1504,
@@ -7355,15 +6772,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "MakeVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "MakeVector"
           },
           "int 'NodePosX'": 7072,
           "int 'NodePosY'": 1856,
@@ -7389,15 +6800,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_LinearColorLinearColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_LinearColorLinearColor"
           },
           "int 'NodePosX'": 3264,
           "int 'NodePosY'": 1728,
@@ -7422,15 +6827,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Conv_FloatToLinearColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Conv_FloatToLinearColor"
           },
           "int 'NodePosX'": 3120,
           "int 'NodePosY'": 1808,
@@ -7453,15 +6852,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetDefaultBrightness"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetDefaultBrightness"
           },
           "int 'NodePosX'": 3904,
           "int 'NodePosY'": -240,
@@ -7485,15 +6878,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetIntensity"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetIntensity"
           },
           "int 'NodePosX'": 4560,
           "int 'NodePosY'": 576,
@@ -7518,15 +6905,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "K2_DestroyComponent"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "K2_DestroyComponent"
           },
           "int 'NodePosX'": 2770,
           "int 'NodePosY'": 2507,
@@ -7550,15 +6931,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetStartDistance"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetStartDistance"
           },
           "int 'NodePosX'": 6416,
           "int 'NodePosY'": 1712,
@@ -7582,15 +6957,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "SetDynamicShadowDistanceMovableLight"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "SetDynamicShadowDistanceMovableLight"
           },
           "int 'NodePosX'": 5616,
           "int 'NodePosY'": 576,
@@ -7614,15 +6983,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "K2_SetWorldLocation"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "K2_SetWorldLocation"
           },
           "int 'NodePosX'": 7344,
           "int 'NodePosY'": 1712,
@@ -7649,15 +7012,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "K2_SetWorldLocation"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "K2_SetWorldLocation"
           },
           "int 'NodePosX'": 3120,
           "int 'NodePosY'": -256,
@@ -7686,15 +7043,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "MakeVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "MakeVector"
           },
           "int 'NodePosX'": 2896,
           "int 'NodePosY'": -96,
@@ -7719,16 +7070,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunMobility",
-              "guid 'MemberGuid'": "1bb733b9-4d30-f427-b177-ae82c0b55133",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "SunMobility",
+            "guid 'MemberGuid'": "1bb733b9-4d30-f427-b177-ae82c0b55133",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3488,
           "int 'NodePosY'": 544,
@@ -7752,15 +7097,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetEnableLightShaftBloom"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetEnableLightShaftBloom"
           },
           "int 'NodePosX'": 6896,
           "int 'NodePosY'": 576,
@@ -7784,15 +7123,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "SetEnableLightShaftOcclusion"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "SetEnableLightShaftOcclusion"
           },
           "int 'NodePosX'": 7232,
           "int 'NodePosY'": 576,
@@ -7816,15 +7149,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetScalarParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetScalarParameterValue"
           },
           "int 'NodePosX'": 7648,
           "int 'NodePosY'": -1088,
@@ -7849,15 +7176,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -31,
-              "name 'MemberName'": "SetScalarParameterValue"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -31,
+            "name 'MemberName'": "SetScalarParameterValue"
           },
           "int 'NodePosX'": 6592,
           "int 'NodePosY'": -1168,
@@ -7882,15 +7203,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "SetOcclusionMaskDarkness"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "SetOcclusionMaskDarkness"
           },
           "int 'NodePosX'": 7600,
           "int 'NodePosY'": 608,
@@ -7914,15 +7229,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetLightColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetLightColor"
           },
           "int 'NodePosX'": 4944,
           "int 'NodePosY'": 576,
@@ -7948,15 +7257,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "K2_SetWorldRotation"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "K2_SetWorldRotation"
           },
           "int 'NodePosX'": 2528,
           "int 'NodePosY'": -1168,
@@ -7984,15 +7287,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetBloomScale"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetBloomScale"
           },
           "int 'NodePosX'": 7952,
           "int 'NodePosY'": 608,
@@ -8016,15 +7313,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetBloomThreshold"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetBloomThreshold"
           },
           "int 'NodePosX'": 8208,
           "int 'NodePosY'": 592,
@@ -8048,15 +7339,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "DisableGroundScattering"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "DisableGroundScattering"
           },
           "int 'NodePosX'": 4768,
           "int 'NodePosY'": -224,
@@ -8080,15 +7365,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetBloomTint"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetBloomTint"
           },
           "int 'NodePosX'": 8512,
           "int 'NodePosY'": 608,
@@ -8112,15 +7391,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetFogDensity"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetFogDensity"
           },
           "int 'NodePosX'": 5888,
           "int 'NodePosY'": 1632,
@@ -8144,15 +7417,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "SetVisibility"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "SetVisibility"
           },
           "int 'NodePosX'": 2672,
           "int 'NodePosY'": -272,
@@ -8177,15 +7444,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -24,
-              "name 'MemberName'": "SetDynamicShadowDistanceStationaryLight"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -24,
+            "name 'MemberName'": "SetDynamicShadowDistanceStationaryLight"
           },
           "int 'NodePosX'": 6032,
           "int 'NodePosY'": 576,
@@ -8210,15 +7471,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetDensityMultiplier"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetDensityMultiplier"
           },
           "int 'NodePosX'": 6640,
           "int 'NodePosY'": -176,
@@ -8242,15 +7497,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetDefaultLightColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetDefaultLightColor"
           },
           "int 'NodePosX'": 5552,
           "int 'NodePosY'": -192,
@@ -8274,16 +7523,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereDensity",
-              "guid 'MemberGuid'": "e04fc6c0-490f-8c86-7ebf-bb9bad2bbb6b",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "AtmosphereDensity",
+            "guid 'MemberGuid'": "e04fc6c0-490f-8c86-7ebf-bb9bad2bbb6b",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2240,
           "int 'NodePosY'": -272,
@@ -8307,15 +7550,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -29,
-              "name 'MemberName'": "SetLightFunctionMaterial"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -29,
+            "name 'MemberName'": "SetLightFunctionMaterial"
           },
           "int 'NodePosX'": 9008,
           "int 'NodePosY'": 672,
@@ -8339,15 +7576,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -34,
-              "name 'MemberName'": "SetVisibility"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -34,
+            "name 'MemberName'": "SetVisibility"
           },
           "int 'NodePosX'": 2656,
           "int 'NodePosY'": 1360,
@@ -8372,15 +7603,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetFogInscatteringColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetFogInscatteringColor"
           },
           "int 'NodePosX'": 4080,
           "int 'NodePosY'": 1488,
@@ -8405,15 +7630,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_LinearColorLinearColor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_LinearColorLinearColor"
           },
           "int 'NodePosX'": 3984,
           "int 'NodePosY'": 1632,
@@ -8437,15 +7656,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "SetFogMultiplier"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "SetFogMultiplier"
           },
           "int 'NodePosX'": 7120,
           "int 'NodePosY'": -160,
@@ -8469,15 +7682,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -26,
-              "name 'MemberName'": "SetFogMaxOpacity"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "SetFogMaxOpacity"
           },
           "int 'NodePosX'": 4768,
           "int 'NodePosY'": 1488,
@@ -8501,16 +7708,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "CalculateSunColor",
-              "guid 'MemberGuid'": "4d2bfff0-41bb-eaf2-c7d1-ea9ae033143e",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "CalculateSunColor",
+            "guid 'MemberGuid'": "4d2bfff0-41bb-eaf2-c7d1-ea9ae033143e",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3760,
           "int 'NodePosY'": 560,
@@ -8535,15 +7736,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Divide_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Divide_FloatFloat"
           },
           "int 'NodePosX'": 5456,
           "int 'NodePosY'": -624,
@@ -8567,15 +7762,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "CreateDynamicMaterialInstance"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "CreateDynamicMaterialInstance"
           },
           "int 'NodePosX'": 2720,
           "int 'NodePosY'": 864,
@@ -8603,15 +7792,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -27,
-              "name 'MemberName'": "CreateDynamicMaterialInstance"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -27,
+            "name 'MemberName'": "CreateDynamicMaterialInstance"
           },
           "int 'NodePosX'": 2832,
           "int 'NodePosY'": -1168,
@@ -8640,15 +7823,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Add_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Add_FloatFloat"
           },
           "int 'NodePosX'": 160,
           "int 'NodePosY'": 224,
@@ -8673,15 +7850,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 2848,
           "int 'NodePosY'": 1840,
@@ -8706,15 +7877,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 2592,
           "int 'NodePosY'": 1872,
@@ -8739,15 +7904,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 4608,
           "int 'NodePosY'": -976,
@@ -8772,15 +7931,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Add_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Add_FloatFloat"
           },
           "int 'NodePosX'": 5824,
           "int 'NodePosY'": -640,
@@ -8805,15 +7958,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 3744,
           "int 'NodePosY'": -80,
@@ -8838,15 +7985,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 4400,
           "int 'NodePosY'": 720,
@@ -8897,14 +8038,8 @@
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereDensity"
-            }
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "AtmosphereDensity"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid'": "a5d8bc43-4fb1-bf88-f207-d2b60ce02746"
@@ -8927,14 +8062,8 @@
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "CalculateSunColor"
-            }
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "CalculateSunColor"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -336,
@@ -8959,14 +8088,8 @@
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 469893120,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "NormalizedSunAngle"
-            }
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "NormalizedSunAngle"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid'": "3ab970aa-429f-7b95-3ac4-5cae89c4509c"
@@ -8989,14 +8112,8 @@
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunMobility"
-            }
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "SunMobility"
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -400,
@@ -9020,15 +8137,9 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -17,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -17,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosX'": -464,
           "guid 'NodeGuid'": "378d88c1-49a1-6068-789d-01a8662240e0"
@@ -9164,13 +8275,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "IndexPinType": {
-            "Name": "IndexPinType",
-            "Type": "StructProperty",
-            "Size": 65,
-            "StructName": "EdGraphPinType",
-            "Value": "bool"
-          },
+          "struct EdGraphPinType 65 'IndexPinType'": "bool",
           "int 'NodePosX'": 2736,
           "int 'NodePosY'": -736,
           "guid 'NodeGuid'": "5b00297d-4ee6-8033-1a8b-bc8e56aa94b9"
@@ -9193,16 +8298,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1264,
           "int 'NodePosY'": -16,
@@ -9224,16 +8323,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereDensityHeight",
-              "guid 'MemberGuid'": "59086404-49c3-cbdb-fe91-219f04ac5dcb",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereDensityHeight",
+            "guid 'MemberGuid'": "59086404-49c3-cbdb-fe91-219f04ac5dcb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1280,
           "int 'NodePosY'": 48,
@@ -9255,16 +8348,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereMaxScatteringOrder",
-              "guid 'MemberGuid'": "ea61632e-4960-ae59-1b96-b9a18444c606",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereMaxScatteringOrder",
+            "guid 'MemberGuid'": "ea61632e-4960-ae59-1b96-b9a18444c606",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1280,
           "int 'NodePosY'": 96,
@@ -9286,16 +8373,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereAltitudeSampleNumber",
-              "guid 'MemberGuid'": "2d5b3e7f-4d53-13ec-49bf-25b5f9149634",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereAltitudeSampleNumber",
+            "guid 'MemberGuid'": "2d5b3e7f-4d53-13ec-49bf-25b5f9149634",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1264,
           "int 'NodePosY'": 160,
@@ -9317,16 +8398,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HighDensityAtmosphere",
-              "guid 'MemberGuid'": "41c593a0-4ba1-47e7-1ce4-b594972df5ed",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HighDensityAtmosphere",
+            "guid 'MemberGuid'": "41c593a0-4ba1-47e7-1ce4-b594972df5ed",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 160,
           "int 'NodePosY'": 112,
@@ -9348,16 +8423,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunColorCurve",
-              "guid 'MemberGuid'": "f52475bd-4483-1b9b-743f-1fb28c55f29d",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunColorCurve",
+            "guid 'MemberGuid'": "f52475bd-4483-1b9b-743f-1fb28c55f29d",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 80,
           "int 'NodePosY'": 208,
@@ -9379,16 +8448,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunTint",
-              "guid 'MemberGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunTint",
+            "guid 'MemberGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1360,
           "int 'NodePosY'": 224,
@@ -9410,16 +8473,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "OverrideSunColor",
-              "guid 'MemberGuid'": "8af81d70-4cca-875a-2b39-78aed8bccbf8",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "OverrideSunColor",
+            "guid 'MemberGuid'": "8af81d70-4cca-875a-2b39-78aed8bccbf8",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1296,
           "int 'NodePosY'": 448,
@@ -9441,16 +8498,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunTint",
-              "guid 'MemberGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunTint",
+            "guid 'MemberGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1040,
           "int 'NodePosY'": 432,
@@ -9472,16 +8523,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "StationaryLightForSun",
-              "guid 'MemberGuid'": "d42af7d8-482f-4714-de1a-50996d7204eb",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "StationaryLightForSun",
+            "guid 'MemberGuid'": "d42af7d8-482f-4714-de1a-50996d7204eb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -112,
           "int 'NodePosY'": 64,
@@ -9503,15 +8548,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Skybox",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "Skybox",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3280,
           "int 'NodePosY'": -944,
@@ -9533,16 +8572,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6928,
           "int 'NodePosY'": -96,
@@ -9564,16 +8597,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereBrightness",
-              "guid 'MemberGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereBrightness",
+            "guid 'MemberGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3552,
           "int 'NodePosY'": -32,
@@ -9595,16 +8622,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GlobalBrightness",
-              "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "GlobalBrightness",
+            "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4256,
           "int 'NodePosY'": 784,
@@ -9626,16 +8647,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2912,
           "int 'NodePosY'": -176,
@@ -9657,15 +8672,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4544,
           "int 'NodePosY'": 1552,
@@ -9687,16 +8696,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunDirectionalLight",
-              "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunDirectionalLight",
+            "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6560,
           "int 'NodePosY'": 832,
@@ -9718,16 +8721,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "UseFog",
-              "guid 'MemberGuid'": "065d7e83-4510-76eb-5d22-c9bc7117c048",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "UseFog",
+            "guid 'MemberGuid'": "065d7e83-4510-76eb-5d22-c9bc7117c048",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2416,
           "int 'NodePosY'": 1536,
@@ -9749,15 +8746,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2384,
           "int 'NodePosY'": 1424,
@@ -9779,16 +8770,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightColor",
-              "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightColor",
+            "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3344,
           "int 'NodePosY'": 1840,
@@ -9810,16 +8795,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightFunctionMaterial",
-              "guid 'MemberGuid'": "95e17178-4350-ec83-c8b6-a7925237571f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightFunctionMaterial",
+            "guid 'MemberGuid'": "95e17178-4350-ec83-c8b6-a7925237571f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 8816,
           "int 'NodePosY'": 672,
@@ -9841,15 +8820,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3072,
           "int 'NodePosY'": 1552,
@@ -9871,16 +8844,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunBrightness",
-              "guid 'MemberGuid'": "889375e4-4160-e51d-1e05-bd9cf29e1dcb",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunBrightness",
+            "guid 'MemberGuid'": "889375e4-4160-e51d-1e05-bd9cf29e1dcb",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4240,
           "int 'NodePosY'": 704,
@@ -9902,16 +8869,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogTint",
-              "guid 'MemberGuid'": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogTint",
+            "guid 'MemberGuid'": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3104,
           "int 'NodePosY'": 1664,
@@ -9933,16 +8894,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunDirectionalLight",
-              "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunDirectionalLight",
+            "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4432,
           "int 'NodePosY'": 800,
@@ -9964,16 +8919,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunDirectionalLight",
-              "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunDirectionalLight",
+            "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 8784,
           "int 'NodePosY'": 800,
@@ -9995,16 +8944,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GlobalBrightness",
-              "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "GlobalBrightness",
+            "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2640,
           "int 'NodePosY'": 1824,
@@ -10026,16 +8969,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogBrightness",
-              "guid 'MemberGuid'": "cc070653-4cbd-a998-a8cd-30b35c6d4908",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogBrightness",
+            "guid 'MemberGuid'": "cc070653-4cbd-a998-a8cd-30b35c6d4908",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2416,
           "int 'NodePosY'": 1840,
@@ -10057,15 +8994,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7120,
           "int 'NodePosY'": 1808,
@@ -10087,16 +9018,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogMaxOpacity",
-              "guid 'MemberGuid'": "bb638858-4e13-7b83-42c6-56ad34f64693",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogMaxOpacity",
+            "guid 'MemberGuid'": "bb638858-4e13-7b83-42c6-56ad34f64693",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4544,
           "int 'NodePosY'": 1664,
@@ -10118,15 +9043,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyLight1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "SkyLight1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2002,
           "int 'NodePosY'": 2539,
@@ -10148,16 +9067,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Shadowdistance",
-              "guid 'MemberGuid'": "10b2b565-4a70-330d-7937-27baa46b6bb0",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Shadowdistance",
+            "guid 'MemberGuid'": "10b2b565-4a70-330d-7937-27baa46b6bb0",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5472,
           "int 'NodePosY'": 784,
@@ -10179,16 +9092,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightShaftBloom",
-              "guid 'MemberGuid'": "81d8a358-4c98-14f9-3c8a-28bbb88a9c8c",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightShaftBloom",
+            "guid 'MemberGuid'": "81d8a358-4c98-14f9-3c8a-28bbb88a9c8c",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6688,
           "int 'NodePosY'": 752,
@@ -10210,16 +9117,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightShaftOcclusion",
-              "guid 'MemberGuid'": "9d886557-4d6d-288c-38ac-7fa404e3f344",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightShaftOcclusion",
+            "guid 'MemberGuid'": "9d886557-4d6d-288c-38ac-7fa404e3f344",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6928,
           "int 'NodePosY'": 928,
@@ -10241,16 +9142,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "OcclusionMaskDarkness",
-              "guid 'MemberGuid'": "43306466-4da0-1920-0e1d-3eb3fc6a66bd",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "OcclusionMaskDarkness",
+            "guid 'MemberGuid'": "43306466-4da0-1920-0e1d-3eb3fc6a66bd",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7328,
           "int 'NodePosY'": 816,
@@ -10272,16 +9167,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "BloomScale",
-              "guid 'MemberGuid'": "ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "BloomScale",
+            "guid 'MemberGuid'": "ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7728,
           "int 'NodePosY'": 832,
@@ -10303,16 +9192,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "BloomThreshold",
-              "guid 'MemberGuid'": "1c5bab01-40c0-92bb-9b8b-44a6f13db12a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "BloomThreshold",
+            "guid 'MemberGuid'": "1c5bab01-40c0-92bb-9b8b-44a6f13db12a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7968,
           "int 'NodePosY'": 832,
@@ -10334,16 +9217,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "BloomTint",
-              "guid 'MemberGuid'": "ef774934-4224-db6b-4a33-769b09425cf2",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "BloomTint",
+            "guid 'MemberGuid'": "ef774934-4224-db6b-4a33-769b09425cf2",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 8288,
           "int 'NodePosY'": 800,
@@ -10365,16 +9242,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6400,
           "int 'NodePosY'": -112,
@@ -10396,16 +9267,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6912,
           "int 'NodePosY'": -1040,
@@ -10427,16 +9292,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogAltitude",
-              "guid 'MemberGuid'": "9cfc5cb7-48a6-3f1d-ae73-88b602e3e059",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogAltitude",
+            "guid 'MemberGuid'": "9cfc5cb7-48a6-3f1d-ae73-88b602e3e059",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6896,
           "int 'NodePosY'": 1936,
@@ -10458,16 +9317,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HDRI_Contrast",
-              "guid 'MemberGuid'": "3e26660f-46a2-e559-1448-6d983ff0c6fe",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HDRI_Contrast",
+            "guid 'MemberGuid'": "3e26660f-46a2-e559-1448-6d983ff0c6fe",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7424,
           "int 'NodePosY'": -912,
@@ -10489,16 +9342,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogHeightFalloff",
-              "guid 'MemberGuid'": "192eaf5e-4f08-b760-1126-e58af5d1bf57",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogHeightFalloff",
+            "guid 'MemberGuid'": "192eaf5e-4f08-b760-1126-e58af5d1bf57",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5104,
           "int 'NodePosY'": 1696,
@@ -10520,15 +9367,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5104,
           "int 'NodePosY'": 1632,
@@ -10550,16 +9391,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "MIC_Black",
-              "guid 'MemberGuid'": "9e65df5f-4dd9-cf65-0611-1bb8baf54fc3",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "MIC_Black",
+            "guid 'MemberGuid'": "9e65df5f-4dd9-cf65-0611-1bb8baf54fc3",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2528,
           "int 'NodePosY'": -688,
@@ -10581,16 +9416,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "MIC_HDRI",
-              "guid 'MemberGuid'": "2996f42d-4aa8-3a57-8754-6daa8c60a9b5",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "MIC_HDRI",
+            "guid 'MemberGuid'": "2996f42d-4aa8-3a57-8754-6daa8c60a9b5",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2544,
           "int 'NodePosY'": -768,
@@ -10612,15 +9441,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Skybox",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "Skybox",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2400,
           "int 'NodePosY'": -928,
@@ -10642,16 +9465,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogDensity",
-              "guid 'MemberGuid'": "7c31fab5-4277-2ac2-37da-78aa8040d1e3",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogDensity",
+            "guid 'MemberGuid'": "7c31fab5-4277-2ac2-37da-78aa8040d1e3",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5616,
           "int 'NodePosY'": 1776,
@@ -10673,16 +9490,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5840,
           "int 'NodePosY'": -176,
@@ -10704,16 +9515,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereDistanceScale",
-              "guid 'MemberGuid'": "873f2ce8-4c36-b25f-5f0c-f19666b6c2c5",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereDistanceScale",
+            "guid 'MemberGuid'": "873f2ce8-4c36-b25f-5f0c-f19666b6c2c5",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5824,
           "int 'NodePosY'": -64,
@@ -10735,16 +9540,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereDensityMultiplier",
-              "guid 'MemberGuid'": "8e03d106-4baa-ed8b-6379-ea8ccc2133d1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereDensityMultiplier",
+            "guid 'MemberGuid'": "8e03d106-4baa-ed8b-6379-ea8ccc2133d1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6336,
           "int 'NodePosY'": -32,
@@ -10766,16 +9565,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "DisableSunDisk",
-              "guid 'MemberGuid'": "75ae9e1f-482b-a0dd-a866-93aff9c69ba1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "DisableSunDisk",
+            "guid 'MemberGuid'": "75ae9e1f-482b-a0dd-a866-93aff9c69ba1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4096,
           "int 'NodePosY'": -96,
@@ -10797,16 +9590,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "UseSkylight",
-              "guid 'MemberGuid'": "160b4703-4c72-62c6-eea7-5fbd477b3899",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "UseSkylight",
+            "guid 'MemberGuid'": "160b4703-4c72-62c6-eea7-5fbd477b3899",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2402,
           "int 'NodePosY'": 2555,
@@ -10828,16 +9615,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogBrightnessCurve",
-              "guid 'MemberGuid'": "52d69615-4521-7b3a-9b81-b890bba9ea5b",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogBrightnessCurve",
+            "guid 'MemberGuid'": "52d69615-4521-7b3a-9b81-b890bba9ea5b",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2160,
           "int 'NodePosY'": 1920,
@@ -10859,16 +9640,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereFogMultiplier",
-              "guid 'MemberGuid'": "1f3bf6ed-49c5-cbd4-cee5-4280988fbde1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereFogMultiplier",
+            "guid 'MemberGuid'": "1f3bf6ed-49c5-cbd4-cee5-4280988fbde1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6880,
           "int 'NodePosY'": -16,
@@ -10890,16 +9665,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereBrightness",
-              "guid 'MemberGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereBrightness",
+            "guid 'MemberGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4976,
           "guid 'NodeGuid'": "d36c227a-48d7-87b4-44fe-fea90942d8d9"
@@ -10920,15 +9689,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5600,
           "int 'NodePosY'": 1712,
@@ -10950,16 +9713,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "FogStartDistance",
-              "guid 'MemberGuid'": "8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "FogStartDistance",
+            "guid 'MemberGuid'": "8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6192,
           "int 'NodePosY'": 1824,
@@ -10981,15 +9738,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ExponentialHeightFog1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "ExponentialHeightFog1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6176,
           "int 'NodePosY'": 1776,
@@ -11011,15 +9762,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Skybox",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "Skybox",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3952,
           "int 'NodePosY'": -1104,
@@ -11041,16 +9786,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightColor",
-              "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightColor",
+            "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4784,
           "int 'NodePosY'": 688,
@@ -11072,16 +9811,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 7408,
           "int 'NodePosY'": -976,
@@ -11103,16 +9836,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Use_HDRI",
-              "guid 'MemberGuid'": "53b41b5d-4361-eb54-d7dd-53a079dd8e1f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Use_HDRI",
+            "guid 'MemberGuid'": "53b41b5d-4361-eb54-d7dd-53a079dd8e1f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2496,
           "int 'NodePosY'": -608,
@@ -11134,16 +9861,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3968,
           "int 'NodePosY'": -1008,
@@ -11165,16 +9886,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightColor",
-              "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightColor",
+            "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3616,
           "int 'NodePosY'": 1104,
@@ -11196,15 +9911,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "PrevisArrow",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "PrevisArrow",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3264,
           "int 'NodePosY'": 992,
@@ -11226,16 +9935,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HDRI_Brightness",
-              "guid 'MemberGuid'": "cc85d4e9-4de8-835b-83f4-5c890197f4bc",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HDRI_Brightness",
+            "guid 'MemberGuid'": "cc85d4e9-4de8-835b-83f4-5c890197f4bc",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4432,
           "int 'NodePosY'": -1008,
@@ -11257,16 +9960,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4784,
           "int 'NodePosY'": -992,
@@ -11288,16 +9985,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HDRI_Cubemap",
-              "guid 'MemberGuid'": "50c68971-4b56-38ff-9bf8-e1b006ce0a0f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HDRI_Cubemap",
+            "guid 'MemberGuid'": "50c68971-4b56-38ff-9bf8-e1b006ce0a0f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5264,
           "int 'NodePosY'": -1056,
@@ -11319,16 +10010,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5248,
           "int 'NodePosY'": -1104,
@@ -11350,16 +10035,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HDRI_Rotation",
-              "guid 'MemberGuid'": "ade074f9-4ea0-52d5-9398-10bcbb2d0122",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HDRI_Rotation",
+            "guid 'MemberGuid'": "ade074f9-4ea0-52d5-9398-10bcbb2d0122",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5600,
           "int 'NodePosY'": -560,
@@ -11381,16 +10060,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4432,
           "int 'NodePosY'": -1056,
@@ -11412,16 +10085,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "UseSunLight",
-              "guid 'MemberGuid'": "2e97b9bc-4602-7f79-084a-6abe4da0d35e",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "UseSunLight",
+            "guid 'MemberGuid'": "2e97b9bc-4602-7f79-084a-6abe4da0d35e",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3264,
           "int 'NodePosY'": 656,
@@ -11443,16 +10110,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "HDRI_Tint",
-              "guid 'MemberGuid'": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "HDRI_Tint",
+            "guid 'MemberGuid'": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4784,
           "int 'NodePosY'": -944,
@@ -11474,15 +10135,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "PrevisArrow",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'VariableReference'": {
+            "name 'MemberName'": "PrevisArrow",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4816,
           "int 'NodePosY'": -640,
@@ -11504,16 +10159,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GlobalBrightness",
-              "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "GlobalBrightness",
+            "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4432,
           "int 'NodePosY'": -896,
@@ -11535,16 +10184,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereAltitude",
-              "guid 'MemberGuid'": "d293d5cd-40db-55f5-4010-d1862e5b9684",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereAltitude",
+            "guid 'MemberGuid'": "d293d5cd-40db-55f5-4010-d1862e5b9684",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2704,
           "int 'NodePosY'": 16,
@@ -11566,16 +10209,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5776,
           "int 'NodePosY'": -1056,
@@ -11597,16 +10234,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6384,
           "int 'NodePosY'": -1168,
@@ -11628,16 +10259,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereOpacityHorizon",
-              "guid 'MemberGuid'": "d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereOpacityHorizon",
+            "guid 'MemberGuid'": "d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6352,
           "int 'NodePosY'": -1008,
@@ -11659,16 +10284,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "PrevisArrowMaterial",
-              "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "PrevisArrowMaterial",
+            "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3728,
           "int 'NodePosY'": 992,
@@ -11690,16 +10309,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereOpacityZenith",
-              "guid 'MemberGuid'": "bc38043d-4343-1754-30bd-3aa77303275a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereOpacityZenith",
+            "guid 'MemberGuid'": "bc38043d-4343-1754-30bd-3aa77303275a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 6896,
           "int 'NodePosY'": -992,
@@ -11721,16 +10334,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "DisableGroundScattering",
-              "guid 'MemberGuid'": "6ad3bb01-48fc-ef07-a856-52a0a244117d",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "DisableGroundScattering",
+            "guid 'MemberGuid'": "6ad3bb01-48fc-ef07-a856-52a0a244117d",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4576,
           "int 'NodePosY'": -32,
@@ -11752,16 +10359,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "UseAtmosphere",
-              "guid 'MemberGuid'": "4877fe6d-4dcb-e9f8-d64a-52b671eee283",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "UseAtmosphere",
+            "guid 'MemberGuid'": "4877fe6d-4dcb-e9f8-d64a-52b671eee283",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2464,
           "int 'NodePosY'": -96,
@@ -11783,16 +10384,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "PrevisArrowMaterial",
-              "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "PrevisArrowMaterial",
+            "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3248,
           "int 'NodePosY'": 1072,
@@ -11814,16 +10409,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphereTint",
-              "guid 'MemberGuid'": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphereTint",
+            "guid 'MemberGuid'": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5344,
           "int 'NodePosY'": -16,
@@ -11845,16 +10434,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3600,
           "int 'NodePosY'": -176,
@@ -11876,16 +10459,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4608,
           "int 'NodePosY'": -144,
@@ -11907,16 +10484,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2448,
           "int 'NodePosY'": -208,
@@ -11938,16 +10509,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4160,
           "int 'NodePosY'": -16,
@@ -11969,16 +10534,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "GlobalBrightness",
-              "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "GlobalBrightness",
+            "guid 'MemberGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3568,
           "int 'NodePosY'": -80,
@@ -12000,16 +10559,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 4928,
           "int 'NodePosY'": 64,
@@ -12031,16 +10584,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 5376,
           "int 'NodePosY'": 64,
@@ -12062,16 +10609,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1008,
           "int 'NodePosY'": 128,
@@ -12096,16 +10637,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "AtmosphericFog",
-              "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "AtmosphericFog",
+            "guid 'MemberGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 976,
           "int 'NodePosY'": -16,
@@ -12130,16 +10665,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "LightColor",
-              "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "LightColor",
+            "guid 'MemberGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1824,
           "int 'NodePosY'": 96,
@@ -12164,16 +10693,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunDirectionalLight",
-              "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunDirectionalLight",
+            "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": -48,
@@ -12198,16 +10721,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SunDirectionalLight",
-              "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SunDirectionalLight",
+            "guid 'MemberGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 128,
@@ -12232,16 +10749,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SkyboxMaterial",
-              "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "SkyboxMaterial",
+            "guid 'MemberGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3216,
           "int 'NodePosY'": -1136,
@@ -12266,16 +10777,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "PrevisArrowMaterial",
-              "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "PrevisArrowMaterial",
+            "guid 'MemberGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3136,
           "int 'NodePosY'": 896,
@@ -12552,70 +11057,58 @@
           "bool 'CastShadow'": false,
           "bool 'bCastDynamicShadow'": false,
           "bool 'bCastStaticShadow'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 907,
-            "StructName": "BodyInstance",
-            "Value": {
-              "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 750,
-                "StructName": "CollisionResponse",
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 709,
-                    "InnerType": "StructProperty",
-                    "MaybeInnerTag": {
-                      "Name": "ResponseArray",
-                      "Type": "StructProperty",
-                      "Size": 656,
-                      "StructName": "ResponseChannel"
-                    },
-                    "Value": [
-                      {
-                        "name 'Channel'": "WorldStatic",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "WorldDynamic",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Pawn",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "PhysicsBody",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Vehicle",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Destructible",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      }
-                    ]
+          "struct BodyInstance 907 'BodyInstance'": {
+            "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 750 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 709,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
+                  "Name": "ResponseArray",
+                  "Type": "StructProperty",
+                  "Size": 656,
+                  "StructName": "ResponseChannel"
+                },
+                "Value": [
+                  {
+                    "name 'Channel'": "WorldStatic",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "WorldDynamic",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Pawn",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "PhysicsBody",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Vehicle",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Destructible",
+                    "byte64 (ECollisionResponse) 'Response'": 167
                   }
-                }
-              },
-              "bool 'bAutoWeld'": false
-            }
+                ]
+              }
+            },
+            "bool 'bAutoWeld'": false
           },
           "Vector 'RelativeScale3D'": "50000 50000 50000",
           "byte64 (EComponentMobility) 'Mobility'": 165
@@ -12640,70 +11133,58 @@
           "bool 'CastShadow'": false,
           "bool 'bCastDynamicShadow'": false,
           "bool 'bCastStaticShadow'": false,
-          "BodyInstance": {
-            "Name": "BodyInstance",
-            "Type": "StructProperty",
-            "Size": 907,
-            "StructName": "BodyInstance",
-            "Value": {
-              "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
-              "name 'CollisionProfileName'": "Custom",
-              "CollisionResponses": {
-                "Name": "CollisionResponses",
-                "Type": "StructProperty",
-                "Size": 750,
-                "StructName": "CollisionResponse",
-                "Value": {
-                  "ResponseArray": {
-                    "Name": "ResponseArray",
-                    "Type": "ArrayProperty",
-                    "Size": 709,
-                    "InnerType": "StructProperty",
-                    "MaybeInnerTag": {
-                      "Name": "ResponseArray",
-                      "Type": "StructProperty",
-                      "Size": 656,
-                      "StructName": "ResponseChannel"
-                    },
-                    "Value": [
-                      {
-                        "name 'Channel'": "WorldStatic",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "WorldDynamic",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Pawn",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Visibility",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Camera",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "PhysicsBody",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Vehicle",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      },
-                      {
-                        "name 'Channel'": "Destructible",
-                        "byte64 (ECollisionResponse) 'Response'": 167
-                      }
-                    ]
+          "struct BodyInstance 907 'BodyInstance'": {
+            "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
+            "name 'CollisionProfileName'": "Custom",
+            "struct CollisionResponse 750 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 709,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
+                  "Name": "ResponseArray",
+                  "Type": "StructProperty",
+                  "Size": 656,
+                  "StructName": "ResponseChannel"
+                },
+                "Value": [
+                  {
+                    "name 'Channel'": "WorldStatic",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "WorldDynamic",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Pawn",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Visibility",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Camera",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "PhysicsBody",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Vehicle",
+                    "byte64 (ECollisionResponse) 'Response'": 167
+                  },
+                  {
+                    "name 'Channel'": "Destructible",
+                    "byte64 (ECollisionResponse) 'Response'": 167
                   }
-                }
-              },
-              "bool 'bAutoWeld'": false
-            }
+                ]
+              }
+            },
+            "bool 'bAutoWeld'": false
           },
           "Vector 'RelativeScale3D'": "0.5 0.5 0.5",
           "bool 'bHiddenInGame'": true

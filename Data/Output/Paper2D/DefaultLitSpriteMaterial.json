@@ -350,7 +350,8 @@
           "Words": ""
         }
       }
-    }
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -363,138 +364,96 @@
       "Obj": {
         "__type": "UMaterial",
         "Members": {
-          "BaseColor": {
-            "Name": "BaseColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "128 128 128 255",
-              "Expression": 2,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 2,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Metallic": {
-            "Name": "Metallic",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0,
-              "Expression": 4,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Metallic'": {
+            "UseConstant": false,
+            "Constant": 0,
+            "Expression": 4,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Roughness": {
-            "Name": "Roughness",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0.5,
-              "Expression": 5,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Normal": {
-            "Name": "Normal",
-            "Type": "StructProperty",
-            "Size": 52,
-            "StructName": "VectorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "0 0 0",
-              "Expression": 7,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct VectorMaterialInput 52 'Normal'": {
+            "UseConstant": false,
+            "Constant": "0 0 0",
+            "Expression": 7,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "EmissiveColor": {
-            "Name": "EmissiveColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "0 0 0 0",
-              "Expression": 0,
-              "OutputIndex": -1,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'EmissiveColor'": {
+            "UseConstant": false,
+            "Constant": "0 0 0 0",
+            "Expression": 0,
+            "OutputIndex": -1,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Opacity": {
-            "Name": "Opacity",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 1,
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Opacity'": {
+            "UseConstant": false,
+            "Constant": 1,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "OpacityMask": {
-            "Name": "OpacityMask",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 1,
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'OpacityMask'": {
+            "UseConstant": false,
+            "Constant": 1,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "byte64 (EBlendMode) 'BlendMode'": 5,
           "bool 'TwoSided'": true,
@@ -516,14 +475,8 @@
               "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
             ]
           },
-          "LightmassSettings": {
-            "Name": "LightmassSettings",
-            "Type": "StructProperty",
-            "Size": 34,
-            "StructName": "LightmassMaterialInterfaceSettings",
-            "Value": {
-              "bool 'bCastShadowAsMasked'": true
-            }
+          "struct LightmassMaterialInterfaceSettings 34 'LightmassSettings'": {
+            "bool 'bCastShadowAsMasked'": true
           },
           "obj 'ThumbnailInfo'": 11,
           "guid 'LightingGuid'": "761383d5-4a32-d13d-5ff6-05a9831b5f65"
@@ -544,39 +497,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 9,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 9,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 6,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 1,
-              "MaskG": 1,
-              "MaskB": 1,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 6,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -208,
           "int 'MaterialExpressionEditorY'": 32,
@@ -595,39 +536,27 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "A": {
-            "Name": "A",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 9,
-              "OutputIndex": 4,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 1,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 9,
+            "OutputIndex": 4,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 1,
+            "bUseConstantValue": false
           },
-          "B": {
-            "Name": "B",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 6,
-              "OutputIndex": 4,
-              "InputName": "None",
-              "Mask": 1,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 1,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 6,
+            "OutputIndex": 4,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 1,
+            "bUseConstantValue": false
           },
           "int 'MaterialExpressionEditorX'": -208,
           "int 'MaterialExpressionEditorY'": 144,
@@ -694,22 +623,16 @@
             "Value": "text-base header=`None` Key=`FC63586341162E016180C383A75A6AFD` Namespace=`\\0` SourceString=`DiffuseMap`"
           },
           "guid 'ExpressionGUID'": "d929b02f-4eae-9eac-a6bd-93a32fb275aa",
-          "Coordinates": {
-            "Name": "Coordinates",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 8,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Coordinates'": {
+            "Expression": 8,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "obj 'Texture'": -15,
           "int 'MaterialExpressionEditorX'": -448,
@@ -738,22 +661,16 @@
           },
           "name 'ParameterName'": "SpriteAdditionalTexture\"0",
           "guid 'ExpressionGUID'": "b2dfb98b-4fa9-dfd5-4929-1ab5261725dd",
-          "Coordinates": {
-            "Name": "Coordinates",
-            "Type": "StructProperty",
-            "Size": 36,
-            "StructName": "ExpressionInput",
-            "Value": {
-              "Expression": 8,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ExpressionInput 36 'Coordinates'": {
+            "Expression": 8,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "obj 'Texture'": -16,
           "byte64 (EMaterialSamplerType) 'SamplerType'": 47,
