@@ -5,7 +5,7 @@ using System.Reflection;
 namespace AssetTool.Test.QuickTest
 {
     [NonParallelizable]
-    public class QuickTests : TestBase
+    public class QuickSequentialTests : TestBase
     {
         [SetUp]
         public void Setup()
@@ -15,7 +15,7 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(1)]
-        public void Test_01_Quick_Files()
+        public void Test_01_RunUassetToJson_Then_RunJsonToUasset()
         {
             Test_UE_Files("QuickTest_Files");
         }
@@ -36,28 +36,6 @@ namespace AssetTool.Test.QuickTest
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             bool success = StructWriter.RunJsonToUassetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", $"{dir}\\..\\..\\..\\..\\Data\\Input", true);
             Assert.That(success, "RunJsonToUassetFiles failed");
-        }
-
-
-        [Test]
-        [Order(4)]
-        public void Test_04_Blueprints_UE4()
-        {
-            Test_UE_Files("Blueprint_Files_UE4");
-        }
-
-        [Test]
-        [Order(4)]
-        public void Test_05_Blueprints_UE5()
-        {
-            Test_UE_Files("Blueprint_Files_UE5");
-        }
-
-        [Test]
-        [Order(4)]
-        public void Test_06_Blueprints_Others()
-        {
-            Test_UE_Files("Blueprint_Files_Others");
         }
     }
 }

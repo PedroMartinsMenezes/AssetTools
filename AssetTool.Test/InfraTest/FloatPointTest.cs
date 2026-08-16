@@ -13,7 +13,10 @@ namespace AssetTool.Test.InfraTest
 
             double reconstructed = double.Parse(text);
 
-            Assert.That(reconstructed, Is.Not.EqualTo(original));
+            if (IsVs2026())
+                Assert.That(reconstructed, Is.Not.EqualTo(original));
+            else
+                Assert.That(reconstructed, Is.EqualTo(original));
         }
 
         [Test]

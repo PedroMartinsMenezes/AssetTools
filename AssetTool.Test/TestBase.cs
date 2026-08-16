@@ -29,6 +29,12 @@ namespace AssetTool.Test
             }
         }
 
+        protected bool IsVs2026()
+        {
+            string vsEnv = Environment.GetEnvironmentVariable("VisualStudioVersion");
+            return !string.IsNullOrEmpty(vsEnv) && vsEnv.Contains("18");
+        }
+
         [TearDown]
         public virtual void TearDown()
         {
