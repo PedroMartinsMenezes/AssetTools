@@ -82,11 +82,14 @@ namespace AssetTool
                 File.WriteAllBytes(outputBinary, outputBytes2);
             }
 
-            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Input\\"))
+            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Data\\Input\\"))
             {
                 string ext = Path.GetExtension(InAssetPath);
-                string outputPath = InAssetPath.Replace("\\Input\\", "\\Output\\").Replace(ext, ".json");
-                asset.SaveToJson(outputPath, transferReader);
+                string[] parts = InAssetPath.Split("\\Data\\Input\\");
+                string inputDir = parts[0] + "\\Data\\Input\\";
+                string outputDir = parts[0] + "\\Data\\Output\\";
+                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                asset.SaveToJson(outputFile, transferReader);
             }
 
             return success;
