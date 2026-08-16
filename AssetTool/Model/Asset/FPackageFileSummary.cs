@@ -32,6 +32,10 @@ namespace AssetTool
         public Int32 SoftPackageReferencesOffset;
         public Int32 SearchableNamesOffset;
         public Int32 ThumbnailTableOffset;
+
+        public Int32 ImportTypeHierarchiesCount;
+        public Int32 ImportTypeHierarchiesOffset;
+
         public FGuid Guid;
         public FGuid PersistentGuid;
         public FGuid OwnerPersistentGuid;
@@ -171,10 +175,12 @@ namespace AssetTool
                 transfer.Move(ref SearchableNamesOffset);
             }
             transfer.Move(ref ThumbnailTableOffset);
+
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
                 transfer.Move(ref Guid);
             }
+
             if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_OWNER)
             {
                 transfer.Move(ref PersistentGuid);
@@ -236,6 +242,118 @@ namespace AssetTool
                 transfer.Move(ref DataResourceOffset);
             }
             return this;
+        }
+
+        public ITransferable WriteCooked(Transfer transfer)
+        {
+            bool IsCooking = true;
+
+            transfer.Move(ref Tag);//4
+
+            transfer.Move(ref LegacyFileVersion);//8
+
+            #region If Writing
+            int32 Zero = 0;
+            transfer.Move(ref Zero); //12 LegacyUE3Version
+            transfer.Move(ref Zero); //16 FileVersionUE.FileVersionUE4
+            transfer.Move(ref Zero); //20 FileVersionUE.FileVersionUE5
+            transfer.Move(ref Zero); //24 FileVersionLicenseeUE
+
+            if (transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref SavedHash); //44
+                transfer.Move(ref TotalHeaderSize); //48
+            }
+
+            FCustomVersionContainer NoCustomVersions = new();
+            transfer.Move(ref NoCustomVersions, ECustomVersionSerializationFormat.Latest); //52
+            #endregion
+
+            if (!transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref TotalHeaderSize); //ignored
+            }
+            transfer.Move(ref PackageName); //129
+
+            if (IsCooking)
+            {
+                PackageFlags |= EPackageFlags.PKG_Cooked;
+            }
+            transfer.MoveEnum(ref PackageFlags); //133
+
+            transfer.Move(ref NameCount); //137
+            transfer.Move(ref NameOffset); //141
+
+            if (transfer.Supports.ADD_SOFTOBJECTPATH_LIST)
+            {
+                transfer.Move(ref SoftObjectPathsCount); //145
+                transfer.Move(ref SoftObjectPathsOffset); //149
+            }
+
+            if (!transfer.GlobalObjects.IsFilterEditorOnly() && transfer.Supports.VER_UE4_ADDED_PACKAGE_SUMMARY_LOCALIZATION_ID)
+            {
+                transfer.Move(ref LocalizationId); //ignored
+            }
+
+            if (transfer.Supports.VER_UE4_SERIALIZE_TEXT_IN_PACKAGES)
+            {
+                transfer.Move(ref GatherableTextDataCount); //153
+                transfer.Move(ref GatherableTextDataOffset); //157
+            }
+
+            transfer.Move(ref ExportCount); //161
+            transfer.Move(ref ExportOffset); //165
+            transfer.Move(ref ImportCount); //169
+            transfer.Move(ref ImportOffset); //173
+
+            if (transfer.Supports.VERSE_CELLS)
+            {
+                transfer.Move(ref CellExportCount); //177
+                transfer.Move(ref CellExportOffset); //181
+                transfer.Move(ref CellImportCount); //185
+                transfer.Move(ref CellImportOffset); //189
+            }
+
+            if (transfer.Supports.METADATA_SERIALIZATION_OFFSET)
+            {
+                transfer.Move(ref MetaDataOffset); //193
+            }
+
+            transfer.Move(ref DependsOffset); //197
+
+            if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
+            {
+                transfer.Move(ref SoftPackageReferencesCount); //201
+                transfer.Move(ref SoftPackageReferencesOffset); //205
+            }
+
+            if (transfer.Supports.VER_UE4_ADDED_SEARCHABLE_NAMES)
+            {
+                transfer.Move(ref SearchableNamesOffset); //209
+            }
+
+            transfer.Move(ref ThumbnailTableOffset); //213
+
+            if (transfer.Supports.IMPORT_TYPE_HIERARCHIES)
+            {
+                transfer.Move(ref ImportTypeHierarchiesCount); //217
+                transfer.Move(ref ImportTypeHierarchiesOffset); //221
+            }
+
+            //Linha 337
+            //if (Sum.GetFileVersionUE() < EUnrealEngineObjectUE5Version::PACKAGE_SAVED_HASH)
+
+            //transfer.Move(ref Generations); //233
+
+            //FEngineVersion EmptyEngineVersion; //onde era SavedByEngineVersion
+            //transfer.Move(ref EmptyEngineVersion); //247
+
+            //FEngineVersion EmptyEngineVersion; //onde era CompatibleWithEngineVersion
+            //transfer.Move(ref EmptyEngineVersion); //261
+
+            //transfer.Move(ref CompressionFlags); //265
+
+            return this; //321
         }
 
         private static ECustomVersionSerializationFormat GetCustomVersionFormatForArchive(int32 LegacyFileVersion)
