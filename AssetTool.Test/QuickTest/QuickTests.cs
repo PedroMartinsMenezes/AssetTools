@@ -1,5 +1,4 @@
 using NUnit.Framework;
-using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 
@@ -23,31 +22,22 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(2)]
-        public void Test_02_RunJsonToUasset()
+        public void Test_02_RunUassetToJson()
         {
-            Stopwatch w = new Stopwatch();
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string[] files = Directory.GetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", "*.json", SearchOption.AllDirectories);
-            w.Start();
-            foreach (string file in files)
-            {
-                bool success = StructWriter.RunJsonToUasset(file, null);
-                Assert.That(success, file);
-            }
-            w.Stop();
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            bool success = StructWriter.RunUassetToJsonFiles($"{dir}\\..\\..\\..\\..\\Data\\Input", $"{dir}\\..\\..\\..\\..\\Data\\Output", true);
+            Assert.That(success, "RunUassetToJsonFiles failed");
         }
 
         [Test]
         [Order(3)]
-        public void Test_03_RunUassetToJson()
+        public void Test_03_RunJsonToUasset()
         {
-            string input = "Data\\Input\\BP_TestActor.uasset";
-            string output = "Data\\Output\\BP_TestActor.json";
-            bool success = StructWriter.RunUassetToJson(input, output);
-            Assert.That(success, input);
+            var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            bool success = StructWriter.RunJsonToUassetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", $"{dir}\\..\\..\\..\\..\\Data\\Input", true);
+            Assert.That(success, "RunJsonToUassetFiles failed");
         }
+
 
         [Test]
         [Order(4)]
