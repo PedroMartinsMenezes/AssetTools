@@ -129,12 +129,11 @@
     {
         BULKDATA_None = 0,
         BULKDATA_PayloadAtEndOfFile = 1 << 0,
-        BULKDATA_SerializeCompressedZLIB = 1 << 1,
+        BULKDATA_SerializeCompressed = 1 << 1,
         BULKDATA_ForceSingleElementSerialization = 1 << 2,
         BULKDATA_SingleUse = 1 << 3,
         BULKDATA_Unused = 1 << 5,
         BULKDATA_ForceInlinePayload = 1 << 6,
-        BULKDATA_SerializeCompressed = (BULKDATA_SerializeCompressedZLIB),
         BULKDATA_ForceStreamPayload = 1 << 7,
         BULKDATA_PayloadInSeperateFile = 1 << 8,
         BULKDATA_SerializeCompressedBitWindow = 1 << 9,

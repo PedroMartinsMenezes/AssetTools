@@ -82,16 +82,20 @@ namespace AssetTool
                 File.WriteAllBytes(outputBinary, outputBytes2);
             }
 
-            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Input\\"))
+            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Data\\Input\\"))
             {
                 string ext = Path.GetExtension(InAssetPath);
-                string outputPath = InAssetPath.Replace("\\Input\\", "\\Output\\").Replace(ext, ".json");
-                asset.SaveToJson(outputPath, transferReader);
+                string[] parts = InAssetPath.Split("\\Data\\Input\\");
+                string inputDir = parts[0] + "\\Data\\Input\\";
+                string outputDir = parts[0] + "\\Data\\Output\\";
+                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                asset.SaveToJson(outputFile, transferReader);
             }
 
             return success;
         }
 
+        #region RunUassetToJson
         public static bool RunUassetToJson(string inputFile, string outputFile)
         {
             bool success = false;
@@ -119,6 +123,27 @@ namespace AssetTool
             return success;
         }
 
+        public static bool RunUassetToJsonFiles(string inputDir, string outputDir, bool exitOnError)
+        {
+            string[] inputFiles = Directory.GetFiles(inputDir, "*.uasset", SearchOption.AllDirectories);
+            foreach (string inputFile in inputFiles)
+            {
+                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".uasset", ".json");
+                bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
+                if (!success)
+                {
+                    Log.Error($"Failed to convert {inputFile} to {outputFile}");
+                    if (exitOnError)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion
+
+        #region RunJsonToUasset
         public static bool RunJsonToUasset(string inputFile, string outputFile = null)
         {
             bool success = false;
@@ -131,13 +156,14 @@ namespace AssetTool
                     outputFile = Path.Combine(outputDir, inputFile.NameWithExtension());
                 }
             }
-            using MemoryStream stream1 = new();
-            using BinaryWriter writer1 = new BinaryWriter(stream1);
-            using TransferWriter transferWriter = new TransferWriter(writer1);
 
             //Read json file
             AssetPackage asset = inputFile.ReadJson<AssetPackage>();
+
             //Write uasset file
+            using MemoryStream stream1 = new();
+            using BinaryWriter writer1 = new BinaryWriter(stream1);
+            using TransferWriter transferWriter = new TransferWriter(writer1);
             success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
 
@@ -145,6 +171,26 @@ namespace AssetTool
                 File.WriteAllBytes(outputFile, stream1.ToArray());
             return success;
         }
+
+        public static bool RunJsonToUassetFiles(string inputDir, string outputDir, bool exitOnError)
+        {
+            string[] inputFiles = Directory.GetFiles(inputDir, "*.json", SearchOption.AllDirectories);
+            foreach (string inputFile in inputFiles)
+            {
+                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".json", ".uasset");
+                bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
+                if (!success)
+                {
+                    Log.Error($"Failed to convert {inputFile} to {outputFile}");
+                    if (exitOnError)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        #endregion
 
         public static bool IsAssetType(string InAssetPath, string assetType)
         {

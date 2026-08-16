@@ -25,8 +25,15 @@ namespace AssetTool
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferable Move(Transfer transfer)
         {
-            transfer.GlobalObjects.GlobalTypeNames ??= new();
-            GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
+            if (transfer.IsReading)
+            {
+                transfer.GlobalObjects.GlobalTypeNames = new();
+                GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
+            }
+            else
+            {
+                transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
+            }
 
             SerializePackageFileSummary(transfer);
             SerializeNameMap(transfer);
