@@ -12,6 +12,7 @@ namespace AssetTool
         public Int32 LegacyUE3Version;
         public FPackageFileVersion FileVersionUE;
         public Int32 FileVersionLicenseeUE;
+        public bool bUnversioned;
         public FCustomVersionContainer CustomVersionContainer;
         public Int32 TotalHeaderSize;
         public FString PackageName;
@@ -32,10 +33,8 @@ namespace AssetTool
         public Int32 SoftPackageReferencesOffset;
         public Int32 SearchableNamesOffset;
         public Int32 ThumbnailTableOffset;
-
         public Int32 ImportTypeHierarchiesCount;
         public Int32 ImportTypeHierarchiesOffset;
-
         public FGuid Guid;
         public FGuid PersistentGuid;
         public FGuid OwnerPersistentGuid;
@@ -69,10 +68,6 @@ namespace AssetTool
         public Int32 ChunkID;
         #endregion
 
-        #region Special Variables
-        public bool FileVersionUE4IsZero = false;
-        #endregion
-
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public ITransferable Move(Transfer transfer)
         {
@@ -82,46 +77,114 @@ namespace AssetTool
                 throw new FormatException("File signature mismatch");
             }
             transfer.Move(ref LegacyFileVersion);
-            if (LegacyFileVersion != -4)
+
+            #region IsReading or IsWriting logic
+            if (transfer.IsReading)
             {
-                transfer.Move(ref LegacyUE3Version);
-            }
-            if (FileVersionUE4IsZero)
-            {
-                transfer.MoveConst(0);
+                if (LegacyFileVersion < 0)
+                {
+                    const int32 CurrentLegacyFileVersion = -9;
+                    if (LegacyFileVersion < CurrentLegacyFileVersion)
+                    {
+                        // we can't safely load more than this because the legacy version code differs in ways we can not predict.
+                        // Make sure that the linker will fail to load with it.
+                        FileVersionUE.Reset();
+                        FileVersionLicenseeUE = 0;
+                        return this;
+                    }
+                    if (LegacyFileVersion != -4)
+                    {
+                        transfer.Move(ref LegacyUE3Version);
+                    }
+                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
+                    if (LegacyFileVersion <= -8)
+                    {
+                        transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
+                    }
+                    transfer.Move(ref FileVersionLicenseeUE);
+
+                    bUnversioned = FileVersionUE.FileVersionUE4 == 0 && FileVersionUE.FileVersionUE5 == 0 && FileVersionLicenseeUE == 0;
+
+                    if (bUnversioned)
+                    {
+                        // Use the latest supported versions
+                        FileVersionUE = Consts.GPackageFileUEVersion;
+                        FileVersionLicenseeUE = (Int32)Consts.GPackageFileLicenseeUEVersion;
+                    }
+
+                    if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
+                    {
+                        string name = transfer.GlobalObjects.FileName;
+                        int min = (int)EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
+                        int ver = (int)FileVersionUE.FileVersionUE4;
+                        throw new InvalidOperationException($"Package is unloadable: {name}. Reason: Version is too old. Min Version: {min}, Package Version: {ver}.");
+                    }
+
+                    if (transfer.Supports.PACKAGE_SAVED_HASH)
+                    {
+                        transfer.Move(ref SavedHash);
+                        transfer.Move(ref TotalHeaderSize);
+                    }
+
+                    if (LegacyFileVersion <= -2)
+                    {
+                        transfer.Move(ref CustomVersionContainer, GetCustomVersionFormatForArchive(LegacyFileVersion));
+                    }
+
+                    if (bUnversioned)
+                    {
+                        // Overwrite the CustomVersionContainer that we deserialized; it was an empty container written
+                        // during unversioned savepackage. Overwrite with the latest version of all custom versions.
+                        CustomVersionContainer = transfer.GlobalObjects.PackageFileSummary.CustomVersionContainer;
+                    }
+                }
+                else
+                {
+                    // This is probably an old UE3 file, make sure that the linker will fail to load with it.
+                    FileVersionUE.Reset();
+                    FileVersionLicenseeUE = 0;
+                    throw new InvalidOperationException("UE3 file is not supported");
+                }
             }
             else
             {
-                transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
-            }
-            if (FileVersionUE.FileVersionUE4 == 0)
-            {
-                FileVersionUE4IsZero = true;
-                FileVersionUE.FileVersionUE4 = EUnrealEngineObjectUE4Version.VER_UE4_AUTOMATIC_VERSION;
-            }
-            if (LegacyFileVersion <= -8)
-            {
-                transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
-            }
-            transfer.Move(ref FileVersionLicenseeUE);
+                if (bUnversioned)
+                {
+                    int32 Zero = 0;
+                    transfer.Move(ref Zero); //12 LegacyUE3Version
+                    transfer.Move(ref Zero); //16 FileVersionUE.FileVersionUE4
+                    transfer.Move(ref Zero); //20 FileVersionUE.FileVersionUE5
+                    transfer.Move(ref Zero); //24 FileVersionLicenseeUE
+                }
+                else
+                {
+                    // Must write out the last UE3 engine version, so that older versions identify it as new
+                    LegacyUE3Version = 864;
+                    transfer.Move(ref LegacyUE3Version); //12 LegacyUE3Version
+                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4); //16 FileVersionUE.FileVersionUE4
+                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE5); //20 FileVersionUE.FileVersionUE5
+                    transfer.Move(ref FileVersionLicenseeUE); //24 FileVersionLicenseeUE
+                }
 
-            if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
-            {
-                string name = transfer.GlobalObjects.FileName;
-                int min = (int)EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
-                int ver = (int)FileVersionUE.FileVersionUE4;
-                throw new InvalidOperationException($"Package is unloadable: {name}. Reason: Version is too old. Min Version: {min}, Package Version: {ver}.");
-            }
+                if (transfer.Supports.PACKAGE_SAVED_HASH)
+                {
+                    transfer.Move(ref SavedHash); //44
+                    transfer.Move(ref TotalHeaderSize); //48
+                }
 
-            if (transfer.Supports.PACKAGE_SAVED_HASH)
-            {
-                transfer.Move(ref SavedHash);
-                transfer.Move(ref TotalHeaderSize);
+                if (bUnversioned)
+                {
+                    FCustomVersionContainer NoCustomVersions = new() { Versions = [] };
+                    transfer.Move(ref NoCustomVersions, ECustomVersionSerializationFormat.Latest); //52
+                }
+                else
+                {
+                    transfer.Move(ref CustomVersionContainer);
+                }
             }
-            if (LegacyFileVersion <= -2)
-            {
-                transfer.Move(ref CustomVersionContainer, GetCustomVersionFormatForArchive(LegacyFileVersion));
-            }
+            #endregion
+
+            #region Common Logic
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
                 transfer.Move(ref TotalHeaderSize);
@@ -175,6 +238,12 @@ namespace AssetTool
                 transfer.Move(ref SearchableNamesOffset);
             }
             transfer.Move(ref ThumbnailTableOffset);
+
+            if (transfer.Supports.IMPORT_TYPE_HIERARCHIES)
+            {
+                transfer.Move(ref ImportTypeHierarchiesCount);
+                transfer.Move(ref ImportTypeHierarchiesOffset);
+            }
 
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
@@ -241,6 +310,7 @@ namespace AssetTool
             {
                 transfer.Move(ref DataResourceOffset);
             }
+            #endregion
             return this;
         }
 
@@ -380,6 +450,12 @@ namespace AssetTool
     {
         public EUnrealEngineObjectUE4Version FileVersionUE4;
         public EUnrealEngineObjectUE5Version FileVersionUE5;
+
+        public void Reset()
+        {
+            FileVersionUE4 = 0;
+            FileVersionUE5 = 0;
+        }
     }
 
     public class FCustomVersionContainer : ITransferable<ECustomVersionSerializationFormat>

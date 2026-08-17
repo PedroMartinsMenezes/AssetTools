@@ -12,7 +12,7 @@ namespace AssetTool
         public FooterData Footer = new();
         [JsonIgnore] public bool VersionIsTooOld => Header.PackageFileSummary.FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
 
-        [JsonIgnore] public int Length => (Objects.Count == 0 ? Header.PackageFileSummary.TotalHeaderSize : (int)Objects[^1].NextOffset) + Footer.Length;
+        [JsonIgnore] public int Length => (Objects is null || Objects.Count == 0 ? Header.PackageFileSummary.TotalHeaderSize : (int)Objects[^1].NextOffset) + Footer.Length;
 
         public bool Move(Transfer transfer, string context)
         {
@@ -24,6 +24,10 @@ namespace AssetTool
                 if (!success)
                 {
                     return false;
+                }
+                if (transfer.GlobalObjects.PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked))
+                {
+                    return true;
                 }
 
                 SetupObjects();
@@ -116,6 +120,10 @@ namespace AssetTool
                 if (!success)
                 {
                     return false;
+                }
+                if (transfer.GlobalObjects.PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked))
+                {
+                    return true;
                 }
 
                 SetupObjects();

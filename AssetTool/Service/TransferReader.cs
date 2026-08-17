@@ -475,7 +475,11 @@ namespace AssetTool
         public override void Move(ref FString value)
         {
             int size = reader.ReadInt32();
-            if (size > AppConfig.MaxStringSize) throw new InvalidOperationException("FString to big");
+            if (size > AppConfig.MaxStringSize)
+                throw new InvalidOperationException("FString to big");
+            ///if (IsReading && size > (int)Length)
+            ///    throw new InvalidOperationException("FString to big");
+
             bool bLoadUnicodeChar = size < 0;
             if (bLoadUnicodeChar)
                 size = -2 * size;
