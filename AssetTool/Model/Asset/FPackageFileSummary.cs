@@ -68,6 +68,11 @@ namespace AssetTool
         public Int32 ChunkID;
         #endregion
 
+        #region Backup
+        public FPackageFileVersion FileVersionUEBackup;
+        public Int32 FileVersionLicenseeUEBackup;
+        #endregion
+
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public ITransferable Move(Transfer transfer)
         {
@@ -90,26 +95,32 @@ namespace AssetTool
                         // Make sure that the linker will fail to load with it.
                         FileVersionUE.Reset();
                         FileVersionLicenseeUE = 0;
-                        return this;
+                        throw new InvalidOperationException("Legacy version unsupported");
                     }
                     if (LegacyFileVersion != -4)
                     {
                         transfer.Move(ref LegacyUE3Version);
                     }
+
+                    FileVersionUE = FileVersionUEBackup;
                     transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
                     if (LegacyFileVersion <= -8)
                     {
                         transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
                     }
+                    FileVersionUEBackup = FileVersionUE;
+
+                    FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
                     transfer.Move(ref FileVersionLicenseeUE);
+                    FileVersionLicenseeUEBackup = FileVersionLicenseeUE;
 
                     bUnversioned = FileVersionUE.FileVersionUE4 == 0 && FileVersionUE.FileVersionUE5 == 0 && FileVersionLicenseeUE == 0;
 
                     if (bUnversioned)
                     {
                         // Use the latest supported versions
-                        FileVersionUE = Consts.GPackageFileUEVersion;
-                        FileVersionLicenseeUE = (Int32)Consts.GPackageFileLicenseeUEVersion;
+                        FileVersionUE = Consts.GPackageFileUEVersion; //@@@ ???
+                        FileVersionLicenseeUE = (Int32)Consts.GPackageFileLicenseeUEVersion; //@@@ ???
                     }
 
                     if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
@@ -159,10 +170,17 @@ namespace AssetTool
                 else
                 {
                     // Must write out the last UE3 engine version, so that older versions identify it as new
-                    LegacyUE3Version = 864;
+                    ///LegacyUE3Version = 864;
                     transfer.Move(ref LegacyUE3Version); //12 LegacyUE3Version
-                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4); //16 FileVersionUE.FileVersionUE4
-                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE5); //20 FileVersionUE.FileVersionUE5
+
+                    FileVersionUE = FileVersionUEBackup;
+                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
+                    if (LegacyFileVersion <= -8)
+                    {
+                        transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
+                    }
+
+                    FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
                     transfer.Move(ref FileVersionLicenseeUE); //24 FileVersionLicenseeUE
                 }
 
@@ -179,7 +197,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    transfer.Move(ref CustomVersionContainer);
+                    transfer.Move(ref CustomVersionContainer, GetCustomVersionFormatForArchive(LegacyFileVersion));
                 }
             }
             #endregion
