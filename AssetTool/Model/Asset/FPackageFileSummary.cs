@@ -170,8 +170,10 @@ namespace AssetTool
                 else
                 {
                     // Must write out the last UE3 engine version, so that older versions identify it as new
-                    ///LegacyUE3Version = 864;
-                    transfer.Move(ref LegacyUE3Version); //12 LegacyUE3Version
+                    if (LegacyFileVersion != -4)
+                    {
+                        transfer.Move(ref LegacyUE3Version);
+                    }
 
                     FileVersionUE = FileVersionUEBackup;
                     transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
