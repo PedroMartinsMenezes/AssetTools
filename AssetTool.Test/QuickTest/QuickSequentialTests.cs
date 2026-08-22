@@ -15,14 +15,7 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(1)]
-        public void Test_01_RunUassetToJson_Then_RunJsonToUasset()
-        {
-            Test_UE_Files("QuickTest_Files");
-        }
-
-        [Test]
-        [Order(2)]
-        public void Test_02_RunUassetToJson()
+        public void Test_01_RunUassetToJson()
         {
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             bool success = StructWriter.RunUassetToJsonFiles($"{dir}\\..\\..\\..\\..\\Data\\Input", $"{dir}\\..\\..\\..\\..\\Data\\Output", true);
@@ -30,12 +23,19 @@ namespace AssetTool.Test.QuickTest
         }
 
         [Test]
-        [Order(3)]
-        public void Test_03_RunJsonToUasset()
+        [Order(2)]
+        public void Test_02_RunJsonToUasset()
         {
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             bool success = StructWriter.RunJsonToUassetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", $"{dir}\\..\\..\\..\\..\\Data\\Input", true);
             Assert.That(success, "RunJsonToUassetFiles failed");
+        }
+
+        [Test]
+        [Order(3)]
+        public void Test_03_Both()
+        {
+            Test_UE_Files("QuickTest_Files");
         }
     }
 }
