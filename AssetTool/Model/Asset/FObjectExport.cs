@@ -6,7 +6,6 @@ namespace AssetTool
 {
     public class FObjectExport : ITransferable
     {
-        #region Original Members
         public FPackageIndex ClassIndex = new();
         public FPackageIndex SuperIndex = new();
         public FPackageIndex TemplateIndex = new();
@@ -27,18 +26,7 @@ namespace AssetTool
         public Int32 FirstExportDependency;
         public Int64 ScriptSerializationStartOffset;
         public Int64 ScriptSerializationEndOffset;
-        #endregion
-
-        #region PreloadDependencies Members
-        public int SerializationBeforeSerializationDependenciesSize;
-        public int CreateBeforeSerializationDependenciesSize;
-        public int SerializationBeforeCreateDependenciesSize;
-        public int CreateBeforeCreateDependenciesSize;
-        public List<FPackageIndex> SerializationBeforeSerializationDependencies;
-        public List<FPackageIndex> CreateBeforeSerializationDependencies;
-        public List<FPackageIndex> SerializationBeforeCreateDependencies;
-        public List<FPackageIndex> CreateBeforeCreateDependencies;
-        #endregion
+        public PreloadDependencies PreloadDependencies = new();
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectExport& E)")]
         public ITransferable Move(Transfer transfer)
@@ -88,10 +76,10 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
                 transfer.Move(ref FirstExportDependency);
-                transfer.Move(ref SerializationBeforeSerializationDependenciesSize);
-                transfer.Move(ref CreateBeforeSerializationDependenciesSize);
-                transfer.Move(ref SerializationBeforeCreateDependenciesSize);
-                transfer.Move(ref CreateBeforeCreateDependenciesSize);
+                transfer.Move(ref PreloadDependencies.SerializationBeforeSerializationDependenciesSize);
+                transfer.Move(ref PreloadDependencies.CreateBeforeSerializationDependenciesSize);
+                transfer.Move(ref PreloadDependencies.SerializationBeforeCreateDependenciesSize);
+                transfer.Move(ref PreloadDependencies.CreateBeforeCreateDependenciesSize);
             }
 
             if (!transfer.GlobalObjects.HasUnversionedProperties() && transfer.Supports.SCRIPT_SERIALIZATION_OFFSET)
@@ -109,37 +97,65 @@ namespace AssetTool
             TemplateIndex.UpdateIndexes(transfer);
             OuterIndex.UpdateIndexes(transfer);
 
-            SerializationBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
-            CreateBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
-            SerializationBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
-            CreateBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
+            {
+                PreloadDependencies.SerializationBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+                PreloadDependencies.CreateBeforeSerializationDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+                PreloadDependencies.SerializationBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+                PreloadDependencies.CreateBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
+            }
         }
 
         public static void SerializePreloadDependencies(Transfer transfer, List<FObjectExport> ObjectExports)
         {
-            foreach (var exportObj in ObjectExports)
+            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
             {
-                if (exportObj.SerializationBeforeSerializationDependenciesSize > 0)
-                {
-                    transfer.Resize(ref exportObj.SerializationBeforeSerializationDependencies, exportObj.SerializationBeforeSerializationDependenciesSize);
-                    exportObj.SerializationBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
-                }
-                if (exportObj.CreateBeforeSerializationDependenciesSize > 0)
-                {
-                    transfer.Resize(ref exportObj.CreateBeforeSerializationDependencies, exportObj.CreateBeforeSerializationDependenciesSize);
-                    exportObj.CreateBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
-                }
-                if (exportObj.SerializationBeforeCreateDependenciesSize > 0)
-                {
-                    transfer.Resize(ref exportObj.SerializationBeforeCreateDependencies, exportObj.SerializationBeforeCreateDependenciesSize);
-                    exportObj.SerializationBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
-                }
-                if (exportObj.CreateBeforeCreateDependenciesSize > 0)
-                {
-                    transfer.Resize(ref exportObj.CreateBeforeCreateDependencies, exportObj.CreateBeforeCreateDependenciesSize);
-                    exportObj.CreateBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
-                }
+                ObjectExports.ForEach(x => x.PreloadDependencies.SerializePreloadDependencies(transfer));
             }
+        }
+    }
+
+    public class PreloadDependencies
+    {
+        public int SerializationBeforeSerializationDependenciesSize;
+        public List<FPackageIndex> SerializationBeforeSerializationDependencies;
+
+        public int CreateBeforeSerializationDependenciesSize;
+        public List<FPackageIndex> CreateBeforeSerializationDependencies;
+
+        public int SerializationBeforeCreateDependenciesSize;
+        public List<FPackageIndex> SerializationBeforeCreateDependencies;
+
+        public int CreateBeforeCreateDependenciesSize;
+        public List<FPackageIndex> CreateBeforeCreateDependencies;
+
+        public void SerializePreloadDependencies(Transfer transfer)
+        {
+            if (SerializationBeforeSerializationDependenciesSize > 0)
+            {
+                transfer.Resize(ref SerializationBeforeSerializationDependencies, SerializationBeforeSerializationDependenciesSize);
+                SerializationBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
+            }
+            if (CreateBeforeSerializationDependenciesSize > 0)
+            {
+                transfer.Resize(ref CreateBeforeSerializationDependencies, CreateBeforeSerializationDependenciesSize);
+                CreateBeforeSerializationDependencies.ForEach(x => x.Move(transfer, true));
+            }
+            if (SerializationBeforeCreateDependenciesSize > 0)
+            {
+                transfer.Resize(ref SerializationBeforeCreateDependencies, SerializationBeforeCreateDependenciesSize);
+                SerializationBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
+            }
+            if (CreateBeforeCreateDependenciesSize > 0)
+            {
+                transfer.Resize(ref CreateBeforeCreateDependencies, CreateBeforeCreateDependenciesSize);
+                CreateBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
+            }
+        }
+
+        public ITransferable Move(Transfer transfer)
+        {
+            throw new NotImplementedException();
         }
     }
 
@@ -156,7 +172,6 @@ namespace AssetTool
                     int i = 1;
                     var obj = new FObjectExport
                     {
-                        #region Original Members
                         ClassIndex = new(v[i++]),
                         SuperIndex = new(v[i++]),
                         TemplateIndex = new(v[i++]),
@@ -176,25 +191,21 @@ namespace AssetTool
                         FirstExportDependency = Int32.Parse(v[i++]),
                         ScriptSerializationStartOffset = Int64.Parse(v[i++]),
                         ScriptSerializationEndOffset = Int64.Parse(v[i++]),
-                        #endregion
+                        PreloadDependencies = new PreloadDependencies()
+                        {
+                            SerializationBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
+                            SerializationBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
 
-                        #region UAssetAPI Members
-                        SerializationBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
-                        SerializationBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                            CreateBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
+                            CreateBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
 
-                        CreateBeforeSerializationDependenciesSize = Int32.Parse(v[i++]),
-                        CreateBeforeSerializationDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                            SerializationBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
+                            SerializationBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
 
-                        SerializationBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
-                        SerializationBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
-
-                        CreateBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
-                        CreateBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
-                        #endregion
-
-                        #region Original Members
+                            CreateBeforeCreateDependenciesSize = Int32.Parse(v[i++]),
+                            CreateBeforeCreateDependencies = v[i++].Length > 0 ? v[i - 1].Split(' ').Select(x => new FPackageIndex { Index = int.Parse(x) }).ToList() : default,
+                        },
                         ObjectFlags = Enum.Parse<EObjectFlags>(v[i]),
-                        #endregion
                     };
                     list.Add(obj);
                 }
@@ -234,17 +245,17 @@ namespace AssetTool
                 #endregion
 
                 #region UAssetAPI Members
-                s.Append(x.SerializationBeforeSerializationDependenciesSize).Append(" | ");
-                s.Append(x.SerializationBeforeSerializationDependencies.ToStr()).Append(" | ");
+                s.Append(x.PreloadDependencies.SerializationBeforeSerializationDependenciesSize).Append(" | ");
+                s.Append(x.PreloadDependencies.SerializationBeforeSerializationDependencies.ToStr()).Append(" | ");
 
-                s.Append(x.CreateBeforeSerializationDependenciesSize).Append(" | ");
-                s.Append(x.CreateBeforeSerializationDependencies.ToStr()).Append(" | ");
+                s.Append(x.PreloadDependencies.CreateBeforeSerializationDependenciesSize).Append(" | ");
+                s.Append(x.PreloadDependencies.CreateBeforeSerializationDependencies.ToStr()).Append(" | ");
 
-                s.Append(x.SerializationBeforeCreateDependenciesSize).Append(" | ");
-                s.Append(x.SerializationBeforeCreateDependencies.ToStr()).Append(" | ");
+                s.Append(x.PreloadDependencies.SerializationBeforeCreateDependenciesSize).Append(" | ");
+                s.Append(x.PreloadDependencies.SerializationBeforeCreateDependencies.ToStr()).Append(" | ");
 
-                s.Append(x.CreateBeforeCreateDependenciesSize).Append(" | ");
-                s.Append(x.CreateBeforeCreateDependencies.ToStr()).Append(" | ");
+                s.Append(x.PreloadDependencies.CreateBeforeCreateDependenciesSize).Append(" | ");
+                s.Append(x.PreloadDependencies.CreateBeforeCreateDependencies.ToStr()).Append(" | ");
                 #endregion
 
                 #region Original Members

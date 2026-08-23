@@ -230,8 +230,8 @@ namespace AssetTool
                 ClassName = GetClassName(x),
                 SuperName = GetSuperName(x),
                 //<
-                SerializationBeforeSerializationDependencies = x.SerializationBeforeSerializationDependencies,
-                SerializationBeforeCreateDependencies = x.SerializationBeforeCreateDependencies
+                SerializationBeforeSerializationDependencies = x.PreloadDependencies.SerializationBeforeSerializationDependencies,
+                SerializationBeforeCreateDependencies = x.PreloadDependencies.SerializationBeforeCreateDependencies
                 //>
             })
             .ToList();
