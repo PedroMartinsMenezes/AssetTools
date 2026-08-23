@@ -244,7 +244,7 @@ namespace AssetTool
                 s.Append(x.ScriptSerializationEndOffset).Append(" | ");
                 #endregion
 
-                #region UAssetAPI Members
+                #region PreloadDependencies Members
                 s.Append(x.PreloadDependencies.SerializationBeforeSerializationDependenciesSize).Append(" | ");
                 s.Append(x.PreloadDependencies.SerializationBeforeSerializationDependencies.ToStr()).Append(" | ");
 
