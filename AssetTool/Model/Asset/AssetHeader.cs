@@ -17,6 +17,8 @@ namespace AssetTool
         public FObjectThumbnails Thumbnails;
         public ThumbnailTable ThumbnailTable;
         public AssetRegistryData AssetRegistryData;
+        public ObjectDataResourceList DataResourceMap;
+        public ImportTypeHierarchiesMap ImportTypeHierarchiesMap;
 
         // Helper class to hold the global type names data
         public Dictionary<string, GlobalTypeName> GlobalTypeNames;
@@ -35,6 +37,7 @@ namespace AssetTool
                 transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
             }
 
+            //Non Cooked Data
             SerializePackageFileSummary(transfer);
             SerializeNameMap(transfer);
             SerializeSoftObjectPathList(transfer);
@@ -49,7 +52,12 @@ namespace AssetTool
             LoadThumbnailsFromPackage(transfer);
             ReadAssetRegistryData(transfer);
             SerializePreloadDependencies(transfer);
+
+            //Cooked Data
             SerializeDataResourceMap(transfer);
+            SerializeImportTypeHierarchies(transfer);
+
+            //Byte Array Data
             MovePadData(transfer);
             return this;
         }
@@ -203,27 +211,35 @@ namespace AssetTool
         }
 
         [Location("FLinkerLoad::SerializePreloadDependencies()")]
-        [Description("Status = SerializePreloadDependencies();")]
         private void SerializePreloadDependencies(Transfer transfer)
         {
-            if (PackageFileSummary.PreloadDependencyCount < 1 || PackageFileSummary.PreloadDependencyOffset <= 0)
-                return;
-
-            if (transfer.Position != PackageFileSummary.PreloadDependencyOffset)
-                throw new InvalidOperationException("Cannot PreloadDependencies");
-
-            if (PackageFileSummary.PreloadDependencyOffset > 0)
-                FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
+            long[] offsets = PreloadDependenciesOffsets(transfer);
+            transfer.Position = offsets[0];
+            LogInfo(12, offsets, "PreloadDependencies");
+            FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
+            AssetRegistryData.AutoCheck(transfer, "PreloadDependencies", transfer.Stream, offsets);
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDataResourceMap()")]
-        [Description("Status = SerializeDataResourceMap();")]
         private void SerializeDataResourceMap(Transfer transfer)
         {
-            if (PackageFileSummary.DataResourceOffset > 0)
-            {
-                throw new NotImplementedException();
-            }
+            long[] offsets = ObjectDataResourceOffsets(transfer);
+            transfer.Position = offsets[0];
+            LogInfo(13, offsets, "DataResourceMap");
+            DataResourceMap ??= new ObjectDataResourceList();
+            transfer.Move(ref DataResourceMap);
+            DataResourceMap.AutoCheck(transfer, "DataResourceMap", transfer.Stream, offsets);
+        }
+
+        [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeImportTypeHierarchies()")]
+        private void SerializeImportTypeHierarchies(Transfer transfer)
+        {
+            long[] offsets = ImportTypeHierarchiesOffsets(transfer);
+            transfer.Position = offsets[0];
+            LogInfo(14, offsets, "ImportTypeHierarchies");
+            ImportTypeHierarchiesMap ??= new ImportTypeHierarchiesMap(PackageFileSummary.ImportTypeHierarchiesCount);
+            transfer.Move(ref ImportTypeHierarchiesMap);
+            DataResourceMap.AutoCheck(transfer, "ImportTypeHierarchies", transfer.Stream, offsets);
         }
         #endregion
 
@@ -243,7 +259,7 @@ namespace AssetTool
         }
         public long[] NameOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.NameCount == 0)
+            if (PackageFileSummary.NameCount == 0) //@@@ NameOffset
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.SoftObjectPathsOffset > 0)
                 return [PackageFileSummary.NameOffset, PackageFileSummary.SoftObjectPathsOffset];
@@ -254,7 +270,7 @@ namespace AssetTool
         }
         public long[] SoftObjectPathsOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.SoftObjectPathsCount == 0)
+            if (PackageFileSummary.SoftObjectPathsCount == 0) //@@@ SoftObjectPathsOffset
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.GatherableTextDataOffset];
@@ -265,7 +281,7 @@ namespace AssetTool
         }
         public long[] GatherableOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.GatherableTextDataCount == 0)
+            if (PackageFileSummary.GatherableTextDataCount == 0) //@@@ GatherableTextDataOffset
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.GatherableTextDataOffset > 0 && PackageFileSummary.MetaDataOffset > 0)
                 return [PackageFileSummary.GatherableTextDataOffset, PackageFileSummary.MetaDataOffset];
@@ -287,14 +303,14 @@ namespace AssetTool
         }
         public long[] ImportOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.ImportCount == 0)
+            if (PackageFileSummary.ImportCount == 0) //@@@ ImportOffset
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.ImportOffset, PackageFileSummary.ExportOffset];
         }
         public long[] ExportOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.ExportCount == 0)
+            if (PackageFileSummary.ExportCount == 0) //@@@ ExportOffset
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.ExportOffset, PackageFileSummary.DependsOffset];
@@ -303,16 +319,16 @@ namespace AssetTool
         {
             if (PackageFileSummary.DependsOffset == 0)
                 return [transfer.Position, transfer.Position];
-            if (PackageFileSummary.SoftPackageReferencesOffset == 0)
+            else if (PackageFileSummary.SoftPackageReferencesOffset == 0)
                 return [PackageFileSummary.DependsOffset, PackageFileSummary.DependsOffset];
             else
                 return [PackageFileSummary.DependsOffset, PackageFileSummary.SoftPackageReferencesOffset];
         }
         public long[] SoftPackageReferenceOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.SoftPackageReferencesCount == 0)
+            if (PackageFileSummary.SoftPackageReferencesCount == 0) //@@@ SoftPackageReferencesOffset
                 return [transfer.Position, transfer.Position];
-            else if (PackageFileSummary.SearchableNamesOffset != 0)
+            else if (PackageFileSummary.SearchableNamesOffset > 0)
                 return [PackageFileSummary.SoftPackageReferencesOffset, PackageFileSummary.SearchableNamesOffset];
             else
                 return [PackageFileSummary.SoftPackageReferencesOffset, -1];
@@ -348,6 +364,37 @@ namespace AssetTool
                 return [PackageFileSummary.AssetRegistryDataOffset, ExportMap.ObjectExports[0].SerialOffset];
             else
                 return [PackageFileSummary.AssetRegistryDataOffset, PackageFileSummary.PreloadDependencyOffset];
+        }
+
+        public long[] PreloadDependenciesOffsets(Transfer transfer)
+        {
+            if (PackageFileSummary.PreloadDependencyCount < 1)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.PreloadDependencyOffset <= 0)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.DataResourceOffset > 0)
+                return [PackageFileSummary.PreloadDependencyOffset, PackageFileSummary.DataResourceOffset];
+            else if (PackageFileSummary.ImportTypeHierarchiesOffset > 0)
+                return [PackageFileSummary.PreloadDependencyOffset, PackageFileSummary.ImportTypeHierarchiesOffset];
+            else
+                return [PackageFileSummary.PreloadDependencyOffset, PackageFileSummary.PreloadDependencyOffset];
+        }
+
+        public long[] ObjectDataResourceOffsets(Transfer transfer)
+        {
+            if (PackageFileSummary.DataResourceOffset == 0)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.ImportTypeHierarchiesOffset > 0)
+                return [PackageFileSummary.DataResourceOffset, PackageFileSummary.ImportTypeHierarchiesOffset];
+            else
+                return [PackageFileSummary.DataResourceOffset, PackageFileSummary.TotalHeaderSize];
+        }
+        public long[] ImportTypeHierarchiesOffsets(Transfer transfer)
+        {
+            if (PackageFileSummary.ImportTypeHierarchiesOffset == 0)
+                return [transfer.Position, transfer.Position];
+            else
+                return [PackageFileSummary.ImportTypeHierarchiesOffset, PackageFileSummary.TotalHeaderSize];
         }
         #endregion
 
