@@ -29,7 +29,7 @@ namespace AssetTool
         public Int64 ScriptSerializationEndOffset;
         #endregion
 
-        #region UAssetAPI Members
+        #region PreloadDependencies Members
         public int SerializationBeforeSerializationDependenciesSize;
         public int CreateBeforeSerializationDependenciesSize;
         public int SerializationBeforeCreateDependenciesSize;
