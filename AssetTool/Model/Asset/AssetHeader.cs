@@ -226,7 +226,7 @@ namespace AssetTool
             long[] offsets = ObjectDataResourceOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(13, offsets, "DataResourceMap");
-            DataResourceMap ??= new ObjectDataResourceList();
+            DataResourceMap ??= new ObjectDataResourceList(PackageFileSummary.DataResourceOffset);
             transfer.Move(ref DataResourceMap);
             DataResourceMap.AutoCheck(transfer, "DataResourceMap", transfer.Stream, offsets);
         }
@@ -382,7 +382,7 @@ namespace AssetTool
 
         public long[] ObjectDataResourceOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.DataResourceOffset == 0)
+            if (PackageFileSummary.DataResourceOffset <= 0)
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.ImportTypeHierarchiesOffset > 0)
                 return [PackageFileSummary.DataResourceOffset, PackageFileSummary.ImportTypeHierarchiesOffset];

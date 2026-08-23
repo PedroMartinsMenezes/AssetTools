@@ -91,13 +91,14 @@ namespace AssetTool.Test
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
             w.Start();
-            foreach (string file in files)
+            for (int i = 0; i < files.Length; i++)
             {
+                string file = files[i];
                 bool success = StructWriter.RebuildAssetFast(file, "");
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
                 {
-                    TestContext.WriteLine($"File         : {file}");
+                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
                     break;
                 }
             }

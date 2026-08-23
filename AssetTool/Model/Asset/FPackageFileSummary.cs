@@ -324,6 +324,7 @@ namespace AssetTool
             }
             if (transfer.Supports.PAYLOAD_TOC)
             {
+                //used by FLinkerLoad::ELinkerStatus FLinkerLoad::SerializePackageTrailer()
                 transfer.Move(ref PayloadTocOffset);
             }
             if (transfer.Supports.DATA_RESOURCES)
