@@ -84,12 +84,16 @@
 
         public bool UESupport(EUnrealEngineObjectUE4Version value)
         {
-            return (int)PackageFileSummary.FileVersionUE.FileVersionUE4 >= (int)value;
+            int currentVersion = (int)PackageFileSummary.FileVersionUE.FileVersionUE4;
+            int targetVersion = (int)value;
+            return currentVersion >= targetVersion;
         }
 
         public bool UESupport(EUnrealEngineObjectUE5Version value)
         {
-            return (int)PackageFileSummary.FileVersionUE.FileVersionUE5 >= (int)value;
+            int currentVersion = (int)PackageFileSummary.FileVersionUE.FileVersionUE5;
+            int targetVersion = (int)value;
+            return currentVersion >= targetVersion;
         }
 
         public bool IsFilterEditorOnly()
