@@ -91,8 +91,6 @@ namespace AssetTool
                     const int32 CurrentLegacyFileVersion = -9;
                     if (LegacyFileVersion < CurrentLegacyFileVersion)
                     {
-                        // we can't safely load more than this because the legacy version code differs in ways we can not predict.
-                        // Make sure that the linker will fail to load with it.
                         FileVersionUE.Reset();
                         FileVersionLicenseeUE = 0;
                         throw new InvalidOperationException("Legacy version unsupported");
@@ -119,10 +117,8 @@ namespace AssetTool
                     if (bUnversioned)
                     {
                         //use the correct version instead of the latest supported versions
-                        if (AppConfig.FileVersionPath is { })
+                        if (transfer.GlobalObjects.FileVersion is FileVersion fileVersion)
                         {
-                            string json = File.ReadAllText(AppConfig.FileVersionPath);
-                            var fileVersion = JsonSerializer.Deserialize<FileVersion>(json);
                             CustomVersionContainer ??= new();
                             CustomVersionContainer.Versions ??= [];
                             fileVersion.GetCustomVersions().ForEach(x => CustomVersionContainer.Versions.Add(x));
@@ -148,12 +144,7 @@ namespace AssetTool
                     if (transfer.Supports.PACKAGE_SAVED_HASH)
                     {
                         transfer.Move(ref SavedHash);
-                        if (Array.Exists(SavedHash.ByteArray, x => x == 0))
-                            throw new InvalidOperationException($"SavedHash is invalid: {SavedHash}");
-
                         transfer.Move(ref TotalHeaderSize);
-                        if (TotalHeaderSize > transfer.GlobalObjects.FileSize)
-                            throw new InvalidOperationException($"TotalHeaderSize is greater than the file size: {TotalHeaderSize} > {transfer.GlobalObjects.FileSize}");
                     }
 
                     if (LegacyFileVersion <= -2)
@@ -163,14 +154,11 @@ namespace AssetTool
 
                     if (bUnversioned)
                     {
-                        // Overwrite the CustomVersionContainer that we deserialized; it was an empty container written
-                        // during unversioned savepackage. Overwrite with the latest version of all custom versions.
                         CustomVersionContainer = transfer.GlobalObjects.PackageFileSummary.CustomVersionContainer;
                     }
                 }
                 else
                 {
-                    // This is probably an old UE3 file, make sure that the linker will fail to load with it.
                     FileVersionUE.Reset();
                     FileVersionLicenseeUE = 0;
                     throw new InvalidOperationException("UE3 file is not supported");
@@ -209,8 +197,6 @@ namespace AssetTool
                 {
                     transfer.Move(ref SavedHash); //44
                     transfer.Move(ref TotalHeaderSize); //48
-                    if (TotalHeaderSize > transfer.GlobalObjects.FileSize)
-                        throw new InvalidOperationException($"TotalHeaderSize is greater than the file size: {TotalHeaderSize} > {transfer.GlobalObjects.FileSize}");
                 }
 
                 if (bUnversioned)
@@ -229,8 +215,6 @@ namespace AssetTool
             if (!transfer.Supports.PACKAGE_SAVED_HASH)
             {
                 transfer.Move(ref TotalHeaderSize);
-                if (TotalHeaderSize > transfer.GlobalObjects.FileSize)
-                    throw new InvalidOperationException($"TotalHeaderSize is greater than the file size: {TotalHeaderSize} > {transfer.GlobalObjects.FileSize}");
             }
             transfer.Move(ref PackageName);
             transfer.MoveEnum(ref PackageFlags);

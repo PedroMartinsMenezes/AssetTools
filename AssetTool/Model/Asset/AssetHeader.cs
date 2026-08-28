@@ -216,8 +216,9 @@ namespace AssetTool
             long[] offsets = PreloadDependenciesOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(12, offsets, "PreloadDependencies");
-            FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
-            AssetRegistryData.AutoCheck(transfer, "PreloadDependencies", transfer.Stream, offsets);
+            ExportMap.PreloadDependencies ??= new ExportMapPreloadDependencies(ExportMap.ObjectExports);
+            ExportMap.PreloadDependencies.Move(transfer);
+            ExportMap.PreloadDependencies.AutoCheck(transfer, "PreloadDependencies", transfer.Stream, offsets);
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDataResourceMap()")]
@@ -249,6 +250,10 @@ namespace AssetTool
             if (PackageFileSummary.TotalHeaderSize > transfer.Position)
             {
                 transfer.Position = PackageFileSummary.TotalHeaderSize;
+                if (transfer.IsWriting && transfer.Position > transfer.Length)
+                {
+                    transfer.Stream.SetLength(transfer.Position);
+                }
             }
         }
 

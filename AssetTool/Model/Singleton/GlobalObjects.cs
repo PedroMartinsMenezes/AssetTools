@@ -70,6 +70,8 @@
 
         public Dictionary<string, GlobalTypeName> GlobalTypeNames { get; set; }
 
+        public FileVersion FileVersion { get; set; } //= "Data/CustomVersions/FileVersion_VER_UE5_4.json";
+
         #endregion
 
         public int CustomVer(Guid guid)

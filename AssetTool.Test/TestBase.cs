@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,19 +14,26 @@ namespace AssetTool.Test
 {
     public class TestBase
     {
-        static bool initialized = false;
-        Stopwatch stopwatch = new Stopwatch();
+        private Stopwatch stopwatch = new Stopwatch();
+        protected static Dictionary<string, FileVersion> FileVersions = [];
 
         public TestBase()
         {
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+        }
 
-            if (!initialized)
+        static TestBase()
+        {
+            Directory.SetCurrentDirectory("..\\..\\..\\..\\");
+
+            foreach (string path in Directory.GetFiles("Data/CustomVersions", "*.json"))
             {
-                initialized = true;
-                Directory.SetCurrentDirectory("..\\..\\..\\..\\");
+                string name = Path.GetFileNameWithoutExtension(path);
+                string json = File.ReadAllText(path);
+                var fileVersion = JsonSerializer.Deserialize<FileVersion>(json);
+                FileVersions[name] = fileVersion;
             }
         }
 
@@ -56,7 +64,7 @@ namespace AssetTool.Test
             TestContext.Progress.WriteLine($"->\n-> [{TestContext.CurrentContext.Test.Name}] Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}\n->");
         }
 
-        protected void Test_UE_Files(string name, bool saveFiles = false)
+        protected void Test_UE_Files(string name)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
@@ -65,7 +73,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, "");
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -73,11 +81,6 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            if (saveFiles)
-            {
-                SaveFiles(name, files, failedFiles, succeededFiles);
-            }
-
             TestContext.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
             TestContext.WriteLine($"Scenario     : {name}.txt");
             TestContext.WriteLine($"File Count   : {files.Length}");
@@ -94,7 +97,7 @@ namespace AssetTool.Test
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, "");
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
                 {

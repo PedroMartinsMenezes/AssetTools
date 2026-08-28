@@ -54,9 +54,5 @@
         /// Use the WorkaroundPad class to read unknown bytes
         public static bool UseWorkaroundPad { get; set; } = false;
         #endregion
-
-        #region Used by Unversioned Files
-        public static string FileVersionPath { get; set; } = "Data/CustomVersions/FileVersion_VER_UE5_3.json";
-        #endregion
     }
 }

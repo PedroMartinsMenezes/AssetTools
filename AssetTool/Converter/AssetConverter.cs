@@ -2,16 +2,16 @@
 
 namespace AssetTool
 {
-    public static class StructWriter
+    public static class AssetConverter
     {
-        static StructWriter()
+        static AssetConverter()
         {
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string outDir)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null)
         {
             if (!File.Exists(InAssetPath))
             {
@@ -44,6 +44,7 @@ namespace AssetTool
             using Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
             transferReader.GlobalObjects.FileSize = (int)fileLength;
+            transferReader.GlobalObjects.FileVersion = fileVersion;
 
             while (i++ == 0)
             {
@@ -129,7 +130,7 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".uasset", ".json");
-                bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
+                bool success = AssetConverter.RunUassetToJson(inputFile, outputFile);
                 if (!success)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");
@@ -178,7 +179,7 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".json", ".uasset");
-                bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
+                bool success = AssetConverter.RunJsonToUasset(inputFile, outputFile);
                 if (!success)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");

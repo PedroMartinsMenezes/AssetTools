@@ -105,17 +105,9 @@ namespace AssetTool
                 PreloadDependencies.CreateBeforeCreateDependencies?.ForEach(x => x.UpdateIndexes(transfer));
             }
         }
-
-        public static void SerializePreloadDependencies(Transfer transfer, List<FObjectExport> ObjectExports)
-        {
-            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
-            {
-                ObjectExports.ForEach(x => x.PreloadDependencies.SerializePreloadDependencies(transfer));
-            }
-        }
     }
 
-    public class PreloadDependencies
+    public class PreloadDependencies : ITransferable
     {
         public int SerializationBeforeSerializationDependenciesSize;
         public List<FPackageIndex> SerializationBeforeSerializationDependencies;
@@ -129,7 +121,7 @@ namespace AssetTool
         public int CreateBeforeCreateDependenciesSize;
         public List<FPackageIndex> CreateBeforeCreateDependencies;
 
-        public void SerializePreloadDependencies(Transfer transfer)
+        public ITransferable Move(Transfer transfer)
         {
             if (SerializationBeforeSerializationDependenciesSize > 0)
             {
@@ -151,11 +143,7 @@ namespace AssetTool
                 transfer.Resize(ref CreateBeforeCreateDependencies, CreateBeforeCreateDependenciesSize);
                 CreateBeforeCreateDependencies.ForEach(x => x.Move(transfer, true));
             }
-        }
-
-        public ITransferable Move(Transfer transfer)
-        {
-            throw new NotImplementedException();
+            return this;
         }
     }
 
