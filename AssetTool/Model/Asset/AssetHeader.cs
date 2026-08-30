@@ -132,6 +132,7 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
             transfer.Move(ref ExportMap);
+            offsets[1] = offsets[1] <= 0 ? transfer.Position : offsets[1];
             ExportMap.AutoCheck(transfer, "ExportMap", transfer.Stream, offsets);
         }
 
