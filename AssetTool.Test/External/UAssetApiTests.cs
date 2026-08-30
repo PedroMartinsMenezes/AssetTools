@@ -2,7 +2,7 @@
 
 namespace AssetTool.Test.External.UAssetAPITest
 {
-    public class UAssetApiTests : TestBase
+    public class UE53Tests : TestBase
     {
         string BaseDir = "Data\\InputCooked";
 
@@ -12,11 +12,20 @@ namespace AssetTool.Test.External.UAssetAPITest
             AppConfig.DebugSaveUnitTest = false;
         }
 
-        #region uasset files
-
         //UE 5.3
         [Test] public void UE53_AmmoDataTable() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_3\\RON\\AmmoDataTable.uasset", fileVersion: FileVersions["UE5_3"]));
         [Test] public void UE53_DefaultRecorderBoneCompression() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_3\\Engine\\DefaultRecorderBoneCompression.uasset", fileVersion: FileVersions["UE5_3"]));
+    }
+
+    public class UE54Tests : TestBase
+    {
+        string BaseDir = "Data\\InputCooked";
+
+        [SetUp]
+        public void Setup()
+        {
+            AppConfig.DebugSaveUnitTest = false;
+        }
 
         //UE 5.4
         [Test] public void UE54_ApprenticeBlacksmithNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\HighSkill\\ApprenticeBlacksmithNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));
@@ -51,7 +60,20 @@ namespace AssetTool.Test.External.UAssetAPITest
         [Test] public void UE54_NoviceWoodsmanNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\MediumSkill\\NoviceWoodsmanNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));
         [Test] public void UE54_SM_BlueCube() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\BlankGame\\SM_BlueCube.uasset", fileVersion: FileVersions["UE5_4"]));
 
+    }
 
+    public class OthersTests : TestBase
+    {
+        string BaseDir = "Data\\InputCooked";
+
+        [SetUp]
+        public void Setup()
+        {
+            AppConfig.DebugSaveUnitTest = false;
+        }
+
+        [Test] public void Roboto() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Biodigital\\Roboto.uasset", fileVersion: FileVersions["UE4_14"]));
+        [Test] public void RobotoTiny() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Biodigital\\RobotoTiny.uasset", fileVersion: FileVersions["UE4_14"]));
 
         //[Test] public void ABP_SMG_A() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestJson\\ABP_SMG_A.uasset.uasset", ""));
         //[Test] public void AlternateStartActor() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestCustomProperty\\AlternateStartActor.uasset", ""));
@@ -102,8 +124,7 @@ namespace AssetTool.Test.External.UAssetAPITest
         //[Test] public void RaceSimDataAsset() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestJson\\RaceSimDataAsset.uasset", ""));
         //[Test] public void RecieverPneumaticTerminals() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\TheOccupation\\RecieverPneumaticTerminals.uasset", ""));
         //[Test] public void ResourceProgressCurve() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Astroneer\\ResourceProgressCurve.uasset", ""));
-        //[Test] public void Roboto() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Biodigital\\Roboto.uasset", ""));
-        //[Test] public void RobotoTiny() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Biodigital\\RobotoTiny.uasset", ""));
+
         //[Test] public void SK_Inner_Female1() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\CodeVein\\SK_Inner_Female1.uasset", ""));
         //[Test] public void SkillHitInfo() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\LiesOfP\\SkillHitInfo.uasset", ""));
         //[Test] public void SkillInfo() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\LiesOfP\\SkillInfo.uasset", ""));
@@ -115,6 +136,5 @@ namespace AssetTool.Test.External.UAssetAPITest
         //[Test] public void WBP_PartyPlayerRow() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\MidAir\\WBP_PartyPlayerRow.uasset", ""));
         //[Test] public void WPN_LockOnRifle() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestJson\\WPN_LockOnRifle.uasset", ""));
         //[Test] public void wtf() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestCustomSerializationStructsInMap\\wtf.uasset", ""));
-        #endregion
     }
 }
