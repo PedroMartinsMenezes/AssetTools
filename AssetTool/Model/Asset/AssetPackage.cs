@@ -29,10 +29,6 @@ namespace AssetTool
                 {
                     return true;
                 }
-                if (transfer.Position == transfer.GlobalObjects.PackageFileSummary.TotalHeaderSize)
-                {
-                    return true;
-                }
 
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
@@ -126,10 +122,6 @@ namespace AssetTool
                     return false;
                 }
                 if (transfer.GlobalObjects.PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked))
-                {
-                    return true;
-                }
-                if (transfer.Position == transfer.GlobalObjects.PackageFileSummary.TotalHeaderSize)
                 {
                     return true;
                 }
