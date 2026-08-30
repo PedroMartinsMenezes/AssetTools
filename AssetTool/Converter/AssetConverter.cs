@@ -164,7 +164,7 @@ namespace AssetTool
             //Write uasset file
             using MemoryStream stream1 = new();
             using BinaryWriter writer1 = new BinaryWriter(stream1);
-            using TransferWriter transferWriter = new TransferWriter(writer1);
+            using TransferWriter transferWriter = new TransferWriter(writer1, fromJson: true);
             success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
             if (!success) return false;
 
