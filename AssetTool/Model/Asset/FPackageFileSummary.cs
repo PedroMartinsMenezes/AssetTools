@@ -68,11 +68,6 @@ namespace AssetTool
         public Int32 ChunkID;
         #endregion
 
-        #region Backup
-        public FPackageFileVersion FileVersionUEBackup;
-        public Int32 FileVersionLicenseeUEBackup;
-        #endregion
-
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public ITransferable Move(Transfer transfer)
         {
@@ -108,22 +103,32 @@ namespace AssetTool
             }
             #endregion
             #region FileVersionUE4
-            FileVersionUE.FileVersionUE4 = FileVersionUEBackup.FileVersionUE4;
-            transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
-            FileVersionUEBackup.FileVersionUE4 = FileVersionUE.FileVersionUE4;
+            if (transfer.IsReading)
+            {
+                transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
+            }
+            else
+            {
+                int fileVersionUE4 = bUnversioned ? 0 : (int)FileVersionUE.FileVersionUE4;
+                transfer.Move(ref fileVersionUE4);
+            }
             #endregion
             #region FileVersionUE5
             if (LegacyFileVersion <= -8)
             {
-                FileVersionUE.FileVersionUE5 = FileVersionUEBackup.FileVersionUE5;
-                transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
-                FileVersionUEBackup.FileVersionUE5 = FileVersionUE.FileVersionUE5;
+                if (transfer.IsReading)
+                {
+                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
+                }
+                else
+                {
+                    int fileVersionUE5 = bUnversioned ? 0 : (int)FileVersionUE.FileVersionUE5;
+                    transfer.Move(ref fileVersionUE5);
+                }
             }
             #endregion
             #region FileVersionLicenseeUE
-            FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
             transfer.Move(ref FileVersionLicenseeUE);
-            FileVersionLicenseeUEBackup = FileVersionLicenseeUE;
             #endregion
             #region bUnversioned
             if (transfer.IsReading)
@@ -170,7 +175,7 @@ namespace AssetTool
             {
                 if (bUnversioned)
                 {
-                    int zero = -1;
+                    int zero = 0;
                     transfer.Move(ref zero);
                 }
                 else
