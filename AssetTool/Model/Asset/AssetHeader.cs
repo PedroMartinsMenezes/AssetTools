@@ -27,14 +27,18 @@ namespace AssetTool
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferable Move(Transfer transfer)
         {
-            if (transfer.IsReading)
+            if (transfer.GlobalObjects.GlobalTypeNames is { } && GlobalTypeNames is null)
             {
-                transfer.GlobalObjects.GlobalTypeNames = new();
                 GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
+            }
+            else if (GlobalTypeNames is { } && transfer.GlobalObjects.GlobalTypeNames is null)
+            {
+                transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
             }
             else
             {
-                transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
+                transfer.GlobalObjects.GlobalTypeNames ??= new();
+                GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
             }
 
             //Non Cooked Data
