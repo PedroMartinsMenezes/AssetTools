@@ -2,32 +2,30 @@
 
 namespace AssetTool.Test.External.UAssetAPITest
 {
-    public class UE53Tests : TestBase
+    public class Cooked_UE53_Tests : TestBase
     {
         string BaseDir = "Data\\InputCooked";
 
         [SetUp]
         public void Setup()
         {
-            AppConfig.DebugSaveUnitTest = false;
+            AppConfig.DebugSaveUnitTest = true;
         }
 
-        //UE 5.3
         [Test] public void UE53_AmmoDataTable() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_3\\RON\\AmmoDataTable.uasset", fileVersion: FileVersions["UE5_3"]));
         [Test] public void UE53_DefaultRecorderBoneCompression() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_3\\Engine\\DefaultRecorderBoneCompression.uasset", fileVersion: FileVersions["UE5_3"]));
     }
 
-    public class UE54Tests : TestBase
+    public class Cooked_UE54_Tests : TestBase
     {
         string BaseDir = "Data\\InputCooked";
 
         [SetUp]
         public void Setup()
         {
-            AppConfig.DebugSaveUnitTest = false;
+            AppConfig.DebugSaveUnitTest = true;
         }
 
-        //UE 5.4
         [Test] public void UE54_ApprenticeBlacksmithNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\HighSkill\\ApprenticeBlacksmithNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));
         [Test] public void UE54_ApprenticeCarpenterNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\HighSkill\\ApprenticeCarpenterNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));
         [Test] public void UE54_ApprenticeEngineerNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\HighSkill\\ApprenticeEngineerNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));
@@ -62,14 +60,33 @@ namespace AssetTool.Test.External.UAssetAPITest
 
     }
 
-    public class OthersTests : TestBase
+    public class Cooked_UE51_Tests : TestBase
     {
         string BaseDir = "Data\\InputCooked";
 
         [SetUp]
         public void Setup()
         {
-            AppConfig.DebugSaveUnitTest = false;
+            AppConfig.DebugSaveUnitTest = true;
+        }
+
+        [Test] public void DT_FishConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishConfigs.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_FishingLevelConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLevelConfigs.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_FishingLevelSegmentConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLevelSegmentConfigs.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_FishingLootConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLootConfigs.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_FishingNibbleConfig() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingNibbleConfig.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_FishingNibbleLevelConfig() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingNibbleLevelConfig.uasset", fileVersion: FileVersions["UE5_1"]));
+        [Test] public void DT_ShopConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_ShopConfigs.uasset", fileVersion: FileVersions["UE5_1"]));
+    }
+
+    public class Cooked_UE414_Tests : TestBase
+    {
+        string BaseDir = "Data\\InputCooked";
+
+        [SetUp]
+        public void Setup()
+        {
+            AppConfig.DebugSaveUnitTest = true;
         }
 
         [Test] public void Roboto() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Biodigital\\Roboto.uasset", fileVersion: FileVersions["UE4_14"]));
@@ -91,13 +108,7 @@ namespace AssetTool.Test.External.UAssetAPITest
         //[Test] public void CharacterCostume_chr0001_DataTable() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\StarlitSeason\\CharacterCostume_chr0001_DataTable.uasset", ""));
         //[Test] public void ChroniclerpathCutscene() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\MutantYearZero\\ChroniclerpathCutscene.uasset", ""));
         //[Test] public void DebugMenu() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Astroneer\\DebugMenu.uasset", ""));
-        //[Test] public void DT_FishConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishConfigs.uasset", ""));
-        //[Test] public void DT_FishingLevelConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLevelConfigs.uasset", ""));
-        //[Test] public void DT_FishingLevelSegmentConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLevelSegmentConfigs.uasset", ""));
-        //[Test] public void DT_FishingLootConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingLootConfigs.uasset", ""));
-        //[Test] public void DT_FishingNibbleConfig() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingNibbleConfig.uasset", ""));
-        //[Test] public void DT_FishingNibbleLevelConfig() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_FishingNibbleLevelConfig.uasset", ""));
-        //[Test] public void DT_ShopConfigs() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Palia\\DT_ShopConfigs.uasset", ""));
+
         //[Test] public void DV_ItemDescription() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\TheBeastInside\\DV_ItemDescription.uasset", ""));
         //[Test] public void ex02_IGC_03_Subtitle() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestACE7\\ex02_IGC_03_Subtitle.uasset", ""));
         //[Test] public void FinalCinematic() => Assert.That(AssetConverter.RebuildAssetFast($"{BaseDir}\\UAssetAPI\\TestManyAssets\\Liminal\\FinalCinematic.uasset", ""));

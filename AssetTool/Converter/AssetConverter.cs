@@ -83,14 +83,26 @@ namespace AssetTool
                 File.WriteAllBytes(outputBinary, outputBytes2);
             }
 
-            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Data\\Input\\"))
+            if (AppConfig.DebugSaveUnitTest)
             {
-                string ext = Path.GetExtension(InAssetPath);
-                string[] parts = InAssetPath.Split("\\Data\\Input\\");
-                string inputDir = parts[0] + "\\Data\\Input\\";
-                string outputDir = parts[0] + "\\Data\\Output\\";
-                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
-                asset.SaveToJson(outputFile, transferReader);
+                if (InAssetPath.Contains("\\Data\\Input\\"))
+                {
+                    string ext = Path.GetExtension(InAssetPath);
+                    string[] parts = InAssetPath.Split("\\Data\\Input\\");
+                    string inputDir = parts[0] + "\\Data\\Input\\";
+                    string outputDir = parts[0] + "\\Data\\Output\\";
+                    string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                    asset.SaveToJson(outputFile, transferReader);
+                }
+                else if (InAssetPath.Contains("\\Data\\InputCooked\\"))
+                {
+                    string ext = Path.GetExtension(InAssetPath);
+                    string[] parts = InAssetPath.Split("\\Data\\InputCooked\\");
+                    string inputDir = parts[0] + "\\Data\\InputCooked\\";
+                    string outputDir = parts[0] + "\\Data\\OutputCooked\\";
+                    string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                    asset.SaveToJson(outputFile, transferReader);
+                }
             }
 
             return success;
