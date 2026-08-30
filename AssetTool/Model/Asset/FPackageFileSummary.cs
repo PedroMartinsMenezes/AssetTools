@@ -76,133 +76,102 @@ namespace AssetTool
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPackageFileSummary& Sum)")]
         public ITransferable Move(Transfer transfer)
         {
+            #region Tag
             transfer.Move(ref Tag);
             if (Tag != ObjectVersion.PACKAGE_FILE_TAG)
             {
                 throw new FormatException("File signature mismatch");
             }
+            #endregion
+            #region LegacyFileVersion
             transfer.Move(ref LegacyFileVersion);
-
-            #region IsReading or IsWriting logic
+            #endregion
+            #region Positive Version Check
+            if (LegacyFileVersion >= 0)
+            {
+                throw new InvalidOperationException("UE3 file is not supported");
+            }
+            #endregion
+            #region Negative Version Check
+            const int32 CurrentLegacyFileVersion = -9;
+            if (LegacyFileVersion < CurrentLegacyFileVersion)
+            {
+                FileVersionUE.Reset();
+                FileVersionLicenseeUE = 0;
+                throw new InvalidOperationException("Legacy version unsupported");
+            }
+            #endregion
+            #region LegacyUE3Version
+            if (LegacyFileVersion != -4)
+            {
+                transfer.Move(ref LegacyUE3Version);
+            }
+            #endregion
+            #region FileVersionUE4
+            FileVersionUE.FileVersionUE4 = FileVersionUEBackup.FileVersionUE4;
+            transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
+            FileVersionUEBackup.FileVersionUE4 = FileVersionUE.FileVersionUE4;
+            #endregion
+            #region FileVersionUE5
+            if (LegacyFileVersion <= -8)
+            {
+                FileVersionUE.FileVersionUE5 = FileVersionUEBackup.FileVersionUE5;
+                transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
+                FileVersionUEBackup.FileVersionUE5 = FileVersionUE.FileVersionUE5;
+            }
+            #endregion
+            #region FileVersionLicenseeUE
+            FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
+            transfer.Move(ref FileVersionLicenseeUE);
+            FileVersionLicenseeUEBackup = FileVersionLicenseeUE;
+            #endregion
+            #region bUnversioned
             if (transfer.IsReading)
             {
-                if (LegacyFileVersion < 0)
+                bUnversioned = FileVersionUE.FileVersionUE4 == 0 && FileVersionUE.FileVersionUE5 == 0 && FileVersionLicenseeUE == 0;
+            }
+            #endregion
+            #region Ovewrite UE version from command line
+            if (bUnversioned && transfer.IsReading)
+            {
+                //use the correct version instead of the latest supported versions
+                if (transfer.GlobalObjects.FileVersion is FileVersion fileVersion)
                 {
-                    const int32 CurrentLegacyFileVersion = -9;
-                    if (LegacyFileVersion < CurrentLegacyFileVersion)
-                    {
-                        FileVersionUE.Reset();
-                        FileVersionLicenseeUE = 0;
-                        throw new InvalidOperationException("Legacy version unsupported");
-                    }
-                    if (LegacyFileVersion != -4)
-                    {
-                        transfer.Move(ref LegacyUE3Version);
-                    }
-
-                    FileVersionUE = FileVersionUEBackup;
-                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
-                    if (LegacyFileVersion <= -8)
-                    {
-                        transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
-                    }
-                    FileVersionUEBackup = FileVersionUE;
-
-                    FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
-                    transfer.Move(ref FileVersionLicenseeUE);
-                    FileVersionLicenseeUEBackup = FileVersionLicenseeUE;
-
-                    bUnversioned = FileVersionUE.FileVersionUE4 == 0 && FileVersionUE.FileVersionUE5 == 0 && FileVersionLicenseeUE == 0;
-
-                    if (bUnversioned)
-                    {
-                        //use the correct version instead of the latest supported versions
-                        if (transfer.GlobalObjects.FileVersion is FileVersion fileVersion)
-                        {
-                            CustomVersionContainer ??= new();
-                            CustomVersionContainer.Versions ??= [];
-                            fileVersion.GetCustomVersions().ForEach(x => CustomVersionContainer.Versions.Add(x));
-                            FileVersionUE.FileVersionUE4 = fileVersion.FileVersionUE4;
-                            FileVersionUE.FileVersionUE5 = fileVersion.FileVersionUE5;
-                        }
-                        else
-                        {
-                            // Use the latest supported versions
-                            FileVersionUE = Consts.GPackageFileUEVersion;
-                            FileVersionLicenseeUE = (Int32)Consts.GPackageFileLicenseeUEVersion;
-                        }
-                    }
-
-                    if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
-                    {
-                        string name = transfer.GlobalObjects.FileName;
-                        int min = (int)EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
-                        int ver = (int)FileVersionUE.FileVersionUE4;
-                        throw new InvalidOperationException($"Package is unloadable: {name}. Reason: Version is too old. Min Version: {min}, Package Version: {ver}.");
-                    }
-
-                    if (transfer.Supports.PACKAGE_SAVED_HASH)
-                    {
-                        transfer.Move(ref SavedHash);
-                        transfer.Move(ref TotalHeaderSize);
-                    }
-
-                    if (LegacyFileVersion <= -2)
-                    {
-                        transfer.Move(ref CustomVersionContainer, GetCustomVersionFormatForArchive(LegacyFileVersion));
-                    }
-
-                    if (bUnversioned)
-                    {
-                        CustomVersionContainer = transfer.GlobalObjects.PackageFileSummary.CustomVersionContainer;
-                    }
+                    CustomVersionContainer ??= new();
+                    CustomVersionContainer.Versions ??= [];
+                    fileVersion.GetCustomVersions().ForEach(x => CustomVersionContainer.Versions.Add(x));
+                    FileVersionUE.FileVersionUE4 = fileVersion.FileVersionUE4;
+                    FileVersionUE.FileVersionUE5 = fileVersion.FileVersionUE5;
                 }
                 else
                 {
-                    FileVersionUE.Reset();
-                    FileVersionLicenseeUE = 0;
-                    throw new InvalidOperationException("UE3 file is not supported");
+                    throw new InvalidOperationException("Specify the FileVersion in command line");
                 }
             }
-            else
+            #endregion
+            #region UE4 Version Check
+            if (FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE)
+            {
+                string name = transfer.GlobalObjects.FileName;
+                int min = (int)EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
+                int ver = (int)FileVersionUE.FileVersionUE4;
+                throw new InvalidOperationException($"Package is unloadable: {name}. Reason: Version is too old. Min Version: {min}, Package Version: {ver}.");
+            }
+            #endregion
+            #region Optional Hash data
+            if (transfer.Supports.PACKAGE_SAVED_HASH)
+            {
+                transfer.Move(ref SavedHash);
+                transfer.Move(ref TotalHeaderSize);
+            }
+            #endregion
+            #region CustomVersionContainer
+            if (LegacyFileVersion <= -2)
             {
                 if (bUnversioned)
                 {
-                    int32 Zero = 0;
-                    transfer.Move(ref Zero); //12 LegacyUE3Version
-                    transfer.Move(ref Zero); //16 FileVersionUE.FileVersionUE4
-                    transfer.Move(ref Zero); //20 FileVersionUE.FileVersionUE5
-                    transfer.Move(ref Zero); //24 FileVersionLicenseeUE
-                }
-                else
-                {
-                    // Must write out the last UE3 engine version, so that older versions identify it as new
-                    if (LegacyFileVersion != -4)
-                    {
-                        transfer.Move(ref LegacyUE3Version);
-                    }
-
-                    FileVersionUE = FileVersionUEBackup;
-                    transfer.MoveEnum(ref FileVersionUE.FileVersionUE4);
-                    if (LegacyFileVersion <= -8)
-                    {
-                        transfer.MoveEnum(ref FileVersionUE.FileVersionUE5);
-                    }
-
-                    FileVersionLicenseeUE = FileVersionLicenseeUEBackup;
-                    transfer.Move(ref FileVersionLicenseeUE); //24 FileVersionLicenseeUE
-                }
-
-                if (transfer.Supports.PACKAGE_SAVED_HASH)
-                {
-                    transfer.Move(ref SavedHash); //44
-                    transfer.Move(ref TotalHeaderSize); //48
-                }
-
-                if (bUnversioned)
-                {
-                    FCustomVersionContainer NoCustomVersions = new() { Versions = [] };
-                    transfer.Move(ref NoCustomVersions, ECustomVersionSerializationFormat.Latest); //52
+                    int zero = -1;
+                    transfer.Move(ref zero);
                 }
                 else
                 {
@@ -251,10 +220,10 @@ namespace AssetTool
                 transfer.Move(ref MetaDataOffset);
             }
             transfer.Move(ref DependsOffset);
-            if (DependsOffset < transfer.Position)
-            {
-                throw new InvalidOperationException($"Invalid DependsOffset: {DependsOffset}");
-            }
+            //if (DependsOffset < transfer.Position)
+            //{
+            //    throw new InvalidOperationException($"Invalid DependsOffset: {DependsOffset}");
+            //}
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
                 transfer.Move(ref SoftPackageReferencesCount);
