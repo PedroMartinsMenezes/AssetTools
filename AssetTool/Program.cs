@@ -190,8 +190,8 @@ namespace AssetTool
 
         private static void RunUassetToJson(string inputFile, string outputFile)
         {
-            bool success = AssetConverter.RunUassetToJson(inputFile, outputFile);
-            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            (string json, _) = AssetConverter.RunUassetToJson(inputFile, outputFile);
+            Console.WriteLine(json is { } ? "\nSUCCESS\n" : "\nFAIL\n");
         }
         #endregion
 
@@ -248,8 +248,8 @@ namespace AssetTool
 
         private static void RunJsonToUasset(string inputFile, string outputFile)
         {
-            bool success = AssetConverter.RunJsonToUasset(inputFile, outputFile);
-            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            byte[] bytes = AssetConverter.RunJsonToUasset(inputFile, outputFile);
+            Console.WriteLine(bytes.Length > 0 ? "\nSUCCESS\n" : "\nFAIL\n");
         }
         #endregion
 
@@ -317,7 +317,7 @@ namespace AssetTool
             }
 
             Console.WriteLine($"\nProcessing previous file: {inputFile1}");
-            if (!AssetConverter.RunUassetToJson(inputFile1, outputFile1))
+            if (AssetConverter.RunUassetToJson(inputFile1, outputFile1).Item1 is null)
             {
                 Console.WriteLine("\nFAIL\n");
                 return;
@@ -326,7 +326,7 @@ namespace AssetTool
             ///GlobalNames.Clear();
 
             Console.WriteLine($"\nProcessing current file: {inputFile2}");
-            if (!AssetConverter.RunUassetToJson(inputFile2, outputFile2))
+            if (AssetConverter.RunUassetToJson(inputFile2, outputFile2).Item1 is null)
             {
                 Console.WriteLine("\nFAIL\n");
                 return;

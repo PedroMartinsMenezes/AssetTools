@@ -158,7 +158,7 @@ namespace AssetTool
         //        {
         //            //checar se os valores são iguais, se não forem, lançar exceção
         //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
-                    
+
         //            string typeName = globalTypeName.TypeName.ToJson();
         //            string currentTypeName = TypeName.ToJson();
         //            if (typeName != currentTypeName)
@@ -301,7 +301,7 @@ namespace AssetTool
         }
     }
 
-public static class FPropertyTagExt
+    public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
@@ -958,7 +958,7 @@ public static class FPropertyTagExt
             this.indent = indent;
             this.baseOffset = baseOffset;
             this.value = value;
-            this.obj = new UObject { ArrayNotifiers = obj.ArrayNotifiers, ArrayMovers = obj.ArrayMovers };
+            this.obj = new UObject { ArrayNotifiers = obj.ArrayNotifiers, ArrayMovers = obj.ArrayMovers, MapMovers = obj.MapMovers };
         }
         public ITransferable Move(Transfer transfer)
         {

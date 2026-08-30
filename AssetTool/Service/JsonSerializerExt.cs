@@ -70,7 +70,7 @@ namespace AssetTool
                     {
                         path = transfer.GlobalObjects.FileName.GetTempAssetPath();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                        
+
                     }
                     using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                     {
@@ -105,11 +105,13 @@ namespace AssetTool
             return obj;
         }
 
-        public static void SaveToJson(this object self, string path, Transfer transfer = null)
+        public static string SaveToJson(this object self, string path, Transfer transfer = null)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
             Directory.CreateDirectory(outputDir);
-            File.WriteAllText(path, JsonSerializer.Serialize(self, DefaultOptions));
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
+            File.WriteAllText(path, json);
+            return json;
         }
 
         public static T ToObject<T>(this string json, Transfer transfer = null)

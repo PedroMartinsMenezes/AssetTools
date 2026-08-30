@@ -132,6 +132,11 @@ namespace AssetTool
 
             T copy = JsonSerializerExt.ToStreamThenToObject(self);
 
+            if (self is FPropertyTagValue before && copy is FPropertyTagValue after)
+            {
+                after.obj = before.obj;
+            }
+
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
