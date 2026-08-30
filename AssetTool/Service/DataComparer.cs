@@ -137,10 +137,22 @@ namespace AssetTool
             using BinaryWriter writer2 = new BinaryWriter(dest2);
             using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true, true);
 
+            long offset = 0;
+            if (transfer.GlobalObjects.CurrentObject is { })
+            {
+                offset = transfer.GlobalObjects.CurrentObject.Offset;
+                transfer.GlobalObjects.CurrentObject.Offset = 0;
+            }
+
             if (copy is ITransferableAutoCheck copy2)
                 copy2.MoveAutoCheck(transferWriter2);
             else
                 copy.Move(transferWriter2);
+
+            if (transfer.GlobalObjects.CurrentObject is { })
+            {
+                transfer.GlobalObjects.CurrentObject.Offset = offset;
+            }
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;
