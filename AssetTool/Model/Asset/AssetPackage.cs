@@ -25,7 +25,7 @@ namespace AssetTool
                 {
                     return false;
                 }
-                if (transfer.GlobalObjects.PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked))
+                if (Header.IsHeaderOnly)
                 {
                     return true;
                 }
@@ -121,7 +121,7 @@ namespace AssetTool
                 {
                     return false;
                 }
-                if (transfer.GlobalObjects.PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked))
+                if (Header.IsHeaderOnly)
                 {
                     return true;
                 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -19,6 +20,8 @@ namespace AssetTool
         public AssetRegistryData AssetRegistryData;
         public ObjectDataResourceList DataResourceMap;
         public ImportTypeHierarchiesMap ImportTypeHierarchiesMap;
+
+        [JsonIgnore] public bool IsHeaderOnly;
 
         // Helper class to hold the global type names data
         public Dictionary<string, GlobalTypeName> GlobalTypeNames;
@@ -63,6 +66,12 @@ namespace AssetTool
 
             //Byte Array Data
             MovePadData(transfer);
+
+            IsHeaderOnly =
+                PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked) ||
+                PackageFileSummary.bUnversioned ||
+                transfer.Position == PackageFileSummary.TotalHeaderSize;
+
             return this;
         }
 

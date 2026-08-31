@@ -225,10 +225,6 @@ namespace AssetTool
                 transfer.Move(ref MetaDataOffset);
             }
             transfer.Move(ref DependsOffset);
-            //if (DependsOffset < transfer.Position)
-            //{
-            //    throw new InvalidOperationException($"Invalid DependsOffset: {DependsOffset}");
-            //}
             if (transfer.Supports.VER_UE4_ADD_STRING_ASSET_REFERENCES_MAP)
             {
                 transfer.Move(ref SoftPackageReferencesCount);
