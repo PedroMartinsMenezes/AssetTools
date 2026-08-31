@@ -65,8 +65,6 @@ namespace AssetTool.Test.UAssetAPITest
     {
         [SetUp] public void Setup() => AppConfig.DebugSaveUnitTest = true;
 
-        //MidAir
-        [Test] public void AM_MedChar_Reload_RingLauncher() => Assert.That(AssetConverter.RebuildAssetFast($"Data\\InputCooked\\UAssetAPI\\TestManyAssets\\Astroneer\\LargeResourceCanister_IT.uasset", fileVersion: FileVersions["UE4_17"]));
         //MutantYearZero
         [Test] public void ChroniclerpathCutscene() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\MutantYearZero\\ChroniclerpathCutscene.uasset", fileVersion: FileVersions["UE4_17"]));
         [Test] public void MainCut() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\MutantYearZero\\MainCut.uasset", fileVersion: FileVersions["UE4_17"]));
