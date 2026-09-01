@@ -33,7 +33,7 @@ namespace AssetTool.Test.QuickTest
 
         [Test]
         [Order(3)]
-        public void Test_03_Both()
+        public void Test_03_QuickTest_Files()
         {
             Test_UE_Files("QuickTest_Files");
         }
