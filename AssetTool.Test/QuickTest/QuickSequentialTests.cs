@@ -18,7 +18,7 @@ namespace AssetTool.Test.QuickTest
         public void Test_01_RunUassetToJson()
         {
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            bool success = StructWriter.RunUassetToJsonFiles($"{dir}\\..\\..\\..\\..\\Data\\Input", $"{dir}\\..\\..\\..\\..\\Data\\Output", true);
+            bool success = AssetConverter.RunUassetToJsonFiles($"{dir}\\..\\..\\..\\..\\Data\\Input", $"{dir}\\..\\..\\..\\..\\Data\\Output", true);
             Assert.That(success, "RunUassetToJsonFiles failed");
         }
 
@@ -27,7 +27,7 @@ namespace AssetTool.Test.QuickTest
         public void Test_02_RunJsonToUasset()
         {
             var dir = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            bool success = StructWriter.RunJsonToUassetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", $"{dir}\\..\\..\\..\\..\\Data\\Input", true);
+            bool success = AssetConverter.RunJsonToUassetFiles($"{dir}\\..\\..\\..\\..\\Data\\Output", $"{dir}\\..\\..\\..\\..\\Data\\Input", true);
             Assert.That(success, "RunJsonToUassetFiles failed");
         }
 

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -20,6 +21,8 @@ namespace AssetTool
         public ObjectDataResourceList DataResourceMap;
         public ImportTypeHierarchiesMap ImportTypeHierarchiesMap;
 
+        [JsonIgnore] public bool IsHeaderOnly;
+
         // Helper class to hold the global type names data
         public Dictionary<string, GlobalTypeName> GlobalTypeNames;
 
@@ -27,14 +30,18 @@ namespace AssetTool
         [Location("FLinkerLoad::ProcessPackageSummary(TMap<TPair<FName, FPackageIndex>, FPackageIndex>* ObjectNameWithOuterToExportMap)")]
         public ITransferable Move(Transfer transfer)
         {
-            if (transfer.IsReading)
+            if (transfer.GlobalObjects.GlobalTypeNames is { } && GlobalTypeNames is null)
             {
-                transfer.GlobalObjects.GlobalTypeNames = new();
                 GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
+            }
+            else if (GlobalTypeNames is { } && transfer.GlobalObjects.GlobalTypeNames is null)
+            {
+                transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
             }
             else
             {
-                transfer.GlobalObjects.GlobalTypeNames = GlobalTypeNames;
+                transfer.GlobalObjects.GlobalTypeNames ??= new();
+                GlobalTypeNames = transfer.GlobalObjects.GlobalTypeNames;
             }
 
             //Non Cooked Data
@@ -59,6 +66,12 @@ namespace AssetTool
 
             //Byte Array Data
             MovePadData(transfer);
+
+            IsHeaderOnly =
+                PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked) ||
+                PackageFileSummary.bUnversioned ||
+                transfer.Position == PackageFileSummary.TotalHeaderSize;
+
             return this;
         }
 
@@ -128,6 +141,7 @@ namespace AssetTool
             transfer.Position = offsets[0];
             LogInfo(5, offsets, "ExportMap");
             transfer.Move(ref ExportMap);
+            offsets[1] = offsets[1] <= 0 ? transfer.Position : offsets[1];
             ExportMap.AutoCheck(transfer, "ExportMap", transfer.Stream, offsets);
         }
 
@@ -216,8 +230,9 @@ namespace AssetTool
             long[] offsets = PreloadDependenciesOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(12, offsets, "PreloadDependencies");
-            FObjectExport.SerializePreloadDependencies(transfer, ExportMap.ObjectExports);
-            AssetRegistryData.AutoCheck(transfer, "PreloadDependencies", transfer.Stream, offsets);
+            ExportMap.PreloadDependencies ??= new ExportMapPreloadDependencies(ExportMap.ObjectExports);
+            ExportMap.PreloadDependencies.Move(transfer);
+            ExportMap.PreloadDependencies.AutoCheck(transfer, "PreloadDependencies", transfer.Stream, offsets);
         }
 
         [Location("FLinkerLoad::ELinkerStatus FLinkerLoad::SerializeDataResourceMap()")]
@@ -249,6 +264,10 @@ namespace AssetTool
             if (PackageFileSummary.TotalHeaderSize > transfer.Position)
             {
                 transfer.Position = PackageFileSummary.TotalHeaderSize;
+                if (transfer.IsWriting && transfer.Position > transfer.Length)
+                {
+                    transfer.Stream.SetLength(transfer.Position);
+                }
             }
         }
 

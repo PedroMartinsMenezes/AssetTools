@@ -2,16 +2,16 @@
 
 namespace AssetTool
 {
-    public static class StructWriter
+    public static class AssetConverter
     {
-        static StructWriter()
+        static AssetConverter()
         {
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string outDir)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null)
         {
             if (!File.Exists(InAssetPath))
             {
@@ -44,6 +44,7 @@ namespace AssetTool
             using Transfer transferReader = new TransferReader(reader);
             transferReader.GlobalObjects.FileName = InAssetPath;
             transferReader.GlobalObjects.FileSize = (int)fileLength;
+            transferReader.GlobalObjects.FileVersion = fileVersion;
 
             while (i++ == 0)
             {
@@ -82,31 +83,45 @@ namespace AssetTool
                 File.WriteAllBytes(outputBinary, outputBytes2);
             }
 
-            if (AppConfig.DebugSaveUnitTest && InAssetPath.Contains("\\Data\\Input\\"))
+            if (AppConfig.DebugSaveUnitTest)
             {
-                string ext = Path.GetExtension(InAssetPath);
-                string[] parts = InAssetPath.Split("\\Data\\Input\\");
-                string inputDir = parts[0] + "\\Data\\Input\\";
-                string outputDir = parts[0] + "\\Data\\Output\\";
-                string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
-                asset.SaveToJson(outputFile, transferReader);
+                if (InAssetPath.Contains("\\Data\\Input\\"))
+                {
+                    string ext = Path.GetExtension(InAssetPath);
+                    string[] parts = InAssetPath.Split("\\Data\\Input\\");
+                    string inputDir = parts[0] + "\\Data\\Input\\";
+                    string outputDir = parts[0] + "\\Data\\Output\\";
+                    string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                    asset.SaveToJson(outputFile, transferReader);
+                }
+                else if (InAssetPath.Contains("\\Data\\InputCooked\\"))
+                {
+                    string ext = Path.GetExtension(InAssetPath);
+                    string[] parts = InAssetPath.Split("\\Data\\InputCooked\\");
+                    string inputDir = parts[0] + "\\Data\\InputCooked\\";
+                    string outputDir = parts[0] + "\\Data\\OutputCooked\\";
+                    string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, InAssetPath)).Replace(ext, ".json");
+                    asset.SaveToJson(outputFile, transferReader);
+                }
             }
 
             return success;
         }
 
         #region RunUassetToJson
-        public static bool RunUassetToJson(string inputFile, string outputFile)
+        public static (string, byte[]) RunUassetToJson(string inputFile, string outputFile)
         {
             bool success = false;
-            outputFile = outputFile ?? inputFile;
             AssetPackage asset = new AssetPackage();
-            string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
-            Directory.CreateDirectory(outputDir);
 
-            if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+            if (!string.IsNullOrEmpty(outputFile))
             {
-                outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.json");
+                string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
+                Directory.CreateDirectory(outputDir);
+                if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
+                {
+                    outputFile = Path.Combine(outputDir, $"{Path.GetFileNameWithoutExtension(inputFile)}.json");
+                }
             }
 
             //Read uasset file
@@ -115,12 +130,19 @@ namespace AssetTool
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader);
             success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
-            if (!success) return false;
+            if (!success)
+                return (null, null);
+
+            //Write uasset to json
+            string json = asset.ToJson();
 
             //Write json file
-            asset.SaveToJson(outputFile, transferReader);
+            if (!string.IsNullOrEmpty(outputFile))
+            {
+                File.WriteAllText(outputFile, json);
+            }
 
-            return success;
+            return (json, inputBytes);
         }
 
         public static bool RunUassetToJsonFiles(string inputDir, string outputDir, bool exitOnError)
@@ -129,8 +151,8 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".uasset", ".json");
-                bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
-                if (!success)
+                (string json, _) = AssetConverter.RunUassetToJson(inputFile, outputFile);
+                if (json is null)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");
                     if (exitOnError)
@@ -144,32 +166,42 @@ namespace AssetTool
         #endregion
 
         #region RunJsonToUasset
-        public static bool RunJsonToUasset(string inputFile, string outputFile = null)
+        public static byte[] RunJsonToUasset(string inputFile, string outputFile)
         {
-            bool success = false;
-            string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
-            if (outputFile is { })
+            AssetPackage asset = null;
+            if (!string.IsNullOrEmpty(outputFile))
             {
+                string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(outputFile)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(outputFile);
                 Directory.CreateDirectory(outputDir);
                 if (outputFile.Equals(inputFile, StringComparison.OrdinalIgnoreCase))
                 {
                     outputFile = Path.Combine(outputDir, inputFile.NameWithExtension());
                 }
+                //Read json file
+                asset = inputFile.ReadJson<AssetPackage>();
+            }
+            else
+            {
+                //Read json content
+                asset = inputFile.ToObject<AssetPackage>();
             }
 
-            //Read json file
-            AssetPackage asset = inputFile.ReadJson<AssetPackage>();
-
-            //Write uasset file
+            //Write uasset to byte array
             using MemoryStream stream1 = new();
             using BinaryWriter writer1 = new BinaryWriter(stream1);
-            using TransferWriter transferWriter = new TransferWriter(writer1);
-            success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
-            if (!success) return false;
+            using TransferWriter transferWriter = new TransferWriter(writer1, fromJson: true);
+            bool success = asset.Move(transferWriter, "Writing Export Objects (obj -> uasset)");
+            if (!success)
+                return [];
+            byte[] bytes = stream1.ToArray();
 
-            if (outputFile is { })
-                File.WriteAllBytes(outputFile, stream1.ToArray());
-            return success;
+            //Write uasset to file
+            if (!string.IsNullOrEmpty(outputFile))
+            {
+                File.WriteAllBytes(outputFile, bytes);
+            }
+
+            return bytes;
         }
 
         public static bool RunJsonToUassetFiles(string inputDir, string outputDir, bool exitOnError)
@@ -178,8 +210,8 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".json", ".uasset");
-                bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
-                if (!success)
+                byte[] bytes = AssetConverter.RunJsonToUasset(inputFile, outputFile);
+                if (bytes.Length == 0)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");
                     if (exitOnError)

@@ -67,7 +67,6 @@ namespace AssetTool
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FPropertyTag& Tag)")]
         public ITransferable Move(Transfer transfer)
         {
-            //ReadFromGlobalTypes(transfer);
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
                 return LoadPropertyTagNoFullType(transfer);
 
@@ -137,50 +136,8 @@ namespace AssetTool
             {
                 TypeNamespace = default;
             }
-            //WriteToGlobalTypes(transfer);
             return this;
         }
-
-        #region GlobalTypeNames
-        //private void WriteToGlobalTypes(Transfer transfer)
-        //{
-        //    if (transfer.IsReading)
-        //    {
-        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}"; //{HeaderOffset} with this always work
-        //        if (!transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
-        //        {
-        //            transfer.GlobalObjects.GlobalTypeNames[key] = new GlobalTypeName
-        //            {
-        //                TypeName = TypeName,
-        //            };
-        //        }
-        //        else
-        //        {
-        //            //checar se os valores são iguais, se não forem, lançar exceção
-        //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
-                    
-        //            string typeName = globalTypeName.TypeName.ToJson();
-        //            string currentTypeName = TypeName.ToJson();
-        //            if (typeName != currentTypeName)
-        //                throw new InvalidOperationException($"GlobalTypeNames mismatch for key: {key}. Existing: {typeName}, Current: {currentTypeName}");
-        //        }
-        //    }
-        //}
-
-        //private void ReadFromGlobalTypes(Transfer transfer)
-        //{
-        //    if (transfer.IsWriting && transfer.FromJson)
-        //    {
-        //        string key = $"{Type} | {InnerType} | {StructName} | {ValueType} | {EnumName}";  //{HeaderOffset} with this always work
-        //        if (transfer.GlobalObjects.GlobalTypeNames.ContainsKey(key))
-        //        {
-        //            var globalTypeName = transfer.GlobalObjects.GlobalTypeNames[key];
-
-        //            //TypeName = globalTypeName.TypeName;
-        //        }
-        //    }
-        //}
-        #endregion
 
         private FPropertyTag LoadPropertyTagNoFullType(Transfer transfer)
         {
@@ -301,7 +258,7 @@ namespace AssetTool
         }
     }
 
-public static class FPropertyTagExt
+    public static class FPropertyTagExt
     {
         public static Dictionary<string, Func<Transfer, int, object, FPropertyTag, object>> StructMovers { get; } = new();
         public static Dictionary<string, Func<FPropertyTag, object>> DerivedConstructors { get; } = new();
@@ -958,7 +915,7 @@ public static class FPropertyTagExt
             this.indent = indent;
             this.baseOffset = baseOffset;
             this.value = value;
-            this.obj = new UObject { ArrayNotifiers = obj.ArrayNotifiers, ArrayMovers = obj.ArrayMovers };
+            this.obj = new UObject { ArrayNotifiers = obj.ArrayNotifiers, ArrayMovers = obj.ArrayMovers, MapMovers = obj.MapMovers };
         }
         public ITransferable Move(Transfer transfer)
         {

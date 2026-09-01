@@ -1,10 +1,13 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
+using System.Text.Json;
 
 namespace AssetTool
 {
     public static class Program
     {
+        static Dictionary<string, FileVersion> FileVersions = [];
+
         static void Main(string[] args)
         {
             Stopwatch stopwatch = Stopwatch.StartNew();
@@ -42,7 +45,7 @@ namespace AssetTool
                     AppConfig.DebugCheckMember = false;
                     bool enabled = Log.Enabled;
 
-                    bool success = StructWriter.RebuildAssetFast(file, "C:\\Temp\\");
+                    bool success = AssetConverter.RebuildAssetFast(file, "C:\\Temp\\", null);
 
                     Log.Enabled = enabled;
                     string status = success ? "OK  " : "FAIL";
@@ -66,7 +69,7 @@ namespace AssetTool
                     AppConfig.DebugCheckMember = false;
                     bool enabled = Log.Enabled;
 
-                    bool success = StructWriter.RebuildAssetFast(file, "");
+                    bool success = AssetConverter.RebuildAssetFast(file, "");
                     _ = success ? succeeded.Add(file) : failed.Add(file);
 
                     Log.Enabled = enabled;
@@ -92,7 +95,7 @@ namespace AssetTool
                     return;
                 }
                 Log.Info(file);
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else if (args.Length > 1 && args[0].Contains("unit-test"))
@@ -101,7 +104,7 @@ namespace AssetTool
                 AppConfig.DebugSaveUnitTest = true;
                 Log.Info($"Command: unit-test");
                 Log.Info($"File   : {args[1]}");
-                bool success = StructWriter.RebuildAssetFast(args[1], "");
+                bool success = AssetConverter.RebuildAssetFast(args[1], "");
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
             else if (args.Length > 2 && args[0].Contains("check-type"))
@@ -109,21 +112,22 @@ namespace AssetTool
                 Log.Info($"Command: check-type");
                 Log.Info($"File   : {args[1]}");
                 Log.Info($"Type   : {args[2]}");
-                Console.WriteLine(StructWriter.IsAssetType(args[1], args[2]));
+                Console.WriteLine(AssetConverter.IsAssetType(args[1], args[2]));
             }
             else if (args.Length > 1 && args[0].Contains("get-type"))
             {
                 Log.Info($"Command: get-type");
                 Log.Info($"File   : {args[1]}");
                 Log.Enabled = false;
-                Console.WriteLine(StructWriter.GetAssetType(args[1]));
+                Console.WriteLine(AssetConverter.GetAssetType(args[1]));
             }
             else if (args.Length > 0)
             {
                 string file = args[0];
                 Log.Info($"Command: rebuild-asset");
                 Log.Info($"File   : {file}");
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                FileVersion fileVersion = GetFileVersion(args);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
                 Log.Enabled = true;
                 Log.Info(success ? "\nSUCCESS\n" : "\nFAIL\n");
             }
@@ -135,6 +139,8 @@ namespace AssetTool
 
             Console.WriteLine($"Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}");
         }
+
+
 
         #region uasset-to-json
         private static bool SpecifyUassetToJson(string[] args, ref string inputFile, ref string outputFile)
@@ -184,8 +190,8 @@ namespace AssetTool
 
         private static void RunUassetToJson(string inputFile, string outputFile)
         {
-            bool success = StructWriter.RunUassetToJson(inputFile, outputFile);
-            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            (string json, _) = AssetConverter.RunUassetToJson(inputFile, outputFile);
+            Console.WriteLine(json is { } ? "\nSUCCESS\n" : "\nFAIL\n");
         }
         #endregion
 
@@ -242,8 +248,8 @@ namespace AssetTool
 
         private static void RunJsonToUasset(string inputFile, string outputFile)
         {
-            bool success = StructWriter.RunJsonToUasset(inputFile, outputFile);
-            Console.WriteLine(success ? "\nSUCCESS\n" : "\nFAIL\n");
+            byte[] bytes = AssetConverter.RunJsonToUasset(inputFile, outputFile);
+            Console.WriteLine(bytes.Length > 0 ? "\nSUCCESS\n" : "\nFAIL\n");
         }
         #endregion
 
@@ -311,7 +317,7 @@ namespace AssetTool
             }
 
             Console.WriteLine($"\nProcessing previous file: {inputFile1}");
-            if (!StructWriter.RunUassetToJson(inputFile1, outputFile1))
+            if (AssetConverter.RunUassetToJson(inputFile1, outputFile1).Item1 is null)
             {
                 Console.WriteLine("\nFAIL\n");
                 return;
@@ -320,7 +326,7 @@ namespace AssetTool
             ///GlobalNames.Clear();
 
             Console.WriteLine($"\nProcessing current file: {inputFile2}");
-            if (!StructWriter.RunUassetToJson(inputFile2, outputFile2))
+            if (AssetConverter.RunUassetToJson(inputFile2, outputFile2).Item1 is null)
             {
                 Console.WriteLine("\nFAIL\n");
                 return;
@@ -364,6 +370,40 @@ namespace AssetTool
             {
                 Console.WriteLine("Error calling git command: " + ex.Message);
                 return false;
+            }
+        }
+        #endregion
+
+        #region File Versions
+        private static FileVersion GetFileVersion(string[] args)
+        {
+            if (!args.Contains("-v"))
+                return null;
+
+            LoadFileVersions();
+
+            int index = Array.IndexOf(args, "-v");
+            string version = args[index + 1];
+
+            if (FileVersions.TryGetValue(version, out FileVersion fileVersion))
+            {
+                return fileVersion;
+            }
+            else
+            {
+                Console.WriteLine($"File version '{version}' not found.");
+                return null;
+            }
+        }
+
+        public static void LoadFileVersions()
+        {
+            foreach (string path in Directory.GetFiles("Data/CustomVersions", "*.json"))
+            {
+                string name = Path.GetFileNameWithoutExtension(path);
+                string json = File.ReadAllText(path);
+                var fileVersion = JsonSerializer.Deserialize<FileVersion>(json);
+                FileVersions[name] = fileVersion;
             }
         }
         #endregion
