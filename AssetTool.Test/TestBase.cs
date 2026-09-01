@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,19 +14,26 @@ namespace AssetTool.Test
 {
     public class TestBase
     {
-        static bool initialized = false;
-        Stopwatch stopwatch = new Stopwatch();
+        private Stopwatch stopwatch = new Stopwatch();
+        protected static Dictionary<string, FileVersion> FileVersions = [];
 
         public TestBase()
         {
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
+        }
 
-            if (!initialized)
+        static TestBase()
+        {
+            Directory.SetCurrentDirectory("..\\..\\..\\..\\");
+
+            foreach (string path in Directory.GetFiles("Data/CustomVersions", "*.json"))
             {
-                initialized = true;
-                Directory.SetCurrentDirectory("..\\..\\..\\..\\");
+                string name = Path.GetFileNameWithoutExtension(path);
+                string json = File.ReadAllText(path);
+                var fileVersion = JsonSerializer.Deserialize<FileVersion>(json);
+                FileVersions[name] = fileVersion;
             }
         }
 
@@ -56,7 +64,7 @@ namespace AssetTool.Test
             TestContext.Progress.WriteLine($"->\n-> [{TestContext.CurrentContext.Test.Name}] Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}\n->");
         }
 
-        protected void Test_UE_Files(string name, bool saveFiles = false)
+        protected void Test_UE_Files(string name, FileVersion fileVersion = null)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
@@ -65,7 +73,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -73,18 +81,13 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            if (saveFiles)
-            {
-                SaveFiles(name, files, failedFiles, succeededFiles);
-            }
-
             TestContext.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
             TestContext.WriteLine($"Scenario     : {name}.txt");
             TestContext.WriteLine($"File Count   : {files.Length}");
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
-        protected void Test_UE_Files_Sequential(string name, bool saveFiles = false)
+        protected void Test_UE_Files_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
@@ -94,9 +97,49 @@ namespace AssetTool.Test
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                bool success = StructWriter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
+                {
+                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
+                    break;
+                }
+            }
+            w.Stop();
+            if (saveFiles)
+            {
+                SaveFiles(name, files, failedFiles, succeededFiles);
+            }
+            TestContext.WriteLine($"Scenario     : {name}.txt");
+            TestContext.WriteLine($"File Count   : {files.Length}");
+            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            Assert.That(failedFiles.Count == 0);
+        }
+
+        protected void Test_UE_Files_Sequential_Separated(string name, bool saveFiles = false)
+        {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
+            w.Start();
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+
+                (string json, byte[] inputBytes) = AssetConverter.RunUassetToJson(file, "");
+
+                UpdateFailedFiles(json is { }, file, failedFiles, succeededFiles);
+                if (!AppConfig.ContinueAfterError && json is null)
+                {
+                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
+                    break;
+                }
+
+                byte[] outputBytes = AssetConverter.RunJsonToUasset(json, "");
+
+                string msg = DataComparer.CompareBytes(inputBytes, outputBytes, 0, inputBytes.Length);
+                if (!AppConfig.ContinueAfterError && (outputBytes.Length == 0 || msg.Length > 0))
                 {
                     TestContext.WriteLine($"File {i + 1,-8}: {file}");
                     break;
