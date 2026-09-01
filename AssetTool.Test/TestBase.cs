@@ -64,7 +64,7 @@ namespace AssetTool.Test
             TestContext.Progress.WriteLine($"->\n-> [{TestContext.CurrentContext.Test.Name}] Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}\n->");
         }
 
-        protected void Test_UE_Files(string name)
+        protected void Test_UE_Files(string name, FileVersion fileVersion = null)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
@@ -73,7 +73,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -87,7 +87,7 @@ namespace AssetTool.Test
             TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
         }
 
-        protected void Test_UE_Files_Sequential(string name, bool saveFiles = false)
+        protected void Test_UE_Files_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)
         {
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
@@ -97,7 +97,7 @@ namespace AssetTool.Test
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                bool success = AssetConverter.RebuildAssetFast(file, "");
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
                 {
