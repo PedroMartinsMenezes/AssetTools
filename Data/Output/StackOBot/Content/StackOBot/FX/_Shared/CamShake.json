@@ -401,7 +401,191 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty FOscillator": {
+        "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0"
+      },
+      "StructProperty VOscillator": {
+        "TypeName": "StructProperty 1 | VOscillator 1 | /Script/EngineCameras 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 6050,
+      "Index": 1,
+      "Size": 476,
+      "ObjectName": "CamShake",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -6,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'UbergraphPages'": "4",
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 151,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/FX/_Shared/CamShake",
+                    "AssetName": "CamShake"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": 1
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'ThumbnailInfo'": 6,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "2e301139-4df3-8602-cb64-8c84c546d41f"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 6526,
+      "Index": 2,
+      "Size": 81,
+      "ObjectName": "CamShake_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "LegacyCameraShake",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-6] LegacyCameraShake",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FuncMap": {},
+        "ClassFlags": 8654848,
+        "ClassWithin": 4294967294,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 6607,
+      "Index": 3,
+      "Size": 657,
+      "ObjectName": "Default__CamShake_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "float 'OscillationDuration'": 0.1,
+          "float 'OscillationBlendInTime'": 0.01,
+          "float 'OscillationBlendOutTime'": 0.05,
+          "struct VOscillator 479 'LocOscillation'": {
+            "struct FOscillator 66 'X'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
+            },
+            "struct FOscillator 66 'Y'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
+            },
+            "struct FOscillator 192 'Z'": {
+              "float 'Amplitude'": 12,
+              "float 'Frequency'": 8,
+              "byte64 (EInitialOscillatorOffset) 'InitialOffset' /Script/EngineCameras": 22,
+              "enum64 (EOscillatorWaveform) 'Waveform' ByteProperty /Script/EngineCameras": 24
+            }
+          },
+          "obj 'RootShakePattern'": 5
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 7264,
+      "Index": 4,
+      "Size": 132,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "2b487f5a-43c9-740e-eca3-17a9fcb3905c"
+        }
+      }
+    },
+    {
+      "Offset": 7396,
+      "Index": 5,
+      "Size": 13,
+      "ObjectName": "RootShakePattern",
+      "ClassName": "LegacyCameraShakePattern",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 7409,
+      "Index": 6,
+      "Size": 13,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

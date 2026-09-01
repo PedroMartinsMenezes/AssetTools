@@ -246,5 +246,187 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 7586,
+      "Index": 1,
+      "Size": 755,
+      "ObjectName": "M_ClearCoat",
+      "ClassName": "Material",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UMaterial",
+        "Members": {
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'Metallic'": {
+            "UseConstant": false,
+            "Constant": 0,
+            "Expression": 2,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "byte64 (EMaterialShadingModel) 'ShadingModel'": 20,
+          "struct MaterialShadingModelField 35 'ShadingModels'": {
+            "ushort 'ShadingModelField'": 16
+          },
+          "struct ScalarMaterialInput 44 'ClearCoatRoughness'": {
+            "UseConstant": false,
+            "Constant": 0,
+            "Expression": 4,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "bool 'bUsedWithStaticLighting'": true,
+          "obj[] 'Expressions'": "5 2 3 4",
+          "guid 'StateId'": "20edcf70-4f29-91b7-1092-d6a78ec97942",
+          "obj 'ThumbnailInfo'": 7,
+          "guid 'LightingGuid'": "7290f699-4585-8cfa-adf5-e29af19a7a9a"
+        },
+        "NumLoadedResources": 0,
+        "bLocalSavedCachedExpressionData_DEPRECATED": false,
+        "bForceNaniteUsage": false,
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 8341,
+      "Index": 2,
+      "Size": 193,
+      "ObjectName": "MaterialExpressionConstant",
+      "ClassName": "MaterialExpressionConstant",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'R'": 1,
+          "int 'MaterialExpressionEditorX'": -286,
+          "int 'MaterialExpressionEditorY'": 36,
+          "guid 'MaterialExpressionGuid'": "0d77f123-4b71-41dd-cd89-c4a3dd8de9ef",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 8534,
+      "Index": 3,
+      "Size": 219,
+      "ObjectName": "MaterialExpressionConstant",
+      "ClassName": "MaterialExpressionConstant",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'R'": 0.65,
+          "int 'MaterialExpressionEditorX'": -240,
+          "int 'MaterialExpressionEditorY'": 128,
+          "guid 'MaterialExpressionGuid'": "6aeb50ff-4b85-9c10-6498-8f88f04d185f",
+          "obj 'Material'": 1,
+          "bool 'bCollapsed'": false
+        }
+      }
+    },
+    {
+      "Offset": 8753,
+      "Index": 4,
+      "Size": 164,
+      "ObjectName": "MaterialExpressionConstant",
+      "ClassName": "MaterialExpressionConstant",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "int 'MaterialExpressionEditorX'": -289,
+          "int 'MaterialExpressionEditorY'": 493,
+          "guid 'MaterialExpressionGuid'": "f6b60a51-4d9f-29f5-f1ad-9caec4102942",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 8917,
+      "Index": 5,
+      "Size": 193,
+      "ObjectName": "MaterialExpressionConstant",
+      "ClassName": "MaterialExpressionConstant",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'R'": 0.18,
+          "int 'MaterialExpressionEditorX'": -239,
+          "int 'MaterialExpressionEditorY'": -67,
+          "guid 'MaterialExpressionGuid'": "c2a431c4-40ae-3ec3-c541-bc9dc35c4b6d",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 9110,
+      "Index": 6,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "2F268F4B48E66A315C789CB3780E79ED"
+        }
+      }
+    },
+    {
+      "Offset": 9175,
+      "Index": 7,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

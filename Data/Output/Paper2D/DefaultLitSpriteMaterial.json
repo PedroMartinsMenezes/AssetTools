@@ -364,5 +364,403 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 11289,
+      "Index": 1,
+      "Size": 1175,
+      "ObjectName": "DefaultLitSpriteMaterial",
+      "ClassName": "Material",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UMaterial",
+        "Members": {
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 2,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'Metallic'": {
+            "UseConstant": false,
+            "Constant": 0,
+            "Expression": 4,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct VectorMaterialInput 52 'Normal'": {
+            "UseConstant": false,
+            "Constant": "0 0 0",
+            "Expression": 7,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ColorMaterialInput 44 'EmissiveColor'": {
+            "UseConstant": false,
+            "Constant": "0 0 0 0",
+            "Expression": 0,
+            "OutputIndex": -1,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'Opacity'": {
+            "UseConstant": false,
+            "Constant": 1,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ScalarMaterialInput 44 'OpacityMask'": {
+            "UseConstant": false,
+            "Constant": 1,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "byte64 (EBlendMode) 'BlendMode'": 5,
+          "bool 'TwoSided'": true,
+          "obj[] 'Expressions'": "2 3 9 8 6 7 4 5",
+          "guid 'StateId'": "4ef26f8f-442f-f1af-c696-668db9352df2",
+          "ReferencedTextureGuids": {
+            "Name": "ReferencedTextureGuids",
+            "Type": "ArrayProperty",
+            "Size": 85,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "ReferencedTextureGuids",
+              "Type": "StructProperty",
+              "Size": 32,
+              "StructName": "Guid"
+            },
+            "Value": [
+              "33eaaba1-459c-1080-dde0-76bef5b108c2",
+              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+            ]
+          },
+          "struct LightmassMaterialInterfaceSettings 34 'LightmassSettings'": {
+            "bool 'bCastShadowAsMasked'": true
+          },
+          "obj 'ThumbnailInfo'": 11,
+          "guid 'LightingGuid'": "761383d5-4a32-d13d-5ff6-05a9831b5f65"
+        },
+        "NumLoadedResources": 0,
+        "bLocalSavedCachedExpressionData_DEPRECATED": false,
+        "bForceNaniteUsage": false,
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 12464,
+      "Index": 2,
+      "Size": 334,
+      "ObjectName": "MaterialExpressionMultiply",
+      "ClassName": "MaterialExpressionMultiply",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 9,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 6,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "int 'MaterialExpressionEditorX'": -208,
+          "int 'MaterialExpressionEditorY'": 32,
+          "guid 'MaterialExpressionGuid'": "1ab7892f-4367-051e-a813-a2928f5c9672",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 12798,
+      "Index": 3,
+      "Size": 334,
+      "ObjectName": "MaterialExpressionMultiply",
+      "ClassName": "MaterialExpressionMultiply",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 9,
+            "OutputIndex": 4,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 1,
+            "bUseConstantValue": false
+          },
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 6,
+            "OutputIndex": 4,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 1,
+            "bUseConstantValue": false
+          },
+          "int 'MaterialExpressionEditorX'": -208,
+          "int 'MaterialExpressionEditorY'": 144,
+          "guid 'MaterialExpressionGuid'": "9ac57de1-45a4-bf8a-5760-eea9c8249e2b",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 13132,
+      "Index": 4,
+      "Size": 362,
+      "ObjectName": "MaterialExpressionScalarParameter",
+      "ClassName": "MaterialExpressionScalarParameter",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "name 'ParameterName'": "Metallic",
+          "guid 'ExpressionGUID'": "bdbdeb74-4b48-6d96-5523-9f9a06801a01",
+          "int 'MaterialExpressionEditorX'": -272,
+          "int 'MaterialExpressionEditorY'": -272,
+          "guid 'MaterialExpressionGuid'": "9c9df3b8-4179-149e-a227-2482f68353aa",
+          "obj 'Material'": 1,
+          "string 'Desc'": "Nonmetals have Metallic values of 0, metals have Metallic values of 1."
+        }
+      }
+    },
+    {
+      "Offset": 13494,
+      "Index": 5,
+      "Size": 427,
+      "ObjectName": "MaterialExpressionScalarParameter",
+      "ClassName": "MaterialExpressionScalarParameter",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'DefaultValue'": 1,
+          "name 'ParameterName'": "Roughness",
+          "guid 'ExpressionGUID'": "c574a6a0-454a-7f5c-c2b8-e9afd7b7aae0",
+          "int 'MaterialExpressionEditorX'": -272,
+          "int 'MaterialExpressionEditorY'": -144,
+          "guid 'MaterialExpressionGuid'": "9c9df3b8-4179-149e-a227-2482f68353aa",
+          "obj 'Material'": 1,
+          "string 'Desc'": "Roughness of 0 (smooth) is a mirror reflection and roughness of 1 (rough) is completely matte or diffuse. "
+        }
+      }
+    },
+    {
+      "Offset": 13921,
+      "Index": 6,
+      "Size": 430,
+      "ObjectName": "MaterialExpressionSpriteTextureSampler",
+      "ClassName": "MaterialExpressionSpriteTextureSampler",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "SlotDisplayName": {
+            "Name": "SlotDisplayName",
+            "Type": "TextProperty",
+            "Size": 62,
+            "Value": "text-base header=`None` Key=`FC63586341162E016180C383A75A6AFD` Namespace=`\\0` SourceString=`DiffuseMap`"
+          },
+          "guid 'ExpressionGUID'": "d929b02f-4eae-9eac-a6bd-93a32fb275aa",
+          "struct ExpressionInput 36 'Coordinates'": {
+            "Expression": 8,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "obj 'Texture'": -15,
+          "int 'MaterialExpressionEditorX'": -448,
+          "int 'MaterialExpressionEditorY'": 144,
+          "guid 'MaterialExpressionGuid'": "e31b0e0e-499e-a19d-bec8-2a836e5c6722",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 14351,
+      "Index": 7,
+      "Size": 529,
+      "ObjectName": "MaterialExpressionSpriteTextureSampler",
+      "ClassName": "MaterialExpressionSpriteTextureSampler",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "bool 'bSampleAdditionalTextures'": true,
+          "SlotDisplayName": {
+            "Name": "SlotDisplayName",
+            "Type": "TextProperty",
+            "Size": 61,
+            "Value": "text-base header=`None` Key=`8574E4D643A8919D3875A8AE71354175` Namespace=`\\0` SourceString=`NormalMap`"
+          },
+          "name 'ParameterName'": "SpriteAdditionalTexture\"0",
+          "guid 'ExpressionGUID'": "b2dfb98b-4fa9-dfd5-4929-1ab5261725dd",
+          "struct ExpressionInput 36 'Coordinates'": {
+            "Expression": 8,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "obj 'Texture'": -16,
+          "byte64 (EMaterialSamplerType) 'SamplerType'": 47,
+          "int 'MaterialExpressionEditorX'": -464,
+          "int 'MaterialExpressionEditorY'": 352,
+          "guid 'MaterialExpressionGuid'": "e31b0e0e-499e-a19d-bec8-2a836e5c6722",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 14880,
+      "Index": 8,
+      "Size": 164,
+      "ObjectName": "MaterialExpressionTextureCoordinate",
+      "ClassName": "MaterialExpressionTextureCoordinate",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "int 'MaterialExpressionEditorX'": -640,
+          "int 'MaterialExpressionEditorY'": 304,
+          "guid 'MaterialExpressionGuid'": "2dcbd880-4473-b61b-d647-6fbeee8bd1c6",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 15044,
+      "Index": 9,
+      "Size": 164,
+      "ObjectName": "MaterialExpressionVertexColor",
+      "ClassName": "MaterialExpressionVertexColor",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "int 'MaterialExpressionEditorX'": -416,
+          "int 'MaterialExpressionEditorY'": -48,
+          "guid 'MaterialExpressionGuid'": "4ca7e055-4510-98bc-ddb0-71a6b72e5844",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 15208,
+      "Index": 10,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "0966914C43C23E868F79548185F40A36"
+        }
+      }
+    },
+    {
+      "Offset": 15273,
+      "Index": 11,
+      "Size": 137,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 57,
+          "bool 'bUserModifiedShape'": true,
+          "float 'OrbitPitch'": 46,
+          "float 'OrbitYaw'": -139
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

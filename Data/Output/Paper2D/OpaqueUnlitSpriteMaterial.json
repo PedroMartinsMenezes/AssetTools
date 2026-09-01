@@ -210,5 +210,105 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 22405,
+      "Index": 1,
+      "Size": 468,
+      "ObjectName": "OpaqueUnlitSpriteMaterial",
+      "ClassName": "MaterialInstanceConstant",
+      "ObjectFlags": "RF_Public, RF_Standalone",
+      "Obj": {
+        "__type": "UMaterialInstance",
+        "Members": {
+          "obj 'Parent'": -4,
+          "bool 'bHasStaticPermutationResource'": true,
+          "guid 'ParentLightingGuid'": "0509fe40-4363-e7eb-fbcd-dbaa54455fe3",
+          "ScalarParameterValues": {
+            "Name": "ScalarParameterValues",
+            "Type": "ArrayProperty",
+            "Size": 120,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'ParameterName'": "RefractionDepthBias",
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ]
+          },
+          "bool 'bOverrideBaseProperties'": true,
+          "ReferencedTextureGuids": {
+            "Name": "ReferencedTextureGuids",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "StructProperty",
+            "Value": [
+              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+            ]
+          },
+          "obj 'ThumbnailInfo'": 3,
+          "guid 'LightingGuid'": "7a0c50ad-4a5a-d27e-9fb8-3fb3ffb159b8"
+        },
+        "bSavedCachedData": false,
+        "bHasStaticPermutationResource": true,
+        "StaticParameters_DEPRECATED": {
+          "StaticSwitchParameters_DEPRECATED": [],
+          "StaticComponentMaskParameters": [],
+          "TerrainLayerWeightParameters": []
+        },
+        "bOverrideBaseProperties_DEPRECATED": true,
+        "bHasPropertyOverrides": true,
+        "BasePropertyOverrides": {
+          "bOverride_OpacityMaskClipValue": false,
+          "OpacityMaskClipValue": 0.3333,
+          "bOverride_BlendMode": true,
+          "BlendMode": "BLEND_Opaque",
+          "bOverride_ShadingModel": false,
+          "ShadingModel": "MSM_DefaultLit",
+          "bOverride_TwoSided": false,
+          "TwoSided": true,
+          "bOverride_bIsThinSurface": false,
+          "bIsThinSurface": false,
+          "bOverride_DitheredLODTransition": false,
+          "DitheredLODTransition": false
+        },
+        "LoadedResources": [],
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 22873,
+      "Index": 2,
+      "Size": 16,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {}
+      }
+    },
+    {
+      "Offset": 22889,
+      "Index": 3,
+      "Size": 136,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 41,
+          "float 'OrbitPitch'": -5,
+          "float 'OrbitYaw'": -159,
+          "float 'OrbitZoom'": -257
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

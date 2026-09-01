@@ -563,7 +563,459 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty ComponentKey": {
+        "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0"
+      },
+      "StructProperty BlueprintCookedComponentInstancingData": {
+        "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty NiagaraUserRedirectionParameterStore": {
+        "TypeName": "StructProperty 1 | NiagaraUserRedirectionParameterStore 1 | /Script/Niagara 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 19246,
+      "Index": 1,
+      "Size": 762,
+      "ObjectName": "BP_Hazard_ConduitCurved",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -1,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 12,
+          "obj[] 'UbergraphPages'": "4",
+          "obj[] 'FunctionGraphs'": "5",
+          "obj 'InheritableComponentHandler'": 6,
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 28,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "None",
+              "Event Graph"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 298,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                    "AssetName": "BP_Hazard_ConduitCurved"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -362.54025,
+                  "Y": -277.75797
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                    "AssetName": "BP_Hazard_ConduitCurved"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 362.59122,
+                  "Y": -461.67453
+                },
+                "float 'SavedZoomAmount'": 0.5
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "f6f9a5a3-4b36-1410-b173-82846f3fe4b1"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 20008,
+      "Index": 2,
+      "Size": 139,
+      "ObjectName": "BP_Hazard_ConduitCurved_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 12,
+          "obj 'InheritableComponentHandler'": 6
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-1] BP_EnviromentalHazard_C",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FuncMap": {},
+        "ClassFlags": 8651012,
+        "ClassWithin": 4294967291,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 20147,
+      "Index": 3,
+      "Size": 13,
+      "ObjectName": "Default__BP_Hazard_ConduitCurved_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 20160,
+      "Index": 4,
+      "Size": 132,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "50fff0d4-4e19-bd18-df22-c495b848a8df"
+        }
+      }
+    },
+    {
+      "Offset": 20292,
+      "Index": 5,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "obj[] 'Nodes'": "7",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "94215dee-464b-ec20-77a7-55aa963de6c4"
+        }
+      }
+    },
+    {
+      "Offset": 20469,
+      "Index": 6,
+      "Size": 1666,
+      "ObjectName": "InheritableComponentHandler",
+      "ClassName": "InheritableComponentHandler",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "Records": {
+            "Name": "Records",
+            "Type": "ArrayProperty",
+            "Size": 1592,
+            "StructName": "ComponentOverrideRecord",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'ComponentClass'": -16,
+                "obj 'ComponentTemplate'": 8,
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "Niagara",
+                  "guid 'AssociatedGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042"
+                },
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+                  },
+                  "bool 'bHasValidCookedData'": false
+                }
+              },
+              {
+                "obj 'ComponentClass'": -14,
+                "obj 'ComponentTemplate'": 13,
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "Sphere",
+                  "guid 'AssociatedGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c"
+                },
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+                  },
+                  "bool 'bHasValidCookedData'": false
+                }
+              },
+              {
+                "obj 'ComponentClass'": -15,
+                "obj 'ComponentTemplate'": 14,
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "StaticMesh",
+                  "guid 'AssociatedGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b"
+                },
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+                  },
+                  "bool 'bHasValidCookedData'": false
+                }
+              },
+              {
+                "obj 'ComponentClass'": -11,
+                "obj 'ComponentTemplate'": 10,
+                "struct ComponentKey 135 'ComponentKey'": {
+                  "obj 'OwnerClass'": -1,
+                  "name 'SCSVariableName'": "DefaultSceneRoot",
+                  "guid 'AssociatedGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039"
+                },
+                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                  "ChangedPropertyList": {
+                    "Name": "ChangedPropertyList",
+                    "Type": "ArrayProperty",
+                    "Size": 4,
+                    "StructName": "BlueprintComponentChangedPropertyInfo",
+                    "BoolVal": 0,
+                    "InnerType": "StructProperty",
+                    "Value": [],
+                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+                  },
+                  "bool 'bHasValidCookedData'": false
+                }
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
+          }
+        }
+      }
+    },
+    {
+      "Offset": 22135,
+      "Index": 7,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "guid 'NodeGuid'": "da2f88fc-4cc4-f1b2-4c2d-5786e5f6263f"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`7 685484d3-4c56-c36c-7094-10a8820500af`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 22536,
+      "Index": 8,
+      "Size": 74,
+      "ObjectName": "Niagara_GEN_VARIABLE",
+      "ClassName": "NiagaraComponent",
+      "ObjectFlags": "RF_Public, RF_ArchetypeObject, RF_InheritableComponentTemplate",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "struct NiagaraUserRedirectionParameterStore 8 'OverrideParameters'": {}
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 22610,
+      "Index": 9,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 22652,
+      "Index": 10,
+      "Size": 42,
+      "ObjectName": "ICH-DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_ArchetypeObject, RF_InheritableComponentTemplate",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 22694,
+      "Index": 11,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -11,
+          "obj 'ComponentTemplate'": 9,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 22925,
+      "Index": 12,
+      "Size": 42,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'DefaultSceneRootNode'": 11
+        }
+      }
+    },
+    {
+      "Offset": 22967,
+      "Index": 13,
+      "Size": 90,
+      "ObjectName": "Sphere_GEN_VARIABLE",
+      "ClassName": "SphereComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_InheritableComponentTemplate",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "Vector 'RelativeLocation'": "-5.8305863859658302 0 -10.911812404051233"
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 23057,
+      "Index": 14,
+      "Size": 54,
+      "ObjectName": "StaticMesh_GEN_VARIABLE",
+      "ClassName": "StaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_InheritableComponentTemplate",
+      "Obj": {
+        "__type": "UStaticMeshComponent",
+        "Members": {
+          "obj 'StaticMesh'": -25
+        },
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

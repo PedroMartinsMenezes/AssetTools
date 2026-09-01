@@ -271,5 +271,228 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 8248,
+      "Index": 1,
+      "Size": 333,
+      "ObjectName": "M_LightStage_Arrows",
+      "ClassName": "Material",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UMaterial",
+        "Members": {
+          "byte64 (EMaterialShadingModel) 'ShadingModel'": 29,
+          "struct MaterialShadingModelField 35 'ShadingModels'": {
+            "ushort 'ShadingModelField'": 1
+          },
+          "guid 'StateId'": "21001025-495a-c597-0272-38ba5dce2f90",
+          "obj 'EditorOnlyData'": 2,
+          "obj 'ThumbnailInfo'": 9,
+          "guid 'LightingGuid'": "f4117d20-4f6a-0be6-2491-b69ea9f0c1ed"
+        },
+        "NumLoadedResources": 0,
+        "bLocalSavedCachedExpressionData_DEPRECATED": false,
+        "bForceNaniteUsage": false,
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 8581,
+      "Index": 2,
+      "Size": 223,
+      "ObjectName": "M_LightStage_ArrowsEditorOnlyData",
+      "ClassName": "MaterialEditorOnlyData",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UMaterialInterfaceEditorOnlyData",
+        "Members": {
+          "struct ColorMaterialInput 44 'EmissiveColor'": {
+            "UseConstant": false,
+            "Constant": "0 0 0 0",
+            "Expression": 5,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct MaterialExpressionCollection 65 'ExpressionCollection'": {
+            "obj[] 'Expressions'": "5 7 3 6 4"
+          }
+        },
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 8804,
+      "Index": 3,
+      "Size": 222,
+      "ObjectName": "MaterialExpressionFresnel",
+      "ClassName": "MaterialExpressionFresnel",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'Exponent'": 1,
+          "float 'BaseReflectFraction'": 0,
+          "int 'MaterialExpressionEditorX'": -1020,
+          "int 'MaterialExpressionEditorY'": 500,
+          "guid 'MaterialExpressionGuid'": "4a3b2547-493c-bc5b-2323-278c74e5f53a",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 9026,
+      "Index": 4,
+      "Size": 278,
+      "ObjectName": "MaterialExpressionLinearInterpolate",
+      "ClassName": "MaterialExpressionLinearInterpolate",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "struct ExpressionInput 36 'Alpha'": {
+            "Expression": 6,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "float 'ConstA'": 0.5,
+          "int 'MaterialExpressionEditorX'": -400,
+          "int 'MaterialExpressionEditorY'": 520,
+          "guid 'MaterialExpressionGuid'": "93cf8e74-4dbd-d1bc-58fd-81af78550fd2",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 9304,
+      "Index": 5,
+      "Size": 363,
+      "ObjectName": "MaterialExpressionMultiply",
+      "ClassName": "MaterialExpressionMultiply",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "struct ExpressionInput 36 'A'": {
+            "Expression": 7,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 1,
+            "MaskR": 1,
+            "MaskG": 1,
+            "MaskB": 1,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "struct ExpressionInput 36 'B'": {
+            "Expression": 4,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "float 'ConstA'": 0.8,
+          "int 'MaterialExpressionEditorX'": -235,
+          "int 'MaterialExpressionEditorY'": 391,
+          "guid 'MaterialExpressionGuid'": "52b6829f-4816-df5d-7e4f-f9b1a5cfaa43",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 9667,
+      "Index": 6,
+      "Size": 249,
+      "ObjectName": "MaterialExpressionOneMinus",
+      "ClassName": "MaterialExpressionOneMinus",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "struct ExpressionInput 36 'Input'": {
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "int 'MaterialExpressionEditorX'": -600,
+          "int 'MaterialExpressionEditorY'": 520,
+          "guid 'MaterialExpressionGuid'": "248ca321-494c-0f6b-bebd-0c84140ffcc2",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 9916,
+      "Index": 7,
+      "Size": 327,
+      "ObjectName": "MaterialExpressionVectorParameter",
+      "ClassName": "MaterialExpressionVectorParameter",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "LinearColor 'DefaultValue'": "1 1 1 1",
+          "name 'ParameterName'": "SunColor",
+          "guid 'ExpressionGUID'": "d7b46a92-4c5e-a110-1c70-e9b0551b447e",
+          "int 'MaterialExpressionEditorX'": -680,
+          "int 'MaterialExpressionEditorY'": 60,
+          "guid 'MaterialExpressionGuid'": "eed9b2a5-4478-7c60-c745-2d82847a83d8",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 10243,
+      "Index": 8,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "AA8848AA4DB008C1F35DEEB1608F5799"
+        }
+      }
+    },
+    {
+      "Offset": 10308,
+      "Index": 9,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

@@ -70,7 +70,7 @@ namespace AssetTool
             IsHeaderOnly =
                 PackageFileSummary.PackageFlags.HasFlag(EPackageFlags.PKG_Cooked) ||
                 PackageFileSummary.bUnversioned ||
-                transfer.Position == PackageFileSummary.TotalHeaderSize;
+                transfer.Position == transfer.GlobalObjects.FileSize;
 
             return this;
         }

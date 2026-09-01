@@ -389,5 +389,451 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 10520,
+      "Index": 1,
+      "Size": 19,
+      "ObjectName": "AssetImportData",
+      "ClassName": "AssetImportData",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UAssetImportData",
+        "Members": {},
+        "Json": "[]"
+      }
+    },
+    {
+      "Offset": 10539,
+      "Index": 2,
+      "Size": 1807,
+      "ObjectName": "RB_BodySetup0",
+      "ClassName": "BodySetup",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBodySetup",
+        "Members": {
+          "struct KAggregateGeom 1098 'AggGeom'": {
+            "ConvexElems": {
+              "Name": "ConvexElems",
+              "Type": "ArrayProperty",
+              "Size": 1057,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
+                "Name": "ConvexElems",
+                "Type": "StructProperty",
+                "Size": 1004,
+                "StructName": "KConvexElem"
+              },
+              "Value": [
+                {
+                  "VertexData": {
+                    "Name": "VertexData",
+                    "Type": "ArrayProperty",
+                    "Size": 245,
+                    "InnerType": "StructProperty",
+                    "MaybeInnerTag": {
+                      "Name": "VertexData",
+                      "Type": "StructProperty",
+                      "Size": 192,
+                      "StructName": "Vector"
+                    },
+                    "Value": [
+                      "499.99993896484375 500.00787353515625 -100.24999237060547",
+                      "499.99993896484375 -499.99993896484375 -100.24679565429688",
+                      "-499.99993896484375 -499.99993896484375 -100.24999237060547",
+                      "500.00787353515625 499.99993896484375 -0.23437498509883881",
+                      "-499.99993896484375 499.99993896484375 -0.25",
+                      "-499.99993896484375 -499.99993896484375 -0.23437498509883881",
+                      "-499.99993896484375 500.00787353515625 -100.24679565429688",
+                      "500.00787353515625 -499.99993896484375 -0.25"
+                    ]
+                  },
+                  "int[] 'IndexData'": "2 6 0 6 3 0 2 0 1 0 7 1 7 2 1 0 3 7 3 5 7 5 2 7 3 6 4 6 5 4 5 3 4 6 2 5",
+                  "struct Box 49 'ElemBox'": {
+                    "Min": "-499.99993896484375 -499.99993896484375 -100.24999237060547",
+                    "Max": "500.00787353515625 500.00787353515625 -0.23437498509883881",
+                    "IsValid": 1
+                  },
+                  "struct Transform 235 'Transform'": {
+                    "Quat 'Rotation'": "0 0 0 1",
+                    "Vector 'Translation'": "0 0 0",
+                    "Vector 'Scale3D'": "1 1 1"
+                  },
+                  "float 'RestOffset'": 0,
+                  "bool 'bIsGenerated'": false,
+                  "name 'Name'": "None",
+                  "bool 'bContributeToMass'": true,
+                  "byte64 (ECollisionEnabled) 'CollisionEnabled'": 59
+                }
+              ]
+            }
+          },
+          "struct BodyInstance 579 'DefaultInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType'": 56,
+            "name 'CollisionProfileName'": "BlockAll",
+            "struct CollisionResponse 422 'CollisionResponses'": {
+              "ResponseArray": {
+                "Name": "ResponseArray",
+                "Type": "ArrayProperty",
+                "Size": 381,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
+                  "Name": "ResponseArray",
+                  "Type": "StructProperty",
+                  "Size": 328,
+                  "StructName": "ResponseChannel"
+                },
+                "Value": [
+                  {
+                    "name 'Channel'": "Lyra_TraceChannel_Interaction",
+                    "byte64 (ECollisionResponse) 'Response'": 61
+                  },
+                  {
+                    "name 'Channel'": "Lyra_TraceChannel_Weapon",
+                    "byte64 (ECollisionResponse) 'Response'": 61
+                  },
+                  {
+                    "name 'Channel'": "Lyra_TraceChannel_Weapon_Capsule",
+                    "byte64 (ECollisionResponse) 'Response'": 61
+                  },
+                  {
+                    "name 'Channel'": "Lyra_TraceChannel_Weapon_Multi",
+                    "byte64 (ECollisionResponse) 'Response'": 61
+                  }
+                ]
+              }
+            },
+            "bool 'bSimulatePhysics'": true
+          }
+        },
+        "BodySetupGuid": "0dd31306-4eb9-dcce-baa6-629898f5b43f",
+        "bCooked": false,
+        "bTemp": false
+      }
+    },
+    {
+      "Offset": 12346,
+      "Index": 3,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "C3D6399847076DA196D0ED84EAE44C80"
+        }
+      }
+    },
+    {
+      "Offset": 12411,
+      "Index": 4,
+      "Size": 44,
+      "ObjectName": "NavCollision",
+      "ClassName": "NavCollision",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UNavCollision",
+        "Members": {},
+        "bGatherConvexGeometry": true,
+        "bHasConvexGeometry": false,
+        "bForceGeometryRebuild": false,
+        "bCreateOnClient": true,
+        "MagicNum": 2721575479,
+        "Version": 4,
+        "Guid2": "",
+        "bCooked": false,
+        "AreaClass": 0
+      }
+    },
+    {
+      "Offset": 12455,
+      "Index": 5,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 12467,
+      "Index": 6,
+      "Size": 3224,
+      "ObjectName": "PhAT_FloorBox",
+      "ClassName": "StaticMesh",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UStaticMesh",
+        "Members": {
+          "SourceModels": {
+            "Name": "SourceModels",
+            "Type": "ArrayProperty",
+            "Size": 1458,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "SourceModels",
+              "Type": "StructProperty",
+              "Size": 1405,
+              "StructName": "StaticMeshSourceModel"
+            },
+            "Value": [
+              {
+                "obj 'StaticMeshDescriptionBulkData'": 8,
+                "struct MeshBuildSettings 567 'BuildSettings'": {
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bRecomputeNormals'": true,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bBuildReversedIndexBuffer'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "bool 'bGenerateLightmapUVs'": false,
+                  "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
+                  "bool 'bSupportFaceRemap'": false,
+                  "int 'MinLightmapResolution'": 64,
+                  "int 'SrcLightmapIndex'": 0,
+                  "int 'DstLightmapIndex'": 1,
+                  "Vector 'BuildScale3D'": "1 1 1",
+                  "float 'DistanceFieldResolutionScale'": 1,
+                  "obj 'DistanceFieldReplacementMesh'": 0,
+                  "int 'MaxLumenMeshCards'": 12
+                },
+                "struct MeshReductionSettings 587 'ReductionSettings'": {
+                  "float 'PercentTriangles'": 1,
+                  "float 'PercentVertices'": 1,
+                  "float 'MaxDeviation'": 0,
+                  "float 'PixelError'": 8,
+                  "float 'WeldingThreshold'": 0,
+                  "float 'HardAngleThreshold'": 45,
+                  "int 'BaseLODModel'": 0,
+                  "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 66,
+                  "byte64 (EMeshFeatureImportance) 'TextureImportance'": 66,
+                  "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 66,
+                  "bool 'bRecalculateNormals'": false,
+                  "bool 'bGenerateUniqueLightmapUVs'": false,
+                  "bool 'bKeepSymmetry'": false,
+                  "bool 'bVisibilityAided'": false,
+                  "bool 'bCullOccluded'": false,
+                  "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 70,
+                  "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 65,
+                  "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 67
+                },
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
+                },
+                "string 'SourceImportFilename'": "",
+                "bool 'bImportWithBaseMesh'": false
+              }
+            ]
+          },
+          "struct StaticMeshSourceModel 37 'HiResSourceModel'": {
+            "obj 'StaticMeshDescriptionBulkData'": 7
+          },
+          "struct MeshSectionInfoMap 202 'SectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "struct MeshSectionInfoMap 202 'OriginalSectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "StaticMaterials": {
+            "Name": "StaticMaterials",
+            "Type": "ArrayProperty",
+            "Size": 381,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "StaticMaterials",
+              "Type": "StructProperty",
+              "Size": 328,
+              "StructName": "StaticMaterial"
+            },
+            "Value": [
+              {
+                "obj 'MaterialInterface'": -8,
+                "name 'MaterialSlotName'": "GridMaterial",
+                "name 'ImportedMaterialSlotName'": "GridMaterial",
+                "struct MeshUVChannelInfo 176 'UVChannelData'": {
+                  "bool 'bInitialized'": true,
+                  "bool 'bOverrideDensities'": false,
+                  "float 'LocalUVDensities'": 1001.47845,
+                  "float 'LocalUVDensities'[1]": 0,
+                  "float 'LocalUVDensities'[2]": 0,
+                  "float 'LocalUVDensities'[3]": 0
+                }
+              }
+            ]
+          },
+          "float 'LightmapUVDensity'": 1001.47845,
+          "obj 'AssetImportData'": 1,
+          "obj 'ThumbnailInfo'": 5,
+          "struct AssetEditorOrbitCameraPosition 253 'EditorCameraPosition'": {
+            "bool 'bIsSet'": true,
+            "Vector 'CamOrbitPoint'": "21.597497940063477 540.50982666015625 306.93191528320312",
+            "Vector 'CamOrbitZoom'": "201.89898681640625 -7.4066686630249023 165.05267333984375",
+            "Rotator 'CamOrbitRotation'": "-39.247146606445312 177.8990478515625 2.4005325940379407E-06"
+          },
+          "struct BoxSphereBounds 187 'ExtendedBounds'": {
+            "Vector 'Origin'": "0 0 -50.246803283691406",
+            "Vector 'BoxExtent'": "500 500 50",
+            "double 'SphereRadius'": 708.872314453125
+          }
+        },
+        "StripFlags": {
+          "GlobalStripFlags": "None",
+          "ClassStripFlags": 0
+        },
+        "bCooked": false,
+        "LocalBodySetup": 2,
+        "LocalNavCollision": 4,
+        "DummyThumbnailDistance": 0,
+        "Deprecated_HighResSourceMeshCRC": 0,
+        "LocalLightingGuid": "4e925b1c-45c7-bd55-9253-3880f7e13e94",
+        "Sockets": "",
+        "bHasSpeedTreeWind": false,
+        "StaticMaterials": [
+          {
+            "MaterialInterface": 4294967288,
+            "MaterialSlotName": "GridMaterial",
+            "InImportedMaterialSlotName": "GridMaterial",
+            "UVChannelData": {
+              "bInitialized": true,
+              "bOverrideDensities": false,
+              "LocalUVDensities": "1001.47845 0 0 0"
+            }
+          }
+        ],
+        "SourceModels": [
+          {
+            "bIsValid": false
+          }
+        ]
+      }
+    },
+    {
+      "Offset": 15691,
+      "Index": 7,
+      "Size": 88,
+      "ObjectName": "HiResMeshDescription",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "None",
+            "BulkDataId": "",
+            "PayloadContentId": {
+              "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            },
+            "PayloadSize": 0,
+            "OffsetInFile": 15867
+          },
+          "Guid": "",
+          "bGuidIsHash": false
+        }
+      }
+    },
+    {
+      "Offset": 15779,
+      "Index": 8,
+      "Size": 88,
+      "ObjectName": "StaticMeshDescriptionBulkData",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "HasRegistered",
+            "BulkDataId": "3abad61d-4e94-f243-0a09-c488ae04b7f3",
+            "PayloadContentId": {
+              "ByteArray": "O3zbTyH9V1tta8W1bgocEMbHP8I="
+            },
+            "PayloadSize": 3728,
+            "OffsetInFile": 15931
+          },
+          "Guid": "f010fc31-41cd-b926-d46c-f6a7c2b429d1",
+          "bGuidIsHash": false
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "t3VjYh4jumsAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAECvE0m59fmhpqBATeo23MlJm8slya3BErfMmpPK5B8yYrd1Y2LM3vNaAwMDEgAAAAEAAAAAAAAOkAAAAAAAAANuO3zbTyH9V1tta8W1bgocEMbHP8J+Q5OWQqSMP0I1UgIAAAMqjAYAAySIAyIHAAAACQAAAAABKlZlcnRpY2VzAAEAAAAIAAAA/wAKUG9zaXRpb24gAQwAAPpD+sNdfsjCQ8PDJLl8vkNDACEQZXhJbnN0YW4k////DwZkZXgABCQEAAICAwUGBwAFAgUBBwAEMBJUZXh0dXJlQ29vcmRpbmEIbxIDOjvffz8AFAdOb3JtYWwMAIC/PyJUYW5nZW50//9/DUJpblNpZ24EPwZDb2wQIVVWAVVWAAAhRWRnEgICAQIDBAcDAAIDSXNIYXJkAQEBAAEBAQEAIFRyaWFuZ2wMDBQDAwUICQsNDg8RExQVFhcYGRobHB0eHyEjDVBvbHlnb24MDEdyb3VwAAhVVgAJEg5zABlJbXBvcnRlZE1hdGVyaWFsU2xvdE5hbWUNR3JpAAUAAABOb25lACAAAAAAAOUH1cgFz+XI1YOXFTXoF2gVIdQBRQXI2wnXyNXY1yVV1QUFFcjVBZXV1ajlZdXVmJWViMgFBQPc6BXL0nhI6IhIWFhISFj8aLz8eOjo/Gjo0NAF3+gV1AHe/D38/Mz8/JhIQNX//+j8vHxY0AXPz/gV0Mj80XzQBQPM+CH8fPzV0szU1f41TZDV1w3QyP3VlbjYVYj96JXl5WXl1VjY6MjP5ekDzMwB1dcJ1NWl0ODVSD3Y5QXV1QUF1dUFBQUFhQUFBQUFBQXV1eUF8zU1/OjU//1YBf7lIfxI4fz13UglBc/o2AXfAAB9BAwKBgQIDAMHDgQIAAgEDAgIDAgICAgIAgIABAAICAAACAgYGh8bCgMEBAgADAwlEBgADBApIhURGQARDQEGDgQ8PBUAIzsXMzUEPwgAPzM/AAAKCD8EAwcIAQ8+EzsLOjITABMKDD4IBjEbNw03DQIAFwscDQsCHxEBBAkAADYPBgEDAgUBAgwFBwsLFwMtMTM3MzIEDAAEWznHAAEAXwBmB/8CAAYCAwMEBgQTAhUaAQVOFQAAAbKsESEwKIOhAgjcLp0hdgkAuqAVSs4GwjPH5AHgiTDZDaMZO4AAoBYOtaKNFz0TAJRqWUWqxIt7ySbfMQE0ZpBh8gSYJwgENiFAwYMqng=="
+  }
 }

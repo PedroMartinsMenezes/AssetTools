@@ -715,7 +715,609 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty InstancedPropertyBag": {
+        "TypeName": "StructProperty 1 | InstancedPropertyBag 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty PCGOverrideInstancedPropertyBag": {
+        "TypeName": "StructProperty 1 | PCGOverrideInstancedPropertyBag 1 | /Script/PCG 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 20453,
+      "Index": 1,
+      "Size": 733,
+      "ObjectName": "PCG_BP_FenceSpline",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -6,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 16,
+          "obj[] 'UbergraphPages'": "3",
+          "obj[] 'FunctionGraphs'": "4",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 28,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "None",
+              "Event Graph"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 298,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                    "AssetName": "PCG_BP_FenceSpline"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                    "AssetName": "PCG_BP_FenceSpline"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": 1
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "b5de7f8b-4455-475e-6944-ebbd64f29775"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 21186,
+      "Index": 2,
+      "Size": 268,
+      "ObjectName": "PCG_BP_FenceSpline_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 16
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-6] Actor",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-13] SplineComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "FenceSpline",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-14] PCGComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PCG",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {},
+        "ClassFlags": 8651012,
+        "ClassWithin": 4294967291,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 9,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 21454,
+      "Index": 3,
+      "Size": 185,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "obj[] 'Nodes'": "5 6 7",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "bc6230d6-4956-29e0-3f62-7cba3e77d331"
+        }
+      }
+    },
+    {
+      "Offset": 21639,
+      "Index": 4,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "obj[] 'Nodes'": "8",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "fda537f5-491c-4c18-09d8-bbb4bc4ca8da"
+        }
+      }
+    },
+    {
+      "Offset": 21816,
+      "Index": 5,
+      "Size": 854,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveBeginPlay"
+          },
+          "bool 'bOverrideFunction'": true,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "c0166a81-453d-5ec4-dcb3-f39f8816ed6f"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-6` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`5 3f90cb56-406a-cfcf-8e10-c0b0c8d94bd3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`5 3658d95c-48c0-57db-9433-75a9f6040412`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 22670,
+      "Index": 6,
+      "Size": 1114,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 208,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "41da603c-4e8c-f985-e185-44bf5e82ecd7"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-6` `` `ReceiveActorBeginOverlap`)`» Name«`OutputDelegate`» Id«`6 3d93538b-489f-1021-0430-fab5f6c9158a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`6 d2bbaf90-4f86-f88a-66f0-09840b502123`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-6`)`» Name«`OtherActor`» Id«`6 50f31444-46c1-b95f-2943-c7a20026081b`» ToolTip«`Other Actor\nActor Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 23784,
+      "Index": 7,
+      "Size": 1126,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "ReceiveTick"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 416,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "ece5b255-45c4-5d59-dde0-a394fbe461c3"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-6` `` `ReceiveTick`)`» Name«`OutputDelegate`» Id«`7 5457c1a3-402a-82e8-3bdb-43b094e3eabd`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`7 80dca2a3-4f78-1306-cfb3-77838062b329`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-float`» Name«`DeltaSeconds`» Id«`7 dc6df6ce-4b49-7718-4eda-eab647b1b572`» ToolTip«`Delta Seconds\nFloat (single-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 24910,
+      "Index": 8,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "guid 'NodeGuid'": "1d97f3d9-42d5-ae2f-8943-ad8824b86861"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`8 e89bc812-4a18-6d78-6c41-c8b1d964c735`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 25311,
+      "Index": 9,
+      "Size": 13,
+      "ObjectName": "Default__PCG_BP_FenceSpline_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 25324,
+      "Index": 10,
+      "Size": 75,
+      "ObjectName": "PCG_GEN_VARIABLE",
+      "ClassName": "PCGComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UPCGComponent",
+        "Members": {
+          "bool 'bForceGenerateOnBPAddedToWorld'": true,
+          "obj 'GraphInstance'": 11
+        },
+        "DynamicallyTrackedKeysToSettings": [],
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 25399,
+      "Index": 11,
+      "Size": 580,
+      "ObjectName": "PCGGraphInstance",
+      "ClassName": "PCGGraphInstance",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'Graph'": -22,
+          "struct PCGOverrideInstancedPropertyBag 489 'ParametersOverrides'": {
+            "class InstancedPropertyBag 432 'Parameters'": {
+              "Version": "SerializeStructSize",
+              "bHasData": true,
+              "PropertyDescs": [
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "330ac9e2-4240-f9bc-ddb8-98acd46f8370",
+                  "Name": "PostDistance",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "General"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "1eb86da9-4131-2550-4f5a-07933d3d2304",
+                  "Name": "HeightOffset",
+                  "ValueType": "Double",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "General"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "efb79ad0-4bc8-4807-4237-6abc997378b8",
+                  "Name": "bUseCurvedEndCaps",
+                  "ValueType": "Bool",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "EndCaps"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                },
+                {
+                  "ValueTypeObject": "ImportIndex[0] ",
+                  "ID": "74396a9d-4ba9-8e42-1789-75834f23ed60",
+                  "Name": "bEndOnlyCap",
+                  "ValueType": "Bool",
+                  "TmpContainerType": "None",
+                  "bHasMetaData": true,
+                  "MetaData": [
+                    {
+                      "Key": "Category",
+                      "Value": "EndCaps"
+                    },
+                    {
+                      "Key": "EnableCategories"
+                    }
+                  ],
+                  "MetaClass": "ImportIndex[0] ",
+                  "ContainerTypes": {
+                    "NumContainers": 0,
+                    "Types": []
+                  }
+                }
+              ],
+              "SerialSize": 124,
+              "BagStruct": {
+                "Members": {
+                  "double 'PostDistance'": 500,
+                  "double 'HeightOffset'": 0,
+                  "bool 'bUseCurvedEndCaps'": false,
+                  "bool 'bEndOnlyCap'": false
+                },
+                "Children": 0,
+                "StructFlags": "STRUCT_NoFlags",
+                "UseNativeSerialization": false,
+                "UseBinarySerialization": false,
+                "Next": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "Offset": 25979,
+      "Index": 12,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 26021,
+      "Index": 13,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -10,
+          "obj 'ComponentTemplate'": 12,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid'": "30890f52-4073-6c87-aba6-678dfe0ff694",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 26252,
+      "Index": 14,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -13,
+          "obj 'ComponentTemplate'": 17,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid'": "2bcb9f24-4368-d2ec-e40b-94aaf38d67f1",
+          "name 'InternalVariableName'": "FenceSpline"
+        }
+      }
+    },
+    {
+      "Offset": 26483,
+      "Index": 15,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -14,
+          "obj 'ComponentTemplate'": 10,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid'": "95b5fcf0-44c3-72f4-c16f-54849c71dae2",
+          "name 'InternalVariableName'": "PCG"
+        }
+      }
+    },
+    {
+      "Offset": 26714,
+      "Index": 16,
+      "Size": 140,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "15 14",
+          "obj[] 'AllNodes'": "15 14",
+          "obj 'DefaultSceneRootNode'": 13
+        }
+      }
+    },
+    {
+      "Offset": 26854,
+      "Index": 17,
+      "Size": 82,
+      "ObjectName": "FenceSpline_GEN_VARIABLE",
+      "ClassName": "SplineComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "LinearColor 'EditorSelectedSplineSegmentColor'": "0.828 0.364 0.003 1"
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

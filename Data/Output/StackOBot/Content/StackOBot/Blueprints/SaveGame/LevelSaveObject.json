@@ -432,5 +432,999 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 25805,
+      "Index": 1,
+      "Size": 1924,
+      "ObjectName": "LevelSaveObject",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -13,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'UbergraphPages'": "4",
+          "obj[] 'FunctionGraphs'": "5 6 3",
+          "NewVariables": {
+            "Name": "NewVariables",
+            "Type": "ArrayProperty",
+            "Size": 694,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "NewVariables",
+              "Type": "StructProperty",
+              "Size": 641,
+              "StructName": "BPVariableDescription"
+            },
+            "Value": [
+              {
+                "name 'VarName'": "CollectablePickups",
+                "guid 'VarGuid'": "22ad8c26-4699-5107-7853-898679e91849",
+                "struct EdGraphPinType 69 'VarType'": "struct obj(`-26`) container(`Array`)",
+                "string 'FriendlyName'": "Collectable Pickups",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 28,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 128,
+                  "InnerType": "StructProperty",
+                  "MaybeInnerTag": {
+                    "Name": "MetaDataArray",
+                    "Type": "StructProperty",
+                    "Size": 75,
+                    "StructName": "BPVariableMetaDataEntry"
+                  },
+                  "Value": [
+                    {
+                      "name 'DataKey'": "MultiLine",
+                      "string 'DataValue'": "true"
+                    }
+                  ]
+                },
+                "string 'DefaultValue'": ""
+              }
+            ]
+          },
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "None"
+            ]
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 802,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "LastEditedDocuments",
+              "Type": "StructProperty",
+              "Size": 749,
+              "StructName": "EditedDocumentInfo"
+            },
+            "Value": [
+              {
+                "struct SoftObjectPath 41 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "SubPathString": "GetCollectablesOnMap",
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                    "AssetName": "LevelSaveObject"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "-350.884033203125 -200.84249877929688",
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "struct SoftObjectPath 38 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "SubPathString": "RemoveCollectable",
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                    "AssetName": "LevelSaveObject"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "-221.5999755859375 -286.0249938964844",
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "SubPathString": "AddCollectable",
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                    "AssetName": "LevelSaveObject"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "-465.0001220703125 -473.1499938964844",
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "struct SoftObjectPath 31 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                    "AssetName": "LevelSaveObject"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "89 -5",
+                "float 'SavedZoomAmount'": 1
+              }
+            ]
+          },
+          "obj 'ThumbnailInfo'": 26,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "19844624-4e6c-0928-78ad-d5bb8bf6f667"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 27729,
+      "Index": 2,
+      "Size": 480,
+      "ObjectName": "LevelSaveObject_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "SaveGame",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'UberGraphFunction'": 12,
+          "PropertyGuids": {
+            "Name": "PropertyGuids",
+            "Type": "MapProperty",
+            "Size": 32,
+            "InnerType": "NameProperty",
+            "ValueType": "StructProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 1,
+              "KeyProp": [
+                "CollectablePickups"
+              ],
+              "ValueProp": [
+                "22ad8c26-4699-5107-7853-898679e91849"
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            }
+          }
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-13] SaveGame",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[11] ImportIndex[-6]: Function",
+          "ExportIndex[14] ImportIndex[-6]: Function",
+          "ExportIndex[13] ImportIndex[-6]: Function",
+          "ExportIndex[12] ImportIndex[-6]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-25] PointerToUberGraphFrame",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FArrayProperty",
+            "TypeName": "ArrayProperty",
+            "PropertyTypeName": "StructProperty",
+            "SingleField": {
+              "__type": "FStructProperty",
+              "TypeName": "StructProperty",
+              "Value": "ImportIndex[-26] CollectableObjectData",
+              "ArrayDim": 1,
+              "ElementSize": 112,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "RepNotifyFunc": "None",
+              "BlueprintReplicationCondition": 0,
+              "NamePrivate": "CollectablePickups",
+              "FlagsPrivate": "RF_Public",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CollectablePickups",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Collectable Pickups",
+              "Category": "Default",
+              "MultiLine": "true"
+            }
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_LevelSaveObject": 12,
+          "GetCollectablesOnMap": 13,
+          "RemoveCollectable": 14,
+          "AddCollectable": 11
+        },
+        "ClassFlags": 264192,
+        "ClassWithin": 4294967288,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 24,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 28209,
+      "Index": 3,
+      "Size": 159,
+      "ObjectName": "AddCollectable",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "17 21 15 7",
+          "guid 'GraphGuid'": "13f3fcff-465b-675f-a9f9-17aa3146bb84"
+        }
+      }
+    },
+    {
+      "Offset": 28368,
+      "Index": 4,
+      "Size": 173,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "8",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "0323f70e-4f2c-509c-cc4e-66ab0007ee23"
+        }
+      }
+    },
+    {
+      "Offset": 28541,
+      "Index": 5,
+      "Size": 159,
+      "ObjectName": "GetCollectablesOnMap",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "18 22 20 9",
+          "guid 'GraphGuid'": "fcf6bf03-469d-f58d-506e-fd9b2c38409d"
+        }
+      }
+    },
+    {
+      "Offset": 28700,
+      "Index": 6,
+      "Size": 159,
+      "ObjectName": "RemoveCollectable",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "19 23 16 10",
+          "guid 'GraphGuid'": "6249ed4d-4cad-55d9-1c3e-11a822d1915c"
+        }
+      }
+    },
+    {
+      "Offset": 28859,
+      "Index": 7,
+      "Size": 512,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0.392576 0.786308 1 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": -34,
+          "int 'NodePosY'": -132,
+          "int 'NodeWidth'": 576,
+          "int 'NodeHeight'": 288,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Add a collectable to the list of collectables that are left on the map. Done by the game instance at the first start when no save game exists.",
+          "guid 'NodeGuid'": "e3714aaf-401e-edbf-02ac-78bbe701f91a"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 29371,
+      "Index": 8,
+      "Size": 608,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0 0 0 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 352,
+          "int 'NodePosY'": 192,
+          "int 'NodeWidth'": 768,
+          "int 'NodeHeight'": 160,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "The level save object contains the data and functions. This object is than saved into a slot as a file on disc. If we would have several levels we could have a save game for each seperatly.\r\n\r\nThe game instance handles the save game data.",
+          "guid 'NodeGuid'": "17a45bfc-40b6-b1ee-9812-618162da2082"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 29979,
+      "Index": 9,
+      "Size": 473,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "1 0.448106 0.812719 1",
+          "int 'FontSize'": 12,
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": -48,
+          "int 'NodePosY'": -48,
+          "int 'NodeWidth'": 521,
+          "int 'NodeHeight'": 214,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Get all the collectables (in our case only orbs) that are still in the map",
+          "guid 'NodeGuid'": "41becb00-4a6b-915f-707f-baa1e0066acd"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 30452,
+      "Index": 10,
+      "Size": 556,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor'": "0.463061 1 0.508225 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": -41,
+          "int 'NodePosY'": -180,
+          "int 'NodeWidth'": 496,
+          "int 'NodeHeight'": 336,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Remove a collectable from our list of collectables that are still in the map. This uses an own struct we created that has the class and actor transform so we can place it at level start.",
+          "guid 'NodeGuid'": "887b8db2-431d-04f5-71ff-afb4fac87217"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 31008,
+      "Index": 11,
+      "Size": 257,
+      "ObjectName": "AddCollectable",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 75,
+          "SerializedScriptSize": 107,
+          "ScriptData": "XlpeDwEAAAAUAAAAAAAAAAsAAAAAAQAAABQAAAAAAAAACwAAABkg7v///xwAAAABAAAAFAAAAAAAAAALAAAAHPD///8BAQAAABoAAAAAAAAAAgAAAAABAAAAGAAAAAAAAAALAAAAFloEC1M="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-26] CollectableObjectData",
+            "ArrayDim": 1,
+            "ElementSize": 112,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Collectable_",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Array_AddUnique_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 31265,
+      "Index": 12,
+      "Size": 116,
+      "ObjectName": "ExecuteUbergraph_LevelSaveObject",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 13,
+          "SerializedScriptSize": 21,
+          "ScriptData": "TgABAAAAKAAAAAAAAAAMAAAABAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 32769,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 31381,
+      "Index": 13,
+      "Size": 208,
+      "ObjectName": "GetCollectablesOnMap",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 34,
+          "SerializedScriptSize": 58,
+          "ScriptData": "XlpeDwEAAAAaAAAAAAAAAA0AAABIAQAAABoAAAAAAAAADQAAAAEBAAAAGgAAAAAAAAACAAAAWgQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FArrayProperty",
+            "TypeName": "ArrayProperty",
+            "PropertyTypeName": "StructProperty",
+            "SingleField": {
+              "__type": "FStructProperty",
+              "TypeName": "StructProperty",
+              "Value": "ImportIndex[-26] CollectableObjectData",
+              "ArrayDim": 1,
+              "ElementSize": 112,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "RepNotifyFunc": "None",
+              "BlueprintReplicationCondition": 0,
+              "NamePrivate": "CollectablePickups",
+              "FlagsPrivate": "RF_Public",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CollectablePickups",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 474087424,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 31589,
+      "Index": 14,
+      "Size": 247,
+      "ObjectName": "RemoveCollectable",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 67,
+          "SerializedScriptSize": 91,
+          "ScriptData": "XlpeFAABAAAAFQAAAAAAAAAOAAAAGSDu////HAAAAAEAAAAVAAAAAAAAAA4AAAAc7////wEBAAAAGgAAAAAAAAACAAAASAEAAAAZAAAAAAAAAA4AAAAWWgQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-26] CollectableObjectData",
+            "ArrayDim": 1,
+            "ElementSize": 112,
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CollectableData",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Array_RemoveItem_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 31836,
+      "Index": 15,
+      "Size": 1539,
+      "ObjectName": "K2Node_CallArrayFunction",
+      "ClassName": "K2Node_CallArrayFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -12,
+            "name 'MemberName'": "Array_AddUnique"
+          },
+          "int 'NodePosX'": 272,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "1cabd0c4-49ef-236c-4b5f-d396505d93dd"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`15 de7f860d-4dec-54e9-1a14-d5934b5e6128`» LinkedTo«`17 a6c37cf0-45d0-579a-f198-b180d6ceb0f7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`15 5604995c-4013-730c-d769-b78c6a0352da`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-12`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`15 930e6c09-4fae-5d84-aed1-e2ad02427a76`» BitField«`1`» DefaultObject«`ImportIndex[-18] Default__KismetArrayLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-26`) container(`Array`) isReference isConst`» Name«`TargetArray`» Id«`15 7f99bc01-4141-6392-24a8-399927d20414`» LinkedTo«`21 efc5e511-4c99-d1f0-2f3a-49ac438e4fc7`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-26`) isReference isConst`» Name«`NewItem`» Id«`15 7018bc3c-4806-56cc-6627-67bebbbe35da`» LinkedTo«`17 e81845e0-47c9-ea8c-34cc-598ee228e349`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`ReturnValue`» Id«`15 33f34d06-4582-120c-d740-4aad4feeea1d`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 33375,
+      "Index": 16,
+      "Size": 1547,
+      "ObjectName": "K2Node_CallArrayFunction",
+      "ClassName": "K2Node_CallArrayFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -12,
+            "name 'MemberName'": "Array_RemoveItem"
+          },
+          "int 'NodePosX'": 224,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "10e2e256-4160-51db-9c1b-b8b4bb241511"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`16 d7374c5e-407e-e359-9e19-c295eba3c676`» LinkedTo«`19 63c57f03-4a83-c88c-10ae-ddab781fc170`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`16 0492f507-40ed-209c-e2ab-cabc53ece3c8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-12`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`16 ea579c36-4531-f6b4-447d-bea351d6c757`» BitField«`1`» DefaultObject«`ImportIndex[-18] Default__KismetArrayLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-26`) container(`Array`) isReference isConst`» Name«`TargetArray`» Id«`16 ec034010-44f9-8ef9-8f03-6a972219a1a2`» LinkedTo«`23 f572ea7c-4c69-c36e-b63d-5f94504a6f36`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-26`) isReference isConst`» Name«`Item`» Id«`16 24afa05d-4a3d-a3bd-0c33-4c89d8cd49e0`» LinkedTo«`19 cda8d906-4d1e-08d8-8b0f-6da513e7684e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ReturnValue`» Id«`16 cf30873c-4c40-272d-ceb0-4ea92f7760d9`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 34922,
+      "Index": 17,
+      "Size": 781,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "AddCollectable"
+          },
+          "bool 'bIsEditable'": true,
+          "int 'NodePosX'": 16,
+          "guid 'NodeGuid'": "2bebd2b6-4674-118a-8726-6a86923495ab"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "Collectable_",
+            "PinType": "struct obj(`-26`)",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`17 a6c37cf0-45d0-579a-f198-b180d6ceb0f7`» LinkedTo«`15 de7f860d-4dec-54e9-1a14-d5934b5e6128`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-26`)`» Name«`Collectable_`» Id«`17 e81845e0-47c9-ea8c-34cc-598ee228e349`» LinkedTo«`15 7018bc3c-4806-56cc-6627-67bebbbe35da`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 35703,
+      "Index": 18,
+      "Size": 450,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 469893120,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCollectablesOnMap"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid'": "593c043d-4f55-f31f-1313-6fb542738b81"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`18 ed3da18d-4dd6-29ef-efef-33b562b558d3`» LinkedTo«`20 57ce2fda-48c4-2cc7-5ec7-e4ab39bb5061`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 36153,
+      "Index": 19,
+      "Size": 752,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "RemoveCollectable"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid'": "fc7af59f-4648-836a-7d05-9a89acff993e"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "CollectableData",
+            "PinType": "struct obj(`-26`) isReference isConst",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`19 63c57f03-4a83-c88c-10ae-ddab781fc170`» LinkedTo«`16 d7374c5e-407e-e359-9e19-c295eba3c676`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-26`) isReference isConst`» Name«`CollectableData`» Id«`19 cda8d906-4d1e-08d8-8b0f-6da513e7684e`» LinkedTo«`16 24afa05d-4a3d-a3bd-0c33-4c89d8cd49e0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 36905,
+      "Index": 20,
+      "Size": 752,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCollectablesOnMap"
+          },
+          "bool 'bIsEditable'": true,
+          "int 'NodePosX'": 272,
+          "guid 'NodeGuid'": "1174ab24-42c3-02d5-8d14-b18e89f769b6"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "CollectablePickups",
+            "PinType": "struct obj(`-26`) container(`Array`)",
+            "DesiredPinDirection": 0,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`20 57ce2fda-48c4-2cc7-5ec7-e4ab39bb5061`» LinkedTo«`18 ed3da18d-4dd6-29ef-efef-33b562b558d3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-26`) container(`Array`)`» Name«`CollectablePickups`» Id«`20 22ff2c97-4ad2-1423-a0a8-d5b4d1c6eccb`» LinkedTo«`22 e5e8c8f4-41fc-6743-9e20-a1bfde06120b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 37657,
+      "Index": 21,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "CollectablePickups",
+            "guid 'MemberGuid'": "22ad8c26-4699-5107-7853-898679e91849",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 272,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid'": "b237e6cc-4488-669f-8880-ce9c955c7f15"
+        },
+        "Pins": [
+          "output-pin Type«`struct obj(`-26`) container(`Array`)`» Name«`CollectablePickups`» Id«`21 efc5e511-4c99-d1f0-2f3a-49ac438e4fc7`» LinkedTo«`15 7f99bc01-4141-6392-24a8-399927d20414`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`21 a95171d4-42cd-3945-f3a2-27b9884da418`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 38422,
+      "Index": 22,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "CollectablePickups",
+            "guid 'MemberGuid'": "22ad8c26-4699-5107-7853-898679e91849",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 64,
+          "int 'NodePosY'": 80,
+          "guid 'NodeGuid'": "b9ea779e-4a1e-c577-c68f-3ba213731de2"
+        },
+        "Pins": [
+          "output-pin Type«`struct obj(`-26`) container(`Array`)`» Name«`CollectablePickups`» Id«`22 e5e8c8f4-41fc-6743-9e20-a1bfde06120b`» LinkedTo«`20 22ff2c97-4ad2-1423-a0a8-d5b4d1c6eccb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`22 2c44fe17-44d0-b5b7-2834-88a873c6fe9c`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 39187,
+      "Index": 23,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "CollectablePickups",
+            "guid 'MemberGuid'": "22ad8c26-4699-5107-7853-898679e91849",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 224,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid'": "4f7709e2-477a-3166-693e-2e96a519c286"
+        },
+        "Pins": [
+          "output-pin Type«`struct obj(`-26`) container(`Array`)`» Name«`CollectablePickups`» Id«`23 f572ea7c-4c69-c36e-b63d-5f94504a6f36`» LinkedTo«`16 ec034010-44f9-8ef9-8f03-6a972219a1a2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`23 a36059d4-4383-350d-fd49-7d9470adbc5f`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 39952,
+      "Index": 24,
+      "Size": 69,
+      "ObjectName": "Default__LevelSaveObject_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 77,
+            "UberGraphFunctionKey": 0
+          }
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 40021,
+      "Index": 25,
+      "Size": 270,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {
+          "2": {
+            "BlueprintType": "true"
+          },
+          "18": {
+            "DefaultGraphNode": "true"
+          },
+          "19": {
+            "DefaultGraphNode": "true"
+          },
+          "17": {
+            "DefaultGraphNode": "true"
+          },
+          "0": {
+            "CollectableData": ""
+          },
+          "0": {
+            "Collectable_": ""
+          },
+          "0": {
+            "BlueprintType": "true"
+          },
+          "14": {
+            "CollectableData": ""
+          },
+          "11": {
+            "Collectable_": ""
+          }
+        },
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "4AFB0E3042F6A8B23776A48E00B856FE"
+        }
+      }
+    },
+    {
+      "Offset": 40291,
+      "Index": 26,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

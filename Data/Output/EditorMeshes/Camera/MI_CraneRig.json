@@ -240,5 +240,138 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 7626,
+      "Index": 1,
+      "Size": 1118,
+      "ObjectName": "MI_CraneRig",
+      "ClassName": "MaterialInstanceConstant",
+      "ObjectFlags": "RF_Public, RF_Standalone",
+      "Obj": {
+        "__type": "UMaterialInstance",
+        "Members": {
+          "obj 'Parent'": -4,
+          "ScalarParameterValues": {
+            "Name": "ScalarParameterValues",
+            "Type": "ArrayProperty",
+            "Size": 472,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "ScalarParameterValues",
+              "Type": "StructProperty",
+              "Size": 419,
+              "StructName": "ScalarParameterValue"
+            },
+            "Value": [
+              {
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  }
+                },
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
+                },
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ]
+          },
+          "VectorParameterValues": {
+            "Name": "VectorParameterValues",
+            "Type": "ArrayProperty",
+            "Size": 351,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "VectorParameterValues",
+              "Type": "StructProperty",
+              "Size": 298,
+              "StructName": "VectorParameterValue"
+            },
+            "Value": [
+              {
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "Color",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
+                },
+                "LinearColor 'ParameterValue'": "0.588 0.588 0.588 1",
+                "guid 'ExpressionGUID'": "5e26e355-44ef-b707-df57-eaade4b425e8"
+              }
+            ]
+          },
+          "struct MaterialInstanceBasePropertyOverrides 37 'BasePropertyOverrides'": {
+            "float 'OpacityMaskClipValue'": 0.3333
+          },
+          "obj 'ThumbnailInfo'": 3,
+          "guid 'LightingGuid'": "c1802b50-4e28-7080-8ab3-4fa07c1b581b"
+        },
+        "bSavedCachedData": false,
+        "bHasStaticPermutationResource": false,
+        "bOverrideBaseProperties_DEPRECATED": false,
+        "bHasPropertyOverrides": false,
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 8744,
+      "Index": 2,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "B33134A64B2F7F9475FF7E919EE0235E"
+        }
+      }
+    },
+    {
+      "Offset": 8809,
+      "Index": 3,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

@@ -204,5 +204,92 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 34496,
+      "Index": 1,
+      "Size": 468,
+      "ObjectName": "TranslucentLitSpriteMaterial",
+      "ClassName": "MaterialInstanceConstant",
+      "ObjectFlags": "RF_Public, RF_Standalone",
+      "Obj": {
+        "__type": "UMaterialInstance",
+        "Members": {
+          "obj 'Parent'": -3,
+          "bool 'bHasStaticPermutationResource'": true,
+          "guid 'ParentLightingGuid'": "cfb2fa4d-4e8e-b161-ecd9-f2b5a967ba29",
+          "ScalarParameterValues": {
+            "Name": "ScalarParameterValues",
+            "Type": "ArrayProperty",
+            "Size": 120,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'ParameterName'": "RefractionDepthBias",
+                "float 'ParameterValue'": 0,
+                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+              }
+            ]
+          },
+          "bool 'bOverrideBaseProperties'": true,
+          "ReferencedTextureGuids": {
+            "Name": "ReferencedTextureGuids",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "StructProperty",
+            "Value": [
+              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+            ]
+          },
+          "obj 'ThumbnailInfo'": 2,
+          "guid 'LightingGuid'": "c8f23f5c-46bf-9766-0c37-d58483cc8a80"
+        },
+        "bSavedCachedData": false,
+        "bHasStaticPermutationResource": true,
+        "StaticParameters_DEPRECATED": {
+          "StaticSwitchParameters_DEPRECATED": [],
+          "StaticComponentMaskParameters": [],
+          "TerrainLayerWeightParameters": []
+        },
+        "bOverrideBaseProperties_DEPRECATED": true,
+        "bHasPropertyOverrides": true,
+        "BasePropertyOverrides": {
+          "bOverride_OpacityMaskClipValue": false,
+          "OpacityMaskClipValue": 0.3333,
+          "bOverride_BlendMode": true,
+          "BlendMode": "BLEND_Translucent",
+          "bOverride_ShadingModel": false,
+          "ShadingModel": "MSM_Unlit",
+          "bOverride_TwoSided": false,
+          "TwoSided": true,
+          "bOverride_bIsThinSurface": false,
+          "bIsThinSurface": false,
+          "bOverride_DitheredLODTransition": false,
+          "DitheredLODTransition": false
+        },
+        "LoadedResources": [],
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 34964,
+      "Index": 2,
+      "Size": 136,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "byte64 (EThumbnailPrimType) 'PrimitiveType'": 38,
+          "float 'OrbitPitch'": 43,
+          "float 'OrbitYaw'": -144,
+          "float 'OrbitZoom'": -342
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

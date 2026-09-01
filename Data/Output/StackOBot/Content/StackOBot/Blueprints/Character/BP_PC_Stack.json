@@ -1848,7 +1848,4357 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 103734,
+      "Index": 1,
+      "Size": 3362,
+      "ObjectName": "BP_PC_Stack",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -40,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 93,
+          "obj[] 'UbergraphPages'": "4",
+          "obj[] 'FunctionGraphs'": "8",
+          "NewVariables": {
+            "Name": "NewVariables",
+            "Type": "ArrayProperty",
+            "Size": 2306,
+            "StructName": "BPVariableDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'VarName'": "IsUsingGamepad",
+                "guid 'VarGuid' /Script/CoreUObject": "df213d31-4172-30e5-af13-a580e9027107",
+                "class EdGraphPinType 69 'VarType'": "bool",
+                "string 'FriendlyName'": "Is Using Gamepad",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 79,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [
+                    {
+                      "name 'DataKey'": "MultiLine",
+                      "string 'DataValue'": "true"
+                    }
+                  ],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "CameraTransitionActive",
+                "guid 'VarGuid' /Script/CoreUObject": "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
+                "class EdGraphPinType 69 'VarType'": "bool",
+                "string 'FriendlyName'": "Camera Transition Active",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 65541,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "DroneRef",
+                "guid 'VarGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+                "class EdGraphPinType 69 'VarType'": "object obj(`-3`)",
+                "string 'FriendlyName'": "Drone Ref",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 67589,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "PlayerRef",
+                "guid 'VarGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
+                "class EdGraphPinType 69 'VarType'": "object obj(`-38`)",
+                "string 'FriendlyName'": "Player Ref",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 67589,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+          },
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 28,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "None",
+              "Event Graph",
+              "Default"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "ImplementedInterfaces": {
+            "Name": "ImplementedInterfaces",
+            "Type": "ArrayProperty",
+            "Size": 172,
+            "StructName": "BPInterfaceDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'Interface'": -2,
+                "obj[] 'Graphs'": "5 7 6"
+              },
+              {
+                "obj 'Interface'": -5,
+                "obj[] 'Graphs'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 298,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
+                    "AssetName": "BP_PC_Stack"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
+                    "AssetName": "BP_PC_Stack"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -593.00977,
+                  "Y": -2042.6482
+                },
+                "float 'SavedZoomAmount'": 0.25
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'ThumbnailInfo'": 91,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid' /Script/CoreUObject": "94e0e784-45bc-baa6-5786-76827e032f80"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 107096,
+      "Index": 2,
+      "Size": 1192,
+      "ObjectName": "BP_PC_Stack_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "PlayerController",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj[] 'DynamicBindingObjects'": "13",
+          "obj 'SimpleConstructionScript'": 93,
+          "obj 'UberGraphFunction'": 14,
+          "PropertyGuids": {
+            "Name": "PropertyGuids",
+            "Type": "MapProperty",
+            "Size": 104,
+            "BoolVal": 0,
+            "ValueType": "StructProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 4,
+              "KeyProp": [
+                "PlayerRef",
+                "DroneRef",
+                "CameraTransitionActive",
+                "IsUsingGamepad"
+              ],
+              "ValueProp": [
+                "ea564f8c-4a28-054c-afbc-789142c03569",
+                "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+                "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
+                "df213d31-4172-30e5-af13-a580e9027107"
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          }
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-40] PlayerController",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[16] ImportIndex[-24]: Function",
+          "ExportIndex[17] ImportIndex[-24]: Function",
+          "ExportIndex[15] ImportIndex[-24]: Function",
+          "ExportIndex[20] ImportIndex[-24]: Function",
+          "ExportIndex[18] ImportIndex[-24]: Function",
+          "ExportIndex[19] ImportIndex[-24]: Function",
+          "ExportIndex[30] ImportIndex[-24]: Function",
+          "ExportIndex[21] ImportIndex[-24]: Function",
+          "ExportIndex[27] ImportIndex[-24]: Function",
+          "ExportIndex[32] ImportIndex[-24]: Function",
+          "ExportIndex[31] ImportIndex[-24]: Function",
+          "ExportIndex[28] ImportIndex[-24]: Function",
+          "ExportIndex[23] ImportIndex[-24]: Function",
+          "ExportIndex[29] ImportIndex[-24]: Function",
+          "ExportIndex[25] ImportIndex[-24]: Function",
+          "ExportIndex[26] ImportIndex[-24]: Function",
+          "ExportIndex[24] ImportIndex[-24]: Function",
+          "ExportIndex[22] ImportIndex[-24]: Function",
+          "ExportIndex[14] ImportIndex[-24]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-108] PointerToUberGraphFrame",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "IsUsingGamepad",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Is Using Gamepad",
+              "Category": "Default",
+              "MultiLine": "true"
+            }
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CameraTransitionActive",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Camera Transition Active",
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-3] BP_Drone_C",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "DroneRef",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Drone Ref",
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-38] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PlayerRef",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "DisplayName": "Player Ref",
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_BP_PC_Stack": 14,
+          "Pause": 22,
+          "ReceiveBeginPlay": 24,
+          "Reset Player": 26,
+          "ReceivePossess": 25,
+          "SetCameraState": 29,
+          "Primary Thumbstick": 23,
+          "Secondary Thumbstick": 28,
+          "Touch Jump Start": 31,
+          "UsePresetAngle": 32,
+          "ResetCamera": 27,
+          "Interact": 21,
+          "Touch Jump End": 30,
+          "InpActEvt_IA_DroneSwitch_K2Node_EnhancedInputActionEvent\"3": 19,
+          "InpActEvt_IA_CameraToggle_K2Node_EnhancedInputActionEvent\"4": 18,
+          "InpActEvt_IA_Pause_K2Node_EnhancedInputActionEvent\"5": 20,
+          "GetCameraState": 15,
+          "GetPlayerCamera": 17,
+          "GetLockedCamera": 16
+        },
+        "ClassFlags": 8651524,
+        "ClassWithin": 4294967271,
+        "ClassConfigName": "Game",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [
+          {
+            "Class": 4294967294,
+            "PointerOffset": 0,
+            "bImplementedByK2": true
+          },
+          {
+            "Class": 4294967291,
+            "PointerOffset": 0,
+            "bImplementedByK2": true
+          }
+        ],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 108288,
+      "Index": 3,
+      "Size": 248,
+      "ObjectName": "Default__BP_PC_Stack_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 215,
+            "UberGraphFunctionKey": 0
+          },
+          "obj 'PlayerCameraManagerClass'": -1,
+          "obj 'TransformComponent'": 90,
+          "bool 'bAttachToPawn'": true,
+          "obj 'RootComponent'": 90,
+          "string 'ActorLabel'": "PC_InGame-1",
+          "bool 'bHiddenEdTemporary'": true
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 108536,
+      "Index": 4,
+      "Size": 385,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -7,
+          "obj[] 'Nodes'": "53 34 9 52 74 56 11 35 36 38 37 79 70 47 46 12 60 81 61 33 55 45 57 75 50 76 48 59 71 78 62 58 44 80 87 82 39 40 51 54 88 49 85 83 41 10 77 72 86 42 84 43 73",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "a2f1706b-45fe-fd17-9e5a-8ea01bc6219a"
+        }
+      }
+    },
+    {
+      "Offset": 108921,
+      "Index": 5,
+      "Size": 246,
+      "ObjectName": "GetCameraState",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -7,
+          "obj[] 'Nodes'": "63 67",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "0a368dc0-4d66-a9c7-8fc3-ffb46e4e5a38",
+          "guid 'InterfaceGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+        }
+      }
+    },
+    {
+      "Offset": 109167,
+      "Index": 6,
+      "Size": 246,
+      "ObjectName": "GetLockedCamera",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -7,
+          "obj[] 'Nodes'": "64 68",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "94ae0be8-4b93-088e-783c-108c6bc64126",
+          "guid 'InterfaceGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+        }
+      }
+    },
+    {
+      "Offset": 109413,
+      "Index": 7,
+      "Size": 246,
+      "ObjectName": "GetPlayerCamera",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -7,
+          "obj[] 'Nodes'": "65 69",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "54039287-4ad2-dde6-2c2e-feb021d563a9",
+          "guid 'InterfaceGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+        }
+      }
+    },
+    {
+      "Offset": 109659,
+      "Index": 8,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -7,
+          "obj[] 'Nodes'": "66",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "20a4949b-4a5a-7015-ef1f-0e9826456b56"
+        }
+      }
+    },
+    {
+      "Offset": 109836,
+      "Index": 9,
+      "Size": 603,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "0.383246 0.990052 1 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 144,
+          "int 'NodePosY'": -624,
+          "int 'NodeWidth'": 1136,
+          "int 'NodeHeight'": 416,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Key Binding (Pause Menu)\r\nYou will notice we will have input proccessed here in the player controller and in the BP_Bot character.\r\nIn this projects case that is fine. The player controller handles everything expect the pawn controls. ",
+          "guid 'NodeGuid' /Script/CoreUObject": "bfd0510d-4ce0-3d28-b48d-cbb5aa18ee3c"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 110439,
+      "Index": 10,
+      "Size": 391,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 320,
+          "int 'NodePosY'": 112,
+          "int 'NodeWidth'": 1843,
+          "int 'NodeHeight'": 357,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Spawn Drone and Possess",
+          "guid 'NodeGuid' /Script/CoreUObject": "4bb4ac5e-4e05-c979-7108-8dad99b29104"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 110830,
+      "Index": 11,
+      "Size": 492,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "0 0 0 1",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 144,
+          "int 'NodePosY'": -1200,
+          "int 'NodeWidth'": 800,
+          "int 'NodeHeight'": 96,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Here the player controler handles the player camera manager, we add the hud and input that's not relavted to the character. ",
+          "guid 'NodeGuid' /Script/CoreUObject": "c3516fb0-4e9a-3748-a525-d6b8dfccecaa"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 111322,
+      "Index": 12,
+      "Size": 404,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodePosX'": 64,
+          "int 'NodePosY'": 608,
+          "int 'NodeWidth'": 1760,
+          "int 'NodeHeight'": 656,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "Change Controls based on Camera Type",
+          "guid 'NodeGuid' /Script/CoreUObject": "7f2648ef-4b9c-3098-2fa1-d8947d5ac2e0"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 111726,
+      "Index": 13,
+      "Size": 495,
+      "ObjectName": "EnhancedInputActionDelegateBinding",
+      "ClassName": "EnhancedInputActionDelegateBinding",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "InputActionDelegateBindings": {
+            "Name": "InputActionDelegateBindings",
+            "Type": "ArrayProperty",
+            "Size": 421,
+            "StructName": "BlueprintEnhancedInputActionBinding",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'InputAction'": -80,
+                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
+                "name 'FunctionNameToBind'": "InpActEvt_IA_Pause_K2Node_EnhancedInputActionEvent\"5"
+              },
+              {
+                "obj 'InputAction'": -79,
+                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
+                "name 'FunctionNameToBind'": "InpActEvt_IA_DroneSwitch_K2Node_EnhancedInputActionEvent\"3"
+              },
+              {
+                "obj 'InputAction'": -78,
+                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
+                "name 'FunctionNameToBind'": "InpActEvt_IA_CameraToggle_K2Node_EnhancedInputActionEvent\"4"
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintEnhancedInputActionBinding 1 | /Script/EnhancedInput 0"
+          }
+        }
+      }
+    },
+    {
+      "Offset": 112221,
+      "Index": 14,
+      "Size": 7974,
+      "ObjectName": "ExecuteUbergraph_BP_PC_Stack",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 2756,
+          "SerializedScriptSize": 3856,
+          "ScriptData": "TgABAAAAdAAAAAAAAAAOAAAAXloUAAEAAAAxAAAAAAAAAA4AAABotP///wABAAAAsAAAAAIAAAAOAAAAFl4UAAEAAAAYAQAAAAAAAA4AAAAAAQAAADEAAAAAAAAADgAAAFpeDwAAAAAAAAAAAAEAAAAaAQAAAgAAAA4AAAA4BAABAAAAsQAAAAIAAAAOAAAADwEAAAAaAQAAAgAAAA4AAAAAAQAAABoBAAACAAAADgAAAAABAAAAGgEAAAIAAAAOAAAAWl4PAAAAAAAAAAAAAQAAABoBAAAAAAAADgAAADgEAAEAAACzAAAAAgAAAA4AAAAPAQAAABoBAAAAAAAADgAAAAABAAAAGgEAAAAAAAAOAAAAAAEAAAAaAQAAAAAAAA4AAABaXl8AAQAAABkBAAACAAAADgAAAAABAAAAsgAAAAIAAAAOAAAAWl8AAQAAADQAAAACAAAADgAAABy3////Fl4PAAAAAAAAAAAAAQAAAK4AAAACAAAADgAAAFL6////AAEAAAA0AAAAAgAAAA4AAAAPAAAAAAAAAAAAAQAAAK8AAAADAAAADgAAADgCAAEAAACuAAAAAgAAAA4AAABaB8EKAAAAAQAAAK8AAAADAAAADgAAAFpeGVEAAQAAAK4AAAACAAAADgAAAA4AAAAAAAAAAAAAAEULAQAAAAAAABZaBsEKAABeWhQAAQAAADEAAAACAAAADgAAAGi0////AAEAAACwAAAAAAAAAA4AAAAWXhQAAQAAABgBAAACAAAADgAAAAABAAAAMQAAAAIAAAAOAAAAWl4PAAAAAAAAAAAAAQAAABoBAAAEAAAADgAAADgEAAEAAACxAAAAAAAAAA4AAAAPAQAAABoBAAAEAAAADgAAAAABAAAAGgEAAAQAAAAOAAAAAAEAAAAaAQAABAAAAA4AAABaXg8AAAAAAAAAAAABAAAAGgEAAAMAAAAOAAAAOAQAAQAAALMAAAAAAAAADgAAAA8BAAAAGgEAAAMAAAAOAAAAAAEAAAAaAQAAAwAAAA4AAAAAAQAAABoBAAADAAAADgAAAFpeXwABAAAAGQEAAAMAAAAOAAAAAAEAAACyAAAAAAAAAA4AAABaFAABAAAAOgAAAAAAAAAOAAAAaLj///8BAQAAAGcAAAAAAAAAAgAAABZeWgf2AgAAAAEAAAA6AAAAAAAAAA4AAABaDwEAAAA7AAAAAAAAAA4AAAAAAQAAADsAAAAAAAAADgAAABkBAQAAAGcAAAAAAAAAAgAAAAoAAAABAAAAOwAAAAAAAAAOAAAAHMb///8WXhQAAQAAAD0AAAAAAAAADgAAABkBAQAAAO4AAAAAAAAAAgAAAB4AAAABAAAAPQAAAAAAAAAOAAAAHMX///8AAQAAADsAAAAAAAAADgAAACgAAQAAAD4AAAAAAAAADgAAACgWWl4cwv///wEBAAAA7gAAAAAAAAACAAAAFlpeGQEBAAAAZwAAAAAAAAACAAAADgAAAAAAAAAAAAAAG6cAAAAAAAAAFloGwQoAAF8AAQAAADwAAAAAAAAADgAAABzD////Fl5fAQEAAADuAAAAAAAAAAIAAAAAAQAAADwAAAAAAAAADgAAAFpfAAEAAAA8AAAAAAAAAA4AAAAcw////xZfAAEAAAA2AAAAAgAAAA4AAAAZAAEAAAA8AAAAAAAAAA4AAAAOAAAAAQAAADYAAAACAAAADgAAABuMAAAAAAAAABZeGQABAAAANgAAAAIAAAAOAAAADgAAAAAAAAAAAAAAGxMBAAAAAAAAFlpfAAEAAAA8AAAAAAAAAA4AAAAcw////xYPAQAAADgAAAAAAAAADgAAAAABAAAAOAAAAAAAAAAOAAAAGQABAAAAPAAAAAAAAAAOAAAACgAAAAEAAAA4AAAAAAAAAA4AAAAcx////xZeXwABAAAAMAAAAAAAAAAOAAAAaMD///8XIP3///8AAQAAADgAAAAAAAAADgAAACQAKiQBFlpfAAEAAAA8AAAAAAAAAA4AAAAcw////xYPAQAAADgAAAAAAAAADgAAAAABAAAAOAAAAAAAAAAOAAAAGQABAAAAPAAAAAAAAAAOAAAACgAAAAEAAAA4AAAAAAAAAA4AAAAcx////xZeXwABAAAAMgAAAAAAAAAOAAAAaL////8AAQAAADAAAAAAAAAADgAAAAABAAAAOAAAAAAAAAAOAAAAJAEWWl5fAQEAAABnAAAAAAAAAAIAAAAAAQAAADIAAAAAAAAADgAAAFpeHML///8BAQAAAGcAAAAAAAAAAgAAABZaBsEKAABeWgbBCgAAXloGwQoAAF5aBsEKAABeWgbBCgAAXloGwQoAAF5aFAABAAAAMQAAAAMAAAAOAAAAaLT///8AAQAAALAAAAADAAAADgAAABZeFAABAAAAGAEAAAMAAAAOAAAAAAEAAAAxAAAAAwAAAA4AAABaXg8AAAAAAAAAAAABAAAAGgEAAAUAAAAOAAAAOAQAAQAAALEAAAADAAAADgAAAA8BAAAAGgEAAAUAAAAOAAAAAAEAAAAaAQAABQAAAA4AAAAAAQAAABoBAAAFAAAADgAAAFpeDwAAAAAAAAAAAAEAAAAaAQAABgAAAA4AAAA4BAABAAAAswAAAAMAAAAOAAAADwEAAAAaAQAABgAAAA4AAAAAAQAAABoBAAAGAAAADgAAAAABAAAAGgEAAAYAAAAOAAAAWl5fAAEAAAAZAQAAAAAAAA4AAAAAAQAAALIAAAADAAAADgAAAFpfAAEAAAA0AAAAAAAAAA4AAAAct////xZeDwAAAAAAAAAAAAEAAACuAAAAAAAAAA4AAABS+v///wABAAAANAAAAAAAAAAOAAAADwAAAAAAAAAAAAEAAACvAAAAAAAAAA4AAAA4AgABAAAArgAAAAAAAAAOAAAAWgfBCgAAAAEAAACvAAAAAAAAAA4AAABaFAABAAAAOQAAAAAAAAAOAAAAaLz///8XFhQAAQAAAD8AAAAAAAAADgAAAGi7////AAEAAAA5AAAAAAAAAA4AAAAWXhlRAAEAAACuAAAAAAAAAA4AAAAXAAAAAAAAAAAAAABFCQEAAAAAAAAAAQAAAD8AAAAAAAAADgAAABZaBsEKAABeWgbBCgAAXwABAAAANwAAAAAAAAAOAAAAaL3///8XHQAAAAAWXwABAAAANgAAAAAAAAAOAAAAGQABAAAANwAAAAAAAAAOAAAADgAAAAEAAAA2AAAAAAAAAA4AAAAbjAAAAAAAAAAWXhkAAQAAADYAAAAAAAAADgAAAA8AAAAAAAAAAAAAABsKAQAAAAAAACgWWg8BAAAAGwEAAAAAAAAOAAAAAAEAAAAbAQAAAAAAAA4AAAAvkv///wEAAAARAQAAABkAAAAAAAAAkv///wERAQAAABcAAAAAAAAAkv///wARAQAAACAAAAAAAAAAkv///wAwXwABAAAANQAAAAAAAAAOAAAAaLX///8XIND///8WXhlRAAEAAAA1AAAAAAAAAA4AAAAgAAAAAAAAAAAAAAAb+wAAAAAAAAAgr////wABAAAAGwEAAAAAAAAOAAAAFloGwQoAAA8BAAAAGwEAAAIAAAAOAAAAAAEAAAAbAQAAAgAAAA4AAAAvkv///wEAAAARAQAAABkAAAAAAAAAkv///wERAQAAABcAAAAAAAAAkv///wARAQAAACAAAAAAAAAAkv///wAwXwABAAAANQAAAAAAAAAOAAAAaLX///8XIND///8WXhlRAAEAAAA1AAAAAAAAAA4AAAAlAAAAAAAAAAAAAAAbCwAAAAAAAAAgr////x1kAAAAAAEAAAAbAQAAAgAAAA4AAAAWWgbBCgAAXwABAAAANwAAAAAAAAAOAAAAaL3///8XHQAAAAAWXwABAAAANgAAAAAAAAAOAAAAGQABAAAANwAAAAAAAAAOAAAADgAAAAEAAAA2AAAAAAAAAA4AAAAbjAAAAAAAAAAWXhkAAQAAADYAAAAAAAAADgAAAA8AAAAAAAAAAAAAABsKAQAAAAAAACcWWgZXBwAAXloGwQoAAF5aXhQAAQAAALoAAAAAAAAADgAAAGi6////AAEAAAC2AAAAAAAAAA4AAAAkABZaB04GAAAAAQAAALoAAAAAAAAADgAAABQAAQAAALoAAAAAAAAADgAAAGi6////AAEAAAC2AAAAAAAAAA4AAAAkARZaB04GAAAAAQAAALoAAAAAAAAADgAAABQAAQAAALoAAAAAAAAADgAAAGi6////AAEAAAC2AAAAAAAAAA4AAAAkAhZaB/YHAAAAAQAAALoAAAAAAAAADgAAAFoGwQoAAF5aYf4AAAAAAAAAAAEAAACrAAAAAAAAAA4AAAAXXlwZAAEAAAC3AAAAAAAAAA4AAAAJAAAAAQAAAN4AAAAAAAAA5v///wEBAAAA3gAAAAAAAADm////AAEAAACrAAAAAAAAAA4AAABaBsEKAABeWhQAAQAAAEAAAAAAAAAADgAAAGi5////AAEAAACsAAAAAAAAAA4AAAABAQAAAGcAAAAAAAAAAgAAABZeWgfBCgAAAAEAAABAAAAAAAAAAA4AAABaXwABAAAAMwAAAAAAAAAOAAAAaL7///8XFl4PAAAAAAAAAAAAAQAAAK0AAAAAAAAADgAAAFL8////AAEAAAAzAAAAAAAAAA4AAAAPAAAAAAAAAAAAAQAAAK8AAAACAAAADgAAADgCAAEAAACtAAAAAAAAAA4AAABaB8EKAAAAAQAAAK8AAAACAAAADgAAAFpeGVEAAQAAAK0AAAAAAAAADgAAAA4AAAAAAAAAAAAAAEUQAQAAAAAAABZaBsEKAABeWg8BAAAAGwEAAAMAAAAOAAAAAAEAAAAbAQAAAwAAAA4AAAAvkv///wEAAAARAQAAABkAAAAAAAAAkv///wERAQAAABcAAAAAAAAAkv///wARAQAAACAAAAAAAAAAkv///wAwXwABAAAANQAAAAIAAAAOAAAAaLX///8XIND///8WXhlRAAEAAAA1AAAAAgAAAA4AAAAlAAAAAAAAAAAAAAAbCwAAAAAAAAAgrv///x0AAAAAAAEAAAAbAQAAAwAAAA4AAAAWWgbBCgAAXloGegUAAAQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_object_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-110] ModifyContextOptions",
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_struct_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-110] ModifyContextOptions",
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_struct_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDelegateProperty",
+            "TypeName": "DelegateProperty",
+            "SignatureFunction": 4294967185,
+            "Ptr": 0,
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_object_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_bool_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-110] ModifyContextOptions",
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_struct_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_object_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_bool_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_IsValid_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Active",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_PresetPitch",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_PresetYaw",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_IsGamePaused_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Not_PreBool_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-34] HUD",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetHUD_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967290,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_AsBPI_HUD",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_bSuccess",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-106] Vector2D",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Axis\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-38] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-39] PawnMovementComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-48] EnhancedInputLocalPlayerSubsystem",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967247,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddMappingContext_self_CastInput",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967247,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_RemoveMappingContext_self_CastInput",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_bool_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-106] Vector2D",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_Axis",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967184,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_New_Camera_State",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-38] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_Event_PossessedPawn",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_SwitchEnum_CmpSuccess",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] Actor",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_CustomEvent_DestroyedActor",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-32] GameModeBase",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetGameMode_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-34] HUD",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetHUD_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967292,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_AsBPI_Gameplay",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967290,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_AsBPI_HUD\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "K2Node_DynamicCast_bSuccess\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"4",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"4",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-48] EnhancedInputLocalPlayerSubsystem",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FInterfaceProperty",
+            "TypeName": "InterfaceProperty",
+            "Value": 4294967247,
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddMappingContext_self_CastInput\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-38] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-104] Transform",
+            "ArrayDim": 1,
+            "ElementSize": 96,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetTransform_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-39] PawnMovementComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] Actor",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-3] BP_Drone_C",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"5",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_real_Variable\"5",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_NotEqual_ObjectObject_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-105] Vector",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-107] HitResult",
+            "ArrayDim": 1,
+            "ElementSize": 264,
+            "PropertyFlags": "CPF_ContainsInstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_K2_SetActorLocation_SweepHitResult",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_K2_SetActorLocation_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 8421377,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 120195,
+      "Index": 15,
+      "Size": 143,
+      "ObjectName": "GetCameraState",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 27,
+          "SerializedScriptSize": 43,
+          "ScriptData": "XlpeDwEAAABEAAAAAAAAAA8AAABIAQAAAEQAAAAAAAAADwAAACQAWgQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967184,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CameraState",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 120338,
+      "Index": 16,
+      "Size": 316,
+      "ObjectName": "GetLockedCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 72,
+          "SerializedScriptSize": 112,
+          "ScriptData": "XlpeDwEAAAA0AQAAAAAAABAAAABIAQAAADQBAAAAAAAAEAAAADcAAAAAAAAAAA8BAAAA6gAAAAAAAAAQAAAASAEAAADqAAAAAAAAABAAAAA3AAAAAAAAAAAUSAEAAAC+AAAAAAAAABAAAAAoWgQLUw=="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Yaw",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Pitch",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Locked",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 120654,
+      "Index": 17,
+      "Size": 200,
+      "ObjectName": "GetPlayerCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 29,
+          "SerializedScriptSize": 45,
+          "ScriptData": "XlpeX0gBAAAAQgAAAAAAAAARAAAAKl9IAQAAAEMAAAAAAAAAEQAAACpaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-29] CameraComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Camera",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-44] SpringArmComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Camera Boom",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 120854,
+      "Index": 18,
+      "Size": 413,
+      "ObjectName": "InpActEvt_IA_CameraToggle_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 96,
+          "SerializedScriptSize": 156,
+          "ScriptData": "XlpeZAEAAACwAAAAAgAAAA4AAAAAAQAAAAcAAAAAAAAAEgAAAGQBAAAAsQAAAAIAAAAOAAAAAAEAAABvAAAAAAAAABIAAABkAQAAALMAAAACAAAADgAAAAABAAAAJgEAAAAAAAASAAAAZAEAAACyAAAAAgAAAA4AAAAAAQAAAA8BAAAAAAAAEgAAAFpeRg4AAAAdCgAAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 121267,
+      "Index": 19,
+      "Size": 413,
+      "ObjectName": "InpActEvt_IA_DroneSwitch_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 96,
+          "SerializedScriptSize": 156,
+          "ScriptData": "XlpeZAEAAACwAAAAAAAAAA4AAAAAAQAAAAcAAAAAAAAAEwAAAGQBAAAAsQAAAAAAAAAOAAAAAAEAAABvAAAAAAAAABMAAABkAQAAALMAAAAAAAAADgAAAAABAAAAJgEAAAAAAAATAAAAZAEAAACyAAAAAAAAAA4AAAAAAQAAAA8BAAAAAAAAEwAAAFpeRg4AAAAdWQEAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 121680,
+      "Index": 20,
+      "Size": 413,
+      "ObjectName": "InpActEvt_IA_Pause_K2Node_EnhancedInputActionEvent",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 96,
+          "SerializedScriptSize": 156,
+          "ScriptData": "XlpeZAEAAACwAAAAAwAAAA4AAAAAAQAAAAcAAAAAAAAAFAAAAGQBAAAAsQAAAAMAAAAOAAAAAAEAAABvAAAAAAAAABQAAABkAQAAALMAAAADAAAADgAAAAABAAAAJgEAAAAAAAAUAAAAZAEAAACyAAAAAwAAAA4AAAAAAQAAAA8BAAAAAAAAFAAAAFpeRg4AAAAdvQQAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-109] InputActionValue",
+            "ArrayDim": 1,
+            "ElementSize": 32,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ActionValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "ElapsedTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "TriggeredTime",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-50] InputAction",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "SourceAction",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 134217728,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122093,
+      "Index": 21,
+      "Size": 63,
+      "ObjectName": "Interact",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdoQQAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122156,
+      "Index": 22,
+      "Size": 63,
+      "ObjectName": "Pause",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-74] Pause",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdugoAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 131584,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122219,
+      "Index": 23,
+      "Size": 154,
+      "ObjectName": "Primary Thumbstick",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAAC1AAAAAAAAAA4AAAAAAQAAAA4AAAAAAAAAFwAAAFpeRg4AAAAdaggAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-106] Vector2D",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Axis",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122373,
+      "Index": 24,
+      "Size": 63,
+      "ObjectName": "ReceiveBeginPlay",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-60] ReceiveBeginPlay",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdGQoAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 134744064,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122436,
+      "Index": 25,
+      "Size": 154,
+      "ObjectName": "ReceivePossess",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-63] ReceivePossess",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAAC3AAAAAAAAAA4AAAAAAQAAAPEAAAAAAAAAGQAAAFpeRg4AAAAdBAkAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-38] Pawn",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PossessedPawn",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 134744064,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122590,
+      "Index": 26,
+      "Size": 154,
+      "ObjectName": "Reset Player",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAACsAAAAAAAAAA4AAAAAAQAAAGMAAAAAAAAAGgAAAFpeRg4AAAAdTQkAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-26] Actor",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "DestroyedActor",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201326592,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122744,
+      "Index": 27,
+      "Size": 63,
+      "ObjectName": "ResetCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdqAQAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122807,
+      "Index": 28,
+      "Size": 154,
+      "ObjectName": "Secondary Thumbstick",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAAC1AAAAAgAAAA4AAAAAAQAAAA4AAAAAAAAAHAAAAFpeRg4AAAAdRwYAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-106] Vector2D",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Axis",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 122961,
+      "Index": 29,
+      "Size": 154,
+      "ObjectName": "SetCameraState",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 42,
+          "SerializedScriptSize": 54,
+          "ScriptData": "XlpeZAEAAAC2AAAAAAAAAA4AAAAAAQAAAMkAAAAAAAAAHQAAAFpeRg4AAAAdcQgAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967184,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "New Camera State",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 123115,
+      "Index": 30,
+      "Size": 63,
+      "ObjectName": "Touch Jump End",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdmgQAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 123178,
+      "Index": 31,
+      "Size": 63,
+      "ObjectName": "Touch Jump Start",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 22,
+          "SerializedScriptSize": 18,
+          "ScriptData": "XlpeRg4AAAAdtgQAABZaBAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 123241,
+      "Index": 32,
+      "Size": 326,
+      "ObjectName": "UsePresetAngle",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 78,
+          "SerializedScriptSize": 122,
+          "ScriptData": "XlpeZAEAAAC0AAAAAAAAAA4AAAAAAQAAAAgAAAAAAAAAIAAAAGQBAAAAuAAAAAAAAAAOAAAAAAEAAADyAAAAAAAAACAAAABkAQAAALkAAAAAAAAADgAAAAABAAAA8wAAAAAAAAAgAAAAWl5GDgAAAB2vBAAAFloEC1M="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Active",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PresetPitch",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PresetYaw",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 123567,
+      "Index": 33,
+      "Size": 1209,
+      "ObjectName": "K2Node_AddDelegate",
+      "ClassName": "K2Node_AddDelegate",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'DelegateReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "OnDestroyed"
+          },
+          "int 'NodePosX'": 3008,
+          "int 'NodePosY'": -528,
+          "guid 'NodeGuid' /Script/CoreUObject": "68119e86-4c40-bd20-2f4d-7fb48726fe17"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`33 b4683dfd-437d-93a8-ba96-a4bdfc525bc6`» LinkedTo«`61 8e201238-4d79-9c7b-3304-ada893f02e0d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`33 c0f39aca-4978-1841-338f-cf99dfcea977`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`BaseMCDelegateSelfPinName` Namespace=`K2Node` SourceString=`Target``» Id«`33 fca60b0c-4778-ba63-b4f6-dcb78a35de1c`» LinkedTo«`61 50f2c317-48a2-83bc-a352-4ba8683fd0d7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`Delegate ref(`-98` `` `ActorDestroyedSignature__DelegateSignature`) isReference isConst`» Name«`Delegate`» PinFriendlyName«`text-base header=`Immutable` Key=`PinFriendlyDelegatetName` Namespace=`K2Node` SourceString=`Event``» Id«`33 a5f858d8-4279-7024-786d-d49083456e84`» LinkedTo«`55 6214b662-4a62-212a-adf8-c491d089d8b7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 124776,
+      "Index": 34,
+      "Size": 973,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -35,
+            "name 'MemberName'": "Not_PreBool"
+          },
+          "int 'NodePosX'": 832,
+          "int 'NodePosY'": -304,
+          "guid 'NodeGuid' /Script/CoreUObject": "5c61d207-4c54-c035-a2ca-c7b32556f5ae"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-35`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`34 85964574-4007-7751-881e-c2924fd61073`» BitField«`1`» DefaultObject«`ImportIndex[-83] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`A`» Id«`34 a39410af-4292-46f5-fbbf-969bdd916380`» LinkedTo«`53 653913f1-4258-2e79-f8fe-c1bef26ac889`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ReturnValue`» Id«`34 da35b3aa-4a83-9045-9a28-7bbad973c3f3`» LinkedTo«`74 ecc823fe-4a5a-10ad-8ee9-52a0fdc45e63`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 125749,
+      "Index": 35,
+      "Size": 1125,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetPlayerPawn"
+          },
+          "int 'NodePosX'": 96,
+          "int 'NodePosY'": 976,
+          "guid 'NodeGuid' /Script/CoreUObject": "eeaf3011-4fe0-161d-6ffe-da8a17ee0124"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`35 0e0bbaf4-4412-8465-7187-8ca721d285c9`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`) isConst`» Name«`WorldContextObject`» Id«`35 7e9311dc-468f-faf7-fb6f-d38767243ff5`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`PlayerIndex`» Id«`35 64f961a7-4476-41ff-5bdc-7f9e11872fda`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-38`)`» Name«`ReturnValue`» Id«`35 5dc5e84f-4e6f-7ccf-2e15-848887bbfd4c`» LinkedTo«`36 5989b719-4553-c0ce-e8e2-e19ceb4472a8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 126874,
+      "Index": 36,
+      "Size": 777,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -38,
+            "name 'MemberName'": "GetMovementComponent"
+          },
+          "int 'NodePosX'": 480,
+          "int 'NodePosY'": 960,
+          "guid 'NodeGuid' /Script/CoreUObject": "7b2468ec-4162-a0ae-ea8e-aab7807083c1"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-38`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`36 5989b719-4553-c0ce-e8e2-e19ceb4472a8`» LinkedTo«`35 5dc5e84f-4e6f-7ccf-2e15-848887bbfd4c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-39`)`» Name«`ReturnValue`» Id«`36 5e414ecf-4d7a-6085-93cc-51bf732ee3fb`» LinkedTo«`38 f98c42d3-4a4c-b03f-addc-eabaa675c966 | 37 f98c42d3-4a4c-b03f-addc-eabaa675c966`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 127651,
+      "Index": 37,
+      "Size": 1180,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -37,
+            "name 'MemberName'": "SetPlaneConstraintEnabled"
+          },
+          "int 'NodePosX'": 800,
+          "int 'NodePosY'": 688,
+          "guid 'NodeGuid' /Script/CoreUObject": "c05e8a72-428e-c3db-3e32-9480b7ca8597"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`37 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» LinkedTo«`81 0b4f34bb-4310-8836-0b30-66bc9f27a4b1 | 81 589218e5-438c-aa18-8c0e-fe8c278709c9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`37 d6f6a18c-4489-0232-7204-adb716182af1`» LinkedTo«`47 4ca536b6-4665-6531-f112-2aa9b02d05ef`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-37`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`37 f98c42d3-4a4c-b03f-addc-eabaa675c966`» LinkedTo«`36 5e414ecf-4d7a-6085-93cc-51bf732ee3fb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bEnabled`» Id«`37 85caf7e9-4f4f-3bb1-a9c9-3cb97fc10cce`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 128831,
+      "Index": 38,
+      "Size": 1155,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -37,
+            "name 'MemberName'": "SetPlaneConstraintEnabled"
+          },
+          "int 'NodePosX'": 800,
+          "int 'NodePosY'": 992,
+          "guid 'NodeGuid' /Script/CoreUObject": "5c9b9056-4dbe-5876-bbaf-fcafbe3b413a"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`38 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» LinkedTo«`81 36e2a44d-4f25-55f8-c706-ae9095980aa9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`38 d6f6a18c-4489-0232-7204-adb716182af1`» LinkedTo«`46 87669ab9-4d3a-304a-cf6c-c28af9bc1548`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-37`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`38 f98c42d3-4a4c-b03f-addc-eabaa675c966`» LinkedTo«`36 5e414ecf-4d7a-6085-93cc-51bf732ee3fb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bEnabled`» Id«`38 85caf7e9-4f4f-3bb1-a9c9-3cb97fc10cce`» DefaultValue«`true`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 129986,
+      "Index": 39,
+      "Size": 1116,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "Possess",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1952,
+          "int 'NodePosY'": 176,
+          "guid 'NodeGuid' /Script/CoreUObject": "9eb1af4b-43e8-b19e-1e5b-f3a39a89ff4c"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`39 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» LinkedTo«`87 239c51bd-45d0-6313-e17a-c6ac1c7e643c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`39 52f3e516-4562-5ad5-7959-fe9e01f28d7c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`39 171d23b4-4a15-dc5f-c331-3faa79fbdbe2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-38`)`» Name«`InPawn`» Id«`39 53ea3d4f-489b-16ce-4f3d-5282f11347ce`» LinkedTo«`87 5a84441e-43d8-2123-5108-0b8f631e497a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 131102,
+      "Index": 40,
+      "Size": 753,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -38,
+            "name 'MemberName'": "GetMovementComponent"
+          },
+          "int 'NodePosX'": 704,
+          "int 'NodePosY'": 304,
+          "guid 'NodeGuid' /Script/CoreUObject": "feb82724-4718-87ce-8d2b-47922f20a700"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-38`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`40 a7fbaaa5-4c72-af9b-e08b-d7ae8b93e6aa`» LinkedTo«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-39`)`» Name«`ReturnValue`» Id«`40 f9d339bf-45a5-0878-03be-86a279030f9f`» LinkedTo«`51 e0f4594e-4aca-977f-d170-348d3b5fc38b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 131855,
+      "Index": 41,
+      "Size": 920,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_DestroyActor",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1472,
+          "int 'NodePosY'": -176,
+          "guid 'NodeGuid' /Script/CoreUObject": "2cc6f0f2-4fc4-181e-508d-74b053224544"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`41 5b2c2cc8-4a40-4413-495b-18806458f26b`» LinkedTo«`49 52f3e516-4562-5ad5-7959-fe9e01f28d7c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`41 c51bc27e-4fa9-10ef-557a-6bb24559aa79`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`41 382c895e-42b9-1887-4d3e-418495e354c7`» LinkedTo«`83 2dc76e25-48be-009b-6683-8e84a2de946d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 132775,
+      "Index": 42,
+      "Size": 2000,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_SetActorLocation",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 880,
+          "int 'NodePosY'": -176,
+          "guid 'NodeGuid' /Script/CoreUObject": "5d2fbd59-4c2e-4c68-d12f-b8bd8af841cc"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`42 9b3e6351-4e3f-a927-1b08-6abd97fbb878`» LinkedTo«`82 7817efc5-4d10-88fc-b0af-5eafd7f7002c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`42 0d03f4df-440f-abf4-5eb3-baa7eb0dd179`» LinkedTo«`49 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`42 1d86c14d-4d10-b795-3a67-629f4f013563`» LinkedTo«`85 8831628a-451b-3535-0cc6-97b2602ca11b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-105`)`» Name«`NewLocation`» Id«`42 870767e0-44be-8f09-3601-8cb42dc991c4`» LinkedTo«`43 949f5c98-450d-4070-b6b6-63afff1753c4`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bSweep`» Id«`42 1803c919-4182-375a-a128-559e77b42119`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-107`)`» Name«`SweepHitResult`» Id«`42 5adc3c91-48da-dd19-973e-3bbc348ddc03`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bTeleport`» Id«`42 d3450dc0-4ad5-eb7f-cd82-9eb94803462c`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ReturnValue`» Id«`42 831e0a05-4d27-a1b4-9fff-d99355861659`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 134775,
+      "Index": 43,
+      "Size": 765,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 496,
+          "int 'NodePosY'": -128,
+          "guid 'NodeGuid' /Script/CoreUObject": "fab4fc94-47bf-582c-3d9f-dcad67c1b8c3"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`43 0063652e-48d0-d8f4-ab42-7797eef8398b`» LinkedTo«`84 2dc76e25-48be-009b-6683-8e84a2de946d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-105`)`» Name«`ReturnValue`» Id«`43 949f5c98-450d-4070-b6b6-63afff1753c4`» LinkedTo«`42 870767e0-44be-8f09-3601-8cb42dc991c4`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 135540,
+      "Index": 44,
+      "Size": 773,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetPawn",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 384,
+          "int 'NodePosY'": 304,
+          "guid 'NodeGuid' /Script/CoreUObject": "25cad6fd-48c2-bd0b-b43d-409667f09c74"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`44 31a6ff8f-47fe-098a-a63b-21a0027a516e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-38`)`» Name«`ReturnValue`» Id«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» LinkedTo«`40 a7fbaaa5-4c72-af9b-e08b-d7ae8b93e6aa | 54 5701f65d-4000-51fc-7cda-40b22ede733d | 88 b8efd33f-4a10-3855-d8b3-93bc8f392136`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 136313,
+      "Index": 45,
+      "Size": 925,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "GetGameMode"
+          },
+          "int 'NodePosX'": 3472,
+          "int 'NodePosY'": -256,
+          "guid 'NodeGuid' /Script/CoreUObject": "89ac8831-4978-13d8-f20a-b6a63882fe29"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`45 49d11cd9-42ee-7d6b-be48-d9bd7628536e`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`) isConst`» Name«`WorldContextObject`» Id«`45 470bd878-44dc-86ce-459c-4288fb169196`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-32`)`» Name«`ReturnValue`» Id«`45 02f9d8c3-4c1d-58e0-da32-108b633060d0`» LinkedTo«`75 62a9de1e-4b4a-57b4-26bc-15a86c87c538`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 137238,
+      "Index": 46,
+      "Size": 1641,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -49,
+            "name 'MemberName'": "AddMappingContext"
+          },
+          "int 'NodePosX'": 1456,
+          "int 'NodePosY'": 992,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "07dd3ad8-4bdf-2445-28ec-01ab3066121a"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`46 87669ab9-4d3a-304a-cf6c-c28af9bc1548`» LinkedTo«`38 d6f6a18c-4489-0232-7204-adb716182af1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`46 75fb90fa-42de-d1a9-5f81-32839a7714d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`interface obj(`-49`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`46 bf287f60-4a08-20f1-5da1-4788a95fb70c`» LinkedTo«`70 d1e32456-4397-f1c7-bbc5-f89034ee77e5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-51`) isConst`» Name«`MappingContext`» Id«`46 2f64f3f6-463e-53ab-4743-5ab1c56f34aa`» DefaultObject«`ImportIndex[-81] IMC_SideScrollingControls`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`Priority`» Id«`46 efaedbce-4572-f08d-7ae0-f196680ff4d6`» DefaultValue«`100`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-110`) isReference isConst`» Name«`Options`» Id«`46 b7b1189d-4ec5-2545-1594-5084406323ef`» DefaultValue«`(bIgnoreAllPressedKeysUntilRelease=True,bForceImmediately=False,bNotifyUserSettings=False)`» AutogeneratedDefaultValue«`()`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 138879,
+      "Index": 47,
+      "Size": 1410,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -49,
+            "name 'MemberName'": "RemoveMappingContext"
+          },
+          "int 'NodePosX'": 1456,
+          "int 'NodePosY'": 688,
+          "guid 'NodeGuid' /Script/CoreUObject": "5a67f636-4d37-655a-17ec-618dc879fd67"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`47 4ca536b6-4665-6531-f112-2aa9b02d05ef`» LinkedTo«`37 d6f6a18c-4489-0232-7204-adb716182af1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`47 5642844f-4075-f25f-ef57-9e8fed7b3f0a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`interface obj(`-49`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`47 c51ce343-484f-5534-eb24-0f800e4d7431`» LinkedTo«`70 d1e32456-4397-f1c7-bbc5-f89034ee77e5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-51`) isConst`» Name«`MappingContext`» Id«`47 a64ae0c8-4573-db18-6c35-789134ccd793`» DefaultObject«`ImportIndex[-81] IMC_SideScrollingControls`» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-110`) isReference isConst`» Name«`Options`» Id«`47 640f22a5-4906-3850-f9d7-699a3479b6d8`» DefaultValue«`(bIgnoreAllPressedKeysUntilRelease=True,bForceImmediately=False,bNotifyUserSettings=False)`» AutogeneratedDefaultValue«`()`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 140289,
+      "Index": 48,
+      "Size": 1639,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -49,
+            "name 'MemberName'": "AddMappingContext"
+          },
+          "int 'NodePosX'": 864,
+          "int 'NodePosY'": -1040,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "5352d479-4dda-fd4c-3c39-f0bcc6614b70"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`48 9d230b9b-4034-b0fc-373d-9a8fe55ca8ec`» LinkedTo«`59 fb895f95-44b5-4959-4f00-09a0586d1ed5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`48 c6dd4a64-4205-ac62-2571-b5ada5de3c95`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`interface obj(`-49`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`48 8749af33-4f9c-5220-3271-078cbd61334c`» LinkedTo«`71 71f8d992-491e-72d9-a41a-5994e77d49fa`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-51`) isConst`» Name«`MappingContext`» Id«`48 a231cf63-41b0-87ed-09b2-da9adb5b9d49`» DefaultObject«`ImportIndex[-82] IMC_ThirdPersonControls`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`Priority`» Id«`48 2e683e64-4f5a-6d26-53bc-65ab2619681c`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-110`) isReference isConst`» Name«`Options`» Id«`48 d0938f19-4800-b5b2-ca74-e4ba4b59a728`» DefaultValue«`(bIgnoreAllPressedKeysUntilRelease=True,bForceImmediately=False,bNotifyUserSettings=False)`» AutogeneratedDefaultValue«`()`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 141928,
+      "Index": 49,
+      "Size": 1244,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "Possess",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1232,
+          "int 'NodePosY'": -176,
+          "guid 'NodeGuid' /Script/CoreUObject": "976dbebf-4cef-8c43-af9c-4e814ba8f19e"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`49 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» LinkedTo«`42 0d03f4df-440f-abf4-5eb3-baa7eb0dd179`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`49 52f3e516-4562-5ad5-7959-fe9e01f28d7c`» LinkedTo«`41 5b2c2cc8-4a40-4413-495b-18806458f26b`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`49 171d23b4-4a15-dc5f-c331-3faa79fbdbe2`» ToolTip«`Target\nController Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-38`)`» Name«`InPawn`» Id«`49 53ea3d4f-489b-16ce-4f3d-5282f11347ce`» LinkedTo«`85 8831628a-451b-3535-0cc6-97b2602ca11b`» ToolTip«`In Pawn\nPawn Object Reference\n\nThe Pawn to be possessed.`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 143172,
+      "Index": 50,
+      "Size": 725,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "GetHUD",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1920,
+          "int 'NodePosY'": -352,
+          "guid 'NodeGuid' /Script/CoreUObject": "0fd2551a-442d-cf5e-15b7-96bf0953cb60"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-40`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`50 822bee13-4855-8364-a6cc-4dbc809d42c5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-34`)`» Name«`ReturnValue`» Id«`50 6cef995c-4c5a-102e-8a29-878912d89d29`» LinkedTo«`76 eaaf280c-47c3-f6f3-41d4-82a690983799`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 143897,
+      "Index": 51,
+      "Size": 948,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -37,
+            "name 'MemberName'": "StopMovementImmediately"
+          },
+          "int 'NodePosX'": 1056,
+          "int 'NodePosY'": 176,
+          "guid 'NodeGuid' /Script/CoreUObject": "d88053d2-4438-6224-2591-3dbc4ad7115d"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`51 d64053ff-4046-2568-ac83-f68bafd37174`» LinkedTo«`88 74a4880f-4016-3ead-20b6-6e8bf9daf52e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`51 b8a5c095-48fe-338a-8ced-7fa3de47b862`» LinkedTo«`80 6cc62964-48a5-450c-2780-37af0ac39a11`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-37`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`51 e0f4594e-4aca-977f-d170-348d3b5fc38b`» LinkedTo«`40 f9d339bf-45a5-0878-03be-86a279030f9f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 144845,
+      "Index": 52,
+      "Size": 891,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "GetHUD",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 752,
+          "int 'NodePosY'": -416,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "008de9b1-415e-6fad-8860-f58cda74e4f6"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-40`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`52 0046d25c-4b8e-0580-47dc-83aac15b2e77`» ToolTip«`Target\nPlayer Controller Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-34`)`» Name«`ReturnValue`» Id«`52 11e82f14-4b36-e22d-7790-43a6fadb2c48`» LinkedTo«`74 36a9e566-4ec4-6a82-b9e5-30a434fe3585`» ToolTip«`Return Value\nHUD Object Reference\n\nGets the HUD currently being used by this player controller`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 145736,
+      "Index": 53,
+      "Size": 937,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -33,
+            "name 'MemberName'": "IsGamePaused"
+          },
+          "int 'NodePosX'": 656,
+          "int 'NodePosY'": -327,
+          "guid 'NodeGuid' /Script/CoreUObject": "65705301-4376-0548-2324-52a9aeb04d9e"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`53 b9ca5ca8-488d-3f93-52e0-fca8acc5ffe3`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`) isConst`» Name«`WorldContextObject`» Id«`53 a0d82d82-4bf9-7ab9-c989-1bbe2ee2b3e7`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ReturnValue`» Id«`53 653913f1-4258-2e79-f8fe-c1bef26ac889`» LinkedTo«`34 a39410af-4292-46f5-fbbf-969bdd916380`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 146673,
+      "Index": 54,
+      "Size": 749,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "GetTransform",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1088,
+          "int 'NodePosY'": 304,
+          "guid 'NodeGuid' /Script/CoreUObject": "3cfc660e-4843-8eb9-8358-6f955ea4a819"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`54 5701f65d-4000-51fc-7cda-40b22ede733d`» LinkedTo«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-104`) isReference isConst`» Name«`ReturnValue`» Id«`54 5699dfc5-4f5b-8c4e-30cb-a58ec6f251d3`» LinkedTo«`80 d0a07e11-4de1-73ac-b26b-7789ab1c7fd7`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 147422,
+      "Index": 55,
+      "Size": 919,
+      "ObjectName": "K2Node_CustomEvent",
+      "ClassName": "K2Node_CustomEvent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "name 'CustomFunctionName'": "Reset Player",
+          "int 'NodePosX'": 2928,
+          "int 'NodePosY'": -368,
+          "guid 'NodeGuid' /Script/CoreUObject": "555d636e-4989-0ef8-125e-908aad1a77aa"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "DestroyedActor",
+            "PinType": "object obj(`-26`)",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "output-pin Type«`delegate ref(`2` `555d636e-4989-0ef8-125e-908aad1a77aa` `Reset Player`)`» Name«`OutputDelegate`» Id«`55 6214b662-4a62-212a-adf8-c491d089d8b7`» LinkedTo«`33 a5f858d8-4279-7024-786d-d49083456e84`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`55 138a865f-4df3-95c1-ff09-d4ba2d48e634`» LinkedTo«`72 e7f35dbc-477e-3aaf-e138-cda77295b3b0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-26`)`» Name«`DestroyedActor`» Id«`55 65c08c9b-4b3d-c0d5-d269-05a86ace0755`» LinkedTo«`77 2f715236-43e8-6a17-f103-b0acdbe46208`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 148341,
+      "Index": 56,
+      "Size": 3132,
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'InputAction'": -80,
+          "int 'NodePosX'": 160,
+          "int 'NodePosY'": -480,
+          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
+          "guid 'NodeGuid' /Script/CoreUObject": "652b8017-40c9-4355-4c27-fea44ca19bba"
+        },
+        "Pins": [
+          "output-pin Type«`exec`» Name«`Triggered`» Id«`56 5005736d-42d6-fbe1-e1fc-589ba2d209a6`» LinkedTo«`73 0e5a2381-4f57-5338-92b4-0c8e57f9f723`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Started`» Id«`56 2a26a1f6-4cbe-fafe-d527-c7aa5918e5f3`» ToolTip«`An event has occurred that has begun Trigger evaluation. Note: Triggered may also occur this frame, but this event will always be fired first.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Ongoing`» Id«`56 784c0115-4ceb-e26b-b322-a78f5d90f884`» ToolTip«`Triggering is still being processed. For example, an action with a \"Press and Hold\" trigger\nwill be \"Ongoing\" while the user is holding down the key but the time threshold has not been met yet.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Canceled`» Id«`56 dfd2ffce-4b03-f54b-a6ef-5aab40033f00`» ToolTip«`Triggering has been canceled. For example,  the user has let go of a key before the \"Press and Hold\" time threshold.\nThe action has started to be evaluated, but never completed.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`56 71118baa-4c7d-d827-fac9-9c8a968a95b4`» ToolTip«`The trigger state has transitioned from Triggered to None this frame, i.e. Triggering has finished.\nNote: Using this event restricts you to one set of triggers for Started/Completed events. You may prefer two actions, each with its own trigger rules.\nCompleted will not fire if any trigger reports Ongoing on the same frame, but both should fire. e.g. Tick 2 of Hold (= Ongoing) + Pressed (= None) combo will raise Ongoing event only.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ActionValue`» Id«`56 dc03ca8b-4f48-98db-3325-7fb4d0968c1d`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ElapsedSeconds`» Id«`56 a46a7553-4ce1-f422-3e63-02b392ffcccf`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`TriggeredSeconds`» Id«`56 d9b455a5-4630-a34a-29af-288561f5f0ba`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-50`)`» Name«`InputAction`» Id«`56 9bb674aa-471e-7334-9bde-529bd42cdaff`» ToolTip«`Input Action\nInput Action Object Reference\n\nThe input action that caused this event to fire`» DefaultValue«`IA_Pause`» DefaultObject«`ImportIndex[-80] IA_Pause`» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 151473,
+      "Index": 57,
+      "Size": 3139,
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'InputAction'": -78,
+          "int 'NodePosX'": 1616,
+          "int 'NodePosY'": -464,
+          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
+          "guid 'NodeGuid' /Script/CoreUObject": "c6f59beb-410f-aa5b-f98d-47b13852aa36"
+        },
+        "Pins": [
+          "output-pin Type«`exec`» Name«`Triggered`» Id«`57 76361531-40ce-72cd-e06f-cc90aeaa8466`» LinkedTo«`76 927c53f9-455f-436d-9994-4dad1a1df9d6`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Started`» Id«`57 7ed56534-465f-7f7b-b537-799add748bfd`» ToolTip«`An event has occurred that has begun Trigger evaluation. Note: Triggered may also occur this frame, but this event will always be fired first.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Ongoing`» Id«`57 e5a5b201-4d6a-db68-1db1-52bafd81492d`» ToolTip«`Triggering is still being processed. For example, an action with a \"Press and Hold\" trigger\nwill be \"Ongoing\" while the user is holding down the key but the time threshold has not been met yet.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Canceled`» Id«`57 b123f977-4b16-86b5-1e6b-b1a48f1620b2`» ToolTip«`Triggering has been canceled. For example,  the user has let go of a key before the \"Press and Hold\" time threshold.\nThe action has started to be evaluated, but never completed.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`57 65557a2b-40cb-474e-0ea8-4e9a8af5407d`» ToolTip«`The trigger state has transitioned from Triggered to None this frame, i.e. Triggering has finished.\nNote: Using this event restricts you to one set of triggers for Started/Completed events. You may prefer two actions, each with its own trigger rules.\nCompleted will not fire if any trigger reports Ongoing on the same frame, but both should fire. e.g. Tick 2 of Hold (= Ongoing) + Pressed (= None) combo will raise Ongoing event only.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ActionValue`» Id«`57 b7fd09fb-4454-f09a-7933-4696333d42fc`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ElapsedSeconds`» Id«`57 a123fa75-47fc-572a-fc42-e2bcac82dbf2`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`TriggeredSeconds`» Id«`57 9b5a9185-473a-515c-4f7f-2595923df298`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-50`)`» Name«`InputAction`» Id«`57 5bddad31-4343-c657-4f92-a1832017ff7b`» ToolTip«`Input Action\nInput Action Object Reference\n\nThe input action that caused this event to fire`» DefaultValue«`IA_CameraToggle`» BitField«`16`» DefaultObject«`ImportIndex[-78] IA_CameraToggle`» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 154612,
+      "Index": 58,
+      "Size": 3138,
+      "ObjectName": "K2Node_EnhancedInputAction",
+      "ClassName": "K2Node_EnhancedInputAction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'InputAction'": -79,
+          "int 'NodePosX'": 160,
+          "int 'NodePosY'": -48,
+          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
+          "guid 'NodeGuid' /Script/CoreUObject": "fc2c2fc1-4560-9d1f-c8d4-60a86d0f08d1"
+        },
+        "Pins": [
+          "output-pin Type«`exec`» Name«`Triggered`» Id«`58 17ebd4ce-4af6-cfca-a47f-e6b0b01b8cae`» LinkedTo«`82 c271cc44-4364-7bae-28fe-1aa9fde53e95`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Started`» Id«`58 56ab4ba6-4523-379a-2f8f-ba9ff90f1b62`» ToolTip«`An event has occurred that has begun Trigger evaluation. Note: Triggered may also occur this frame, but this event will always be fired first.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Ongoing`» Id«`58 1323f5a6-41c8-2ae3-8494-7f93c472d4f2`» ToolTip«`Triggering is still being processed. For example, an action with a \"Press and Hold\" trigger\nwill be \"Ongoing\" while the user is holding down the key but the time threshold has not been met yet.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Canceled`» Id«`58 f408b66f-434f-64c0-5791-8cb9da459cba`» ToolTip«`Triggering has been canceled. For example,  the user has let go of a key before the \"Press and Hold\" time threshold.\nThe action has started to be evaluated, but never completed.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`58 4d5d3254-4403-5eb1-e8b9-23be19ec163c`» ToolTip«`The trigger state has transitioned from Triggered to None this frame, i.e. Triggering has finished.\nNote: Using this event restricts you to one set of triggers for Started/Completed events. You may prefer two actions, each with its own trigger rules.\nCompleted will not fire if any trigger reports Ongoing on the same frame, but both should fire. e.g. Tick 2 of Hold (= Ongoing) + Pressed (= None) combo will raise Ongoing event only.`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ActionValue`» Id«`58 dd5b74f7-4e0a-f3a7-9ef6-13aa54ff60cd`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ElapsedSeconds`» Id«`58 52737483-4907-3574-02f7-2da242864180`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`TriggeredSeconds`» Id«`58 18a1e0f6-4d8b-660d-02ed-6095022cf98b`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-50`)`» Name«`InputAction`» Id«`58 0ee3d988-48b9-c074-47ec-0284912b1541`» ToolTip«`Input Action\nInput Action Object Reference\n\nThe input action that caused this event to fire`» DefaultValue«`IA_DroneSwitch`» BitField«`16`» DefaultObject«`ImportIndex[-79] IA_DroneSwitch`» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 157750,
+      "Index": 59,
+      "Size": 704,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "ReceiveBeginPlay"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 608,
+          "int 'NodePosY'": -1024,
+          "guid 'NodeGuid' /Script/CoreUObject": "ab817c06-49ab-baf0-1900-afa8f31ed110"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-26` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`59 e696285f-4f25-918e-62bb-728da15fd2a3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`59 fb895f95-44b5-4959-4f00-09a0586d1ed5`» LinkedTo«`48 9d230b9b-4034-b0fc-373d-9a8fe55ca8ec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 158454,
+      "Index": 60,
+      "Size": 1043,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "SetCameraState",
+            "guid 'MemberGuid' /Script/CoreUObject": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 128,
+          "int 'NodePosY'": 768,
+          "guid 'NodeGuid' /Script/CoreUObject": "f50534fe-4536-37c1-3b52-9792d73d6d95"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-2` `be9d2899-4b90-1eac-9007-8dbf53ddacf8` `SetCameraState`)`» Name«`OutputDelegate`» Id«`60 c23d3c81-4501-b504-c28f-81a41b35050e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`60 b38370fb-43da-4c3d-9839-cdbfc8129c6d`» LinkedTo«`81 192162ba-4dda-1484-96e3-af84feb4eec0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`byte obj(`-112`)`» Name«`New Camera State`» Id«`60 cc1bb9d4-4e40-631c-82c9-4aabb1de809e`» LinkedTo«`81 2751ddb6-4085-4447-390c-6db93c0f9899`» ToolTip«`New Camera State\nEnum_CameraState Enum`» DefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 159497,
+      "Index": 61,
+      "Size": 961,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -30,
+            "name 'MemberName'": "ReceivePossess"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 2768,
+          "int 'NodePosY'": -528,
+          "guid 'NodeGuid' /Script/CoreUObject": "15397cab-4065-907c-0c65-21b16216165b"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-30` `` `ReceivePossess`)`» Name«`OutputDelegate`» Id«`61 2c4b056c-4650-0ae8-1c4f-5c954eeb077e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`61 8e201238-4d79-9c7b-3304-ada893f02e0d`» LinkedTo«`33 b4683dfd-437d-93a8-ba96-a4bdfc525bc6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-38`)`» Name«`PossessedPawn`» Id«`61 50f2c317-48a2-83bc-a352-4ba8683fd0d7`» LinkedTo«`33 fca60b0c-4778-ba63-b4f6-dcb78a35de1c`» ToolTip«`Possessed Pawn\nPawn Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 160458,
+      "Index": 62,
+      "Size": 769,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Pause",
+            "guid 'MemberGuid' /Script/CoreUObject": "2736b3a4-4f42-b416-6c16-6f95b52c12b4"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 448,
+          "int 'NodePosY'": -416,
+          "guid 'NodeGuid' /Script/CoreUObject": "a6df4ccf-47e3-7e64-5a55-d28175a588a2"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-5` `2736b3a4-4f42-b416-6c16-6f95b52c12b4` `Pause`)`» Name«`OutputDelegate`» Id«`62 b0a8afd0-493e-deba-3f1f-d394be4f3f6b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`62 f1685936-450d-ea88-8680-4e993c603419`» LinkedTo«`73 0e5a2381-4f57-5338-92b4-0c8e57f9f723`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 161227,
+      "Index": 63,
+      "Size": 490,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetCameraState",
+            "guid 'MemberGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "b619d1f7-43eb-5f65-e260-1d9001eb941c"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`63 1ae9fb08-4264-8da3-27cd-ea851765e093`» LinkedTo«`67 b352a0e2-46e8-c86f-7e16-fbb71f242b7e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 161717,
+      "Index": 64,
+      "Size": 490,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetLockedCamera",
+            "guid 'MemberGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "b165ed81-4be5-c156-07b1-14be8ace3727"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`64 bce34911-4721-9ceb-18da-3ea644e7793e`» LinkedTo«`68 84362117-4380-8c14-461c-91b8bce3de56`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 162207,
+      "Index": 65,
+      "Size": 490,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetPlayerCamera",
+            "guid 'MemberGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "99c3c928-4e43-fbc2-6c3f-70965c078682"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`65 923b6f42-4123-99ec-9ffa-7b933b1fee87`» LinkedTo«`69 b9608d9f-47d1-129b-f001-7086ead88ae1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 162697,
+      "Index": 66,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -26,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "0a9a193e-4ba6-5677-947e-db9c15d81464"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`66 d206dd09-4afb-3703-3f5b-849c603dacac`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 163098,
+      "Index": 67,
+      "Size": 765,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetCameraState",
+            "guid 'MemberGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+          },
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "2f05720a-4f93-70ef-bf31-26a5109e3409"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`67 b352a0e2-46e8-c86f-7e16-fbb71f242b7e`» LinkedTo«`63 1ae9fb08-4264-8da3-27cd-ea851765e093`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-112`)`» Name«`CameraState`» Id«`67 917dd34d-4c30-69b3-ce03-7cae886de61b`» ToolTip«`Camera State\nEnum_CameraState Enum`» DefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 163863,
+      "Index": 68,
+      "Size": 1210,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetLockedCamera",
+            "guid 'MemberGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+          },
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "6a74fc4e-477a-9efd-12d0-809452eb5235"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`68 84362117-4380-8c14-461c-91b8bce3de56`» LinkedTo«`64 bce34911-4721-9ceb-18da-3ea644e7793e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Yaw`» Id«`68 69f7f9da-4413-f90a-f835-078763c0f2a1`» ToolTip«`Yaw\nFloat (double-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Pitch`» Id«`68 72010d41-4a99-b632-bde5-10a9785fc3bd`» ToolTip«`Pitch\nFloat (double-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`Locked`» Id«`68 0d526d2f-43ad-8784-6a70-b9a972881b10`» ToolTip«`Locked\nBoolean`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 165073,
+      "Index": 69,
+      "Size": 1002,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "GetPlayerCamera",
+            "guid 'MemberGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+          },
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "6717b1e8-46d0-5142-d6dd-5db7395ef9ab"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`69 b9608d9f-47d1-129b-f001-7086ead88ae1`» LinkedTo«`65 923b6f42-4123-99ec-9ffa-7b933b1fee87`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-29`)`» Name«`Camera`» Id«`69 3d2b3a43-413a-012e-a27e-a0b146ab74a9`» ToolTip«`Camera\nCamera Component Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-44`)`» Name«`Camera Boom`» Id«`69 6da67174-4f6e-a6d5-0bbe-a49522f1a4ac`» ToolTip«`Camera Boom\nSpring Arm Component Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 166075,
+      "Index": 70,
+      "Size": 633,
+      "ObjectName": "K2Node_GetSubsystemFromPC",
+      "ClassName": "K2Node_GetSubsystemFromPC",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'CustomClass'": -48,
+          "int 'NodePosX'": 1024,
+          "int 'NodePosY'": 848,
+          "guid 'NodeGuid' /Script/CoreUObject": "6d435992-4062-0661-7cfa-0a8b8d178f7a"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-40`)`» Name«`PlayerController`» Id«`70 add6b7a6-4493-e396-d2a5-049f5b1be00f`» LinkedTo«`79 c7d28ef1-4f9f-4400-2f09-ab97613b1152`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-48`)`» Name«`ReturnValue`» Id«`70 d1e32456-4397-f1c7-bbc5-f89034ee77e5`» LinkedTo«`47 c51ce343-484f-5534-eb24-0f800e4d7431 | 46 bf287f60-4a08-20f1-5da1-4788a95fb70c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 166708,
+      "Index": 71,
+      "Size": 609,
+      "ObjectName": "K2Node_GetSubsystemFromPC",
+      "ClassName": "K2Node_GetSubsystemFromPC",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'CustomClass'": -48,
+          "int 'NodePosX'": 544,
+          "int 'NodePosY'": -928,
+          "guid 'NodeGuid' /Script/CoreUObject": "a61f1bbc-4027-1d86-fd54-9da05570d9d7"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-40`)`» Name«`PlayerController`» Id«`71 97e6a11f-4729-ab19-11f7-b0930c3efcb0`» LinkedTo«`78 c8276a4a-4224-0de3-7336-1c9204f3fee4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-48`)`» Name«`ReturnValue`» Id«`71 71f8d992-491e-72d9-a41a-5994e77d49fa`» LinkedTo«`48 8749af33-4f9c-5220-3271-078cbd61334c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 167317,
+      "Index": 72,
+      "Size": 1058,
+      "ObjectName": "K2Node_IfThenElse",
+      "ClassName": "K2Node_IfThenElse",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 3152,
+          "int 'NodePosY'": -352,
+          "guid 'NodeGuid' /Script/CoreUObject": "ad49f39f-4f47-436a-f211-c898811cd182"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`72 e7f35dbc-477e-3aaf-e138-cda77295b3b0`» LinkedTo«`55 138a865f-4df3-95c1-ff09-d4ba2d48e634`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`Condition`» Id«`72 0a096f6e-459e-5f6e-d961-58ac66976f56`» LinkedTo«`77 ba5ee5b5-43f6-8f88-10a5-bfa016b6e0c0`» DefaultValue«`true`» AutogeneratedDefaultValue«`true`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» PinFriendlyName«`text-base header=`Immutable` Key=`true` Namespace=`K2Node` SourceString=`true``» Id«`72 2723e2ac-4f3a-a2c5-5cc9-3da91770e59d`» LinkedTo«`75 f1f064b2-4d6e-6862-3092-9faf696d7856`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`else`» PinFriendlyName«`text-base header=`Immutable` Key=`false` Namespace=`K2Node` SourceString=`false``» Id«`72 f1ada65e-408b-12e2-e59e-94bd3e22438d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 168375,
+      "Index": 73,
+      "Size": 604,
+      "ObjectName": "K2Node_Knot",
+      "ClassName": "K2Node_Knot",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 736,
+          "int 'NodePosY'": -448,
+          "guid 'NodeGuid' /Script/CoreUObject": "2bb9bcaf-4ea9-5d53-fd56-2fbc99da3fd3"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`InputPin`» Id«`73 0e5a2381-4f57-5338-92b4-0c8e57f9f723`» LinkedTo«`56 5005736d-42d6-fbe1-e1fc-589ba2d209a6 | 62 f1685936-450d-ea88-8680-4e993c603419`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`OutputPin`» Id«`73 545e19e2-4c32-70c4-cf5b-3fb2ee7595bc`» LinkedTo«`74 dab2df6c-4fd8-981c-ea01-00ac6935051e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 168979,
+      "Index": 74,
+      "Size": 1272,
+      "ObjectName": "K2Node_Message",
+      "ClassName": "K2Node_Message",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "SetPaused",
+            "guid 'MemberGuid' /Script/CoreUObject": "f36b2f39-4571-82d3-cde8-97b2f2e8b78d"
+          },
+          "int 'NodePosX'": 1056,
+          "int 'NodePosY'": -496,
+          "guid 'NodeGuid' /Script/CoreUObject": "5d0913e0-4b4b-22b7-b130-b5adeee6aead"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`74 dab2df6c-4fd8-981c-ea01-00ac6935051e`» LinkedTo«`73 545e19e2-4c32-70c4-cf5b-3fb2ee7595bc`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`74 457052f3-405e-5347-df7e-3c9182b5ad41`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`74 36a9e566-4ec4-6a82-b9e5-30a434fe3585`» LinkedTo«`52 11e82f14-4b36-e22d-7790-43a6fadb2c48`» ToolTip«`Target\nObject Reference`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`Paused`» Id«`74 ecc823fe-4a5a-10ad-8ee9-52a0fdc45e63`» LinkedTo«`34 da35b3aa-4a83-9045-9a28-7bbad973c3f3`» ToolTip«`Paused\nBoolean`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 170251,
+      "Index": 75,
+      "Size": 989,
+      "ObjectName": "K2Node_Message",
+      "ClassName": "K2Node_Message",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -4,
+            "name 'MemberName'": "Spawn",
+            "guid 'MemberGuid' /Script/CoreUObject": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
+          },
+          "int 'NodePosX'": 3456,
+          "int 'NodePosY'": -368,
+          "guid 'NodeGuid' /Script/CoreUObject": "3fc83e74-45dd-0b92-f5ab-029d689f3c62"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`75 f1f064b2-4d6e-6862-3092-9faf696d7856`» LinkedTo«`72 2723e2ac-4f3a-a2c5-5cc9-3da91770e59d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`75 7f4f9edd-450e-901b-22d2-99b5c45c57ea`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`75 62a9de1e-4b4a-57b4-26bc-15a86c87c538`» LinkedTo«`45 02f9d8c3-4c1d-58e0-da32-108b633060d0`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 171240,
+      "Index": 76,
+      "Size": 989,
+      "ObjectName": "K2Node_Message",
+      "ClassName": "K2Node_Message",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -6,
+            "name 'MemberName'": "Show UI",
+            "guid 'MemberGuid' /Script/CoreUObject": "11eee847-4a08-1466-36c7-7aaf39ff17df"
+          },
+          "int 'NodePosX'": 1968,
+          "int 'NodePosY'": -480,
+          "guid 'NodeGuid' /Script/CoreUObject": "4391f3d5-4a12-4638-4074-18891f614a42"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`76 927c53f9-455f-436d-9994-4dad1a1df9d6`» LinkedTo«`57 76361531-40ce-72cd-e06f-cc90aeaa8466`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`76 1707afa2-4ade-9a35-31b4-bbb669660938`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`76 eaaf280c-47c3-f6f3-41d4-82a690983799`» LinkedTo«`50 6cef995c-4c5a-102e-8a29-878912d89d29`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 172229,
+      "Index": 77,
+      "Size": 1173,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "NotEqual",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -35,
+            "name 'MemberName'": "NotEqual_ObjectObject"
+          },
+          "int 'NodePosX'": 3152,
+          "int 'NodePosY'": -240,
+          "guid 'NodeGuid' /Script/CoreUObject": "3635f1ff-430a-d3fa-0108-cdaef973d9e7"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-25`)`» Name«`A`» Id«`77 2f715236-43e8-6a17-f103-b0acdbe46208`» LinkedTo«`55 65c08c9b-4b3d-c0d5-d269-05a86ace0755`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-25`)`» Name«`B`» Id«`77 613766a7-428f-933f-1e56-a3a7625bc2ab`» LinkedTo«`86 fc6d8e43-4b95-e102-b99d-39bba2c7bedf`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`ReturnValue`» Id«`77 ba5ee5b5-43f6-8f88-10a5-bfa016b6e0c0`» LinkedTo«`72 0a096f6e-459e-5f6e-d961-58ac66976f56`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«``» Name«`ErrorTolerance`» Id«`77 161a4487-4870-c0e4-8462-6b9093ae4ba3`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 173402,
+      "Index": 78,
+      "Size": 360,
+      "ObjectName": "K2Node_Self",
+      "ClassName": "K2Node_Self",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 336,
+          "int 'NodePosY'": -880,
+          "guid 'NodeGuid' /Script/CoreUObject": "a9cf6460-40dd-f512-c188-3fb613b4ee2f"
+        },
+        "Pins": [
+          "output-pin Type«`object-self`» Name«`self`» Id«`78 c8276a4a-4224-0de3-7336-1c9204f3fee4`» LinkedTo«`71 97e6a11f-4729-ab19-11f7-b0930c3efcb0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 173762,
+      "Index": 79,
+      "Size": 360,
+      "ObjectName": "K2Node_Self",
+      "ClassName": "K2Node_Self",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 864,
+          "int 'NodePosY'": 896,
+          "guid 'NodeGuid' /Script/CoreUObject": "3e1e6171-4c60-720b-3be2-e38801b66d3e"
+        },
+        "Pins": [
+          "output-pin Type«`object-self`» Name«`self`» Id«`79 c7d28ef1-4f9f-4400-2f09-ab97613b1152`» LinkedTo«`70 add6b7a6-4493-e396-d2a5-049f5b1be00f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 174122,
+      "Index": 80,
+      "Size": 2228,
+      "ObjectName": "K2Node_SpawnActorFromClass",
+      "ClassName": "K2Node_SpawnActorFromClass",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": 1328,
+          "int 'NodePosY'": 192,
+          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid' /Script/CoreUObject": "ee54cc57-4be8-9e1c-c625-cdba04b2302e"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`80 6cc62964-48a5-450c-2780-37af0ac39a11`» LinkedTo«`51 b8a5c095-48fe-338a-8ced-7fa3de47b862`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`80 d6c8cd69-449e-6dc8-cfd7-95832067ce8d`» LinkedTo«`87 82d23299-4494-d9f3-49c6-04a72f51bc26`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`class obj(`-26`)`» Name«`Class`» Id«`80 f2ffe55d-4b46-b6dd-03a7-b0aa98cc165d`» DefaultObject«`ImportIndex[-3] BP_Drone_C`» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-3`)`» Name«`ReturnValue`» Id«`80 0f163c9b-427e-7b47-c98c-928290da5f49`» LinkedTo«`87 87317cd7-490f-a363-9f68-13ab5cc5c207`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-104`)`» Name«`SpawnTransform`» Id«`80 d0a07e11-4de1-73ac-b26b-7789ab1c7fd7`» LinkedTo«`54 5699dfc5-4f5b-8c4e-30cb-a58ec6f251d3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-55`)`» Name«`CollisionHandlingOverride`» Id«`80 4110bdc7-47c0-52f5-921a-aba7185c77bd`» DefaultValue«`Undefined`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-56`)`» Name«`TransformScaleMethod`» Id«`80 c8b092b0-41c0-073e-04a0-50820dd13a42`» DefaultValue«`MultiplyWithRoot`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-26`)`» Name«`Owner`» Id«`80 7d3df443-48c1-5331-02e1-5c9c4edc9c81`» BitField«`16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-38`) isUObjectWrapperBool`» Name«`Instigator`» Id«`80 61a0e746-438f-9c05-1789-269b42edb8b1`» ToolTip«`Instigator\nPawn Object Reference\n\nPawn responsible for damage and other gameplay events caused by this actor.`» AutogeneratedDefaultValue«`None`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 176350,
+      "Index": 81,
+      "Size": 2115,
+      "ObjectName": "K2Node_SwitchEnum",
+      "ClassName": "K2Node_SwitchEnum",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "obj 'Enum'": -112,
+          "EnumEntries": {
+            "Name": "EnumEntries",
+            "Type": "ArrayProperty",
+            "Size": 36,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "NewEnumerator0",
+              "NewEnumerator5",
+              "NewEnumerator2",
+              "NewEnumerator3"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "int 'NodePosX'": 448,
+          "int 'NodePosY'": 784,
+          "guid 'NodeGuid' /Script/CoreUObject": "a4aa4600-4929-e5e5-adfb-9497a23965c8"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`81 192162ba-4dda-1484-96e3-af84feb4eec0`» LinkedTo«`60 b38370fb-43da-4c3d-9839-cdbfc8129c6d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-112`)`» Name«`Selection`» Id«`81 2751ddb6-4085-4447-390c-6db93c0f9899`» LinkedTo«`60 cc1bb9d4-4e40-631c-82c9-4aabb1de809e`» DefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-35`)`» Name«`NotEqual_ByteByte`» Id«`81 68f13eb8-47bd-fd7f-8554-82bdfb28d039`» BitField«`7`» DefaultObject«`ImportIndex[-83] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`NewEnumerator0`» PinFriendlyName«`text-base header=`None` Key=`4315239841B2213B8AB540AF09993505` Namespace=`[0E3EB2A44A8B240B7F2B1787B6B90213]` SourceString=`Third Person Default``» Id«`81 0b4f34bb-4310-8836-0b30-66bc9f27a4b1`» LinkedTo«`37 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`NewEnumerator5`» PinFriendlyName«`text-base header=`None` Key=`AEB50A7B49C3870E0BC4DDB1C23336A8` Namespace=`[0E3EB2A44A8B240B7F2B1787B6B90213]` SourceString=`Third Person Locked``» Id«`81 589218e5-438c-aa18-8c0e-fe8c278709c9`» LinkedTo«`37 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`NewEnumerator2`» PinFriendlyName«`text-base header=`None` Key=`7AAEAD4548655AB46DA770A7DAD6C8A8` Namespace=`[0E3EB2A44A8B240B7F2B1787B6B90213]` SourceString=`Side View``» Id«`81 36e2a44d-4f25-55f8-c706-ae9095980aa9`» LinkedTo«`38 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`NewEnumerator3`» PinFriendlyName«`text-base header=`None` Key=`A8E7C2C2406B4F6CE88D499367BC2081` Namespace=`[0E3EB2A44A8B240B7F2B1787B6B90213]` SourceString=`Transition``» Id«`81 43752ee3-470c-8a73-a711-c6a3f7209f60`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 178465,
+      "Index": 82,
+      "Size": 1536,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "enum64 (EGetNodeVariation) 'CurrentVariation' IntProperty /Script/BlueprintGraph": 109,
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "DroneRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 512,
+          "int 'NodePosY'": -48,
+          "guid 'NodeGuid' /Script/CoreUObject": "48a6b3e6-41e0-b38c-ad00-de9449a9ad13"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`82 c271cc44-4364-7bae-28fe-1aa9fde53e95`» LinkedTo«`58 17ebd4ce-4af6-cfca-a47f-e6b0b01b8cae`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» PinFriendlyName«`text-base header=`Immutable` Key=`Valid` Namespace=`K2Node` SourceString=`Is Valid``» Id«`82 7817efc5-4d10-88fc-b0af-5eafd7f7002c`» LinkedTo«`42 9b3e6351-4e3f-a927-1b08-6abd97fbb878`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`else`» PinFriendlyName«`text-base header=`Immutable` Key=`Invalid` Namespace=`K2Node` SourceString=`Is Not Valid``» Id«`82 4673bdd3-47d2-a247-2aca-89a691bbc004`» LinkedTo«`88 ce40b46e-4a77-7c11-fd0b-2aa6a78c4ba2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`82 831aa70e-4a6f-0b26-09d4-768c4989d788`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`82 8b66344d-416e-eee5-d3c6-e2891db94a65`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 180001,
+      "Index": 83,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "DroneRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1472,
+          "int 'NodePosY'": -64,
+          "guid 'NodeGuid' /Script/CoreUObject": "81151449-4ea5-d0f7-5dce-3bba32b3c494"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`83 2dc76e25-48be-009b-6683-8e84a2de946d`» LinkedTo«`41 382c895e-42b9-1887-4d3e-418495e354c7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`83 b8661f6c-41bb-f3b6-af94-ffa4072b9b10`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 180766,
+      "Index": 84,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "DroneRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 336,
+          "int 'NodePosY'": -90,
+          "guid 'NodeGuid' /Script/CoreUObject": "bbbc8fe1-4615-467f-d0f0-d1ae7dff71b9"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`84 2dc76e25-48be-009b-6683-8e84a2de946d`» LinkedTo«`43 0063652e-48d0-d8f4-ab42-7797eef8398b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`84 b8661f6c-41bb-f3b6-af94-ffa4072b9b10`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 181531,
+      "Index": 85,
+      "Size": 789,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1232,
+          "int 'NodePosY'": -32,
+          "guid 'NodeGuid' /Script/CoreUObject": "2332f5d1-43ce-72fa-b561-d4aa92534a59"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-38`)`» Name«`PlayerRef`» Id«`85 8831628a-451b-3535-0cc6-97b2602ca11b`» LinkedTo«`49 53ea3d4f-489b-16ce-4f3d-5282f11347ce | 42 1d86c14d-4d10-b795-3a67-629f4f013563`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`85 a0924233-48c0-c6aa-123c-1e994edf0a44`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 182320,
+      "Index": 86,
+      "Size": 765,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "DroneRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 2992,
+          "int 'NodePosY'": -176,
+          "guid 'NodeGuid' /Script/CoreUObject": "b510a5d9-4634-54d8-98ad-c88351ce669b"
+        },
+        "Pins": [
+          "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`86 fc6d8e43-4b95-e102-b99d-39bba2c7bedf`» LinkedTo«`77 613766a7-428f-933f-1e56-a3a7625bc2ab`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`86 51659d87-49f5-e18a-0c79-3ca25b1388f7`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 183085,
+      "Index": 87,
+      "Size": 1501,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "DroneRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 1760,
+          "int 'NodePosY'": 208,
+          "guid 'NodeGuid' /Script/CoreUObject": "9dfdd101-4248-c797-28a5-d49e3049bfbc"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`87 82d23299-4494-d9f3-49c6-04a72f51bc26`» LinkedTo«`80 d6c8cd69-449e-6dc8-cfd7-95832067ce8d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`87 239c51bd-45d0-6313-e17a-c6ac1c7e643c`» LinkedTo«`39 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`87 87317cd7-490f-a363-9f68-13ab5cc5c207`» LinkedTo«`80 0f163c9b-427e-7b47-c98c-928290da5f49`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-3`)`» Name«`Output_Get`» Id«`87 5a84441e-43d8-2123-5108-0b8f631e497a`» LinkedTo«`39 53ea3d4f-489b-16ce-4f3d-5282f11347ce`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`87 1aae2566-4211-1f87-95c2-c9bc1e6e6fac`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 184586,
+      "Index": 88,
+      "Size": 1477,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "PlayerRef",
+            "guid 'MemberGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 768,
+          "int 'NodePosY'": 208,
+          "guid 'NodeGuid' /Script/CoreUObject": "b6f0037a-4c55-f4dd-537d-2fb7f4cfba5f"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`88 ce40b46e-4a77-7c11-fd0b-2aa6a78c4ba2`» LinkedTo«`82 4673bdd3-47d2-a247-2aca-89a691bbc004`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`88 74a4880f-4016-3ead-20b6-6e8bf9daf52e`» LinkedTo«`51 d64053ff-4046-2568-ac83-f68bafd37174`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-38`)`» Name«`PlayerRef`» Id«`88 b8efd33f-4a10-3855-d8b3-93bc8f392136`» LinkedTo«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-38`)`» Name«`Output_Get`» Id«`88 318fd1e6-42ce-84f4-a55e-89ab73518cc8`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`2`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`88 0855a931-4c4a-30fe-ed06-e285f49990e4`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 186063,
+      "Index": 89,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 186105,
+      "Index": 90,
+      "Size": 17,
+      "ObjectName": "TransformComponent0",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {},
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 186122,
+      "Index": 91,
+      "Size": 13,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 186135,
+      "Index": 92,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -41,
+          "obj 'ComponentTemplate'": 89,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid' /Script/CoreUObject": "f11b5e38-4fb7-036f-7161-71958f931d7e",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 186366,
+      "Index": 93,
+      "Size": 42,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'DefaultSceneRootNode'": 92
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

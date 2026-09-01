@@ -948,7 +948,2345 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty GraphReference": {
+        "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 72132,
+      "Index": 1,
+      "Size": 851,
+      "ObjectName": "BP_CoinArray",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -15,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 54,
+          "obj[] 'UbergraphPages'": "4",
+          "obj[] 'FunctionGraphs'": "5",
+          "obj[] 'ComponentTemplates'": "7 8",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 28,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Default",
+              "None",
+              "Event Graph"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 298,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/_Ignore/CoinGen/BP_CoinArray",
+                    "AssetName": "BP_CoinArray"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -731.2409,
+                  "Y": -190.43567
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/_Ignore/CoinGen/BP_CoinArray",
+                    "AssetName": "BP_CoinArray"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -388.67105,
+                  "Y": -148.36673
+                },
+                "float 'SavedZoomAmount'": 0.675
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "ComponentTemplateNameIndex": {
+            "Name": "ComponentTemplateNameIndex",
+            "Type": "MapProperty",
+            "Size": 20,
+            "BoolVal": 0,
+            "ValueType": "IntProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 1,
+              "KeyProp": [
+                "InstancedStaticMeshComponent"
+              ],
+              "ValueProp": [
+                2
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            },
+            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          },
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "ebd89194-4c57-e034-27d1-d2adf4efbe0e"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 72983,
+      "Index": 2,
+      "Size": 254,
+      "ObjectName": "BP_CoinArray_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj[] 'ComponentTemplates'": "7 8",
+          "obj 'SimpleConstructionScript'": 54
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-15] Actor",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[6] ImportIndex[-13]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-21] SceneComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "DefaultSceneRoot",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {
+          "UserConstructionScript": 6
+        },
+        "ClassFlags": 8651012,
+        "ClassWithin": 4294967282,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 73237,
+      "Index": 3,
+      "Size": 13,
+      "ObjectName": "Default__BP_CoinArray_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 73250,
+      "Index": 4,
+      "Size": 185,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "obj[] 'Nodes'": "21 22 23",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "b3eb6679-4f3f-7c01-9273-ac8a2f6895a5"
+        }
+      }
+    },
+    {
+      "Offset": 73435,
+      "Index": 5,
+      "Size": 333,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -3,
+          "obj[] 'Nodes'": "25 10 28 29 49 18 19 50 43 20 36 44 13 51 45 14 37 38 39 31 9 27 26 46 11 12 47 40 16 30 41 17 48 42 15 33 32 35 34 24",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "74d0d6da-4528-eb0f-85f4-2991bcdc67e9"
+        }
+      }
+    },
+    {
+      "Offset": 73768,
+      "Index": 6,
+      "Size": 6069,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-26] UserConstructionScript",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 2435,
+          "SerializedScriptSize": 3539,
+          "ScriptData": "TIAJAABeWl4PAQAAAHoAAAAAAAAABgAAAAABAAAAegAAAAAAAAAGAAAAHQAAAABaXkwsAAAAWgZqAQAAXloPAQAAAKkAAAACAAAABgAAAAABAAAAqQAAAAIAAAAGAAAAKwAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAPA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA/Xl8AAQAAACIAAAACAAAABgAAABzn////IXwAAAAAAAAAKAABAAAAqQAAAAIAAAAGAAAAFygWWl5aXlpeDwEAAACoAAAAAgAAAAYAAAAAAQAAAKgAAAACAAAABgAAAB0AAAAAWhQAAQAAACUAAAACAAAABgAAAGjj////AAEAAACoAAAAAgAAAAYAAAAdBwAAABZeWgepAgAAAAEAAAAlAAAAAgAAAAYAAABaXkwcAQAAWgasAgAAXloPAQAAACEAAAACAAAABgAAAAABAAAAIQAAAAIAAAAGAAAAaOX///8AAQAAAKgAAAACAAAABgAAAB0BAAAAFl4PAQAAAKgAAAACAAAABgAAAAABAAAAqAAAAAIAAAAGAAAAAAEAAAAhAAAAAgAAAAYAAABaBt0AAAAPAQAAAKkAAAAAAAAABgAAAAABAAAAqQAAAAAAAAAGAAAAKwAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAPA/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8D8AAAAAAADwPwAAAAAAAPA/Xl8AAQAAACIAAAAAAAAABgAAABzn////IXsAAAAAAAAAKAABAAAAqQAAAAAAAAAGAAAAFygWWl5aXlpeDwEAAACoAAAABAAAAAYAAAAAAQAAAKgAAAAEAAAABgAAAB0AAAAAWhQAAQAAACUAAAAEAAAABgAAAGjj////AAEAAACoAAAABAAAAAYAAAAdBwAAABZeWgemAgAAAAEAAAAlAAAABAAAAAYAAABaXkxYAgAAWgYWBgAAXloPAQAAACEAAAAEAAAABgAAAAABAAAAIQAAAAQAAAAGAAAAaOX///8AAQAAAKgAAAAEAAAABgAAAB0BAAAAFl4PAQAAAKgAAAAEAAAABgAAAAABAAAAqAAAAAQAAAAGAAAAAAEAAAAhAAAABAAAAAYAAABaBhkCAABeWk1eWk1eWl4PAQAAALgAAAAAAAAABgAAAAABAAAAuAAAAAAAAAAGAAAAAAEAAACoAAAAAgAAAAYAAABaXlpeWl4PAQAAAKgAAAAAAAAABgAAAAABAAAAqAAAAAAAAAAGAAAAHQAAAABaFAABAAAAJQAAAAAAAAAGAAAAaOP///8AAQAAAKgAAAAAAAAABgAAAB0HAAAAFl5aBxMGAAAAAQAAACUAAAAAAAAABgAAAFpeTCcDAABaBnUDAABeWg8BAAAAIQAAAAAAAAAGAAAAAAEAAAAhAAAAAAAAAAYAAABo5f///wABAAAAqAAAAAAAAAAGAAAAHQEAAAAWXg8BAAAAqAAAAAAAAAAGAAAAAAEAAACoAAAAAAAAAAYAAAAAAQAAACEAAAAAAAAABgAAAFoG6AIAAF5aXg8BAAAAuQAAAAAAAAAGAAAAAAEAAAC5AAAAAAAAAAYAAAAAAQAAAKgAAAAAAAAABgAAAFoPAQAAACQAAAAAAAAABgAAAAABAAAAJAAAAAAAAAAGAAAAaOT///8AAQAAALkAAAAAAAAABgAAABYPAQAAACQAAAACAAAABgAAAAABAAAAJAAAAAIAAAAGAAAAaOT///8AAQAAALgAAAAAAAAABgAAABYPAQAAACsAAAAAAAAABgAAAAABAAAAKwAAAAAAAAAGAAAAaN7///8AAQAAACQAAAAAAAAABgAAADcAAAAAAAAMQBYPAQAAACsAAAACAAAABgAAAAABAAAAKwAAAAIAAAAGAAAAaN7///8AAQAAACQAAAACAAAABgAAADcAAAAAAAAMQBYPAQAAACoAAAAAAAAABgAAAAABAAAAKgAAAAAAAAAGAAAAaN////8AAQAAACsAAAAAAAAABgAAADcAAAAAAABZQBYPAQAAACoAAAACAAAABgAAAAABAAAAKgAAAAIAAAAGAAAAaN////8AAQAAACsAAAACAAAABgAAADcAAAAAAABZQBYPAQAAACkAAAAAAAAABgAAAAABAAAAKQAAAAAAAAAGAAAAaOD///8AAQAAACoAAAACAAAABgAAADcAAAAAAAAAAAABAAAAKgAAAAAAAAAGAAAAFg8BAAAAJAAAAAMAAAAGAAAAAAEAAAAkAAAAAwAAAAYAAABo5P///wABAAAAegAAAAAAAAAGAAAAFg8BAAAAKgAAAAMAAAAGAAAAAAEAAAAqAAAAAwAAAAYAAABo3////wABAAAAJAAAAAMAAAAGAAAANwAAAAAAAAhAFg8AAAAAAAAAAAABAAAAJwAAAAAAAAAGAAAAOAMAAQAAACoAAAADAAAABgAAAA8BAAAAJgAAAAAAAAAGAAAAAAEAAAAmAAAAAAAAAAYAAABo4v///x4AAAAAHgAAAAAAAQAAACcAAAAAAAAABgAAABYPAQAAACgAAAAAAAAABgAAAAABAAAAKAAAAAAAAAAGAAAAaOH///8AAQAAACkAAAAAAAAABgAAAAABAAAAJgAAAAAAAAAGAAAAIzMzMzMzM+s/MzMzMzMz6z8zMzMzMzPrPxZeDwEAAAAjAAAAAAAAAAYAAAAAAQAAACMAAAAAAAAABgAAABkAAQAAACIAAAACAAAABgAAABgAAAABAAAAIwAAAAAAAAAGAAAAGwYAAAAAAAAAAAEAAAAoAAAAAAAAAAYAAAAoFlpeDwEAAAB6AAAAAAAAAAYAAAAAAQAAAHoAAAAAAAAABgAAAAABAAAAIwAAAAAAAAAGAAAAWk1eWk1eWl4PAQAAALgAAAAAAAAABgAAAAABAAAAuAAAAAAAAAAGAAAAAAEAAACoAAAABAAAAAYAAABaXlpeWl4PAQAAAKgAAAADAAAABgAAAAABAAAAqAAAAAMAAAAGAAAAHQAAAABaFAABAAAAJQAAAAMAAAAGAAAAaOP///8AAQAAAKgAAAADAAAABgAAAB0HAAAAFl5aB30JAAAAAQAAACUAAAADAAAABgAAAFpeTJEGAABaBt8GAABeWg8BAAAAIQAAAAMAAAAGAAAAAAEAAAAhAAAAAwAAAAYAAABo5f///wABAAAAqAAAAAMAAAAGAAAAHQEAAAAWXg8BAAAAqAAAAAMAAAAGAAAAAAEAAACoAAAAAwAAAAYAAAAAAQAAACEAAAADAAAABgAAAFoGUgYAAF5aXg8BAAAAuQAAAAAAAAAGAAAAAAEAAAC5AAAAAAAAAAYAAAAAAQAAAKgAAAADAAAABgAAAFoPAQAAACQAAAAEAAAABgAAAAABAAAAJAAAAAQAAAAGAAAAaOT///8AAQAAALkAAAAAAAAABgAAABYPAQAAACsAAAADAAAABgAAAAABAAAAKwAAAAMAAAAGAAAAaN7///8AAQAAACQAAAAEAAAABgAAADcAAAAAAAAMQBYPAQAAACoAAAAEAAAABgAAAAABAAAAKgAAAAQAAAAGAAAAaN////8AAQAAACsAAAADAAAABgAAADcAAAAAAABZQBYPAQAAACQAAAAFAAAABgAAAAABAAAAJAAAAAUAAAAGAAAAaOT///8AAQAAALgAAAAAAAAABgAAABYPAQAAACQAAAAGAAAABgAAAAABAAAAJAAAAAYAAAAGAAAAaOT///8AAQAAAHoAAAAAAAAABgAAABYPAQAAACsAAAAEAAAABgAAAAABAAAAKwAAAAQAAAAGAAAAaN7///8AAQAAACQAAAAFAAAABgAAADcAAAAAAAAMQBYPAQAAACoAAAAFAAAABgAAAAABAAAAKgAAAAUAAAAGAAAAaN////8AAQAAACQAAAAGAAAABgAAADcAAAAAAAAIQBYPAQAAACoAAAAGAAAABgAAAAABAAAAKgAAAAYAAAAGAAAAaN////8AAQAAACsAAAAEAAAABgAAADcAAAAAAABZQBYPAAAAAAAAAAAAAQAAACcAAAACAAAABgAAADgDAAEAAAAqAAAABQAAAAYAAAAPAQAAACYAAAACAAAABgAAAAABAAAAJgAAAAIAAAAGAAAAaOL///8eAAAAAB4AAAAAAAEAAAAnAAAAAgAAAAYAAAAWDwEAAAApAAAAAgAAAAYAAAAAAQAAACkAAAACAAAABgAAAGjg////AAEAAAAqAAAABgAAAAYAAAA3AAAAAAAAAAAAAQAAACoAAAAEAAAABgAAABYPAQAAACgAAAACAAAABgAAAAABAAAAKAAAAAIAAAAGAAAAaOH///8AAQAAACkAAAACAAAABgAAAAABAAAAJgAAAAIAAAAGAAAAIzMzMzMzM+s/MzMzMzMz6z8zMzMzMzPrPxZeDwEAAAAjAAAAAgAAAAYAAAAAAQAAACMAAAACAAAABgAAABkAAQAAACIAAAAAAAAABgAAABgAAAABAAAAIwAAAAIAAAAGAAAAGwYAAAAAAAAAAAEAAAAoAAAAAgAAAAYAAAAoFlpeDwEAAAB6AAAAAAAAAAYAAAAAAQAAAHoAAAAAAAAABgAAAAABAAAAIwAAAAIAAAAGAAAAWk1eWk0EC1M="
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Y",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "FriendlyName": "Y",
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "NewLocalVar",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "FriendlyName": "New Local Var",
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "X",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "FriendlyName": "X",
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-46] Transform",
+            "ArrayDim": 1,
+            "ElementSize": 96,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_struct_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-19] InstancedStaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddComponent_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_int_Variable",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_LessEqual_IntInt_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_int_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_LessEqual_IntInt_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_int_Variable\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_LessEqual_IntInt_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_int_Variable\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_LessEqual_IntInt_ReturnValue\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-47] Vector",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeVector_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-45] Rotator",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeRotator_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-46] Transform",
+            "ArrayDim": 1,
+            "ElementSize": 96,
+            "PropertyFlags": "CPF_ConstParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Temp_struct_Variable\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-46] Transform",
+            "ArrayDim": 1,
+            "ElementSize": 96,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeTransform_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-19] InstancedStaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddComponent_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddInstance_ReturnValue",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"2",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"4",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"5",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"3",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"4",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"5",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-45] Rotator",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeRotator_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-47] Vector",
+            "ArrayDim": 1,
+            "ElementSize": 24,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeVector_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-46] Transform",
+            "ArrayDim": 1,
+            "ElementSize": 96,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeTransform_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_AddInstance_ReturnValue\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeRotator_Yaw_ImplicitCast",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FFloatProperty",
+            "TypeName": "FloatProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_None",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CallFunc_MakeRotator_Yaw_ImplicitCast\"1",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 209848320,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 79837,
+      "Index": 7,
+      "Size": 123,
+      "ObjectName": "NODE_AddInstancedStaticMeshComponent-0",
+      "ClassName": "InstancedStaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UInstancedStaticMeshComponent",
+        "Members": {
+          "obj 'StaticMesh'": -48,
+          "obj[] 'OverrideMaterials'": "-37"
+        },
+        "bCooked": false,
+        "bHasSkipSerializationPropertiesData": true,
+        "TempPerInstanceSMData": {
+          "ElementSize": 128,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "TempPerInstanceSMCustomData": {
+          "ElementSize": 4,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "RenderDataSizeBytes": 0,
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 79960,
+      "Index": 8,
+      "Size": 148,
+      "ObjectName": "NODE_AddInstancedStaticMeshComponent-1",
+      "ClassName": "InstancedStaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UInstancedStaticMeshComponent",
+        "Members": {
+          "obj 'StaticMesh'": -48,
+          "bool 'bDisallowNanite'": true,
+          "obj[] 'OverrideMaterials'": "-36"
+        },
+        "bCooked": false,
+        "bHasSkipSerializationPropertiesData": true,
+        "TempPerInstanceSMData": {
+          "ElementSize": 128,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "TempPerInstanceSMCustomData": {
+          "ElementSize": 4,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "RenderDataSizeBytes": 0,
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 80108,
+      "Index": 9,
+      "Size": 2615,
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "string 'TemplateBlueprint'": "/Game/NewBlueprint.NewBlueprint",
+          "obj 'TemplateType'": -19,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 288,
+          "int 'NodePosY'": 608,
+          "guid 'NodeGuid'": "fa994e4a-453b-5ca2-f8cb-449e3a65acd1"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`9 518a2d66-4ad4-6570-0db1-8e9361f2eda6`» LinkedTo«`24 09f16e6d-4edf-d485-2f07-2f8879e3dc71`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`9 343f8b91-43f6-b4f9-792a-8da63c4f5d57`» LinkedTo«`27 c9a78a29-4737-2a43-1308-f9aadf01123f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`9 14f04113-4e2f-4ebc-cd31-a781df2836ff`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`name`» Name«`TemplateName`» Id«`9 4904e6c4-4e66-9996-5249-97af28be47f1`» DefaultValue«`NODE_AddInstancedStaticMeshComponent-1`» AutogeneratedDefaultValue«`None`» BitField«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bManualAttachment`» Id«`9 ce17fc0d-41cc-d07a-9d5b-32913b9f4dc1`» ToolTip«`Manual Attachment\nBoolean\n\nDefines whether the component should attach to the root automatically, or be left unattached for the user to manually attach later.`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-46`) isConst`» Name«`RelativeTransform`» Id«`9 6d83fde1-4612-df6b-cbdd-9db806ce415a`» ToolTip«`Relative Transform\nTransform\n\nDefines where to position the component (relative to its parent). If the component is left unattached, then the transform is relative to the world.`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-14`) isConst`» Name«`ComponentTemplateContext`» Id«`9 4810491d-45f4-ed1c-32bf-3086dce9bbb0`» BitField«`3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bDeferredFinish`» Id«`9 7f626a95-4c1f-cad3-defa-1e8df8fe8d04`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» BitField«`3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-19`)`» Name«`ReturnValue`» Id«`9 e1a80b7f-461d-1d97-af68-9d905cb39fc5`» LinkedTo«`11 37cc7457-47ec-7a9f-4e93-928f3fbef346`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 82723,
+      "Index": 10,
+      "Size": 2615,
+      "ObjectName": "K2Node_AddComponent",
+      "ClassName": "K2Node_AddComponent",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "string 'TemplateBlueprint'": "/Game/NewBlueprint.NewBlueprint",
+          "obj 'TemplateType'": -19,
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "AddComponent",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 240,
+          "int 'NodePosY'": -16,
+          "guid 'NodeGuid'": "fce9b825-498f-354d-0cf6-7f9195ba98f1"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`10 518a2d66-4ad4-6570-0db1-8e9361f2eda6`» LinkedTo«`24 6d9cf1a9-4350-c565-845b-4d9542bf8e5a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`10 343f8b91-43f6-b4f9-792a-8da63c4f5d57`» LinkedTo«`28 c9a78a29-4737-2a43-1308-f9aadf01123f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`10 14f04113-4e2f-4ebc-cd31-a781df2836ff`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`name`» Name«`TemplateName`» Id«`10 4904e6c4-4e66-9996-5249-97af28be47f1`» DefaultValue«`NODE_AddInstancedStaticMeshComponent-0`» AutogeneratedDefaultValue«`None`» BitField«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bManualAttachment`» Id«`10 ce17fc0d-41cc-d07a-9d5b-32913b9f4dc1`» ToolTip«`Manual Attachment\nBoolean\n\nDefines whether the component should attach to the root automatically, or be left unattached for the user to manually attach later.`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-46`) isConst`» Name«`RelativeTransform`» Id«`10 6d83fde1-4612-df6b-cbdd-9db806ce415a`» ToolTip«`Relative Transform\nTransform\n\nDefines where to position the component (relative to its parent). If the component is left unattached, then the transform is relative to the world.`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-14`) isConst`» Name«`ComponentTemplateContext`» Id«`10 4810491d-45f4-ed1c-32bf-3086dce9bbb0`» BitField«`3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bDeferredFinish`» Id«`10 7f626a95-4c1f-cad3-defa-1e8df8fe8d04`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» BitField«`3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-19`)`» Name«`ReturnValue`» Id«`10 e1a80b7f-461d-1d97-af68-9d905cb39fc5`» LinkedTo«`18 37cc7457-47ec-7a9f-4e93-928f3fbef346`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 85338,
+      "Index": 11,
+      "Size": 1629,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "AddInstance"
+          },
+          "int 'NodePosX'": 1648,
+          "int 'NodePosY'": 608,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid'": "a97446b0-46f7-cfee-c863-7bb95b346105"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`11 1848dcb9-4744-ed80-38dc-d6be3c992e6e`» LinkedTo«`48 b0697b3e-4d6e-c4d5-358b-63876b127531`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`11 d24b2dd2-45eb-d3ab-a9c7-6ca53912e5a4`» LinkedTo«`47 a5532945-4eae-3514-968f-ccae02bcc7b1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-19`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`11 37cc7457-47ec-7a9f-4e93-928f3fbef346`» LinkedTo«`9 e1a80b7f-461d-1d97-af68-9d905cb39fc5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-46`) isReference isConst`» Name«`InstanceTransform`» Id«`11 3d5878c9-4b01-5c6f-21dd-a884e10488a2`» LinkedTo«`12 c3abb1c6-493b-d424-2bed-6d8e7fa9c1af`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bWorldSpace`» Id«`11 20a3e150-4027-5d0d-21d4-83aa0e0e0c50`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`ReturnValue`» Id«`11 bf8400bc-4657-bcd4-be07-c5b2ae9eb24f`» LinkedTo«`47 533a82fe-47a5-8055-928f-80984b5352fb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 86967,
+      "Index": 12,
+      "Size": 4052,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "MakeTransform"
+          },
+          "int 'NodePosX'": 1280,
+          "int 'NodePosY'": 848,
+          "guid 'NodeGuid'": "7cf674d9-48fb-e176-0aa6-09ac521d912a"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`12 93b65506-4c73-a66c-349c-2fa966e4382a`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-47`)`» Name«`Location`» Id«`12 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» SubPins«`12 286a4f33-4439-1c5f-b36d-99ac9be2def6 | 12 55160157-41fc-2ec0-903d-12849b00b675 | 12 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Location_X`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`X`»)` »`» Id«`12 286a4f33-4439-1c5f-b36d-99ac9be2def6`» LinkedTo«`33 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`real-double`» Name«`Location_Y`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`Y`»)` »`» Id«`12 55160157-41fc-2ec0-903d-12849b00b675`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`real-double`» Name«`Location_Z`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`Z`»)` »`» Id«`12 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» LinkedTo«`32 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`struct obj(`-45`)`» Name«`Rotation`» Id«`12 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» SubPins«`12 99c61016-4f51-21ee-9de5-1bb61a71ed88 | 12 1c0471fe-4058-aa3b-05e4-448bb2335228 | 12 be940e52-4acc-096c-02a6-8e84535c0bec`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Roll`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`X (Roll)`»)` »`» Id«`12 99c61016-4f51-21ee-9de5-1bb61a71ed88`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Pitch`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`Y (Pitch)`»)` »`» Id«`12 1c0471fe-4058-aa3b-05e4-448bb2335228`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Yaw`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`Z (Yaw)`»)` »`» Id«`12 be940e52-4acc-096c-02a6-8e84535c0bec`» LinkedTo«`30 08ec7340-4b73-fa58-b3b2-61a8d98c2490`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`12 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`struct obj(`-47`)`» Name«`Scale`» Id«`12 f5d7c0d8-475a-9bac-0086-aeaa19ec5413`» DefaultValue«`0.850000,0.850000,0.850000`» AutogeneratedDefaultValue«`1.000000,1.000000,1.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-46`)`» Name«`ReturnValue`» Id«`12 c3abb1c6-493b-d424-2bed-6d8e7fa9c1af`» LinkedTo«`11 3d5878c9-4b01-5c6f-21dd-a884e10488a2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 91019,
+      "Index": 13,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 608,
+          "int 'NodePosY'": 224,
+          "guid 'NodeGuid'": "3713d896-4ca5-c936-b394-629a91c91251"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`13 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`13 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`44 28b95d9d-4f49-8057-f937-cbad10a9850f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`13 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`39 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 91980,
+      "Index": 14,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 624,
+          "int 'NodePosY'": 352,
+          "guid 'NodeGuid'": "d07565de-4d84-cbf0-378b-bda4ad481cd2"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`14 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`14 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`45 51d2a46c-4444-87c7-d87c-a9aea16f316f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`14 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`31 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 92941,
+      "Index": 15,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 672,
+          "int 'NodePosY'": 976,
+          "guid 'NodeGuid'": "a98e2d50-430a-7f14-d3ea-a895c206e916"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`15 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`15 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`42 51d2a46c-4444-87c7-d87c-a9aea16f316f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`15 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`34 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 93902,
+      "Index": 16,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 864,
+          "int 'NodePosY'": 1072,
+          "guid 'NodeGuid'": "d267dccb-4e9c-5ac8-8177-bdb719e1a542"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`16 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`16 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`40 1032e7bc-485a-3026-73e2-ec8a1cf9944c`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`16 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`30 f7dbe983-41c1-046e-562c-5ba1d3d3ab52`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 94863,
+      "Index": 17,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 656,
+          "int 'NodePosY'": 848,
+          "guid 'NodeGuid'": "929a270d-4cb9-f02a-aa01-d8ab8b15333f"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`17 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`17 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`41 28b95d9d-4f49-8057-f937-cbad10a9850f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`17 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`35 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 95824,
+      "Index": 18,
+      "Size": 1629,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "AddInstance"
+          },
+          "int 'NodePosX'": 1600,
+          "int 'NodePosY'": -16,
+          "int 'ErrorType'": 1,
+          "guid 'NodeGuid'": "3708691c-4a02-2854-a782-85b7cb78fed3"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`18 1848dcb9-4744-ed80-38dc-d6be3c992e6e`» LinkedTo«`51 b0697b3e-4d6e-c4d5-358b-63876b127531`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`18 d24b2dd2-45eb-d3ab-a9c7-6ca53912e5a4`» LinkedTo«`50 a5532945-4eae-3514-968f-ccae02bcc7b1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-19`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`18 37cc7457-47ec-7a9f-4e93-928f3fbef346`» LinkedTo«`10 e1a80b7f-461d-1d97-af68-9d905cb39fc5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-46`) isReference isConst`» Name«`InstanceTransform`» Id«`18 3d5878c9-4b01-5c6f-21dd-a884e10488a2`» LinkedTo«`19 c3abb1c6-493b-d424-2bed-6d8e7fa9c1af`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`bWorldSpace`» Id«`18 20a3e150-4027-5d0d-21d4-83aa0e0e0c50`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`ReturnValue`» Id«`18 bf8400bc-4657-bcd4-be07-c5b2ae9eb24f`» LinkedTo«`50 533a82fe-47a5-8055-928f-80984b5352fb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 97453,
+      "Index": 19,
+      "Size": 4052,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "MakeTransform"
+          },
+          "int 'NodePosX'": 1232,
+          "int 'NodePosY'": 224,
+          "guid 'NodeGuid'": "5c89907f-4979-3323-e54e-5a919c1dfd20"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`19 93b65506-4c73-a66c-349c-2fa966e4382a`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`struct obj(`-47`)`» Name«`Location`» Id«`19 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» SubPins«`19 286a4f33-4439-1c5f-b36d-99ac9be2def6 | 19 55160157-41fc-2ec0-903d-12849b00b675 | 19 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Location_X`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`X`»)` »`» Id«`19 286a4f33-4439-1c5f-b36d-99ac9be2def6`» LinkedTo«`37 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`real-double`» Name«`Location_Y`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`Y`»)` »`» Id«`19 55160157-41fc-2ec0-903d-12849b00b675`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`real-double`» Name«`Location_Z`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Location`»)` `text(«text header=`CultureInvariant` SourceString=`Z`»)` »`» Id«`19 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» LinkedTo«`38 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 8bffe87f-4511-a4bc-6657-c48a3c2daba9`» ",
+          "input-pin Type«`struct obj(`-45`)`» Name«`Rotation`» Id«`19 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» SubPins«`19 99c61016-4f51-21ee-9de5-1bb61a71ed88 | 19 1c0471fe-4058-aa3b-05e4-448bb2335228 | 19 be940e52-4acc-096c-02a6-8e84535c0bec`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Roll`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`X (Roll)`»)` »`» Id«`19 99c61016-4f51-21ee-9de5-1bb61a71ed88`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Pitch`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`Y (Pitch)`»)` »`» Id«`19 1c0471fe-4058-aa3b-05e4-448bb2335228`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`real-float`» Name«`Rotation_Yaw`» PinFriendlyName«`text-named-format header=`None` SourceFmt«text-base header=`Immutable` Key=`SplitPinFriendlyNameFormat` Namespace=`KismetSchema` SourceString=`{PinDisplayName} {ProtoPinDisplayName}`» Keys(`PinDisplayName` `ProtoPinDisplayName`) Values« `text(«text header=`CultureInvariant` SourceString=`Rotation`»)` `text(«text header=`CultureInvariant` SourceString=`Z (Yaw)`»)` »`» Id«`19 be940e52-4acc-096c-02a6-8e84535c0bec`» LinkedTo«`36 08ec7340-4b73-fa58-b3b2-61a8d98c2490`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ParentPin«`19 c0c907a4-48cd-29fa-f107-70a8a4d0c50d`» ",
+          "input-pin Type«`struct obj(`-47`)`» Name«`Scale`» Id«`19 f5d7c0d8-475a-9bac-0086-aeaa19ec5413`» DefaultValue«`0.850000,0.850000,0.850000`» AutogeneratedDefaultValue«`1.000000,1.000000,1.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`struct obj(`-46`)`» Name«`ReturnValue`» Id«`19 c3abb1c6-493b-d424-2bed-6d8e7fa9c1af`» LinkedTo«`18 3d5878c9-4b01-5c6f-21dd-a884e10488a2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 101505,
+      "Index": 20,
+      "Size": 961,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Conv_IntToDouble"
+          },
+          "int 'NodePosX'": 816,
+          "int 'NodePosY'": 448,
+          "guid 'NodeGuid'": "411a13d8-4286-1886-ee15-37af2acd58f4"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-20`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`20 05cdf060-4f0b-2d27-1ad5-909f3dcf50a0`» BitField«`1`» DefaultObject«`ImportIndex[-35] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`InInt`» Id«`20 133c56d6-4b24-f500-89d4-e3ae22b916d6`» LinkedTo«`43 1032e7bc-485a-3026-73e2-ec8a1cf9944c`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`20 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» LinkedTo«`36 f7dbe983-41c1-046e-562c-5ba1d3d3ab52`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 102466,
+      "Index": 21,
+      "Size": 854,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -15,
+            "name 'MemberName'": "ReceiveBeginPlay"
+          },
+          "bool 'bOverrideFunction'": true,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 74,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "69d07461-48a2-c21b-748f-188fbe36b691"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-15` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`21 f3514739-43a6-8ce7-b17d-74b56a411cfe`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`21 5b3c499c-47a9-d630-1f1f-f29f5f4161ec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 103320,
+      "Index": 22,
+      "Size": 1114,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -15,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 208,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 74,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "7b3a8baf-46b2-e4ff-f910-ca83c53ffcaa"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-15` `` `ReceiveActorBeginOverlap`)`» Name«`OutputDelegate`» Id«`22 3b30a931-4d84-70ac-9034-5c89249bbb53`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`22 67b340b1-45c2-a1d5-bd8b-08b7a4e29ca2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-15`)`» Name«`OtherActor`» Id«`22 bb8b26e3-45b8-2db3-2b2a-768a00dc5ee2`» ToolTip«`Other Actor\nActor Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 104434,
+      "Index": 23,
+      "Size": 1126,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -15,
+            "name 'MemberName'": "ReceiveTick"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 416,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 74,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "cdd06c42-480d-bc3e-9dca-5dab7ac89c82"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-15` `` `ReceiveTick`)`» Name«`OutputDelegate`» Id«`23 de25dbc4-4820-0285-2d44-a7a4520ecd66`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`23 e1abc4c5-4d7b-1b87-2e64-c9bba1fc296a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-float`» Name«`DeltaSeconds`» Id«`23 728ec367-412d-0d3e-a7da-78a0f1e3fab4`» ToolTip«`Delta Seconds\nFloat (single-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 105560,
+      "Index": 24,
+      "Size": 800,
+      "ObjectName": "K2Node_ExecutionSequence",
+      "ClassName": "K2Node_ExecutionSequence",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "int 'NodePosX'": -16,
+          "int 'NodePosY'": 288,
+          "guid 'NodeGuid'": "093f3fdd-4ce4-7711-756d-708e4b189bb0"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`24 fe5bdd62-47d0-0b6f-0b0f-6790a96c9512`» LinkedTo«`25 3f9ffcfc-426b-3c2a-ca8e-e785f5ae2d8c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then\"0`» Id«`24 6d9cf1a9-4350-c565-845b-4d9542bf8e5a`» LinkedTo«`10 518a2d66-4ad4-6570-0db1-8e9361f2eda6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then\"1`» Id«`24 09f16e6d-4edf-d485-2f07-2f8879e3dc71`» LinkedTo«`9 518a2d66-4ad4-6570-0db1-8e9361f2eda6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 106360,
+      "Index": 25,
+      "Size": 2191,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "LocalVariables": {
+            "Name": "LocalVariables",
+            "Type": "ArrayProperty",
+            "Size": 1647,
+            "StructName": "BPVariableDescription",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "name 'VarName'": "X",
+                "guid 'VarGuid'": "eed323b1-4612-2e9e-4183-41aec2f330af",
+                "class EdGraphPinType 69 'VarType'": "int",
+                "string 'FriendlyName'": "X",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 5,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 54,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              },
+              {
+                "name 'VarName'": "NewLocalVar",
+                "guid 'VarGuid'": "2baf6345-48ba-7ad7-20b3-a1aa9fa2025b",
+                "class EdGraphPinType 69 'VarType'": "int",
+                "string 'FriendlyName'": "New Local Var",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 5,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 54,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": "0"
+              },
+              {
+                "name 'VarName'": "Y",
+                "guid 'VarGuid'": "10659eec-4ab7-2241-7b5d-2999518bc5f3",
+                "class EdGraphPinType 69 'VarType'": "int",
+                "string 'FriendlyName'": "Y",
+                "Category": {
+                  "Name": "Category",
+                  "Type": "TextProperty",
+                  "Size": 46,
+                  "BoolVal": 0,
+                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                  "TypeName": "TextProperty 0"
+                },
+                "ulong 'PropertyFlags'": 5,
+                "name 'RepNotifyFunc'": "None",
+                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 54,
+                "MetaDataArray": {
+                  "Name": "MetaDataArray",
+                  "Type": "ArrayProperty",
+                  "Size": 4,
+                  "StructName": "BPVariableMetaDataEntry",
+                  "BoolVal": 0,
+                  "InnerType": "StructProperty",
+                  "Value": [],
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                },
+                "string 'DefaultValue'": ""
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+          },
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -15,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "int 'NodePosX'": -208,
+          "int 'NodePosY'": 288,
+          "guid 'NodeGuid'": "5bde28c0-4714-4889-717c-d2bc789b2eec"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`25 3f9ffcfc-426b-3c2a-ca8e-e785f5ae2d8c`» LinkedTo«`24 fe5bdd62-47d0-0b6f-0b0f-6790a96c9512`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 108551,
+      "Index": 26,
+      "Size": 1574,
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -24,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid'": "55c904af-4b45-fe17-61fb-55a8db9fb801"
+          },
+          "int 'NodePosX'": 1184,
+          "int 'NodePosY'": 624,
+          "guid 'NodeGuid'": "c85f47ed-43d2-3746-ab3a-0c9133965e85"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`26 c9a78a29-4737-2a43-1308-f9aadf01123f`» LinkedTo«`46 8ead5ada-4b36-444a-fbe4-1d99746a4e6f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`FirstIndex`» Id«`26 0b7dd365-4173-c687-bf4d-c5adf114b2ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`LastIndex`» Id«`26 a4f1177a-49bb-ea68-dafa-5f9e3dde7c53`» DefaultValue«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`LoopBody`» Id«`26 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» LinkedTo«`48 d58da0a5-4384-76f1-1963-64ad335276d0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Index`» Id«`26 506c1d47-4a50-1e73-cb88-22906343f4eb`» LinkedTo«`48 b831ea69-49b3-0639-e883-84a7f66eb730`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`26 0a3ef8c2-41d7-26c2-0716-a7a3d6a6a94d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 110125,
+      "Index": 27,
+      "Size": 1574,
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -24,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid'": "55c904af-4b45-fe17-61fb-55a8db9fb801"
+          },
+          "int 'NodePosX'": 656,
+          "int 'NodePosY'": 624,
+          "guid 'NodeGuid'": "6cf88d24-48d1-a0cb-3e07-3e9c9546c3cb"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`27 c9a78a29-4737-2a43-1308-f9aadf01123f`» LinkedTo«`9 343f8b91-43f6-b4f9-792a-8da63c4f5d57`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`FirstIndex`» Id«`27 0b7dd365-4173-c687-bf4d-c5adf114b2ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`LastIndex`» Id«`27 a4f1177a-49bb-ea68-dafa-5f9e3dde7c53`» DefaultValue«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`LoopBody`» Id«`27 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» LinkedTo«`46 8aa4f71f-49e6-6acc-4356-eda694c6fb60`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Index`» Id«`27 506c1d47-4a50-1e73-cb88-22906343f4eb`» LinkedTo«`46 a0858d50-4c99-57bb-63f5-e092505e404b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`27 0a3ef8c2-41d7-26c2-0716-a7a3d6a6a94d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 111699,
+      "Index": 28,
+      "Size": 1545,
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -24,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid'": "55c904af-4b45-fe17-61fb-55a8db9fb801"
+          },
+          "int 'NodePosX'": 608,
+          "guid 'NodeGuid'": "bbd6b8ad-44ff-04c5-a60a-41b272a0fa51"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`28 c9a78a29-4737-2a43-1308-f9aadf01123f`» LinkedTo«`10 343f8b91-43f6-b4f9-792a-8da63c4f5d57`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`FirstIndex`» Id«`28 0b7dd365-4173-c687-bf4d-c5adf114b2ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`LastIndex`» Id«`28 a4f1177a-49bb-ea68-dafa-5f9e3dde7c53`» DefaultValue«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`LoopBody`» Id«`28 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» LinkedTo«`49 8aa4f71f-49e6-6acc-4356-eda694c6fb60`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Index`» Id«`28 506c1d47-4a50-1e73-cb88-22906343f4eb`» LinkedTo«`49 a0858d50-4c99-57bb-63f5-e092505e404b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`28 0a3ef8c2-41d7-26c2-0716-a7a3d6a6a94d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 113244,
+      "Index": 29,
+      "Size": 1545,
+      "ObjectName": "K2Node_MacroInstance",
+      "ClassName": "K2Node_MacroInstance",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -24,
+            "obj 'GraphBlueprint'": -2,
+            "guid 'GraphGuid'": "55c904af-4b45-fe17-61fb-55a8db9fb801"
+          },
+          "int 'NodePosX'": 1136,
+          "guid 'NodeGuid'": "7ef75672-40f0-5e9d-264b-63b3b7a3b615"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`29 c9a78a29-4737-2a43-1308-f9aadf01123f`» LinkedTo«`49 8ead5ada-4b36-444a-fbe4-1d99746a4e6f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`FirstIndex`» Id«`29 0b7dd365-4173-c687-bf4d-c5adf114b2ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`LastIndex`» Id«`29 a4f1177a-49bb-ea68-dafa-5f9e3dde7c53`» DefaultValue«`7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`LoopBody`» Id«`29 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» LinkedTo«`51 d58da0a5-4384-76f1-1963-64ad335276d0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Index`» Id«`29 506c1d47-4a50-1e73-cb88-22906343f4eb`» LinkedTo«`51 b831ea69-49b3-0639-e883-84a7f66eb730`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`Completed`» Id«`29 0a3ef8c2-41d7-26c2-0716-a7a3d6a6a94d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 114789,
+      "Index": 30,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 1008,
+          "int 'NodePosY'": 1072,
+          "guid 'NodeGuid'": "1011cfd1-41d9-e371-7336-f39def49b2db"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`30 f7dbe983-41c1-046e-562c-5ba1d3d3ab52`» LinkedTo«`16 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`30 20fdccad-4c81-c291-eb6e-7e8aba85c109`» DefaultValue«`3.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`30 08ec7340-4b73-fa58-b3b2-61a8d98c2490`» LinkedTo«`12 be940e52-4acc-096c-02a6-8e84535c0bec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 115751,
+      "Index": 31,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Subtract",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Subtract_DoubleDouble"
+          },
+          "int 'NodePosX'": 784,
+          "int 'NodePosY'": 352,
+          "guid 'NodeGuid'": "321a11fc-44db-66b6-406b-e4817284fa7f"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`31 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» LinkedTo«`14 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`31 1d95ce33-4260-164b-f4c0-bc8aa8a860f4`» DefaultValue«`3.500000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`31 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» LinkedTo«`38 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 116713,
+      "Index": 32,
+      "Size": 964,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 1008,
+          "int 'NodePosY'": 976,
+          "guid 'NodeGuid'": "fa80e9bf-4cc5-2099-3f1e-9d8b9c5687af"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`32 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» LinkedTo«`34 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`32 11211b6e-4cf3-edad-2936-b5a5d8a01dc0`» DefaultValue«`100.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`32 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» LinkedTo«`12 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 117677,
+      "Index": 33,
+      "Size": 964,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 1024,
+          "int 'NodePosY'": 880,
+          "guid 'NodeGuid'": "d2897378-427d-b1a4-8a1d-e5bdfd79b338"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`33 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» LinkedTo«`35 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`33 11211b6e-4cf3-edad-2936-b5a5d8a01dc0`» DefaultValue«`100.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`33 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» LinkedTo«`12 286a4f33-4439-1c5f-b36d-99ac9be2def6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 118641,
+      "Index": 34,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Subtract",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Subtract_DoubleDouble"
+          },
+          "int 'NodePosX'": 832,
+          "int 'NodePosY'": 976,
+          "guid 'NodeGuid'": "12d008b9-4830-cf44-9650-528ec2c6867f"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`34 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» LinkedTo«`15 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`34 1d95ce33-4260-164b-f4c0-bc8aa8a860f4`» DefaultValue«`3.500000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`34 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» LinkedTo«`32 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 119603,
+      "Index": 35,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Subtract",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Subtract_DoubleDouble"
+          },
+          "int 'NodePosX'": 832,
+          "int 'NodePosY'": 848,
+          "guid 'NodeGuid'": "0b76bbb0-490a-02d0-3e65-1baa5ccb4b70"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`35 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» LinkedTo«`17 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`35 1d95ce33-4260-164b-f4c0-bc8aa8a860f4`» DefaultValue«`3.500000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`35 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» LinkedTo«`33 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 120565,
+      "Index": 36,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 960,
+          "int 'NodePosY'": 448,
+          "guid 'NodeGuid'": "2556f106-4f6f-0491-efb3-8c94b71cb46b"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`36 f7dbe983-41c1-046e-562c-5ba1d3d3ab52`» LinkedTo«`20 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`36 20fdccad-4c81-c291-eb6e-7e8aba85c109`» DefaultValue«`3.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`36 08ec7340-4b73-fa58-b3b2-61a8d98c2490`» LinkedTo«`19 be940e52-4acc-096c-02a6-8e84535c0bec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 121527,
+      "Index": 37,
+      "Size": 964,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 976,
+          "int 'NodePosY'": 256,
+          "guid 'NodeGuid'": "f2be6c48-4d0d-f40b-d53f-eebe307e1ea8"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`37 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» LinkedTo«`39 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`37 11211b6e-4cf3-edad-2936-b5a5d8a01dc0`» DefaultValue«`100.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`37 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» LinkedTo«`19 286a4f33-4439-1c5f-b36d-99ac9be2def6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 122491,
+      "Index": 38,
+      "Size": 964,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Multiply",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Multiply_DoubleDouble"
+          },
+          "int 'NodePosX'": 960,
+          "int 'NodePosY'": 352,
+          "guid 'NodeGuid'": "1b7e8f98-4523-08c1-36a2-cea1795e9532"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`38 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» LinkedTo«`31 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`38 11211b6e-4cf3-edad-2936-b5a5d8a01dc0`» DefaultValue«`100.000000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`38 9ff90751-47ef-8dfa-291d-c6979dc4aa8f`» LinkedTo«`19 f3bb64cd-4de1-e3f7-1fa9-789c0e8a579f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 123455,
+      "Index": 39,
+      "Size": 962,
+      "ObjectName": "K2Node_PromotableOperator",
+      "ClassName": "K2Node_PromotableOperator",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "name 'OperationName'": "Subtract",
+          "bool 'bDefaultsToPureFunc'": true,
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -20,
+            "name 'MemberName'": "Subtract_DoubleDouble"
+          },
+          "int 'NodePosX'": 784,
+          "int 'NodePosY'": 224,
+          "guid 'NodeGuid'": "60b359af-4eb1-347d-47de-fbaad2be81cc"
+        },
+        "Pins": [
+          "input-pin Type«`real-double`» Name«`A`» Id«`39 b4c58326-41a9-30ed-c7f2-5b850b29eee8`» LinkedTo«`13 f7f91de6-4e53-2710-e6be-31be0b3dcde9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`B`» Id«`39 1d95ce33-4260-164b-f4c0-bc8aa8a860f4`» DefaultValue«`3.500000`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`ReturnValue`» Id«`39 0e6a0eae-4343-5ef0-ce5a-20835205bd00`» LinkedTo«`37 8ae0afba-4c8d-dbc1-087e-4390b866c8c3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 124417,
+      "Index": 40,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "NewLocalVar",
+            "guid 'MemberGuid'": "2baf6345-48ba-7ad7-20b3-a1aa9fa2025b"
+          },
+          "int 'NodePosX'": 736,
+          "int 'NodePosY'": 1072,
+          "guid 'NodeGuid'": "d48bcba2-4d05-24e9-7a0a-9d9b24bf05e5"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`NewLocalVar`» Id«`40 1032e7bc-485a-3026-73e2-ec8a1cf9944c`» LinkedTo«`16 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 124988,
+      "Index": 41,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "X",
+            "guid 'MemberGuid'": "eed323b1-4612-2e9e-4183-41aec2f330af"
+          },
+          "int 'NodePosX'": 496,
+          "int 'NodePosY'": 848,
+          "guid 'NodeGuid'": "903a3642-4628-870a-7756-23b2e44424f9"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`X`» Id«`41 28b95d9d-4f49-8057-f937-cbad10a9850f`» LinkedTo«`17 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 125559,
+      "Index": 42,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "Y",
+            "guid 'MemberGuid'": "10659eec-4ab7-2241-7b5d-2999518bc5f3"
+          },
+          "int 'NodePosX'": 512,
+          "int 'NodePosY'": 976,
+          "guid 'NodeGuid'": "fb0dfcdb-444a-e3da-b619-92b0b98082b5"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`Y`» Id«`42 51d2a46c-4444-87c7-d87c-a9aea16f316f`» LinkedTo«`15 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 126130,
+      "Index": 43,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "NewLocalVar",
+            "guid 'MemberGuid'": "2baf6345-48ba-7ad7-20b3-a1aa9fa2025b"
+          },
+          "int 'NodePosX'": 688,
+          "int 'NodePosY'": 448,
+          "guid 'NodeGuid'": "6e29554f-42c6-3338-d502-4481fe312768"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`NewLocalVar`» Id«`43 1032e7bc-485a-3026-73e2-ec8a1cf9944c`» LinkedTo«`20 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 126701,
+      "Index": 44,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "X",
+            "guid 'MemberGuid'": "eed323b1-4612-2e9e-4183-41aec2f330af"
+          },
+          "int 'NodePosX'": 448,
+          "int 'NodePosY'": 224,
+          "guid 'NodeGuid'": "b34fe056-4e33-67cd-5793-f9a80821f7b8"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`X`» Id«`44 28b95d9d-4f49-8057-f937-cbad10a9850f`» LinkedTo«`13 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 127272,
+      "Index": 45,
+      "Size": 571,
+      "ObjectName": "K2Node_VariableGet",
+      "ClassName": "K2Node_VariableGet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "Y",
+            "guid 'MemberGuid'": "10659eec-4ab7-2241-7b5d-2999518bc5f3"
+          },
+          "int 'NodePosX'": 464,
+          "int 'NodePosY'": 352,
+          "guid 'NodeGuid'": "91f91217-4a3c-ccb3-526a-11a74be8330d"
+        },
+        "Pins": [
+          "output-pin Type«`int`» Name«`Y`» Id«`45 51d2a46c-4444-87c7-d87c-a9aea16f316f`» LinkedTo«`14 133c56d6-4b24-f500-89d4-e3ae22b916d6`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 127843,
+      "Index": 46,
+      "Size": 1287,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "X",
+            "guid 'MemberGuid'": "eed323b1-4612-2e9e-4183-41aec2f330af"
+          },
+          "int 'NodePosX'": 1008,
+          "int 'NodePosY'": 640,
+          "guid 'NodeGuid'": "27b0dd2f-40ae-dc04-aefb-239eda075eff"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`46 8aa4f71f-49e6-6acc-4356-eda694c6fb60`» LinkedTo«`27 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`46 8ead5ada-4b36-444a-fbe4-1d99746a4e6f`» LinkedTo«`26 c9a78a29-4737-2a43-1308-f9aadf01123f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`X`» Id«`46 a0858d50-4c99-57bb-63f5-e092505e404b`» LinkedTo«`27 506c1d47-4a50-1e73-cb88-22906343f4eb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`46 e0302ccb-42a0-e506-fd59-abaddccc477d`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 129130,
+      "Index": 47,
+      "Size": 1263,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "NewLocalVar",
+            "guid 'MemberGuid'": "2baf6345-48ba-7ad7-20b3-a1aa9fa2025b"
+          },
+          "int 'NodePosX'": 1968,
+          "int 'NodePosY'": 640,
+          "guid 'NodeGuid'": "4e0902b0-4b3b-3857-de13-8282de4ad3c0"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`47 a5532945-4eae-3514-968f-ccae02bcc7b1`» LinkedTo«`11 d24b2dd2-45eb-d3ab-a9c7-6ca53912e5a4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`47 7347cef5-4501-3c16-7795-ee96a71ce606`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`NewLocalVar`» Id«`47 533a82fe-47a5-8055-928f-80984b5352fb`» LinkedTo«`11 bf8400bc-4657-bcd4-be07-c5b2ae9eb24f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`47 50485e4d-4b38-e1d2-1f15-e29fb479fa64`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 130393,
+      "Index": 48,
+      "Size": 1287,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "Y",
+            "guid 'MemberGuid'": "10659eec-4ab7-2241-7b5d-2999518bc5f3"
+          },
+          "int 'NodePosX'": 1456,
+          "int 'NodePosY'": 640,
+          "guid 'NodeGuid'": "e7167c88-4654-8644-c2db-cb9eedb59e72"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`48 d58da0a5-4384-76f1-1963-64ad335276d0`» LinkedTo«`26 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`48 b0697b3e-4d6e-c4d5-358b-63876b127531`» LinkedTo«`11 1848dcb9-4744-ed80-38dc-d6be3c992e6e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`Y`» Id«`48 b831ea69-49b3-0639-e883-84a7f66eb730`» LinkedTo«`26 506c1d47-4a50-1e73-cb88-22906343f4eb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`48 3ae9003a-4d78-a8e9-c093-9cbab5e2003e`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 131680,
+      "Index": 49,
+      "Size": 1287,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "X",
+            "guid 'MemberGuid'": "eed323b1-4612-2e9e-4183-41aec2f330af"
+          },
+          "int 'NodePosX'": 960,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "52d51d5a-4b16-3512-b6a4-8589cbe4eb3c"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`49 8aa4f71f-49e6-6acc-4356-eda694c6fb60`» LinkedTo«`28 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`49 8ead5ada-4b36-444a-fbe4-1d99746a4e6f`» LinkedTo«`29 c9a78a29-4737-2a43-1308-f9aadf01123f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`X`» Id«`49 a0858d50-4c99-57bb-63f5-e092505e404b`» LinkedTo«`28 506c1d47-4a50-1e73-cb88-22906343f4eb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`49 e0302ccb-42a0-e506-fd59-abaddccc477d`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 132967,
+      "Index": 50,
+      "Size": 1263,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "NewLocalVar",
+            "guid 'MemberGuid'": "2baf6345-48ba-7ad7-20b3-a1aa9fa2025b"
+          },
+          "int 'NodePosX'": 1920,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "657c4c5e-4cd6-817a-a49d-d5a73ccf2b0e"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`50 a5532945-4eae-3514-968f-ccae02bcc7b1`» LinkedTo«`18 d24b2dd2-45eb-d3ab-a9c7-6ca53912e5a4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`50 7347cef5-4501-3c16-7795-ee96a71ce606`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`NewLocalVar`» Id«`50 533a82fe-47a5-8055-928f-80984b5352fb`» LinkedTo«`18 bf8400bc-4657-bcd4-be07-c5b2ae9eb24f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`50 50485e4d-4b38-e1d2-1f15-e29fb479fa64`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 134230,
+      "Index": 51,
+      "Size": 1287,
+      "ObjectName": "K2Node_VariableSet",
+      "ClassName": "K2Node_VariableSet",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 158 'VariableReference'": {
+            "string 'MemberScope'": "UserConstructionScript",
+            "name 'MemberName'": "Y",
+            "guid 'MemberGuid'": "10659eec-4ab7-2241-7b5d-2999518bc5f3"
+          },
+          "int 'NodePosX'": 1408,
+          "int 'NodePosY'": 16,
+          "guid 'NodeGuid'": "a11340cd-4652-ab3e-a57e-e4bbc9872c86"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`51 d58da0a5-4384-76f1-1963-64ad335276d0`» LinkedTo«`29 5e1df308-4bec-2e4e-3703-b4b5765ea9d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`51 b0697b3e-4d6e-c4d5-358b-63876b127531`» LinkedTo«`18 1848dcb9-4744-ed80-38dc-d6be3c992e6e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`int`» Name«`Y`» Id«`51 b831ea69-49b3-0639-e883-84a7f66eb730`» LinkedTo«`29 506c1d47-4a50-1e73-cb88-22906343f4eb`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`int`» Name«`Output_Get`» Id«`51 3ae9003a-4d78-a8e9-c093-9cbab5e2003e`» ToolTip«`Retrieves the value of the variable, can use instead of a separate Get node`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 135517,
+      "Index": 52,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 135559,
+      "Index": 53,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -21,
+          "obj 'ComponentTemplate'": 52,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid'": "6a7d94c2-415e-714b-3348-6c8841e2c49f",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 135790,
+      "Index": 54,
+      "Size": 132,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "53",
+          "obj[] 'AllNodes'": "53",
+          "obj 'DefaultSceneRootNode'": 53
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

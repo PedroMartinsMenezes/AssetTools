@@ -789,7 +789,649 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty BoxSphereBounds": {
+        "TypeName": "StructProperty 1 | BoxSphereBounds 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty BoundsCacheElement": {
+        "TypeName": "StructProperty 1 | BoundsCacheElement 1 | /Script/Engine 0"
+      },
+      "StructProperty BodyInstance": {
+        "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 25902,
+      "Index": 1,
+      "Size": 840,
+      "ObjectName": "BPP_PLA_Platform_Small_03",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -11,
+          "bool 'bRunConstructionScriptOnDrag'": false,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 17,
+          "obj[] 'UbergraphPages'": "4",
+          "obj[] 'FunctionGraphs'": "5",
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 445,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_03",
+                    "AssetName": "BPP_PLA_Platform_Small_03_C"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": -1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_03",
+                    "AssetName": "BPP_PLA_Platform_Small_03"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": -1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 2,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Environment/PackedLevelActors/BPP_PLA_Platform_Small_03",
+                    "AssetName": "BPP_PLA_Platform_Small_03"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
+                },
+                "float 'SavedZoomAmount'": -1
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid' /Script/CoreUObject": "92513b79-493f-4b7e-23d2-c8b99ff640e1"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 26742,
+      "Index": 2,
+      "Size": 268,
+      "ObjectName": "BPP_PLA_Platform_Small_03_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "PackedLevelActor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 17
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-11] PackedLevelActor",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-9] InstancedStaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "InstancedStaticMesh1",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-9] InstancedStaticMeshComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "InstancedStaticMesh",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {},
+        "ClassFlags": 8651012,
+        "ClassWithin": 4294967292,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 27010,
+      "Index": 3,
+      "Size": 194,
+      "ObjectName": "Default__BPP_PLA_Platform_Small_03_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "guid 'PackedVersion' /Script/CoreUObject": "90296d70-4239-a9a0-01eb-ee9de00e81bd",
+          "uint 'PackedHash'": 1025683233,
+          "soft 'WorldAsset'": 3,
+          "obj 'LevelInstanceComponent'": 12,
+          "obj 'RootComponent'": 12
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 27204,
+      "Index": 4,
+      "Size": 185,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "8 9 10",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "2d319345-432c-6908-40c4-77b7f92a5fd8"
+        }
+      }
+    },
+    {
+      "Offset": 27389,
+      "Index": 5,
+      "Size": 177,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "11",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid' /Script/CoreUObject": "8e2fbac8-4a3e-3875-a106-b8af16a95398"
+        }
+      }
+    },
+    {
+      "Offset": 27566,
+      "Index": 6,
+      "Size": 1735,
+      "ObjectName": "InstancedStaticMesh1_GEN_VARIABLE",
+      "ClassName": "InstancedStaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UInstancedStaticMeshComponent",
+        "Members": {
+          "int 'InstancingRandomSeed'": 20988,
+          "bool 'bInheritPerInstanceData'": true,
+          "struct BoundsCacheElement 273 'CachedBounds'": {
+            "uint 'Hash'": 849644626,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 48.03016853332521",
+              "Vector 'BoxExtent' /Script/CoreUObject": "212.72200371269926 212.72200371269926 48.03016853332521",
+              "double 'SphereRadius'": 304.6443809040812
+            }
+          },
+          "struct BoundsCacheElement 273 'CachedBounds'[1]": {
+            "uint 'Hash'": 1362689423,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 48.03016853332521",
+              "Vector 'BoxExtent' /Script/CoreUObject": "212.7645481134418 212.7645481134418 48.563267326354996",
+              "double 'SphereRadius'": 304.78828192902233
+            }
+          },
+          "struct BoundsCacheElement 273 'CachedBounds'[2]": {
+            "uint 'Hash'": 849644626,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 48.03016853332521",
+              "Vector 'BoxExtent' /Script/CoreUObject": "212.72200371269926 212.72200371269926 48.03016853332521",
+              "double 'SphereRadius'": 304.6443809040812
+            }
+          },
+          "obj 'StaticMesh'": -26,
+          "bool 'bUseDefaultCollision'": true,
+          "obj[] 'OverrideMaterials'": "-16",
+          "bool 'bGenerateOverlapEvents'": false,
+          "struct BodyInstance 98 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
+            "name 'CollisionProfileName'": "BlockAll"
+          },
+          "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 52,
+          "ComponentTags": {
+            "Name": "ComponentTags",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "PackedComponent"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "bool 'bEditableWhenInherited'": false
+        },
+        "bCooked": false,
+        "bHasSkipSerializationPropertiesData": true,
+        "TempPerInstanceSMData": {
+          "ElementSize": 128,
+          "ElementCount": 2,
+          "Items": [
+            {
+              "Transform": "7.425398517747261E-09 0.425444 0 0 -0.425444 7.425398517747261E-09 0 0 0 0 1 0 0 0 85.03016853332522 1"
+            },
+            {
+              "Transform": "7.4253986122148065E-09 0.4254439999999999 0 0 0.4254439999999999 -7.425398517747261E-09 -5.210186328164466E-17 0 -1.2246467991473532E-16 2.137411880400782E-24 -0.9999999999999998 0 0 0 11.030168533325217 1"
+            }
+          ]
+        },
+        "TempPerInstanceSMCustomData": {
+          "ElementSize": 4,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "RenderDataSizeBytes": 0,
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 29301,
+      "Index": 7,
+      "Size": 1607,
+      "ObjectName": "InstancedStaticMesh_GEN_VARIABLE",
+      "ClassName": "InstancedStaticMeshComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UInstancedStaticMeshComponent",
+        "Members": {
+          "int 'InstancingRandomSeed'": 17964,
+          "bool 'bInheritPerInstanceData'": true,
+          "struct BoundsCacheElement 273 'CachedBounds'": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 47.212570953369173",
+              "Vector 'BoxExtent' /Script/CoreUObject": "272.64850704529897 272.64850704529897 37.499998855590817",
+              "double 'SphereRadius'": 387.40246088819595
+            }
+          },
+          "struct BoundsCacheElement 273 'CachedBounds'[1]": {
+            "uint 'Hash'": 2021631092,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 47.212570953369166",
+              "Vector 'BoxExtent' /Script/CoreUObject": "272.70303674670805 272.70303674670805 37.529998855590819",
+              "double 'SphereRadius'": 387.48211999504366
+            }
+          },
+          "struct BoundsCacheElement 273 'CachedBounds'[2]": {
+            "uint 'Hash'": 806638895,
+            "struct BoxSphereBounds 187 'Value'": {
+              "Vector 'Origin' /Script/CoreUObject": "0 0 47.212570953369173",
+              "Vector 'BoxExtent' /Script/CoreUObject": "272.64850704529897 272.64850704529897 37.499998855590817",
+              "double 'SphereRadius'": 387.40246088819595
+            }
+          },
+          "obj 'StaticMesh'": -27,
+          "bool 'bUseDefaultCollision'": true,
+          "obj[] 'OverrideMaterials'": "-17",
+          "bool 'bGenerateOverlapEvents'": false,
+          "struct BodyInstance 98 'BodyInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 49,
+            "name 'CollisionProfileName'": "BlockAll"
+          },
+          "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 52,
+          "ComponentTags": {
+            "Name": "ComponentTags",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "PackedComponent"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "bool 'bEditableWhenInherited'": false
+        },
+        "bCooked": false,
+        "bHasSkipSerializationPropertiesData": true,
+        "TempPerInstanceSMData": {
+          "ElementSize": 128,
+          "ElementCount": 1,
+          "Items": [
+            {
+              "Transform": "-0.39978658227836783 0.14551043181223017 0 0 -0.14551043181223017 -0.39978658227836783 0 0 0 0 0.3 0 0 0 85.03016853332522 1"
+            }
+          ]
+        },
+        "TempPerInstanceSMCustomData": {
+          "ElementSize": 4,
+          "ElementCount": 0,
+          "Items": []
+        },
+        "RenderDataSizeBytes": 0,
+        "LODData": [],
+        "bSerializeAsCookedData": false,
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 30908,
+      "Index": 8,
+      "Size": 854,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveBeginPlay"
+          },
+          "bool 'bOverrideFunction'": true,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 58,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid' /Script/CoreUObject": "2852608f-4e8b-d0fb-a6fa-94b06d9f9a2f"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-5` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`8 ca1d7573-41cb-b040-b653-768f9ed4f9e7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`8 cba2cd4f-46d9-59b2-c866-74b974757654`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 31762,
+      "Index": 9,
+      "Size": 1114,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 208,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 58,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid' /Script/CoreUObject": "bd13befd-4d0c-0809-c773-0d9f954b828e"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-5` `` `ReceiveActorBeginOverlap`)`» Name«`OutputDelegate`» Id«`9 23d25b33-4a5a-8bd2-f293-3ab3c8491e2d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`9 374d84f1-4b98-bdbe-f97b-beb1f46e3ec3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-5`)`» Name«`OtherActor`» Id«`9 03baa8af-492a-ef71-c0fd-50952a1c263c`» ToolTip«`Other Actor\nActor Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 32876,
+      "Index": 10,
+      "Size": 1126,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "ReceiveTick"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 416,
+          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 58,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid' /Script/CoreUObject": "a428a17e-4fdd-33b2-d3e7-46b9c6a05d88"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-5` `` `ReceiveTick`)`» Name«`OutputDelegate`» Id«`10 2e21dc4e-4a60-f18c-5fc8-6496e14134b5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`10 0e7e7232-41d5-5710-d696-97a13d2bd871`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-float`» Name«`DeltaSeconds`» Id«`10 32c53e13-4556-45a1-102a-ed92cb53942d`» ToolTip«`Delta Seconds\nFloat (single-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 34002,
+      "Index": 11,
+      "Size": 401,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "guid 'NodeGuid' /Script/CoreUObject": "d0de2816-4634-5242-0bbd-daa3c89c4e71"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`11 b29bf73b-4f1e-03e3-f12e-3b8ef6b5955c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 34403,
+      "Index": 12,
+      "Size": 17,
+      "ObjectName": "Root",
+      "ClassName": "LevelInstanceComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {},
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 34420,
+      "Index": 13,
+      "Size": 42,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false,
+        "UCSModifiedProperties": []
+      }
+    },
+    {
+      "Offset": 34462,
+      "Index": 14,
+      "Size": 231,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -12,
+          "obj 'ComponentTemplate'": 13,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "guid 'VariableGuid' /Script/CoreUObject": "0e4217a4-45eb-9925-3876-76b0f2174ea6",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 34693,
+      "Index": 15,
+      "Size": 289,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -9,
+          "obj 'ComponentTemplate'": 7,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "name 'ParentComponentOrVariableName'": "Root",
+          "bool 'bIsParentComponentNative'": true,
+          "guid 'VariableGuid' /Script/CoreUObject": "e131975a-4023-5453-524e-db80284f37c1",
+          "name 'InternalVariableName'": "InstancedStaticMesh"
+        }
+      }
+    },
+    {
+      "Offset": 34982,
+      "Index": 16,
+      "Size": 289,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -9,
+          "obj 'ComponentTemplate'": 6,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "BoolVal": 0,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
+            "TypeName": "TextProperty 0"
+          },
+          "name 'ParentComponentOrVariableName'": "Root",
+          "bool 'bIsParentComponentNative'": true,
+          "guid 'VariableGuid' /Script/CoreUObject": "bbae3b44-4e9a-789c-296c-ad9d0b547dd8",
+          "name 'InternalVariableName'": "InstancedStaticMesh1"
+        }
+      }
+    },
+    {
+      "Offset": 35271,
+      "Index": 17,
+      "Size": 140,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "15 16",
+          "obj[] 'AllNodes'": "15 16",
+          "obj 'DefaultSceneRootNode'": 14
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

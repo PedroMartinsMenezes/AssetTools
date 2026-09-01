@@ -204,5 +204,97 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 5072,
+      "Index": 1,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "A84A69604DE6562F7387EEB207505DD4"
+        }
+      }
+    },
+    {
+      "Offset": 5137,
+      "Index": 2,
+      "Size": 353,
+      "ObjectName": "DefaultSkeletalMesh_Skeleton",
+      "ClassName": "Skeleton",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "USkeleton",
+        "Members": {
+          "BoneTree": {
+            "Name": "BoneTree",
+            "Type": "ArrayProperty",
+            "Size": 102,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "BoneTree",
+              "Type": "StructProperty",
+              "Size": 49,
+              "StructName": "BoneNode"
+            },
+            "Value": [
+              {
+                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
+              }
+            ]
+          },
+          "PreviewSkeletalMesh": {
+            "Name": "PreviewSkeletalMesh",
+            "Type": "SoftObjectProperty",
+            "Size": 12,
+            "Value": {
+              "bSerializeInternals": false,
+              "SoftObjectPathIndex": 0,
+              "AssetPathName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh",
+              "AssetPath": {
+                "PackageName": "/Engine/EditorMeshes/SkeletalMesh/DefaultSkeletalMesh.DefaultSkeletalMesh"
+              },
+              "SaveNum": 0
+            }
+          }
+        },
+        "ReferenceSkeleton": {
+          "RawRefBoneInfo": [
+            "(Name) (ParentIndex) (ExportName) (DummyColor)",
+            "(joint1) (-1) (joint1) ()"
+          ],
+          "RawRefBonePose": [
+            "(Translation) (Rotation) (Scale3D)",
+            "(0 -96 0) (0 -0 0 -1) (1 1 1)"
+          ],
+          "RawNameToIndexMap": {
+            "joint1": 0
+          }
+        },
+        "AnimRetargetSources": {},
+        "FGuid": "e551e4d8-4f62-4ab3-7da0-8aafabc062ef",
+        "SmartNames_DEPRECATED": {
+          "NameMappings": {
+            "AnimationCurves": {
+              "NextUidTemp": 0,
+              "CurveMetaDataMap": {}
+            }
+          }
+        },
+        "StripFlags": {
+          "GlobalStripFlags": "None",
+          "ClassStripFlags": 0
+        },
+        "ExistingMarkerNames": []
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

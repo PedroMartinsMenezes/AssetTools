@@ -529,5 +529,2391 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 24323,
+      "Index": 1,
+      "Size": 333,
+      "ObjectName": "Default__ABP_Quinn_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 127,
+            "UberGraphFunctionKey": 0
+          },
+          "struct AnimNode_BlendSpacePlayer 37 'AnimGraphNode_BlendSpacePlayer'": {
+            "obj 'BlendSpace'": -4
+          },
+          "struct AnimNode_SequencePlayer 37 'AnimGraphNode_SequencePlayer\"3'": {
+            "obj 'Sequence'": -3
+          },
+          "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": false
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": "ExportIndex[12] ImportIndex[-11]: ScriptStruct",
+          "Value": {
+            "Members": {
+              "obj 'BlendSpace\"132'": -4,
+              "obj 'AnimSequenceBase\"134'": -3
+            },
+            "Children": 0,
+            "StructFlags": "STRUCT_NoFlags",
+            "UseNativeSerialization": false,
+            "UseBinarySerialization": false,
+            "Next": 0
+          }
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 24656,
+      "Index": 2,
+      "Size": 921,
+      "ObjectName": "ABP_Quinn",
+      "ClassName": "AnimBlueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'TargetSkeleton'": -48,
+          "ParentAssetOverrides": {
+            "Name": "ParentAssetOverrides",
+            "Type": "ArrayProperty",
+            "Size": 257,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "ParentAssetOverrides",
+              "Type": "StructProperty",
+              "Size": 204,
+              "StructName": "AnimParentNodeAssetOverride"
+            },
+            "Value": [
+              {
+                "obj 'NewAsset'": -3,
+                "guid 'ParentNodeGuid'": "25720556-43b6-abf5-16ac-93b4ca32b0ed"
+              },
+              {
+                "obj 'NewAsset'": -4,
+                "guid 'ParentNodeGuid'": "88fe114c-4f6b-c8d8-adaf-dda163ab6f12"
+              }
+            ]
+          },
+          "PreviewSkeletalMesh": {
+            "Name": "PreviewSkeletalMesh",
+            "Type": "SoftObjectProperty",
+            "Size": 12,
+            "Value": {
+              "bSerializeInternals": false,
+              "SoftObjectPathIndex": 0,
+              "AssetPathName": "/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple",
+              "AssetPath": {
+                "PackageName": "/Game/Characters/Mannequins/Meshes/SKM_Quinn_Simple.SKM_Quinn_Simple"
+              },
+              "SaveNum": 0
+            }
+          },
+          "obj 'ParentClass'": -2,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'UbergraphPages'": "4",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Event Graph"
+            ]
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 227,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "LastEditedDocuments",
+              "Type": "StructProperty",
+              "Size": 174,
+              "StructName": "EditedDocumentInfo"
+            },
+            "Value": [
+              {
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "-198.08771118929928 -231.8163413266539",
+                "float 'SavedZoomAmount'": 0.875
+              }
+            ]
+          },
+          "obj 'ThumbnailInfo'": 11,
+          "obj 'GeneratedClass'": 3,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "77c38356-478b-495e-a9ce-9e84b4ebb44d"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 25577,
+      "Index": 3,
+      "Size": 8891,
+      "ObjectName": "ABP_Quinn_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "AnimBlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'TargetSkeleton'": -48,
+          "SyncGroupNames": {
+            "Name": "SyncGroupNames",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Locomotion",
+              "Sprint"
+            ]
+          },
+          "AnimNodeData": {
+            "Name": "AnimNodeData",
+            "Type": "ArrayProperty",
+            "Size": 5125,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "AnimNodeData",
+              "Type": "StructProperty",
+              "Size": 5072,
+              "StructName": "AnimNodeData"
+            },
+            "Value": [
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 28,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    0,
+                    22
+                  ]
+                },
+                "int 'NodeIndex'": 0,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 1,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 2,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 80,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    22,
+                    19,
+                    18,
+                    17,
+                    2147483648,
+                    8,
+                    15,
+                    12,
+                    12,
+                    8,
+                    1,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 3,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    2,
+                    22,
+                    21
+                  ]
+                },
+                "int 'NodeIndex'": 4,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 84,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    22,
+                    19,
+                    18,
+                    17,
+                    3,
+                    15,
+                    15,
+                    14,
+                    4294967295,
+                    8,
+                    12,
+                    17
+                  ]
+                },
+                "int 'NodeIndex'": 5,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4,
+                    22,
+                    24
+                  ]
+                },
+                "int 'NodeIndex'": 6,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 40,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 7,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 24,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 8,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 9,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 10,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 11,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 12,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 13,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 20,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 14,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 56,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 15,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 24,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 16,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 84,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    22,
+                    19,
+                    18,
+                    17,
+                    5,
+                    15,
+                    15,
+                    14,
+                    4294967295,
+                    8,
+                    12,
+                    17
+                  ]
+                },
+                "int 'NodeIndex'": 17,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    6,
+                    22,
+                    7
+                  ]
+                },
+                "int 'NodeIndex'": 18,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 84,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    22,
+                    19,
+                    18,
+                    17,
+                    9,
+                    15,
+                    15,
+                    14,
+                    4294967295,
+                    8,
+                    12,
+                    17
+                  ]
+                },
+                "int 'NodeIndex'": 19,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    10,
+                    22,
+                    11
+                  ]
+                },
+                "int 'NodeIndex'": 20,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 84,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    22,
+                    19,
+                    18,
+                    17,
+                    16,
+                    15,
+                    15,
+                    14,
+                    4294967295,
+                    13,
+                    12,
+                    17
+                  ]
+                },
+                "int 'NodeIndex'": 21,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    20,
+                    22,
+                    21
+                  ]
+                },
+                "int 'NodeIndex'": 22,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 24,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 23,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 32,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    23,
+                    22,
+                    24
+                  ]
+                },
+                "int 'NodeIndex'": 24,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 40,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 25,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 28,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 26,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              },
+              {
+                "AnimClassInterface": {
+                  "Name": "AnimClassInterface",
+                  "Type": "InterfaceProperty",
+                  "Size": 4,
+                  "Value": {
+                    "__type": "FInterfaceProperty",
+                    "TypeName": "InterfaceProperty",
+                    "Value": 3,
+                    "ArrayDim": 0,
+                    "ElementSize": 0,
+                    "PropertyFlags": "CPF_None",
+                    "RepIndex": 0,
+                    "BlueprintReplicationCondition": 0,
+                    "FlagsPrivate": "RF_NoFlags",
+                    "HasMetaData": false,
+                    "MetaDataMap": {}
+                  }
+                },
+                "Entries": {
+                  "Name": "Entries",
+                  "Type": "ArrayProperty",
+                  "Size": 120,
+                  "InnerType": "UInt32Property",
+                  "Value": [
+                    25,
+                    25,
+                    25,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295,
+                    4294967295
+                  ]
+                },
+                "int 'NodeIndex'": 27,
+                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              }
+            ]
+          },
+          "NodeTypeMap": {
+            "Name": "NodeTypeMap",
+            "Type": "MapProperty",
+            "Size": 3404,
+            "InnerType": "ObjectProperty",
+            "ValueType": "StructProperty",
+            "Value": {
+              "__type": "FMapProperty",
+              "TypeName": "MapProperty",
+              "NumKeysToRemove": 0,
+              "NumEntries": 16,
+              "KeyProp": [
+                -35,
+                -36,
+                -39,
+                -38,
+                -33,
+                -44,
+                -34,
+                -40,
+                -46,
+                -42,
+                -43,
+                -37,
+                -31,
+                -45,
+                -41,
+                -32
+              ],
+              "ValueProp": [
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 356,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 29,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "SourcePropertyNames",
+                        "DestPropertyNames",
+                        "TargetInstance",
+                        "Source",
+                        "bResetInputPoseToInitial",
+                        "bTransferInputPose",
+                        "bTransferInputCurves",
+                        "bTransferPoseInGlobalSpace",
+                        "InputBonesToTransfer",
+                        "NodeMappingContainer",
+                        "InputSettings",
+                        "OutputSettings",
+                        "bExecute",
+                        "ControlRigClass",
+                        "ControlRig",
+                        "Alpha",
+                        "AlphaInputType",
+                        "bSetRefPoseFromSkeleton",
+                        "bAlphaBoolEnabled",
+                        "AlphaScaleBias",
+                        "AlphaBoolBlend",
+                        "AlphaCurveName",
+                        "AlphaScaleBiasClamp",
+                        "InputMapping",
+                        "OutputMapping",
+                        "LODThreshold"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19,
+                        20,
+                        21,
+                        22,
+                        23,
+                        24,
+                        25,
+                        26,
+                        27,
+                        28
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 29
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 200,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 16,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "SourcePropertyNames",
+                        "DestPropertyNames",
+                        "TargetInstance",
+                        "Source",
+                        "bResetInputPoseToInitial",
+                        "bTransferInputPose",
+                        "bTransferInputCurves",
+                        "bTransferPoseInGlobalSpace",
+                        "InputBonesToTransfer",
+                        "NodeMappingContainer",
+                        "InputSettings",
+                        "OutputSettings",
+                        "bExecute"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 16
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 80,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 6,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "SourcePropertyNames",
+                        "DestPropertyNames",
+                        "TargetInstance"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 6
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 44,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 3,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 3
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 80,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 6,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "Source",
+                        "SlotName",
+                        "bAlwaysUpdateSourcePose"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 6
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 116,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 9,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "StateMachineIndexInClass",
+                        "MaxTransitionsPerFrame",
+                        "bSkipFirstUpdateTransition",
+                        "bReinitializeOnBecomingRelevant",
+                        "bCreateNotifyMetaData",
+                        "bAllowConduitEntryStates"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 9
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 92,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 7,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "Result",
+                        "Name",
+                        "Group",
+                        "StateIndex"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 7
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 80,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 6,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "Result",
+                        "Name",
+                        "Group"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 6
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 68,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 5,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "LinkToCachingNode",
+                        "CachePoseName"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 5
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 248,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 20,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "GroupIndex",
+                        "GroupScope",
+                        "BlendWeight",
+                        "InternalTimeAccumulator",
+                        "PlayRateScaleBiasClampState",
+                        "GroupName",
+                        "GroupRole",
+                        "Method",
+                        "bIgnoreForRelevancyTest",
+                        "Sequence",
+                        "PlayRateBasis",
+                        "PlayRate",
+                        "PlayRateScaleBiasClampConstants",
+                        "PlayRateScaleBiasClamp",
+                        "StartPosition",
+                        "bLoopAnimation",
+                        "bStartFromMatchingPose"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18,
+                        19
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 20
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 104,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 8,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "GroupIndex",
+                        "GroupScope",
+                        "BlendWeight",
+                        "InternalTimeAccumulator",
+                        "PlayRateScaleBiasClampState"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 8
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 92,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 7,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "GroupIndex",
+                        "GroupScope",
+                        "BlendWeight",
+                        "InternalTimeAccumulator"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 7
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 164,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 13,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "Base",
+                        "Additive",
+                        "Alpha",
+                        "AlphaScaleBias",
+                        "LODThreshold",
+                        "AlphaBoolBlend",
+                        "AlphaCurveName",
+                        "AlphaScaleBiasClamp",
+                        "AlphaInputType",
+                        "bAlphaBoolEnabled"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 13
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 56,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 4,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "bCanEnterTransition"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 4
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 68,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 5,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "Pose",
+                        "CachePoseName"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 5
+                },
+                {
+                  "NameToIndexMap": {
+                    "Name": "NameToIndexMap",
+                    "Type": "MapProperty",
+                    "Size": 236,
+                    "InnerType": "NameProperty",
+                    "ValueType": "IntProperty",
+                    "Value": {
+                      "__type": "FMapProperty",
+                      "TypeName": "MapProperty",
+                      "NumKeysToRemove": 0,
+                      "NumEntries": 19,
+                      "KeyProp": [
+                        "InitialUpdateFunction",
+                        "BecomeRelevantFunction",
+                        "UpdateFunction",
+                        "GroupIndex",
+                        "GroupScope",
+                        "BlendWeight",
+                        "InternalTimeAccumulator",
+                        "GroupName",
+                        "GroupRole",
+                        "Method",
+                        "bIgnoreForRelevancyTest",
+                        "X",
+                        "Y",
+                        "PlayRate",
+                        "bLoop",
+                        "bResetPlayTimeWhenBlendSpaceChanges",
+                        "StartPosition",
+                        "BlendSpace",
+                        "PreviousBlendSpace"
+                      ],
+                      "ValueProp": [
+                        0,
+                        1,
+                        2,
+                        3,
+                        4,
+                        5,
+                        6,
+                        7,
+                        8,
+                        9,
+                        10,
+                        11,
+                        12,
+                        13,
+                        14,
+                        15,
+                        16,
+                        17,
+                        18
+                      ],
+                      "ArrayDim": 0,
+                      "ElementSize": 0,
+                      "PropertyFlags": "CPF_None",
+                      "RepIndex": 0,
+                      "BlueprintReplicationCondition": 0,
+                      "FlagsPrivate": "RF_NoFlags",
+                      "HasMetaData": false,
+                      "MetaDataMap": {}
+                    }
+                  },
+                  "int 'NumProperties'": 19
+                }
+              ],
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            }
+          },
+          "bool 'bIsSparseClassDataSerializable'": true,
+          "obj 'UberGraphFunction'": 6
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-2] ABP_Manny_C",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[6] ImportIndex[-9]: Function"
+        ],
+        "ChildProperties": [
+          {
+            "__type": "FStructProperty",
+            "TypeName": "StructProperty",
+            "Value": "ImportIndex[-47] PointerToUberGraphFrame",
+            "ArrayDim": 1,
+            "ElementSize": 16,
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "UberGraphFrame",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FuncMap": {
+          "ExecuteUbergraph_ABP_Quinn": 6
+        },
+        "ClassFlags": 8652808,
+        "ClassWithin": 4294967279,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 2,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 1,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 34468,
+      "Index": 4,
+      "Size": 185,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -5,
+          "obj[] 'Nodes'": "9 8 7 5",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "8ece4f16-47a3-6ac5-5fb1-18a18723d56c"
+        }
+      }
+    },
+    {
+      "Offset": 34653,
+      "Index": 5,
+      "Size": 615,
+      "ObjectName": "EdGraphNode_Comment",
+      "ClassName": "EdGraphNode_Comment",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
+          "int 'NodeWidth'": 1024,
+          "int 'NodeHeight'": 512,
+          "bool 'bCommentBubblePinned'": false,
+          "bool 'bCommentBubbleVisible'": false,
+          "string 'NodeComment'": "This is a Child Anim BP (child of ABP_Manny). That means it uses the logic and graph of another Anim BP but can override sequence and blendspace players in the Asset Override Edditor window. Child AnimBPs are great if you have multiple characters with different animations but want to share logic. If you want to view or edit the Anim Graph and logic, open ABP_Manny. ",
+          "guid 'NodeGuid'": "2f1edd22-4335-dd97-22ce-a197174f48e9"
+        },
+        "Pins": []
+      }
+    },
+    {
+      "Offset": 35268,
+      "Index": 6,
+      "Size": 116,
+      "ObjectName": "ExecuteUbergraph_ABP_Quinn",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 13,
+          "SerializedScriptSize": 21,
+          "ScriptData": "TgABAAAASgAAAAAAAAAGAAAABAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FIntProperty",
+            "TypeName": "IntProperty",
+            "ArrayDim": 1,
+            "ElementSize": 4,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "EntryPoint",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 32769,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 35384,
+      "Index": 7,
+      "Size": 979,
+      "ObjectName": "K2Node_CallFunction",
+      "ClassName": "K2Node_CallFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "bool 'bIsPureFunc'": true,
+          "bool 'bIsConstFunc'": true,
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "TryGetPawnOwner",
+            "bool 'bSelfContext'": true
+          },
+          "int 'NodePosX'": 43,
+          "int 'NodePosY'": 283,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 72,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "ad05b148-40df-8d25-153e-f29f133a6179"
+        },
+        "Pins": [
+          "input-pin Type«`object obj(`-14`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`7 b86e7a86-4e1c-25d8-04b0-a2a6249710e6`» ToolTip«`Target\nAnim Instance Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`object obj(`-16`)`» Name«`ReturnValue`» Id«`7 fa86c41b-44b3-b9e8-b4bc-3fb1b8bc4434`» ToolTip«`Return Value\nPawn Object Reference\n\nkismet event functions`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 36363,
+      "Index": 8,
+      "Size": 1346,
+      "ObjectName": "K2Node_CallParentFunction",
+      "ClassName": "K2Node_CallParentFunction",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphNode",
+        "Members": {
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -2,
+            "name 'MemberName'": "BlueprintUpdateAnimation",
+            "guid 'MemberGuid'": "70de4b27-48df-df78-8756-33a7c07ec4de"
+          },
+          "int 'NodePosX'": 336,
+          "int 'NodePosY'": 176,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 72,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "dc45c7af-4e5f-698f-87c0-ca878236b945"
+        },
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`8 b2642d6d-4a2a-6a20-1391-55b7718ae964`» LinkedTo«`9 57665c0c-4477-969b-719a-f28188e92a14`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`8 5b09daa7-4d83-2148-c0a4-9588b7932479`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-14`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`8 507f17a3-480b-bc04-b79a-8d8ae0292a5e`» BitField«`1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-float`» Name«`DeltaTimeX`» Id«`8 31fa36ec-4f74-64a6-a7af-39a4c9676762`» LinkedTo«`9 af91ad10-42be-7829-0eb3-5d9ae7fcac32`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 37709,
+      "Index": 9,
+      "Size": 1150,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "BlueprintUpdateAnimation"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosX'": 43,
+          "int 'NodePosY'": 176,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 72,
+          "bool 'bCommentBubblePinned'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "dfbc0bef-4486-793b-87c9-8aaf27e4bbb9"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-14` `` `BlueprintUpdateAnimation`)`» Name«`OutputDelegate`» Id«`9 105da7fe-4621-dd2a-afd2-b88a14ab8708`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`9 57665c0c-4477-969b-719a-f28188e92a14`» LinkedTo«`8 b2642d6d-4a2a-6a20-1391-55b7718ae964`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-float`» Name«`DeltaTimeX`» Id«`9 af91ad10-42be-7829-0eb3-5d9ae7fcac32`» LinkedTo«`8 31fa36ec-4f74-64a6-a7af-39a4c9676762`» ToolTip«`Delta Time X\nFloat (single-precision)`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 38859,
+      "Index": 10,
+      "Size": 402,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {
+          "3": {
+            "BlueprintType": "true",
+            "HideCategories": "AnimInstance"
+          },
+          "9": {
+            "DefaultGraphNode": "true"
+          },
+          "8": {
+            "DefaultGraphNode": "true"
+          },
+          "7": {
+            "DefaultGraphNode": "true"
+          },
+          "0": {
+            "Comment": "/** Executed when the Animation is updated */",
+            "ModuleRelativePath": "Classes/Animation/AnimInstance.h",
+            "ToolTip": "Executed when the Animation is updated"
+          },
+          "0": {
+            "BlueprintType": "true",
+            "HideCategories": "AnimInstance"
+          }
+        },
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "05AA6AB4435BEBC3CD38788DE9BE1E94"
+        }
+      }
+    },
+    {
+      "Offset": 39261,
+      "Index": 11,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 39273,
+      "Index": 12,
+      "Size": 36,
+      "ObjectName": "AnimBlueprintGeneratedConstantData",
+      "ClassName": "ScriptStruct",
+      "SuperName": "ScriptStruct",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UScriptStruct",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-30] AnimBlueprintGeneratedConstantData",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "StructFlags": "STRUCT_NoFlags",
+        "UseNativeSerialization": false,
+        "UseBinarySerialization": false,
+        "Next": 0
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

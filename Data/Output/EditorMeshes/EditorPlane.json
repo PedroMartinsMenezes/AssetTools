@@ -350,5 +350,360 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 8751,
+      "Index": 1,
+      "Size": 164,
+      "ObjectName": "AssetImportData",
+      "ClassName": "AssetImportData",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UAssetImportData",
+        "Members": {},
+        "Json": "[{ \"RelativeFilename\" : \"../../../../../stuff/BulkImports/EditorPlane.fbx\", \"Timestamp\" : \"-2006054656\", \"FileMD5\" : \"\", \"DisplayLabelName\" : \"\" }]"
+      }
+    },
+    {
+      "Offset": 8915,
+      "Index": 2,
+      "Size": 204,
+      "ObjectName": "RB_BodySetup",
+      "ClassName": "BodySetup",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UBodySetup",
+        "Members": {
+          "struct BodyInstance 82 'DefaultInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType'": 41,
+            "name 'CollisionProfileName'": "BlockAll"
+          },
+          "byte64 (EPhysicsType) 'PhysicsType'": 85
+        },
+        "BodySetupGuid": "f52ebc93-4853-577c-3c5d-c087e2303368",
+        "bCooked": false,
+        "bTemp": false
+      }
+    },
+    {
+      "Offset": 9119,
+      "Index": 3,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "B0B6F1B541016F7205A250A9FFE31E48"
+        }
+      }
+    },
+    {
+      "Offset": 9184,
+      "Index": 4,
+      "Size": 44,
+      "ObjectName": "NavCollision",
+      "ClassName": "NavCollision",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UNavCollision",
+        "Members": {},
+        "bGatherConvexGeometry": true,
+        "bHasConvexGeometry": false,
+        "bForceGeometryRebuild": false,
+        "bCreateOnClient": true,
+        "MagicNum": 2721575479,
+        "Version": 4,
+        "Guid2": "",
+        "bCooked": false,
+        "AreaClass": 0
+      }
+    },
+    {
+      "Offset": 9228,
+      "Index": 5,
+      "Size": 70,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "float 'OrbitPitch'": -7.25,
+          "float 'OrbitYaw'": 90.5
+        }
+      }
+    },
+    {
+      "Offset": 9298,
+      "Index": 6,
+      "Size": 2878,
+      "ObjectName": "EditorPlane",
+      "ClassName": "StaticMesh",
+      "ObjectFlags": "RF_Public, RF_Standalone",
+      "Obj": {
+        "__type": "UStaticMesh",
+        "Members": {
+          "SourceModels": {
+            "Name": "SourceModels",
+            "Type": "ArrayProperty",
+            "Size": 1458,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "SourceModels",
+              "Type": "StructProperty",
+              "Size": 1405,
+              "StructName": "StaticMeshSourceModel"
+            },
+            "Value": [
+              {
+                "obj 'StaticMeshDescriptionBulkData'": 8,
+                "struct MeshBuildSettings 567 'BuildSettings'": {
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bRecomputeNormals'": true,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bBuildReversedIndexBuffer'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "bool 'bGenerateLightmapUVs'": false,
+                  "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
+                  "bool 'bSupportFaceRemap'": false,
+                  "int 'MinLightmapResolution'": 64,
+                  "int 'SrcLightmapIndex'": 0,
+                  "int 'DstLightmapIndex'": 1,
+                  "Vector 'BuildScale3D'": "1 1 1",
+                  "float 'DistanceFieldResolutionScale'": 1,
+                  "obj 'DistanceFieldReplacementMesh'": 0,
+                  "int 'MaxLumenMeshCards'": 12
+                },
+                "struct MeshReductionSettings 587 'ReductionSettings'": {
+                  "float 'PercentTriangles'": 1,
+                  "float 'PercentVertices'": 1,
+                  "float 'MaxDeviation'": 0,
+                  "float 'PixelError'": 8,
+                  "float 'WeldingThreshold'": 0,
+                  "float 'HardAngleThreshold'": 45,
+                  "int 'BaseLODModel'": 0,
+                  "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 45,
+                  "byte64 (EMeshFeatureImportance) 'TextureImportance'": 45,
+                  "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 45,
+                  "bool 'bRecalculateNormals'": false,
+                  "bool 'bGenerateUniqueLightmapUVs'": false,
+                  "bool 'bKeepSymmetry'": false,
+                  "bool 'bVisibilityAided'": false,
+                  "bool 'bCullOccluded'": false,
+                  "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 50,
+                  "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 44,
+                  "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 46
+                },
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
+                },
+                "string 'SourceImportFilename'": "",
+                "bool 'bImportWithBaseMesh'": false
+              }
+            ]
+          },
+          "struct StaticMeshSourceModel 37 'HiResSourceModel'": {
+            "obj 'StaticMeshDescriptionBulkData'": 7
+          },
+          "struct MeshSectionInfoMap 202 'SectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "struct MeshSectionInfoMap 202 'OriginalSectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "StaticMaterials": {
+            "Name": "StaticMaterials",
+            "Type": "ArrayProperty",
+            "Size": 381,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "StaticMaterials",
+              "Type": "StructProperty",
+              "Size": 328,
+              "StructName": "StaticMaterial"
+            },
+            "Value": [
+              {
+                "obj 'MaterialInterface'": 0,
+                "name 'MaterialSlotName'": "MaterialSlot",
+                "name 'ImportedMaterialSlotName'": "MaterialSlot",
+                "struct MeshUVChannelInfo 176 'UVChannelData'": {
+                  "bool 'bInitialized'": true,
+                  "bool 'bOverrideDensities'": false,
+                  "float 'LocalUVDensities'": 256,
+                  "float 'LocalUVDensities'[1]": 0,
+                  "float 'LocalUVDensities'[2]": 0,
+                  "float 'LocalUVDensities'[3]": 0
+                }
+              }
+            ]
+          },
+          "float 'LightmapUVDensity'": 256,
+          "int 'LightMapResolution'": 32,
+          "obj 'AssetImportData'": 1,
+          "obj 'ThumbnailInfo'": 5,
+          "struct BoxSphereBounds 114 'ExtendedBounds'": {
+            "Vector 'BoxExtent'": "0.00030517607228830457 128 128",
+            "double 'SphereRadius'": 181.0193328857422
+          }
+        },
+        "StripFlags": {
+          "GlobalStripFlags": "None",
+          "ClassStripFlags": 0
+        },
+        "bCooked": false,
+        "LocalBodySetup": 2,
+        "LocalNavCollision": 4,
+        "DummyThumbnailDistance": 0,
+        "Deprecated_HighResSourceMeshCRC": 0,
+        "LocalLightingGuid": "859fef63-42b0-c3ff-7f32-62afbd9c0b46",
+        "Sockets": "",
+        "bHasSpeedTreeWind": false,
+        "StaticMaterials": [
+          {
+            "MaterialInterface": 0,
+            "MaterialSlotName": "MaterialSlot",
+            "InImportedMaterialSlotName": "MaterialSlot",
+            "UVChannelData": {
+              "bInitialized": true,
+              "bOverrideDensities": false,
+              "LocalUVDensities": "256 0 0 0"
+            }
+          }
+        ],
+        "SourceModels": [
+          {
+            "bIsValid": false
+          }
+        ]
+      }
+    },
+    {
+      "Offset": 12176,
+      "Index": 7,
+      "Size": 88,
+      "ObjectName": "HiResMeshDescription",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "None",
+            "BulkDataId": "",
+            "PayloadContentId": {
+              "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            },
+            "PayloadSize": 0,
+            "OffsetInFile": 12352
+          },
+          "Guid": "",
+          "bGuidIsHash": false
+        }
+      }
+    },
+    {
+      "Offset": 12264,
+      "Index": 8,
+      "Size": 88,
+      "ObjectName": "StaticMeshDescriptionBulkData",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "HasRegistered",
+            "BulkDataId": "e420c70e-4315-851d-421b-6885c59ec6a8",
+            "PayloadContentId": {
+              "ByteArray": "SAVwjkyfO2p1fYxfnB1oe37D9S8="
+            },
+            "PayloadSize": 8122,
+            "OffsetInFile": 12416
+          },
+          "Guid": "eda0b762-4eac-ff0d-ab87-0a8debe877e5",
+          "bGuidIsHash": false
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "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"
+  }
 }

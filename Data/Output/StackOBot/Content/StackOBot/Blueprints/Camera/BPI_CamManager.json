@@ -744,7 +744,957 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty KismetUserDeclaredFunctionMetadata": {
+        "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 19405,
+      "Index": 1,
+      "Size": 1043,
+      "ObjectName": "BPI_CamManager",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -5,
+          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 16,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'FunctionGraphs'": "8 4 6 5 7 9",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "None"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 592,
+            "StructName": "EditedDocumentInfo",
+            "BoolVal": 0,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -851.5981,
+                  "Y": -573.4584
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -746.7655,
+                  "Y": -578.4584
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 2,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -977.5981,
+                  "Y": -608.4584
+                },
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 3,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                    "AssetName": "BPI_CamManager"
+                  },
+                  "SaveNum": 0
+                },
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -967.7648,
+                  "Y": -593.625
+                },
+                "float 'SavedZoomAmount'": 1
+              }
+            ],
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+          },
+          "obj 'ThumbnailInfo'": 25,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid' /Script/CoreUObject": "ffe99ca7-4cc3-7d15-6eaf-3ab9ca8686f9"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 20448,
+      "Index": 2,
+      "Size": 177,
+      "ObjectName": "BPI_CamManager_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Interface",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-5] Interface",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[15] ImportIndex[-4]: Function",
+          "ExportIndex[13] ImportIndex[-4]: Function",
+          "ExportIndex[11] ImportIndex[-4]: Function",
+          "ExportIndex[12] ImportIndex[-4]: Function",
+          "ExportIndex[10] ImportIndex[-4]: Function",
+          "ExportIndex[14] ImportIndex[-4]: Function"
+        ],
+        "ChildProperties": [],
+        "FuncMap": {
+          "SetCameraState": 14,
+          "GetCameraState": 10,
+          "GetPlayerCamera": 12,
+          "GetLockedCamera": 11,
+          "ResetCamera": 13,
+          "UsePresetAngle": 15
+        },
+        "ClassFlags": 278528,
+        "ClassWithin": 4294967290,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 20625,
+      "Index": 3,
+      "Size": 13,
+      "ObjectName": "Default__BPI_CamManager_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 20638,
+      "Index": 4,
+      "Size": 156,
+      "ObjectName": "GetCameraState",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "16 22",
+          "guid 'GraphGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+        }
+      }
+    },
+    {
+      "Offset": 20794,
+      "Index": 5,
+      "Size": 156,
+      "ObjectName": "GetLockedCamera",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "17 23",
+          "guid 'GraphGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+        }
+      }
+    },
+    {
+      "Offset": 20950,
+      "Index": 6,
+      "Size": 156,
+      "ObjectName": "GetPlayerCamera",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "18 24",
+          "guid 'GraphGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+        }
+      }
+    },
+    {
+      "Offset": 21106,
+      "Index": 7,
+      "Size": 152,
+      "ObjectName": "ResetCamera",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "19",
+          "guid 'GraphGuid' /Script/CoreUObject": "07edc5a9-4340-9b75-955f-bf883f89dd08"
+        }
+      }
+    },
+    {
+      "Offset": 21258,
+      "Index": 8,
+      "Size": 152,
+      "ObjectName": "SetCameraState",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "20",
+          "guid 'GraphGuid' /Script/CoreUObject": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+        }
+      }
+    },
+    {
+      "Offset": 21410,
+      "Index": 9,
+      "Size": 152,
+      "ObjectName": "UsePresetAngle",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "21",
+          "guid 'GraphGuid' /Script/CoreUObject": "10e7bd66-4f01-6a97-9f52-f5b91b9cd0d9"
+        }
+      }
+    },
+    {
+      "Offset": 21562,
+      "Index": 10,
+      "Size": 103,
+      "ObjectName": "GetCameraState",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967277,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "CameraState",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 21665,
+      "Index": 11,
+      "Size": 207,
+      "ObjectName": "GetLockedCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Yaw",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Pitch",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Locked",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 21872,
+      "Index": 12,
+      "Size": 158,
+      "ObjectName": "GetPlayerCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-9] CameraComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Camera",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-11] SpringArmComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Camera Boom",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 205651968,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 22030,
+      "Index": 13,
+      "Size": 48,
+      "ObjectName": "ResetCamera",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 22078,
+      "Index": 14,
+      "Size": 103,
+      "ObjectName": "SetCameraState",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FByteProperty",
+            "TypeName": "ByteProperty",
+            "Enum": 4294967277,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "New Camera State",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 22181,
+      "Index": 15,
+      "Size": 207,
+      "ObjectName": "UsePresetAngle",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FBoolProperty",
+            "TypeName": "BoolProperty",
+            "FieldSize": 1,
+            "ByteOffset": 0,
+            "ByteMask": 1,
+            "FieldMask": 255,
+            "BoolSize": 1,
+            "NativeBool": 1,
+            "ArrayDim": 1,
+            "ElementSize": 1,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "Active",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PresetPitch",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          },
+          {
+            "__type": "FDoubleProperty",
+            "TypeName": "DoubleProperty",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "PresetYaw",
+            "FlagsPrivate": "RF_Public",
+            "HasMetaData": false,
+            "MetaDataMap": {}
+          }
+        ],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 22388,
+      "Index": 16,
+      "Size": 450,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCameraState"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "de3c8918-4a7b-fc42-8347-92a02b4063c6"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`16 c61f36f3-4a05-d613-f422-c2a73ae075c4`» LinkedTo«`22 f4f716b9-4a74-15f0-0dbb-8d83ed2e85eb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 22838,
+      "Index": 17,
+      "Size": 578,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
+          },
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetLockedCamera"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "e2196aa2-43bb-5c20-2141-88aa5069631e"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`17 06357781-4502-f3f4-51b3-1aa13b3c6cd0`» LinkedTo«`23 f8ae2340-4ab1-9e4d-7639-dc99b4ce22e8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 23416,
+      "Index": 18,
+      "Size": 450,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetPlayerCamera"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "b4b92dd0-46b8-374f-e2db-40bf83288f55"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`18 5e3370a4-4df0-be80-7a19-309d7c263137`» LinkedTo«`24 f49bb312-4d09-99f4-0ab8-b69aa5d59367`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 23866,
+      "Index": 19,
+      "Size": 426,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "ResetCamera"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "b0a2f923-4293-d02c-eedf-9ea0b6e796f5"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`19 a850d73e-474b-3244-4bc6-d3b7aedaf6a6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 24292,
+      "Index": 20,
+      "Size": 877,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct KismetUserDeclaredFunctionMetadata 79 'MetaData'": {
+            "Category": {
+              "Name": "Category",
+              "Type": "TextProperty",
+              "Size": 46,
+              "BoolVal": 0,
+              "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+              "TypeName": "TextProperty 0"
+            }
+          },
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "SetCameraState"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "3c434cc3-4fdb-f136-258c-eab656a4fa5f"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "New Camera State",
+            "PinType": "byte obj(`-19`)",
+            "DesiredPinDirection": 1,
+            "PinDefaultValue": "NewEnumerator0",
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`20 e1ed8c20-45fc-bc3f-7587-3b93af4ebbbe`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`byte obj(`-19`)`» Name«`New Camera State`» Id«`20 8925707a-43a8-c585-f2b1-f3be0b6887ea`» DefaultValue«`NewEnumerator0`» AutogeneratedDefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 25169,
+      "Index": 21,
+      "Size": 1260,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "UsePresetAngle"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "508c45cd-4f0f-c6d4-8bb2-7bb055149eef"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "Active",
+            "PinType": "bool",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          },
+          {
+            "PinName": "PresetPitch",
+            "PinType": "real-double",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          },
+          {
+            "PinName": "PresetYaw",
+            "PinType": "real-double",
+            "DesiredPinDirection": 1,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`21 e373e423-4b20-94db-cd3a-b6be4a818ccc`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`bool`» Name«`Active`» Id«`21 79a3d1be-42fd-08fe-c710-f2842237bb15`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`PresetPitch`» Id«`21 6223f06b-4bf1-5e25-c788-abbb621a8387`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "output-pin Type«`real-double`» Name«`PresetYaw`» Id«`21 7ea7f75c-4048-96d9-cfd9-7ab8419ae8e6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 26429,
+      "Index": 22,
+      "Size": 773,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetCameraState"
+          },
+          "bool 'bIsEditable'": true,
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "5acf4303-4918-19e0-df68-4aa983d7a0cf"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "CameraState",
+            "PinType": "byte obj(`-19`)",
+            "DesiredPinDirection": 0,
+            "PinDefaultValue": "NewEnumerator0",
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`22 f4f716b9-4a74-15f0-0dbb-8d83ed2e85eb`» LinkedTo«`16 c61f36f3-4a05-d613-f422-c2a73ae075c4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`byte obj(`-19`)`» Name«`CameraState`» Id«`22 7ca76b19-47fa-34a4-e140-c6a36cfcc500`» DefaultValue«`NewEnumerator0`» AutogeneratedDefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 27202,
+      "Index": 23,
+      "Size": 1326,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetLockedCamera"
+          },
+          "bool 'bIsEditable'": true,
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "03f957eb-42fe-fae9-ce97-85b00bcfb2c6"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "Yaw",
+            "PinType": "real-double",
+            "DesiredPinDirection": 0,
+            "PinDefaultValue": "0.0",
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          },
+          {
+            "PinName": "Pitch",
+            "PinType": "real-double",
+            "DesiredPinDirection": 0,
+            "PinDefaultValue": "0.0",
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          },
+          {
+            "PinName": "Locked",
+            "PinType": "bool",
+            "DesiredPinDirection": 0,
+            "PinDefaultValue": "false",
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`23 f8ae2340-4ab1-9e4d-7639-dc99b4ce22e8`» LinkedTo«`17 06357781-4502-f3f4-51b3-1aa13b3c6cd0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Yaw`» Id«`23 4b4ce68e-4ead-ccf2-dcf2-179b85cb6c72`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`real-double`» Name«`Pitch`» Id«`23 2e17a600-4a4d-6757-d466-e3a69137ed35`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`bool`» Name«`Locked`» Id«`23 fd97b008-428b-3777-ed21-899d557b1a61`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 28528,
+      "Index": 24,
+      "Size": 1006,
+      "ObjectName": "K2Node_FunctionResult",
+      "ClassName": "K2Node_FunctionResult",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "GetPlayerCamera"
+          },
+          "bool 'bIsEditable'": true,
+          "int 'NodePosX'": 256,
+          "guid 'NodeGuid' /Script/CoreUObject": "a97a9902-4cab-02f1-2f11-458c309ef640"
+        },
+        "SerializedItems": [
+          {
+            "PinName": "Camera",
+            "PinType": "object obj(`-9`)",
+            "DesiredPinDirection": 0,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          },
+          {
+            "PinName": "Camera Boom",
+            "PinType": "object obj(`-11`)",
+            "DesiredPinDirection": 0,
+            "bIsArray": false,
+            "bIsReference": false,
+            "PinSubCategoryObject": 0
+          }
+        ],
+        "Pins": [
+          "input-pin Type«`exec`» Name«`execute`» Id«`24 f49bb312-4d09-99f4-0ab8-b69aa5d59367`» LinkedTo«`18 5e3370a4-4df0-be80-7a19-309d7c263137`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-9`)`» Name«`Camera`» Id«`24 4b9ea5d6-4c78-27c8-03e0-9e8ad99623d6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
+          "input-pin Type«`object obj(`-11`)`» Name«`Camera Boom`» Id«`24 5673ce8f-4496-9aa5-7a9c-eebfdfad26ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 29534,
+      "Index": 25,
+      "Size": 13,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

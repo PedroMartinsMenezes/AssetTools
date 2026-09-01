@@ -194,5 +194,101 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 1457,
+      "Index": 1,
+      "Size": 19,
+      "ObjectName": "AssetImportData",
+      "ClassName": "AssetImportData",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UAssetImportData",
+        "Members": {},
+        "Json": "[]"
+      }
+    },
+    {
+      "Offset": 1476,
+      "Index": 2,
+      "Size": 265,
+      "ObjectName": "FogBrightnessLUT",
+      "ClassName": "CurveFloat",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UCurveFloat",
+        "Members": {
+          "struct RichCurve 175 'FloatCurve'": {
+            "Keys": {
+              "Name": "Keys",
+              "Type": "ArrayProperty",
+              "Size": 134,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
+                "Name": "Keys",
+                "Type": "StructProperty",
+                "Size": 81,
+                "StructName": "RichCurveKey"
+              },
+              "Value": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0,
+                  "Value": 0.0005,
+                  "ArriveTangent": 0,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0,
+                  "LeaveTangentWeight": 0
+                },
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 0.08,
+                  "ArriveTangent": 0.1995,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0.1995,
+                  "LeaveTangentWeight": 0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1,
+                  "Value": 0.2,
+                  "ArriveTangent": 0,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0,
+                  "LeaveTangentWeight": 0
+                }
+              ]
+            }
+          },
+          "obj 'AssetImportData'": 1
+        }
+      }
+    },
+    {
+      "Offset": 1741,
+      "Index": 3,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "1C89ECE044B6460D8D50A89F139A06C9"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

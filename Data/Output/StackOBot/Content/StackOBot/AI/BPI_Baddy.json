@@ -302,7 +302,201 @@
       "Count": 0,
       "ImportTypeHierarchies": {}
     },
-    "GlobalTypeNames": {}
+    "GlobalTypeNames": {
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
+    }
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 7806,
+      "Index": 1,
+      "Size": 341,
+      "ObjectName": "BPI_Baddy",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -4,
+          "byte64 (EBlueprintType) 'BlueprintType'": 10,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj[] 'FunctionGraphs'": "4",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 12,
+            "StructName": "NameProperty",
+            "BoolVal": 0,
+            "InnerType": "NameProperty",
+            "Value": [
+              "None"
+            ],
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
+          },
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid' /Script/CoreUObject": "67b9a4e4-4bb7-d84d-ffda-c1b1b9244fc3"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 8147,
+      "Index": 2,
+      "Size": 97,
+      "ObjectName": "BPI_Baddy_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Interface",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-4] Interface",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [
+          "ExportIndex[5] ImportIndex[-3]: Function"
+        ],
+        "ChildProperties": [],
+        "FuncMap": {
+          "Attack": 5
+        },
+        "ClassFlags": 278528,
+        "ClassWithin": 4294967290,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 3,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 8244,
+      "Index": 3,
+      "Size": 13,
+      "ObjectName": "Default__BPI_Baddy_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "SparseClassDataStruct": {
+          "Index": ""
+        },
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 8257,
+      "Index": 4,
+      "Size": 152,
+      "ObjectName": "Attack",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -1,
+          "obj[] 'Nodes'": "6",
+          "guid 'GraphGuid' /Script/CoreUObject": "e374e43a-41c4-d2ba-05b9-2197d5d29e73"
+        }
+      }
+    },
+    {
+      "Offset": 8409,
+      "Index": 5,
+      "Size": 48,
+      "ObjectName": "Attack",
+      "ClassName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[0] ",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 3,
+          "SerializedScriptSize": 3,
+          "ScriptData": "BAtT"
+        },
+        "ChildArray": [],
+        "ChildProperties": [],
+        "FunctionFlags": 201457664,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 8457,
+      "Index": 6,
+      "Size": 426,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "int 'ExtraFlags'": 201457664,
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Attack"
+          },
+          "bool 'bIsEditable'": true,
+          "guid 'NodeGuid' /Script/CoreUObject": "27f60e6d-41e9-9509-aafa-e9af4e08650b"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`6 1be6ef93-43b2-7df4-6bf4-788410133329`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
+        ]
+      }
+    },
+    {
+      "Offset": 8883,
+      "Index": 7,
+      "Size": 141,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {
+          "0": {
+            "BlueprintType": "true"
+          },
+          "2": {
+            "BlueprintType": "true"
+          },
+          "6": {
+            "DefaultGraphNode": "true"
+          }
+        },
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "93670047A7931C9AB5637130C96A1D60"
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqnpf2pYAuO8TRAgAAABwAAAAAAAAAAAAAAAAAAAB23jhRBMq/KTAAAAAAAAAAwYMqng=="
+  }
 }

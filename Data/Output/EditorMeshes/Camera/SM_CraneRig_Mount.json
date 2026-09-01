@@ -351,5 +351,358 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 9467,
+      "Index": 1,
+      "Size": 163,
+      "ObjectName": "BodySetup",
+      "ClassName": "BodySetup",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UBodySetup",
+        "Members": {
+          "struct BodyInstance 82 'DefaultInstance'": {
+            "byte64 (ECollisionChannel) 'ObjectType'": 41,
+            "name 'CollisionProfileName'": "BlockAll"
+          }
+        },
+        "BodySetupGuid": "52aecb5f-4430-7b68-a160-c3a844ca93c6",
+        "bCooked": false,
+        "bTemp": false
+      }
+    },
+    {
+      "Offset": 9630,
+      "Index": 2,
+      "Size": 200,
+      "ObjectName": "FbxStaticMeshImportData",
+      "ClassName": "FbxStaticMeshImportData",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UAssetImportData",
+        "Members": {},
+        "Json": "[{ \"RelativeFilename\" : \"C:/Users/jeff.farris/Downloads/Crane_Camera_Pivot.FBX\", \"Timestamp\" : \"1457034972\", \"FileMD5\" : \"cac69618a386fdfb83a312603024d13f\", \"DisplayLabelName\" : \"\" }]"
+      }
+    },
+    {
+      "Offset": 9830,
+      "Index": 3,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "C47CF5A14E70D8EF97A271950A46795D"
+        }
+      }
+    },
+    {
+      "Offset": 9895,
+      "Index": 4,
+      "Size": 44,
+      "ObjectName": "NavCollision",
+      "ClassName": "NavCollision",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UNavCollision",
+        "Members": {},
+        "bGatherConvexGeometry": true,
+        "bHasConvexGeometry": false,
+        "bForceGeometryRebuild": false,
+        "bCreateOnClient": true,
+        "MagicNum": 2721575479,
+        "Version": 4,
+        "Guid2": "",
+        "bCooked": false,
+        "AreaClass": 0
+      }
+    },
+    {
+      "Offset": 9939,
+      "Index": 5,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 9951,
+      "Index": 6,
+      "Size": 2980,
+      "ObjectName": "SM_CraneRig_Mount",
+      "ClassName": "StaticMesh",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UStaticMesh",
+        "Members": {
+          "SourceModels": {
+            "Name": "SourceModels",
+            "Type": "ArrayProperty",
+            "Size": 1458,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "SourceModels",
+              "Type": "StructProperty",
+              "Size": 1405,
+              "StructName": "StaticMeshSourceModel"
+            },
+            "Value": [
+              {
+                "obj 'StaticMeshDescriptionBulkData'": 8,
+                "struct MeshBuildSettings 567 'BuildSettings'": {
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bRecomputeNormals'": false,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bBuildReversedIndexBuffer'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "bool 'bGenerateLightmapUVs'": true,
+                  "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
+                  "bool 'bSupportFaceRemap'": false,
+                  "int 'MinLightmapResolution'": 64,
+                  "int 'SrcLightmapIndex'": 0,
+                  "int 'DstLightmapIndex'": 1,
+                  "Vector 'BuildScale3D'": "1 1 1",
+                  "float 'DistanceFieldResolutionScale'": 1,
+                  "obj 'DistanceFieldReplacementMesh'": 0,
+                  "int 'MaxLumenMeshCards'": 12
+                },
+                "struct MeshReductionSettings 587 'ReductionSettings'": {
+                  "float 'PercentTriangles'": 1,
+                  "float 'PercentVertices'": 1,
+                  "float 'MaxDeviation'": 0,
+                  "float 'PixelError'": 8,
+                  "float 'WeldingThreshold'": 0,
+                  "float 'HardAngleThreshold'": 80,
+                  "int 'BaseLODModel'": 0,
+                  "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 45,
+                  "byte64 (EMeshFeatureImportance) 'TextureImportance'": 45,
+                  "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 45,
+                  "bool 'bRecalculateNormals'": false,
+                  "bool 'bGenerateUniqueLightmapUVs'": false,
+                  "bool 'bKeepSymmetry'": false,
+                  "bool 'bVisibilityAided'": false,
+                  "bool 'bCullOccluded'": false,
+                  "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 49,
+                  "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 44,
+                  "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 46
+                },
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
+                },
+                "string 'SourceImportFilename'": "",
+                "bool 'bImportWithBaseMesh'": false
+              }
+            ]
+          },
+          "struct StaticMeshSourceModel 37 'HiResSourceModel'": {
+            "obj 'StaticMeshDescriptionBulkData'": 7
+          },
+          "struct MeshSectionInfoMap 202 'SectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "struct MeshSectionInfoMap 202 'OriginalSectionInfoMap'": {
+            "Map": {
+              "Name": "Map",
+              "Type": "MapProperty",
+              "Size": 153,
+              "InnerType": "UInt32Property",
+              "ValueType": "StructProperty",
+              "Value": {
+                "__type": "FMapProperty",
+                "TypeName": "MapProperty",
+                "NumKeysToRemove": 0,
+                "NumEntries": 1,
+                "KeyProp": [
+                  0
+                ],
+                "ValueProp": [
+                  {
+                    "int 'MaterialIndex'": 0,
+                    "bool 'bEnableCollision'": true,
+                    "bool 'bCastShadow'": true,
+                    "bool 'bVisibleInRayTracing'": true,
+                    "bool 'bForceOpaque'": false
+                  }
+                ],
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            }
+          },
+          "StaticMaterials": {
+            "Name": "StaticMaterials",
+            "Type": "ArrayProperty",
+            "Size": 381,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "StaticMaterials",
+              "Type": "StructProperty",
+              "Size": 328,
+              "StructName": "StaticMaterial"
+            },
+            "Value": [
+              {
+                "obj 'MaterialInterface'": -8,
+                "name 'MaterialSlotName'": "MI_CineMat_Rig",
+                "name 'ImportedMaterialSlotName'": "MI_CineMat_Rig",
+                "struct MeshUVChannelInfo 176 'UVChannelData'": {
+                  "bool 'bInitialized'": true,
+                  "bool 'bOverrideDensities'": false,
+                  "float 'LocalUVDensities'": 56.217842,
+                  "float 'LocalUVDensities'[1]": 258.1868,
+                  "float 'LocalUVDensities'[2]": 0,
+                  "float 'LocalUVDensities'[3]": 0
+                }
+              }
+            ]
+          },
+          "float 'LightmapUVDensity'": 258.1868,
+          "int 'LightMapResolution'": 64,
+          "int 'LightMapCoordinateIndex'": 1,
+          "obj 'AssetImportData'": 2,
+          "obj 'ThumbnailInfo'": 5,
+          "struct BoxSphereBounds 187 'ExtendedBounds'": {
+            "Vector 'Origin'": "0.001453399658203125 -0.052076339721679688 0.00167083740234375",
+            "Vector 'BoxExtent'": "32.011184692382812 22.125808715820312 46.189617156982422",
+            "double 'SphereRadius'": 59.38831329345703
+          }
+        },
+        "StripFlags": {
+          "GlobalStripFlags": "None",
+          "ClassStripFlags": 0
+        },
+        "bCooked": false,
+        "LocalBodySetup": 1,
+        "LocalNavCollision": 4,
+        "DummyThumbnailDistance": 0,
+        "Deprecated_HighResSourceMeshCRC": 0,
+        "LocalLightingGuid": "93a8f31b-46d5-3836-73c0-9798cbe9c990",
+        "Sockets": "",
+        "bHasSpeedTreeWind": false,
+        "StaticMaterials": [
+          {
+            "MaterialInterface": 4294967288,
+            "MaterialSlotName": "MI_CineMat_Rig",
+            "InImportedMaterialSlotName": "MI_CineMat_Rig",
+            "UVChannelData": {
+              "bInitialized": true,
+              "bOverrideDensities": false,
+              "LocalUVDensities": "56.217842 258.1868 0 0"
+            }
+          }
+        ],
+        "SourceModels": [
+          {
+            "bIsValid": false
+          }
+        ]
+      }
+    },
+    {
+      "Offset": 12931,
+      "Index": 7,
+      "Size": 88,
+      "ObjectName": "HiResMeshDescription",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_DefaultSubObject",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "None",
+            "BulkDataId": "",
+            "PayloadContentId": {
+              "ByteArray": "AAAAAAAAAAAAAAAAAAAAAAAAAAA="
+            },
+            "PayloadSize": 0,
+            "OffsetInFile": 13107
+          },
+          "Guid": "",
+          "bGuidIsHash": false
+        }
+      }
+    },
+    {
+      "Offset": 13019,
+      "Index": 8,
+      "Size": 88,
+      "ObjectName": "StaticMeshDescriptionBulkData",
+      "ClassName": "StaticMeshDescriptionBulkData",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UMeshDescriptionBaseBulkData",
+        "Members": {},
+        "BulkData": {
+          "BulkData": {
+            "Flags": "HasRegistered",
+            "BulkDataId": "67322523-44cc-aec3-349e-ae8b68e37f7b",
+            "PayloadContentId": {
+              "ByteArray": "9tv0h5tqn5E8GoqLEb8PuAS2UXA="
+            },
+            "PayloadSize": 43794,
+            "OffsetInFile": 13171
+          },
+          "Guid": "ca0d09af-4ab7-93af-cdb4-5a837e4d4fcc",
+          "bGuidIsHash": false
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "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"
+  }
 }

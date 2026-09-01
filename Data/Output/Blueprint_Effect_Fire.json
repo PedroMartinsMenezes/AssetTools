@@ -388,5 +388,431 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 12602,
+      "Index": 1,
+      "Size": 40,
+      "ObjectName": "P_Fire",
+      "ClassName": "ObjectProperty",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UProperty",
+        "Members": {},
+        "ArrayDim": 1,
+        "SaveFlags": 17179869188,
+        "RepNotifyFunc": "None",
+        "BlueprintReplicationCondition": 0,
+        "Next": 0
+      },
+      "Pad": "ImportIndex[-14] ParticleSystemComponent"
+    },
+    {
+      "Offset": 12642,
+      "Index": 2,
+      "Size": 40,
+      "ObjectName": "Fire Audio",
+      "ClassName": "ObjectProperty",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UProperty",
+        "Members": {},
+        "ArrayDim": 1,
+        "SaveFlags": 17179869188,
+        "RepNotifyFunc": "None",
+        "BlueprintReplicationCondition": 0,
+        "Next": 1
+      },
+      "Pad": "ImportIndex[-9] AudioComponent"
+    },
+    {
+      "Offset": 12682,
+      "Index": 3,
+      "Size": 49,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "Function",
+      "SuperName": "Function",
+      "ObjectFlags": "RF_Public",
+      "Obj": {
+        "__type": "UFunction",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-19] UserConstructionScript",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 5,
+          "SerializedScriptSize": 5,
+          "ScriptData": "XloEC1M="
+        },
+        "FunctionFlags": 201459712,
+        "RepOffset": 0,
+        "EventGraphFunction": 0,
+        "EventGraphCallOffset": 0,
+        "Next": 2
+      }
+    },
+    {
+      "Offset": 12731,
+      "Index": 4,
+      "Size": 120,
+      "ObjectName": "Blueprint_Effect_Fire_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 19
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-8] Actor",
+        "Children": 3,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "FuncMap": {
+          "UserConstructionScript": 3
+        },
+        "ClassFlags": 12845072,
+        "ClassWithin": 4294967290,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 7,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 5,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 12851,
+      "Index": 5,
+      "Size": 8,
+      "ObjectName": "Default__Blueprint_Effect_Fire_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 12859,
+      "Index": 6,
+      "Size": 40,
+      "ObjectName": "AudioComponent",
+      "ClassName": "AudioComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "obj 'Sound'": -27
+        },
+        "bIsCooked": false
+      }
+    },
+    {
+      "Offset": 12899,
+      "Index": 7,
+      "Size": 742,
+      "ObjectName": "Blueprint_Effect_Fire",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -8,
+          "guid 'SearchGuid'": "5e9b725f-4a41-efe7-bc2a-f9904a2e4b18",
+          "obj 'SimpleConstructionScript'": 19,
+          "obj[] 'UbergraphPages'": "8",
+          "obj[] 'FunctionGraphs'": "9",
+          "CategorySorting": {
+            "Name": "CategorySorting",
+            "Type": "ArrayProperty",
+            "Size": 20,
+            "InnerType": "NameProperty",
+            "Value": [
+              "Audio",
+              "Default"
+            ]
+          },
+          "int 'BlueprintSystemVersion'": 2,
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 244,
+            "InnerType": "StructProperty",
+            "Value": [
+              {
+                "obj 'EditedObject'": 9,
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": 1
+              },
+              {
+                "obj 'EditedObject'": 8,
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": 1
+              }
+            ]
+          },
+          "obj 'ThumbnailInfo'": 15,
+          "obj 'GeneratedClass'": 4,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "bool 'bLegacyGeneratedClassIsAuthoritative'": true,
+          "guid 'BlueprintGuid'": "71ae88ac-e402-ea45-db99-bbda1b26fe3d"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": true
+      }
+    },
+    {
+      "Offset": 13641,
+      "Index": 8,
+      "Size": 129,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "a0a90b51-4de6-f107-a3b1-1b82b78bd03c"
+        }
+      }
+    },
+    {
+      "Offset": 13770,
+      "Index": 9,
+      "Size": 169,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "obj[] 'Nodes'": "11",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "1fac8376-444e-015c-086d-12b1203b7374"
+        }
+      }
+    },
+    {
+      "Offset": 13939,
+      "Index": 10,
+      "Size": 194,
+      "ObjectName": "EdGraphPin",
+      "ClassName": "EdGraphPin",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraphPin",
+        "Members": {
+          "string 'PinName'": "then",
+          "byte64 (EEdGraphPinDirection) 'Direction'": 44,
+          "struct EdGraphPinType 61 'PinType'": "exec"
+        }
+      }
+    },
+    {
+      "Offset": 14133,
+      "Index": 11,
+      "Size": 205,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "bool 'bEnforceConstCorrectness'": false,
+          "obj 'SignatureClass'": -8,
+          "name 'SignatureName'": "UserConstructionScript",
+          "obj[] 'Pins'": "10",
+          "guid 'NodeGuid'": "f66ab977-4af2-6269-e4a9-18aaed8785ed"
+        },
+        "SerializedItems": []
+      }
+    },
+    {
+      "Offset": 14338,
+      "Index": 12,
+      "Size": 798,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {
+          "4": {
+            "BlueprintType": "true"
+          },
+          "3": {
+            "BlueprintInternalUseOnly": "true",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function\n@param       Location        The location.\n@param       Rotation        The rotation."
+          },
+          "2": {
+            "Category": "Audio"
+          },
+          "1": {
+            "Category": "Default"
+          },
+          "0": {
+            "BlueprintInternalUseOnly": "true",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function\n@param       Location        The location.\n@param       Rotation        The rotation."
+          },
+          "0": {
+            "Category": "Audio"
+          },
+          "0": {
+            "Category": "Default"
+          },
+          "0": {
+            "BlueprintType": "true"
+          }
+        }
+      }
+    },
+    {
+      "Offset": 15136,
+      "Index": 13,
+      "Size": 160,
+      "ObjectName": "ParticleSystemComponent",
+      "ClassName": "ParticleSystemComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "obj 'Template'": -26,
+          "Vector 'OldPosition'": "-38 -328 52",
+          "Vector 'RelativeLocation'": "-38 -328 52"
+        },
+        "bIsCooked": false
+      }
+    },
+    {
+      "Offset": 15296,
+      "Index": 14,
+      "Size": 12,
+      "ObjectName": "SceneComponent",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {},
+        "bIsCooked": false
+      }
+    },
+    {
+      "Offset": 15308,
+      "Index": 15,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_NoFlags",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 15320,
+      "Index": 16,
+      "Size": 218,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentTemplate'": 14,
+          "name 'VariableName'": "DefaultSceneRoot",
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": "text-base header=`InitializedFromString` Key=`459D94BF4610E831B3CEC6B253EFC781` Namespace=`` SourceString=`Default`"
+          },
+          "guid 'VariableGuid'": "56bc9799-c494-e6e6-321d-42957d5eb316"
+        }
+      }
+    },
+    {
+      "Offset": 15538,
+      "Index": 17,
+      "Size": 258,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentTemplate'": 13,
+          "name 'VariableName'": "P_Fire",
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 58,
+            "Value": "text-base header=`InitializedFromString` Key=`75A31D1D402A6BBE1CC27BB1BFE22D51` Namespace=`` SourceString=`Default`"
+          },
+          "obj[] 'ChildNodes'": "18",
+          "guid 'VariableGuid'": "bf492cb0-a111-c7db-5768-16fee377ec15"
+        }
+      }
+    },
+    {
+      "Offset": 15796,
+      "Index": 18,
+      "Size": 216,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentTemplate'": 6,
+          "name 'VariableName'": "Fire Audio",
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 56,
+            "Value": "text-base header=`InitializedFromString` Key=`124CDA974967BF577EBD769681FB14B8` Namespace=`` SourceString=`Audio`"
+          },
+          "guid 'VariableGuid'": "e36d7126-d8a2-ed42-3f6a-d2cf653ab7cf"
+        }
+      }
+    },
+    {
+      "Offset": 16012,
+      "Index": 19,
+      "Size": 80,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "17",
+          "obj 'DefaultSceneRootNode'": 16
+        }
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }
