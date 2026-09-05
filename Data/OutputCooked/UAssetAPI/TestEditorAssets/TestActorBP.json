@@ -380,5 +380,415 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 14011,
+      "Index": 1,
+      "Size": 942,
+      "ObjectName": "TestActorBP",
+      "ClassName": "Blueprint",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintCore",
+        "Members": {
+          "obj 'ParentClass'": -7,
+          "int 'BlueprintSystemVersion'": 2,
+          "obj 'SimpleConstructionScript'": 13,
+          "obj[] 'UbergraphPages'": "3",
+          "obj[] 'FunctionGraphs'": "4",
+          "LastEditedDocuments": {
+            "Name": "LastEditedDocuments",
+            "Type": "ArrayProperty",
+            "Size": 579,
+            "InnerType": "StructProperty",
+            "MaybeInnerTag": {
+              "Name": "LastEditedDocuments",
+              "Type": "StructProperty",
+              "Size": 526,
+              "StructName": "EditedDocumentInfo"
+            },
+            "Value": [
+              {
+                "struct SoftObjectPath 39 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/TestActorBP.TestActorBP_C",
+                  "SubPathString": "SimpleConstructionScript_0",
+                  "AssetPath": {
+                    "PackageName": "/Game/TestActorBP.TestActorBP_C"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": -1
+              },
+              {
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/TestActorBP.TestActorBP",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/TestActorBP.TestActorBP"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": -1
+              },
+              {
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/TestActorBP.TestActorBP",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/TestActorBP.TestActorBP"
+                  },
+                  "SaveNum": 0
+                },
+                "Vector2D 'SavedViewOffset'": "0 0",
+                "float 'SavedZoomAmount'": -1
+              }
+            ]
+          },
+          "obj 'ThumbnailInfo'": 11,
+          "obj 'GeneratedClass'": 2,
+          "bool 'bLegacyNeedToPurgeSkelRefs'": false,
+          "guid 'BlueprintGuid'": "1b4dc4d3-448c-7f68-2b8a-f6a49a17dd62"
+        },
+        "bLegacyGeneratedClassIsAuthoritative": false
+      }
+    },
+    {
+      "Offset": 14953,
+      "Index": 2,
+      "Size": 188,
+      "ObjectName": "TestActorBP_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "Actor",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "obj 'SimpleConstructionScript'": 13
+        },
+        "AccessTrackedObjectPtr": "ImportIndex[-7] Actor",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "ChildArray": [],
+        "ChildProperties": [
+          {
+            "__type": "FObjectProperty",
+            "TypeName": "ObjectProperty",
+            "Value": "ImportIndex[-11] SceneComponent",
+            "ArrayDim": 1,
+            "ElementSize": 8,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "RepIndex": 0,
+            "RepNotifyFunc": "None",
+            "BlueprintReplicationCondition": 0,
+            "NamePrivate": "DefaultSceneRoot",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            }
+          }
+        ],
+        "FuncMap": {},
+        "ClassFlags": 8652820,
+        "ClassWithin": 4294967290,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 1,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 14,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 15141,
+      "Index": 3,
+      "Size": 181,
+      "ObjectName": "EventGraph",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "obj[] 'Nodes'": "5 6 7",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "7d0c1f65-4856-7204-7715-a8a200571612"
+        }
+      }
+    },
+    {
+      "Offset": 15322,
+      "Index": 4,
+      "Size": 173,
+      "ObjectName": "UserConstructionScript",
+      "ClassName": "EdGraph",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UEdGraph",
+        "Members": {
+          "obj 'Schema'": -2,
+          "obj[] 'Nodes'": "8",
+          "bool 'bAllowDeletion'": false,
+          "guid 'GraphGuid'": "2c3ad816-464f-6bad-07b1-ebb957dfc66d"
+        }
+      }
+    },
+    {
+      "Offset": 15495,
+      "Index": 5,
+      "Size": 812,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "ReceiveBeginPlay"
+          },
+          "bool 'bOverrideFunction'": true,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 45,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "b4f709cf-4f2e-1d76-e65d-20888e0ac36b"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-7` `` `ReceiveBeginPlay`)`» Name«`OutputDelegate`» Id«`5 b46158b2-414f-ec1b-2249-1a9781bee397`» DefaultObject«`ImportIndex[0] `» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`5 0c0b09ad-46f1-62bb-5abf-01a653026f45`» DefaultObject«`ImportIndex[0] `» "
+        ]
+      }
+    },
+    {
+      "Offset": 16307,
+      "Index": 6,
+      "Size": 1064,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "ReceiveActorBeginOverlap"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 208,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 45,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "fb87e788-4dbc-db91-6391-a5b37e2c20b7"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-7` `` `ReceiveActorBeginOverlap`)`» Name«`OutputDelegate`» Id«`6 891aa8ac-4960-4427-6f7e-4f95c80d98e8`» DefaultObject«`ImportIndex[0] `» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`6 9e8ca445-4e0d-5083-33a2-e5a3679be65e`» DefaultObject«`ImportIndex[0] `» ",
+          "output-pin Type«`object obj(`-7`)`» Name«`OtherActor`» Id«`6 5adf58ea-4faa-18a7-aed1-97a9ccfb48d9`» ToolTip«`Other Actor\nActor Object Reference`» DefaultObject«`ImportIndex[0] `» "
+        ]
+      }
+    },
+    {
+      "Offset": 17371,
+      "Index": 7,
+      "Size": 1057,
+      "ObjectName": "K2Node_Event",
+      "ClassName": "K2Node_Event",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "ReceiveTick"
+          },
+          "bool 'bOverrideFunction'": true,
+          "int 'NodePosY'": 416,
+          "enum64 (ENodeEnabledState) 'EnabledState'": 45,
+          "bool 'bCommentBubblePinned'": true,
+          "bool 'bCommentBubbleVisible'": true,
+          "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
+          "guid 'NodeGuid'": "7c782cef-4237-9bd5-95c0-30bf6694f940"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`delegate ref(`-7` `` `ReceiveTick`)`» Name«`OutputDelegate`» Id«`7 d227004b-41b2-bd81-5455-d09b2b0066b9`» DefaultObject«`ImportIndex[0] `» ",
+          "output-pin Type«`exec`» Name«`then`» Id«`7 3222e6cc-4c5f-aae0-da12-3c87ce9ac857`» DefaultObject«`ImportIndex[0] `» ",
+          "output-pin Type«`float`» Name«`DeltaSeconds`» Id«`7 7669b7f1-4446-7b75-df9c-0fb33490bd3f`» ToolTip«`Delta Seconds\nFloat`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» "
+        ]
+      }
+    },
+    {
+      "Offset": 18428,
+      "Index": 8,
+      "Size": 392,
+      "ObjectName": "K2Node_FunctionEntry",
+      "ClassName": "K2Node_FunctionEntry",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UK2Node_EditablePinBase",
+        "Members": {
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "UserConstructionScript"
+          },
+          "guid 'NodeGuid'": "16e840e3-41d9-d6ee-87ad-cdb926be9378"
+        },
+        "SerializedItems": [],
+        "Pins": [
+          "output-pin Type«`exec`» Name«`then`» Id«`8 5b20af06-45f7-309a-c014-139adb34a548`» DefaultObject«`ImportIndex[0] `» "
+        ]
+      }
+    },
+    {
+      "Offset": 18820,
+      "Index": 9,
+      "Size": 585,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {
+          "8": {
+            "DefaultGraphNode": "true"
+          },
+          "0": {
+            "BlueprintInternalUseOnly": "true",
+            "Comment": "/**\n\t * Construction script, the place to spawn components and do other setup.\n\t * @note Name used in CreateBlueprint function\n\t */",
+            "DisplayName": "Construction Script",
+            "ModuleRelativePath": "Classes/GameFramework/Actor.h",
+            "ToolTip": "Construction script, the place to spawn components and do other setup.\n@note Name used in CreateBlueprint function"
+          },
+          "0": {
+            "BlueprintType": "true"
+          },
+          "2": {
+            "BlueprintType": "true"
+          },
+          "5": {
+            "DefaultGraphNode": "true"
+          },
+          "6": {
+            "DefaultGraphNode": "true"
+          },
+          "7": {
+            "DefaultGraphNode": "true"
+          }
+        },
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "D9C9644F42FF1A92C53A39A59FD9DE22"
+        }
+      }
+    },
+    {
+      "Offset": 19405,
+      "Index": 10,
+      "Size": 38,
+      "ObjectName": "DefaultSceneRoot_GEN_VARIABLE",
+      "ClassName": "SceneComponent",
+      "ObjectFlags": "RF_Public, RF_Transactional, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "USceneComponent",
+        "Members": {
+          "bool 'bVisualizeComponent'": true
+        },
+        "bIsCooked": false
+      }
+    },
+    {
+      "Offset": 19443,
+      "Index": 11,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfo",
+      "ClassName": "SceneThumbnailInfo",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    },
+    {
+      "Offset": 19455,
+      "Index": 12,
+      "Size": 230,
+      "ObjectName": "SCS_Node",
+      "ClassName": "SCS_Node",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj 'ComponentClass'": -11,
+          "obj 'ComponentTemplate'": 10,
+          "CategoryName": {
+            "Name": "CategoryName",
+            "Type": "TextProperty",
+            "Size": 37,
+            "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`"
+          },
+          "guid 'VariableGuid'": "30e39229-4101-5691-0cd8-209fc0f607b9",
+          "name 'InternalVariableName'": "DefaultSceneRoot"
+        }
+      }
+    },
+    {
+      "Offset": 19685,
+      "Index": 13,
+      "Size": 123,
+      "ObjectName": "SimpleConstructionScript",
+      "ClassName": "SimpleConstructionScript",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "obj[] 'RootNodes'": "12",
+          "obj[] 'AllNodes'": "12",
+          "obj 'DefaultSceneRootNode'": 12
+        }
+      }
+    },
+    {
+      "Offset": 19808,
+      "Index": 14,
+      "Size": 8,
+      "ObjectName": "Default__TestActorBP_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "Next": 0
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

@@ -224,5 +224,92 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 99781,
+      "Index": 1,
+      "Size": 433,
+      "ObjectName": "TestMaterial",
+      "ClassName": "Material",
+      "ObjectFlags": "RF_Public, RF_Standalone, RF_Transactional",
+      "Obj": {
+        "__type": "UMaterial",
+        "Members": {
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 2,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
+          },
+          "obj[] 'Expressions'": "2",
+          "bool 'bCanMaskedBeAssumedOpaque'": true,
+          "guid 'StateId'": "29ac68d8-41fe-fb0a-25ce-6eae2055a6ad",
+          "struct MaterialCachedExpressionData 49 'CachedExpressionData'": {
+            "bool[] 'QualityLevelsUsed'": "0 0 0 0"
+          },
+          "obj 'ThumbnailInfo'": 4,
+          "guid 'LightingGuid'": "f59dbec3-4fbc-6ac5-a92e-a0a79941ef4b"
+        },
+        "NumLoadedResources": 0,
+        "bLocalSavedCachedExpressionData_DEPRECATED": false,
+        "bForceNaniteUsage": false,
+        "bSavedCachedExpressionData": false
+      }
+    },
+    {
+      "Offset": 100214,
+      "Index": 2,
+      "Size": 200,
+      "ObjectName": "MaterialExpressionConstant3Vector",
+      "ClassName": "MaterialExpressionConstant3Vector",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {
+          "LinearColor 'Constant'": "0 255 255 0",
+          "int 'MaterialExpressionEditorX'": -272,
+          "guid 'MaterialExpressionGuid'": "3cd1eb37-40ae-40e4-d87c-97981c5746fd",
+          "obj 'Material'": 1
+        }
+      }
+    },
+    {
+      "Offset": 100414,
+      "Index": 3,
+      "Size": 65,
+      "ObjectName": "PackageMetaData",
+      "ClassName": "MetaData",
+      "ObjectFlags": "RF_Standalone",
+      "Obj": {
+        "__type": "UMetaData",
+        "Members": {},
+        "ObjectMetaDataMap": {},
+        "RootMetaDataMap": {
+          "PackageLocalizationNamespace": "F3BAF74E49FF9BD4C133F192C1DBCC08"
+        }
+      }
+    },
+    {
+      "Offset": 100479,
+      "Index": 4,
+      "Size": 12,
+      "ObjectName": "SceneThumbnailInfoWithPrimitive",
+      "ClassName": "SceneThumbnailInfoWithPrimitive",
+      "ObjectFlags": "RF_Transactional",
+      "Obj": {
+        "__type": "UObject",
+        "Members": {}
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

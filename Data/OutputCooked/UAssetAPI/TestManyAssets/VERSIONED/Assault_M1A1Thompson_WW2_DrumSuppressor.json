@@ -358,5 +358,483 @@
     },
     "GlobalTypeNames": {}
   },
-  "Footer": {}
+  "Objects": [
+    {
+      "Offset": 6824,
+      "Index": 1,
+      "Size": 80,
+      "ObjectName": "Assault_M1A1Thompson_WW2_DrumSuppressor_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "SuperName": "RangedWeaponItem",
+      "ObjectFlags": "RF_Public, RF_Transactional",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {},
+        "AccessTrackedObjectPtr": "ImportIndex[-7] RangedWeaponItem",
+        "Children": 0,
+        "ScriptLoadHelper": {
+          "BytecodeBufferSize": 0,
+          "SerializedScriptSize": 0,
+          "ScriptData": ""
+        },
+        "FuncMap": {},
+        "ClassFlags": 262160,
+        "ClassWithin": 4294967290,
+        "ClassConfigName": "Engine",
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "SerializedInterfaces": [],
+        "bDeprecatedForceScriptOrder": false,
+        "Dummy": "None",
+        "bCookedAsBool": true,
+        "PerspectiveNewCDO": 2,
+        "Next": 0
+      }
+    },
+    {
+      "Offset": 6904,
+      "Index": 2,
+      "Size": 10984,
+      "ObjectName": "Default__Assault_M1A1Thompson_WW2_DrumSuppressor_C",
+      "ClassName": "BlueprintGeneratedClass",
+      "ObjectFlags": "RF_Public, RF_ClassDefaultObject, RF_ArchetypeObject",
+      "Obj": {
+        "__type": "UBlueprintGeneratedClass",
+        "Members": {
+          "struct ItemAudioInfo 247 'AudioInfo'": {
+            "Switches": {
+              "Name": "Switches",
+              "Type": "ArrayProperty",
+              "Size": 153,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
+                "Name": "Switches",
+                "Type": "StructProperty",
+                "Size": 100,
+                "StructName": "ItemAudioSwitch"
+              },
+              "Value": [
+                {
+                  "string 'Group'": "switch_wpn_model",
+                  "string 'Value'": "smg_45_m1928_ww2"
+                }
+              ]
+            },
+            "obj[] 'Banks'": "-22 -25 -23 -24"
+          },
+          "struct RangedWeaponResource 9205 'Resource'": {
+            "string 'DisplayName'": "Gangland Strad{[0,+]s}",
+            "string 'DisplayType'": "Ranged Weapon: Assault ",
+            "string 'Description'": "A well-maintained Thompson submachine gun, fitted with a hair trigger, suppressor, and infamous drum magazine. <br><br>While out of \"service\" for many decades, this old bastard makes deadly music in the hands of a master.",
+            "name 'ZoomMode'": "DefaultClose",
+            "name 'FireMode'": "SemiAutoAndFullAuto",
+            "name 'AmmoType'": "/Game/Items/Ammo/Ammo_45.Ammo_45_C",
+            "name 'MuzzleFlashtype'": "muzzle_assault_fullauto",
+            "name 'Mesh'": "/Game/Art/Weapons/SMG_Thompson_01/SMG_Thompson_01.SMG_Thompson_01",
+            "name 'AnimInstance'": "/Game/Persona/Assault/Assault_ABP.Assault_ABP_C",
+            "struct TransformFloat 78 'FullAutoRoundsPerMinute'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 750
+            },
+            "struct TransformFloat 78 'SemiAutoCooldownMS'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 48
+            },
+            "struct TransformFloat 78 'BurstRoundsPerMinute'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 1090
+            },
+            "struct TransformFloat 78 'BurstCooldownMS'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 300
+            },
+            "struct TransformFloat 78 'SwayStrength'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.7
+            },
+            "struct TransformFloat 78 'KickSnapTime'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.03
+            },
+            "struct TransformFloat 78 'KickSnapHoldTime'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.03
+            },
+            "struct TransformFloat 49 'KickRecoveryTime'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickRecoveryPercent'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickRecoveryMinPercent'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickRecoveryDecreasePercentPerShot'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickRecoveryResetPercentage'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'KickAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 1.05
+            },
+            "struct TransformFloat 49 'KickLeftMinAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickLeftMaxAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickRightMinAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'KickRightMaxAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 10
+            },
+            "struct TransformFloat 49 'KickLeftChance'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'KickChanceToHorizontalMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformInt 78 'ProjectileCount'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "int 'Value'": 1
+            },
+            "struct TransformInt 49 'MagazineSize'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'ReloadDuration'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 3.8
+            },
+            "struct TransformInt 78 'AmmoConsumedPerShot'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "int 'Value'": 1
+            },
+            "struct TransformFloat 78 'SpreadMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.25
+            },
+            "struct TransformFloat 78 'SpreadMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 3
+            },
+            "struct TransformFloat 78 'SpreadGrowthPerShot'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.09
+            },
+            "struct TransformFloat 78 'SpreadGrowthPerShotExponentDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 2
+            },
+            "struct TransformFloat 78 'SpreadRecoveryTimeMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.4
+            },
+            "struct TransformFloat 78 'SpreadRecoveryTimeMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.4
+            },
+            "struct TransformInt 49 'NumProjectilesThatIgnoreSpread'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformBool 49 'ApplyConeTracedRound'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformBool 49 'LimitProjectilesBasedOnConeHits'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeImpact'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeImpactDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKnockdown'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKnockdownDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeDismember'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeDismemberDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConePenetration'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeSpreadAngleMultiplier'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeRangeMultiplierMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeRangeMultiplierMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKillzoneChanceAtAndBeforeFalloffDistanceA'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKillzoneChanceAtAndBeyondFalloffDistanceB'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKillzoneHeadshotFudgeAngle'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKillzoneFalloffDistanceA'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'ConeKillzoneFalloffDistanceB'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'Impact'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.525
+            },
+            "struct TransformFloat 78 'ImpactDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.125
+            },
+            "struct TransformFloat 78 'Knockdown'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.1
+            },
+            "struct TransformFloat 78 'KnockdownDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.1
+            },
+            "struct TransformFloat 49 'Dismember'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'DismemberDelta'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 49 'Penetration'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'FalloffDistanceA'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 4000
+            },
+            "struct TransformFloat 78 'FalloffDistanceB'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 6000
+            },
+            "struct TransformFloat 78 'Range'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 20000
+            },
+            "struct TransformFloat 78 'FalloffStatMinPercent'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.25
+            },
+            "struct TransformFloat 78 'Weight'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 11.5
+            },
+            "struct TransformInt 78 'InfluenceValue'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "int 'Value'": 250
+            },
+            "struct TransformInt 49 'PrestigeValue'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            },
+            "struct TransformFloat 78 'Durability'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 530
+            },
+            "struct TransformFloat 78 'DurabilityLossPerShotMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 1
+            },
+            "struct TransformFloat 78 'DurabilityLossPerShotMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 1.5
+            },
+            "struct TransformFloat 78 'JamTimeMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 7
+            },
+            "struct TransformFloat 78 'JamTimeMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 7
+            },
+            "struct TransformFloat 78 'JamClearDurabilityPercentRestoredMin'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.4
+            },
+            "struct TransformFloat 78 'JamClearDurabilityPercentRestoredMax'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.5
+            },
+            "struct TransformFloat 78 'PerceptionLoudness'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 1.45
+            },
+            "struct TransformFloat 78 'MoveSpeedMultiplier'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.9
+            },
+            "name 'IconFills'": "Texture2D'/Game/Art/UI/common_art_assets/common_weapons_ranged/icon_weapon_ranged_WWII_smg_tommygun_fills.icon_weapon_ranged_WWII_smg_tommygun_fills'",
+            "name 'IconLines'": "Texture2D'/Game/Art/UI/common_art_assets/common_weapons_ranged/icon_weapon_ranged_WWII_smg_tommygun_lines.icon_weapon_ranged_WWII_smg_tommygun_lines'",
+            "byte64 (ERangedWeaponTypeEnum) 'RangedWeaponType'": 74,
+            "byte64 (EShootTypeEnum) 'ShootType'": 78,
+            "byte64 (EReloadTypeEnum) 'ReloadType'": 76,
+            "byte64 (EChargeTypeEnum) 'ReloadChargeType'": 69,
+            "byte64 (EGripTypeEnum) 'GripType'": 71,
+            "struct TransformFloat 78 'AimBlendTime'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80,
+              "float 'Value'": 0.1
+            },
+            "struct SupportedMods 112 'SupportedMods'": {
+              "bool 'ModSupressor'": true,
+              "bool 'ModMuzzleBrake'": true,
+              "bool 'ModAction'": true,
+              "bool 'ModMagazine'": true
+            },
+            "Mods": {
+              "Name": "Mods",
+              "Type": "ArrayProperty",
+              "Size": 20,
+              "InnerType": "NameProperty",
+              "Value": [
+                "/Game/Items/Mods/Thompson_Mod_Mag_Drum.Thompson_Mod_Mag_Drum_C",
+                "/Game/Items/Mods/Pro_Suppressor.Pro_Suppressor_C"
+              ]
+            },
+            "struct TransformFloat 49 'LaunchedObjectVelocity'": {
+              "byte64 (ETransformTypeEnum) 'TransformType'": 80
+            }
+          },
+          "obj[] 'SwitchableAmmoClasses'": "-3",
+          "obj 'MuzzleFlashType'": -2,
+          "SkeletalMesh": {
+            "Name": "SkeletalMesh",
+            "Type": "AssetObjectProperty",
+            "Size": 70,
+            "Value": {
+              "__type": "FSoftObjectProperty",
+              "TypeName": "SoftObjectProperty",
+              "Value": 0,
+              "Ptr": {
+                "SoftObjectPtr": 0,
+                "ObjectID": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "Path": "/Game/Art/Weapons/SMG_Thompson_01/SMG_Thompson_01.SMG_Thompson_01",
+                  "SaveNum": 0
+                }
+              },
+              "ArrayDim": 0,
+              "ElementSize": 0,
+              "PropertyFlags": "CPF_None",
+              "RepIndex": 0,
+              "BlueprintReplicationCondition": 0,
+              "FlagsPrivate": "RF_NoFlags",
+              "HasMetaData": false,
+              "MetaDataMap": {}
+            }
+          },
+          "obj 'AnimInstance'": -1,
+          "obj[] 'ModItems'": "-5 -4",
+          "struct ItemDisplayInfo 990 'DisplayInfo'": {
+            "DisplayName": {
+              "Name": "DisplayName",
+              "Type": "TextProperty",
+              "Size": 109,
+              "Value": "text-base header=`None` Key=`Name` Namespace=`Dayton.RangedWeaponItem.Assault_M1A1Thompson_WW2_DrumSuppressor` SourceString=`Gangland Strad{[0,+]s}`"
+            },
+            "DisplayType": {
+              "Name": "DisplayType",
+              "Type": "TextProperty",
+              "Size": 110,
+              "Value": "text-base header=`None` Key=`Type` Namespace=`Dayton.RangedWeaponItem.Assault_M1A1Thompson_WW2_DrumSuppressor` SourceString=`Ranged Weapon: Assault `"
+            },
+            "DisplayDescription": {
+              "Name": "DisplayDescription",
+              "Type": "TextProperty",
+              "Size": 315,
+              "Value": "text-base header=`None` Key=`Description` Namespace=`Dayton.RangedWeaponItem.Assault_M1A1Thompson_WW2_DrumSuppressor` SourceString=`A well-maintained Thompson submachine gun, fitted with a hair trigger, suppressor, and infamous drum magazine. <br><br>While out of \"service\" for many decades, this old bastard makes deadly music in the hands of a master.`"
+            },
+            "IconFills": {
+              "Name": "IconFills",
+              "Type": "AssetObjectProperty",
+              "Size": 143,
+              "Value": {
+                "__type": "FSoftObjectProperty",
+                "TypeName": "SoftObjectProperty",
+                "Value": 0,
+                "Ptr": {
+                  "SoftObjectPtr": 0,
+                  "ObjectID": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "Path": "/Game/Art/UI/common_art_assets/common_weapons_ranged/icon_weapon_ranged_WWII_smg_tommygun_fills.icon_weapon_ranged_WWII_smg_tommygun_fills",
+                    "SaveNum": 0
+                  }
+                },
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            },
+            "IconLines": {
+              "Name": "IconLines",
+              "Type": "AssetObjectProperty",
+              "Size": 143,
+              "Value": {
+                "__type": "FSoftObjectProperty",
+                "TypeName": "SoftObjectProperty",
+                "Value": 0,
+                "Ptr": {
+                  "SoftObjectPtr": 0,
+                  "ObjectID": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "Path": "/Game/Art/UI/common_art_assets/common_weapons_ranged/icon_weapon_ranged_WWII_smg_tommygun_lines.icon_weapon_ranged_WWII_smg_tommygun_lines",
+                    "SaveNum": 0
+                  }
+                },
+                "ArrayDim": 0,
+                "ElementSize": 0,
+                "PropertyFlags": "CPF_None",
+                "RepIndex": 0,
+                "BlueprintReplicationCondition": 0,
+                "FlagsPrivate": "RF_NoFlags",
+                "HasMetaData": false,
+                "MetaDataMap": {}
+              }
+            },
+            "string 'InventoryObjectSoundSwitch'": "wpn_smg"
+          },
+          "struct ItemWeightInfo 37 'WeightInfo'": {
+            "float 'Weight'": 11.5
+          },
+          "int 'InfluenceValue'": 250,
+          "name 'CatalogID'": "CU8_WorldWar2Pack"
+        },
+        "Children": 0,
+        "ClassFlags": 0,
+        "ClassWithin": 0,
+        "NumInterfaces": 0,
+        "ClassGeneratedBy": 0,
+        "bDeprecatedForceScriptOrder": false,
+        "bCookedAsBool": false,
+        "PerspectiveNewCDO": 0,
+        "Next": 0
+      }
+    }
+  ],
+  "Footer": {
+    "Data": "wYMqng=="
+  }
 }

@@ -16,15 +16,23 @@ namespace AssetTool.Test.UAssetAPITest
         [Test] public void plwp_6aam_a0() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestACE7\\plwp_6aam_a0.uasset", fileVersion: FileVersions["UE4_18"]));
     }
 
+    public class Uncooked_Tests : TestBase
+    {
+        [SetUp] public void Setup() => AppConfig.DebugSaveUnitTest = true;
+
+        //TestEditorAssets
+        [Test] public void TestActorBP() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestActorBP.uasset", ""));
+        [Test] public void TestMaterial() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestMaterial.uasset", ""));
+        [Test] public void TestSoundClass() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestSoundClass.uasset", ""));
+        //VERSIONED
+        [Test] public void Assault_M1A1Thompson_WW2_DrumSuppressor() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\VERSIONED\\Assault_M1A1Thompson_WW2_DrumSuppressor.uasset", ""));
+    }
+
     public class Uncooked_HeaderOnly_Tests : TestBase
     {
         [SetUp] public void Setup() => AppConfig.DebugSaveUnitTest = true;
 
         [Test] public void ABP_SMG_A() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestJson\\ABP_SMG_A.uasset"));
-        [Test] public void Assault_M1A1Thompson_WW2_DrumSuppressor() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\VERSIONED\\Assault_M1A1Thompson_WW2_DrumSuppressor.uasset", ""));
-        [Test] public void TestActorBP() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestActorBP.uasset", ""));
-        [Test] public void TestMaterial() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestMaterial.uasset", ""));
-        [Test] public void TestSoundClass() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestEditorAssets\\TestSoundClass.uasset", ""));
     }
 
     public class Cooked_UE414_Tests : TestBase
