@@ -138,7 +138,7 @@ namespace AssetTool
         }
         public override void Move(ref bool[] value, int count)
         {
-            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+            writer.Write(MemoryMarshal.AsBytes(value.Select(x => x ? 1u : 0u).ToArray().AsSpan()));
         }
         #endregion
 

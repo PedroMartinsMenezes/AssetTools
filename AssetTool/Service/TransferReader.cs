@@ -144,7 +144,9 @@ namespace AssetTool
         }
         public override void Move(ref bool[] value, int count)
         {
-            reader.Read(MemoryMarshal.AsBytes((value = new bool[count]).AsSpan()));
+            UInt32[] values;
+            reader.Read(MemoryMarshal.AsBytes((values = new UInt32[count]).AsSpan()));
+            value = values.Select(x => x == 1).ToArray();
         }
         #endregion
 
