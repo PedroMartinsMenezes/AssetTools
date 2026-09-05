@@ -16,6 +16,7 @@ namespace AssetTool.Test
     {
         private Stopwatch stopwatch = new Stopwatch();
         protected static Dictionary<string, FileVersion> FileVersions = [];
+        protected static AppConfig AppConfig = new AppConfig();
 
         public TestBase()
         {
@@ -66,6 +67,7 @@ namespace AssetTool.Test
 
         protected void Test_UE_Files(string name, FileVersion fileVersion = null)
         {
+            AssetConverter.AppConfig = AppConfig;
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();

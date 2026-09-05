@@ -101,7 +101,7 @@ namespace AssetTool
 
         public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable
         {
-            if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
+            if (transfer.IsWriting || !transfer.AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
             string msg = string.Empty;
             long currentPosition = source.Position;
@@ -110,7 +110,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             reader.Read(sourceBytes);
 
-            if (AppConfig.AutoCheckBinaryWriter)
+            if (transfer.AppConfig.AutoCheckBinaryWriter)
             {
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 using MemoryStream dest = new();

@@ -72,7 +72,7 @@ namespace AssetTool
 
             transfer.Move(ref Name);
 
-            if (AppConfig.DenyNamesStartedWithSlash && Name.Value.StartsWith('/'))
+            if (transfer.AppConfig.DenyNamesStartedWithSlash && Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
 
             if (!Name.IsFilled())
@@ -90,7 +90,7 @@ namespace AssetTool
 
             transfer.Move(ref Size);
 
-            if (AppConfig.BreakWhenTagSizeIsZero && Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
+            if (transfer.AppConfig.BreakWhenTagSizeIsZero && Size == 0 && Type?.Value != FBoolProperty.TYPE_NAME)
                 throw new InvalidOperationException($"Invalid Size: 0");
 
             transfer.MoveEnum(ref PropertyTagFlags);
@@ -143,7 +143,7 @@ namespace AssetTool
         {
             transfer.Move(ref Name);
 
-            if (AppConfig.DenyNamesStartedWithSlash && Name.Value.StartsWith('/'))
+            if (transfer.AppConfig.DenyNamesStartedWithSlash && Name.Value.StartsWith('/'))
                 throw new InvalidOperationException($"Invalid Name: {Name.Value}");
 
             if (!Name.IsFilled())
@@ -465,7 +465,7 @@ namespace AssetTool
         {
             (long startOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
             (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.KeyType?.Value, tag.ValueType?.Value, tag.Size);
-            int inc = Log.InfoRead(transfer.Position, indent, tag);
+            int inc = Log.InfoRead(tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
 
@@ -479,7 +479,7 @@ namespace AssetTool
             if (transfer.IsReading && startOffset != endOffset && size > 0 && indent == 0)
                 new FPropertyTagValue(tag, indent, baseOffset, tag.Value, obj).AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", transfer.Stream, [startOffset, endOffset]);
             else if (indent == 0 && tag.Size == 0)
-                Log.InfoWrite(transfer.Position, indent, tag, true);
+                Log.InfoWrite(tag, true);
 
             return tag.Value;
         }
@@ -519,7 +519,7 @@ namespace AssetTool
 
             transfer.Resize(ref list, true);
 
-            if (list.Count > AppConfig.MaxArraySize)
+            if (list.Count > transfer.AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {list.Count}");
 
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.Supports.VER_UE4_INNER_ARRAY_TAG_INFO && innerType == FStructProperty.TYPE_NAME)

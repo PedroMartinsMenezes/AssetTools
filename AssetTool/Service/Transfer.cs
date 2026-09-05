@@ -9,6 +9,7 @@
         public GlobalObjects GlobalObjects { get; set; } = new();
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
+        public AppConfig AppConfig { get; set; } = new();
         private bool _disposed;
 
         public void Initialize(Transfer other)
@@ -17,6 +18,7 @@
             GlobalObjects = other?.GlobalObjects ?? GlobalObjects;
             Supports = new Supports(other ?? this);
             SupportsAfter = new SupportsAfter(other ?? this);
+            AppConfig = other?.AppConfig ?? AppConfig;
         }
 
         public abstract bool IsReading { get; }

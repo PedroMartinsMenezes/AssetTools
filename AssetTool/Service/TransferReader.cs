@@ -14,9 +14,10 @@ namespace AssetTool
             GlobalObjects.PackageFileSummary.CustomVersionContainer.Versions = [new() { Key = new(FEditorObjectVersion.Guid), Version = (int)FEditorObjectVersion.Enums.LatestVersion }];
         }
 
-        public TransferReader(BinaryReader reader)
+        public TransferReader(BinaryReader reader, AppConfig appConfig)
         {
             this.reader = reader;
+            this.AppConfig = appConfig;
             Initialize(this);
             FromJson = false;
             FromAutoCheck = false;

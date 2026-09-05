@@ -56,9 +56,9 @@ namespace AssetTool
             {
                 MoveAutoCheck(transfer);
                 offsets[1] = transfer.Position;
-                AppConfig.DebugCheckMember = true;
+                transfer.AppConfig.DebugCheckMember = true;
                 AutoCheck(transfer, GetType().ToString(), transfer.Stream, offsets);
-                AppConfig.DebugCheckMember = false;
+                transfer.AppConfig.DebugCheckMember = false;
             }
             else
             {
@@ -69,7 +69,7 @@ namespace AssetTool
 
         public bool AutoCheck(Transfer transfer, string name, Stream source, long[] offsets)
         {
-            if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
+            if (transfer.IsWriting || !transfer.AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
             string msg = string.Empty;
             long currentPosition = source.Position;
@@ -78,7 +78,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             reader.Read(sourceBytes);
 
-            if (AppConfig.AutoCheckBinaryWriter)
+            if (transfer.AppConfig.AutoCheckBinaryWriter)
             {
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 using MemoryStream dest = new();

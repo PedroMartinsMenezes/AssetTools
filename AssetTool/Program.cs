@@ -10,6 +10,9 @@ namespace AssetTool
 
         static void Main(string[] args)
         {
+            var AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
+            AssetConverter.AppConfig = AppConfig;
+
             Stopwatch stopwatch = Stopwatch.StartNew();
             var cultureInfo = CultureInfo.InvariantCulture;
             CultureInfo.DefaultThreadCurrentCulture = cultureInfo;

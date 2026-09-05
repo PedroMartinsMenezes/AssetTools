@@ -51,7 +51,7 @@ namespace AssetTool
                 AssetPackage asset = await ToStreamThenToObjectAsync(self);
                 bool success = await asset.MoveAsync(transfer, context);
 
-                if (AppConfig.DebugSaveJson)
+                if (transfer.AppConfig.DebugSaveJson)
                 {
                     (string json, string path) = (null, null);
                     lock (_lock)
@@ -63,7 +63,7 @@ namespace AssetTool
                     await File.WriteAllTextAsync(path, json);
                 }
 
-                if (AppConfig.DebugSaveUasset)
+                if (transfer.AppConfig.DebugSaveUasset)
                 {
                     string path = null;
                     lock (_lock)

@@ -10,6 +10,7 @@ namespace AssetTool
         public AssetHeader Header = new();
         public List<AssetObject> Objects;
         public FooterData Footer = new();
+
         [JsonIgnore] public bool VersionIsTooOld => Header.PackageFileSummary.FileVersionUE.FileVersionUE4 != EUnrealEngineObjectUE4Version.UNKNOWN && Header.PackageFileSummary.FileVersionUE.FileVersionUE4 < EUnrealEngineObjectUE4Version.VER_UE4_OLDEST_LOADABLE_PACKAGE;
 
         [JsonIgnore] public int Length => (Objects is null || Objects.Count == 0 ? Header.PackageFileSummary.TotalHeaderSize : (int)Objects[^1].NextOffset) + Footer.Length;
@@ -33,7 +34,7 @@ namespace AssetTool
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
 
-                if (!AppConfig.DebugIgnoreAssetPackageFooter)
+                if (!transfer.AppConfig.DebugIgnoreAssetPackageFooter)
                 {
                     Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
                 }
@@ -129,7 +130,7 @@ namespace AssetTool
                 SetupObjects();
                 LoadAllObjects(transfer, context, status);
 
-                if (!AppConfig.DebugIgnoreAssetPackageFooter)
+                if (!transfer.AppConfig.DebugIgnoreAssetPackageFooter)
                 {
                     Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
                 }
@@ -170,7 +171,7 @@ namespace AssetTool
                 }
                 catch
                 {
-                    if (!AppConfig.ContinueAfterError)
+                    if (!transfer.AppConfig.ContinueAfterError)
                     {
                         throw;
                     }
@@ -185,7 +186,7 @@ namespace AssetTool
             if (obj.NextOffset != transfer.Position)
             {
                 Log.Error($"Wrong Transfer Size: Obj({obj.ClassName}) Expected({obj.NextOffset}) Actual({transfer.Position})");
-                if (!AppConfig.ContinueAfterError)
+                if (!transfer.AppConfig.ContinueAfterError)
                     throw new InvalidOperationException();
                 return false;
             }
@@ -201,7 +202,7 @@ namespace AssetTool
             {
                 transfer.Move(ref Header);
                 Header.AutoCheck(transfer, "Header", transfer.Stream, [0, Header.PackageFileSummary.TotalHeaderSize]);
-                if (AppConfig.DebugSaveHeader && transfer.IsReading)
+                if (transfer.AppConfig.DebugSaveHeader && transfer.IsReading)
                 {
                     string name = transfer.GlobalObjects.FileName.NameOnly();
                     string suffix = transfer.GlobalObjects.FileName.Hash();

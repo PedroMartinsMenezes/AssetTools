@@ -4,6 +4,8 @@ namespace AssetTool
 {
     public static class AssetConverter
     {
+        public static AppConfig AppConfig { get; set; }
+
         static AssetConverter()
         {
             var cultureInfo = CultureInfo.InvariantCulture;
@@ -17,6 +19,10 @@ namespace AssetTool
             {
                 Console.WriteLine($"File not found: {InAssetPath}");
                 return false;
+            }
+            if (AppConfig is null)
+            {
+                throw new InvalidOperationException("AppConfig is not initialized. Please call AssetConverter.Initialize() before using this method.");
             }
             bool success = false;
             AssetPackage asset = new AssetPackage();
@@ -41,7 +47,7 @@ namespace AssetTool
 
             using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using Transfer transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader, AppConfig);
             transferReader.GlobalObjects.FileName = InAssetPath;
             transferReader.GlobalObjects.FileSize = (int)fileLength;
             transferReader.GlobalObjects.FileVersion = fileVersion;
@@ -128,7 +134,7 @@ namespace AssetTool
             byte[] inputBytes = File.ReadAllBytes(inputFile);
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using TransferReader transferReader = new TransferReader(reader);
+            using TransferReader transferReader = new TransferReader(reader, AppConfig);
             success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
             if (!success)
                 return (null, null);
@@ -151,7 +157,7 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".uasset", ".json");
-                (string json, _) = AssetConverter.RunUassetToJson(inputFile, outputFile);
+                (string json, _) = RunUassetToJson(inputFile, outputFile);
                 if (json is null)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");
@@ -210,7 +216,7 @@ namespace AssetTool
             foreach (string inputFile in inputFiles)
             {
                 string outputFile = Path.Combine(outputDir, Path.GetRelativePath(inputDir, inputFile)).Replace(".json", ".uasset");
-                byte[] bytes = AssetConverter.RunJsonToUasset(inputFile, outputFile);
+                byte[] bytes = RunJsonToUasset(inputFile, outputFile);
                 if (bytes.Length == 0)
                 {
                     Log.Error($"Failed to convert {inputFile} to {outputFile}");
@@ -229,7 +235,7 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using Transfer transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader, AppConfig);
             transferReader.GlobalObjects.FileName = InAssetPath;
             return asset.IsAssetType(transferReader, assetType);
         }
@@ -239,7 +245,7 @@ namespace AssetTool
             AssetPackage asset = new AssetPackage();
             using FileStream inputStream = new FileStream(InAssetPath, FileMode.Open, FileAccess.Read);
             using BinaryReader reader = new BinaryReader(inputStream);
-            using Transfer transferReader = new TransferReader(reader);
+            using Transfer transferReader = new TransferReader(reader, AppConfig);
             transferReader.GlobalObjects.FileName = InAssetPath;
             return asset.GetAssetType(transferReader);
         }
