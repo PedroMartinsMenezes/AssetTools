@@ -21,10 +21,6 @@
             {
                 transfer.Move(ref DummyCompressionName);
             }
-            if (bCooked)
-            {
-                throw new InvalidOperationException();
-            }
             if (!transfer.Supports.SoundWaveVirtualizationUpdate)
             {
                 transfer.Move(ref TempOldBulkData);

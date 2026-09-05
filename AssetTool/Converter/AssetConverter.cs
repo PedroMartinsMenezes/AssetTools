@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public static class AssetConverter
     {
-        public static AppConfig AppConfig { get; set; }
+        public static AppConfig AppConfig { get; set; } = new();
 
         static AssetConverter()
         {

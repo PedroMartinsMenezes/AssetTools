@@ -81,7 +81,7 @@ namespace AssetTool
         public override void MoveFloat(ref double? value) => value = reader.ReadSingle();
 
         public override void Move(ref bool value) => value = reader.ReadInt32() == 1;
-        public override void Move(ref bool? value) => value = reader.ReadInt32() == 1;
+        public override void Move(ref bool? value) => value = reader.ReadInt32() == 1 ? true : null;
 
         public override void Move(ref sbyte value) => reader.Read(ref value);
         public override void Move(ref sbyte? value) => value = reader.ReadSByte();
