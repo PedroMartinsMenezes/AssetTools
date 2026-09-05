@@ -3,7 +3,7 @@
     [JsonAsset("SoundWave")]
     public class USoundWave : USoundBase
     {
-        public FBool bCooked;
+        public bool bCooked;
         public FName DummyCompressionName;
         public FGuid CompressedDataGuid;
         public bool bShouldStreamSound = true;

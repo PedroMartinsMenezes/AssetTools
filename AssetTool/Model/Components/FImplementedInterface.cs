@@ -4,7 +4,7 @@
     {
         public UInt32 Class;
         public Int32 PointerOffset;
-        public FBool bImplementedByK2;
+        public bool bImplementedByK2;
 
         public ITransferable Move(Transfer transfer)
         {

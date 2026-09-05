@@ -21,8 +21,8 @@ namespace AssetTool
         public FEdGraphPinType PinType;
         public byte DesiredPinDirection;
         public FString PinDefaultValue;
-        public FBool bIsArray;
-        public FBool bIsReference;
+        public bool bIsArray;
+        public bool bIsReference;
         public FString PinCategoryStr;
 
         public FString PinSubCategoryStr;

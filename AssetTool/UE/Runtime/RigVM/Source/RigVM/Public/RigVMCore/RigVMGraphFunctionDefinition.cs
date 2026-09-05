@@ -189,10 +189,10 @@ namespace AssetTool
         public FName DisplayName;
         public FName CPPType;
         public UInt32 CPPTypeObject;
-        public FBool bIsArray;
+        public bool bIsArray;
         public ERigVMPinDirection Direction;
         public FString DefaultValue;
-        public FBool bIsConst;
+        public bool bIsConst;
         public Dictionary<FString, FText> PathToTooltip;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMGraphFunctionArgument& Data)")]

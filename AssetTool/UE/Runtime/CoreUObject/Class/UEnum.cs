@@ -6,7 +6,7 @@
         public List<FName> TempNames;
         public Dictionary<FName, TUInt8> OldNames;
         public Dictionary<FName, TInt64> Names;
-        public FBool bIsNamespace;
+        public bool bIsNamespace;
         public byte EnumTypeByte;
 
         [Location("void UEnum::Serialize( FArchive& Ar )")]

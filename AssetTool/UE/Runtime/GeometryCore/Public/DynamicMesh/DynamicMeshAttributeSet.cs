@@ -1,11 +1,11 @@
 ﻿namespace AssetTool.Geometry
 {
+    using System.Diagnostics;
+    using FDynamicMeshBoneColorAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FVector4f>;
     using FDynamicMeshBoneNameAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FName>;
     using FDynamicMeshBoneParentIndexAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, int32>;
-    using FDynamicMeshBoneColorAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FVector4f>;
     using FDynamicMeshBonePoseAttribute = TDynamicBoneAttributeBase<FDynamicMesh3, FTransform>;
     using FDynamicMeshVertexSkinWeightsAttribute = TDynamicVertexSkinWeightsAttribute<FDynamicMesh3>;
-    using System.Diagnostics;
 
     [DebuggerDisplay("UV({UVLayers.Count}) N({NormalLayers.Count}) P({PolygroupLayers.Count}) W({WeightLayers.Count})")]
     public class FDynamicMeshAttributeSet : ITransferable<FCompactMaps, bool>
@@ -16,15 +16,15 @@
         public List<FDynamicMeshUVOverlayFloat1> WeightLayers;
         public int32 NumColorLayers;
         public FDynamicMeshUVOverlayFloat4 ColorLayer;
-        public FBool bHasMaterialID;
+        public bool bHasMaterialID;
         public TDynamicMeshTriangleAttributeInt32 MaterialIDAttrib;
         public List<SkinWeightAttributesMap> SkinWeightAttributes;
-        public FBool bHasBones;
+        public bool bHasBones;
         public FDynamicMeshBoneNameAttribute BoneNameAttrib;
         public FDynamicMeshBoneParentIndexAttribute BoneParentIndexAttrib;
         public FDynamicMeshBonePoseAttribute BonePoseAttrib;
         public FDynamicMeshBoneColorAttribute BoneColorAttrib;
-        public FBool bUseCompression;
+        public bool bUseCompression;
         public FDynamicMeshSculptLayers SculptLayers;
 
         public ITransferable Move(Transfer transfer)
@@ -59,16 +59,16 @@
             transfer.Move(ref NumColorLayers);
             if (NumColorLayers > 0)
             {
-                transfer.Move(ref ColorLayer, CompactMaps, bUseCompression.Value);
+                transfer.Move(ref ColorLayer, CompactMaps, bUseCompression);
             }
             transfer.Move(ref bHasMaterialID);
             if (bHasMaterialID)
             {
-                transfer.Move(ref MaterialIDAttrib, CompactMaps, bUseCompression.Value);
+                transfer.Move(ref MaterialIDAttrib, CompactMaps, bUseCompression);
             }
             if (!bUseLegacySerialization)
             {
-                transfer.Move(ref SkinWeightAttributes, CompactMaps, bUseCompression.Value);
+                transfer.Move(ref SkinWeightAttributes, CompactMaps, bUseCompression);
             }
             bool bSerializeBones = transfer.Supports.DynamicMeshAttributesSerializeBones;
             if (bSerializeBones)

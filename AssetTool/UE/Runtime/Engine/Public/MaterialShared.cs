@@ -4,8 +4,8 @@ namespace AssetTool
 {
     public class FMaterial
     {
-        public FBool bCooked;
-        public FBool bValid;
+        public bool bCooked;
+        public bool bValid;
         public FMaterialShaderMap LoadedShaderMap;
 
         #region Legacy

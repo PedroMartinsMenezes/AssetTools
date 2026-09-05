@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public FWordBulkData CollisionHeightData;
         public FByteBulkData DominantLayerData;
-        public FBool bCooked;
+        public bool bCooked;
         public uint8[] CookedCollisionData;
         public FByteBulkData PhysicalMaterialRenderData;
 

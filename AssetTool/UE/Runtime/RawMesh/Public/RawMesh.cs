@@ -4,7 +4,7 @@
     {
         public FByteBulkData BulkData;
         public FGuid Guid;
-        public FBool bGuidIsHash;
+        public bool bGuidIsHash;
 
         public ITransferable Move(Transfer transfer)
         {

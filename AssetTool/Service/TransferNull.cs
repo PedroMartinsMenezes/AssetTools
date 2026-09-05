@@ -56,6 +56,8 @@
         public override void Move(ref short[] value, int count) { }
         public override void Move(ref ushort[] value, int count) { }
         public override void Move(ref uint[] value, int count) { }
+        public override void Move(ref bool[] value, int count) { }
+
         public override void Move(ref byte[] value) { }
         public override void Move(ref ushort[] value) { }
         public override void Move(ref int[] value) { }
@@ -64,6 +66,8 @@
         public override void Move(ref ulong[] value) { }
         public override void Move(ref float[] value) { }
         public override void Move(ref double[] value) { }
+        public override void Move(ref bool[] value) { }
+
         public override void Move<T>(ref T value, Action<T> action) { }
         public override void Move<T>(ref T value) { }
         public override void Move<T, T1>(ref T value, T1 arg1) { }
@@ -83,8 +87,6 @@
         public override void Move<T1, T2>(ref Dictionary<T1, T2> value, Action<T2> valueAction) { }
         public override void Move<T>(ref List<T> value, Action<T> action) { }
         public override void Move<T>(ref List<T> value, int count, Action<T> action) { }
-        public override void Move(ref FBool value) { }
-        public override void Move(ref FBool? value) { }
         public override FGuid Move(FGuid value) => default;
         public override void Move(ref FGuid value) { }
         public override void Move(ref FGuid? value) { }

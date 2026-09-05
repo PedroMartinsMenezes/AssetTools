@@ -2,7 +2,7 @@
 {
     public class FRawSkeletalMeshBulkData : ITransferable
     {
-        public FBool bGuidIsHash;
+        public bool bGuidIsHash;
         public FGuid Guid;
         public FByteBulkData BulkData;
         public ESkeletalMeshGeoImportVersions GeoImportVersion;

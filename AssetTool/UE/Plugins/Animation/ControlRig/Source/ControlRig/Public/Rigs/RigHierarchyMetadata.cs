@@ -84,8 +84,8 @@
 
     public class FRigBaseMetadataValues
     {
-        public FBool BoolValue;
-        public FBool[] BoolArray;
+        public bool BoolValue;
+        public bool[] BoolArray;
         public float FloatValue;
         public float[] FloatArray;
         public Int32 Int32Value;

@@ -29,7 +29,7 @@ namespace AssetTool
         [JsonIgnore] public bool SerializeCalled;
 
         #region SerializePin
-        public FBool? bNullPtr;
+        public bool? bNullPtr;
         public TRef LocalOwningNode;
         public FGuid? PinGuid;
         #endregion
@@ -69,7 +69,7 @@ namespace AssetTool
             transfer.Resize(ref ArrayRef, true);
             for (int i = 0; i < ArrayRef.Count; i++)
             {
-                FBool bNullPtr = ArrayRef[i]?.bNullPtr ?? new FBool();
+                bool bNullPtr = ArrayRef[i]?.bNullPtr ?? new bool();
                 transfer.Move(ref bNullPtr);
                 if (!bNullPtr)
                 {
@@ -142,7 +142,7 @@ namespace AssetTool
             EdGraphPin.SerializePinArray(transfer, ref SubPins.List, EPinResolveType.SubPins, Owner);
             SubPins = SubPins.List.Count == 0 ? null : SubPins;
 
-            FBool ParentPinIsNull = ParentPin is null;
+            bool ParentPinIsNull = ParentPin is null;
             transfer.Move(ref ParentPinIsNull);
             if (!ParentPinIsNull)
             {
@@ -151,7 +151,7 @@ namespace AssetTool
                 SerializePin(transfer, ParentPin.ParentPin);
             }
 
-            FBool ReferencePassThroughConnectionIsNull = ReferencePassThroughConnection is null;
+            bool ReferencePassThroughConnectionIsNull = ReferencePassThroughConnection is null;
             transfer.Move(ref ReferencePassThroughConnectionIsNull);
             if (!ReferencePassThroughConnectionIsNull)
             {

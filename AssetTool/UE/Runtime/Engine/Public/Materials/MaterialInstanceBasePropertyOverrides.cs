@@ -2,18 +2,18 @@
 {
     public class FMaterialInstanceBasePropertyOverrides : ITransferable
     {
-        public FBool bOverride_OpacityMaskClipValue;
+        public bool bOverride_OpacityMaskClipValue;
         public float OpacityMaskClipValue;
-        public FBool bOverride_BlendMode;
+        public bool bOverride_BlendMode;
         public EBlendMode BlendMode;
-        public FBool bOverride_ShadingModel;
+        public bool bOverride_ShadingModel;
         public EMaterialShadingModel ShadingModel;
-        public FBool bOverride_TwoSided;
-        public FBool TwoSided;
-        public FBool bOverride_bIsThinSurface;
-        public FBool bIsThinSurface;
-        public FBool bOverride_DitheredLODTransition;
-        public FBool DitheredLODTransition;
+        public bool bOverride_TwoSided;
+        public bool TwoSided;
+        public bool bOverride_bIsThinSurface;
+        public bool bIsThinSurface;
+        public bool bOverride_DitheredLODTransition;
+        public bool DitheredLODTransition;
 
         public ITransferable Move(Transfer transfer)
         {

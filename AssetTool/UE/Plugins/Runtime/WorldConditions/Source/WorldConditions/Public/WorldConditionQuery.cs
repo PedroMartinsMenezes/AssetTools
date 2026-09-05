@@ -4,7 +4,7 @@ namespace AssetTool
     public class FWorldConditionQueryDefinition : ITransferable
     {
         public UScriptStruct StaticStruct;
-        public FBool bHasSharedDefinition;
+        public bool bHasSharedDefinition;
 
         [Location("bool FWorldConditionQueryDefinition::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)

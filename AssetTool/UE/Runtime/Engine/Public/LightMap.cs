@@ -49,7 +49,7 @@ namespace AssetTool
         public FVector4f[] AddVectors = new FVector4f[Consts.NUM_STORED_LIGHTMAP_COEF];
         public FVector2D CoordinateScale;
         public FVector2D CoordinateBias;
-        public FBool[] bShadowChannelValid = [new(), new(), new(), new()];
+        public bool[] bShadowChannelValid = [new(), new(), new(), new()];
         public FVector4f InvUniformPenumbraSize;
         public UInt32[] Dummies2D;
         public UInt32[] Dummies1D;

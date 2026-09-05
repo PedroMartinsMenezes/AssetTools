@@ -4,10 +4,10 @@
     {
         public FObjectPtr MaterialInterface;
         public FName MaterialSlotName;
-        public FBool bSerializeImportedMaterialSlotName;
+        public bool bSerializeImportedMaterialSlotName;
         public FName ImportedMaterialSlotName;
-        public FBool bEnableShadowCasting_DEPRECATED;
-        public FBool bRecomputeTangent_DEPRECATED;
+        public bool bEnableShadowCasting_DEPRECATED;
+        public bool bRecomputeTangent_DEPRECATED;
         public FMeshUVChannelInfo UVChannelData;
         public FObjectPtr OverlayMaterialInterface;
 

@@ -32,7 +32,7 @@ namespace AssetTool
     public class FVisibilitySample : ITransferable
     {
         public FFloatRange Range;
-        public FBool bVisibilityState;
+        public bool bVisibilityState;
 
         public ITransferable Move(Transfer transfer)
         {

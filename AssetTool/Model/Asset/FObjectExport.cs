@@ -15,14 +15,14 @@ namespace AssetTool
         public Int64 SerialSize;
         public Int64 SerialOffset;
         public FGuid DummyPackageGuid;
-        public FBool bForcedExport;
-        public FBool bNotForClient;
-        public FBool bNotForServer;
-        public FBool bIsInheritedInstance;
+        public bool bForcedExport;
+        public bool bNotForClient;
+        public bool bNotForServer;
+        public bool bIsInheritedInstance;
         public EPackageFlags PackageFlags;
-        public FBool bNotAlwaysLoadedForEditorGame;
-        public FBool bIsAsset;
-        public FBool bGeneratePublicHash;
+        public bool bNotAlwaysLoadedForEditorGame;
+        public bool bIsAsset;
+        public bool bGeneratePublicHash;
         public Int32 FirstExportDependency;
         public Int64 ScriptSerializationStartOffset;
         public Int64 ScriptSerializationEndOffset;
@@ -168,14 +168,14 @@ namespace AssetTool
                         SerialSize = Int64.Parse(v[i++]),
                         SerialOffset = Int64.Parse(v[i++]),
                         DummyPackageGuid = new(v[i++]),
-                        bForcedExport = new(v[i++]),
-                        bNotForClient = new(v[i++]),
-                        bNotForServer = new(v[i++]),
-                        bIsInheritedInstance = new(v[i++]),
+                        bForcedExport = bool.Parse(v[i++]),
+                        bNotForClient = bool.Parse(v[i++]),
+                        bNotForServer = bool.Parse(v[i++]),
+                        bIsInheritedInstance = bool.Parse(v[i++]),
                         PackageFlags = Enum.Parse<EPackageFlags>(v[i++]),
-                        bNotAlwaysLoadedForEditorGame = new(v[i++]),
-                        bIsAsset = new(v[i++]),
-                        bGeneratePublicHash = new(v[i++]),
+                        bNotAlwaysLoadedForEditorGame = bool.Parse(v[i++]),
+                        bIsAsset = bool.Parse(v[i++]),
+                        bGeneratePublicHash = bool.Parse(v[i++]),
                         FirstExportDependency = Int32.Parse(v[i++]),
                         ScriptSerializationStartOffset = Int64.Parse(v[i++]),
                         ScriptSerializationEndOffset = Int64.Parse(v[i++]),

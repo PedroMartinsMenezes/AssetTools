@@ -6,7 +6,7 @@ namespace AssetTool
         public int DataLayerFilterCount;
         public List<FString> AssetPathStr;
         public List<FSoftObjectPath> AssetPath;
-        public List<FBool> bIncluded;
+        public List<TBool> bIncluded;
         public int ChildFilterCount;
         public List<FGuid> ActorGuid;
         public List<FWorldPartitionActorFilter> ChildFilter;

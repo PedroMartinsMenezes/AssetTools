@@ -14,7 +14,7 @@ namespace AssetTool
         [JsonIgnore] public bool bIsUClass;
         #endregion
 
-        [JsonPropertyOrder(-9)] public FBool? HasGuid;
+        [JsonPropertyOrder(-9)] public bool? HasGuid;
         [JsonPropertyOrder(-9)] public FGuid? Guid;
         [JsonPropertyOrder(-9)] public EClassSerializationControlExtension? SerializationControl;
 

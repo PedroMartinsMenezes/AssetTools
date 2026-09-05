@@ -20,8 +20,8 @@ namespace AssetTool
 
     public class FAnimCurveType : ITransferable
     {
-        public FBool bMaterial;
-        public FBool bMorphtarget;
+        public bool bMaterial;
+        public bool bMorphtarget;
 
         public ITransferable Move(Transfer transfer)
         {

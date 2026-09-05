@@ -50,7 +50,7 @@ namespace AssetTool
 
         public FName NamePrivate;
         public EObjectFlags FlagsPrivate;
-        public FBool HasMetaData;
+        public bool HasMetaData;
         public Dictionary<FName, FString> MetaDataMap = [];
 
         [Location("void FField::Serialize(FArchive& Ar)")]

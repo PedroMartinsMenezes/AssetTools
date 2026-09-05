@@ -136,6 +136,10 @@ namespace AssetTool
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
+        public override void Move(ref bool[] value, int count)
+        {
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+        }
         #endregion
 
         #region Arrays
@@ -175,6 +179,11 @@ namespace AssetTool
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
         public override void Move(ref double[] value)
+        {
+            writer.Write(value.Length);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+        }
+        public override void Move(ref bool[] value)
         {
             writer.Write(value.Length);
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
@@ -325,14 +334,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override void Move(ref FBool value)
-        {
-            writer.Write(value ? 1 : 0);
-        }
-        public override void Move(ref FBool? value)
-        {
-            writer.Write(value.GetValueOrDefault() ? 1 : 0);
-        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = value.ToByteArray() ?? new byte[16];

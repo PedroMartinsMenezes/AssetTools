@@ -2,7 +2,7 @@
 {
     public class TOptional<T> : ITransferable where T : ITransferable, new()
     {
-        public FBool bOptionalWasSaved;
+        public bool bOptionalWasSaved;
         public T Value;
 
         public ITransferable Move(Transfer transfer)

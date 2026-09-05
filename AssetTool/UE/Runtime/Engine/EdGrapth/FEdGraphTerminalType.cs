@@ -8,9 +8,9 @@ namespace AssetTool
         public FString TerminalCategoryStr;
         public FName TerminalSubCategory;
         public FString TerminalSubCategoryStr;
-        public FBool? bTerminalIsConst;
-        public FBool? bTerminalIsWeakPointer;
-        public FBool? bTerminalIsUObjectWrapper;
+        public bool? bTerminalIsConst;
+        public bool? bTerminalIsWeakPointer;
+        public bool? bTerminalIsUObjectWrapper;
         public FPackageIndex TerminalSubCategoryObject;
 
         [Location("FArchive& operator<<(FArchive& Ar, FEdGraphTerminalType& T)")]

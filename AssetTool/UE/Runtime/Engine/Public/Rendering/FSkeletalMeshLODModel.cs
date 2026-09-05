@@ -21,8 +21,8 @@ namespace AssetTool
         public UInt32[] RawPointIndices2;
         public FRawSkeletalMeshBulkData RawSkeletalMeshBulkData_DEPRECATED;
         public FString RawSkeletalMeshBulkDataID;
-        public FBool bIsBuildDataAvailable;
-        public FBool bIsRawSkeletalMeshBulkDataEmpty;
+        public bool bIsBuildDataAvailable;
+        public bool bIsRawSkeletalMeshBulkDataEmpty;
         public Int32[] TempMeshToImportVertexMap;
         public Int32 TempMaxImportVertex;
         public Int32[] MeshToImportVertexMap;
@@ -205,17 +205,17 @@ namespace AssetTool
         public UInt32 BaseIndex;
         public UInt32 NumTriangles;
         public byte DummyTriangleSorting;
-        public FBool bLegacyClothingSection_DEPRECATED;
+        public bool bLegacyClothingSection_DEPRECATED;
         public Int16 CorrespondClothSectionIndex_DEPRECATED;
         public byte DummyEnableClothLOD;
-        public FBool bRecomputeTangent;
+        public bool bRecomputeTangent;
         public ESkinVertexColorChannel RecomputeTangentsVertexMaskChannel;
-        public FBool bCastShadow;
-        public FBool bVisibleInRayTracing;
+        public bool bCastShadow;
+        public bool bVisibleInRayTracing;
         public UInt32 BaseVertexIndex;
         public List<FLegacyRigidSkinVertex> LegacyRigidVertices;
         public List<FSoftSkinVertex> SoftVertices;
-        public FBool bUse16BitBoneIndex;
+        public bool bUse16BitBoneIndex;
         public UInt16[] BoneMap;
         public Int32 NumVertices;
         public Int32 DummyNumRigidVerts;
@@ -228,7 +228,7 @@ namespace AssetTool
         public Int16 DummyClothAssetSubmeshIndex;
         public FClothingSectionData ClothingData;
         public Dictionary<TInt32, List<TInt32>> OverlappingVertices;
-        public FBool bDisabled;
+        public bool bDisabled;
         public Int32 GenerateUpToLodIndex;
         public Int32 OriginalDataSectionIndex;
         public Int32 ChunkedParentSectionIndex;
@@ -569,13 +569,13 @@ namespace AssetTool
     public class FSkelMeshSourceSectionUserData : ITransferable
     {
         public FStripDataFlags StripFlags;
-        public FBool bRecomputeTangent;
+        public bool bRecomputeTangent;
         public ESkinVertexColorChannel RecomputeTangentsVertexMaskChannel;
-        public FBool bCastShadow;
-        public FBool bVisibleInRayTracing;
+        public bool bCastShadow;
+        public bool bVisibleInRayTracing;
         public Int16 CorrespondClothAssetIndex;
         public FClothingSectionData ClothingData;
-        public FBool bDisabled;
+        public bool bDisabled;
         public Int32 GenerateUpToLodIndex;
 
         public ITransferable Move(Transfer transfer)

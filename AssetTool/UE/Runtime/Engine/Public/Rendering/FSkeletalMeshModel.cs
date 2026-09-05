@@ -4,7 +4,7 @@
     {
         public FStripDataFlags StripFlags;
         public FGuid SkeletalMeshModelGUID;
-        public FBool bGuidIsHash;
+        public bool bGuidIsHash;
         public List<FSkeletalMeshLODModel> LODModels;
         public List<FReductionBaseSkeletalMeshBulkData> OriginalReductionSourceMeshData_DEPRECATED;
         public List<FInlineReductionCacheData> InlineReductionCacheDatas;

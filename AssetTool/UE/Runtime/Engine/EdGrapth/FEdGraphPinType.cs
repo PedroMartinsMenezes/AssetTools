@@ -16,15 +16,15 @@ namespace AssetTool
         public FPackageIndex PinSubCategoryObject;
         public EPinContainerType? ContainerType;
         public FEdGraphTerminalType PinValueType;
-        public FBool? bIsMap;
-        public FBool? bIsSet;
-        public FBool? bIsArray;
-        public FBool? bIsReferenceBool;
-        public FBool? bIsWeakPointerBool;
+        public bool? bIsMap;
+        public bool? bIsSet;
+        public bool? bIsArray;
+        public bool? bIsReferenceBool;
+        public bool? bIsWeakPointerBool;
         public FSimpleMemberReference PinSubCategoryMemberReference;
-        public FBool? bIsConstBool;
-        public FBool? bIsUObjectWrapperBool;
-        public FBool? bSerializeAsSinglePrecisionFloatBool;
+        public bool? bIsConstBool;
+        public bool? bIsUObjectWrapperBool;
+        public bool? bSerializeAsSinglePrecisionFloatBool;
 
         [Location("bool FEdGraphPinType::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)

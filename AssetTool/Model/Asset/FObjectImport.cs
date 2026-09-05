@@ -10,7 +10,7 @@ namespace AssetTool
         public FPackageIndex OuterIndex = new();
         public FName ObjectName;
         public FName PackageName;
-        public FBool bImportOptional;
+        public bool bImportOptional;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FObjectImport& I)")]
         public ITransferable Move(Transfer transfer)
@@ -55,7 +55,7 @@ namespace AssetTool
                         ClassPackage = new FName(classPackage),
                         ClassName = new FName(className),
                         PackageName = new FName(packageName),
-                        bImportOptional = new FBool(v[5]),
+                        bImportOptional = bool.Parse(v[5]),
                         ObjectName = new FName(v[6]),
                     };
                     list.Add(obj);

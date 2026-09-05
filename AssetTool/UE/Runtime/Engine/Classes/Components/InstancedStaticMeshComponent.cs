@@ -3,8 +3,8 @@ namespace AssetTool
     [JsonAsset("InstancedStaticMeshComponent")]
     public class UInstancedStaticMeshComponent : UStaticMeshComponent
     {
-        public FBool bCooked;
-        public FBool bHasSkipSerializationPropertiesData;
+        public bool bCooked;
+        public bool bHasSkipSerializationPropertiesData;
         public TBulkList<FInstancedStaticMeshInstanceData> TempPerInstanceSMData;
         public TBulkList<TFloat> TempPerInstanceSMCustomData;
         public TBulkList<FInstancedStaticMeshInstanceData_DEPRECATED> DeprecatedData;

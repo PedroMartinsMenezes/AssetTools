@@ -38,7 +38,7 @@ namespace AssetTool
     public class FShaderValueType : ITransferable
     {
         public EShaderFundamentalType Type;
-        public FBool bIsDynamicArray;
+        public bool bIsDynamicArray;
         public FName Name;
         public List<FStructElement> StructElements;
         public EShaderFundamentalDimensionType DimensionType;

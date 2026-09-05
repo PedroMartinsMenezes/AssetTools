@@ -34,7 +34,7 @@ namespace AssetTool
         public float m_fGustDurationMax;
         public float m_fGustRiseScalar;
         public float m_fGustFallScalar;
-        public FBool[] Options = new FBool[(int)EOptions.NUM_WIND_OPTIONS];
+        public bool[] Options = new bool[(int)EOptions.NUM_WIND_OPTIONS];
         public FVector BranchAnchor;
         public float MaxBranchLength;
 

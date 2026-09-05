@@ -10,9 +10,9 @@
         public Int32 NumInterfaces;
         public UInt32 ClassGeneratedBy;
         public List<FImplementedInterface> SerializedInterfaces;
-        public FBool bDeprecatedForceScriptOrder;
+        public bool bDeprecatedForceScriptOrder;
         public FName Dummy;
-        public FBool bCookedAsBool;
+        public bool bCookedAsBool;
         public UInt32 PerspectiveNewCDO;
         public TObjectPtr<UScriptStruct> SparseClassDataStruct;
 

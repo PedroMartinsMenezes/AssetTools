@@ -3,7 +3,7 @@
     [TransferableStruct("PerPlatformInt")]
     public class FPerPlatformInt : ITransferable
     {
-        public FBool bCooked;
+        public bool bCooked;
         public Int32 Default;
         public Dictionary<FName, TInt32> PerPlatform;
 

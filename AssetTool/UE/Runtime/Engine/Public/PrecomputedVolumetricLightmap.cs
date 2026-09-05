@@ -2,7 +2,7 @@
 {
     public class FPrecomputedVolumetricLightmapData : FRenderResource, ITransferable
     {
-        public FBool bValid;
+        public bool bValid;
         public FBox Bounds;
         public FIntVector IndirectionTextureDimensions;
         public FVolumetricLightmapDataLayer IndirectionTexture;

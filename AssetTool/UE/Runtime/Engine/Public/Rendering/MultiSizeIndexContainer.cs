@@ -2,7 +2,7 @@
 {
     public class FMultiSizeIndexContainer : ITransferable
     {
-        public FBool bOldNeedsCPUAccess;
+        public bool bOldNeedsCPUAccess;
         public byte DataTypeSize;
         public TBulkList<TUInt16> IndexBuffer16;
         public TBulkList<TUInt32> IndexBuffer32;

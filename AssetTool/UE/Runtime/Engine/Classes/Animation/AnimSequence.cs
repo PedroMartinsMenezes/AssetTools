@@ -7,7 +7,7 @@ namespace AssetTool
         public List<FRawAnimSequenceTrack> RawAnimationData;
         public List<FRawAnimSequenceTrack> SourceRawAnimationData_DEPRECATED;
         public byte[] CompressedAnimData;
-        public FBool bSerializeCompressedData;
+        public bool bSerializeCompressedData;
 
         public UAnimSequence()
         {
@@ -39,7 +39,7 @@ namespace AssetTool
             else
             {
                 transfer.Move(ref bSerializeCompressedData);
-                if (bSerializeCompressedData.Value)
+                if (bSerializeCompressedData)
                     transfer.Move(ref CompressedAnimData);
             }
 

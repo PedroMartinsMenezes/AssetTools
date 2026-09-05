@@ -7,7 +7,7 @@ namespace AssetTool
     public class FInstancedPropertyBag : ITransferable
     {
         public EVersion Version = EVersion.LatestVersion;
-        public FBool bHasData;
+        public bool bHasData;
         public List<FPropertyBagPropertyDesc> PropertyDescs;
         public Int32 SerialSize;
         public UScriptStruct BagStruct;
@@ -42,7 +42,7 @@ namespace AssetTool
         public FName Name;
         public EPropertyBagPropertyType ValueType;
         public EPropertyBagContainerType TmpContainerType;
-        public FBool bHasMetaData;
+        public bool bHasMetaData;
         public List<FPropertyBagPropertyDescMetaData> MetaData;
         public FObjectPtr MetaClass;
         public List<FPropertyBagPropertyDescMetaData> TempMetaData;

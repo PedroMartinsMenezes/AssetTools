@@ -117,7 +117,7 @@ namespace AssetTool
         public override void MoveSingleOrDouble(ref double? value) => value = Supports.LARGE_WORLD_COORDINATES ? reader.ReadDouble() : reader.ReadSingle();
         #endregion
 
-        #region
+        #region Sized Arrays
         public override void Move(ref float[] value, int count)
         {
             reader.Read(MemoryMarshal.AsBytes((value = new float[count]).AsSpan()));
@@ -142,6 +142,13 @@ namespace AssetTool
         {
             reader.Read(MemoryMarshal.AsBytes((value = new UInt32[count]).AsSpan()));
         }
+        public override void Move(ref bool[] value, int count)
+        {
+            reader.Read(MemoryMarshal.AsBytes((value = new bool[count]).AsSpan()));
+        }
+        #endregion
+
+        #region Array
         public override void Move(ref byte[] value)
         {
             reader.Read(value = new byte[reader.ReadInt32()]);
@@ -173,6 +180,10 @@ namespace AssetTool
         public override void Move(ref double[] value)
         {
             reader.Read(MemoryMarshal.AsBytes((value = new double[reader.ReadInt32()]).AsSpan()));
+        }
+        public override void Move(ref bool[] value)
+        {
+            reader.Read(MemoryMarshal.AsBytes((value = new bool[reader.ReadInt32()]).AsSpan()));
         }
         #endregion
 
@@ -404,20 +415,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override void Move(ref FBool value)
-        {
-            int number = reader.ReadInt32();
-            if (number > 1)
-                throw new InvalidOperationException($"Wrong bool value {number} at {reader.BaseStream.Position}");
-            value = new FBool(number);
-        }
-        public override void Move(ref FBool? value)
-        {
-            int number = reader.ReadInt32();
-            if (number > 1)
-                throw new InvalidOperationException($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
-            value = number == 0 ? null : new FBool(number);
-        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);

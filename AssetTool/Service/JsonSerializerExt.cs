@@ -37,7 +37,7 @@ namespace AssetTool
                     new FTextKeyJsonConverter(),
                     new FStringJsonConverter(),
                     new FNameJsonConverter(),
-                    new FBoolJsonConverter(),
+                    //new FBoolJsonConverter(),
                 }
             };
             string json = JsonSerializer.Serialize(self, options);
@@ -258,7 +258,7 @@ namespace AssetTool
                 new FNameJsonConverter(),
                 new FStringJsonConverter(),
                 new FGuidJsonConverter(),
-                new FBoolJsonConverter(),
+                //new FBoolJsonConverter(),
                 new FTextKeyJsonConverter(),
                 new FNameEntryIdJsonConverter(),
                 new FDateTimeJsonConverter(),
@@ -362,6 +362,7 @@ namespace AssetTool
                 new TUInt64JsonConverter(),
                 new TFloatJsonConverter(),
                 new TDoubleJsonConverter(),
+                new TBoolsonConverter(),
                 #endregion
 
                 #region Array Types

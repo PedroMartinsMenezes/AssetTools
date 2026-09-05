@@ -3,7 +3,7 @@
     public class TUniquePtr<T> : ITransferable where T : ITransferable, new()
     {
         public TSerializablePtr<T> Copy;
-        public FBool bExists;
+        public bool bExists;
         public EImplicitObjectType ObjectType;
         public TUniquePtr<TSphere3> SphereType;
         public TUniquePtr<TBox3> BoxType;

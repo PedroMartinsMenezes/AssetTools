@@ -4,8 +4,8 @@
     {
         public FString KeyName;
         public FString SiteDescription;
-        public FBool IsEditorOnly;
-        public FBool IsOptional;
+        public bool IsEditorOnly;
+        public bool IsOptional;
         public FLocMetadataObject InfoMetaData;
         public FLocMetadataObject KeyMetaData;
 

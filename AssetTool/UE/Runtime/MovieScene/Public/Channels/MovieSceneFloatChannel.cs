@@ -9,11 +9,11 @@
         public FFrameNumber[] Times;
         public Int32 ValuesElementSize;
         public FMovieSceneFloatValue[] Values;
-        public FBool bShowCurve;
+        public bool bShowCurve;
         public float DefaultValue;
-        public FBool bHasDefaultValue;
+        public bool bHasDefaultValue;
         public FFrameRate TickResolution;
-        public FBool bSerializeShowCurve;
+        public bool bSerializeShowCurve;
 
         public bool IsPropertyTag(Transfer transfer)
         {

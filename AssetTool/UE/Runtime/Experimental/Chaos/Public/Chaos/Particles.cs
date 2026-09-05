@@ -4,7 +4,7 @@ namespace AssetTool.Chaos
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Experimental/Chaos/Public/Chaos/Particles.h")]
     public class TParticles3 : ITransferable
     {
-        public FBool bSerialize;
+        public bool bSerialize;
         public List<TVector3> MX;
 
         [Location("void Serialize(FArchive& Ar) at 122")]

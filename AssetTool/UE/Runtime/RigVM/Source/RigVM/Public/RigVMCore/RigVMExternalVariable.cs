@@ -5,9 +5,9 @@
         public FName Name;
         public FName TypeName;
         public FSoftObjectPath TypeObjectPath;
-        public FBool bIsArray;
-        public FBool bIsPublic;
-        public FBool bIsReadOnly;
+        public bool bIsArray;
+        public bool bIsPublic;
+        public bool bIsReadOnly;
         public Int32 Size;
 
         [Location("inline FArchive& operator<<(FArchive& Ar, FRigVMExternalVariableDef& Variable)")]

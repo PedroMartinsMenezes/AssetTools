@@ -4,9 +4,9 @@ namespace AssetTool
     public class FMaterialOverrideNanite : ITransferable
     {
         public UInt32 OverrideMaterialRef;
-        public FBool bEnableOverride;
+        public bool bEnableOverride;
         public UInt32 OverrideMaterial;
-        public FBool bSerializeAsCookedData;
+        public bool bSerializeAsCookedData;
         public UInt32 OverrideMaterialEditor;
 
         public ITransferable Move(Transfer transfer)

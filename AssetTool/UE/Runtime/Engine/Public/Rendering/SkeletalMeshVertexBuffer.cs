@@ -6,8 +6,8 @@ namespace AssetTool
     {
         public FStripDataFlags StripFlags;
         public UInt32 NumTexCoords;
-        public FBool bUseFullPrecisionUVs;
-        public FBool bBackCompatExtraBoneInfluences;
+        public bool bUseFullPrecisionUVs;
+        public bool bBackCompatExtraBoneInfluences;
         public FVector Dummy1;
         public FVector Dummy2;
         public Int32 ElementSize;

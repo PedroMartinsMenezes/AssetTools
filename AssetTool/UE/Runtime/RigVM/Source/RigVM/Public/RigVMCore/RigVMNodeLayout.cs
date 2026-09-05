@@ -26,7 +26,7 @@
     {
         public FString Path;
         public List<FString> Elements;
-        public FBool bExpandedByDefault;
+        public bool bExpandedByDefault;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMPinCategory& Category)")]
         public ITransferable Move(Transfer transfer)

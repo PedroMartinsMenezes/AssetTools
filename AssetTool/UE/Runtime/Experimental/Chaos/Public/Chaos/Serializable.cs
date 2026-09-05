@@ -4,7 +4,7 @@ namespace AssetTool.Chaos
 {
     public class TSerializablePtr<T> : ITransferable where T : ITransferable
     {
-        public FBool bExists;
+        public bool bExists;
         public int32 Tag;
         public EImplicitObjectType ObjectType;
         public FImplicitObject ImplicitObject;

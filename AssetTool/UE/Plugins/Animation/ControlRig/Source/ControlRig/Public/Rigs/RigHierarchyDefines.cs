@@ -49,8 +49,8 @@ namespace AssetTool
 
     public class FRigControlLimitEnabled : ITransferable
     {
-        public FBool bMinimum;
-        public FBool bMaximum;
+        public bool bMinimum;
+        public bool bMaximum;
 
         [Location("void FRigControlLimitEnabled::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)
@@ -149,13 +149,13 @@ namespace AssetTool
     public class FRigHierarchySerializationSettings : ITransferable
     {
         public FControlRigObjectVersion.Enums ControlRigVersion;
-        public FBool bIsSerializingToPackage;
-        public FBool bUseCompressedArchive;
-        public FBool bStoreCompactTransforms;
-        public FBool bSerializeLocalTransform;
-        public FBool bSerializeGlobalTransform;
-        public FBool bSerializeInitialTransform;
-        public FBool bSerializeCurrentTransform;
+        public bool bIsSerializingToPackage;
+        public bool bUseCompressedArchive;
+        public bool bStoreCompactTransforms;
+        public bool bSerializeLocalTransform;
+        public bool bSerializeGlobalTransform;
+        public bool bSerializeInitialTransform;
+        public bool bSerializeCurrentTransform;
         public ESerializationPhase SerializationPhase;
 
         [Location("void FRigHierarchySerializationSettings::Load(FArchive& InArchive)")]
@@ -176,9 +176,9 @@ namespace AssetTool
 
     public class FRigHierarchyKey : ITransferable
     {
-        public FBool bIsElement;
+        public bool bIsElement;
         public FRigElementKey ElementKey;
-        public FBool bIsComponent;
+        public bool bIsComponent;
         public FRigComponentKey ComponentKey;
 
         [Location("void FRigHierarchyKey::Serialize(FArchive& Ar)")]

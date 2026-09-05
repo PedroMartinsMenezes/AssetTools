@@ -9,11 +9,11 @@ namespace AssetTool
         public FFrameNumber[] Times;
         public Int32 ValuesElementSize;
         public FMovieSceneDoubleValue[] Values;
-        public FBool bShowCurve;
+        public bool bShowCurve;
         public double DefaultValue;
-        public FBool bHasDefaultValue;
+        public bool bHasDefaultValue;
         public FFrameRate TickResolution;
-        public FBool bSerializeShowCurve;
+        public bool bSerializeShowCurve;
 
         [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)

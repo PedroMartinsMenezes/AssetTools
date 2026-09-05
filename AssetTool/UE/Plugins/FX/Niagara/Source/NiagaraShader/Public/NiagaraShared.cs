@@ -52,7 +52,7 @@ namespace AssetTool
 
     public class FNiagaraShaderScript : ITransferable
     {
-        public FBool bCooked;
+        public bool bCooked;
         public Int32 NumPermutations;
         public FNiagaraCompileHash BaseCompileHash;
 

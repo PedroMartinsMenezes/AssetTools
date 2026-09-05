@@ -11,7 +11,7 @@ namespace AssetTool
         #endregion
         public ETextFlag Flags;
         public ETextHistoryType HistoryType = (ETextHistoryType)(-1);
-        public FBool bHasCultureInvariantString;
+        public bool bHasCultureInvariantString;
         public ITextData TextData;
         public FString SourceStringToImplantIntoHistory;
         public FTextKey Namespace;
@@ -264,8 +264,8 @@ namespace AssetTool
 
     public class FNumberFormattingOptions : ITransferable
     {
-        public FBool AlwaysSign;
-        public FBool UseGrouping;
+        public bool AlwaysSign;
+        public bool UseGrouping;
         public ERoundingMode RoundingMode;
         public int32 MinimumIntegralDigits;
         public int32 MaximumIntegralDigits;

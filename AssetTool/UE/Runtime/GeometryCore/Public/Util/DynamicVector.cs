@@ -43,7 +43,7 @@ namespace AssetTool.Geometry
         {
             public List<ArrayType> Elements;
             public TBulkList<ArrayType> BulkElements;
-            public FBool bUseCompressionForBulkSerialization;
+            public bool bUseCompressionForBulkSerialization;
             public FCompressedChunkInfo PackageFileTag;
             public FCompressedChunkInfo Summary;
             public FCompressedChunkInfo[] CompressionChunks;

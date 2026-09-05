@@ -5,7 +5,7 @@ namespace AssetTool
     [JsonAsset("SceneComponent")]
     public class USceneComponent : UActorComponent
     {
-        public FBool bIsCooked;
+        public bool bIsCooked;
         public FBoxSphereBounds Bounds;
         [JsonIgnore] public bool bComputeBoundsOnceForGame;
 

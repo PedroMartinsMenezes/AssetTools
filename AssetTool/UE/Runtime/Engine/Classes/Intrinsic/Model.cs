@@ -24,8 +24,8 @@ namespace AssetTool
         public UInt32 DummyPolys;
         public TBulkList<TInt32> DummyLeafHulls;
         public TBulkList<FLeaf> DummyLeaves;
-        public FBool RootOutside;
-        public FBool Linked;
+        public bool RootOutside;
+        public bool Linked;
         public TBulkList<TInt32> DummyPortalNodes;
         public uint32 NumUniqueVertices;
         public FModelVertexBuffer VertexBuffer;

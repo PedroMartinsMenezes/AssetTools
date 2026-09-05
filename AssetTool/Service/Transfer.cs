@@ -94,6 +94,7 @@
         public abstract void Move(ref Int16[] value, int count);
         public abstract void Move(ref UInt16[] value, int count);
         public abstract void Move(ref UInt32[] value, int count);
+        public abstract void Move(ref bool[] value, int count);
 
         public abstract void Move(ref byte[] value);
         public abstract void Move(ref UInt16[] value);
@@ -103,6 +104,7 @@
         public abstract void Move(ref UInt64[] value);
         public abstract void Move(ref float[] value);
         public abstract void Move(ref double[] value);
+        public abstract void Move(ref bool[] value);
 
         public abstract void Move<T>(ref T value, Action<T> action) where T : new();
 
@@ -133,8 +135,6 @@
 
         public abstract void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action) where T : new();
 
-        public abstract void Move(ref FBool value);
-        public abstract void Move(ref FBool? value);
         public abstract FGuid Move(FGuid value);
         public abstract void Move(ref FGuid value);
         public abstract void Move(ref FGuid? value);

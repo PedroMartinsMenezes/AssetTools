@@ -4,7 +4,7 @@ namespace AssetTool
     public class UStaticMeshComponent : USceneComponent
     {
         public List<FStaticMeshComponentLODInfo> LODData;
-        public FBool bSerializeAsCookedData;
+        public bool bSerializeAsCookedData;
         public FObjectPtr MeshPaintTexture;
 
         [Location("void UStaticMeshComponent::Serialize(FArchive& Ar)")]

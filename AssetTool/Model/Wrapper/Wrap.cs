@@ -8,7 +8,7 @@ namespace AssetTool
     [DebuggerDisplay("{Value}")]
     public class TBool : ITransferable
     {
-        public FBool Value;
+        public bool Value;
         public override string ToString() => Value.ToString();
 
         public ITransferable Move(Transfer transfer)
@@ -21,16 +21,16 @@ namespace AssetTool
     {
         public override TBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            var obj = new TBool { Value = new FBool { Value = reader.GetBoolean() } };
+            var obj = new TBool { Value = reader.GetBoolean() };
             return obj;
         }
         public override TBool ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return new TBool { Value = new FBool { Value = bool.Parse(reader.GetString()) } };
+            return new TBool { Value = bool.Parse(reader.GetString()) };
         }
         public override void Write(Utf8JsonWriter writer, TBool value, JsonSerializerOptions options)
         {
-            writer.WriteBooleanValue(value.Value.Value);
+            writer.WriteBooleanValue(value.Value);
         }
         public override void WriteAsPropertyName(Utf8JsonWriter writer, TBool value, JsonSerializerOptions options)
         {

@@ -28,7 +28,7 @@ namespace AssetTool
         public FPropertyTypeName TypeName;
         public EPropertyTagExtension? PropertyTagExtensions;
         public EOverriddenPropertyOperation? OverrideOperation;
-        public FBool? bExperimentalOverridableLogic;
+        public bool? bExperimentalOverridableLogic;
         public EPropertyTagFlags? PropertyTagFlags;
         #endregion
 

@@ -20,8 +20,8 @@
         public FString Label;
         public FText ToolTip;
         public FLinearColor Color;
-        public FBool bShowInUserInterface;
-        public FBool bMarksSubjectAsInvalid;
+        public bool bShowInUserInterface;
+        public bool bMarksSubjectAsInvalid;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FRigVMTag& Data)")]
         public ITransferable Move(Transfer transfer)

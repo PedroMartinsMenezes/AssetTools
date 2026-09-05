@@ -22,11 +22,11 @@
 
     public class FLocMetadataValueBoolean : ITransferable
     {
-        public FBool FBool;
+        public bool Value;
 
         public ITransferable Move(Transfer transfer)
         {
-            transfer.Move(ref FBool);
+            transfer.Move(ref Value);
             return this;
         }
     }
