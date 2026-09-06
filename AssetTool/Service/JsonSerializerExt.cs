@@ -1,5 +1,4 @@
-﻿using AssetTool.Chaos;
-using AssetTool.Service;
+﻿using AssetTool.Service;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -386,21 +385,19 @@ namespace AssetTool
                 #endregion
 
                 #region Chaos
-                new FPlaneDataJsonConverterTInt32(),
-                new FPlaneDataJsonConverterTInt16(),
-                new FPlaneDataJsonConverterTUInt8(),
-
-                new FHalfEdgeDataJsonConverterTInt32(),
-                new FHalfEdgeDataJsonConverterTInt16(),
-                new FHalfEdgeDataJsonConverterTUInt8(),
-
-                new FVertexDataJsonConverterTInt32(),
-                new FVertexDataJsonConverterTInt16(),
-                new FVertexDataJsonConverterTUInt8(),
-
-                new TPlaneConcreteJsonConverter(),
-                new TRotation3dJsonConverter(),
-                new TRotation3fJsonConverter(),
+                new Chaos.FPlaneDataJsonConverterTInt32(),
+                new Chaos.FPlaneDataJsonConverterTInt16(),
+                new Chaos.FPlaneDataJsonConverterTUInt8(),
+                new Chaos.FHalfEdgeDataJsonConverterTInt32(),
+                new Chaos.FHalfEdgeDataJsonConverterTInt16(),
+                new Chaos.FHalfEdgeDataJsonConverterTUInt8(),
+                new Chaos.FVertexDataJsonConverterTInt32(),
+                new Chaos.FVertexDataJsonConverterTInt16(),
+                new Chaos.FVertexDataJsonConverterTUInt8(),
+                new Chaos.TPlaneConcreteJsonConverter(),
+                new Chaos.TRotation3dJsonConverter(),
+                new Chaos.TRotation3fJsonConverter(),
+                new Chaos.SerializeAsAABB3JsonConverter(),
                 #endregion
 
                 #region Array Types
