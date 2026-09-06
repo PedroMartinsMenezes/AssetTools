@@ -334,6 +334,7 @@ namespace AssetTool
                 //FColor
                 new FColorJsonConverter(),
                 new FLinearColorJsonConverter(),
+                new FLinearColorListJsonConverter(),
                 //FVector2DHalf
                 new FVector2DHalfJsonConverter(),
                 new FVector2DHalfArrayJsonConverter(),
@@ -411,6 +412,21 @@ namespace AssetTool
                 new UInt64ArrayJsonConverter(),
                 new FloatArrayJsonConverter(),
                 new DoubleArrayJsonConverter(),
+                #endregion
+
+                #region IntVector
+                new FIntVector2ListJsonConverter(),
+                new FIntVector3ListJsonConverter(),
+                new FIntVector4ListJsonConverter(),
+                new FUIntVector2ListJsonConverter(),
+                new FUIntVector3ListJsonConverter(),
+                new FUIntVector4ListJsonConverter(),
+                new FInt64Vector2ListJsonConverter(),
+                new FInt64Vector3ListJsonConverter(),
+                new FInt64Vector4ListJsonConverter(),
+                new FUInt64Vector2ListJsonConverter(),
+                new FUInt64Vector3ListJsonConverter(),
+                new FUInt64Vector4ListJsonConverter(),
                 #endregion
 
                 #region Other Types
