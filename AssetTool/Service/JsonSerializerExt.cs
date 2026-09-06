@@ -1,4 +1,5 @@
-﻿using AssetTool.Service;
+﻿using AssetTool.Chaos;
+using AssetTool.Service;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
@@ -37,7 +38,6 @@ namespace AssetTool
                     new FTextKeyJsonConverter(),
                     new FStringJsonConverter(),
                     new FNameJsonConverter(),
-                    //new FBoolJsonConverter(),
                 }
             };
             string json = JsonSerializer.Serialize(self, options);
@@ -258,7 +258,6 @@ namespace AssetTool
                 new FNameJsonConverter(),
                 new FStringJsonConverter(),
                 new FGuidJsonConverter(),
-                //new FBoolJsonConverter(),
                 new FTextKeyJsonConverter(),
                 new FNameEntryIdJsonConverter(),
                 new FDateTimeJsonConverter(),
@@ -349,20 +348,58 @@ namespace AssetTool
                 #endregion
 
                 #region Wrapper Types
+                new TBoolJsonConverter(),
+                new TListBoolJsonConverter(),
+
                 new TInt8JsonConverter(),
-                new TUInt8ArrayJsonConverter(),
+                new TListInt8JsonConverter(),
+
                 new TInt16JsonConverter(),
-                new TUInt16ArrayJsonConverter(),
+                new TListInt16JsonConverter(),
+
                 new TInt32JsonConverter(),
                 new TListInt32JsonConverter(),
+
                 new TInt64JsonConverter(),
+                new TListInt64JsonConverter(),
+
                 new TUInt8JsonConverter(),
+                new TUInt8ArrayJsonConverter(),
+                new TListUInt8JsonConverter(),
+
                 new TUInt16JsonConverter(),
+                new TUInt16ArrayJsonConverter(),
+                new TListUInt16JsonConverter(),
+
                 new TUInt32JsonConverter(),
+                new TListUInt32JsonConverter(),
+
                 new TUInt64JsonConverter(),
+                new TListUInt64JsonConverter(),
+
                 new TFloatJsonConverter(),
+                new TListFloatJsonConverter(),
+
                 new TDoubleJsonConverter(),
-                new TBoolsonConverter(),
+                new TListDoubleJsonConverter(),
+                #endregion
+
+                #region Chaos
+                new FPlaneDataJsonConverterTInt32(),
+                new FPlaneDataJsonConverterTInt16(),
+                new FPlaneDataJsonConverterTUInt8(),
+
+                new FHalfEdgeDataJsonConverterTInt32(),
+                new FHalfEdgeDataJsonConverterTInt16(),
+                new FHalfEdgeDataJsonConverterTUInt8(),
+
+                new FVertexDataJsonConverterTInt32(),
+                new FVertexDataJsonConverterTInt16(),
+                new FVertexDataJsonConverterTUInt8(),
+
+                new TPlaneConcreteJsonConverter(),
+                new TRotation3dJsonConverter(),
+                new TRotation3fJsonConverter(),
                 #endregion
 
                 #region Array Types
@@ -383,9 +420,6 @@ namespace AssetTool
                 new FRigVMOperandJsonConverter(),
                 new FGroupInfoJsonConverter(),
                 new AttributeStorageFAttributeKeyJsonConverter(),
-                #endregion
-
-                
                 new FSimpleMemberReferenceJsonConverter(),
                 new FEdGraphPinTypeJsonConverter(),
                 new EdGraphPinJsonConverter(),
@@ -400,7 +434,7 @@ namespace AssetTool
                 new FDeprecatedSerializedPackedNormalJsonConverter(),
                 new FRigidBodyIndexPairJsonConverter(),
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
-
+                #endregion
             }
         };
     }

@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    #region TBool
     [DebuggerDisplay("{Value}")]
     public class TBool : ITransferable
     {
@@ -17,7 +18,7 @@ namespace AssetTool
             return this;
         }
     }
-    public class TBoolsonConverter : JsonConverter<TBool>
+    public class TBoolJsonConverter : JsonConverter<TBool>
     {
         public override TBool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -37,7 +38,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListBoolJsonConverter : JsonConverter<List<TBool>>
+    {
+        public override List<TBool> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TBool { Value = bool.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TBool> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 
+    #region TInt8
     [DebuggerDisplay("{Value}")]
     public class TInt8 : ITransferable
     {
@@ -70,7 +85,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListInt8JsonConverter : JsonConverter<List<TInt8>>
+    {
+        public override List<TInt8> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TInt8 { Value = sbyte.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TInt8> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    #endregion
 
+    #region TInt16
     [DebuggerDisplay("{Value}")]
     public class TInt16 : ITransferable
     {
@@ -103,7 +132,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListInt16JsonConverter : JsonConverter<List<TInt16>>
+    {
+        public override List<TInt16> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TInt16 { Value = Int16.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TInt16> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    #endregion
 
+    #region TInt32
     [DebuggerDisplay("{Value}")]
     public class TInt32 : ITransferable
     {
@@ -135,7 +178,6 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
-
     public class TListInt32JsonConverter : JsonConverter<List<TInt32>>
     {
         public override List<TInt32> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
@@ -148,7 +190,9 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value));
         }
     }
+    #endregion
 
+    #region TInt64
     [DebuggerDisplay("{Value}")]
     public class TInt64 : ITransferable
     {
@@ -181,7 +225,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListInt64JsonConverter : JsonConverter<List<TInt64>>
+    {
+        public override List<TInt64> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TInt64 { Value = Int64.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TInt64> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    #endregion
 
+    #region TUInt8
     [DebuggerDisplay("{Value}")]
     public struct TUInt8 : ITransferable
     {
@@ -225,7 +283,21 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
+    public class TListUInt8JsonConverter : JsonConverter<List<TUInt8>>
+    {
+        public override List<TUInt8> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TUInt8 { Value = byte.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TUInt8> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    #endregion
 
+    #region TUInt16
     [DebuggerDisplay("{Value}")]
     public class TUInt16 : ITransferable
     {
@@ -269,7 +341,21 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
+    public class TListUInt16JsonConverter : JsonConverter<List<TUInt16>>
+    {
+        public override List<TUInt16> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TUInt16 { Value = UInt16.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TUInt16> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 
+    #region TUInt32
     [DebuggerDisplay("{Value}")]
     public class TUInt32 : ITransferable
     {
@@ -302,7 +388,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListUInt32JsonConverter : JsonConverter<List<TUInt32>>
+    {
+        public override List<TUInt32> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TUInt32 { Value = UInt32.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TUInt32> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 
+    #region TUInt64
     [DebuggerDisplay("{Value}")]
     public class TUInt64 : ITransferable
     {
@@ -335,7 +435,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListUInt64JsonConverter : JsonConverter<List<TUInt64>>
+    {
+        public override List<TUInt64> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TUInt64 { Value = UInt64.Parse(x) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TUInt64> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 
+    #region TFloat
     [DebuggerDisplay("{Value}")]
     public class TFloat : ITransferable
     {
@@ -368,7 +482,21 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListFloatJsonConverter : JsonConverter<List<TFloat>>
+    {
+        public override List<TFloat> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TFloat { Value = float.Parse(x, CultureInfo.InvariantCulture) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TFloat> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 
+    #region TDouble
     [DebuggerDisplay("{Value}")]
     public class TDouble : ITransferable
     {
@@ -401,4 +529,17 @@ namespace AssetTool
             writer.WritePropertyName(value.Value.ToString());
         }
     }
+    public class TListDoubleJsonConverter : JsonConverter<List<TDouble>>
+    {
+        public override List<TDouble> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(' ').Select(x => new TDouble { Value = double.Parse(x, CultureInfo.InvariantCulture) }).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<TDouble> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    #endregion
 }
