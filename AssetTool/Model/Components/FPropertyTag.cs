@@ -186,7 +186,7 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG)
             {
                 transfer.Move(ref HasPropertyGuid);
-                HasPropertyGuid = HasPropertyGuid == 0 ? null : HasPropertyGuid;
+                HasPropertyGuid = HasPropertyGuid.GetValueOrDefault() == 0 ? null : HasPropertyGuid;
                 if (HasPropertyGuid.GetValueOrDefault() is not (0 or 1))
                 {
                     throw new InvalidOperationException($"Invalid HasPropertyGuid: {HasPropertyGuid}");

@@ -6,9 +6,9 @@
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
         public Int32 TimesElementSize;
-        public FFrameNumber[] Times;
+        public List<FFrameNumber> Times;
         public Int32 ValuesElementSize;
-        public FMovieSceneFloatValue[] Values;
+        public List<FMovieSceneFloatValue> Values;
         public bool bShowCurve;
         public float DefaultValue;
         public bool bHasDefaultValue;
@@ -71,16 +71,16 @@
     }
 
     [TransferableStruct("MovieSceneFloatValue")]
-    public struct FMovieSceneFloatValue : ITransferable, ITransferableRaw
+    public class FMovieSceneFloatValue : ITransferable, ITransferableRaw
     {
-        public static readonly int Size = System.Runtime.InteropServices.Marshal.SizeOf(typeof(FMovieSceneFloatValue));
+        public static readonly int Size = 28;
 
         public float Value;
         public FMovieSceneTangentData Tangent;
-        public byte InterpMode;
-        public byte TangentMode;
-        public byte PaddingByte;
-        public byte UnserializedPaddingBytes;
+        public byte? InterpMode;
+        public byte? TangentMode;
+        public byte? PaddingByte;
+        public byte? UnserializedPaddingBytes;
 
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)
@@ -97,14 +97,17 @@
                 transfer.Move(ref InterpMode);
                 transfer.Move(ref TangentMode);
                 transfer.Move(ref Tangent);
+                Tangent = transfer.IsReading && Tangent.IsZero() ? null : Tangent;
             }
             else
             {
+                Tangent ??= new();
                 transfer.Move(ref Tangent.ArriveTangent);
                 transfer.Move(ref Tangent.LeaveTangent);
                 transfer.Move(ref Tangent.ArriveTangentWeight);
                 transfer.Move(ref Tangent.LeaveTangentWeight);
                 transfer.Move(ref Tangent.TangentWeightMode);
+                Tangent = transfer.IsReading && Tangent.IsZero() ? null : Tangent;
                 transfer.Move(ref InterpMode);
                 transfer.Move(ref TangentMode);
                 transfer.Move(ref PaddingByte);
@@ -117,6 +120,7 @@
         {
             transfer.Move(ref Value);
             transfer.MoveRaw(ref Tangent);
+            Tangent = transfer.IsReading && Tangent.IsZero() ? null : Tangent;
             transfer.Move(ref InterpMode);
             transfer.Move(ref TangentMode);
             transfer.Move(ref PaddingByte);

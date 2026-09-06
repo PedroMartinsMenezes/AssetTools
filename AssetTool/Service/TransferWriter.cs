@@ -198,6 +198,7 @@ namespace AssetTool
         #region ITransferableRaw
         public override void MoveRaw<T>(ref T value)
         {
+            value ??= new();
             value.MoveRaw(this);
         }
         public override void MoveRaw<T>(ref T[] value)
@@ -208,11 +209,20 @@ namespace AssetTool
                 item.MoveRaw(this);
             }
         }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            writer.Write(value.Count);
+            foreach (var item in value)
+            {
+                item.MoveRaw(this);
+            }
+        }
         #endregion
 
         #region ITransferable
         public override void Move<T>(ref T value)
         {
+            value ??= new();
             value.Move(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)

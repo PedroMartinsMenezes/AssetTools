@@ -24,7 +24,8 @@ namespace AssetTool
     {
         public override List<FIntVector2> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector2 { X = int.Parse(v[0]), Y = int.Parse(v[1]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector2 { X = int.Parse(v[0]), Y = int.Parse(v[1]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FIntVector2> value, JsonSerializerOptions options)
@@ -56,7 +57,8 @@ namespace AssetTool
     {
         public override List<FIntVector3> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector3 { X = int.Parse(v[0]), Y = int.Parse(v[1]), Z = int.Parse(v[2]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector3 { X = int.Parse(v[0]), Y = int.Parse(v[1]), Z = int.Parse(v[2]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FIntVector3> value, JsonSerializerOptions options)
@@ -90,7 +92,8 @@ namespace AssetTool
     {
         public override List<FIntVector4> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector4 { X = int.Parse(v[0]), Y = int.Parse(v[1]), Z = int.Parse(v[2]), W = int.Parse(v[3]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FIntVector4 { X = int.Parse(v[0]), Y = int.Parse(v[1]), Z = int.Parse(v[2]), W = int.Parse(v[3]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FIntVector4> value, JsonSerializerOptions options)
@@ -120,7 +123,8 @@ namespace AssetTool
     {
         public override List<FUIntVector2> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector2 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector2 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FUIntVector2> value, JsonSerializerOptions options)
@@ -152,7 +156,8 @@ namespace AssetTool
     {
         public override List<FUIntVector3> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector3 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]), Z = uint.Parse(v[2]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector3 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]), Z = uint.Parse(v[2]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FUIntVector3> value, JsonSerializerOptions options)
@@ -186,7 +191,8 @@ namespace AssetTool
     {
         public override List<FUIntVector4> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector4 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]), Z = uint.Parse(v[2]), W = uint.Parse(v[3]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUIntVector4 { X = uint.Parse(v[0]), Y = uint.Parse(v[1]), Z = uint.Parse(v[2]), W = uint.Parse(v[3]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FUIntVector4> value, JsonSerializerOptions options)
@@ -216,7 +222,8 @@ namespace AssetTool
     {
         public override List<FInt64Vector2> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector2 { X = long.Parse(v[0]), Y = long.Parse(v[1]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector2 { X = long.Parse(v[0]), Y = long.Parse(v[1]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FInt64Vector2> value, JsonSerializerOptions options)
@@ -248,7 +255,8 @@ namespace AssetTool
     {
         public override List<FInt64Vector3> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector3 { X = long.Parse(v[0]), Y = long.Parse(v[1]), Z = long.Parse(v[2]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector3 { X = long.Parse(v[0]), Y = long.Parse(v[1]), Z = long.Parse(v[2]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FInt64Vector3> value, JsonSerializerOptions options)
@@ -282,7 +290,8 @@ namespace AssetTool
     {
         public override List<FInt64Vector4> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector4 { X = long.Parse(v[0]), Y = long.Parse(v[1]), Z = long.Parse(v[2]), W = long.Parse(v[3]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FInt64Vector4 { X = long.Parse(v[0]), Y = long.Parse(v[1]), Z = long.Parse(v[2]), W = long.Parse(v[3]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FInt64Vector4> value, JsonSerializerOptions options)
@@ -312,7 +321,8 @@ namespace AssetTool
     {
         public override List<FUInt64Vector2> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector2 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector2 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FUInt64Vector2> value, JsonSerializerOptions options)
@@ -344,7 +354,8 @@ namespace AssetTool
     {
         public override List<FUInt64Vector3> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector3 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]), Z = ulong.Parse(v[2]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector3 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]), Z = ulong.Parse(v[2]) } : default).ToList();
         }
         public override void Write(Utf8JsonWriter writer, List<FUInt64Vector3> value, JsonSerializerOptions options)
         {
@@ -377,7 +388,8 @@ namespace AssetTool
     {
         public override List<FUInt64Vector4> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector4 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]), Z = ulong.Parse(v[2]), W = ulong.Parse(v[3]) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FUInt64Vector4 { X = ulong.Parse(v[0]), Y = ulong.Parse(v[1]), Z = ulong.Parse(v[2]), W = ulong.Parse(v[3]) } : default).ToList();
         }
         public override void Write(Utf8JsonWriter writer, List<FUInt64Vector4> value, JsonSerializerOptions options)
         {

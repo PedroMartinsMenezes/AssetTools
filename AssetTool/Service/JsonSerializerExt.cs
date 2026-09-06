@@ -451,6 +451,8 @@ namespace AssetTool
                 new FDeprecatedSerializedPackedNormalJsonConverter(),
                 new FRigidBodyIndexPairJsonConverter(),
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
+                new FFrameNumberJsonConverter(),
+                new ListFFrameNumberJsonConverter(),
                 #endregion
             }
         };

@@ -47,7 +47,8 @@ namespace AssetTool
     {
         public override List<FLinearColor> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString().Split(" | ").Select(x => x.Split(' ') is var v ? new FLinearColor { R = float.Parse(v[0], CultureInfo.InvariantCulture), G = float.Parse(v[1], CultureInfo.InvariantCulture), B = float.Parse(v[2], CultureInfo.InvariantCulture), A = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList();
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FLinearColor { R = float.Parse(v[0], CultureInfo.InvariantCulture), G = float.Parse(v[1], CultureInfo.InvariantCulture), B = float.Parse(v[2], CultureInfo.InvariantCulture), A = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FLinearColor> value, JsonSerializerOptions options)

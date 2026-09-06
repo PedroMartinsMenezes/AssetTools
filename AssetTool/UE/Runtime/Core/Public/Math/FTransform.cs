@@ -213,14 +213,12 @@ namespace AssetTool
     {
         public override List<FTransform> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-
             List<FTransform> list = [];
             if (reader.TokenType == JsonTokenType.StartArray)
             {
-                if (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
-                {
-                    _ = reader.GetString();
-                }
+                if (reader.Read() && reader.TokenType == JsonTokenType.EndArray)
+                    return list;
+                _ = reader.GetString();
                 while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                 {
                     string line = reader.GetString();
@@ -250,20 +248,23 @@ namespace AssetTool
         {
             Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
             writer.WriteStartArray();
-            writer.WriteStringValue("Translation ; Rotation ; Scale3D = X Y Z ; X Y Z W ; X Y Z");
-            StringBuilder s = new StringBuilder();
-            for (int i = 0; i < value.Count; i++)
+            if (value.Count > 0)
             {
-                var v = value[i];
-                s.Append($"{v.Translation.X} {v.Translation.Y} {v.Translation.Z} ; ");
-                s.Append($"{v.Rotation.X} {v.Rotation.Y} {v.Rotation.Z} {v.Rotation.W} ; ");
-                s.Append($"{v.Scale3D.X} {v.Scale3D.Y} {v.Scale3D.Z}");
-                if (i < value.Count - 1)
+                writer.WriteStringValue("Translation ; Rotation ; Scale3D = X Y Z ; X Y Z W ; X Y Z");
+                StringBuilder s = new StringBuilder();
+                for (int i = 0; i < value.Count; i++)
                 {
-                    s.Append(" | ");
+                    var v = value[i];
+                    s.Append($"{v.Translation.X} {v.Translation.Y} {v.Translation.Z} ; ");
+                    s.Append($"{v.Rotation.X} {v.Rotation.Y} {v.Rotation.Z} {v.Rotation.W} ; ");
+                    s.Append($"{v.Scale3D.X} {v.Scale3D.Y} {v.Scale3D.Z}");
+                    if (i < value.Count - 1)
+                    {
+                        s.Append(" | ");
+                    }
                 }
+                writer.WriteStringValue(s.ToString());
             }
-            writer.WriteStringValue(s.ToString());
             writer.WriteEndArray();
         }
     }

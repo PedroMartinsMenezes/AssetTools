@@ -120,6 +120,7 @@
 
         public override void MoveRaw<T>(ref T value) { }
         public override void MoveRaw<T>(ref T[] value) { }
+        public override void MoveRaw<T>(ref List<T> value) { }
 
         public override void MoveSingleOrDouble(ref double value) { }
         public override void MoveSingleOrDouble(ref double? value) { }

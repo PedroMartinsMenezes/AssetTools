@@ -87,7 +87,11 @@ namespace AssetTool
         public override void Move(ref sbyte? value) => value = reader.ReadSByte();
 
         public override void Move(ref byte value) => reader.Read(ref value);
-        public override void Move(ref byte? value) => value = reader.ReadByte();
+        public override void Move(ref byte? value)
+        {
+            value = reader.ReadByte();
+            value = value == 0 ? null : value;
+        }
 
         public override void Move(ref short value) => reader.Read(ref value);
         public override void Move(ref short? value) => value = reader.ReadInt16();
@@ -209,6 +213,16 @@ namespace AssetTool
             {
                 value[i] ??= new();
                 value[i].MoveRaw(this);
+            }
+        }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T item = (T)new T().MoveRaw(this);
+                value.Add(item);
             }
         }
         #endregion
