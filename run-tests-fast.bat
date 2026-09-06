@@ -13,19 +13,22 @@ if errorlevel 1 (
     exit /b 1
 )
 
+echo %TIME%
 echo Running tests in parallel...
 
+echo %TIME%
 start "CookedTest" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.CookedTest"" --configuration Release --verbosity quiet >nul 2>&1 && echo StackOBotCookedTests: SUCCESS || echo StackOBotCookedTests: FAIL & echo.>CookedTest.done"
-
+echo %TIME%
 start "QuickTest" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.QuickTest"" --configuration Release --verbosity quiet >nul 2>&1 && echo QuickTest: SUCCESS || echo QuickTest: FAIL & echo.>QuickTest.done"
-
+echo %TIME%
 start "SamplesTest" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.SamplesTest"" --configuration Release --verbosity quiet >nul 2>&1 && echo SamplesTest: SUCCESS || echo SamplesTest: FAIL & echo.>SamplesTest.done"
-
+echo %TIME%
 start "UAssetAPITest" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.UAssetAPITest"" --configuration Release --verbosity quiet >nul 2>&1 && echo UAssetAPITest: SUCCESS || echo UAssetAPITest: FAIL & echo.>UAssetAPITest.done"
-
+echo %TIME%
 start "UE4Tests" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.UE4Tests"" --configuration Release --verbosity quiet >nul 2>&1 && echo UE4Tests: SUCCESS || echo UE4Tests: FAIL & echo.>UE4Tests.done"
-
+echo %TIME%
 start "UE5Tests" /B cmd /c "dotnet test --no-build --filter ""FullyQualifiedName~AssetTool.Test.UE5Tests"" --configuration Release --verbosity quiet >nul 2>&1 && echo UE5Tests: SUCCESS || echo UE5Tests: FAIL & echo.>UE5Tests.done"
+echo %TIME%
 
 :wait
 if not exist CookedTest.done goto wait
@@ -35,23 +38,7 @@ if not exist UAssetAPITest.done goto wait
 if not exist UE4Tests.done goto wait
 if not exist UE5Tests.done goto wait
 
-set END=%TIME%
-
-for /f "tokens=1-4 delims=:., " %%a in ("%START%") do (
-    set /a STARTSEC=(((%%a*60)+%%b)*60)+%%c
-)
-
-for /f "tokens=1-4 delims=:., " %%a in ("%END%") do (
-    set /a ENDSEC=(((%%a*60)+%%b)*60)+%%c
-)
-
-set /a ELAPSED=ENDSEC-STARTSEC
-if !ELAPSED! lss 0 set /a ELAPSED+=86400
-
-echo.
-echo ==================================
-echo Tempo total: !ELAPSED! segundos
-echo ==================================
+echo All tests completed
 
 del /q *.done
 
