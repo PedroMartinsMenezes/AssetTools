@@ -429,6 +429,10 @@ namespace AssetTool
                 new FUInt64Vector4ListJsonConverter(),
                 #endregion
 
+                new FTransformListJsonConverter(),
+                new FTransform3fListJsonConverter(),
+                new FTransform3dListJsonConverter(),
+
                 #region Other Types
                 new FRigElementKeyJsonConverter(),
                 new FMeshBoneInfoListJsonConverter(),
@@ -442,7 +446,6 @@ namespace AssetTool
                 new FPropertyTypeNameJsonConverter(),
                 new ParentPinWrapperJsonConverter(),
                 new LinkedToWrapperJsonConverter(),
-                new FTransformListJsonConverter(),
                 new FNameEntrySerializedJsonConverter(),
                 new FPackageIndexJsonConverter(),
                 new FObjectPtrJsonConverter(),
