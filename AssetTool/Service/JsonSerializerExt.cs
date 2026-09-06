@@ -398,6 +398,7 @@ namespace AssetTool
                 new Chaos.TRotation3dJsonConverter(),
                 new Chaos.TRotation3fJsonConverter(),
                 new Chaos.SerializeAsAABB3JsonConverter(),
+                new Chaos.SerializeAsAABBsJsonConverter(),
                 #endregion
 
                 #region Array Types
