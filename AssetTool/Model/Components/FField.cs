@@ -77,10 +77,11 @@ namespace AssetTool
 
             return typeName switch
             {
-                nameof(FIntProperty) => FIntPropertySerializer.Read(root, options),
-                nameof(FObjectProperty) => FObjectPropertySerializer.Read(root, options),
-                nameof(FFloatProperty) => FFloatPropertySerializer.Read(root, options),
-                nameof(FDoubleProperty) => FDoublePropertySerializer.Read(root, options),
+                nameof(FIntProperty) => new FIntPropertySerializer().Read(root, options),
+                nameof(FClassProperty) => new FClassPropertySerializer().Read(root, options),
+                nameof(FObjectProperty) => new FObjectPropertySerializer().Read(root, options),
+                nameof(FFloatProperty) => new FFloatPropertySerializer().Read(root, options),
+                nameof(FDoubleProperty) => new FDoublePropertySerializer().Read(root, options),
 
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
@@ -88,8 +89,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
                 nameof(FByteProperty)
                     => JsonSerializer.Deserialize<FByteProperty>(root.GetRawText(), options)!,
-                nameof(FClassProperty)
-                    => JsonSerializer.Deserialize<FClassProperty>(root.GetRawText(), options)!,
                 nameof(FClassPtrProperty)
                     => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
                 nameof(FDelegateProperty)
@@ -158,20 +157,26 @@ namespace AssetTool
             switch (value)
             {
                 case FIntProperty intProperty:
-                    FIntPropertySerializer.Write(writer, intProperty, options);
+                    new FIntPropertySerializer().Write(writer, intProperty, options);
+                    return;
+
+                case FClassProperty classProperty:
+                    new FClassPropertySerializer().Write(writer, classProperty, options);
                     return;
 
                 case FObjectProperty objectProperty:
-                    FObjectPropertySerializer.Write(writer, objectProperty, options);
-                    return;
-
-                case FDoubleProperty doubleProperty:
-                    FDoublePropertySerializer.Write(writer, doubleProperty, options);
+                    new FObjectPropertySerializer().Write(writer, objectProperty, options);
                     return;
 
                 case FFloatProperty floatProperty:
-                    FFloatPropertySerializer.Write(writer, floatProperty, options);
+                    new FFloatPropertySerializer().Write(writer, floatProperty, options);
                     return;
+
+                case FDoubleProperty doubleProperty:
+                    new FDoublePropertySerializer().Write(writer, doubleProperty, options);
+                    return;
+
+
 
                 default:
                     writer.WriteStartObject();

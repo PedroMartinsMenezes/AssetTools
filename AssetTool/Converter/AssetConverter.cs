@@ -61,7 +61,16 @@ namespace AssetTool
                     Console.WriteLine($"Version is too old: {InAssetPath}");
                     return true;
                 }
-                if (!success) break;
+                if (AppConfig.DebugSaveJson)
+                {
+                    (string json, string path) = (null, null);
+                    json = asset.ToJson();
+                    path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
+                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    File.WriteAllText(path, json);
+                }
+                if (!success)
+                    break;
                 #endregion
 
                 #region Write Output

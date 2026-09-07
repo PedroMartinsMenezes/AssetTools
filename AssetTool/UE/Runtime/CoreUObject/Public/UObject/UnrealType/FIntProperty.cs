@@ -23,48 +23,18 @@ namespace AssetTool
 
     public class FIntPropertySerializer : FPropertySerializerBase<FIntProperty>
     {
-        public static FIntProperty Read(JsonElement root, JsonSerializerOptions options)
+        public FIntProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var value = new FIntProperty
-            {
-                ArrayDim = 1,
-                ElementSize = 4,
-                PropertyFlags = EPropertyFlags.CPF_None,
-                RepIndex = 0,
-                RepNotifyFunc = new FName("None"),
-                BlueprintReplicationCondition = 0,
-                FlagsPrivate = EObjectFlags.RF_Public,
-                HasMetaData = false
-            };
-
-            ReadBaseProperties(root, value);
-
-            #region Derived Properties
-            if (root.TryGetProperty("ElementSize", out var elementSize))
-                value.ElementSize = elementSize.GetInt32();
-
-            if (root.TryGetProperty("NamePrivate", out var namePrivate))
-                value.NamePrivate = new FName(namePrivate.GetString());
-            #endregion
-
+            var value = ReadBaseProperties(root);
+            value.ElementSize = 4;
+            ReadValue(root, value);
             return value;
         }
 
-        public static void Write(Utf8JsonWriter writer, FIntProperty value, JsonSerializerOptions options)
+        public void Write(Utf8JsonWriter writer, FIntProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-
             WriteBaseProperties(writer, value);
-
-            #region Derived Properties
-            writer.WriteString("__type", "FIntProperty");
-
-            if (value.ElementSize != 4)
-                writer.WriteNumber("ElementSize", value.ElementSize);
-
-            writer.WriteString("NamePrivate", value.NamePrivate.ToString());
-            #endregion
-
             writer.WriteEndObject();
         }
     }
