@@ -36,6 +36,8 @@ namespace AssetTool.Test
                 var fileVersion = JsonSerializer.Deserialize<FileVersion>(json);
                 FileVersions[name] = fileVersion;
             }
+
+            AssetConverter.AppConfig = AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
         }
 
         protected bool IsVs2026()
@@ -67,7 +69,6 @@ namespace AssetTool.Test
 
         protected void Test_UE_Files(string name, FileVersion fileVersion = null)
         {
-            AssetConverter.AppConfig = AppConfig;
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();

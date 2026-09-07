@@ -350,18 +350,23 @@ namespace AssetTool
                 #region Wrapper Types
                 new TBoolJsonConverter(),
                 new TListBoolJsonConverter(),
+                new TArrayBoolJsonConverter(),
 
                 new TInt8JsonConverter(),
                 new TListInt8JsonConverter(),
+                new TArrayInt8JsonConverter(),
 
                 new TInt16JsonConverter(),
                 new TListInt16JsonConverter(),
+                new TArrayInt16JsonConverter(),
 
                 new TInt32JsonConverter(),
                 new TListInt32JsonConverter(),
+                new TArrayInt32JsonConverter(),
 
                 new TInt64JsonConverter(),
                 new TListInt64JsonConverter(),
+                new TArrayInt64JsonConverter(),
 
                 new TUInt8JsonConverter(),
                 new TUInt8ArrayJsonConverter(),
@@ -373,15 +378,19 @@ namespace AssetTool
 
                 new TUInt32JsonConverter(),
                 new TListUInt32JsonConverter(),
+                new TArrayUInt32JsonConverter(),
 
                 new TUInt64JsonConverter(),
                 new TListUInt64JsonConverter(),
+                new TArrayUInt64JsonConverter(),
 
                 new TFloatJsonConverter(),
                 new TListFloatJsonConverter(),
+                new TArrayFloatJsonConverter(),
 
                 new TDoubleJsonConverter(),
                 new TListDoubleJsonConverter(),
+                new TArrayDoubleJsonConverter(),
                 #endregion
 
                 #region Chaos
@@ -402,14 +411,26 @@ namespace AssetTool
                 #endregion
 
                 #region Array Types
+                new SByteArrayJsonConverter(),
+                new SByteListJsonConverter(),
+                new BoolArrayJsonConverter(),
+                new BoolListJsonConverter(),
                 new Int16ArrayJsonConverter(),
+                new Int16ListJsonConverter(),
                 new UInt16ArrayJsonConverter(),
+                new UInt16ListJsonConverter(),
                 new Int32ArrayJsonConverter(),
+                new Int32ListJsonConverter(),
                 new UInt32ArrayJsonConverter(),
+                new UInt32ListJsonConverter(),
                 new Int64ArrayJsonConverter(),
+                new Int64ListJsonConverter(),
                 new UInt64ArrayJsonConverter(),
+                new UInt64ListJsonConverter(),
                 new FloatArrayJsonConverter(),
+                new FloatListJsonConverter(),
                 new DoubleArrayJsonConverter(),
+                new DoubleListJsonConverter(),
                 #endregion
 
                 #region IntVector

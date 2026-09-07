@@ -24,6 +24,40 @@ namespace AssetTool
         #region String to Array Conversions
 
         /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => bool.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Values separated by spaces</param>
+        /// <returns></returns>
+        public static bool[] ToBoolArray(this string input)
+        {
+            if (input.Length == 0) return [];
+            ReadOnlySpan<char> span = input.AsSpan();
+            int count = 1;
+            for (int i = 0; i < span.Length; i++)
+                if (span[i] == ' ') count++;
+
+            bool[] values = new bool[count];
+            int index = 0;
+            while (!span.IsEmpty)
+            {
+                int spaceIndex = span.IndexOf(' ');
+                ReadOnlySpan<char> part;
+                if (spaceIndex == -1)
+                {
+                    part = span;
+                    span = ReadOnlySpan<char>.Empty;
+                }
+                else
+                {
+                    part = span.Slice(0, spaceIndex);
+                    span = span.Slice(spaceIndex + 1);
+                }
+                values[index++] = bool.Parse(part);
+            }
+            return values;
+        }
+
+        /// <summary>
         /// Performs the faster version of input.Split(' ').Select(s => byte.Parse(s)).ToArray()
         /// </summary>
         /// <param name="input">Numbers separated by spaces</param>

@@ -8,7 +8,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Ignore("Bug")]
@@ -27,7 +26,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         //TestEditorAssets
@@ -44,7 +42,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void ABP_SMG_A() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestJson\\ABP_SMG_A.uasset"));
@@ -56,7 +53,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         //Tekken
@@ -75,7 +71,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         //MutantYearZero
@@ -89,7 +84,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         //Bloodstained
@@ -113,7 +107,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void DV_ItemDescription() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\TheBeastInside\\DV_ItemDescription.uasset", fileVersion: FileVersions["UE4_19"]));
@@ -128,7 +121,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void as_mt_base() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestMaterials\\as_mt_base.uasset", fileVersion: FileVersions["UE4_20"]));
@@ -140,7 +132,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void Augment_BroadBrush() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\Astroneer\\Augment_BroadBrush.uasset", fileVersion: FileVersions["UE4_23"]));
@@ -157,7 +148,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void CharacterCostume_chr0001_DataTable() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\StarlitSeason\\CharacterCostume_chr0001_DataTable.uasset", fileVersion: FileVersions["UE4_24"]));
@@ -169,7 +159,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void WPN_LockOnRifle() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestJson\\WPN_LockOnRifle.uasset", fileVersion: FileVersions["UE4_25"]));
@@ -185,7 +174,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void MainChar_BellySlice_BR() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\MISC_426\\MainChar_BellySlice_BR.uasset", fileVersion: FileVersions["UE4_26"]));
@@ -197,7 +185,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void ItemInfo() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestManyAssets\\LiesOfP\\ItemInfo.uasset", fileVersion: FileVersions["UE4_27"]));
@@ -215,7 +202,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         //Palia
@@ -243,7 +229,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void UE53_AmmoDataTable() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestUE5_3\\RON\\AmmoDataTable.uasset", fileVersion: FileVersions["UE5_3"]));
@@ -256,7 +241,6 @@ namespace AssetTool.Test.UAssetAPITest
         public void Setup()
         {
             AppConfig.DebugSaveUnitTest = true;
-            AssetConverter.AppConfig = AppConfig;
         }
 
         [Test] public void UE54_ApprenticeBlacksmithNPCTemplate() => Assert.That(AssetConverter.RebuildAssetFast("Data\\InputCooked\\UAssetAPI\\TestUE5_4\\Bellwright\\Content\\Mist\\Characters\\NPC\\Villager\\HighSkill\\ApprenticeBlacksmithNPCTemplate.uasset", fileVersion: FileVersions["UE5_4"]));

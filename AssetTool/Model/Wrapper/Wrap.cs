@@ -50,6 +50,17 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
+    public class TArrayBoolJsonConverter : JsonConverter<TBool[]>
+    {
+        public override TBool[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TBool { Value = bool.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TBool[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
     #endregion
 
     #region TInt8
@@ -95,6 +106,17 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<TInt8> value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    public class TArrayInt8JsonConverter : JsonConverter<TInt8[]>
+    {
+        public override TInt8[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TInt8 { Value = sbyte.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TInt8[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
     #endregion
@@ -144,6 +166,17 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value));
         }
     }
+    public class TArrayInt16JsonConverter : JsonConverter<TInt16[]>
+    {
+        public override TInt16[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TInt16 { Value = Int16.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TInt16[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
     #endregion
 
     #region TInt32
@@ -188,6 +221,17 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<TInt32> value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    public class TArrayInt32JsonConverter : JsonConverter<TInt32[]>
+    {
+        public override TInt32[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TInt32 { Value = Int32.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TInt32[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
     #endregion
@@ -235,6 +279,17 @@ namespace AssetTool
         public override void Write(Utf8JsonWriter writer, List<TInt64> value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(' ', value));
+        }
+    }
+    public class TArrayInt64JsonConverter : JsonConverter<TInt64[]>
+    {
+        public override TInt64[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TInt64 { Value = Int64.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TInt64[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
     #endregion
@@ -400,6 +455,17 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
+    public class TArrayUInt32JsonConverter : JsonConverter<TUInt32[]>
+    {
+        public override TUInt32[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TUInt32 { Value = UInt32.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TUInt32[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
     #endregion
 
     #region TUInt64
@@ -443,6 +509,17 @@ namespace AssetTool
             return s.Length == 0 ? [] : s.Split(' ').Select(x => new TUInt64 { Value = UInt64.Parse(x) }).ToList();
         }
         public override void Write(Utf8JsonWriter writer, List<TUInt64> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    public class TArrayUInt64JsonConverter : JsonConverter<TUInt64[]>
+    {
+        public override TUInt64[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TUInt64 { Value = UInt64.Parse(x) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TUInt64[] value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
@@ -494,6 +571,17 @@ namespace AssetTool
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
     }
+    public class TArrayFloatJsonConverter : JsonConverter<TFloat[]>
+    {
+        public override TFloat[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TFloat { Value = float.Parse(x, CultureInfo.InvariantCulture) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TFloat[] value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
     #endregion
 
     #region TDouble
@@ -537,6 +625,17 @@ namespace AssetTool
             return s.Length == 0 ? [] : s.Split(' ').Select(x => new TDouble { Value = double.Parse(x, CultureInfo.InvariantCulture) }).ToList();
         }
         public override void Write(Utf8JsonWriter writer, List<TDouble> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
+        }
+    }
+    public class TArrayDoubleJsonConverter : JsonConverter<TDouble[]>
+    {
+        public override TDouble[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return reader.GetString() is string s && s.Length > 0 ? s.Split(' ').Select(x => new TDouble { Value = double.Parse(x, CultureInfo.InvariantCulture) }).ToArray() : [];
+        }
+        public override void Write(Utf8JsonWriter writer, TDouble[] value, JsonSerializerOptions options)
         {
             writer.WriteStringValue(string.Join(' ', value.Select(x => x.Value)));
         }
