@@ -82,13 +82,12 @@ namespace AssetTool
                 nameof(FObjectProperty) => new FObjectPropertySerializer().Read(root, options),
                 nameof(FFloatProperty) => new FFloatPropertySerializer().Read(root, options),
                 nameof(FDoubleProperty) => new FDoublePropertySerializer().Read(root, options),
+                nameof(FByteProperty) => new FBytePropertySerializer().Read(root, options),
 
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
                 nameof(FBoolProperty)
                     => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
-                nameof(FByteProperty)
-                    => JsonSerializer.Deserialize<FByteProperty>(root.GetRawText(), options)!,
                 nameof(FClassPtrProperty)
                     => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
                 nameof(FDelegateProperty)
@@ -176,7 +175,9 @@ namespace AssetTool
                     new FDoublePropertySerializer().Write(writer, doubleProperty, options);
                     return;
 
-
+                case FByteProperty byteProperty:
+                    new FBytePropertySerializer().Write(writer, byteProperty, options);
+                    return;
 
                 default:
                     writer.WriteStartObject();
