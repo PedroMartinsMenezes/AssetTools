@@ -1769,7 +1769,6 @@
             "BoolVal": 0,
             "ValueType": "StructProperty",
             "Value": {
-              "__type": "FMapProperty",
               "TypeName": "MapProperty",
               "NumKeysToRemove": 0,
               "NumEntries": 4,
@@ -2286,17 +2285,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "EntryPoint",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "NamePrivate": "EntryPoint"
           },
           {
             "__type": "FObjectProperty",
@@ -2715,17 +2705,7 @@
           },
           {
             "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_Objective_Index",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "NamePrivate": "K2Node_Event_Objective_Index"
           },
           {
             "__type": "FStructProperty",
@@ -3311,17 +3291,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Objective Index",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "NamePrivate": "Objective Index"
           },
           {
             "__type": "FStructProperty",
@@ -3368,7 +3339,6 @@
             "PropertyGuid": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c",
             "BoolVal": 0,
             "Value": {
-              "__type": "FMulticastInlineDelegateProperty",
               "TypeName": "MulticastInlineDelegateProperty",
               "PropertyValuePtr": 0,
               "InvocationList": [],

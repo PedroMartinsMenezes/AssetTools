@@ -12,6 +12,7 @@ namespace AssetTool
         {
             var AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
             AssetConverter.AppConfig = AppConfig;
+            AssetConverter.AppConfig.DebugSaveJson = args.Contains("-DebugSaveJson");
 
             Stopwatch stopwatch = Stopwatch.StartNew();
             var cultureInfo = CultureInfo.InvariantCulture;
@@ -79,7 +80,6 @@ namespace AssetTool
                     string status = success ? "OK  " : "FAIL";
                     Log.Info($"[{status}] {file}");
                 }
-
 
                 lastFiles = failed.Concat(lastFiles).ToList();
 

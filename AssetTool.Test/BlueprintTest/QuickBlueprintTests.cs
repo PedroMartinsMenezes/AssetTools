@@ -1,8 +1,8 @@
 using NUnit.Framework;
 
-namespace AssetTool.Test.QuickTest
+namespace AssetTool.Test.BlueprintTest
 {
-    public class QuickBlueprintTests : TestBase
+    public class OnlyBlueprintTests : TestBase
     {
         [SetUp]
         public void Setup()

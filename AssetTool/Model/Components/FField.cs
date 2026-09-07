@@ -1,48 +1,8 @@
-﻿using System.Diagnostics;
+﻿using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{TypeName} {NamePrivate?.ToString()}")]
-    [JsonPolymorphic(TypeDiscriminatorPropertyName = "__type")]
-    [JsonDerivedType(typeof(FProperty), nameof(FProperty))]
-
-    [JsonDerivedType(typeof(FArrayProperty), nameof(FArrayProperty))]
-    [JsonDerivedType(typeof(FBoolProperty), nameof(FBoolProperty))]
-    [JsonDerivedType(typeof(FByteProperty), nameof(FByteProperty))]
-    [JsonDerivedType(typeof(FClassProperty), nameof(FClassProperty))]
-    [JsonDerivedType(typeof(FClassPtrProperty), nameof(FClassPtrProperty))]
-    [JsonDerivedType(typeof(FDelegateProperty), nameof(FDelegateProperty))]
-    [JsonDerivedType(typeof(FDoubleProperty), nameof(FDoubleProperty))]
-    [JsonDerivedType(typeof(FEnumProperty), nameof(FEnumProperty))]
-    [JsonDerivedType(typeof(FFieldPathProperty), nameof(FFieldPathProperty))]
-    [JsonDerivedType(typeof(FFloatProperty), nameof(FFloatProperty))]
-    [JsonDerivedType(typeof(FInt16Property), nameof(FInt16Property))]
-    [JsonDerivedType(typeof(FInt64Property), nameof(FInt64Property))]
-    [JsonDerivedType(typeof(FInt8Property), nameof(FInt8Property))]
-    [JsonDerivedType(typeof(FInterfaceProperty), nameof(FInterfaceProperty))]
-    [JsonDerivedType(typeof(FIntProperty), nameof(FIntProperty))]
-    [JsonDerivedType(typeof(FLazyObjectProperty), nameof(FLazyObjectProperty))]
-    [JsonDerivedType(typeof(FMapProperty), nameof(FMapProperty))]
-    [JsonDerivedType(typeof(FMulticastDelegateProperty), nameof(FMulticastDelegateProperty))]
-    [JsonDerivedType(typeof(FMulticastInlineDelegateProperty), nameof(FMulticastInlineDelegateProperty))]
-    [JsonDerivedType(typeof(FMulticastSparseDelegateProperty), nameof(FMulticastSparseDelegateProperty))]
-    [JsonDerivedType(typeof(FNameProperty), nameof(FNameProperty))]
-    [JsonDerivedType(typeof(FNumericProperty), nameof(FNumericProperty))]
-    [JsonDerivedType(typeof(FObjectProperty), nameof(FObjectProperty))]
-    [JsonDerivedType(typeof(FObjectPropertyBase), nameof(FObjectPropertyBase))]
-    [JsonDerivedType(typeof(FObjectPtrProperty), nameof(FObjectPtrProperty))]
-    [JsonDerivedType(typeof(FSetProperty), nameof(FSetProperty))]
-    [JsonDerivedType(typeof(FSoftClassProperty), nameof(FSoftClassProperty))]
-    [JsonDerivedType(typeof(FSoftObjectProperty), nameof(FSoftObjectProperty))]
-    [JsonDerivedType(typeof(FStrProperty), nameof(FStrProperty))]
-    [JsonDerivedType(typeof(FStructProperty), nameof(FStructProperty))]
-    [JsonDerivedType(typeof(FTextProperty), nameof(FTextProperty))]
-    [JsonDerivedType(typeof(FUInt16Property), nameof(FUInt16Property))]
-    [JsonDerivedType(typeof(FUInt32Property), nameof(FUInt32Property))]
-    [JsonDerivedType(typeof(FUInt64Property), nameof(FUInt64Property))]
-    [JsonDerivedType(typeof(FWeakObjectProperty), nameof(FWeakObjectProperty))]
-    [JsonDerivedType(typeof(FOptionalProperty), nameof(FOptionalProperty))]
     public class FField : ITransferable
     {
         public const string TYPE_NAME = "Field";
@@ -98,6 +58,126 @@ namespace AssetTool
             {
                 Field = Field ?? FField.Construct(PropertyTypeName);
                 Field.Move(transfer);
+            }
+        }
+    }
+
+    public sealed class FFieldJsonConverter : JsonConverter<FField>
+    {
+        public override FField Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            using JsonDocument document = JsonDocument.ParseValue(ref reader);
+
+            JsonElement root = document.RootElement;
+
+            if (!root.TryGetProperty("__type", out JsonElement typeElement))
+                throw new JsonException("Property '__type' not found.");
+
+            string typeName = typeElement.GetString();
+
+            return typeName switch
+            {
+                nameof(FIntProperty)
+                    => FIntPropertySerializer.Read(root, options),
+                nameof(FArrayProperty)
+                    => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
+                nameof(FBoolProperty)
+                    => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
+                nameof(FByteProperty)
+                    => JsonSerializer.Deserialize<FByteProperty>(root.GetRawText(), options)!,
+                nameof(FClassProperty)
+                    => JsonSerializer.Deserialize<FClassProperty>(root.GetRawText(), options)!,
+                nameof(FClassPtrProperty)
+                    => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
+                nameof(FDelegateProperty)
+                    => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
+                nameof(FDoubleProperty)
+                    => JsonSerializer.Deserialize<FDoubleProperty>(root.GetRawText(), options)!,
+                nameof(FEnumProperty)
+                    => JsonSerializer.Deserialize<FEnumProperty>(root.GetRawText(), options)!,
+                nameof(FFieldPathProperty)
+                    => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
+                nameof(FFloatProperty)
+                    => JsonSerializer.Deserialize<FFloatProperty>(root.GetRawText(), options)!,
+                nameof(FInt16Property)
+                    => JsonSerializer.Deserialize<FInt16Property>(root.GetRawText(), options)!,
+                nameof(FInt64Property)
+                    => JsonSerializer.Deserialize<FInt64Property>(root.GetRawText(), options)!,
+                nameof(FInt8Property)
+                    => JsonSerializer.Deserialize<FInt8Property>(root.GetRawText(), options)!,
+                nameof(FInterfaceProperty)
+                    => JsonSerializer.Deserialize<FInterfaceProperty>(root.GetRawText(), options)!,
+                nameof(FLazyObjectProperty)
+                    => JsonSerializer.Deserialize<FLazyObjectProperty>(root.GetRawText(), options)!,
+                nameof(FMapProperty)
+                    => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
+                nameof(FMulticastDelegateProperty)
+                    => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
+                nameof(FMulticastInlineDelegateProperty)
+                    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
+                nameof(FMulticastSparseDelegateProperty)
+                    => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
+                nameof(FNameProperty)
+                    => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
+                nameof(FNumericProperty)
+                    => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
+                nameof(FObjectProperty)
+                    => JsonSerializer.Deserialize<FObjectProperty>(root.GetRawText(), options)!,
+                nameof(FObjectPropertyBase)
+                    => JsonSerializer.Deserialize<FObjectPropertyBase>(root.GetRawText(), options)!,
+                nameof(FObjectPtrProperty)
+                    => JsonSerializer.Deserialize<FObjectPtrProperty>(root.GetRawText(), options)!,
+                nameof(FOptionalProperty)
+                    => JsonSerializer.Deserialize<FOptionalProperty>(root.GetRawText(), options)!,
+                nameof(FProperty)
+                    => JsonSerializer.Deserialize<FProperty>(root.GetRawText(), options)!,
+                nameof(FSetProperty)
+                    => JsonSerializer.Deserialize<FSetProperty>(root.GetRawText(), options)!,
+                nameof(FSoftClassProperty)
+                    => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
+                nameof(FSoftObjectProperty)
+                    => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
+                nameof(FStrProperty)
+                    => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
+                nameof(FStructProperty)
+                    => JsonSerializer.Deserialize<FStructProperty>(root.GetRawText(), options)!,
+                nameof(FTextProperty)
+                    => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
+                nameof(FUInt16Property)
+                    => JsonSerializer.Deserialize<FUInt16Property>(root.GetRawText(), options)!,
+                nameof(FUInt32Property)
+                    => JsonSerializer.Deserialize<FUInt32Property>(root.GetRawText(), options)!,
+                nameof(FUInt64Property)
+                    => JsonSerializer.Deserialize<FUInt64Property>(root.GetRawText(), options)!,
+                nameof(FWeakObjectProperty)
+                    => JsonSerializer.Deserialize<FWeakObjectProperty>(root.GetRawText(), options)!,
+                _ => throw new JsonException(
+                    $"Unknown field type '{typeName}'.")
+            };
+        }
+
+        public override void Write(Utf8JsonWriter writer, FField value, JsonSerializerOptions options)
+        {
+            switch (value)
+            {
+                case FIntProperty intProperty:
+                    FIntPropertySerializer.Write(writer, intProperty, options);
+                    return;
+
+                default:
+                    writer.WriteStartObject();
+
+                    writer.WriteString("__type", value.GetType().Name);
+
+                    JsonElement element = JsonSerializer.SerializeToElement(value, value.GetType(), options);
+
+                    foreach (JsonProperty property in element.EnumerateObject())
+                    {
+                        property.WriteTo(writer);
+                    }
+
+                    writer.WriteEndObject();
+                    return;
             }
         }
     }

@@ -478,6 +478,10 @@ namespace AssetTool
                 new FSHVectorJsonConverter(),
                 new FSHVectorRGBJsonConverter(),
                 #endregion
+
+                #region Properties
+                new FFieldJsonConverter(),
+                #endregion
             }
         };
     }
