@@ -1099,14 +1099,14 @@
         "ChildArray": [],
         "ChildProperties": [
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Yaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Yaw"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Pitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Pitch"
           },
           {
             "__type": "FBoolProperty",
@@ -1156,14 +1156,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-9] CameraComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera",
             "Value": "ImportIndex[-9] CameraComponent"
           },
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-11] SpringArmComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera Boom",
             "Value": "ImportIndex[-11] SpringArmComponent"
           }
@@ -1283,14 +1285,14 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetPitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetPitch"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetYaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetYaw"
           }
         ],
         "FunctionFlags": 201457664,

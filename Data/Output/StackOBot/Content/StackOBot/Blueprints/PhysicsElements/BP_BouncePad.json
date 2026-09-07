@@ -1101,75 +1101,81 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-29] SphereComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Sphere",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Sphere",
             "Value": "ImportIndex[-29] SphereComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-30] StaticMeshComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "StaticMesh",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "StaticMesh",
             "Value": "ImportIndex[-30] StaticMeshComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-22] PointLightComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "PointLight",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "PointLight",
             "Value": "ImportIndex[-22] PointLightComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-34] NiagaraComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "FX_Pad",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "FX_Pad",
             "Value": "ImportIndex[-34] NiagaraComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-30] StaticMeshComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Cube",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Cube",
             "Value": "ImportIndex[-30] StaticMeshComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-23] SceneComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "DefaultSceneRoot",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
             "Value": "ImportIndex[-23] SceneComponent"
           },
           {
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "__type": "FFloatProperty",
-            "NamePrivate": "Timeline_Bump_46D12550472E1D74840FB780644C2564"
+            "NamePrivate": "Timeline_Bump_46D12550472E1D74840FB780644C2564",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FByteProperty",
@@ -1187,14 +1193,15 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-31] TimelineComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference",
+            "NamePrivate": "Timeline",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "BP_BouncePad"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Timeline",
             "Value": "ImportIndex[-31] TimelineComponent"
           }
         ],
@@ -1383,8 +1390,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -1403,11 +1410,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-13] Actor",
             "NamePrivate": "K2Node_Event_OtherActor",
             "Value": "ImportIndex[-13] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-16] Character",
             "NamePrivate": "K2Node_DynamicCast_AsCharacter",
             "Value": "ImportIndex[-16] Character"
           },
@@ -1432,8 +1441,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast"
           }
         ],
         "FunctionFlags": 32769,
@@ -1464,8 +1473,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-13] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
             "Value": "ImportIndex[-13] Actor"
           }

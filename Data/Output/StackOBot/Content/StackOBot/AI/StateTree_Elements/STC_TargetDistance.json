@@ -1097,15 +1097,16 @@
         ],
         "ChildProperties": [
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-11] Actor",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
+            "NamePrivate": "Actor",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Actor",
               "Category": "Context"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Actor",
             "Value": "ImportIndex[-11] Actor"
           },
           {
@@ -1127,6 +1128,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Distance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1134,8 +1136,7 @@
             "MetaDataMap": {
               "DisplayName": "Distance",
               "Category": "Inputs"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FBoolProperty",
@@ -1586,8 +1587,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Square_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Square_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -1620,8 +1621,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_VSizeXYSquared_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_VSizeXYSquared_ReturnValue"
           },
           {
             "__type": "FBoolProperty",

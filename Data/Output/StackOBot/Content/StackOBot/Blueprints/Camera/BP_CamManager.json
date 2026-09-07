@@ -4241,15 +4241,16 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] Actor",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "NamePrivate": "CameraTargetRef",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Camera Target Ref",
               "Category": "SideScrollingCamera"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "CameraTargetRef",
             "Value": "ImportIndex[-27] Actor"
           },
           {
@@ -4271,15 +4272,16 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-30] CameraActor",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "NamePrivate": "ProxyCameraTransition",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Proxy Camera Transition",
               "Category": "SideScrollingCamera"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "ProxyCameraTransition",
             "Value": "ImportIndex[-30] CameraActor"
           },
           {
@@ -4355,6 +4357,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Camera Zoom",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4362,21 +4365,21 @@
             "MetaDataMap": {
               "DisplayName": "Camera Zoom",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "Camera Speed Z",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Camera Speed Z",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "Camera Speed Z"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Camera X Goal",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4384,10 +4387,10 @@
             "MetaDataMap": {
               "DisplayName": "Camera X Goal",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Camera Y Goal",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4395,10 +4398,10 @@
             "MetaDataMap": {
               "DisplayName": "Camera Y Goal",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Camera  Z Goal",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4406,8 +4409,7 @@
             "MetaDataMap": {
               "DisplayName": "Camera  Z Goal",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FBoolProperty",
@@ -4433,38 +4435,40 @@
             }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "TransitionOutBlendTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Transition Out Blend Time",
               "Category": "Side Scrolling Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "TransitionOutBlendTime"
+            }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-31] CameraComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "PlayerCamera",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Player Camera",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "PlayerCamera",
             "Value": "ImportIndex[-31] CameraComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-44] SpringArmComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "Camera Boom",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Camera Boom",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Camera Boom",
             "Value": "ImportIndex[-44] SpringArmComponent"
           },
           {
@@ -4491,114 +4495,114 @@
             }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultTargetArmLength",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default Target Arm Length",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultTargetArmLength"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultViewPitchMin",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default View Pitch Min",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultViewPitchMin"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultViewPitchMax",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default View Pitch Max",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultViewPitchMax"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultViewYawMax",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default View Yaw Max",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultViewYawMax"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultViewYawMin",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default View Yaw Min",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultViewYawMin"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultCameraRotationLagSpeed",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default Camera Rotation Lag Speed",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultCameraRotationLagSpeed"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultCameraLagSpeed",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default Camera Lag Speed",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultCameraLagSpeed"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DefaultCameraLagMaxDistance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Default Camera Lag Max Distance",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "DefaultCameraLagMaxDistance"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "LockedPitchBounds",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Locked Pitch Bounds",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "LockedPitchBounds"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "LockedYawBounds",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Locked Yaw Bounds",
               "Category": "Locked Camera"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "LockedYawBounds"
+            }
           },
           {
             "__type": "FStructProperty",
@@ -4619,6 +4623,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "LockedArmLength",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4626,8 +4631,7 @@
             "MetaDataMap": {
               "DisplayName": "Locked Arm Length",
               "Category": "Locked Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FByteProperty",
@@ -4648,6 +4652,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "PresetYaw",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4655,10 +4660,10 @@
             "MetaDataMap": {
               "DisplayName": "Preset Yaw",
               "Category": "Locked Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Preset Pitch",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4666,8 +4671,7 @@
             "MetaDataMap": {
               "DisplayName": "Preset Pitch",
               "Category": "Locked Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FBoolProperty",
@@ -4716,6 +4720,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "LockedCameraInterpSpeed",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4723,10 +4728,10 @@
             "MetaDataMap": {
               "DisplayName": "Locked Camera Interp Speed",
               "Category": "Locked Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "LockedCameraLagInterpSpeed",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4734,8 +4739,7 @@
             "MetaDataMap": {
               "DisplayName": "Locked Camera Lag Interp Speed",
               "Category": "Locked Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FStructProperty",
@@ -4774,6 +4778,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "CurrentCameraOffset",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4781,10 +4786,10 @@
             "MetaDataMap": {
               "DisplayName": "Current Camera Offset",
               "Category": "Third Person Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "PawnZ",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4792,10 +4797,10 @@
             "MetaDataMap": {
               "DisplayName": "Pawn Z",
               "Category": "Third Person Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "MaxCameraOffset",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4803,10 +4808,10 @@
             "MetaDataMap": {
               "DisplayName": "Max Camera Offset",
               "Category": "Third Person Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "CurrentGroundDistance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -4814,8 +4819,7 @@
             "MetaDataMap": {
               "DisplayName": "Current Ground Distance",
               "Category": "Third Person Camera"
-            },
-            "__type": "FDoubleProperty"
+            }
           }
         ],
         "FuncMap": {
@@ -5586,8 +5590,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "CameraTarget",
             "Value": "ImportIndex[-27] Actor"
           },
@@ -5622,8 +5627,8 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "NewCameraFOV"
           },
           {
@@ -5647,14 +5652,14 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "NewLocalVar",
             "HasMetaData": true,
             "MetaDataMap": {
               "FriendlyName": "New Local Var",
               "Category": "Default"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FStructProperty",
@@ -5692,40 +5697,40 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"2"
           },
           {
             "__type": "FArrayProperty",
@@ -5733,6 +5738,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-27] Actor",
               "NamePrivate": "K2Node_MakeArray_Array",
               "Value": "ImportIndex[-27] Actor"
             },
@@ -5763,16 +5769,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"3"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"3"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"3"
           },
           {
             "__type": "FStructProperty",
@@ -5939,17 +5945,20 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-45] PhysicalMaterial",
             "NamePrivate": "CallFunc_BreakHitResult_PhysMat",
             "Value": "ImportIndex[-45] PhysicalMaterial"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] Actor",
             "NamePrivate": "CallFunc_BreakHitResult_HitActor",
             "Value": "ImportIndex[-27] Actor"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-40] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_BreakHitResult_HitComponent",
             "Value": "ImportIndex[-40] PrimitiveComponent"
           },
@@ -6024,8 +6033,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -6063,16 +6072,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"4"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"4"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"4"
           },
           {
             "__type": "FStructProperty",
@@ -6105,8 +6114,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -6194,16 +6203,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"5"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"5"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"5"
           },
           {
             "__type": "FBoolProperty",
@@ -6226,20 +6235,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_ReturnValue\"1"
           }
         ],
         "FunctionFlags": 214042632,
@@ -6304,28 +6313,28 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
             "__type": "FStructProperty",
@@ -6363,16 +6372,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"2"
           },
           {
             "__type": "FBoolProperty",
@@ -6395,8 +6404,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -6616,28 +6625,28 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FClamp_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FClamp_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -6676,6 +6685,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
             "Value": "ImportIndex[-37] Pawn"
           },
@@ -6715,6 +6725,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-27] Actor",
               "NamePrivate": "K2Node_MakeArray_Array",
               "Value": "ImportIndex[-27] Actor"
             },
@@ -6874,17 +6885,20 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-45] PhysicalMaterial",
             "NamePrivate": "CallFunc_BreakHitResult_PhysMat",
             "Value": "ImportIndex[-45] PhysicalMaterial"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] Actor",
             "NamePrivate": "CallFunc_BreakHitResult_HitActor",
             "Value": "ImportIndex[-27] Actor"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-40] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_BreakHitResult_HitComponent",
             "Value": "ImportIndex[-40] PrimitiveComponent"
           },
@@ -6974,8 +6988,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_VSize_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_VSize_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -7033,20 +7047,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           }
         ],
         "FunctionFlags": 209846272,
@@ -7098,16 +7112,19 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue",
             "Value": "ImportIndex[-39] PlayerController"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
             "Value": "ImportIndex[-37] Pawn"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"1",
             "Value": "ImportIndex[-39] PlayerController"
           },
@@ -7117,11 +7134,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"2",
             "Value": "ImportIndex[-39] PlayerController"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue",
             "Value": "ImportIndex[-37] Pawn"
           },
@@ -7182,6 +7201,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue\"1",
             "Value": "ImportIndex[-37] Pawn"
           },
@@ -7202,6 +7222,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"3",
             "Value": "ImportIndex[-39] PlayerController"
           },
@@ -7317,6 +7338,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"4",
             "Value": "ImportIndex[-39] PlayerController"
           },
@@ -7427,6 +7449,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue\"1",
             "Value": "ImportIndex[-37] Pawn"
           },
@@ -7536,20 +7559,22 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "K2Node_Event_PresetPitch",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_PresetPitch"
           },
           {
-            "NamePrivate": "K2Node_Event_PresetYaw",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_PresetYaw"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] Actor",
             "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
             "Value": "ImportIndex[-27] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-30] CameraActor",
             "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
             "Value": "ImportIndex[-30] CameraActor"
           },
@@ -7575,21 +7600,25 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"5",
             "Value": "ImportIndex[-39] PlayerController"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "K2Node_CustomEvent_OldPawn",
             "Value": "ImportIndex[-37] Pawn"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "K2Node_CustomEvent_NewPawn",
             "Value": "ImportIndex[-37] Pawn"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
             "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue\"2",
             "Value": "ImportIndex[-37] Pawn"
           },
@@ -7629,28 +7658,30 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-31] CameraComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetPlayerCamera_Camera",
             "Value": "ImportIndex[-31] CameraComponent"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-44] SpringArmComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetPlayerCamera_Camera_Boom",
             "Value": "ImportIndex[-44] SpringArmComponent"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_LockedCameraInterpolation_DeltaTime_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_LockedCameraInterpolation_DeltaTime_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -7730,14 +7761,14 @@
         "ChildArray": [],
         "ChildProperties": [
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Yaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Yaw"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Pitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Pitch"
           },
           {
             "__type": "FBoolProperty",
@@ -7787,14 +7818,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-31] CameraComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera",
             "Value": "ImportIndex[-31] CameraComponent"
           },
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-44] SpringArmComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera Boom",
             "Value": "ImportIndex[-44] SpringArmComponent"
           }
@@ -7826,13 +7859,14 @@
         "ChildArray": [],
         "ChildProperties": [
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "DeltaTime",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "DeltaTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-44] SpringArmComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "CameraBoom",
             "Value": "ImportIndex[-44] SpringArmComponent"
           },
@@ -7857,16 +7891,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"2"
           },
           {
             "__type": "FStructProperty",
@@ -7884,48 +7918,48 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"3"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"4"
           },
           {
             "__type": "FFloatProperty",
             "NamePrivate": "CallFunc_VInterpTo_DeltaTime_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"2"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"3"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Current_ImplicitCast\"4"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"2"
           },
           {
             "__type": "FFloatProperty",
@@ -7940,8 +7974,8 @@
             "NamePrivate": "CallFunc_VInterpTo_InterpSpeed_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_Target_ImplicitCast\"3"
           },
           {
             "__type": "FFloatProperty",
@@ -8011,8 +8045,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "DeltaSeconds"
           }
         ],
@@ -8112,6 +8146,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue",
             "Value": "ImportIndex[-38] PlayerCameraManager"
           },
@@ -8223,16 +8258,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
             "__type": "FStructProperty",
@@ -8250,24 +8285,24 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -8285,12 +8320,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue\"2"
           },
           {
             "__type": "FStructProperty",
@@ -8308,8 +8343,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_InterpSpeed_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_InterpSpeed_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -8396,6 +8431,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue",
             "Value": "ImportIndex[-38] PlayerCameraManager"
           }
@@ -8428,6 +8464,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue",
             "Value": "ImportIndex[-39] PlayerController"
           },
@@ -8459,49 +8496,50 @@
             "NamePrivate": "CallFunc_BreakRotator_Yaw"
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"1"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue",
             "Value": "ImportIndex[-38] PlayerCameraManager"
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_B_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_B_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_B_ImplicitCast\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_B_ImplicitCast\"1"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_B_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_B_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_B_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_B_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -8512,12 +8550,12 @@
             "NamePrivate": "K2Node_VariableSet_ViewYawMax_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_B_ImplicitCast\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_B_ImplicitCast\"1"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_B_ImplicitCast\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_B_ImplicitCast\"1"
           },
           {
             "__type": "FFloatProperty",
@@ -8555,14 +8593,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OldPawn",
             "Value": "ImportIndex[-37] Pawn"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] Pawn",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "NewPawn",
             "Value": "ImportIndex[-37] Pawn"
           }
@@ -8614,14 +8654,14 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetPitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetPitch"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetYaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetYaw"
           }
         ],
         "FunctionFlags": 201457664,

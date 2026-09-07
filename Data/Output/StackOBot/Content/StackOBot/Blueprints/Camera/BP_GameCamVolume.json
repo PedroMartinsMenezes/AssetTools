@@ -2059,39 +2059,43 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-26] ArrowComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Arrow",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Arrow",
             "Value": "ImportIndex[-26] ArrowComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-43] SphereComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Sphere",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Sphere",
             "Value": "ImportIndex[-43] SphereComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] BillboardComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Billboard",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Billboard",
             "Value": "ImportIndex[-27] BillboardComponent"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "TriggerRadius",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -2099,8 +2103,7 @@
             "MetaDataMap": {
               "DisplayName": "Trigger Radius",
               "Category": "Camera Volume"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FByteProperty",
@@ -2190,6 +2193,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "PresetYaw",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -2197,10 +2201,10 @@
             "MetaDataMap": {
               "DisplayName": "Preset Yaw",
               "Category": "Locked Third Person"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "PresetPitch",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -2208,8 +2212,7 @@
             "MetaDataMap": {
               "DisplayName": "Preset Pitch",
               "Category": "Locked Third Person"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FBoolProperty",
@@ -2509,11 +2512,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Pawn",
             "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
             "Value": "ImportIndex[-36] Pawn"
           },
@@ -2548,32 +2552,32 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -2749,11 +2753,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] Actor",
             "NamePrivate": "K2Node_Event_OtherActor\"1",
             "Value": "ImportIndex[-25] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] Actor",
             "NamePrivate": "K2Node_Event_OtherActor",
             "Value": "ImportIndex[-25] Actor"
           },
@@ -2767,11 +2773,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue",
             "Value": "ImportIndex[-37] PlayerCameraManager"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue\"1",
             "Value": "ImportIndex[-37] PlayerCameraManager"
           },
@@ -2907,6 +2915,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-37] PlayerCameraManager",
             "NamePrivate": "CallFunc_GetPlayerCameraManager_ReturnValue\"2",
             "Value": "ImportIndex[-37] PlayerCameraManager"
           },
@@ -2967,16 +2976,19 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue",
             "Value": "ImportIndex[-38] PlayerController"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Pawn",
             "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue",
             "Value": "ImportIndex[-36] Pawn"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-32] GameModeBase",
             "NamePrivate": "CallFunc_GetGameMode_ReturnValue",
             "Value": "ImportIndex[-32] GameModeBase"
           },
@@ -3002,6 +3014,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-5] GM_InGame_C",
             "NamePrivate": "K2Node_DynamicCast_AsGM_in_Game",
             "Value": "ImportIndex[-5] GM_InGame_C"
           },
@@ -3047,6 +3060,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Pawn",
             "NamePrivate": "K2Node_CustomEvent_PlayerPawn",
             "Value": "ImportIndex[-36] Pawn"
           },
@@ -3056,6 +3070,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-25] Actor",
               "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
               "Value": "ImportIndex[-25] Actor"
             },
@@ -3072,6 +3087,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] Actor",
             "NamePrivate": "CallFunc_Array_Get_Item",
             "Value": "ImportIndex[-25] Actor"
           },
@@ -3219,8 +3235,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Pawn",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "PlayerPawn",
             "Value": "ImportIndex[-36] Pawn"
           }
@@ -3253,8 +3270,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
             "Value": "ImportIndex[-25] Actor"
           }
@@ -3287,8 +3305,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
             "Value": "ImportIndex[-25] Actor"
           }
@@ -3348,8 +3367,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "DeltaSeconds"
           }
         ],

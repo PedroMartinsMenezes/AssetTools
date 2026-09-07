@@ -2534,7 +2534,10 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-6] PlayerSaveObject_C",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper",
+            "NamePrivate": "PlayerInventorySaveGame",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
@@ -2542,12 +2545,13 @@
               "Category": "Default",
               "MultiLine": "true"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "PlayerInventorySaveGame",
             "Value": "ImportIndex[-6] PlayerSaveObject_C"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-28] AudioComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "Music",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
@@ -2555,8 +2559,6 @@
               "Category": "Default",
               "MultiLine": "true"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Music",
             "Value": "ImportIndex[-28] AudioComponent"
           },
           {
@@ -2601,19 +2603,23 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-28] AudioComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "Audio",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Audio",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Audio",
             "Value": "ImportIndex[-28] AudioComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-98] UI_LoadingScreen_C",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "LoadingWidget",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
@@ -2621,8 +2627,6 @@
               "DisplayName": "Loading Widget",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "LoadingWidget",
             "Value": "ImportIndex[-98] UI_LoadingScreen_C"
           }
         ],
@@ -3320,8 +3324,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] SaveGame",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SaveGame",
             "Value": "ImportIndex[-38] SaveGame"
           },
@@ -3399,6 +3404,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] SaveGame",
             "NamePrivate": "K2Node_CustomEvent_SaveGame",
             "Value": "ImportIndex[-38] SaveGame"
           },
@@ -3460,21 +3466,24 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] SaveGame",
             "NamePrivate": "Temp_object_Variable",
             "Value": "ImportIndex[-38] SaveGame"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-98] UI_LoadingScreen_C",
             "PropertyFlags": "CPF_InstancedReference",
+            "NamePrivate": "CallFunc_Create_ReturnValue",
             "HasMetaData": true,
             "MetaDataMap": {
               "EditInline": "true"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_Create_ReturnValue",
             "Value": "ImportIndex[-98] UI_LoadingScreen_C"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-27] AsyncActionHandleSaveGame",
             "NamePrivate": "CallFunc_AsyncSaveGameToSlot_ReturnValue",
             "Value": "ImportIndex[-27] AsyncActionHandleSaveGame"
           },
@@ -3630,11 +3639,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-5] LevelSaveObject_C",
             "NamePrivate": "CallFunc_CreateSaveGameObject_ReturnValue",
             "Value": "ImportIndex[-5] LevelSaveObject_C"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] SaveGame",
             "NamePrivate": "CallFunc_LoadGameFromSlot_ReturnValue",
             "Value": "ImportIndex[-38] SaveGame"
           },
@@ -3660,6 +3671,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-5] LevelSaveObject_C",
             "NamePrivate": "K2Node_DynamicCast_AsLevel_Save_Object",
             "Value": "ImportIndex[-5] LevelSaveObject_C"
           },
@@ -3712,6 +3724,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] SaveGame",
             "NamePrivate": "CallFunc_LoadGameFromSlot_ReturnValue",
             "Value": "ImportIndex[-38] SaveGame"
           },
@@ -3737,6 +3750,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-6] PlayerSaveObject_C",
             "NamePrivate": "K2Node_DynamicCast_AsPlayer_Save_Object",
             "Value": "ImportIndex[-6] PlayerSaveObject_C"
           },
@@ -3762,6 +3776,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-6] PlayerSaveObject_C",
             "NamePrivate": "CallFunc_CreateSaveGameObject_ReturnValue",
             "Value": "ImportIndex[-6] PlayerSaveObject_C"
           }
@@ -3918,8 +3933,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] SoundBase",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Audio",
             "Value": "ImportIndex[-39] SoundBase"
           },
@@ -3944,8 +3960,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-28] AudioComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_CreateSound2D_ReturnValue",
             "Value": "ImportIndex[-28] AudioComponent"
           }

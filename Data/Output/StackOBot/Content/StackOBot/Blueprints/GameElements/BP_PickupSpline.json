@@ -1038,39 +1038,43 @@
         ],
         "ChildProperties": [
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-18] PCGComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "PCG",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "PCG",
             "Value": "ImportIndex[-18] PCGComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-17] SplineComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Spline",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Spline",
             "Value": "ImportIndex[-17] SplineComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-14] SceneComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "DefaultSceneRoot",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
             "Value": "ImportIndex[-14] SceneComponent"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
             "NamePrivate": "Distance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1079,8 +1083,7 @@
               "DisplayName": "Distance",
               "Category": "PCG",
               "ExposeOnSpawn": "true"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
@@ -1273,8 +1276,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-10] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "DestroyedActor",
             "Value": "ImportIndex[-10] Actor"
           }
@@ -1332,8 +1336,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-2] BP_Coin_C",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Coin",
             "Value": "ImportIndex[-2] BP_Coin_C"
           },

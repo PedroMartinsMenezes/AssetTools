@@ -1891,37 +1891,39 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-31] SceneComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "DefaultSceneRoot",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
             "Value": "ImportIndex[-31] SceneComponent"
           },
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "Panels",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Panels",
               "Category": "Default"
-            },
-            "NamePrivate": "Panels"
+            }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-34] StaticMesh",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "Mesh",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Mesh",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Mesh",
             "Value": "ImportIndex[-34] StaticMesh"
           },
           {
@@ -1929,8 +1931,9 @@
             "TypeName": "ArrayProperty",
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
-              "PropertyFlags": "CPF_InstancedReference",
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-35] StaticMeshComponent",
+              "PropertyFlags": "CPF_InstancedReference",
               "NamePrivate": "Mesh References",
               "Value": "ImportIndex[-35] StaticMeshComponent"
             },
@@ -1949,18 +1952,20 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-34] StaticMesh",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "End Mesh",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "End Mesh",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "End Mesh",
             "Value": "ImportIndex[-34] StaticMesh"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Spacing",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1968,8 +1973,7 @@
             "MetaDataMap": {
               "DisplayName": "Spacing",
               "Category": "Default"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FBoolProperty",
@@ -1995,6 +1999,7 @@
             }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Rotation Increment",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -2002,10 +2007,10 @@
             "MetaDataMap": {
               "DisplayName": "Rotation Increment",
               "Category": "Default"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Attach Point Offset",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -2013,8 +2018,7 @@
             "MetaDataMap": {
               "DisplayName": "Attach Point Offset",
               "Category": "Default"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FStructProperty",
@@ -2450,12 +2454,12 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "Index",
             "HasMetaData": true,
             "MetaDataMap": {
               "FriendlyName": "Index",
               "Category": "Default"
-            },
-            "NamePrivate": "Index"
+            }
           },
           {
             "__type": "FIntProperty",
@@ -2482,18 +2486,20 @@
             "NamePrivate": "CallFunc_Subtract_IntInt_ReturnValue"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item\"1",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
@@ -2518,8 +2524,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -2587,8 +2593,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
@@ -2613,22 +2620,23 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item\"2",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -2685,20 +2693,22 @@
             "NamePrivate": "CallFunc_Subtract_IntInt_ReturnValue\"1"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-29] PhysicsConstraintComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"1",
             "Value": "ImportIndex[-29] PhysicsConstraintComponent"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-29] PhysicsConstraintComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"2",
             "Value": "ImportIndex[-29] PhysicsConstraintComponent"
           },
           {
-            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"1"
           },
           {
             "__type": "FBoolProperty",
@@ -2721,12 +2731,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3"
           },
           {
             "__type": "FStructProperty",
@@ -2774,18 +2784,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"3",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"2"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"4"
           },
           {
             "__type": "FStructProperty",
@@ -2833,14 +2844,16 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"4",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item\"3",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
@@ -2929,8 +2942,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item\"4",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
@@ -2955,8 +2969,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] StaticMeshComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_Array_Get_Item\"5",
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },

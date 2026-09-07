@@ -1114,15 +1114,16 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "Player Number",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Player Number",
               "Category": "Params"
-            },
-            "NamePrivate": "Player Number"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Trigger Distance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1135,19 +1136,19 @@
               "ClampMin": "0",
               "UIMax": "100000",
               "ClampMax": "100000"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-12] Actor",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
+            "NamePrivate": "Actor",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Actor",
               "Category": "Context"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Actor",
             "Value": "ImportIndex[-12] Actor"
           }
         ],
@@ -1466,8 +1467,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Square_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Square_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -1486,6 +1487,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-20] Pawn",
             "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
             "Value": "ImportIndex[-20] Pawn"
           },
@@ -1525,8 +1527,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Vector_Distance2DSquared_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Vector_Distance2DSquared_ReturnValue"
           },
           {
             "__type": "FBoolProperty",

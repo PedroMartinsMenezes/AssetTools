@@ -1965,70 +1965,75 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-22] BillboardComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Billboard",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Billboard",
             "Value": "ImportIndex[-22] BillboardComponent"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "Category": "Default"
-            },
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] SceneComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Anchor",
-            "Value": "ImportIndex[-36] SceneComponent"
-          },
-          {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
+            "Value": "ImportIndex[-36] SceneComponent"
+          },
+          {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] SceneComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Scene",
-            "Value": "ImportIndex[-36] SceneComponent"
-          },
-          {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
+            "Value": "ImportIndex[-36] SceneComponent"
+          },
+          {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] BoxComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Box",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "HasMetaData": true,
+            "MetaDataMap": {
+              "Category": "Default"
+            },
             "Value": "ImportIndex[-25] BoxComponent"
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "PreShatterTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Pre Shatter Time",
               "Category": "Destructible Platform"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "PreShatterTime"
+            }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-42] GeometryCollectionComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "GC",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "GC",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "GC",
             "Value": "ImportIndex[-42] GeometryCollectionComponent"
           },
           {
@@ -2050,38 +2055,39 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "NamePrivate": "ActivePlatform",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Active Platform",
               "Category": "Destructible Platform"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "ActivePlatform",
             "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C"
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "RespawnTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Respawn Time",
               "Category": "Destructible Platform"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "RespawnTime"
+            }
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "PreBreakDuration",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Pre Break Duration",
               "Category": "Destructible Platform"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "PreBreakDuration"
+            }
           }
         ],
         "FuncMap": {
@@ -2398,19 +2404,22 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_Event_MyComp",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-21] Actor",
             "NamePrivate": "K2Node_Event_Other",
             "Value": "ImportIndex[-21] Actor"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_Event_OtherComp",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
@@ -2495,19 +2504,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-26] Character",
             "NamePrivate": "K2Node_DynamicCast_AsCharacter",
             "Value": "ImportIndex[-26] Character"
           },
@@ -2547,16 +2557,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
             "__type": "FBoolProperty",
@@ -2650,11 +2660,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-21] Actor",
             "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
             "Value": "ImportIndex[-21] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C",
             "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
             "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C"
           },
@@ -2675,17 +2687,19 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-21] Actor",
             "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue\"1",
             "Value": "ImportIndex[-21] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-3] BP_DestructiblePlatform_Destruction_C",
             "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue\"1",
             "Value": "ImportIndex[-3] BP_DestructiblePlatform_Destruction_C"
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -2754,8 +2768,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -2817,20 +2831,23 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] PrimitiveComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "MyComp",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-21] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Other",
             "Value": "ImportIndex[-21] Actor"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-35] PrimitiveComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "OtherComp",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
@@ -3020,8 +3037,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "NamePrivate": "CallFunc_RandomFloatInRange_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_RandomFloatInRange_ReturnValue"
           },
           {
             "__type": "FIntProperty",
@@ -3043,8 +3060,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -3107,8 +3124,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-44] NiagaraComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_SpawnSystemAtLocation_ReturnValue",
             "Value": "ImportIndex[-44] NiagaraComponent"
           },

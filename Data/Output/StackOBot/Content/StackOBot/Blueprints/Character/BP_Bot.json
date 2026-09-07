@@ -5670,102 +5670,111 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-78] NiagaraComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "FX_JetpackThruster",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "FX_JetpackThruster",
             "Value": "ImportIndex[-78] NiagaraComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-72] StaticMeshComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "StaticMesh",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "StaticMesh",
             "Value": "ImportIndex[-72] StaticMeshComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-83] WidgetComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "UI_Cue",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "UI_Cue",
             "Value": "ImportIndex[-83] WidgetComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-38] ArrowComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Arrow_Landing",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Arrow_Landing",
             "Value": "ImportIndex[-38] ArrowComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-42] CameraComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "FollowCamera",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "MyCharacter"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "FollowCamera",
             "Value": "ImportIndex[-42] CameraComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-49] DecalComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Decal",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Decal",
             "Value": "ImportIndex[-49] DecalComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-61] PhysicsHandleComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "PhysicsHandle",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "PhysicsHandle",
             "Value": "ImportIndex[-61] PhysicsHandleComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] AudioComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "JetpackSFX",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "JetpackSFX",
             "Value": "ImportIndex[-39] AudioComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-71] SpringArmComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "CameraBoom",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "MyCharacter"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "CameraBoom",
             "Value": "ImportIndex[-71] SpringArmComponent"
           },
           {
@@ -5793,7 +5802,10 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-48] CurveFloat",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "JetpackBoostCurve",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
@@ -5801,11 +5813,10 @@
               "Category": "Jetpack",
               "MultiLine": "true"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "JetpackBoostCurve",
             "Value": "ImportIndex[-48] CurveFloat"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "ThrusterTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -5814,10 +5825,10 @@
               "DisplayName": "Thruster Time",
               "Category": "Jetpack",
               "MultiLine": "true"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "ThrusterMaxTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -5826,8 +5837,7 @@
               "DisplayName": "Thruster Max Time",
               "Category": "Jetpack",
               "MultiLine": "true"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
             "__type": "FArrayProperty",
@@ -5835,6 +5845,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-57] MaterialInstanceDynamic",
               "NamePrivate": "Materials",
               "Value": "ImportIndex[-57] MaterialInstanceDynamic"
             },
@@ -5897,30 +5908,33 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "Tele_Target",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Tele Target",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Tele_Target",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-78] NiagaraComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "FX_Grab",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "FX Grab",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "FX_Grab",
             "Value": "ImportIndex[-78] NiagaraComponent"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "CachedVelocity",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -5928,10 +5942,10 @@
             "MetaDataMap": {
               "DisplayName": "Cached Velocity",
               "Category": "Jetpack"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "CachedVelocityDampening",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -5939,19 +5953,19 @@
             "MetaDataMap": {
               "DisplayName": "Cached Velocity Dampening",
               "Category": "Jetpack"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "Potential Interact",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Potential Interact",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Potential Interact",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
           {
@@ -5978,27 +5992,28 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-57] MaterialInstanceDynamic",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "DMI_FuelDisplay",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "DMI Fuel Display",
               "Category": "Jetpack"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "DMI_FuelDisplay",
             "Value": "ImportIndex[-57] MaterialInstanceDynamic"
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "Project In Front",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Project in Front",
               "Category": "Grab"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "Project In Front"
+            }
           },
           {
             "__type": "FStructProperty",
@@ -6019,15 +6034,16 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Actor",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "NamePrivate": "Standing On Actor",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Standing on Actor",
               "Category": "Gameplay"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Standing On Actor",
             "Value": "ImportIndex[-36] Actor"
           },
           {
@@ -6049,15 +6065,16 @@
             }
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] AudioComponent",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
+            "NamePrivate": "GrabAudio",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Grab Audio",
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "GrabAudio",
             "Value": "ImportIndex[-39] AudioComponent"
           },
           {
@@ -7475,8 +7492,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Hit Flash Value"
           },
           {
@@ -7500,8 +7517,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
             "__type": "FFloatProperty",
@@ -7583,8 +7600,9 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"1"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"1",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -7605,20 +7623,21 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
             "NamePrivate": "Temp_object_Variable",
             "Value": "ImportIndex[-75] InputAction"
           },
           {
-            "NamePrivate": "Temp_real_Variable",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable"
           },
           {
-            "NamePrivate": "Temp_real_Variable",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"1"
           },
           {
             "__type": "FStructProperty",
@@ -7636,16 +7655,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "Temp_real_Variable\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_Y"
           },
           {
             "__type": "FStructProperty",
@@ -7671,13 +7690,15 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
             "NamePrivate": "Temp_object_Variable\"1",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -7702,20 +7723,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "Temp_real_Variable\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"2"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"3"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"2"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"3"
           },
           {
             "__type": "FBoolProperty",
@@ -7828,12 +7849,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "K2Node_Event_PresetPitch",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_PresetPitch"
           },
           {
-            "NamePrivate": "K2Node_Event_PresetYaw",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_PresetYaw"
           },
           {
             "__type": "FBoolProperty",
@@ -7896,19 +7917,21 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-47] Controller",
             "NamePrivate": "K2Node_Event_NewController",
             "Value": "ImportIndex[-47] Controller"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"4"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"5"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
             "NamePrivate": "Temp_object_Variable\"2",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -7948,16 +7971,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
             "__type": "FStructProperty",
@@ -7983,8 +8006,9 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"5"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"5",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -8016,8 +8040,8 @@
             "NamePrivate": "CallFunc_BreakRotator_Yaw"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"5"
           },
           {
             "__type": "FStructProperty",
@@ -8035,8 +8059,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "Temp_real_Variable\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"4"
           },
           {
             "__type": "FStructProperty",
@@ -8173,12 +8197,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_SelectFloat_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_SelectFloat_ReturnValue"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"6",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"6"
           },
           {
             "__type": "FStructProperty",
@@ -8196,8 +8220,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "Temp_real_Variable\"7",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"7"
           },
           {
             "__type": "FStructProperty",
@@ -8215,11 +8239,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "Temp_real_Variable\"8",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"8"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-62] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue",
             "Value": "ImportIndex[-62] PlayerController"
           },
@@ -8240,6 +8265,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
             "NamePrivate": "Temp_object_Variable\"3",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -8267,22 +8293,23 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"2"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"2",
             "Value": "ImportIndex[-75] InputAction"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"8",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"8"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"7",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"7"
           },
           {
-            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis1D_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis1D_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -8300,8 +8327,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_VSize_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_VSize_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -8354,12 +8381,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "K2Node_Event_Knockback_Strength",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_Knockback_Strength"
           },
           {
-            "NamePrivate": "K2Node_Event_InvFramesTime",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "K2Node_Event_InvFramesTime"
           },
           {
             "__type": "FStructProperty",
@@ -8422,20 +8449,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -8499,16 +8526,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z\"2"
           },
           {
             "__type": "FStructProperty",
@@ -8526,8 +8553,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_ClampAngle_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_ClampAngle_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -8568,22 +8595,23 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"3"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"3",
             "Value": "ImportIndex[-75] InputAction"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"8",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"8"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"7",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"7"
           },
           {
-            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis1D_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_InputActionValueToAxis1D_ReturnValue\"1"
           },
           {
             "__type": "FStructProperty",
@@ -8602,6 +8630,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-62] PlayerController",
             "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"1",
             "Value": "ImportIndex[-62] PlayerController"
           },
@@ -8636,36 +8665,36 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_X\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_X\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_Y\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_Y\"1"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_X\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_X\"2"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_Y\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_Y\"2"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"1"
           },
           {
             "__type": "FStructProperty",
@@ -8683,35 +8712,36 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_X\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_X\"3"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_Y\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_Y\"3"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"9",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"9"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"2",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"2"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"3"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"10",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"10"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
             "NamePrivate": "Temp_object_Variable\"4",
             "Value": "ImportIndex[-75] InputAction"
           },
@@ -8754,18 +8784,19 @@
             "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"4"
           },
           {
-            "PropertyFlags": "CPF_ConstParm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"4",
             "Value": "ImportIndex[-75] InputAction"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"10",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"10"
           },
           {
-            "NamePrivate": "Temp_real_Variable\"9",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "Temp_real_Variable\"9"
           },
           {
             "__type": "FStructProperty",
@@ -8798,20 +8829,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_X\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_X\"4"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector2D_Y\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector2D_Y\"4"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"4",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"4"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"5",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue\"5"
           },
           {
             "__type": "FFloatProperty",
@@ -8826,8 +8857,8 @@
             "NamePrivate": "K2Node_MakeStruct_B_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Greater_DoubleDouble_A_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -8939,14 +8970,14 @@
         "ChildArray": [],
         "ChildProperties": [
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Yaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Yaw"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Pitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Pitch"
           },
           {
             "__type": "FBoolProperty",
@@ -8996,14 +9027,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-42] CameraComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera",
             "Value": "ImportIndex[-42] CameraComponent"
           },
           {
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-71] SpringArmComponent",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera Boom",
             "Value": "ImportIndex[-71] SpringArmComponent"
           }
@@ -9040,6 +9073,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-36] Actor",
               "NamePrivate": "Temp_object_Variable",
               "Value": "ImportIndex[-36] Actor"
             },
@@ -9089,16 +9123,16 @@
             "NamePrivate": "CallFunc_GetComponentBounds_SphereRadius"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
             "__type": "FStructProperty",
@@ -9410,17 +9444,20 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-81] PhysicalMaterial",
             "NamePrivate": "CallFunc_BreakHitResult_PhysMat",
             "Value": "ImportIndex[-81] PhysicalMaterial"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Actor",
             "NamePrivate": "CallFunc_BreakHitResult_HitActor",
             "Value": "ImportIndex[-36] Actor"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_BreakHitResult_HitComponent",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
@@ -9582,8 +9619,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetGrabbedComponent_ReturnValue",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           }
@@ -9615,14 +9653,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-64] SceneComponent",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "Component",
             "Value": "ImportIndex[-64] SceneComponent"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "Component2",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
@@ -9661,18 +9701,19 @@
             "NamePrivate": "CallFunc_GetComponentBounds_SphereRadius"
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-39] AudioComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_SpawnSoundAttached_ReturnValue",
             "Value": "ImportIndex[-39] AudioComponent"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -9690,18 +9731,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-78] NiagaraComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_SpawnSystemAttached_ReturnValue",
             "Value": "ImportIndex[-78] NiagaraComponent"
           },
           {
-            "NamePrivate": "CallFunc_Add_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Add_DoubleDouble_A_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -9740,6 +9782,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Actor",
             "NamePrivate": "CallFunc_GetOwner_ReturnValue",
             "Value": "ImportIndex[-36] Actor"
           },
@@ -9779,8 +9822,9 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetGrabbedComponent_ReturnValue",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
@@ -9815,8 +9859,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Vector_Distance_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Vector_Distance_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -9834,16 +9878,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FClamp_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FClamp_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Lerp_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Lerp_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -9966,8 +10010,8 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast"
           },
           {
             "__type": "FFloatProperty",
@@ -10016,18 +10060,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10074,18 +10119,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10132,18 +10178,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10190,18 +10237,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10248,18 +10296,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10306,18 +10355,19 @@
             "MetaDataMap": {}
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ElapsedTime"
           },
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "TriggeredTime"
           },
           {
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-75] InputAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
             "Value": "ImportIndex[-75] InputAction"
           }
@@ -10375,12 +10425,12 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_FInterpTo_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           }
         ],
         "FunctionFlags": 201457664,
@@ -10549,8 +10599,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-47] Controller",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "NewController",
             "Value": "ImportIndex[-47] Controller"
           }
@@ -10583,8 +10634,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FFloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "DeltaSeconds"
           }
         ],
@@ -10630,14 +10681,14 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Knockback Strength",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "Knockback Strength"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "InvFramesTime",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "InvFramesTime"
           }
         ],
         "FunctionFlags": 201457664,
@@ -10672,6 +10723,7 @@
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
+              "Value": "ImportIndex[-36] Actor",
               "NamePrivate": "Temp_object_Variable",
               "Value": "ImportIndex[-36] Actor"
             },
@@ -10861,17 +10913,20 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-81] PhysicalMaterial",
             "NamePrivate": "CallFunc_BreakHitResult_PhysMat",
             "Value": "ImportIndex[-81] PhysicalMaterial"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-36] Actor",
             "NamePrivate": "CallFunc_BreakHitResult_HitActor",
             "Value": "ImportIndex[-36] Actor"
           },
           {
-            "PropertyFlags": "CPF_InstancedReference",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-63] PrimitiveComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_BreakHitResult_HitComponent",
             "Value": "ImportIndex[-63] PrimitiveComponent"
           },
@@ -11272,16 +11327,16 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_X"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Y"
           },
           {
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
             "__type": "FInterfaceProperty",
@@ -11418,12 +11473,12 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FBoolProperty",
@@ -11446,20 +11501,20 @@
             "MetaDataMap": {}
           },
           {
-            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_GetWorldDeltaSeconds_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"1",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue\"1"
           },
           {
             "__type": "FFloatProperty",
             "NamePrivate": "CallFunc_GetFloatValue_ReturnValue"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
           },
           {
             "__type": "FStructProperty",
@@ -11485,8 +11540,8 @@
             "NamePrivate": "CallFunc_GetFloatValue_InTime_ImplicitCast"
           },
           {
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
-            "__type": "FDoubleProperty"
+            "__type": "FDoubleProperty",
+            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast"
           }
         ],
         "FunctionFlags": 201457664,
@@ -11536,14 +11591,14 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetPitch",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetPitch"
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetYaw",
-            "__type": "FDoubleProperty"
+            "NamePrivate": "PresetYaw"
           }
         ],
         "FunctionFlags": 201457664,
@@ -11575,6 +11630,7 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-57] MaterialInstanceDynamic",
             "NamePrivate": "CallFunc_CreateDynamicMaterialInstance_ReturnValue",
             "Value": "ImportIndex[-57] MaterialInstanceDynamic"
           },
@@ -11588,11 +11644,13 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-57] MaterialInstanceDynamic",
             "NamePrivate": "CallFunc_CreateDynamicMaterialInstance_ReturnValue\"1",
             "Value": "ImportIndex[-57] MaterialInstanceDynamic"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-57] MaterialInstanceDynamic",
             "NamePrivate": "CallFunc_CreateDynamicMaterialInstance_ReturnValue\"2",
             "Value": "ImportIndex[-57] MaterialInstanceDynamic"
           },
@@ -11602,6 +11660,7 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-57] MaterialInstanceDynamic",
             "NamePrivate": "CallFunc_CreateDynamicMaterialInstance_ReturnValue\"3",
             "Value": "ImportIndex[-57] MaterialInstanceDynamic"
           },

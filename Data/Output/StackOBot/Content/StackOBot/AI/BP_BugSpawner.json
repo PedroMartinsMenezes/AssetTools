@@ -1462,63 +1462,68 @@
             "MetaDataMap": {}
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-34] StaticMeshComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Cylinder",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Cylinder",
             "Value": "ImportIndex[-34] StaticMeshComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-25] CapsuleComponent",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
+            "NamePrivate": "Capsule",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "Category": "Default"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Capsule",
             "Value": "ImportIndex[-25] CapsuleComponent"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-19] Class",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "Bug Class",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Bug Class",
               "Category": "Spawner"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Bug Class",
             "Value": "ImportIndex[-19] Class"
           },
           {
+            "__type": "FObjectProperty",
+            "Value": "ImportIndex[-3] BP_Bug_C",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
+            "NamePrivate": "Spawned Bug",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Spawned Bug",
               "Category": "Spawner"
             },
-            "__type": "FObjectProperty",
-            "NamePrivate": "Spawned Bug",
             "Value": "ImportIndex[-3] BP_Bug_C"
           },
           {
+            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "Respawn Cooldown",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Respawn Cooldown",
               "Category": "Spawner"
-            },
-            "__type": "FFloatProperty",
-            "NamePrivate": "Respawn Cooldown"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Max Leash Distance From Spawn Point",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1526,10 +1531,10 @@
             "MetaDataMap": {
               "DisplayName": "Max Leash Distance from Spawn Point",
               "Category": "AI"
-            },
-            "__type": "FDoubleProperty"
+            }
           },
           {
+            "__type": "FDoubleProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Min Leash Distance From Spawn Point To Resume Roaming",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
@@ -1537,8 +1542,7 @@
             "MetaDataMap": {
               "DisplayName": "Min Leash Distance from Spawn Point to Resume Roaming",
               "Category": "AI"
-            },
-            "__type": "FDoubleProperty"
+            }
           }
         ],
         "FuncMap": {
@@ -1903,16 +1907,19 @@
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-22] Actor",
             "NamePrivate": "K2Node_CustomEvent_DestroyedActor",
             "Value": "ImportIndex[-22] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-22] Actor",
             "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
             "Value": "ImportIndex[-22] Actor"
           },
           {
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-3] BP_Bug_C",
             "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
             "Value": "ImportIndex[-3] BP_Bug_C"
           },
@@ -2051,8 +2058,9 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "__type": "FObjectProperty",
+            "Value": "ImportIndex[-22] Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "DestroyedActor",
             "Value": "ImportIndex[-22] Actor"
           }
