@@ -79,6 +79,9 @@ namespace AssetTool
             {
                 nameof(FIntProperty)
                     => FIntPropertySerializer.Read(root, options),
+                nameof(FObjectProperty)
+                    => FObjectPropertySerializer.Read(root, options),
+
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
                 nameof(FBoolProperty)
@@ -121,8 +124,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
                 nameof(FNumericProperty)
                     => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
-                nameof(FObjectProperty)
-                    => JsonSerializer.Deserialize<FObjectProperty>(root.GetRawText(), options)!,
                 nameof(FObjectPropertyBase)
                     => JsonSerializer.Deserialize<FObjectPropertyBase>(root.GetRawText(), options)!,
                 nameof(FObjectPtrProperty)
@@ -162,6 +163,10 @@ namespace AssetTool
             {
                 case FIntProperty intProperty:
                     FIntPropertySerializer.Write(writer, intProperty, options);
+                    return;
+
+                case FObjectProperty objectProperty:
+                    FObjectPropertySerializer.Write(writer, objectProperty, options);
                     return;
 
                 default:
