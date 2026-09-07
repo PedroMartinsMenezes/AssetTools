@@ -38,11 +38,9 @@ namespace AssetTool
             if (root.TryGetProperty("FlagsPrivate", out var flagsPrivate))
                 Enum.TryParse(flagsPrivate.GetString(), out value.FlagsPrivate);
 
-            if (root.TryGetProperty("HasMetaData", out var hasMetaData))
-                value.HasMetaData = hasMetaData.GetBoolean();
-
-            if (value.HasMetaData && root.TryGetProperty("MetaDataMap", out var metaDataMap))
+            if (root.TryGetProperty("MetaDataMap", out var metaDataMap))
             {
+                value.HasMetaData = true;
                 foreach (var property in metaDataMap.EnumerateObject())
                 {
                     value.MetaDataMap.Add(new FName(property.Name), new FString(property.Value.GetString() ?? string.Empty));
@@ -75,9 +73,6 @@ namespace AssetTool
 
             if (value.FlagsPrivate != EObjectFlags.RF_Public)
                 writer.WriteString("FlagsPrivate", value.FlagsPrivate.ToString());
-
-            if (value.HasMetaData)
-                writer.WriteBoolean("HasMetaData", value.HasMetaData);
 
             if (value.HasMetaData)
             {
