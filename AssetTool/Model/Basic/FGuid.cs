@@ -117,4 +117,20 @@ namespace AssetTool
             writer.WritePropertyName(text);
         }
     }
+
+    public class FGuidListJsonConverter : JsonConverter<List<FGuid>>
+    {
+        public override List<FGuid> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string s = reader.GetString();
+            if (string.IsNullOrEmpty(s))
+                return new List<FGuid>();
+            string[] items = s.Split(' ');
+            return items.Select(x => new FGuid(x.Trim('\''))).ToList();
+        }
+        public override void Write(Utf8JsonWriter writer, List<FGuid> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.Select(x => $"'{x}'")));
+        }
+    }
 }

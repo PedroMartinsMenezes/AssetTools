@@ -257,6 +257,7 @@ namespace AssetTool
                 new FNameJsonConverter(),
                 new FStringJsonConverter(),
                 new FGuidJsonConverter(),
+                new FGuidListJsonConverter(),
                 new FTextKeyJsonConverter(),
                 new FNameEntryIdJsonConverter(),
                 new FDateTimeJsonConverter(),
@@ -474,6 +475,8 @@ namespace AssetTool
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
                 new FFrameNumberJsonConverter(),
                 new ListFFrameNumberJsonConverter(),
+                new FSHVectorJsonConverter(),
+                new FSHVectorRGBJsonConverter(),
                 #endregion
             }
         };

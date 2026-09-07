@@ -1,5 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
@@ -22,6 +24,19 @@ namespace AssetTool
         public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class FSHVectorRGBJsonConverter : JsonConverter<FSHVectorRGB>
+    {
+        public override FSHVectorRGB Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var parts = reader.GetString().Split(" | ");
+            return new FSHVectorRGB { R = new FSHVector { v = parts[0].ToFloatArray() }, G = new FSHVector { v = parts[1].ToFloatArray() }, B = new FSHVector { v = parts[2].ToFloatArray() } };
+        }
+        public override void Write(Utf8JsonWriter writer, FSHVectorRGB value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"{string.Join(' ', value.R.v)} | {string.Join(' ', value.G.v)} | {string.Join(' ', value.B.v)}");
         }
     }
 
@@ -65,6 +80,18 @@ namespace AssetTool
         public ITransferable Move(Transfer transfer)
         {
             throw new NotImplementedException();
+        }
+    }
+
+    public class FSHVectorJsonConverter : JsonConverter<FSHVector>
+    {
+        public override FSHVector Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FSHVector { v = reader.GetString().ToFloatArray() };
+        }
+        public override void Write(Utf8JsonWriter writer, FSHVector value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(string.Join(' ', value.v));
         }
     }
 }
