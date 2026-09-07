@@ -25,10 +25,9 @@ namespace AssetTool
     {
         public FFloatProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var value = ReadBaseProperties(root);
-            value.ElementSize = 4;
-            ReadValue(root, value);
-            return value;
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 4;
+            return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FFloatProperty value, JsonSerializerOptions options)

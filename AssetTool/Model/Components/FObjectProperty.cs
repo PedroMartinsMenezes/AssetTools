@@ -28,28 +28,19 @@ namespace AssetTool
     {
         public FObjectProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var value = ReadBaseProperties(root);
-            value.ElementSize = 8;
-            ReadValue(root, value);
-            return value;
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 8;
+            if (root.TryGetProperty("Value", out var value))
+                obj.Value = FObjectPtr.FromString(value.GetString());
+            return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FObjectProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
             WriteBaseProperties(writer, value);
-            writer.WriteEndObject();
-        }
-
-        protected override void ReadValue(JsonElement root, FObjectProperty value)
-        {
-            if (root.TryGetProperty("Value", out var valueProperty))
-                value.Value = FObjectPtr.FromString(valueProperty.GetString());
-        }
-
-        protected override void WriteValue(Utf8JsonWriter writer, FObjectProperty value)
-        {
             writer.WriteString("Value", value.Value.ToString());
+            writer.WriteEndObject();
         }
     }
 }

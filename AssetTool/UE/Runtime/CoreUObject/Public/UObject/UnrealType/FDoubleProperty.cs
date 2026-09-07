@@ -25,10 +25,9 @@ namespace AssetTool
     {
         public FDoubleProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var value = ReadBaseProperties(root);
-            value.ElementSize = 8;
-            ReadValue(root, value);
-            return value;
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 8;
+            return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FDoubleProperty value, JsonSerializerOptions options)

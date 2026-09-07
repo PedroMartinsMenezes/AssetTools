@@ -17,8 +17,6 @@ namespace AssetTool
                 HasMetaData = false
             };
 
-            ReadValue(root, value);
-
             if (root.TryGetProperty("ArrayDim", out var arrayDim))
                 value.ArrayDim = arrayDim.GetInt32();
 
@@ -58,8 +56,6 @@ namespace AssetTool
         {
             writer.WriteString("__type", value.GetType().Name);
 
-            WriteValue(writer, value);
-
             if (value.ArrayDim != 1)
                 writer.WriteNumber("ArrayDim", value.ArrayDim);
 
@@ -93,14 +89,6 @@ namespace AssetTool
                 }
                 writer.WriteEndObject();
             }
-        }
-
-        protected virtual void ReadValue(JsonElement root, T value)
-        {
-        }
-
-        protected virtual void WriteValue(Utf8JsonWriter writer, T value)
-        {
         }
     }
 }

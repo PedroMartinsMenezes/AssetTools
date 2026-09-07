@@ -22,29 +22,23 @@ namespace AssetTool
     {
         public FClassProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var value = ReadBaseProperties(root);
-            value.MetaClass = 4294967290;
-            value.ElementSize = 8;
-            ReadValue(root, value);
-            return value;
+            var obj = ReadBaseProperties(root);
+            obj.MetaClass = 4294967290;
+            obj.ElementSize = 8;
+            if (root.TryGetProperty("Value", out var value))
+                obj.Value = FObjectPtr.FromString(value.GetString());
+            if (root.TryGetProperty("MetaClass", out var metaclass))
+                obj.MetaClass = metaclass.GetUInt32();
+            return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FClassProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
             WriteBaseProperties(writer, value);
-            writer.WriteEndObject();
-        }
-
-        protected override void ReadValue(JsonElement root, FClassProperty value)
-        {
-            if (root.TryGetProperty("Value", out var valueProperty))
-                value.Value = FObjectPtr.FromString(valueProperty.GetString());
-        }
-
-        protected override void WriteValue(Utf8JsonWriter writer, FClassProperty value)
-        {
             writer.WriteString("Value", value.Value.ToString());
+            writer.WriteNumber("MetaClass", value.MetaClass);
+            writer.WriteEndObject();
         }
     }
 }
