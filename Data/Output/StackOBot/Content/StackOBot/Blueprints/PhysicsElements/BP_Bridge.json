@@ -1904,13 +1904,13 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Panels",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Panels",
               "Category": "Default"
-            }
+            },
+            "NamePrivate": "Panels"
           },
           {
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
@@ -1961,21 +1961,15 @@
             "Value": "ImportIndex[-34] StaticMesh"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Spacing",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Spacing",
               "Category": "Default"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -2001,38 +1995,26 @@
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Rotation Increment",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Rotation Increment",
               "Category": "Default"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Attach Point Offset",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Attach Point Offset",
               "Category": "Default"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",
@@ -2468,12 +2450,12 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Index",
             "HasMetaData": true,
             "MetaDataMap": {
               "FriendlyName": "Index",
               "Category": "Default"
-            }
+            },
+            "NamePrivate": "Index"
           },
           {
             "__type": "FIntProperty",
@@ -2506,18 +2488,8 @@
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "PropertyFlags": "CPF_InstancedReference",
@@ -2546,18 +2518,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -2657,46 +2619,16 @@
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Subtract_DoubleDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -2765,18 +2697,8 @@
             "Value": "ImportIndex[-29] PhysicsConstraintComponent"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -2799,32 +2721,12 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"3",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",
@@ -2878,32 +2780,12 @@
             "Value": "ImportIndex[-35] StaticMeshComponent"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue\"4",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",

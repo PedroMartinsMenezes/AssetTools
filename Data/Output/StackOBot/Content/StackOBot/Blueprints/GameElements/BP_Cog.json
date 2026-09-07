@@ -1372,16 +1372,16 @@
             "Value": "ImportIndex[-25] StaticMeshComponent"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Rotation Rate Z (Yaw)",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Rotation Rate Z (Yaw)",
               "Category": "Settings",
               "tooltip": "If set to 0 the cog will not move."
-            }
+            },
+            "__type": "FFloatProperty",
+            "NamePrivate": "Rotation Rate Z (Yaw)"
           },
           {
             "__type": "FBoolProperty",
@@ -1407,14 +1407,7 @@
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "ScaleMultiplier",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
@@ -1422,7 +1415,8 @@
               "DisplayName": "Scale Multiplier",
               "Category": "Scale",
               "tooltip": "Multiply the Relative Scale"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",
@@ -1607,8 +1601,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "__type": "FFloatProperty",
             "NamePrivate": "DeltaSeconds"
           }
         ],
@@ -1695,32 +1689,12 @@
             "Value": "ImportIndex[-18] MaterialInstanceDynamic"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_SelectFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",
@@ -1738,46 +1712,16 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_NotEqual_DoubleDouble_A_ImplicitCast",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_SelectFloat_B_ImplicitCast",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FFloatProperty",

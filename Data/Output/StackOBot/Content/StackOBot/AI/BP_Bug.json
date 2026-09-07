@@ -1733,14 +1733,7 @@
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Max Leash Distance from Spawn Point",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
@@ -1748,17 +1741,11 @@
               "DisplayName": "Max Leash Distance From Spawn Point",
               "Category": "AI",
               "ExposeOnSpawn": "true"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Min Leash Distance from Spawn Point to Resume Roaming",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
@@ -1766,7 +1753,8 @@
               "DisplayName": "Min Leash Distance From Spawn Point To Resume Roaming",
               "Category": "AI",
               "ExposeOnSpawn": "true"
-            }
+            },
+            "__type": "FDoubleProperty"
           }
         ],
         "FuncMap": {
@@ -2316,18 +2304,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Dot_VectorVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",

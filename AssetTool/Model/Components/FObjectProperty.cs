@@ -74,7 +74,6 @@ namespace AssetTool
                 value.Value = FObjectPtr.FromString(valueProperty.GetString());
             #endregion
 
-
             return value;
         }
 

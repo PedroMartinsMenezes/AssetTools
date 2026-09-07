@@ -2009,15 +2009,15 @@
             "Value": "ImportIndex[-25] BoxComponent"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "PreShatterTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Pre Shatter Time",
               "Category": "Destructible Platform"
-            }
+            },
+            "__type": "FFloatProperty",
+            "NamePrivate": "PreShatterTime"
           },
           {
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
@@ -2062,26 +2062,26 @@
             "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "RespawnTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Respawn Time",
               "Category": "Destructible Platform"
-            }
+            },
+            "__type": "FFloatProperty",
+            "NamePrivate": "RespawnTime"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "PreBreakDuration",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Pre Break Duration",
               "Category": "Destructible Platform"
-            }
+            },
+            "__type": "FFloatProperty",
+            "NamePrivate": "PreBreakDuration"
           }
         ],
         "FuncMap": {
@@ -2495,46 +2495,16 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_X",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Y",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Z",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FObjectProperty",
@@ -2577,46 +2547,16 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -2744,18 +2684,8 @@
             "Value": "ImportIndex[-3] BP_DestructiblePlatform_Destruction_C"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",
@@ -2824,18 +2754,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FFloatProperty",
@@ -3100,18 +3020,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_RandomFloatInRange_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FIntProperty",
@@ -3133,18 +3043,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FStructProperty",

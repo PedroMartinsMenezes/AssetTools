@@ -1171,9 +1171,9 @@
             "Value": "ImportIndex[-16] SceneComponent"
           },
           {
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "__type": "FFloatProperty",
-            "NamePrivate": "ScaleOnSpawn_ScaleScalar_BFAF593349334970B5F4A6B66C2AD79F",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "NamePrivate": "ScaleOnSpawn_ScaleScalar_BFAF593349334970B5F4A6B66C2AD79F"
           },
           {
             "__type": "FByteProperty",
@@ -1202,15 +1202,15 @@
             "Value": "ImportIndex[-20] TimelineComponent"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "PreShatterTime",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Pre Shatter Time",
               "Category": "Default"
-            }
+            },
+            "__type": "FFloatProperty",
+            "NamePrivate": "PreShatterTime"
           },
           {
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
@@ -1424,18 +1424,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_DoubleToVector_InDouble_ImplicitCast",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           }
         ],
         "FunctionFlags": 32769,

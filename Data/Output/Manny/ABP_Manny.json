@@ -8559,14 +8559,7 @@
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "GroundSpeed",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "HasMetaData": true,
@@ -8574,7 +8567,8 @@
               "DisplayName": "Ground Speed",
               "Category": "Essential Movement Data",
               "MultiLine": "true"
-            }
+            },
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -12528,8 +12522,8 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "__type": "FFloatProperty",
             "NamePrivate": "DeltaTimeX"
           }
         ],
@@ -12645,18 +12639,8 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_VSizeXY_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -12754,46 +12738,16 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_X",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Y",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
-            "__type": "FDoubleProperty",
-            "TypeName": "DoubleProperty",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_BreakVector_Z",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "__type": "FDoubleProperty"
           },
           {
             "__type": "FBoolProperty",
@@ -14105,14 +14059,14 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "IntProperty\"138",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "NamePrivate": "IntProperty\"138"
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "FloatProperty\"139",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "__type": "FFloatProperty",
+            "NamePrivate": "FloatProperty\"139"
           },
           {
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -14138,8 +14092,8 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "IntProperty\"142",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "NamePrivate": "IntProperty\"142"
           },
           {
             "__type": "FBoolProperty",
@@ -14162,10 +14116,10 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "FloatProperty\"144",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "__type": "FFloatProperty",
+            "NamePrivate": "FloatProperty\"144"
           },
           {
             "__type": "FStructProperty",
@@ -14183,10 +14137,10 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "FloatProperty\"146",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "__type": "FFloatProperty",
+            "NamePrivate": "FloatProperty\"146"
           },
           {
             "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
@@ -14278,8 +14232,8 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "IntProperty\"152",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "NamePrivate": "IntProperty\"152"
           },
           {
             "__type": "FNameProperty",
@@ -14312,8 +14266,8 @@
           {
             "__type": "FIntProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "IntProperty\"155",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "NamePrivate": "IntProperty\"155"
           },
           {
             "__type": "FStructProperty",
@@ -14388,10 +14342,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FFloatProperty",
             "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "FloatProperty",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "__type": "FFloatProperty",
+            "NamePrivate": "FloatProperty"
           }
         ],
         "StructFlags": "STRUCT_IsPlainOldData, STRUCT_NoDestructor, STRUCT_ZeroConstructor",

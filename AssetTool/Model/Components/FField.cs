@@ -83,6 +83,8 @@ namespace AssetTool
                     => FObjectPropertySerializer.Read(root, options),
                 nameof(FFloatProperty)
                     => FFloatPropertySerializer.Read(root, options),
+                nameof(FDoubleProperty)
+                    => FDoublePropertySerializer.Read(root, options),
 
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
@@ -96,8 +98,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
                 nameof(FDelegateProperty)
                     => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
-                nameof(FDoubleProperty)
-                    => JsonSerializer.Deserialize<FDoubleProperty>(root.GetRawText(), options)!,
                 nameof(FEnumProperty)
                     => JsonSerializer.Deserialize<FEnumProperty>(root.GetRawText(), options)!,
                 nameof(FFieldPathProperty)
@@ -167,6 +167,10 @@ namespace AssetTool
 
                 case FObjectProperty objectProperty:
                     FObjectPropertySerializer.Write(writer, objectProperty, options);
+                    return;
+
+                case FDoubleProperty doubleProperty:
+                    FDoublePropertySerializer.Write(writer, doubleProperty, options);
                     return;
 
                 case FFloatProperty floatProperty:

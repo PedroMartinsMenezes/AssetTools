@@ -37,11 +37,9 @@ namespace AssetTool
                 HasMetaData = false
             };
 
+            #region Read Properties
             if (root.TryGetProperty("ArrayDim", out var arrayDim))
                 value.ArrayDim = arrayDim.GetInt32();
-
-            if (root.TryGetProperty("ElementSize", out var elementSize))
-                value.ElementSize = elementSize.GetInt32();
 
             if (root.TryGetProperty("PropertyFlags", out var propertyFlags))
                 Enum.TryParse(propertyFlags.GetString(), out value.PropertyFlags);
@@ -54,9 +52,6 @@ namespace AssetTool
 
             if (root.TryGetProperty("BlueprintReplicationCondition", out var condition))
                 value.BlueprintReplicationCondition = condition.GetByte();
-
-            if (root.TryGetProperty("NamePrivate", out var namePrivate))
-                value.NamePrivate = new FName(namePrivate.GetString());
 
             if (root.TryGetProperty("FlagsPrivate", out var flagsPrivate))
                 Enum.TryParse(flagsPrivate.GetString(), out value.FlagsPrivate);
@@ -71,6 +66,15 @@ namespace AssetTool
                     value.MetaDataMap.Add(new FName(property.Name), new FString(property.Value.GetString() ?? string.Empty));
                 }
             }
+            #endregion
+
+            #region Derived Properties
+            if (root.TryGetProperty("ElementSize", out var elementSize))
+                value.ElementSize = elementSize.GetInt32();
+
+            if (root.TryGetProperty("NamePrivate", out var namePrivate))
+                value.NamePrivate = new FName(namePrivate.GetString());
+            #endregion
 
             return value;
         }
@@ -79,13 +83,9 @@ namespace AssetTool
         {
             writer.WriteStartObject();
 
-            writer.WriteString("__type", "FFloatProperty");
-
+            #region Base Properties
             if (value.ArrayDim != 1)
                 writer.WriteNumber("ArrayDim", value.ArrayDim);
-
-            if (value.ElementSize != 4)
-                writer.WriteNumber("ElementSize", value.ElementSize);
 
             if (value.PropertyFlags != EPropertyFlags.CPF_None)
                 writer.WriteString("PropertyFlags", value.PropertyFlags.ToString());
@@ -98,8 +98,6 @@ namespace AssetTool
 
             if (value.BlueprintReplicationCondition != 0)
                 writer.WriteNumber("BlueprintReplicationCondition", value.BlueprintReplicationCondition);
-
-            writer.WriteString("NamePrivate", value.NamePrivate.ToString());
 
             if (value.FlagsPrivate != EObjectFlags.RF_Public)
                 writer.WriteString("FlagsPrivate", value.FlagsPrivate.ToString());
@@ -117,6 +115,16 @@ namespace AssetTool
                 }
                 writer.WriteEndObject();
             }
+            #endregion
+
+            #region Derived Properties
+            writer.WriteString("__type", "FFloatProperty");
+
+            if (value.ElementSize != 4)
+                writer.WriteNumber("ElementSize", value.ElementSize);
+
+            writer.WriteString("NamePrivate", value.NamePrivate.ToString());
+            #endregion
 
             writer.WriteEndObject();
         }
