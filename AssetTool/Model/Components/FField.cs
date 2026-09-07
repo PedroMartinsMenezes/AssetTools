@@ -77,14 +77,10 @@ namespace AssetTool
 
             return typeName switch
             {
-                nameof(FIntProperty)
-                    => FIntPropertySerializer.Read(root, options),
-                nameof(FObjectProperty)
-                    => FObjectPropertySerializer.Read(root, options),
-                nameof(FFloatProperty)
-                    => FFloatPropertySerializer.Read(root, options),
-                nameof(FDoubleProperty)
-                    => FDoublePropertySerializer.Read(root, options),
+                nameof(FIntProperty) => FIntPropertySerializer.Read(root, options),
+                nameof(FObjectProperty) => FObjectPropertySerializer.Read(root, options),
+                nameof(FFloatProperty) => FFloatPropertySerializer.Read(root, options),
+                nameof(FDoubleProperty) => FDoublePropertySerializer.Read(root, options),
 
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
