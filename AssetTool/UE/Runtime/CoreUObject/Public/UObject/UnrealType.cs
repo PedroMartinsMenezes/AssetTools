@@ -50,7 +50,7 @@ namespace AssetTool
             obj.PropertyValuePtr = root.GetProperty("PropertyValuePtr").GetUInt32();
             if (root.TryGetProperty("InvocationList", out var invocationListProperty) && invocationListProperty.ValueKind == JsonValueKind.Array)
             {
-                obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(root.GetProperty("InvocationList").GetRawText(), options);
+                obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(invocationListProperty.GetRawText(), options);
             }
             return obj;
         }

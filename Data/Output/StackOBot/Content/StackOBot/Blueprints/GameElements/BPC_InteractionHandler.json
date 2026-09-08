@@ -1501,25 +1501,19 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
+            "NamePrivate": "Trigger Refs",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Trigger Refs",
+              "Category": "Default"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "Trigger Refs",
               "Value": "ImportIndex[-18] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Trigger Refs",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Trigger Refs",
-              "Category": "Default"
             }
           },
           {

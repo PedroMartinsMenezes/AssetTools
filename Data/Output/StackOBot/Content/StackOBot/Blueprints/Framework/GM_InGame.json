@@ -1880,7 +1880,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "Objective Tracker",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Objective Tracker",
+              "Category": "Gameplay",
+              "MultiLine": "true"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
               "__type": "FStructProperty",
@@ -1896,20 +1904,6 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Objective Tracker",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Objective Tracker",
-              "Category": "Gameplay",
-              "MultiLine": "true"
             }
           },
           {
@@ -2275,23 +2269,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
               "Value": "ImportIndex[-7] BP_SpawnPad_C"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FObjectProperty",
@@ -2465,23 +2451,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
               "Value": "ImportIndex[-46] LevelSequenceActor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FObjectProperty",

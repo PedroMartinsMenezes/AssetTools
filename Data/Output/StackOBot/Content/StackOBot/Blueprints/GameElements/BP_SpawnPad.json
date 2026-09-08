@@ -4729,7 +4729,9 @@
         "ChildProperties": [
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "K2Node_MakeArray_Array",
+            "ElementSize": 16,
             "PropertyTypeName": "NameProperty",
             "SingleField": {
               "__type": "FNameProperty",
@@ -4744,21 +4746,13 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_MakeArray_Array",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "K2Node_MakeArray_Array\"1",
+            "ElementSize": 16,
             "PropertyTypeName": "NameProperty",
             "SingleField": {
               "__type": "FNameProperty",
@@ -4773,17 +4767,7 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_MakeArray_Array\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           }
         ],
         "FunctionFlags": 209848320,

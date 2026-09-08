@@ -86,26 +86,11 @@ namespace AssetTool
                 nameof(FUInt64Property) => new FUInt64PropertySerializer().Read(root, options),
                 nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
                 nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
+                nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
                 //
-                //nameof(FInt8Property)
-                //    => JsonSerializer.Deserialize<FInt8Property>(root.GetRawText(), options)!,
-                //nameof(FInt16Property)
-                //    => JsonSerializer.Deserialize<FInt16Property>(root.GetRawText(), options)!,
-                //nameof(FInt64Property)
-                //    => JsonSerializer.Deserialize<FInt64Property>(root.GetRawText(), options)!,
-                //nameof(FUInt16Property)
-                //    => JsonSerializer.Deserialize<FUInt16Property>(root.GetRawText(), options)!,
-                //nameof(FUInt32Property)
-                //    => JsonSerializer.Deserialize<FUInt32Property>(root.GetRawText(), options)!,
-                //nameof(FUInt64Property)
-                //    => JsonSerializer.Deserialize<FUInt64Property>(root.GetRawText(), options)!,
-                //nameof(FDelegateProperty)
-                //    => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
-                //nameof(FMulticastInlineDelegateProperty)
-                //    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
-                //
-                nameof(FArrayProperty)
-                    => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
+
+                //nameof(FArrayProperty)
+                //    => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
                 nameof(FBoolProperty)
                     => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
                 nameof(FClassPtrProperty)
@@ -141,7 +126,6 @@ namespace AssetTool
                 nameof(FSoftClassProperty)
                     => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
                 nameof(FSoftObjectProperty)
-
                     => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
                 nameof(FStrProperty)
                     => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
@@ -174,6 +158,7 @@ namespace AssetTool
                 case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
                 case FDelegateProperty delegateProperty: new FDelegatePropertySerializer().Write(writer, delegateProperty, options); return;
                 case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
+                case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
 
                 default:
                     writer.WriteStartObject();

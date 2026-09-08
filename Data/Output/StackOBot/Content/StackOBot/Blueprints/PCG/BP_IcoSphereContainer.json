@@ -998,7 +998,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
+            "NamePrivate": "ExitPoints",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Exit Points",
+              "Category": "Default",
+              "MakeEditWidget": "true"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
               "__type": "FStructProperty",
@@ -1014,20 +1022,6 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "ExitPoints",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Exit Points",
-              "Category": "Default",
-              "MakeEditWidget": "true"
             }
           }
         ],

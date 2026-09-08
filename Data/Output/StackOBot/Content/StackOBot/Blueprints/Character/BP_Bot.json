@@ -5819,26 +5819,20 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "Materials",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Materials",
+              "Category": "My Character",
+              "MultiLine": "true"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "Materials",
               "Value": "ImportIndex[-57] MaterialInstanceDynamic"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Materials",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Materials",
-              "Category": "My Character",
-              "MultiLine": "true"
             }
           },
           {
@@ -8987,23 +8981,15 @@
         "ChildProperties": [
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
+            "NamePrivate": "Temp_object_Variable",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "Temp_object_Variable",
               "Value": "ImportIndex[-36] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Temp_object_Variable",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FStructProperty",
@@ -10619,23 +10605,15 @@
         "ChildProperties": [
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
+            "NamePrivate": "Temp_object_Variable",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "Temp_object_Variable",
               "Value": "ImportIndex[-36] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Temp_object_Variable",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FStructProperty",

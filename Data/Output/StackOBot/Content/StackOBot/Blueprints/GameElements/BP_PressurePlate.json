@@ -1851,25 +1851,19 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
+            "NamePrivate": "Triggerables",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Triggerables",
+              "Category": "Default"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "Triggerables",
               "Value": "ImportIndex[-23] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Triggerables",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Triggerables",
-              "Category": "Default"
             }
           },
           {
@@ -2495,23 +2489,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
               "Value": "ImportIndex[-23] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FIntProperty",
@@ -2818,24 +2804,16 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm, CPF_ContainsInstancedReference",
+            "NamePrivate": "CallFunc_GetComponentsByInterface_ReturnValue",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "PropertyFlags": "CPF_InstancedReference",
               "NamePrivate": "CallFunc_GetComponentsByInterface_ReturnValue",
               "Value": "ImportIndex[-24] ActorComponent"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetComponentsByInterface_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FObjectProperty",

@@ -3030,23 +3030,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_ReferenceParm",
+            "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
+            "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
               "__type": "FObjectProperty",
               "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
               "Value": "ImportIndex[-25] Actor"
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           },
           {
             "__type": "FObjectProperty",

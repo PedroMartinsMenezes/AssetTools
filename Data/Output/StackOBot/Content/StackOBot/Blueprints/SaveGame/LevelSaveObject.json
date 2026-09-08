@@ -653,7 +653,15 @@
           },
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
+            "NamePrivate": "CollectablePickups",
+            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
+            "MetaDataMap": {
+              "DisplayName": "Collectable Pickups",
+              "Category": "Default",
+              "MultiLine": "true"
+            },
+            "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
               "__type": "FStructProperty",
@@ -669,20 +677,6 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CollectablePickups",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Collectable Pickups",
-              "Category": "Default",
-              "MultiLine": "true"
             }
           }
         ],
@@ -966,7 +960,9 @@
         "ChildProperties": [
           {
             "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
+            "NamePrivate": "CollectablePickups",
+            "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
               "__type": "FStructProperty",
@@ -982,17 +978,7 @@
               "FlagsPrivate": "RF_Public",
               "HasMetaData": false,
               "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CollectablePickups",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            }
           }
         ],
         "FunctionFlags": 474087424,
