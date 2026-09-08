@@ -28,10 +28,7 @@ namespace AssetTool
             var obj = ReadBaseProperties(root);
             obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
             obj.PropertyTypeName = new FName(root.GetProperty("PropertyTypeName").GetString());
-            if (root.TryGetProperty("SingleField", out var singleField) && singleField.ValueKind == JsonValueKind.Object)
-            {
-                obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
-            }
+            obj.SingleField = JsonSerializer.Deserialize<FField>(root.GetProperty("SingleField").GetRawText(), options);
             return obj;
         }
 

@@ -23,12 +23,9 @@ namespace AssetTool
         public FClassProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             var obj = ReadBaseProperties(root);
-            obj.MetaClass = 4294967290;
             obj.ElementSize = 8;
-            if (root.TryGetProperty("Value", out var value))
-                obj.Value = FObjectPtr.FromString(value.GetString());
-            if (root.TryGetProperty("MetaClass", out var metaclass))
-                obj.MetaClass = metaclass.GetUInt32();
+            obj.Value = FObjectPtr.FromString(root.GetProperty("Value").GetString());
+            obj.MetaClass = root.GetProperty("MetaClass").GetUInt32();
             return obj;
         }
 

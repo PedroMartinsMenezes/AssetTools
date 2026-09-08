@@ -88,12 +88,10 @@ namespace AssetTool
                 nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                 nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
                 nameof(FBoolProperty) => new FBoolPropertySerializer().Read(root, options),
-                //
+                nameof(FClassPtrProperty) => new FClassPtrPropertySerializer().Read(root, options),
+                nameof(FEnumProperty) => new FEnumPropertySerializer().Read(root, options),
 
-                nameof(FClassPtrProperty)
-                    => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
-                nameof(FEnumProperty)
-                    => JsonSerializer.Deserialize<FEnumProperty>(root.GetRawText(), options)!,
+
                 nameof(FFieldPathProperty)
                     => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
                 nameof(FInterfaceProperty)
@@ -141,6 +139,7 @@ namespace AssetTool
         {
             switch (value)
             {
+                case FClassPtrProperty classPtrProperty: new FClassPtrPropertySerializer().Write(writer, classPtrProperty, options); return;
                 case FClassProperty classProperty: new FClassPropertySerializer().Write(writer, classProperty, options); return;
                 case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
                 case FFloatProperty floatProperty: new FFloatPropertySerializer().Write(writer, floatProperty, options); return;
@@ -157,6 +156,7 @@ namespace AssetTool
                 case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
                 case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
                 case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
+                case FEnumProperty enumProperty: new FEnumPropertySerializer().Write(writer, enumProperty, options); return;
 
                 default:
                     writer.WriteStartObject();

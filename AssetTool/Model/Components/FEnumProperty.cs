@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -32,6 +33,30 @@ namespace AssetTool
         {
             transfer.MoveEnum(ref value);
             return value;
+        }
+    }
+
+    public class FEnumPropertySerializer : FPropertySerializerBase<FEnumProperty>
+    {
+        public FEnumProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 1;
+            obj.Value = root.GetProperty("Value").GetUInt32();
+            obj.PropertyTypeName = new FName(root.GetProperty("PropertyTypeName").GetString());
+            obj.SingleField = JsonSerializer.Deserialize<FField>(root.GetProperty("SingleField").GetRawText(), options);
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FEnumProperty value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            WriteBaseProperties(writer, value);
+            writer.WriteNumber("Value", value.Value);
+            writer.WriteString("PropertyTypeName", value.PropertyTypeName.ToString());
+            writer.WritePropertyName("SingleField");
+            JsonSerializer.Serialize(writer, value.SingleField, options);
+            writer.WriteEndObject();
         }
     }
 }

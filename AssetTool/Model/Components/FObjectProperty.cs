@@ -30,8 +30,7 @@ namespace AssetTool
         {
             var obj = ReadBaseProperties(root);
             obj.ElementSize = 8;
-            if (root.TryGetProperty("Value", out var value))
-                obj.Value = FObjectPtr.FromString(value.GetString());
+            obj.Value = FObjectPtr.FromString(root.GetProperty("Value").GetString());
             return obj;
         }
 
