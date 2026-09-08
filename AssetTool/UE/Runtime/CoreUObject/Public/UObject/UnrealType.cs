@@ -61,7 +61,6 @@ namespace AssetTool
             WriteBaseProperties(writer, value);
             writer.WriteNumber("ElementSize", value.ElementSize);
             writer.WriteNumber("PropertyValuePtr", value.PropertyValuePtr);
-
             if (value.InvocationList is { })
             {
                 writer.WritePropertyName("InvocationList");
@@ -69,7 +68,6 @@ namespace AssetTool
                 JsonSerializer.Serialize(writer, value.InvocationList, options);
                 writer.WriteEndArray();
             }
-
             writer.WriteEndObject();
         }
     }

@@ -85,7 +85,7 @@ namespace AssetTool
                 nameof(FUInt32Property) => new FUInt32PropertySerializer().Read(root, options),
                 nameof(FUInt64Property) => new FUInt64PropertySerializer().Read(root, options),
                 nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
-                //nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
+                nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                 //
                 //nameof(FInt8Property)
                 //    => JsonSerializer.Deserialize<FInt8Property>(root.GetRawText(), options)!,
@@ -101,8 +101,8 @@ namespace AssetTool
                 //    => JsonSerializer.Deserialize<FUInt64Property>(root.GetRawText(), options)!,
                 //nameof(FDelegateProperty)
                 //    => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
-                nameof(FMulticastInlineDelegateProperty)
-                    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
+                //nameof(FMulticastInlineDelegateProperty)
+                //    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
                 //
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
@@ -173,7 +173,7 @@ namespace AssetTool
                 case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
                 case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
                 case FDelegateProperty delegateProperty: new FDelegatePropertySerializer().Write(writer, delegateProperty, options); return;
-                //case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
+                case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
 
                 default:
                     writer.WriteStartObject();
