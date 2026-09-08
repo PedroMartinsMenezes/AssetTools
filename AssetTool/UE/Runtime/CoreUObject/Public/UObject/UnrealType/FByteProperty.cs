@@ -30,8 +30,7 @@ namespace AssetTool
         {
             var obj = ReadBaseProperties(root);
             obj.ElementSize = 1;
-            if (root.TryGetProperty("Value", out var metaclass))
-                obj.Value = metaclass.GetUInt32();
+            obj.Value = root.GetProperty("Value").GetUInt32();
             return obj;
         }
 
