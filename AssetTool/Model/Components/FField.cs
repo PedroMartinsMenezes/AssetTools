@@ -87,12 +87,9 @@ namespace AssetTool
                 nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
                 nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                 nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
+                nameof(FBoolProperty) => new FBoolPropertySerializer().Read(root, options),
                 //
 
-                //nameof(FArrayProperty)
-                //    => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
-                nameof(FBoolProperty)
-                    => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
                 nameof(FClassPtrProperty)
                     => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
                 nameof(FEnumProperty)
@@ -159,6 +156,7 @@ namespace AssetTool
                 case FDelegateProperty delegateProperty: new FDelegatePropertySerializer().Write(writer, delegateProperty, options); return;
                 case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
                 case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
+                case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
 
                 default:
                     writer.WriteStartObject();
