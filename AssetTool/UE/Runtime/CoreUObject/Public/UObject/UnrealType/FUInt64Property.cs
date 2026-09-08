@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+
+namespace AssetTool
 {
     public class FUInt64Property : FNumericProperty
     {
@@ -16,6 +18,23 @@
         {
             transfer.Move(ref value);
             return value;
+        }
+    }
+
+    public class FUInt64PropertySerializer : FPropertySerializerBase<FUInt64Property>
+    {
+        public FUInt64Property Read(JsonElement root, JsonSerializerOptions options)
+        {
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 8;
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FUInt64Property value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            WriteBaseProperties(writer, value);
+            writer.WriteEndObject();
         }
     }
 }

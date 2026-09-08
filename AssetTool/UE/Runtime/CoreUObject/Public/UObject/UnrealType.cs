@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+
+namespace AssetTool
 {
     public class FLazyObjectProperty : FProperty
     {
@@ -36,6 +38,39 @@
         {
             transfer.Move(ref InvocationList);
             return this;
+        }
+    }
+
+    public class FMulticastInlineDelegatePropertySerializer : FPropertySerializerBase<FMulticastInlineDelegateProperty>
+    {
+        public FMulticastInlineDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
+            obj.PropertyValuePtr = root.GetProperty("PropertyValuePtr").GetUInt32();
+            if (root.TryGetProperty("InvocationList", out var invocationListProperty) && invocationListProperty.ValueKind == JsonValueKind.Array)
+            {
+                obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(root.GetProperty("InvocationList").GetRawText(), options);
+            }
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FMulticastInlineDelegateProperty value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            WriteBaseProperties(writer, value);
+            writer.WriteNumber("ElementSize", value.ElementSize);
+            writer.WriteNumber("PropertyValuePtr", value.PropertyValuePtr);
+
+            if (value.InvocationList is { })
+            {
+                writer.WritePropertyName("InvocationList");
+                writer.WriteStartArray();
+                JsonSerializer.Serialize(writer, value.InvocationList, options);
+                writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
         }
     }
 }

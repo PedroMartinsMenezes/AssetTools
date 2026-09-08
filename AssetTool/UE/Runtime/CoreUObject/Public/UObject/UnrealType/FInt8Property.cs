@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+
+namespace AssetTool
 {
     public class FInt8Property : FNumericProperty
     {
@@ -16,6 +18,23 @@
         {
             transfer.Move(ref value);
             return value;
+        }
+    }
+
+    public class FInt8PropertySerializer : FPropertySerializerBase<FInt8Property>
+    {
+        public FInt8Property Read(JsonElement root, JsonSerializerOptions options)
+        {
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = 1;
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FInt8Property value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            WriteBaseProperties(writer, value);
+            writer.WriteEndObject();
         }
     }
 }

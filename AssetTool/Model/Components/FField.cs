@@ -67,41 +67,53 @@ namespace AssetTool
         public override FField Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using JsonDocument document = JsonDocument.ParseValue(ref reader);
-
             JsonElement root = document.RootElement;
-
-            if (!root.TryGetProperty("__type", out JsonElement typeElement))
-                throw new JsonException("Property '__type' not found.");
-
-            string typeName = typeElement.GetString();
+            string typeName = root.GetProperty("__type").GetString();
 
             return typeName switch
             {
-                nameof(FIntProperty) => new FIntPropertySerializer().Read(root, options),
                 nameof(FClassProperty) => new FClassPropertySerializer().Read(root, options),
                 nameof(FObjectProperty) => new FObjectPropertySerializer().Read(root, options),
                 nameof(FFloatProperty) => new FFloatPropertySerializer().Read(root, options),
                 nameof(FDoubleProperty) => new FDoublePropertySerializer().Read(root, options),
+                nameof(FInt8Property) => new FInt8PropertySerializer().Read(root, options),
+                nameof(FInt16Property) => new FInt16PropertySerializer().Read(root, options),
+                nameof(FIntProperty) => new FIntPropertySerializer().Read(root, options),
+                nameof(FInt64Property) => new FInt64PropertySerializer().Read(root, options),
                 nameof(FByteProperty) => new FBytePropertySerializer().Read(root, options),
-
+                nameof(FUInt16Property) => new FUInt16PropertySerializer().Read(root, options),
+                nameof(FUInt32Property) => new FUInt32PropertySerializer().Read(root, options),
+                nameof(FUInt64Property) => new FUInt64PropertySerializer().Read(root, options),
+                //nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
+                //nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
+                //
+                //nameof(FInt8Property)
+                //    => JsonSerializer.Deserialize<FInt8Property>(root.GetRawText(), options)!,
+                //nameof(FInt16Property)
+                //    => JsonSerializer.Deserialize<FInt16Property>(root.GetRawText(), options)!,
+                //nameof(FInt64Property)
+                //    => JsonSerializer.Deserialize<FInt64Property>(root.GetRawText(), options)!,
+                //nameof(FUInt16Property)
+                //    => JsonSerializer.Deserialize<FUInt16Property>(root.GetRawText(), options)!,
+                //nameof(FUInt32Property)
+                //    => JsonSerializer.Deserialize<FUInt32Property>(root.GetRawText(), options)!,
+                //nameof(FUInt64Property)
+                //    => JsonSerializer.Deserialize<FUInt64Property>(root.GetRawText(), options)!,
+                nameof(FDelegateProperty)
+                    => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
+                nameof(FMulticastInlineDelegateProperty)
+                    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
+                //
                 nameof(FArrayProperty)
                     => JsonSerializer.Deserialize<FArrayProperty>(root.GetRawText(), options)!,
                 nameof(FBoolProperty)
                     => JsonSerializer.Deserialize<FBoolProperty>(root.GetRawText(), options)!,
                 nameof(FClassPtrProperty)
                     => JsonSerializer.Deserialize<FClassPtrProperty>(root.GetRawText(), options)!,
-                nameof(FDelegateProperty)
-                    => JsonSerializer.Deserialize<FDelegateProperty>(root.GetRawText(), options)!,
                 nameof(FEnumProperty)
                     => JsonSerializer.Deserialize<FEnumProperty>(root.GetRawText(), options)!,
                 nameof(FFieldPathProperty)
                     => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
-                nameof(FInt16Property)
-                    => JsonSerializer.Deserialize<FInt16Property>(root.GetRawText(), options)!,
-                nameof(FInt64Property)
-                    => JsonSerializer.Deserialize<FInt64Property>(root.GetRawText(), options)!,
-                nameof(FInt8Property)
-                    => JsonSerializer.Deserialize<FInt8Property>(root.GetRawText(), options)!,
                 nameof(FInterfaceProperty)
                     => JsonSerializer.Deserialize<FInterfaceProperty>(root.GetRawText(), options)!,
                 nameof(FLazyObjectProperty)
@@ -110,8 +122,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
                 nameof(FMulticastDelegateProperty)
                     => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
-                nameof(FMulticastInlineDelegateProperty)
-                    => JsonSerializer.Deserialize<FMulticastInlineDelegateProperty>(root.GetRawText(), options)!,
                 nameof(FMulticastSparseDelegateProperty)
                     => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
                 nameof(FNameProperty)
@@ -131,6 +141,7 @@ namespace AssetTool
                 nameof(FSoftClassProperty)
                     => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
                 nameof(FSoftObjectProperty)
+
                     => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
                 nameof(FStrProperty)
                     => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
@@ -138,12 +149,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FStructProperty>(root.GetRawText(), options)!,
                 nameof(FTextProperty)
                     => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
-                nameof(FUInt16Property)
-                    => JsonSerializer.Deserialize<FUInt16Property>(root.GetRawText(), options)!,
-                nameof(FUInt32Property)
-                    => JsonSerializer.Deserialize<FUInt32Property>(root.GetRawText(), options)!,
-                nameof(FUInt64Property)
-                    => JsonSerializer.Deserialize<FUInt64Property>(root.GetRawText(), options)!,
                 nameof(FWeakObjectProperty)
                     => JsonSerializer.Deserialize<FWeakObjectProperty>(root.GetRawText(), options)!,
                 _ => throw new JsonException(
@@ -155,42 +160,27 @@ namespace AssetTool
         {
             switch (value)
             {
-                case FIntProperty intProperty:
-                    new FIntPropertySerializer().Write(writer, intProperty, options);
-                    return;
-
-                case FClassProperty classProperty:
-                    new FClassPropertySerializer().Write(writer, classProperty, options);
-                    return;
-
-                case FObjectProperty objectProperty:
-                    new FObjectPropertySerializer().Write(writer, objectProperty, options);
-                    return;
-
-                case FFloatProperty floatProperty:
-                    new FFloatPropertySerializer().Write(writer, floatProperty, options);
-                    return;
-
-                case FDoubleProperty doubleProperty:
-                    new FDoublePropertySerializer().Write(writer, doubleProperty, options);
-                    return;
-
-                case FByteProperty byteProperty:
-                    new FBytePropertySerializer().Write(writer, byteProperty, options);
-                    return;
+                case FClassProperty classProperty: new FClassPropertySerializer().Write(writer, classProperty, options); return;
+                case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
+                case FFloatProperty floatProperty: new FFloatPropertySerializer().Write(writer, floatProperty, options); return;
+                case FDoubleProperty doubleProperty: new FDoublePropertySerializer().Write(writer, doubleProperty, options); return;
+                case FInt8Property int8Property: new FInt8PropertySerializer().Write(writer, int8Property, options); return;
+                case FInt16Property int16Property: new FInt16PropertySerializer().Write(writer, int16Property, options); return;
+                case FIntProperty intProperty: new FIntPropertySerializer().Write(writer, intProperty, options); return;
+                case FInt64Property int64Property: new FInt64PropertySerializer().Write(writer, int64Property, options); return;
+                case FByteProperty byteProperty: new FBytePropertySerializer().Write(writer, byteProperty, options); return;
+                case FUInt16Property uint16Property: new FUInt16PropertySerializer().Write(writer, uint16Property, options); return;
+                case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
+                case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
+                //case FDelegateProperty delegateProperty: new FDelegatePropertySerializer().Write(writer, delegateProperty, options); return;
+                //case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
 
                 default:
                     writer.WriteStartObject();
-
                     writer.WriteString("__type", value.GetType().Name);
-
                     JsonElement element = JsonSerializer.SerializeToElement(value, value.GetType(), options);
-
                     foreach (JsonProperty property in element.EnumerateObject())
-                    {
                         property.WriteTo(writer);
-                    }
-
                     writer.WriteEndObject();
                     return;
             }
