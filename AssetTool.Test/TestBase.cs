@@ -15,6 +15,7 @@ namespace AssetTool.Test
     public class TestBase
     {
         private Stopwatch stopwatch = new Stopwatch();
+        protected string IndividualLog = string.Empty;
         protected static Dictionary<string, FileVersion> FileVersions = [];
         protected static AppConfig AppConfig = new AppConfig();
 
@@ -49,7 +50,11 @@ namespace AssetTool.Test
         [TearDown]
         public virtual void TearDown()
         {
-            TestContext.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
+            TestContext.WriteLine($"Test Finished: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")} - {TestContext.CurrentContext.Test.Name}");
+            if (IndividualLog.Length > 0)
+            {
+                TestContext.WriteLine(IndividualLog);
+            }
         }
 
         [OneTimeSetUp]
@@ -61,10 +66,9 @@ namespace AssetTool.Test
             stopwatch.Start();
         }
 
-        [OneTimeTearDown]
-        public void GlobalTeardown()
+        private void PrintFileSkipped(string file)
         {
-            TestContext.Progress.WriteLine($"->\n-> [{TestContext.CurrentContext.Test.Name}] Total Time(s): {Math.Round(stopwatch.Elapsed.TotalSeconds, 2)}\n->");
+            TestContext.WriteLine($"  -> File Skipped: {file}");
         }
 
         protected void Test_UE_Files(string name, FileVersion fileVersion = null)
@@ -76,7 +80,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, fileSkipped: PrintFileSkipped);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -84,10 +88,9 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            TestContext.WriteLine($"Test         : {TestContext.CurrentContext.Test.Name}");
-            TestContext.WriteLine($"Scenario     : {name}.txt");
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            IndividualLog += $"  Scenario     : {name}.txt\n";
+            IndividualLog += $"  File Count   : {files.Length}\n";
+            IndividualLog += $"  Total Seconds: {w.Elapsed.TotalSeconds:0.00}\n";
         }
 
         protected void Test_UE_Files_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)

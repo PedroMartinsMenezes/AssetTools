@@ -1,10 +1,13 @@
-﻿using System.Globalization;
+﻿using System.Collections.Concurrent;
+using System.Globalization;
 
 namespace AssetTool
 {
     public static class AssetConverter
     {
         public static AppConfig AppConfig { get; set; } = new();
+        readonly record struct FileKey(long Size, ulong Hash);
+        private readonly static ConcurrentDictionary<FileKey, string> FileCache = [];
 
         static AssetConverter()
         {
@@ -13,7 +16,7 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null, Action<string> fileSkipped = null)
         {
             if (!File.Exists(InAssetPath))
             {
@@ -29,6 +32,31 @@ namespace AssetTool
             byte[] outputBytes2 = default;
             int i = 0;
             FileInfo fileInfo = new FileInfo(InAssetPath);
+
+            #region Detect File Repetition
+            var incompleteKey = new FileKey(fileInfo.Length, 0);
+            if (!FileCache.TryAdd(incompleteKey, InAssetPath))
+            {
+                string prevFilePath = FileCache[incompleteKey];
+                ulong prevFileHash = K4os.Hash.xxHash.XXH64.DigestOf(File.ReadAllBytes(prevFilePath));
+                var prevFileKey = new FileKey(fileInfo.Length, prevFileHash);
+                FileCache[prevFileKey] = prevFilePath;
+
+                ulong currFileHash = K4os.Hash.xxHash.XXH64.DigestOf(File.ReadAllBytes(InAssetPath));
+                var currFileKey = new FileKey(fileInfo.Length, currFileHash);
+
+                if (!FileCache.TryAdd(currFileKey, InAssetPath))
+                {
+                    fileSkipped?.Invoke($"Skipping file: {InAssetPath} (already processed)");
+                    return true;
+                }
+                else
+                {
+                    FileCache[currFileKey] = InAssetPath;
+                }
+            }
+            #endregion
+
             InAssetPath = fileInfo.FullName;
             long fileLength = fileInfo.Length;
             if (fileLength > AppConfig.MaxFileSize)
