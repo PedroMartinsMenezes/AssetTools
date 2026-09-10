@@ -90,12 +90,10 @@ namespace AssetTool
                 nameof(FBoolProperty) => new FBoolPropertySerializer().Read(root, options),
                 nameof(FClassPtrProperty) => new FClassPtrPropertySerializer().Read(root, options),
                 nameof(FEnumProperty) => new FEnumPropertySerializer().Read(root, options),
-
+                nameof(FInterfaceProperty) => new FInterfacePropertySerializer().Read(root, options),
 
                 nameof(FFieldPathProperty)
                     => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
-                nameof(FInterfaceProperty)
-                    => JsonSerializer.Deserialize<FInterfaceProperty>(root.GetRawText(), options)!,
                 nameof(FLazyObjectProperty)
                     => JsonSerializer.Deserialize<FLazyObjectProperty>(root.GetRawText(), options)!,
                 nameof(FMapProperty)
@@ -157,6 +155,7 @@ namespace AssetTool
                 case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
                 case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
                 case FEnumProperty enumProperty: new FEnumPropertySerializer().Write(writer, enumProperty, options); return;
+                case FInterfaceProperty interfaceProperty: new FInterfacePropertySerializer().Write(writer, interfaceProperty, options); return;
 
                 default:
                     writer.WriteStartObject();
