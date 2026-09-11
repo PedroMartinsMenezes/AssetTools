@@ -91,6 +91,7 @@ namespace AssetTool
                 nameof(FClassPtrProperty) => new FClassPtrPropertySerializer().Read(root, options),
                 nameof(FEnumProperty) => new FEnumPropertySerializer().Read(root, options),
                 nameof(FInterfaceProperty) => new FInterfacePropertySerializer().Read(root, options),
+                nameof(FStructProperty) => new FStructPropertySerializer().Read(root, options),
 
                 nameof(FFieldPathProperty)
                     => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
@@ -122,8 +123,6 @@ namespace AssetTool
                     => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
                 nameof(FStrProperty)
                     => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
-                nameof(FStructProperty)
-                    => JsonSerializer.Deserialize<FStructProperty>(root.GetRawText(), options)!,
                 nameof(FTextProperty)
                     => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
                 nameof(FWeakObjectProperty)
@@ -156,6 +155,7 @@ namespace AssetTool
                 case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
                 case FEnumProperty enumProperty: new FEnumPropertySerializer().Write(writer, enumProperty, options); return;
                 case FInterfaceProperty interfaceProperty: new FInterfacePropertySerializer().Write(writer, interfaceProperty, options); return;
+                case FStructProperty structProperty: new FStructPropertySerializer().Write(writer, structProperty, options); return;
 
                 default:
                     writer.WriteStartObject();

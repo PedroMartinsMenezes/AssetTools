@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+
+namespace AssetTool
 {
     public class FStructProperty : FProperty
     {
@@ -24,6 +26,25 @@
         {
             Value = transfer.MoveTags(Value.ToObject<Dictionary<string, object>>(transfer), 0);
             return this;
+        }
+    }
+
+    public class FStructPropertySerializer : FPropertySerializerBase<FStructProperty>
+    {
+        public FStructProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            var obj = ReadBaseProperties(root);
+            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
+            obj.Value = JsonSerializer.Deserialize<FObjectPtr>(root.GetProperty("Value").GetRawText(), options);
+            return obj;
+        }
+        public void Write(Utf8JsonWriter writer, FStructProperty value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            WriteBaseProperties(writer, value);
+            writer.WriteNumber("ElementSize", value.ElementSize);
+            writer.WriteString("Value", value.Value.ToString());
+            writer.WriteEndObject();
         }
     }
 }
