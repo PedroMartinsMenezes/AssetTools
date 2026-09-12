@@ -5,6 +5,164 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
+    #region TBulkList
+    [DebuggerDisplay("ElementSize({ElementSize}) ElementCount({ElementCount})")]
+    public class TBulkList<T> : ITransferable<bool> where T : ITransferable, new()
+    {
+        [JsonIgnore] public int Count => Items.Count;
+        public int ElementSize;
+        public int ElementCount;
+        public List<T> Items;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            return Move(transfer, false);
+        }
+
+        public ITransferable Move(Transfer transfer, bool bForcePerElementSerialization)
+        {
+            if (bForcePerElementSerialization)
+            {
+                transfer.Move(ref Items);
+                return this;
+            }
+            else
+            {
+                transfer.Move(ref ElementSize);
+                if (ElementSize <= 0)
+                    throw new InvalidOperationException();
+                transfer.Move(ref ElementCount);
+                transfer.Move(ref Items, ElementCount);
+                return this;
+            }
+        }
+    }
+
+    public class TBulkListTUInt16JsonConverter : JsonConverter<TBulkList<TUInt16>>
+    {
+        public override TBulkList<TUInt16> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            var parts = reader.GetString().Split(" | ");
+            var header = parts[0].Split(' ');
+            int elementSize = int.Parse(header[1]);
+            int elementCount = int.Parse(header[3]);
+            var items = parts[1].Length == 0 ? new List<TUInt16>() : parts[1].Split(' ').Select(x => new TUInt16 { Value = UInt16.Parse(x) }).ToList();
+            return new TBulkList<TUInt16> { ElementSize = elementSize, ElementCount = elementCount, Items = items };
+        }
+        public override void Write(Utf8JsonWriter writer, TBulkList<TUInt16> value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue($"ElementSize {value.ElementSize} ElementCount {value.ElementCount} | {string.Join(' ', value.Items.Select(x => x.Value))}");
+        }
+    }
+    #endregion
+
+    #region TList
+    public class TList<T> : ITransferable where T : ITransferable, new()
+    {
+        public List<T> Items;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref Items);
+            return this;
+        }
+    }
+
+    public class TListOfList<T> : ITransferable where T : ITransferable, new()
+    {
+        public List<TList<T>> Items;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref Items);
+            return this;
+        }
+    }
+    #endregion
+
+    #region TTuple
+    [DebuggerDisplay("{Item1}, {Item2}")]
+    public class TTuple<T1, T2> : ITransferable where T1 : ITransferable, new() where T2 : ITransferable, new()
+    {
+        public T1 Item1;
+        public T2 Item2;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref Item1);
+            transfer.Move(ref Item2);
+            return this;
+        }
+    }
+
+    public class TTupleFNameFNameJsonConverter : JsonConverter<TTuple<FName, FName>>
+    {
+        public override TTuple<FName, FName> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string[] parts = reader.GetString().Split(' ');
+            return new TTuple<FName, FName> { Item1 = new FName(parts[0]), Item2 = new FName(parts[1]) };
+        }
+
+        public override TTuple<FName, FName> ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
+
+        public override void Write(Utf8JsonWriter writer, TTuple<FName, FName> value, JsonSerializerOptions options)
+        {
+            string key = $"{value.Item1.ToString()} {value.Item2.ToString()}";
+            writer.WriteStringValue(key);
+        }
+
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, TTuple<FName, FName> value, JsonSerializerOptions options)
+        {
+            string key = $"{value.Item1.ToString()} {value.Item2.ToString()}";
+            writer.WritePropertyName(key);
+        }
+    }
+    #endregion
+
+    #region TRef
+    public class TRef : ITransferable
+    {
+        public Int32 ExportIndex;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref ExportIndex);
+            if (ExportIndex > transfer.GlobalObjects.ExportMap.Count)
+            {
+                throw new InvalidOperationException("Invalid Export Index");
+            }
+            return this;
+        }
+
+        public override string ToString() => ExportIndex.ToString();
+
+        public static TRef FromString(string str) => new TRef { ExportIndex = Int32.Parse(str) };
+    }
+
+    public class TRefJsonConverter : JsonConverter<TRef>
+    {
+        public override TRef Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new TRef { ExportIndex = reader.GetInt32() };
+        }
+        public override TRef ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new TRef { ExportIndex = Int32.Parse(reader.GetString()) };
+        }
+        public override void Write(Utf8JsonWriter writer, TRef value, JsonSerializerOptions options)
+        {
+            writer.WriteNumberValue(value.ExportIndex);
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, TRef value, JsonSerializerOptions options)
+        {
+            writer.WritePropertyName(value.ExportIndex.ToString());
+        }
+    }
+    #endregion
+
     #region TBool
     [DebuggerDisplay("{Value}")]
     public class TBool : ITransferable

@@ -462,7 +462,7 @@ namespace AssetTool
                 new AttributeStorageFAttributeKeyJsonConverter(),
                 new FSimpleMemberReferenceJsonConverter(),
                 new FEdGraphPinTypeJsonConverter(),
-                new EdGraphPinJsonConverter(),
+                new UEdGraphPinJsonConverter(),
                 new FPropertyTypeNameJsonConverter(),
                 new ParentPinWrapperJsonConverter(),
                 new LinkedToWrapperJsonConverter(),

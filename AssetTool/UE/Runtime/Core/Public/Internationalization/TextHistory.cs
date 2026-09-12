@@ -418,4 +418,21 @@ namespace AssetTool
         ToLower,
         ToUpper,
     }
+
+    public enum ETextHistoryType : sbyte
+    {
+        Base,
+        NamedFormat,
+        OrderedFormat,
+        ArgumentFormat,
+        AsNumber,
+        AsPercent,
+        AsCurrency,
+        AsDate,
+        AsTime,
+        AsDateTime,
+        Transform,
+        StringTableEntry,
+        TextGenerator,
+    }
 }

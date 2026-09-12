@@ -1,4 +1,4 @@
-﻿namespace AssetTool
+namespace AssetTool
 {
     public class TArray64<T> : ITransferable where T : ITransferable, new()
     {
