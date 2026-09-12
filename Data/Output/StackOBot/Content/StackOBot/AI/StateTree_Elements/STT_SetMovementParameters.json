@@ -1282,7 +1282,6 @@
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-20] StateTreeTaskBlueprintBase",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -1297,18 +1296,11 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-37] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
             "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "UberGraphFrame",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 16,
+            "Value": "ImportIndex[-37] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
@@ -1411,14 +1403,10 @@
         "ClassFlags": 262144,
         "ClassWithin": 4294967285,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 44,
-        "Next": 0
+        "PerspectiveNewCDO": 44
       }
     },
     {
@@ -1584,7 +1572,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 844,
           "SerializedScriptSize": 1396,
@@ -1599,48 +1586,22 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-36] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_MakeRotator_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-36] Rotator",
-            "ArrayDim": 1,
             "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_MakeRotator_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "Value": "ImportIndex[-36] Rotator"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-40] StateTreeTransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 72,
+            "NamePrivate": "CallFunc_MakeRotator_ReturnValue\"1",
+            "ElementSize": 24,
+            "Value": "ImportIndex[-36] Rotator"
+          },
+          {
+            "__type": "FStructProperty",
             "PropertyFlags": "CPF_ConstParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_Event_Transition\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 72,
+            "Value": "ImportIndex[-40] StateTreeTransitionResult"
           },
           {
             "__type": "FBoolProperty",
@@ -1648,18 +1609,10 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-40] StateTreeTransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 72,
             "PropertyFlags": "CPF_ConstParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_Event_Transition",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 72,
+            "Value": "ImportIndex[-40] StateTreeTransitionResult"
           },
           {
             "__type": "FBoolProperty",
@@ -1669,8 +1622,7 @@
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1685,7 +1637,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-29] ReceiveExitState",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
@@ -1695,25 +1646,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-40] StateTreeTransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 72,
             "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Transition",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 72,
+            "Value": "ImportIndex[-40] StateTreeTransitionResult"
           }
         ],
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1728,7 +1670,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-28] ReceiveGetDescription",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 133,
           "SerializedScriptSize": 157,
@@ -1766,8 +1707,7 @@
         "FunctionFlags": 1279789056,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1782,7 +1722,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-30] ReceiveLatentEnterState",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
@@ -1792,25 +1731,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-40] StateTreeTransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 72,
             "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Transition",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 72,
+            "Value": "ImportIndex[-40] StateTreeTransitionResult"
           }
         ],
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3015,18 +2945,9 @@
           "float 'Acceleration While Active' {340a1913-464c-dfd4-beb1-2681429fa59c}": 500,
           "float 'Acceleration On Exit' {019efb0a-467f-f217-77f4-a8b782027ce6}": 5000
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     }
   ],

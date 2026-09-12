@@ -1268,7 +1268,6 @@
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-18] Actor",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -1281,18 +1280,11 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-86] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
             "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "UberGraphFrame",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 16,
+            "Value": "ImportIndex[-86] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
@@ -1347,21 +1339,15 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-82] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Relative Transform",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Relative Transform",
               "Category": "Default"
-            }
+            },
+            "ElementSize": 96,
+            "Value": "ImportIndex[-82] Transform"
           }
         ],
         "FuncMap": {
@@ -1371,14 +1357,10 @@
         "ClassFlags": 8651012,
         "ClassWithin": 4294967279,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 3,
-        "Next": 0
+        "PerspectiveNewCDO": 3
       }
     },
     {
@@ -1405,18 +1387,9 @@
             "bool 'bStartWithTickEnabled'": false
           }
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     },
     {
@@ -1584,7 +1557,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 1105,
           "SerializedScriptSize": 1345,
@@ -1624,63 +1596,28 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_Event_HitLocation",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-83] Vector"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_Event_HitNormal",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
             "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_NormalImpulse",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "Value": "ImportIndex[-83] Vector"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-84] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
+            "NamePrivate": "K2Node_Event_NormalImpulse",
+            "ElementSize": 24,
+            "Value": "ImportIndex[-83] Vector"
+          },
+          {
+            "__type": "FStructProperty",
             "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_Event_Hit",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 264,
+            "Value": "ImportIndex[-84] HitResult"
           },
           {
             "__type": "FObjectProperty",
@@ -1703,18 +1640,9 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-82] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_MakeTransform_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 96,
+            "Value": "ImportIndex[-82] Transform"
           },
           {
             "__type": "FObjectProperty",
@@ -1724,33 +1652,15 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-83] Vector"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-82] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_GetComponentToWorld_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 96,
+            "Value": "ImportIndex[-82] Transform"
           },
           {
             "__type": "FObjectProperty",
@@ -1766,8 +1676,7 @@
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1782,7 +1691,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-49] ReceiveHit",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 168,
           "SerializedScriptSize": 292,
@@ -1815,70 +1723,37 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "HitLocation",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-83] Vector"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "HitNormal",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-83] Vector",
-            "ArrayDim": 1,
             "ElementSize": 24,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "NormalImpulse",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "Value": "ImportIndex[-83] Vector"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-84] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "NamePrivate": "NormalImpulse",
+            "ElementSize": 24,
+            "Value": "ImportIndex[-83] Vector"
+          },
+          {
+            "__type": "FStructProperty",
             "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Hit",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 264,
+            "Value": "ImportIndex[-84] HitResult"
           }
         ],
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {

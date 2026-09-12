@@ -2144,14 +2144,6 @@
           "bool '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": true,
           "Vector 'Velocity' {b01cde31-409b-c95b-adf8-6d959905dad4}": "0 0 0"
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": "ExportIndex[126] ImportIndex[-48]: ScriptStruct",
           "Value": {
@@ -3524,15 +3516,9 @@
                   ]
                 }
               }
-            },
-            "Children": 0,
-            "StructFlags": "STRUCT_NoFlags",
-            "UseNativeSerialization": false,
-            "UseBinarySerialization": false,
-            "Next": 0
+            }
           }
-        },
-        "Next": 0
+        }
       }
     },
     {
@@ -7997,7 +7983,6 @@
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-52] AnimInstance",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -8013,485 +7998,231 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-118] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
             "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "UberGraphFrame",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 16,
+            "Value": "ImportIndex[-118] PointerToUberGraphFrame"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[127] ScriptStruct",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "__AnimBlueprintMutables",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
             "MetaDataMap": {
               "BlueprintCompilerGeneratedDefaults": "true"
-            }
+            },
+            "ElementSize": 8,
+            "Value": "ImportIndex[127] ScriptStruct"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-116] AnimSubsystemInstance",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimBlueprintExtension_PropertyAccess",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 8,
+            "Value": "ImportIndex[-116] AnimSubsystemInstance"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-116] AnimSubsystemInstance",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimBlueprintExtension_Base",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 8,
+            "Value": "ImportIndex[-116] AnimSubsystemInstance"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-106] AnimNode_Root",
-            "ArrayDim": 1,
-            "ElementSize": 184,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_Root",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 184,
+            "Value": "ImportIndex[-106] AnimNode_Root"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"7",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"6",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-95] AnimNode_BlendSpacePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 280,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_BlendSpacePlayer",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 280,
+            "Value": "ImportIndex[-95] AnimNode_BlendSpacePlayer"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult\"5",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-108] AnimNode_SequencePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 328,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_SequencePlayer\"3",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 328,
+            "Value": "ImportIndex[-108] AnimNode_SequencePlayer"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult\"4",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-110] AnimNode_StateMachine",
-            "ArrayDim": 1,
-            "ElementSize": 304,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateMachine\"1",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 304,
+            "Value": "ImportIndex[-110] AnimNode_StateMachine"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-107] AnimNode_SaveCachedPose",
-            "ArrayDim": 1,
-            "ElementSize": 392,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_SaveCachedPose",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 392,
+            "Value": "ImportIndex[-107] AnimNode_SaveCachedPose"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"5",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"4",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"3",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"2",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult\"1",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-111] AnimNode_TransitionResult",
-            "ArrayDim": 1,
-            "ElementSize": 160,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_TransitionResult",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 160,
+            "Value": "ImportIndex[-111] AnimNode_TransitionResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-94] AnimNode_ApplyAdditive",
-            "ArrayDim": 1,
-            "ElementSize": 344,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_ApplyAdditive",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 344,
+            "Value": "ImportIndex[-94] AnimNode_ApplyAdditive"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-112] AnimNode_UseCachedPose",
-            "ArrayDim": 1,
-            "ElementSize": 176,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_UseCachedPose\"1",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 176,
+            "Value": "ImportIndex[-112] AnimNode_UseCachedPose"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-108] AnimNode_SequencePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 328,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_SequencePlayer\"2",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 328,
+            "Value": "ImportIndex[-108] AnimNode_SequencePlayer"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult\"3",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-108] AnimNode_SequencePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 328,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_SequencePlayer\"1",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 328,
+            "Value": "ImportIndex[-108] AnimNode_SequencePlayer"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult\"2",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-108] AnimNode_SequencePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 328,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_SequencePlayer",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 328,
+            "Value": "ImportIndex[-108] AnimNode_SequencePlayer"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult\"1",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-112] AnimNode_UseCachedPose",
-            "ArrayDim": 1,
-            "ElementSize": 176,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_UseCachedPose",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 176,
+            "Value": "ImportIndex[-112] AnimNode_UseCachedPose"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] AnimNode_StateResult",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateResult",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-97] AnimNode_StateResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-110] AnimNode_StateMachine",
-            "ArrayDim": 1,
-            "ElementSize": 304,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_StateMachine",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 304,
+            "Value": "ImportIndex[-110] AnimNode_StateMachine"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-96] AnimNode_Slot",
-            "ArrayDim": 1,
-            "ElementSize": 208,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_Slot",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 208,
+            "Value": "ImportIndex[-96] AnimNode_Slot"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-98] AnimNode_ControlRig",
-            "ArrayDim": 1,
-            "ElementSize": 1256,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraphNode_ControlRig",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 1256,
+            "Value": "ImportIndex[-98] AnimNode_ControlRig"
           },
           {
             "__type": "FBoolProperty",
@@ -8524,22 +8255,16 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-100] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "Velocity",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Velocity",
               "Category": "EssentialMovementData",
               "MultiLine": "true"
-            }
+            },
+            "ElementSize": 24,
+            "Value": "ImportIndex[-100] Vector"
           },
           {
             "__type": "FDoubleProperty",
@@ -8585,14 +8310,10 @@
         "ClassFlags": 8652808,
         "ClassWithin": 4294967234,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 19,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 1,
-        "Next": 0
+        "PerspectiveNewCDO": 1
       }
     },
     {
@@ -12399,7 +12120,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 44,
           "SerializedScriptSize": 56,
@@ -12409,25 +12129,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-119] PoseLink",
-            "ArrayDim": 1,
-            "ElementSize": 24,
             "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimGraph",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-119] PoseLink"
           }
         ],
         "FunctionFlags": 205520896,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -12442,7 +12153,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-68] BlueprintInitializeAnimation",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -12453,8 +12163,7 @@
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -12469,7 +12178,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-69] BlueprintUpdateAnimation",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
@@ -12486,8 +12194,7 @@
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -12501,7 +12208,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -12512,8 +12218,7 @@
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -12527,7 +12232,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 801,
           "SerializedScriptSize": 1209,
@@ -12572,18 +12276,9 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-100] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_GetCurrentAcceleration_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-100] Vector"
           },
           {
             "__type": "FBoolProperty",
@@ -12621,8 +12316,7 @@
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -13799,7 +13493,6 @@
         "__type": "UScriptStruct",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-101] AnimBlueprintConstantData",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -13937,18 +13630,11 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-117] InputScaleBiasClampConstants",
-            "ArrayDim": 1,
-            "ElementSize": 44,
             "PropertyFlags": "CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "StructProperty\"145",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 44,
+            "Value": "ImportIndex[-117] InputScaleBiasClampConstants"
           },
           {
             "__type": "FFloatProperty",
@@ -14045,54 +13731,27 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-113] AnimNodeFunctionRef",
-            "ArrayDim": 1,
-            "ElementSize": 40,
             "PropertyFlags": "CPF_BlueprintVisible",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "StructProperty\"156",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 40,
+            "Value": "ImportIndex[-113] AnimNodeFunctionRef"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-115] AnimSubsystem_PropertyAccess",
-            "ArrayDim": 1,
-            "ElementSize": 192,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimBlueprintExtension_PropertyAccess",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 192,
+            "Value": "ImportIndex[-115] AnimSubsystem_PropertyAccess"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-114] AnimSubsystem_Base",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "AnimBlueprintExtension_Base",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-114] AnimSubsystem_Base"
           }
-        ],
-        "StructFlags": "STRUCT_NoFlags",
-        "UseNativeSerialization": false,
-        "UseBinarySerialization": false,
-        "Next": 0
+        ]
       }
     },
     {
@@ -14107,7 +13766,6 @@
         "__type": "UScriptStruct",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-102] AnimBlueprintMutableData",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -14122,10 +13780,7 @@
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           }
         ],
-        "StructFlags": "STRUCT_IsPlainOldData, STRUCT_NoDestructor, STRUCT_ZeroConstructor",
-        "UseNativeSerialization": false,
-        "UseBinarySerialization": false,
-        "Next": 0
+        "StructFlags": "STRUCT_IsPlainOldData, STRUCT_NoDestructor, STRUCT_ZeroConstructor"
       }
     }
   ],

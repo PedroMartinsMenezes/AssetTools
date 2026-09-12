@@ -1807,7 +1807,6 @@
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-21] Actor",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -1831,18 +1830,11 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-104] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
             "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "UberGraphFrame",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 16,
+            "Value": "ImportIndex[-104] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
@@ -1925,40 +1917,28 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-100] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "ActorTransform",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Actor Transform",
               "Category": "Default",
               "MultiLine": "true"
-            }
+            },
+            "ElementSize": 96,
+            "Value": "ImportIndex[-100] Transform"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
             "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "HiddenLocation",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
             "MetaDataMap": {
               "DisplayName": "Hidden Location",
               "Category": "Default"
-            }
+            },
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FIntProperty",
@@ -2000,14 +1980,10 @@
         "ClassFlags": 8651012,
         "ClassWithin": 4294967276,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 3,
-        "Next": 0
+        "PerspectiveNewCDO": 3
       }
     },
     {
@@ -2035,18 +2011,9 @@
           },
           "string 'ActorLabel'": "BP_Coin-1"
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     },
     {
@@ -2432,7 +2399,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2443,8 +2409,7 @@
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2458,7 +2423,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2469,8 +2433,7 @@
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2484,7 +2447,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 1797,
           "SerializedScriptSize": 2397,
@@ -2499,18 +2461,9 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_DoubleToVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FDoubleProperty",
@@ -2518,63 +2471,27 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_Conv_DoubleToVector_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-99] Rotator",
-            "ArrayDim": 1,
             "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
+            "Value": "ImportIndex[-101] Vector"
+          },
+          {
+            "__type": "FStructProperty",
             "NamePrivate": "CallFunc_MakeRotator_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-99] Rotator"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-100] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_MakeTransform_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 96,
+            "Value": "ImportIndex[-100] Transform"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-100] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_MakeTransform_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 96,
+            "Value": "ImportIndex[-100] Transform"
           },
           {
             "__type": "FDelegateProperty",
@@ -2599,33 +2516,17 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-102] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
             "PropertyFlags": "CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_SetRelativeTransform_SweepHitResult",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 264,
+            "Value": "ImportIndex[-102] HitResult"
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-102] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
             "PropertyFlags": "CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_SetRelativeTransform_SweepHitResult\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 264,
+            "Value": "ImportIndex[-102] HitResult"
           },
           {
             "__type": "FDoubleProperty",
@@ -2659,48 +2560,22 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-99] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_MakeRotator_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-102] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
             "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
+            "Value": "ImportIndex[-99] Rotator"
+          },
+          {
+            "__type": "FStructProperty",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
+            "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+            "ElementSize": 264,
+            "Value": "ImportIndex[-102] HitResult"
+          },
+          {
+            "__type": "FStructProperty",
             "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FDoubleProperty",
@@ -2752,8 +2627,7 @@
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2767,7 +2641,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2778,8 +2651,7 @@
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2794,7 +2666,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-56] ReceiveActorBeginOverlap",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
@@ -2812,8 +2683,7 @@
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2828,7 +2698,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-57] ReceiveBeginPlay",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2839,8 +2708,7 @@
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2854,7 +2722,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2865,8 +2732,7 @@
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2880,7 +2746,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2891,8 +2756,7 @@
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2906,7 +2770,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2917,8 +2780,7 @@
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2932,7 +2794,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2943,8 +2804,7 @@
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2958,7 +2818,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
@@ -2969,8 +2828,7 @@
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2984,7 +2842,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 102,
           "SerializedScriptSize": 130,
@@ -3005,8 +2862,7 @@
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3020,7 +2876,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 617,
           "SerializedScriptSize": 781,
@@ -3034,18 +2889,9 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FDoubleProperty",
@@ -3072,18 +2918,8 @@
           },
           {
             "__type": "FInterfaceProperty",
-            "TypeName": "InterfaceProperty",
-            "Value": 4294967294,
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "Value": 4294967294
           },
           {
             "__type": "FBoolProperty",
@@ -3091,18 +2927,9 @@
           },
           {
             "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
             "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FFloatProperty",
@@ -3112,8 +2939,7 @@
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
