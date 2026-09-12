@@ -5,11 +5,11 @@ namespace AssetTool
     [JsonAsset("ScriptStruct")]
     public class UScriptStruct : UStruct, ITransferable
     {
-        [JsonPropertyOrder(-7)] public EStructFlags StructFlags;
+        [JsonPropertyOrder(-7)] public EStructFlags? StructFlags;
 
-        [JsonIgnore] public bool UseNativeSerialization => StructFlags.HasFlag(EStructFlags.STRUCT_SerializeNative);
+        [JsonIgnore] public bool UseNativeSerialization => StructFlags?.HasFlag(EStructFlags.STRUCT_SerializeNative) == true;
 
-        [JsonIgnore] public bool UseBinarySerialization => StructFlags.HasFlag(EStructFlags.STRUCT_Immutable);
+        [JsonIgnore] public bool UseBinarySerialization => StructFlags?.HasFlag(EStructFlags.STRUCT_Immutable) == true;
 
         [Location("void UScriptStruct::Serialize( FArchive& Ar )")]
         public override ITransferable Move(Transfer transfer)

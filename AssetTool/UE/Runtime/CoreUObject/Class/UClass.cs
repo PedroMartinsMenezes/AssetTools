@@ -4,16 +4,16 @@
     public class UClass : UStruct
     {
         public Dictionary<FName, TUInt32> FuncMap;
-        public UInt32 ClassFlags;
-        public UInt32 ClassWithin;
+        public UInt32? ClassFlags;
+        public UInt32? ClassWithin;
         public FName ClassConfigName;
-        public Int32 NumInterfaces;
-        public UInt32 ClassGeneratedBy;
+        public Int32? NumInterfaces;
+        public UInt32? ClassGeneratedBy;
         public List<FImplementedInterface> SerializedInterfaces;
-        public bool bDeprecatedForceScriptOrder;
+        public bool? bDeprecatedForceScriptOrder;
         public FName Dummy;
-        public bool bCookedAsBool;
-        public UInt32 PerspectiveNewCDO;
+        public bool? bCookedAsBool;
+        public UInt32? PerspectiveNewCDO;
         public TObjectPtr<UScriptStruct> SparseClassDataStruct;
 
         [Location("void UClass::Serialize( FArchive& Ar )")]
@@ -36,7 +36,7 @@
             {
                 InterfacesStart = transfer.Position;
                 transfer.Move(ref NumInterfaces);
-                transfer.Position = InterfacesStart + 4 + NumInterfaces * 12;
+                transfer.Position = InterfacesStart + 4 + NumInterfaces.GetValueOrDefault(0) * 12;
             }
             transfer.Move(ref ClassGeneratedBy);
 

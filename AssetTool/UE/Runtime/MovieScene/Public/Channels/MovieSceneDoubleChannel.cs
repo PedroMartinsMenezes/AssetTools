@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 namespace AssetTool
 {
     [TransferableStruct("MovieSceneDoubleChannel")]
-    public class FMovieSceneDoubleChannel : FMovieSceneChannel, ITransferable, ITransferableRaw
+    public class FMovieSceneDoubleChannel : FMovieSceneChannel, ITransferable, ITransferableRaw, ITransferablePropertyTag
     {
         public byte PreInfinityExtrap;
         public byte PostInfinityExtrap;
@@ -19,10 +19,15 @@ namespace AssetTool
         public FFrameRate TickResolution;
         public bool bSerializeShowCurve;
 
+        public bool IsPropertyTag(Transfer transfer)
+        {
+            return !transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve;
+        }
+
         [Location("bool FMovieSceneDoubleChannel::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)
         {
-            if (!transfer.Supports.SerializeFloatChannelCompletely && !transfer.Supports.SerializeFloatChannelShowCurve)
+            if (IsPropertyTag(transfer))
                 return default;
 
             transfer.Move(ref PreInfinityExtrap);
@@ -68,7 +73,7 @@ namespace AssetTool
     }
 
     [TransferableStruct("MovieSceneDoubleValue")]
-    public class FMovieSceneDoubleValue : ITransferable, ITransferableRaw
+    public class FMovieSceneDoubleValue : ITransferable, ITransferableRaw, ITransferablePropertyTag
     {
         public static readonly int Size = 32;
 
@@ -79,14 +84,19 @@ namespace AssetTool
         public byte? PaddingByte;
         public byte? UnserializedPaddingBytes;
 
+        public bool IsPropertyTag(Transfer transfer)
+        {
+            return !transfer.Supports.SerializeFloatChannel;
+        }
+
         [Location("bool TMovieSceneCurveChannelImpl<ChannelType>::SerializeChannelValue(ChannelValueType& InValue, FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)
         {
-            if (!transfer.Supports.SerializeFloatChannel)
-            {
+            if (IsPropertyTag(transfer))
                 return default;
-            }
+
             transfer.MoveSingleOrDouble(ref Value);
+
             if (!transfer.Supports.SerializeFloatChannelCompletely)
             {
                 transfer.Move(ref InterpMode);
