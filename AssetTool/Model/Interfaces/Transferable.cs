@@ -32,6 +32,10 @@ namespace AssetTool
         object Move(Transfer transfer, int num, object value);
     }
 
+    /// <summary>
+    /// Use this on all ITransferable classes that can return "null" by some condition.
+    /// This is the C++ equivalent of returning "false" on "bool Serialize(FArchive& Ar)" functions.
+    /// </summary>
     public interface ITransferablePropertyTag : ITransferable
     {
         bool IsPropertyTag(Transfer transfer);
