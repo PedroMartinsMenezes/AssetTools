@@ -1,4 +1,8 @@
-﻿namespace AssetTool
+﻿using System.Text;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
 {
     [TransferableStruct("MovieSceneFloatChannel")]
     public class FMovieSceneFloatChannel : FMovieSceneChannel, ITransferable, ITransferableRaw, ITransferablePropertyTag
@@ -126,6 +130,45 @@
             transfer.Move(ref PaddingByte);
             transfer.Move(ref UnserializedPaddingBytes);
             return this;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder builder = new();
+            builder.AppendNonNull("Value({0}) ", Value);
+            if (InterpMode.GetValueOrDefault(0) != 0) builder.AppendNonNull("InterpMode({0}) ", InterpMode);
+            if (TangentMode.GetValueOrDefault(0) != 0) builder.AppendNonNull("TangentMode({0}) ", TangentMode);
+            if (PaddingByte.GetValueOrDefault(0) != 0) builder.AppendNonNull("PaddingByte({0}) ", PaddingByte);
+            if (UnserializedPaddingBytes.GetValueOrDefault(0) != 0) builder.AppendNonNull("UnserializedPaddingBytes({0}) ", UnserializedPaddingBytes);
+            if (Tangent is { } && !Tangent.IsZero()) builder.AppendNonNull("Tangent( {0} )", Tangent.ToString());
+            return builder.ToString();
+        }
+
+        public static FMovieSceneFloatValue FromString(string s)
+        {
+            FMovieSceneFloatValue result = new();
+            result.Value = s.GetNonNull("Value({0})", (x) => float.Parse(x));
+            result.InterpMode = s.GetNonNull("InterpMode({0})", (x) => byte.Parse(x));
+            result.TangentMode = s.GetNonNull("TangentMode({0})", (x) => byte.Parse(x));
+            result.PaddingByte = s.GetNonNull("PaddingByte({0})", (x) => byte.Parse(x));
+            result.UnserializedPaddingBytes = s.GetNonNull("UnserializedPaddingBytes({0})", (x) => byte.Parse(x));
+            result.Tangent = s.GetNonNull("Tangent( {0} )", (x) => FMovieSceneTangentData.FromString(x));
+            return result;
+        }
+    }
+
+    public class FMovieSceneFloatValueJsonConverter : JsonConverter<FMovieSceneFloatValue>
+    {
+        public override FMovieSceneFloatValue Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            string text = reader.GetString();
+            var result = FMovieSceneFloatValue.FromString(text);
+            return result;
+        }
+
+        public override void Write(Utf8JsonWriter writer, FMovieSceneFloatValue value, JsonSerializerOptions options)
+        {
+            writer.WriteStringValue(value.ToString());
         }
     }
 }

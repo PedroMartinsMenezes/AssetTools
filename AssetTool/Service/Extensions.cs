@@ -398,7 +398,17 @@ namespace AssetTool
         }
         #endregion
 
-        #region NaN Numbers
+        #region Float Numbers
+        public static bool IsZero(this float self)
+        {
+            var v = BitConverter.GetBytes(self);
+            return v[0] == 0 && v[1] == 0 && v[2] == 0 && v[3] == 0;
+        }
+        public static bool IsNonZero(this float self)
+        {
+            return !self.IsZero();
+        }
+
         public static string ToStr(this float self)
         {
             if (!float.IsNaN(self))
@@ -533,6 +543,7 @@ namespace AssetTool
         }
         #endregion
 
+        #region Inline Multi Fields
         public static void AppendNonNull(this StringBuilder self, string format, object arg1)
         {
             if (arg1 is { })
@@ -573,5 +584,6 @@ namespace AssetTool
             }
             return func(Text.ToString());
         }
+        #endregion
     }
 }

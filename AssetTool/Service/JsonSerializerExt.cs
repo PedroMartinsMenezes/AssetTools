@@ -477,6 +477,9 @@ namespace AssetTool
                 new ListFFrameNumberJsonConverter(),
                 new FSHVectorJsonConverter(),
                 new FSHVectorRGBJsonConverter(),
+                new FMovieSceneTangentDataJsonConverter(),
+                new FMovieSceneDoubleValueJsonConverter(),
+                new FMovieSceneFloatValueJsonConverter(),
                 #endregion
 
                 #region Properties
