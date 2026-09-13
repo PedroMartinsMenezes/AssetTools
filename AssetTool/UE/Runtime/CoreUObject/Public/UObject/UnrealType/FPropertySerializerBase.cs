@@ -89,12 +89,10 @@ namespace AssetTool
 
         protected T ReadKeyValue(string key, JsonElement root)
         {
-            T value = new()
-            {
-                HasMetaData = false
-            };
+            T value = new();
 
-            value.NamePrivate = key.GetNonNull("NamePrivate({0})", x => new FName(x));
+            value.NamePrivate = new FName(key.Split("'")[1]);
+
             value.PropertyFlags = key.GetNonNull("PropertyFlags({0})", x => Enum.Parse<EPropertyFlags>(x), EPropertyFlags.CPF_None);
             value.FlagsPrivate = key.GetNonNull("FlagsPrivate({0})", x => Enum.Parse<EObjectFlags>(x), EObjectFlags.RF_Public);
             value.ArrayDim = key.GetNonNull("ArrayDim({0})", x => int.Parse(x), 1);
@@ -124,7 +122,6 @@ namespace AssetTool
             builder.Append($"{name} ");
 
             //Base members
-            builder.Append($"NamePrivate({value.NamePrivate}) ");
             if (value.PropertyFlags != EPropertyFlags.CPF_None) builder.Append($"PropertyFlags({value.PropertyFlags}) ");
             if (value.FlagsPrivate != EObjectFlags.RF_Public) builder.Append($"FlagsPrivate({value.FlagsPrivate}) ");
             if (value.ArrayDim != 1) builder.Append($"ArrayDim({value.ArrayDim}) ");
@@ -140,6 +137,9 @@ namespace AssetTool
                     builder.Append($"{pair.Key}({pair.Value}) ");
                 }
             }
+
+            //NamePrivate
+            builder.Append($"'{value.NamePrivate}'");
 
             //Derived members body
             if (value.HasMetaData)
