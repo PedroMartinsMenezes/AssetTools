@@ -7998,8 +7998,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-118] PointerToUberGraphFrame"
@@ -8225,14 +8225,12 @@
             "Value": "ImportIndex[-98] AnimNode_ControlRig"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "prop-bool FlagsPrivate(RF_Public, RF_LoadCompleted) '__CustomProperty_ShouldDoIKTrace_385011E94C94F6DE70691192D3E0622C'": ""
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "NamePrivate": "Character",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Character",
@@ -8243,8 +8241,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference, CPF_UObjectWrapper",
             "NamePrivate": "MovementComponent",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Movement Component",
@@ -8255,8 +8253,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Velocity",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Velocity",
@@ -8268,8 +8266,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "GroundSpeed",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Ground Speed",
@@ -8278,25 +8276,21 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "ShouldMove",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Should Move",
-              "Category": "Essential Movement Data",
-              "MultiLine": "true"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'ShouldMove'": {
+              "MetaDataMap": {
+                "DisplayName": "Should Move",
+                "Category": "Essential Movement Data",
+                "MultiLine": "true"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "IsFalling",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Is Falling",
-              "Category": "Essential Movement Data",
-              "MultiLine": "true"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'IsFalling'": {
+              "MetaDataMap": {
+                "DisplayName": "Is Falling",
+                "Category": "Essential Movement Data",
+                "MultiLine": "true"
+              }
             }
           }
         ],
@@ -12129,8 +12123,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "AnimGraph",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "ElementSize": 24,
             "Value": "ImportIndex[-119] PoseLink"
           }
@@ -12187,8 +12181,8 @@
         "ChildProperties": [
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "DeltaTimeX"
+            "NamePrivate": "DeltaTimeX",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           }
         ],
         "FunctionFlags": 134350848,
@@ -12241,16 +12235,15 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FFloatProperty",
             "NamePrivate": "K2Node_Event_DeltaTimeX"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -12263,16 +12256,14 @@
             "Value": "ImportIndex[-55] Character"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FDoubleProperty",
             "NamePrivate": "CallFunc_VSizeXY_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
           },
           {
             "__type": "FStructProperty",
@@ -12281,16 +12272,13 @@
             "Value": "ImportIndex[-100] Vector"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_NotEqual_VectorVector_ReturnValue"
+            "prop-bool 'CallFunc_NotEqual_VectorVector_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsFalling_ReturnValue"
+            "prop-bool 'CallFunc_IsFalling_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BooleanAND_ReturnValue"
+            "prop-bool 'CallFunc_BooleanAND_ReturnValue'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -12305,12 +12293,10 @@
             "NamePrivate": "CallFunc_BreakVector_Z"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue\"1"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue\"1'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BooleanAND_ReturnValue\"1"
+            "prop-bool 'CallFunc_BooleanAND_ReturnValue\"1'": ""
           }
         ],
         "FunctionFlags": 32769,
@@ -13516,8 +13502,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "NamePrivate": "BlendSpace\"132",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": "ImportIndex[-54] BlendSpace"
           },
@@ -13537,8 +13523,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "NamePrivate": "AnimSequenceBase\"134",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": "ImportIndex[-53] AnimSequenceBase"
           },
@@ -13558,8 +13544,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "NamePrivate": "AnimSequenceBase\"136",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": "ImportIndex[-53] AnimSequenceBase"
           },
@@ -13579,20 +13565,20 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "IntProperty\"138",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "FloatProperty\"139",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "NamePrivate": "AnimSequenceBase\"140",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": "ImportIndex[-53] AnimSequenceBase"
           },
@@ -13612,53 +13598,47 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "IntProperty\"142",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "BoolProperty\"143",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'BoolProperty\"143'": ""
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "FloatProperty\"144",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "StructProperty\"145",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 44,
             "Value": "ImportIndex[-117] InputScaleBiasClampConstants"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "FloatProperty\"146",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "NamePrivate": "AnimSequenceBase\"147",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_UObjectWrapper",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": "ImportIndex[-53] AnimSequenceBase"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
-            "NamePrivate": "BoolProperty\"148",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'BoolProperty\"148'": ""
           },
           {
             "__type": "FEnumProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "EnumProperty\"149",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": 4294967229,
             "PropertyTypeName": "ByteProperty",
@@ -13670,8 +13650,8 @@
           },
           {
             "__type": "FByteProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "ByteProperty\"150",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "Value": 4294967230
           },
@@ -13691,8 +13671,8 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "IntProperty\"152",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
@@ -13725,14 +13705,14 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "IntProperty\"155",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "StructProperty\"156",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 40,
             "Value": "ImportIndex[-113] AnimNodeFunctionRef"
@@ -13775,8 +13755,8 @@
         "ChildProperties": [
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible",
             "NamePrivate": "FloatProperty",
+            "PropertyFlags": "CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted"
           }
         ],

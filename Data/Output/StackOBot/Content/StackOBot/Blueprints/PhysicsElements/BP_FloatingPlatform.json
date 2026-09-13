@@ -1238,16 +1238,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-40] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": " ",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1256,8 +1256,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": " 2",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1266,8 +1266,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": " 1",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1276,8 +1276,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "MovingComp",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1286,8 +1286,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "PhysicsConstraint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1296,8 +1296,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "DefaultSceneRoot",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1306,8 +1306,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_ExposeOnSpawn",
             "NamePrivate": "Attach Point",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_ExposeOnSpawn",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Attach Point",
@@ -1408,22 +1408,20 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_FindComponentByTag_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-19] PrimitiveComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue\"1"
+            "prop-bool 'CallFunc_IsValid_ReturnValue\"1'": ""
           }
         ],
         "FunctionFlags": 32769,
@@ -1477,18 +1475,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_FindComponentByTag_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-19] PrimitiveComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue\"1"
+            "prop-bool 'CallFunc_IsValid_ReturnValue\"1'": ""
           }
         ],
         "FunctionFlags": 201459712,

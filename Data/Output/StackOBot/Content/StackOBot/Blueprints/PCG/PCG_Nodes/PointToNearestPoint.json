@@ -1273,8 +1273,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Orientation Targets",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Orientation Targets",
@@ -1284,8 +1284,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Points",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Points",
@@ -1295,8 +1295,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Pole Vector",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Pole Vector",
@@ -1307,8 +1307,8 @@
           },
           {
             "__type": "FByteProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Look At Axis",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Look at Axis",
@@ -1317,23 +1317,19 @@
             "Value": 4294967264
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Pole World Space",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Pole World Space",
-              "Category": "Default"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Pole World Space'": {
+              "MetaDataMap": {
+                "DisplayName": "Pole World Space",
+                "Category": "Default"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Invert Look At",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Invert Look At",
-              "Category": "Default"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Invert Look At'": {
+              "MetaDataMap": {
+                "DisplayName": "Invert Look At",
+                "Category": "Default"
+              }
             }
           }
         ],
@@ -1419,22 +1415,22 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "InContext",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 688,
             "Value": "ImportIndex[-66] PCGContext"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "Input",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-67] PCGDataCollection"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "Output",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-67] PCGDataCollection"
           },
@@ -1471,8 +1467,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "CallFunc_ToPointDataWithContext_ReturnValue",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-30] PCGPointData"
           },
           {
@@ -1513,8 +1509,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "CallFunc_Set_ToArray_Result",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "NameProperty",
             "SingleField": {
@@ -1540,8 +1536,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "K2Node_MakeArray_Array",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1553,8 +1549,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "CallFunc_GetInputsByPinLabel_ReturnValue",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1621,8 +1617,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BreakTaggedData_bIsUsedMultipleTimes"
+            "prop-bool 'CallFunc_BreakTaggedData_bIsUsedMultipleTimes'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1630,13 +1625,12 @@
             "Value": "ImportIndex[-31] PCGSpatialData"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "CallFunc_GetInputsByPinLabel_ReturnValue\"1",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1697,8 +1691,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BreakTaggedData_bIsUsedMultipleTimes\"1"
+            "prop-bool 'CallFunc_BreakTaggedData_bIsUsedMultipleTimes\"1'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1706,8 +1699,7 @@
             "Value": "ImportIndex[-31] PCGSpatialData"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           }
         ],
         "FunctionFlags": 214042624,
@@ -1737,50 +1729,47 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "InContext",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 688,
             "Value": "ImportIndex[-66] PCGContext"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "InData",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-30] PCGPointData"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "InPoint",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 208,
             "Value": "ImportIndex[-68] PCGPoint"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "OutPoint",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "ElementSize": 208,
             "Value": "ImportIndex[-68] PCGPoint"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OutMetadata",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-28] PCGMetadata"
           },
           {
             "__type": "FInt64Property",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Iteration"
+            "NamePrivate": "Iteration",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_ReturnParm",
-            "NamePrivate": "ReturnValue"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Variable"
+            "prop-bool 'Temp_bool_Variable'": ""
           },
           {
             "__type": "FStructProperty",
@@ -1855,13 +1844,12 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "CallFunc_ToPointDataWithContext_ReturnValue",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-30] PCGPointData"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_GetClosestPoint_bOutFound"
+            "prop-bool 'CallFunc_GetClosestPoint_bOutFound'": ""
           },
           {
             "__type": "FStructProperty",

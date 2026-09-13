@@ -3195,8 +3195,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "SkyLight1",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "BP_DayLight"
@@ -3205,8 +3205,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "ExponentialHeightFog1",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "BP_DayLight"
@@ -3215,8 +3215,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "PrevisArrow",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "BP_DayLight"
@@ -3225,8 +3225,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Skybox",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -3235,8 +3235,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Scene1",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -3245,8 +3245,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "GlobalBrightness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Global Brightness",
@@ -3254,29 +3254,25 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Use_HDRI",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use HDRI",
-              "Category": "HDRI"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Use_HDRI'": {
+              "MetaDataMap": {
+                "DisplayName": "Use HDRI",
+                "Category": "HDRI"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "UseSunLight",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use Sun Light",
-              "Category": "Sun"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'UseSunLight'": {
+              "MetaDataMap": {
+                "DisplayName": "Use Sun Light",
+                "Category": "Sun"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "SunBrightness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Sun Brightness",
@@ -3285,8 +3281,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "SunTint",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Sun Tint",
@@ -3296,19 +3292,17 @@
             "Value": "ImportIndex[-117] LinearColor"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "StationaryLightForSun",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Stationary Light for Sun",
-              "Category": "Sun"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'StationaryLightForSun'": {
+              "MetaDataMap": {
+                "DisplayName": "Stationary Light for Sun",
+                "Category": "Sun"
+              }
             }
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "NamePrivate": "SunDirectionalLight",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Sun Directional Light",
@@ -3317,19 +3311,17 @@
             "Value": "ImportIndex[-24] DirectionalLightComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "UseAtmosphere",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use Atmosphere",
-              "Category": "Atmosphere"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'UseAtmosphere'": {
+              "MetaDataMap": {
+                "DisplayName": "Use Atmosphere",
+                "Category": "Atmosphere"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereBrightness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Brightness",
@@ -3338,8 +3330,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereTint",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Tint",
@@ -3350,8 +3342,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "PrevisArrowMaterial",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Previs Arrow Material",
@@ -3361,8 +3353,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "LightColor",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Light Color",
@@ -3373,8 +3365,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "SunColorCurve",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Sun Color Curve",
@@ -3383,19 +3375,17 @@
             "Value": "ImportIndex[-23] CurveLinearColor"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "OverrideSunColor",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Override Sun Color",
-              "Category": "Sun"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'OverrideSunColor'": {
+              "MetaDataMap": {
+                "DisplayName": "Override Sun Color",
+                "Category": "Sun"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereDensityMultiplier",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Density Multiplier",
@@ -3404,8 +3394,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereAltitude",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Altitude",
@@ -3413,29 +3403,25 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "DisableSunDisk",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Disable Sun Disk",
-              "Category": "Sun"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DisableSunDisk'": {
+              "MetaDataMap": {
+                "DisplayName": "Disable Sun Disk",
+                "Category": "Sun"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "UseFog",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use Fog",
-              "Category": "Fog"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'UseFog'": {
+              "MetaDataMap": {
+                "DisplayName": "Use Fog",
+                "Category": "Fog"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogBrightness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Brightness",
@@ -3444,8 +3430,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogTint",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Tint",
@@ -3456,8 +3442,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogAltitude",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Altitude",
@@ -3466,8 +3452,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogMaxOpacity",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Max Opacity",
@@ -3476,8 +3462,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogHeightFalloff",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Height Falloff",
@@ -3486,8 +3472,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogDensity",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Density",
@@ -3496,8 +3482,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "FogBrightnessCurve",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Brightness Curve",
@@ -3507,8 +3493,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "FogStartDistance",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Fog Start Distance",
@@ -3516,19 +3502,17 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "DisableGroundScattering",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Disable Ground Scattering",
-              "Category": "Atmosphere"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DisableGroundScattering'": {
+              "MetaDataMap": {
+                "DisplayName": "Disable Ground Scattering",
+                "Category": "Atmosphere"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereDistanceScale",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Distance Scale",
@@ -3537,8 +3521,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "SkyboxMaterial",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Skybox Material",
@@ -3548,8 +3532,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "HDRI_Brightness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "HDRI Brightness",
@@ -3558,8 +3542,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "HDRI_Contrast",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "HDRI Contrast",
@@ -3568,8 +3552,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "HDRI_Tint",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "HDRI Tint",
@@ -3580,8 +3564,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "HDRI_Cubemap",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "HDRI Cubemap",
@@ -3591,8 +3575,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "HDRI_Rotation",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "HDRI Rotation",
@@ -3601,8 +3585,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "AtmosphereOpacityHorizon",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Opacity Horizon",
@@ -3611,8 +3595,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "AtmosphereOpacityZenith",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Opacity Zenith",
@@ -3620,19 +3604,17 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "HighDensityAtmosphere",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "High Density Atmosphere",
-              "Category": "Atmosphere"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'HighDensityAtmosphere'": {
+              "MetaDataMap": {
+                "DisplayName": "High Density Atmosphere",
+                "Category": "Atmosphere"
+              }
             }
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "NamePrivate": "AtmosphericFog",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmospheric Fog",
@@ -3641,19 +3623,17 @@
             "Value": "ImportIndex[-19] AtmosphericFogComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "UseSkylight",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use Skylight",
-              "Category": "SkyLight"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'UseSkylight'": {
+              "MetaDataMap": {
+                "DisplayName": "Use Skylight",
+                "Category": "SkyLight"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Shadowdistance",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Shadowdistance",
@@ -3661,29 +3641,25 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "LightShaftBloom",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Light Shaft Bloom",
-              "Category": "LightShafts"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LightShaftBloom'": {
+              "MetaDataMap": {
+                "DisplayName": "Light Shaft Bloom",
+                "Category": "LightShafts"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "LightShaftOcclusion",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Light Shaft Occlusion",
-              "Category": "LightShafts"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LightShaftOcclusion'": {
+              "MetaDataMap": {
+                "DisplayName": "Light Shaft Occlusion",
+                "Category": "LightShafts"
+              }
             }
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "OcclusionMaskDarkness",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Occlusion Mask Darkness",
@@ -3692,8 +3668,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "BloomScale",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Bloom Scale",
@@ -3702,8 +3678,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "BloomThreshold",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Bloom Threshold",
@@ -3712,8 +3688,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "BloomTint",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Bloom Tint",
@@ -3724,8 +3700,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereFogMultiplier",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Fog Multiplier",
@@ -3734,8 +3710,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereDensityHeight",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Density Height",
@@ -3744,8 +3720,8 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereMaxScatteringOrder",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Max Scattering Order",
@@ -3754,8 +3730,8 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "AtmosphereAltitudeSampleNumber",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Atmosphere Altitude Sample Number",
@@ -3764,8 +3740,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "LightFunctionMaterial",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Light Function Material",
@@ -3775,8 +3751,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "MIC_Black",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "MIC Black",
@@ -3786,8 +3762,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "MIC_HDRI",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "MIC HDRI",
@@ -4391,28 +4367,28 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "Temp_struct_Variable",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-119] Transform"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "Temp_struct_Variable\"1",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-119] Transform"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-19] AtmosphericFogComponent"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"1",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-19] AtmosphericFogComponent"
           }
         ],
@@ -4511,8 +4487,8 @@
         "ChildProperties": [
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Angle"
+            "NamePrivate": "Angle",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm"
           },
           {
             "__type": "FStructProperty",
@@ -4579,28 +4555,28 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "Temp_struct_Variable",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-119] Transform"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "Temp_struct_Variable\"1",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 48,
             "Value": "ImportIndex[-119] Transform"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-24] DirectionalLightComponent"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_AddComponent_ReturnValue\"1",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-24] DirectionalLightComponent"
           }
         ],
@@ -4630,8 +4606,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Variable"
+            "prop-bool 'Temp_bool_Variable'": ""
           },
           {
             "__type": "FStructProperty",
@@ -4669,8 +4644,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldLocation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 152,
             "Value": "ImportIndex[-121] HitResult"
           },
@@ -4684,8 +4659,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldLocation_SweepHitResult\"1",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 152,
             "Value": "ImportIndex[-121] HitResult"
           },
@@ -4750,8 +4725,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 152,
             "Value": "ImportIndex[-121] HitResult"
           }

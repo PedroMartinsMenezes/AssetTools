@@ -1280,8 +1280,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Amount"
+            "NamePrivate": "Amount",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm"
           }
         ],
         "FunctionFlags": 205651968,
@@ -1421,8 +1421,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "CollectableData",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 112,
             "Value": "ImportIndex[-17] CollectableObjectData"
           }
@@ -1466,9 +1466,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Success"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Success'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -1520,9 +1518,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Enable"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Enable'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -1551,8 +1547,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Change"
+            "NamePrivate": "Change",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           }
         ],
         "FunctionFlags": 201457664,

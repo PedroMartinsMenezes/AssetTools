@@ -961,16 +961,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-36] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "NamePrivate": "Pawn",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Pawn",
@@ -980,8 +980,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Cached Location",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Cached Location",
@@ -1128,13 +1128,13 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_Event_Transition",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-39] StateTreeTransitionResult"
           },
@@ -1145,8 +1145,7 @@
             "Value": "ImportIndex[-35] Vector"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ByteByte_ReturnValue"
+            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -1176,8 +1175,8 @@
         "ChildProperties": [
           {
             "__type": "FEnumProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Formatting",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": 4294967274,
             "PropertyTypeName": "ByteProperty",
             "SingleField": {
@@ -1228,8 +1227,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "Transition",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-39] StateTreeTransitionResult"
           }

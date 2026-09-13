@@ -1097,8 +1097,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "NamePrivate": "Actor",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Actor",
@@ -1108,8 +1108,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Target Location",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Target Location",
@@ -1120,8 +1120,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Distance",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Distance",
@@ -1129,13 +1129,11 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Farther Away",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Farther Away",
-              "Category": "Params"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Farther Away'": {
+              "MetaDataMap": {
+                "DisplayName": "Farther Away",
+                "Category": "Params"
+              }
             }
           }
         ],
@@ -1315,8 +1313,8 @@
         "ChildProperties": [
           {
             "__type": "FEnumProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Formatting",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": 4294967276,
             "PropertyTypeName": "ByteProperty",
             "SingleField": {
@@ -1353,8 +1351,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "K2Node_MakeArray_Array",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1366,8 +1364,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "K2Node_MakeArray_Array\"1",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1446,13 +1444,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_ReturnParm",
-            "NamePrivate": "ReturnValue"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Variable"
+            "prop-bool 'Temp_bool_Variable'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -1475,16 +1470,13 @@
             "NamePrivate": "CallFunc_VSizeXYSquared_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Not_PreBool_ReturnValue"
+            "prop-bool 'CallFunc_Not_PreBool_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_Select_Default"
+            "prop-bool 'K2Node_Select_Default'": ""
           }
         ],
         "FunctionFlags": 1279395840,

@@ -1950,16 +1950,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-104] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Billboard",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1968,8 +1968,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Anchor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1978,8 +1978,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Scene",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1988,8 +1988,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Box",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1998,8 +1998,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "PreShatterTime",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Pre Shatter Time",
@@ -2008,8 +2008,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "NamePrivate": "GC",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "GC",
@@ -2019,8 +2019,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "NamePrivate": "Relative Transform",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Relative Transform",
@@ -2031,8 +2031,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "NamePrivate": "ActivePlatform",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Active Platform",
@@ -2042,8 +2042,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "RespawnTime",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Respawn Time",
@@ -2052,8 +2052,8 @@
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "PreBreakDuration",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Pre Break Duration",
@@ -2277,29 +2277,25 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_IsClosed_Variable"
+            "prop-bool 'Temp_bool_IsClosed_Variable'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Has_Been_Initd_Variable"
+            "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_IsClosed_Variable\"1"
+            "prop-bool 'Temp_bool_IsClosed_Variable\"1'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Has_Been_Initd_Variable\"1"
+            "prop-bool 'Temp_bool_Has_Been_Initd_Variable\"1'": ""
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_Event_MyComp",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
@@ -2309,13 +2305,12 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_Event_OtherComp",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_Event_bSelfMoved"
+            "prop-bool 'K2Node_Event_bSelfMoved'": ""
           },
           {
             "__type": "FStructProperty",
@@ -2337,8 +2332,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
             "NamePrivate": "K2Node_Event_Hit",
+            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-102] HitResult"
           },
@@ -2360,8 +2355,7 @@
             "Value": "ImportIndex[-26] Character"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FStructProperty",
@@ -2382,16 +2376,13 @@
             "NamePrivate": "CallFunc_BreakVector_Z\"1"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsFalling_ReturnValue"
+            "prop-bool 'CallFunc_IsFalling_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_ActorHasTag_ReturnValue"
+            "prop-bool 'CallFunc_ActorHasTag_ReturnValue'": ""
           },
           {
             "__type": "FStructProperty",
@@ -2401,8 +2392,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-102] HitResult"
           },
@@ -2456,8 +2447,7 @@
             "Value": "ImportIndex[-105] TimerHandle"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_K2_AttachToComponent_ReturnValue"
+            "prop-bool 'CallFunc_K2_AttachToComponent_ReturnValue'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -2520,52 +2510,50 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "MyComp",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Other",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-21] Actor"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "OtherComp",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "Value": "ImportIndex[-35] PrimitiveComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "bSelfMoved"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bSelfMoved'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "HitLocation",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 24,
             "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "HitNormal",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
-          },
-          {
-            "__type": "FStructProperty",
             "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "NormalImpulse",
             "ElementSize": 24,
             "Value": "ImportIndex[-101] Vector"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
+            "NamePrivate": "NormalImpulse",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
+            "ElementSize": 24,
+            "Value": "ImportIndex[-101] Vector"
+          },
+          {
+            "__type": "FStructProperty",
             "NamePrivate": "Hit",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-102] HitResult"
           }
@@ -2692,15 +2680,15 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetRelativeLocation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-102] HitResult"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-102] HitResult"
           },
@@ -2712,8 +2700,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_SpawnSystemAtLocation_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-44] NiagaraComponent"
           },
           {

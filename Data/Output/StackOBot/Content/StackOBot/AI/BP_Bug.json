@@ -1684,16 +1684,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-97] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "DamageSphere",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -1701,19 +1701,17 @@
             "Value": "ImportIndex[-54] SphereComponent"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "Dying",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Dying",
-              "Category": "Default"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Dying'": {
+              "MetaDataMap": {
+                "DisplayName": "Dying",
+                "Category": "Default"
+              }
             }
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
             "NamePrivate": "Max Leash Distance from Spawn Point",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Max Leash Distance From Spawn Point",
@@ -1723,8 +1721,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
             "NamePrivate": "Min Leash Distance from Spawn Point to Resume Roaming",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Min Leash Distance From Spawn Point To Resume Roaming",
@@ -2079,36 +2077,34 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "OverlappedComponent",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "Value": "ImportIndex[-46] PrimitiveComponent"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-29] Actor"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "NamePrivate": "OtherComp",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
             "Value": "ImportIndex[-46] PrimitiveComponent"
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "OtherBodyIndex"
+            "NamePrivate": "OtherBodyIndex",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "bFromSweep"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bFromSweep'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
             "NamePrivate": "SweepResult",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-95] HitResult"
           }
@@ -2139,19 +2135,17 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "self2",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-29] Actor"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "JumpedOnEnemy"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'JumpedOnEnemy'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "Direction",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "ElementSize": 24,
             "Value": "ImportIndex[-94] Vector"
           },
@@ -2184,8 +2178,7 @@
             "NamePrivate": "CallFunc_Dot_VectorVector_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 474087424,
@@ -2214,8 +2207,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FStructProperty",
@@ -2336,8 +2329,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Has_Been_Initd_Variable"
+            "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
           },
           {
             "__type": "FDelegateProperty",
@@ -2358,8 +2350,7 @@
             "Value": "ImportIndex[-12] PlayMontageCallbackProxy"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2374,8 +2365,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-45] PawnMovementComponent"
           },
           {
@@ -2394,12 +2385,10 @@
             "Value": 4294967289
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_CheckHitDirection_JumpedOnEnemy"
+            "prop-bool 'CallFunc_CheckHitDirection_JumpedOnEnemy'": ""
           },
           {
             "__type": "FStructProperty",
@@ -2413,13 +2402,12 @@
             "Value": "ImportIndex[-35] Character"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_IsClosed_Variable"
+            "prop-bool 'Temp_bool_IsClosed_Variable'": ""
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue\"1",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-45] PawnMovementComponent"
           },
           {
@@ -2436,8 +2424,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_ComponentBoundEvent_OverlappedComponent",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-46] PrimitiveComponent"
           },
           {
@@ -2447,8 +2435,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_InstancedReference",
             "NamePrivate": "K2Node_ComponentBoundEvent_OtherComp",
+            "PropertyFlags": "CPF_InstancedReference",
             "Value": "ImportIndex[-46] PrimitiveComponent"
           },
           {
@@ -2456,19 +2444,17 @@
             "NamePrivate": "K2Node_ComponentBoundEvent_OtherBodyIndex"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_bFromSweep"
+            "prop-bool 'K2Node_ComponentBoundEvent_bFromSweep'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
             "NamePrivate": "K2Node_ComponentBoundEvent_SweepResult",
+            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-95] HitResult"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_DoesImplementInterface_ReturnValue"
+            "prop-bool 'CallFunc_DoesImplementInterface_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 8421377,

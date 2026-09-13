@@ -1043,8 +1043,8 @@
         "ChildProperties": [
           {
             "__type": "FByteProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "CameraState",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "Value": 4294967277
           }
         ],
@@ -1074,18 +1074,16 @@
         "ChildProperties": [
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Yaw"
+            "NamePrivate": "Yaw",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm"
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Pitch"
+            "NamePrivate": "Pitch",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm"
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Locked"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Locked'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -1114,14 +1112,14 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "Value": "ImportIndex[-9] CameraComponent"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "NamePrivate": "Camera Boom",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
             "Value": "ImportIndex[-11] SpringArmComponent"
           }
         ],
@@ -1175,8 +1173,8 @@
         "ChildProperties": [
           {
             "__type": "FByteProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "New Camera State",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": 4294967277
           }
         ],
@@ -1205,19 +1203,17 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Active"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Active'": ""
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetPitch"
+            "NamePrivate": "PresetPitch",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "PresetYaw"
+            "NamePrivate": "PresetYaw",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           }
         ],
         "FunctionFlags": 201457664,

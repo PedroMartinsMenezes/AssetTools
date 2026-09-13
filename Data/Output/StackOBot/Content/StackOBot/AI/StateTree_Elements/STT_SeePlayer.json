@@ -1170,16 +1170,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-49] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "NamePrivate": "Controller",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Controller",
@@ -1189,8 +1189,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "NamePrivate": "Target Player Pawn",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Target Player Pawn",
@@ -1200,8 +1200,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Forget Cooldown Time",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Forget Cooldown Time",
@@ -1209,13 +1209,11 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "On Cooldown",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "On Cooldown",
-              "Category": "Default"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'On Cooldown'": {
+              "MetaDataMap": {
+                "DisplayName": "On Cooldown",
+                "Category": "Default"
+              }
             }
           }
         ],
@@ -1487,8 +1485,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FDelegateProperty",
@@ -1521,8 +1519,7 @@
             "Value": "ImportIndex[-25] Pawn"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1535,16 +1532,13 @@
             "Value": "ImportIndex[-25] Pawn"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsPlayerControlled_ReturnValue"
+            "prop-bool 'CallFunc_IsPlayerControlled_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsPlayerControlled_ReturnValue\"1"
+            "prop-bool 'CallFunc_IsPlayerControlled_ReturnValue\"1'": ""
           },
           {
             "__type": "FDelegateProperty",
@@ -1562,25 +1556,23 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_Event_Transition\"1",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-52] StateTreeTransitionResult"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ByteByte_ReturnValue"
+            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_Event_Transition",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-52] StateTreeTransitionResult"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ByteByte_ReturnValue\"1"
+            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue\"1'": ""
           },
           {
             "__type": "FFloatProperty",
@@ -1613,8 +1605,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-19] Actor"
           }
         ],
@@ -1644,14 +1636,14 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Actor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-19] Actor"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Stimulus",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 96,
             "Value": "ImportIndex[-47] AIStimulus"
           }
@@ -1683,8 +1675,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "Transition",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-52] StateTreeTransitionResult"
           }
@@ -1716,8 +1708,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "NamePrivate": "Transition",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
             "ElementSize": 72,
             "Value": "ImportIndex[-52] StateTreeTransitionResult"
           }

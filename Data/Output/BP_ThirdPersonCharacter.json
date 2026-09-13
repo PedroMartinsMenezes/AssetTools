@@ -937,16 +937,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-85] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "FollowCamera",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Camera"
@@ -955,8 +955,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "CameraBoom",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Camera"
@@ -1379,8 +1379,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FStructProperty",
@@ -1398,8 +1398,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"2",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-43] InputAction"
           },
           {
@@ -1408,8 +1408,7 @@
             "Value": "ImportIndex[-43] InputAction"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue"
+            "prop-bool 'CallFunc_Conv_InputActionValueToBool_ReturnValue'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -1428,13 +1427,12 @@
             "NamePrivate": "Temp_real_Variable\"1"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_Variable"
+            "prop-bool 'Temp_bool_Variable'": ""
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "Temp_struct_Variable",
+            "PropertyFlags": "CPF_ConstParm",
             "ElementSize": 1,
             "Value": "ImportIndex[-87] ModifyContextOptions"
           },
@@ -1454,8 +1452,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"1",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-43] InputAction"
           },
           {
@@ -1507,8 +1505,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-43] InputAction"
           },
           {
@@ -1636,8 +1634,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm",
             "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"3",
+            "PropertyFlags": "CPF_ConstParm",
             "Value": "ImportIndex[-43] InputAction"
           },
           {
@@ -1649,8 +1647,7 @@
             "NamePrivate": "Temp_real_Variable\"1"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Conv_InputActionValueToBool_ReturnValue\"1"
+            "prop-bool 'CallFunc_Conv_InputActionValueToBool_ReturnValue\"1'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1663,8 +1660,7 @@
             "Value": "ImportIndex[-32] PlayerController"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1672,8 +1668,7 @@
             "Value": "ImportIndex[-41] EnhancedInputLocalPlayerSubsystem"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FInterfaceProperty",
@@ -1723,25 +1718,25 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ActionValue",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 32,
             "Value": "ImportIndex[-86] InputActionValue"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "ElapsedTime"
+            "NamePrivate": "ElapsedTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "TriggeredTime"
+            "NamePrivate": "TriggeredTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-43] InputAction"
           }
         ],
@@ -1771,25 +1766,25 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ActionValue",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 32,
             "Value": "ImportIndex[-86] InputActionValue"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "ElapsedTime"
+            "NamePrivate": "ElapsedTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "TriggeredTime"
+            "NamePrivate": "TriggeredTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-43] InputAction"
           }
         ],
@@ -1819,25 +1814,25 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ActionValue",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 32,
             "Value": "ImportIndex[-86] InputActionValue"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "ElapsedTime"
+            "NamePrivate": "ElapsedTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "TriggeredTime"
+            "NamePrivate": "TriggeredTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-43] InputAction"
           }
         ],
@@ -1867,25 +1862,25 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "ActionValue",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 32,
             "Value": "ImportIndex[-86] InputActionValue"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "ElapsedTime"
+            "NamePrivate": "ElapsedTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "TriggeredTime"
+            "NamePrivate": "TriggeredTime",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "SourceAction",
+            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-43] InputAction"
           }
         ],

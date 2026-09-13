@@ -1112,8 +1112,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Player Number",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Player Number",
@@ -1122,8 +1122,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Trigger Distance",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Trigger Distance",
@@ -1137,8 +1137,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "NamePrivate": "Actor",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Actor",
@@ -1277,8 +1277,8 @@
         "ChildProperties": [
           {
             "__type": "FEnumProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Formatting",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": 4294967271,
             "PropertyTypeName": "ByteProperty",
             "SingleField": {
@@ -1319,8 +1319,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "K2Node_MakeArray_Array",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
@@ -1371,9 +1371,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_ReturnParm",
-            "NamePrivate": "ReturnValue"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -1397,16 +1395,14 @@
             "Value": "ImportIndex[-44] Vector"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_IsValid_ReturnValue"
+            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
             "__type": "FDoubleProperty",
             "NamePrivate": "CallFunc_Vector_Distance2DSquared_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Greater_DoubleDouble_ReturnValue"
+            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 1279395840,

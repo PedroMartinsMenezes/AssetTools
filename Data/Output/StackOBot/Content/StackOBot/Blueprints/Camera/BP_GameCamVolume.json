@@ -2044,16 +2044,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-96] PointerToUberGraphFrame"
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Arrow",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -2062,8 +2062,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Sphere",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -2072,8 +2072,8 @@
           },
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "NamePrivate": "Billboard",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "Category": "Default"
@@ -2082,8 +2082,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "TriggerRadius",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Trigger Radius",
@@ -2092,8 +2092,8 @@
           },
           {
             "__type": "FByteProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "SwitchToCameraState",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Switch to Camera State",
@@ -2102,39 +2102,33 @@
             "Value": 4294967199
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Align Player on Entry",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Align Player On Entry",
-              "Category": "Camera Volume"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Align Player on Entry'": {
+              "MetaDataMap": {
+                "DisplayName": "Align Player On Entry",
+                "Category": "Camera Volume"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Deactivate On Exit",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Deactivate on Exit",
-              "Category": "Camera Volume"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Deactivate On Exit'": {
+              "MetaDataMap": {
+                "DisplayName": "Deactivate on Exit",
+                "Category": "Camera Volume"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Reset on Exit",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Reset On Exit",
-              "Category": "Camera Volume"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Reset on Exit'": {
+              "MetaDataMap": {
+                "DisplayName": "Reset On Exit",
+                "Category": "Camera Volume"
+              }
             }
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "PresetYaw",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Preset Yaw",
@@ -2143,8 +2137,8 @@
           },
           {
             "__type": "FDoubleProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "PresetPitch",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Preset Pitch",
@@ -2152,23 +2146,19 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "UsePresetAngle",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Use Preset Angle",
-              "Category": "Locked Third Person"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'UsePresetAngle'": {
+              "MetaDataMap": {
+                "DisplayName": "Use Preset Angle",
+                "Category": "Locked Third Person"
+              }
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "NamePrivate": "AlignmentActive",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Alignment Active",
-              "Category": "Camera Volume"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'AlignmentActive'": {
+              "MetaDataMap": {
+                "DisplayName": "Alignment Active",
+                "Category": "Camera Volume"
+              }
             }
           }
         ],
@@ -2389,9 +2379,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "NamePrivate": "Aligned"
+            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Aligned'": ""
           },
           {
             "__type": "FDoubleProperty",
@@ -2443,8 +2431,7 @@
             "NamePrivate": "CallFunc_FInterpTo_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_NearlyEqual_FloatFloat_ReturnValue"
+            "prop-bool 'CallFunc_NearlyEqual_FloatFloat_ReturnValue'": ""
           },
           {
             "__type": "FStructProperty",
@@ -2454,14 +2441,13 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetActorLocation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-95] HitResult"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_K2_SetActorLocation_ReturnValue"
+            "prop-bool 'CallFunc_K2_SetActorLocation_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 214040576,
@@ -2514,20 +2500,18 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "Temp_bool_True_if_break_was_hit_Variable"
+            "prop-bool 'Temp_bool_True_if_break_was_hit_Variable'": ""
           },
           {
             "__type": "FIntProperty",
             "NamePrivate": "Temp_int_Array_Index_Variable"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Not_PreBool_ReturnValue"
+            "prop-bool 'CallFunc_Not_PreBool_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2563,8 +2547,7 @@
             "Value": 4294967293
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
             "__type": "FInterfaceProperty",
@@ -2572,8 +2555,7 @@
             "Value": 4294967293
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           },
           {
             "__type": "FDelegateProperty",
@@ -2587,12 +2569,10 @@
             "NamePrivate": "K2Node_Event_DeltaSeconds"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_AlignPlayerToTrigger_Aligned"
+            "prop-bool 'CallFunc_AlignPlayerToTrigger_Aligned'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BooleanAND_ReturnValue"
+            "prop-bool 'CallFunc_BooleanAND_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2605,12 +2585,10 @@
             "Value": 4294967293
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"2"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_SwitchEnum_CmpSuccess"
+            "prop-bool 'K2Node_SwitchEnum_CmpSuccess'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2628,8 +2606,7 @@
             "Value": "ImportIndex[-32] GameModeBase"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ObjectObject_ReturnValue"
+            "prop-bool 'CallFunc_EqualEqual_ObjectObject_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2637,12 +2614,10 @@
             "Value": "ImportIndex[-5] GM_InGame_C"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"3"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"3'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ObjectObject_ReturnValue\"1"
+            "prop-bool 'CallFunc_EqualEqual_ObjectObject_ReturnValue\"1'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2651,8 +2626,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_ReferenceParm",
             "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
+            "PropertyFlags": "CPF_ReferenceParm",
             "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
@@ -2671,16 +2646,13 @@
             "NamePrivate": "CallFunc_Array_Length_ReturnValue"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_EqualEqual_ObjectObject_ReturnValue\"2"
+            "prop-bool 'CallFunc_EqualEqual_ObjectObject_ReturnValue\"2'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Less_IntInt_ReturnValue"
+            "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_BooleanAND_ReturnValue\"1"
+            "prop-bool 'CallFunc_BooleanAND_ReturnValue\"1'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -2757,8 +2729,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "PlayerPawn",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-36] Pawn"
           }
         ],
@@ -2789,8 +2761,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-25] Actor"
           }
         ],
@@ -2821,8 +2793,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "OtherActor",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-25] Actor"
           }
         ],
@@ -2878,8 +2850,8 @@
         "ChildProperties": [
           {
             "__type": "FFloatProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "DeltaSeconds"
+            "NamePrivate": "DeltaSeconds",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           }
         ],
         "FunctionFlags": 134350848,
@@ -2915,8 +2887,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
             "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
+            "PropertyFlags": "CPF_ContainsInstancedReference",
             "ElementSize": 264,
             "Value": "ImportIndex[-95] HitResult"
           },

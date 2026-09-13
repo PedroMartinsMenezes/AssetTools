@@ -1451,16 +1451,16 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "NamePrivate": "UberGraphFrame",
+            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "ElementSize": 16,
             "Value": "ImportIndex[-49] PointerToUberGraphFrame"
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
             "NamePrivate": "Trigger Complete",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Trigger Complete",
@@ -1471,8 +1471,8 @@
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
             "NamePrivate": "Trigger Reverse",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Trigger Reverse",
@@ -1483,8 +1483,8 @@
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Activation Counter",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Activation Counter",
@@ -1493,8 +1493,8 @@
           },
           {
             "__type": "FArrayProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "NamePrivate": "Trigger Refs",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Trigger Refs",
@@ -1509,19 +1509,17 @@
             }
           },
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "NamePrivate": "Is Objective",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Is Objective",
-              "Category": "Objective"
+            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Is Objective'": {
+              "MetaDataMap": {
+                "DisplayName": "Is Objective",
+                "Category": "Objective"
+              }
             }
           },
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Objective Index",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Objective Index",
@@ -1530,8 +1528,8 @@
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "NamePrivate": "Objective Payload",
+            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
             "FlagsPrivate": "RF_Public, RF_LoadCompleted",
             "MetaDataMap": {
               "DisplayName": "Objective Payload",
@@ -1886,8 +1884,8 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "EntryPoint"
+            "NamePrivate": "EntryPoint",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FIntProperty",
@@ -1918,20 +1916,17 @@
             "Value": "ImportIndex[-18] Actor"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_GreaterEqual_IntInt_ReturnValue"
+            "prop-bool 'CallFunc_GreaterEqual_IntInt_ReturnValue'": ""
           },
           {
             "__type": "FIntProperty",
             "NamePrivate": "CallFunc_Array_Length_ReturnValue\"1"
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Array_RemoveItem_ReturnValue"
+            "prop-bool 'CallFunc_Array_RemoveItem_ReturnValue'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "CallFunc_Less_IntInt_ReturnValue"
+            "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1944,12 +1939,10 @@
             "Value": 4294967294
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess"
+            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_Event_In_Out"
+            "prop-bool 'K2Node_Event_In_Out'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1962,8 +1955,7 @@
             "Value": 4294967294
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -1976,8 +1968,7 @@
             "Value": 4294967294
           },
           {
-            "__type": "FBoolProperty",
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"2"
+            "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
           },
           {
             "__type": "FObjectProperty",
@@ -2036,8 +2027,8 @@
         "ChildProperties": [
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "NamePrivate": "Spawn Transform",
+            "PropertyFlags": "CPF_Parm, CPF_OutParm",
             "ElementSize": 96,
             "Value": "ImportIndex[-47] Transform"
           }
@@ -2068,8 +2059,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "NewParam",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-3] BP_SpawnPad_C"
           }
         ],
@@ -2122,9 +2113,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FBoolProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "In/Out"
+            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'In/Out'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -2153,8 +2142,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Trigger Ref",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-18] Actor"
           }
         ],
@@ -2232,8 +2221,8 @@
         "ChildProperties": [
           {
             "__type": "FObjectProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Trigger Ref",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "Value": "ImportIndex[-18] Actor"
           }
         ],
@@ -2263,13 +2252,13 @@
         "ChildProperties": [
           {
             "__type": "FIntProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "NamePrivate": "Objective Index"
+            "NamePrivate": "Objective Index",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
           },
           {
             "__type": "FStructProperty",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "NamePrivate": "Objective Complete",
+            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
             "ElementSize": 24,
             "Value": "ImportIndex[-50] ST_Objective"
           }
