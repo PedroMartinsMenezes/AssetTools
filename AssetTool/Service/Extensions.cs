@@ -543,7 +543,7 @@ namespace AssetTool
         }
         #endregion
 
-        #region Inline Multi Fields
+        #region String Multi Fields
         public static void AppendNonNull(this StringBuilder self, string format, object arg1)
         {
             if (arg1 is { })
