@@ -1,3 +1,4 @@
+using System.Text;
 using System.Text.Json;
 
 namespace AssetTool
@@ -50,15 +51,20 @@ namespace AssetTool
             return value;
         }
 
-        protected void WriteBaseProperties(Utf8JsonWriter writer, T value)
+        protected static void WriteBaseProperties(Utf8JsonWriter writer, T value)
         {
             writer.WriteString("__type", value.GetType().Name);
 
-            if (value.ArrayDim != 1)
-                writer.WriteNumber("ArrayDim", value.ArrayDim);
+            writer.WriteString("NamePrivate", value.NamePrivate.ToString());
 
             if (value.PropertyFlags != EPropertyFlags.CPF_None)
                 writer.WriteString("PropertyFlags", value.PropertyFlags.ToString());
+
+            if (value.FlagsPrivate != EObjectFlags.RF_Public)
+                writer.WriteString("FlagsPrivate", value.FlagsPrivate.ToString());
+
+            if (value.ArrayDim != 1)
+                writer.WriteNumber("ArrayDim", value.ArrayDim);
 
             if (value.RepIndex != 0)
                 writer.WriteNumber("RepIndex", value.RepIndex);
@@ -69,11 +75,6 @@ namespace AssetTool
             if (value.BlueprintReplicationCondition != 0)
                 writer.WriteNumber("BlueprintReplicationCondition", value.BlueprintReplicationCondition);
 
-            writer.WriteString("NamePrivate", value.NamePrivate.ToString());
-
-            if (value.FlagsPrivate != EObjectFlags.RF_Public)
-                writer.WriteString("FlagsPrivate", value.FlagsPrivate.ToString());
-
             if (value.HasMetaData)
             {
                 writer.WritePropertyName("MetaDataMap");
@@ -83,6 +84,80 @@ namespace AssetTool
                     writer.WriteString(kvp.Key.ToString(), kvp.Value.ToString());
                 }
                 writer.WriteEndObject();
+            }
+        }
+
+        protected T ReadKeyValue(string key, JsonElement root)
+        {
+            T value = new()
+            {
+                HasMetaData = false
+            };
+
+            value.NamePrivate = key.GetNonNull("NamePrivate({0})", x => new FName(x));
+            value.PropertyFlags = key.GetNonNull("PropertyFlags({0})", x => Enum.Parse<EPropertyFlags>(x), EPropertyFlags.CPF_None);
+            value.FlagsPrivate = key.GetNonNull("FlagsPrivate({0})", x => Enum.Parse<EObjectFlags>(x), EObjectFlags.RF_Public);
+            value.ArrayDim = key.GetNonNull("ArrayDim({0})", x => int.Parse(x), 1);
+            value.RepIndex = key.GetNonNull("RepIndex({0})", x => ushort.Parse(x), (ushort)0);
+            value.RepNotifyFunc = key.GetNonNull("RepNotifyFunc({0})", x => new FName(x), new FName("None"));
+            value.BlueprintReplicationCondition = key.GetNonNull("BlueprintReplicationCondition({0})", x => byte.Parse(x), (byte)0);
+
+            if (root.ValueKind == JsonValueKind.Object)
+            {
+                if (root.TryGetProperty("MetaDataMap", out var metaDataMap))
+                {
+                    value.HasMetaData = true;
+                    foreach (var property in metaDataMap.EnumerateObject())
+                    {
+                        value.MetaDataMap.Add(new FName(property.Name), new FString(property.Value.GetString() ?? string.Empty));
+                    }
+                }
+            }
+
+            return value;
+        }
+
+        protected void WriteKeyValue(Utf8JsonWriter writer, JsonSerializerOptions options, T value, string name, Dictionary<string, object> inlineFields = null, Dictionary<string, object> fields = null)
+        {
+            StringBuilder builder = new();
+
+            builder.Append($"{name} ");
+
+            //Base members
+            builder.Append($"NamePrivate({value.NamePrivate}) ");
+            if (value.PropertyFlags != EPropertyFlags.CPF_None) builder.Append($"PropertyFlags({value.PropertyFlags}) ");
+            if (value.FlagsPrivate != EObjectFlags.RF_Public) builder.Append($"FlagsPrivate({value.FlagsPrivate}) ");
+            if (value.ArrayDim != 1) builder.Append($"ArrayDim({value.ArrayDim}) ");
+            if (value.RepIndex != 0) builder.Append($"RepIndex({value.RepIndex}) ");
+            if (value.RepNotifyFunc.Value != "None") builder.Append($"RepNotifyFunc({value.RepNotifyFunc}) ");
+            if (value.BlueprintReplicationCondition != 0) builder.Append($"BlueprintReplicationCondition({value.BlueprintReplicationCondition}) ");
+
+            //Derived members inlined
+            if (inlineFields is { } && inlineFields.Count > 0)
+            {
+                foreach (var pair in inlineFields)
+                {
+                    builder.Append($"{pair.Key}({pair.Value}) ");
+                }
+            }
+
+            //Derived members body
+            if (value.HasMetaData)
+            {
+                fields ??= new();
+                fields["MetaDataMap"] = value.MetaDataMap;
+            }
+
+            string key = builder.ToString();
+
+            if (fields is null)
+            {
+                writer.WriteString(key, string.Empty);
+            }
+            else
+            {
+                writer.WritePropertyName(key);
+                JsonSerializer.Serialize(writer, fields, options);
             }
         }
     }

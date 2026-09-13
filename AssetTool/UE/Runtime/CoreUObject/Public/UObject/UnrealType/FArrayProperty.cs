@@ -30,6 +30,15 @@ namespace AssetTool
             obj.PropertyTypeName = new FName(root.GetProperty("PropertyTypeName").GetString());
             obj.SingleField = JsonSerializer.Deserialize<FField>(root.GetProperty("SingleField").GetRawText(), options);
             return obj;
+
+            //JsonElement fields = root.EnumerateObject().First().Value;
+
+            //var obj = ReadKeyValue(root.EnumerateObject().First().Name, fields);
+
+            //obj.ElementSize = fields.GetProperty("ElementSize").GetInt32();
+            //obj.PropertyTypeName = new FName(fields.GetProperty("PropertyTypeName").GetString());
+            //obj.SingleField = JsonSerializer.Deserialize<FField>(fields.GetProperty("SingleField").GetRawText(), options);
+            //return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FArrayProperty value, JsonSerializerOptions options)
@@ -43,6 +52,17 @@ namespace AssetTool
             JsonSerializer.Serialize(writer, value.SingleField, options);
 
             writer.WriteEndObject();
+
+            //writer.WriteStartObject();
+
+            //Dictionary<string, object> fields = new()
+            //{
+            //    ["ElementSize"] = value.ElementSize,
+            //    ["PropertyTypeName"] = value.PropertyTypeName,
+            //    ["SingleField"] = value.SingleField
+            //};
+            //WriteKeyValue(writer, options, value, "prop-array", fields);
+            //writer.WriteEndObject();
         }
     }
 }

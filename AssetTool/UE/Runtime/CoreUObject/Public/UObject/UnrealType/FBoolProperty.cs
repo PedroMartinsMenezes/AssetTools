@@ -38,35 +38,38 @@ namespace AssetTool
     {
         public FBoolProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
-            obj.ElementSize = 1;
-            obj.FieldSize = 1;
-            obj.ByteOffset = 0;
-            obj.ByteMask = 1;
-            obj.FieldMask = 255;
-            obj.BoolSize = 1;
-            obj.NativeBool = 1;
+            string key = root.EnumerateObject().First().Name;
 
-            if (root.TryGetProperty("FieldSize", out var fieldSize)) obj.FieldSize = fieldSize.GetByte();
-            if (root.TryGetProperty("ByteOffset", out var byteOffset)) obj.ByteOffset = byteOffset.GetByte();
-            if (root.TryGetProperty("ByteMask", out var byteMask)) obj.ByteMask = byteMask.GetByte();
-            if (root.TryGetProperty("FieldMask", out var fieldMask)) obj.FieldMask = fieldMask.GetByte();
-            if (root.TryGetProperty("BoolSize", out var boolSize)) obj.BoolSize = boolSize.GetByte();
-            if (root.TryGetProperty("NativeBool", out var nativeBool)) obj.NativeBool = nativeBool.GetByte();
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = 1;
+
+            obj.FieldSize = key.GetNonNull("FieldSize({0})", x => byte.Parse(x), (byte)1);
+            obj.ByteOffset = key.GetNonNull("ByteOffset({0})", x => byte.Parse(x), (byte)0);
+            obj.ByteMask = key.GetNonNull("ByteMask({0})", x => byte.Parse(x), (byte)1);
+            obj.FieldMask = key.GetNonNull("FieldMask({0})", x => byte.Parse(x), (byte)255);
+            obj.BoolSize = key.GetNonNull("BoolSize({0})", x => byte.Parse(x), (byte)1);
+            obj.NativeBool = key.GetNonNull("NativeBool({0})", x => byte.Parse(x), (byte)1);
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FBoolProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
 
-            if (value.FieldSize != 1) writer.WriteNumber("FieldSize", value.FieldSize);
-            if (value.ByteOffset != 0) writer.WriteNumber("ByteOffset", value.ByteOffset);
-            if (value.ByteMask != 1) writer.WriteNumber("ByteMask", value.ByteMask);
-            if (value.FieldMask != 255) writer.WriteNumber("FieldMask", value.FieldMask);
-            if (value.BoolSize != 1) writer.WriteNumber("BoolSize", value.BoolSize);
-            if (value.NativeBool != 1) writer.WriteNumber("NativeBool", value.NativeBool);
+            Dictionary<string, object> inlineFields = new();
+
+            if (value.FieldSize != 1) inlineFields.Add("FieldSize", value.FieldSize);
+            if (value.ByteOffset != 0) inlineFields.Add("ByteOffset", value.ByteOffset);
+            if (value.ByteMask != 1) inlineFields.Add("ByteMask", value.ByteMask);
+            if (value.FieldMask != 255) inlineFields.Add("FieldMask", value.FieldMask);
+            if (value.BoolSize != 1) inlineFields.Add("BoolSize", value.BoolSize);
+            if (value.NativeBool != 1) inlineFields.Add("NativeBool", value.NativeBool);
+
+            WriteKeyValue(writer, options, value, "prop-bool", inlineFields);
 
             writer.WriteEndObject();
         }
