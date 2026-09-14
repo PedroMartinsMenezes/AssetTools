@@ -169,10 +169,16 @@ namespace AssetTool
 
             //Read uasset file
             byte[] inputBytes = File.ReadAllBytes(inputFile);
+
             using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using TransferReader transferReader = new TransferReader(reader, AppConfig);
+
+            transferReader.GlobalObjects.FileName = inputFile;
+            transferReader.GlobalObjects.FileSize = inputBytes.Length;
+
             success = asset.Move(transferReader, "Reading Export Objects (uasset -> obj)");
+
             if (!success)
                 return (null, null);
 
