@@ -36,7 +36,8 @@ namespace AssetTool
 
                 if (!transfer.AppConfig.DebugIgnoreAssetPackageFooter)
                 {
-                    Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
+                    int size = transfer.GlobalObjects.FileSize - (int)transfer.Position;
+                    Footer.Move(transfer, size);
                 }
                 return status.TrueForAll(x => x);
             }
@@ -132,7 +133,8 @@ namespace AssetTool
 
                 if (!transfer.AppConfig.DebugIgnoreAssetPackageFooter)
                 {
-                    Footer.Move(transfer, (int)transfer.Length - (int)transfer.Position);
+                    int size = transfer.GlobalObjects.FileSize - (int)transfer.Position;
+                    Footer.Move(transfer, size);
                 }
                 return await Task.FromResult(status.TrueForAll(x => x));
             }
