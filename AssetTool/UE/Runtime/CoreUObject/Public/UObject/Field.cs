@@ -77,7 +77,7 @@ namespace AssetTool
                     nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
                     //nameof(FBoolProperty) => new FBoolPropertySerializer().Read(root, options),
                     //nameof(FByteProperty) => new FBytePropertySerializer().Read(root, options),
-                    nameof(FClassProperty) => new FClassPropertySerializer().Read(root, options),
+                    //nameof(FClassProperty) => new FClassPropertySerializer().Read(root, options),
                     nameof(FClassPtrProperty) => new FClassPtrPropertySerializer().Read(root, options),
                     nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
                     nameof(FDoubleProperty) => new FDoublePropertySerializer().Read(root, options),
@@ -123,6 +123,7 @@ namespace AssetTool
                 {
                     "prop-bool" => new FBoolPropertySerializer().Read(root, options),
                     "prop-byte" => new FBytePropertySerializer().Read(root, options),
+                    "prop-class" => new FClassPropertySerializer().Read(root, options),
                     _ => throw new JsonException($"Unknown field key '{key}'.")
                 };
             }
