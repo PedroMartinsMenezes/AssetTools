@@ -109,8 +109,8 @@ namespace AssetTool
                     nameof(FSetProperty) => JsonSerializer.Deserialize<FSetProperty>(root.GetRawText(), options)!,
                     //nameof(FSoftClassProperty) => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
                     //nameof(FSoftObjectProperty) => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
-                    nameof(FStrProperty) => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
-                    nameof(FTextProperty) => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
+                    //nameof(FStrProperty) => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
+                    //nameof(FTextProperty) => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
                     nameof(FWeakObjectProperty) => JsonSerializer.Deserialize<FWeakObjectProperty>(root.GetRawText(), options)!,
                     _ => throw new JsonException($"Unknown field type '{typeName}'.")
                 };
@@ -137,7 +137,9 @@ namespace AssetTool
                     "prop-object" => new FObjectPropertySerializer().Read(root, options),
                     "prop-softclass" => new FSoftClassPropertySerializer().Read(root, options),
                     "prop-softobject" => new FSoftObjectPropertySerializer().Read(root, options),
+                    "prop-str" => new FStrPropertySerializer().Read(root, options),
                     "prop-struct" => new FStructPropertySerializer().Read(root, options),
+                    "prop-text" => new FTextPropertySerializer().Read(root, options),
                     "prop-uint16" => new FUInt16PropertySerializer().Read(root, options),
                     "prop-uint32" => new FUInt32PropertySerializer().Read(root, options),
                     "prop-uint64" => new FUInt64PropertySerializer().Read(root, options),
@@ -170,7 +172,9 @@ namespace AssetTool
                 case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
                 case FSoftClassProperty softClassProperty: new FSoftClassPropertySerializer().Write(writer, softClassProperty, options); return;
                 case FSoftObjectProperty softObjectProperty: new FSoftObjectPropertySerializer().Write(writer, softObjectProperty, options); return;
+                case FStrProperty strProperty: new FStrPropertySerializer().Write(writer, strProperty, options); return;
                 case FStructProperty structProperty: new FStructPropertySerializer().Write(writer, structProperty, options); return;
+                case FTextProperty textProperty: new FTextPropertySerializer().Write(writer, textProperty, options); return;
                 case FUInt16Property uint16Property: new FUInt16PropertySerializer().Write(writer, uint16Property, options); return;
                 case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
                 case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
