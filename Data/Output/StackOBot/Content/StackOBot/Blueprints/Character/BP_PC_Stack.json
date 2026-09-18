@@ -2172,12 +2172,7 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-108] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-108] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'IsUsingGamepad'": {
@@ -2197,26 +2192,20 @@
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DroneRef",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Drone Ref",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-3] BP_Drone_C"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-3] BP_Drone_C) 'DroneRef'": {
+              "MetaDataMap": {
+                "DisplayName": "Drone Ref",
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "PlayerRef",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Player Ref",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-38] Pawn"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-38] Pawn) 'PlayerRef'": {
+              "MetaDataMap": {
+                "DisplayName": "Player Ref",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -2528,136 +2517,88 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Temp_object_Variable",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object Value(ImportIndex[-50] InputAction) 'Temp_object_Variable'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Temp_struct_Variable",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 1,
-            "Value": "ImportIndex[-110] ModifyContextOptions"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(1) Value(ImportIndex[-110] ModifyContextOptions) 'Temp_struct_Variable'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Temp_struct_Variable\"1",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 1,
-            "Value": "ImportIndex[-110] ModifyContextOptions"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(1) Value(ImportIndex[-110] ModifyContextOptions) 'Temp_struct_Variable\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue\"1",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'K2Node_EnhancedInputActionEvent_ActionValue\"1'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime\"1"
+            "prop-float 'K2Node_EnhancedInputActionEvent_ElapsedTime\"1'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"1"
+            "prop-float 'K2Node_EnhancedInputActionEvent_TriggeredTime\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"1",
-            "PropertyFlags": "CPF_ConstParm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-50] InputAction) 'K2Node_EnhancedInputActionEvent_SourceAction\"1'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967185,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967185) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
             "prop-bool 'CallFunc_Conv_InputActionValueToBool_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Temp_object_Variable\"1",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object Value(ImportIndex[-50] InputAction) 'Temp_object_Variable\"1'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable"
+            "prop-double 'Temp_real_Variable'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable"
+            "prop-double 'Temp_real_Variable'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"1"
+            "prop-double 'Temp_real_Variable\"1'": ""
           },
           {
             "prop-bool 'Temp_bool_Variable'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"1"
+            "prop-double 'Temp_real_Variable\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Temp_struct_Variable\"2",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 1,
-            "Value": "ImportIndex[-110] ModifyContextOptions"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(1) Value(ImportIndex[-110] ModifyContextOptions) 'Temp_struct_Variable\"2'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'K2Node_EnhancedInputActionEvent_ActionValue'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime"
+            "prop-float 'K2Node_EnhancedInputActionEvent_ElapsedTime'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime"
+            "prop-float 'K2Node_EnhancedInputActionEvent_TriggeredTime'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction",
-            "PropertyFlags": "CPF_ConstParm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-50] InputAction) 'K2Node_EnhancedInputActionEvent_SourceAction'": ""
           },
           {
             "prop-bool 'CallFunc_Conv_InputActionValueToBool_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Temp_object_Variable\"2",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object Value(ImportIndex[-50] InputAction) 'Temp_object_Variable\"2'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"2"
+            "prop-double 'Temp_real_Variable\"2'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"2"
+            "prop-double 'Temp_real_Variable\"2'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"3"
+            "prop-double 'Temp_real_Variable\"3'": ""
           },
           {
             "prop-bool 'Temp_bool_Variable\"1'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"3"
+            "prop-double 'Temp_real_Variable\"3'": ""
           },
           {
             "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
@@ -2666,12 +2607,10 @@
             "prop-bool 'K2Node_Event_Active'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "K2Node_Event_PresetPitch"
+            "prop-double 'K2Node_Event_PresetPitch'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "K2Node_Event_PresetYaw"
+            "prop-double 'K2Node_Event_PresetYaw'": ""
           },
           {
             "prop-bool 'CallFunc_IsGamePaused_ReturnValue'": ""
@@ -2680,34 +2619,22 @@
             "prop-bool 'CallFunc_Not_PreBool_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetHUD_ReturnValue",
-            "Value": "ImportIndex[-34] HUD"
+            "prop-object Value(ImportIndex[-34] HUD) 'CallFunc_GetHUD_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ActionValue\"2",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'K2Node_EnhancedInputActionEvent_ActionValue\"2'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_ElapsedTime\"2"
+            "prop-float 'K2Node_EnhancedInputActionEvent_ElapsedTime\"2'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_TriggeredTime\"2"
+            "prop-float 'K2Node_EnhancedInputActionEvent_TriggeredTime\"2'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_EnhancedInputActionEvent_SourceAction\"2",
-            "PropertyFlags": "CPF_ConstParm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-50] InputAction) 'K2Node_EnhancedInputActionEvent_SourceAction\"2'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_HUD",
-            "Value": 4294967290
+            "prop-interface Value(4294967290) 'K2Node_DynamicCast_AsBPI_HUD'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
@@ -2716,159 +2643,100 @@
             "prop-bool 'CallFunc_Conv_InputActionValueToBool_ReturnValue\"2'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Axis\"1",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-106] Vector2D"
+            "prop-struct ElementSize(16) Value(ImportIndex[-106] Vector2D) 'K2Node_Event_Axis\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
-            "Value": "ImportIndex[-38] Pawn"
+            "prop-object Value(ImportIndex[-38] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-39] PawnMovementComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-39] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue",
-            "Value": "ImportIndex[-48] EnhancedInputLocalPlayerSubsystem"
+            "prop-object Value(ImportIndex[-48] EnhancedInputLocalPlayerSubsystem) 'CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "CallFunc_AddMappingContext_self_CastInput",
-            "Value": 4294967247
+            "prop-interface Value(4294967247) 'CallFunc_AddMappingContext_self_CastInput'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "CallFunc_RemoveMappingContext_self_CastInput",
-            "Value": 4294967247
+            "prop-interface Value(4294967247) 'CallFunc_RemoveMappingContext_self_CastInput'": ""
           },
           {
             "prop-bool 'Temp_bool_Variable\"2'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Axis",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-106] Vector2D"
+            "prop-struct ElementSize(16) Value(ImportIndex[-106] Vector2D) 'K2Node_Event_Axis'": ""
           },
           {
-            "__type": "FByteProperty",
-            "NamePrivate": "K2Node_Event_New_Camera_State",
-            "Value": 4294967184
+            "prop-byte Value(4294967184) 'K2Node_Event_New_Camera_State'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_PossessedPawn",
-            "Value": "ImportIndex[-38] Pawn"
+            "prop-object Value(ImportIndex[-38] Pawn) 'K2Node_Event_PossessedPawn'": ""
           },
           {
             "prop-bool 'K2Node_SwitchEnum_CmpSuccess'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_DestroyedActor",
-            "Value": "ImportIndex[-26] Actor"
+            "prop-object Value(ImportIndex[-26] Actor) 'K2Node_CustomEvent_DestroyedActor'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetGameMode_ReturnValue",
-            "Value": "ImportIndex[-32] GameModeBase"
+            "prop-object Value(ImportIndex[-32] GameModeBase) 'CallFunc_GetGameMode_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetHUD_ReturnValue\"1",
-            "Value": "ImportIndex[-34] HUD"
+            "prop-object Value(ImportIndex[-34] HUD) 'CallFunc_GetHUD_ReturnValue\"1'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Gameplay",
-            "Value": 4294967292
+            "prop-interface Value(4294967292) 'K2Node_DynamicCast_AsBPI_Gameplay'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_HUD\"1",
-            "Value": 4294967290
+            "prop-interface Value(4294967290) 'K2Node_DynamicCast_AsBPI_HUD\"1'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"4"
+            "prop-double 'Temp_real_Variable\"4'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"4"
+            "prop-double 'Temp_real_Variable\"4'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue\"1",
-            "Value": "ImportIndex[-48] EnhancedInputLocalPlayerSubsystem"
+            "prop-object Value(ImportIndex[-48] EnhancedInputLocalPlayerSubsystem) 'CallFunc_GetLocalPlayerSubSystemFromPlayerController_ReturnValue\"1'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "CallFunc_AddMappingContext_self_CastInput\"1",
-            "Value": 4294967247
+            "prop-interface Value(4294967247) 'CallFunc_AddMappingContext_self_CastInput\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue",
-            "Value": "ImportIndex[-38] Pawn"
+            "prop-object Value(ImportIndex[-38] Pawn) 'CallFunc_K2_GetPawn_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_GetTransform_ReturnValue",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-104] Transform"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-104] Transform) 'CallFunc_GetTransform_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue\"1",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-39] PawnMovementComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-39] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
-            "Value": "ImportIndex[-26] Actor"
+            "prop-object Value(ImportIndex[-26] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
-            "Value": "ImportIndex[-3] BP_Drone_C"
+            "prop-object Value(ImportIndex[-3] BP_Drone_C) 'CallFunc_FinishSpawningActor_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"5"
+            "prop-double 'Temp_real_Variable\"5'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Temp_real_Variable\"5"
+            "prop-double 'Temp_real_Variable\"5'": ""
           },
           {
             "prop-bool 'CallFunc_NotEqual_ObjectObject_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-105] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-105] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetActorLocation_SweepHitResult",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-107] HitResult"
+            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-107] HitResult) 'CallFunc_K2_SetActorLocation_SweepHitResult'": ""
           },
           {
             "prop-bool 'CallFunc_K2_SetActorLocation_ReturnValue'": ""
@@ -2899,10 +2767,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FByteProperty",
-            "NamePrivate": "CameraState",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "Value": 4294967184
+            "prop-byte PropertyFlags(CPF_Parm, CPF_OutParm) Value(4294967184) 'CameraState'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -2930,14 +2795,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Yaw",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm"
+            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Yaw'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Pitch",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm"
+            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Pitch'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Locked'": ""
@@ -2968,16 +2829,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Camera",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
-            "Value": "ImportIndex[-29] CameraComponent"
+            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-29] CameraComponent) 'Camera'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Camera Boom",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_InstancedReference",
-            "Value": "ImportIndex[-44] SpringArmComponent"
+            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) 'Camera Boom'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -3005,27 +2860,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "ActionValue",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'ActionValue'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "ElapsedTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'ElapsedTime'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "TriggeredTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'TriggeredTime'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "SourceAction",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-50] InputAction) 'SourceAction'": ""
           }
         ],
         "FunctionFlags": 134217728,
@@ -3053,27 +2897,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "ActionValue",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'ActionValue'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "ElapsedTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'ElapsedTime'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "TriggeredTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'TriggeredTime'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "SourceAction",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-50] InputAction) 'SourceAction'": ""
           }
         ],
         "FunctionFlags": 134217728,
@@ -3101,27 +2934,16 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "ActionValue",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 32,
-            "Value": "ImportIndex[-109] InputActionValue"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-109] InputActionValue) 'ActionValue'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "ElapsedTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'ElapsedTime'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "TriggeredTime",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'TriggeredTime'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "SourceAction",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-50] InputAction"
+            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-50] InputAction) 'SourceAction'": ""
           }
         ],
         "FunctionFlags": 134217728,
@@ -3198,11 +3020,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Axis",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-106] Vector2D"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(16) Value(ImportIndex[-106] Vector2D) 'Axis'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3256,10 +3074,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "PossessedPawn",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-38] Pawn"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-38] Pawn) 'PossessedPawn'": ""
           }
         ],
         "FunctionFlags": 134744064,
@@ -3287,10 +3102,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DestroyedActor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-26] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-26] Actor) 'DestroyedActor'": ""
           }
         ],
         "FunctionFlags": 201326592,
@@ -3342,11 +3154,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Axis",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-106] Vector2D"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(16) Value(ImportIndex[-106] Vector2D) 'Axis'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3374,10 +3182,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FByteProperty",
-            "NamePrivate": "New Camera State",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": 4294967184
+            "prop-byte PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967184) 'New Camera State'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3456,14 +3261,10 @@
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Active'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "PresetPitch",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetPitch'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "PresetYaw",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetYaw'": ""
           }
         ],
         "FunctionFlags": 201457664,

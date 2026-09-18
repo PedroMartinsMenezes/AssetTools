@@ -974,32 +974,21 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-46] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-46] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "AIPerception",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-4] AIPerceptionComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] AIPerceptionComponent) 'AIPerception'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "StateTreeAI",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-28] StateTreeAIComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] StateTreeAIComponent) 'StateTreeAI'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -1094,34 +1083,22 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967266,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967266) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_OldPawn",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object Value(ImportIndex[-24] Pawn) 'K2Node_CustomEvent_OldPawn'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_NewPawn",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object Value(ImportIndex[-24] Pawn) 'K2Node_CustomEvent_NewPawn'": ""
           },
           {
             "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_K2_GetPawn_ReturnValue",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object Value(ImportIndex[-24] Pawn) 'CallFunc_K2_GetPawn_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_IsValid_ReturnValue\"1'": ""
@@ -1152,16 +1129,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OldPawn",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) 'OldPawn'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "NewPawn",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) 'NewPawn'": ""
           }
         ],
         "FunctionFlags": 201326592,

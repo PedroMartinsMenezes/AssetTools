@@ -1279,63 +1279,41 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-62] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-62] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "StaticMesh",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-28] StaticMeshComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] StaticMeshComponent) 'StaticMesh'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Sphere",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-27] SphereComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] SphereComponent) 'Sphere'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-22] SceneComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-22] SceneComponent) 'DefaultSceneRoot'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "Timeline_NewTrack_0_F8FE91B64ACB70471221738BCCB77C6C",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted"
+            "prop-float FlagsPrivate(RF_Public, RF_LoadCompleted) 'Timeline_NewTrack_0_F8FE91B64ACB70471221738BCCB77C6C'": ""
           },
           {
-            "__type": "FByteProperty",
-            "NamePrivate": "Timeline__Direction_F8FE91B64ACB70471221738BCCB77C6C",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "Value": 4294967260
+            "prop-byte FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967260) 'Timeline__Direction_F8FE91B64ACB70471221738BCCB77C6C'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Timeline",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "BP_DevCom"
-            },
-            "Value": "ImportIndex[-29] TimelineComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-29] TimelineComponent) 'Timeline'": {
+              "MetaDataMap": {
+                "Category": "BP_DevCom"
+              }
+            }
           },
           {
             "__type": "FTextProperty",
@@ -1355,15 +1333,12 @@
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "As Pawn",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "As Pawn",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-20] Pawn"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-20] Pawn) 'As Pawn'": {
+              "MetaDataMap": {
+                "DisplayName": "As Pawn",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -1504,58 +1479,41 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_Create_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "MetaDataMap": {
-              "EditInline": "true"
-            },
-            "Value": "ImportIndex[-64] UI_InfoDisplay_C"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-64] UI_InfoDisplay_C) 'CallFunc_Create_ReturnValue'": {
+              "MetaDataMap": {
+                "EditInline": "true"
+              }
+            }
           },
           {
             "prop-bool 'CallFunc_AddToPlayerScreen_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_ReturnValue"
+            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_OtherActor\"1",
-            "Value": "ImportIndex[-12] Actor"
+            "prop-object Value(ImportIndex[-12] Actor) 'K2Node_Event_OtherActor\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_MakeVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-60] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-60] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_ActorHasTag_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_OtherActor",
-            "Value": "ImportIndex[-12] Actor"
+            "prop-object Value(ImportIndex[-12] Actor) 'K2Node_Event_OtherActor'": ""
           },
           {
             "prop-bool 'CallFunc_ActorHasTag_ReturnValue\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetRelativeLocation_SweepHitResult",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-61] HitResult"
+            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-61] HitResult) 'CallFunc_K2_SetRelativeLocation_SweepHitResult'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Multiply_DoubleDouble_A_ImplicitCast"
+            "prop-double 'CallFunc_Multiply_DoubleDouble_A_ImplicitCast'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -1584,10 +1542,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherActor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-12] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-12] Actor) 'OtherActor'": ""
           }
         ],
         "FunctionFlags": 134350848,
@@ -1616,10 +1571,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherActor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-12] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-12] Actor) 'OtherActor'": ""
           }
         ],
         "FunctionFlags": 134350848,

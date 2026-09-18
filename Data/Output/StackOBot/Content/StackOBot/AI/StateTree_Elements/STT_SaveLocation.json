@@ -960,35 +960,23 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-36] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-36] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Pawn",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Pawn",
-              "Category": "Context"
-            },
-            "Value": "ImportIndex[-13] Actor"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] Actor) 'Pawn'": {
+              "MetaDataMap": {
+                "DisplayName": "Pawn",
+                "Category": "Context"
+              }
+            }
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Cached Location",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Cached Location",
-              "Category": "Outputs"
-            },
-            "ElementSize": 24,
-            "Value": "ImportIndex[-35] Vector"
+            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-35] Vector) 'Cached Location'": {
+              "MetaDataMap": {
+                "DisplayName": "Cached Location",
+                "Category": "Outputs"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -1127,22 +1115,13 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Transition",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-39] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-39] StateTreeTransitionResult) 'K2Node_Event_Transition'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-35] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-35] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
@@ -1180,9 +1159,7 @@
             "Value": 4294967274,
             "PropertyTypeName": "ByteProperty",
             "SingleField": {
-              "__type": "FByteProperty",
-              "NamePrivate": "UnderlyingType",
-              "Value": 0
+              "prop-byte Value(0) 'UnderlyingType'": ""
             }
           },
           {
@@ -1226,11 +1203,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Transition",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-39] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-39] StateTreeTransitionResult) 'Transition'": ""
           }
         ],
         "FunctionFlags": 138545152,

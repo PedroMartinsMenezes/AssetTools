@@ -1450,12 +1450,7 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-49] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-49] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
@@ -1482,13 +1477,11 @@
             "PropertyValuePtr": 22
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Activation Counter",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Activation Counter",
-              "Category": "Default"
+            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Activation Counter'": {
+              "MetaDataMap": {
+                "DisplayName": "Activation Counter",
+                "Category": "Default"
+              }
             }
           },
           {
@@ -1503,9 +1496,7 @@
             "ElementSize": 16,
             "PropertyTypeName": "ObjectProperty",
             "SingleField": {
-              "__type": "FObjectProperty",
-              "NamePrivate": "Trigger Refs",
-              "Value": "ImportIndex[-18] Actor"
+              "prop-object Value(ImportIndex[-18] Actor) 'Trigger Refs'": ""
             }
           },
           {
@@ -1517,26 +1508,20 @@
             }
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Objective Index",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Objective Index",
-              "Category": "Objective"
+            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Objective Index'": {
+              "MetaDataMap": {
+                "DisplayName": "Objective Index",
+                "Category": "Objective"
+              }
             }
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Objective Payload",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Objective Payload",
-              "Category": "Objective"
-            },
-            "ElementSize": 24,
-            "Value": "ImportIndex[-50] ST_Objective"
+            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'Objective Payload'": {
+              "MetaDataMap": {
+                "DisplayName": "Objective Payload",
+                "Category": "Objective"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -1883,44 +1868,31 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "K2Node_Event_Objective_Index"
+            "prop-int 'K2Node_Event_Objective_Index'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Objective_Complete",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-50] ST_Objective"
+            "prop-struct ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'K2Node_Event_Objective_Complete'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_Trigger_Ref\"1",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object Value(ImportIndex[-18] Actor) 'K2Node_Event_Trigger_Ref\"1'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_Array_Length_ReturnValue"
+            "prop-int 'CallFunc_Array_Length_ReturnValue'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_Array_AddUnique_ReturnValue"
+            "prop-int 'CallFunc_Array_AddUnique_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_Trigger_Ref",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object Value(ImportIndex[-18] Actor) 'K2Node_Event_Trigger_Ref'": ""
           },
           {
             "prop-bool 'CallFunc_GreaterEqual_IntInt_ReturnValue'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_Array_Length_ReturnValue\"1"
+            "prop-int 'CallFunc_Array_Length_ReturnValue\"1'": ""
           },
           {
             "prop-bool 'CallFunc_Array_RemoveItem_ReturnValue'": ""
@@ -1929,14 +1901,10 @@
             "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetGameMode_ReturnValue",
-            "Value": "ImportIndex[-23] GameModeBase"
+            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Gameplay",
-            "Value": 4294967294
+            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
@@ -1945,35 +1913,25 @@
             "prop-bool 'K2Node_Event_In_Out'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetGameMode_ReturnValue\"1",
-            "Value": "ImportIndex[-23] GameModeBase"
+            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue\"1'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Gameplay\"1",
-            "Value": 4294967294
+            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay\"1'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetGameMode_ReturnValue\"2",
-            "Value": "ImportIndex[-23] GameModeBase"
+            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue\"2'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Gameplay\"2",
-            "Value": 4294967294
+            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay\"2'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_NewParam",
-            "Value": "ImportIndex[-3] BP_SpawnPad_C"
+            "prop-object Value(ImportIndex[-3] BP_SpawnPad_C) 'K2Node_Event_NewParam'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -2026,11 +1984,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Spawn Transform",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-47] Transform"
+            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(96) Value(ImportIndex[-47] Transform) 'Spawn Transform'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -2058,10 +2012,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "NewParam",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-3] BP_SpawnPad_C"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-3] BP_SpawnPad_C) 'NewParam'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -2141,10 +2092,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Trigger Ref",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) 'Trigger Ref'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -2220,10 +2168,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Trigger Ref",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) 'Trigger Ref'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -2251,16 +2196,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Objective Index",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Objective Index'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Objective Complete",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-50] ST_Objective"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'Objective Complete'": ""
           }
         ],
         "FunctionFlags": 201457664,

@@ -30,20 +30,32 @@ namespace AssetTool
     {
         public FDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
-            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
-            obj.SignatureFunction = root.GetProperty("SignatureFunction").GetUInt32();
-            obj.Ptr = root.GetProperty("Ptr").GetUInt64();
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+            obj.SignatureFunction = key.GetNonNull("SignatureFunction({0})", x => uint.Parse(x), (uint)0);
+            obj.Ptr = key.GetNonNull("Ptr({0})", x => ulong.Parse(x), (ulong)0);
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FDelegateProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteNumber("ElementSize", value.ElementSize);
-            writer.WriteNumber("SignatureFunction", value.SignatureFunction);
-            writer.WriteNumber("Ptr", value.Ptr);
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["SignatureFunction"] = value.SignatureFunction,
+                ["Ptr"] = value.Ptr
+            };
+
+            WriteKeyValue(writer, options, value, "prop-delegate", inlineFields);
+
             writer.WriteEndObject();
         }
     }

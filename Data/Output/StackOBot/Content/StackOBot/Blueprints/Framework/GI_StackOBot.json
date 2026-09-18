@@ -2481,12 +2481,7 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-94] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-94] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
@@ -2520,28 +2515,22 @@
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "PlayerInventorySaveGame",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Player Inventory Save Game",
-              "Category": "Default",
-              "MultiLine": "true"
-            },
-            "Value": "ImportIndex[-6] PlayerSaveObject_C"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-6] PlayerSaveObject_C) 'PlayerInventorySaveGame'": {
+              "MetaDataMap": {
+                "DisplayName": "Player Inventory Save Game",
+                "Category": "Default",
+                "MultiLine": "true"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Music",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Music",
-              "Category": "Default",
-              "MultiLine": "true"
-            },
-            "Value": "ImportIndex[-28] AudioComponent"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] AudioComponent) 'Music'": {
+              "MetaDataMap": {
+                "DisplayName": "Music",
+                "Category": "Default",
+                "MultiLine": "true"
+              }
+            }
           },
           {
             "__type": "FMulticastInlineDelegateProperty",
@@ -2564,27 +2553,21 @@
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Audio",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Audio",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-28] AudioComponent"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] AudioComponent) 'Audio'": {
+              "MetaDataMap": {
+                "DisplayName": "Audio",
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "LoadingWidget",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "EditInline": "true",
-              "DisplayName": "Loading Widget",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-98] UI_LoadingScreen_C"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-98] UI_LoadingScreen_C) 'LoadingWidget'": {
+              "MetaDataMap": {
+                "EditInline": "true",
+                "DisplayName": "Loading Widget",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -3274,10 +3257,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "SaveGame",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-38] SaveGame"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-38] SaveGame) 'SaveGame'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bSuccess'": ""
@@ -3308,49 +3288,35 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
             "prop-bool 'CallFunc_SetGamePaused_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_SaveGame",
-            "Value": "ImportIndex[-38] SaveGame"
+            "prop-object Value(ImportIndex[-38] SaveGame) 'K2Node_CustomEvent_SaveGame'": ""
           },
           {
             "prop-bool 'K2Node_CustomEvent_bSuccess'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967250,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967250) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
             "prop-bool 'Temp_bool_Variable'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Temp_object_Variable",
-            "Value": "ImportIndex[-38] SaveGame"
+            "prop-object Value(ImportIndex[-38] SaveGame) 'Temp_object_Variable'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_Create_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "MetaDataMap": {
-              "EditInline": "true"
-            },
-            "Value": "ImportIndex[-98] UI_LoadingScreen_C"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-98] UI_LoadingScreen_C) 'CallFunc_Create_ReturnValue'": {
+              "MetaDataMap": {
+                "EditInline": "true"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_AsyncSaveGameToSlot_ReturnValue",
-            "Value": "ImportIndex[-27] AsyncActionHandleSaveGame"
+            "prop-object Value(ImportIndex[-27] AsyncActionHandleSaveGame) 'CallFunc_AsyncSaveGameToSlot_ReturnValue'": ""
           },
           {
             "prop-bool 'K2Node_Event_Enable'": ""
@@ -3359,8 +3325,7 @@
             "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "K2Node_Event_Change"
+            "prop-int 'K2Node_Event_Change'": ""
           },
           {
             "__type": "FNameProperty",
@@ -3377,14 +3342,10 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue"
+            "prop-int 'CallFunc_Add_IntInt_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_CollectableData",
-            "ElementSize": 112,
-            "Value": "ImportIndex[-97] CollectableObjectData"
+            "prop-struct ElementSize(112) Value(ImportIndex[-97] CollectableObjectData) 'K2Node_Event_CollectableData'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -3412,9 +3373,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Amount",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm"
+            "prop-int PropertyFlags(CPF_Parm, CPF_OutParm) 'Amount'": ""
           }
         ],
         "FunctionFlags": 205651968,
@@ -3456,22 +3415,16 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_CreateSaveGameObject_ReturnValue",
-            "Value": "ImportIndex[-5] LevelSaveObject_C"
+            "prop-object Value(ImportIndex[-5] LevelSaveObject_C) 'CallFunc_CreateSaveGameObject_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_LoadGameFromSlot_ReturnValue",
-            "Value": "ImportIndex[-38] SaveGame"
+            "prop-object Value(ImportIndex[-38] SaveGame) 'CallFunc_LoadGameFromSlot_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_DoesSaveGameExist_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsLevel_Save_Object",
-            "Value": "ImportIndex[-5] LevelSaveObject_C"
+            "prop-object Value(ImportIndex[-5] LevelSaveObject_C) 'K2Node_DynamicCast_AsLevel_Save_Object'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
@@ -3502,25 +3455,19 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_LoadGameFromSlot_ReturnValue",
-            "Value": "ImportIndex[-38] SaveGame"
+            "prop-object Value(ImportIndex[-38] SaveGame) 'CallFunc_LoadGameFromSlot_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_DoesSaveGameExist_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsPlayer_Save_Object",
-            "Value": "ImportIndex[-6] PlayerSaveObject_C"
+            "prop-object Value(ImportIndex[-6] PlayerSaveObject_C) 'K2Node_DynamicCast_AsPlayer_Save_Object'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_CreateSaveGameObject_ReturnValue",
-            "Value": "ImportIndex[-6] PlayerSaveObject_C"
+            "prop-object Value(ImportIndex[-6] PlayerSaveObject_C) 'CallFunc_CreateSaveGameObject_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3572,9 +3519,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "NewAmount",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NewAmount'": ""
           }
         ],
         "FunctionFlags": 202506240,
@@ -3665,19 +3610,13 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Audio",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-39] SoundBase"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-39] SoundBase) 'Audio'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Persist'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_CreateSound2D_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-28] AudioComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-28] AudioComponent) 'CallFunc_CreateSound2D_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3778,11 +3717,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CollectableData",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 112,
-            "Value": "ImportIndex[-97] CollectableObjectData"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(112) Value(ImportIndex[-97] CollectableObjectData) 'CollectableData'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -3968,9 +3903,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Change",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Change'": ""
           }
         ],
         "FunctionFlags": 201457664,

@@ -33,17 +33,29 @@ namespace AssetTool
     {
         public FStructProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
-            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
-            obj.Value = JsonSerializer.Deserialize<FObjectPtr>(root.GetProperty("Value").GetRawText(), options);
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+            obj.Value = key.GetNonNull("Value({0})", x => FObjectPtr.FromString(x), new FObjectPtr { Index = new FPackageIndex() });
+
             return obj;
         }
         public void Write(Utf8JsonWriter writer, FStructProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteNumber("ElementSize", value.ElementSize);
-            writer.WriteString("Value", value.Value.ToString());
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["Value"] = value.Value
+            };
+
+            WriteKeyValue(writer, options, value, "prop-struct", inlineFields);
+
             writer.WriteEndObject();
         }
     }

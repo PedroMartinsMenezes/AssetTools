@@ -25,15 +25,23 @@ namespace AssetTool
     {
         public FInt8Property Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
             obj.ElementSize = 1;
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FInt8Property value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
+
+            WriteKeyValue(writer, options, value, "prop-int8");
+
             writer.WriteEndObject();
         }
     }

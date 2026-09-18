@@ -1279,75 +1279,52 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-86] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-86] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "FS_Spawn",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-29] SceneComponent"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "SM_CylinderRoofBevel",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-35] StaticMeshComponent"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-29] SceneComponent"
-          },
-          {
-            "__type": "FFloatProperty",
-            "NamePrivate": "PreShatterTime",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Pre Shatter Time",
-              "Category": "Default"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-29] SceneComponent) 'FS_Spawn'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "GC",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "GC",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-37] GeometryCollectionComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) 'SM_CylinderRoofBevel'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Relative Transform",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Relative Transform",
-              "Category": "Default"
-            },
-            "ElementSize": 96,
-            "Value": "ImportIndex[-82] Transform"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-29] SceneComponent) 'DefaultSceneRoot'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PreShatterTime'": {
+              "MetaDataMap": {
+                "DisplayName": "Pre Shatter Time",
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-37] GeometryCollectionComponent) 'GC'": {
+              "MetaDataMap": {
+                "DisplayName": "GC",
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(96) Value(ImportIndex[-82] Transform) 'Relative Transform'": {
+              "MetaDataMap": {
+                "DisplayName": "Relative Transform",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -1565,108 +1542,64 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
             "prop-bool 'Temp_bool_IsClosed_Variable'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_MyComp",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-28] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-28] PrimitiveComponent) 'K2Node_Event_MyComp'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_Other",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object Value(ImportIndex[-18] Actor) 'K2Node_Event_Other'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_OtherComp",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-28] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-28] PrimitiveComponent) 'K2Node_Event_OtherComp'": ""
           },
           {
             "prop-bool 'K2Node_Event_bSelfMoved'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_HitLocation",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-83] Vector) 'K2Node_Event_HitLocation'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_HitNormal",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-83] Vector) 'K2Node_Event_HitNormal'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_NormalImpulse",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-83] Vector) 'K2Node_Event_NormalImpulse'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Hit",
-            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-84] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-84] HitResult) 'K2Node_Event_Hit'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_SpawnSystemAtLocation_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-38] NiagaraComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-38] NiagaraComponent) 'CallFunc_SpawnSystemAtLocation_ReturnValue'": ""
           },
           {
             "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
-            "Value": "ImportIndex[-27] Pawn"
+            "prop-object Value(ImportIndex[-27] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_EqualEqual_ObjectObject_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_MakeTransform_ReturnValue",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-82] Transform"
+            "prop-struct ElementSize(96) Value(ImportIndex[-82] Transform) 'CallFunc_MakeTransform_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_AddComponent_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-37] GeometryCollectionComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-37] GeometryCollectionComponent) 'CallFunc_AddComponent_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-83] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetComponentToWorld_ReturnValue",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-82] Transform"
+            "prop-struct ElementSize(96) Value(ImportIndex[-82] Transform) 'CallFunc_K2_GetComponentToWorld_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object Value(ImportIndex[-18] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
-            "Value": "ImportIndex[-3] FS_MasterField_C"
+            "prop-object Value(ImportIndex[-3] FS_MasterField_C) 'CallFunc_FinishSpawningActor_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -1695,53 +1628,28 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "MyComp",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-28] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-28] PrimitiveComponent) 'MyComp'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Other",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-18] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) 'Other'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherComp",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-28] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-28] PrimitiveComponent) 'OtherComp'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bSelfMoved'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "HitLocation",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-83] Vector) 'HitLocation'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "HitNormal",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-83] Vector) 'HitNormal'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "NormalImpulse",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-83] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-83] Vector) 'NormalImpulse'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Hit",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-84] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-84] HitResult) 'Hit'": ""
           }
         ],
         "FunctionFlags": 138545152,

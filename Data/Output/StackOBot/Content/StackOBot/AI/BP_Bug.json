@@ -1683,22 +1683,14 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-97] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-97] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DamageSphere",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-54] SphereComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-54] SphereComponent) 'DamageSphere'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
             "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Dying'": {
@@ -1709,25 +1701,21 @@
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Max Leash Distance from Spawn Point",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Max Leash Distance From Spawn Point",
-              "Category": "AI",
-              "ExposeOnSpawn": "true"
+            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Max Leash Distance from Spawn Point'": {
+              "MetaDataMap": {
+                "DisplayName": "Max Leash Distance From Spawn Point",
+                "Category": "AI",
+                "ExposeOnSpawn": "true"
+              }
             }
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Min Leash Distance from Spawn Point to Resume Roaming",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Min Leash Distance From Spawn Point To Resume Roaming",
-              "Category": "AI",
-              "ExposeOnSpawn": "true"
+            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Min Leash Distance from Spawn Point to Resume Roaming'": {
+              "MetaDataMap": {
+                "DisplayName": "Min Leash Distance From Spawn Point To Resume Roaming",
+                "Category": "AI",
+                "ExposeOnSpawn": "true"
+              }
             }
           }
         ],
@@ -2076,37 +2064,22 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OverlappedComponent",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-46] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'OverlappedComponent'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherActor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-29] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) 'OtherActor'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherComp",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-46] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'OtherComp'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "OtherBodyIndex",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'OtherBodyIndex'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bFromSweep'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "SweepResult",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-95] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) 'SweepResult'": ""
           }
         ],
         "FunctionFlags": 138412032,
@@ -2134,48 +2107,28 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "self2",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-29] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) 'self2'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'JumpedOnEnemy'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Direction",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-94] Vector) 'Direction'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"1",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_Subtract_VectorVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_Normal_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Normal_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Dot_VectorVector_ReturnValue"
+            "prop-double 'CallFunc_Dot_VectorVector_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
@@ -2206,15 +2159,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
             "__type": "FNameProperty",
@@ -2245,11 +2193,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967238,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
             "__type": "FNameProperty",
@@ -2266,11 +2210,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"1",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967238,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"1'": ""
           },
           {
             "__type": "FNameProperty",
@@ -2287,11 +2227,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"2",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967238,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"2'": ""
           },
           {
             "__type": "FNameProperty",
@@ -2308,11 +2244,7 @@
             "MetaDataMap": {}
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"3",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967238,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"3'": ""
           },
           {
             "__type": "FNameProperty",
@@ -2332,57 +2264,34 @@
             "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"4",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967238,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"4'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_MakeVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_CreateProxyObjectForPlayMontage_ReturnValue",
-            "Value": "ImportIndex[-12] PlayMontageCallbackProxy"
+            "prop-object Value(ImportIndex[-12] PlayMontageCallbackProxy) 'CallFunc_CreateProxyObjectForPlayMontage_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerCharacter_ReturnValue",
-            "Value": "ImportIndex[-35] Character"
+            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"1",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-45] PawnMovementComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerCharacter_ReturnValue\"1",
-            "Value": "ImportIndex[-35] Character"
+            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerCharacter_ReturnValue\"2",
-            "Value": "ImportIndex[-35] Character"
+            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"2'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Bot",
-            "Value": 4294967289
+            "prop-interface Value(4294967289) 'K2Node_DynamicCast_AsBPI_Bot'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
@@ -2391,67 +2300,40 @@
             "prop-bool 'CallFunc_CheckHitDirection_JumpedOnEnemy'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_CheckHitDirection_Direction",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_CheckHitDirection_Direction'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerCharacter_ReturnValue\"3",
-            "Value": "ImportIndex[-35] Character"
+            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"3'": ""
           },
           {
             "prop-bool 'Temp_bool_IsClosed_Variable'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetMovementComponent_ReturnValue\"1",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-45] PawnMovementComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_Multiply_VectorVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_Add_VectorVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-94] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Add_VectorVector_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_OverlappedComponent",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-46] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'K2Node_ComponentBoundEvent_OverlappedComponent'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_OtherActor",
-            "Value": "ImportIndex[-29] Actor"
+            "prop-object Value(ImportIndex[-29] Actor) 'K2Node_ComponentBoundEvent_OtherActor'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_OtherComp",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-46] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'K2Node_ComponentBoundEvent_OtherComp'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_OtherBodyIndex"
+            "prop-int 'K2Node_ComponentBoundEvent_OtherBodyIndex'": ""
           },
           {
             "prop-bool 'K2Node_ComponentBoundEvent_bFromSweep'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_ComponentBoundEvent_SweepResult",
-            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-95] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) 'K2Node_ComponentBoundEvent_SweepResult'": ""
           },
           {
             "prop-bool 'CallFunc_DoesImplementInterface_ReturnValue'": ""

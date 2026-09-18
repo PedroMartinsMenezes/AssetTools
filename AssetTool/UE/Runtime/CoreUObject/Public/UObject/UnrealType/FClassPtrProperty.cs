@@ -18,19 +18,32 @@ namespace AssetTool
     {
         public FClassPtrProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
             obj.ElementSize = 8;
-            obj.Value = FObjectPtr.FromString(root.GetProperty("Value").GetString());
-            obj.MetaClass = root.GetProperty("MetaClass").GetUInt32();
+
+            obj.Value = key.GetNonNull("Value({0})", x => FObjectPtr.FromString(x), new FObjectPtr { Index = new FPackageIndex() });
+            obj.MetaClass = key.GetNonNull("MetaClass({0})", x => uint.Parse(x), (uint)0);
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FClassPtrProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteString("Value", value.Value.ToString());
-            writer.WriteNumber("MetaClass", value.MetaClass);
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["Value"] = value.Value,
+                ["MetaClass"] = value.MetaClass
+            };
+
+            WriteKeyValue(writer, options, value, "prop-classptr", inlineFields);
+
             writer.WriteEndObject();
         }
     }

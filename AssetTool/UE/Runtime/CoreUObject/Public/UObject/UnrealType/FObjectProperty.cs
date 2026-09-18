@@ -28,17 +28,30 @@ namespace AssetTool
     {
         public FObjectProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
             obj.ElementSize = 8;
-            obj.Value = FObjectPtr.FromString(root.GetProperty("Value").GetString());
+
+            obj.Value = key.GetNonNull("Value({0})", x => FObjectPtr.FromString(x), new FObjectPtr { Index = new FPackageIndex() });
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FObjectProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteString("Value", value.Value.ToString());
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["Value"] = value.Value
+            };
+
+            WriteKeyValue(writer, options, value, "prop-object", inlineFields);
+
             writer.WriteEndObject();
         }
     }

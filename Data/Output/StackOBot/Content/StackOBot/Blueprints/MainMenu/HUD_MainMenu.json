@@ -1383,48 +1383,34 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-60] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-60] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "DefaultSceneRoot",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-26] SceneComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] SceneComponent) 'DefaultSceneRoot'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "MyMainMenu",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "EditInline": "true",
-              "DisplayName": "My Main Menu",
-              "Category": "Default",
-              "BlueprintPrivate": "true"
-            },
-            "Value": "ImportIndex[-30] UserWidget"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-30] UserWidget) 'MyMainMenu'": {
+              "MetaDataMap": {
+                "EditInline": "true",
+                "DisplayName": "My Main Menu",
+                "Category": "Default",
+                "BlueprintPrivate": "true"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "MyLoadingWidget",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "EditInline": "true",
-              "DisplayName": "My Loading Widget",
-              "Category": "Default",
-              "BlueprintPrivate": "true"
-            },
-            "Value": "ImportIndex[-62] UI_LoadingScreen_C"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-62] UI_LoadingScreen_C) 'MyLoadingWidget'": {
+              "MetaDataMap": {
+                "EditInline": "true",
+                "DisplayName": "My Loading Widget",
+                "Category": "Default",
+                "BlueprintPrivate": "true"
+              }
+            }
           },
           {
             "__type": "FSoftObjectProperty",
@@ -1572,59 +1558,41 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
             "prop-bool 'K2Node_Event_Paused'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "K2Node_Event_Index"
+            "prop-int 'K2Node_Event_Index'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Objective_Info",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-61] ST_Objective"
+            "prop-struct ElementSize(24) Value(ImportIndex[-61] ST_Objective) 'K2Node_Event_Objective_Info'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetOwningPlayerController_ReturnValue",
-            "Value": "ImportIndex[-25] PlayerController"
+            "prop-object Value(ImportIndex[-25] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
-            "Value": "ImportIndex[-24] Pawn"
+            "prop-object Value(ImportIndex[-24] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetOwningPlayerController_ReturnValue\"1",
-            "Value": "ImportIndex[-25] PlayerController"
+            "prop-object Value(ImportIndex[-25] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_Create_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "MetaDataMap": {
-              "EditInline": "true"
-            },
-            "Value": "ImportIndex[-63] UI_MainMenu_C"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-63] UI_MainMenu_C) 'CallFunc_Create_ReturnValue'": {
+              "MetaDataMap": {
+                "EditInline": "true"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_GetGameInstance_ReturnValue",
-            "Value": "ImportIndex[-20] GameInstance"
+            "prop-object Value(ImportIndex[-20] GameInstance) 'CallFunc_GetGameInstance_ReturnValue'": ""
           },
           {
-            "__type": "FInterfaceProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance",
-            "Value": 4294967294
+            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Game_Instance'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
@@ -1828,16 +1796,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "Index",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Index'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Objective Info",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-61] ST_Objective"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-61] ST_Objective) 'Objective Info'": ""
           }
         ],
         "FunctionFlags": 201457664,

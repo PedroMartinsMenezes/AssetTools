@@ -91,7 +91,7 @@ namespace AssetTool
         {
             T value = new();
 
-            value.NamePrivate = new FName(key.Split("'")[1]);
+            value.NamePrivate = new FName(key[(key.IndexOf('\'') + 1)..^1]);
 
             value.PropertyFlags = key.GetNonNull("PropertyFlags({0})", x => Enum.Parse<EPropertyFlags>(x), EPropertyFlags.CPF_None);
             value.FlagsPrivate = key.GetNonNull("FlagsPrivate({0})", x => Enum.Parse<EObjectFlags>(x), EObjectFlags.RF_Public);

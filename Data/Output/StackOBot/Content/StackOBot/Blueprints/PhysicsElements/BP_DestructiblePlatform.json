@@ -1949,115 +1949,82 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-104] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-104] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Billboard",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-22] BillboardComponent"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Anchor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-36] SceneComponent"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Scene",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-36] SceneComponent"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Box",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-25] BoxComponent"
-          },
-          {
-            "__type": "FFloatProperty",
-            "NamePrivate": "PreShatterTime",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Pre Shatter Time",
-              "Category": "Destructible Platform"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-22] BillboardComponent) 'Billboard'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
             }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "GC",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "GC",
-              "Category": "Default"
-            },
-            "Value": "ImportIndex[-42] GeometryCollectionComponent"
-          },
-          {
-            "__type": "FStructProperty",
-            "NamePrivate": "Relative Transform",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Relative Transform",
-              "Category": "Destructible Platform"
-            },
-            "ElementSize": 96,
-            "Value": "ImportIndex[-100] Transform"
-          },
-          {
-            "__type": "FObjectProperty",
-            "NamePrivate": "ActivePlatform",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Active Platform",
-              "Category": "Destructible Platform"
-            },
-            "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C"
-          },
-          {
-            "__type": "FFloatProperty",
-            "NamePrivate": "RespawnTime",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Respawn Time",
-              "Category": "Destructible Platform"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-36] SceneComponent) 'Anchor'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
             }
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "PreBreakDuration",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Pre Break Duration",
-              "Category": "Destructible Platform"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-36] SceneComponent) 'Scene'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-25] BoxComponent) 'Box'": {
+              "MetaDataMap": {
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PreShatterTime'": {
+              "MetaDataMap": {
+                "DisplayName": "Pre Shatter Time",
+                "Category": "Destructible Platform"
+              }
+            }
+          },
+          {
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-42] GeometryCollectionComponent) 'GC'": {
+              "MetaDataMap": {
+                "DisplayName": "GC",
+                "Category": "Default"
+              }
+            }
+          },
+          {
+            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(96) Value(ImportIndex[-100] Transform) 'Relative Transform'": {
+              "MetaDataMap": {
+                "DisplayName": "Relative Transform",
+                "Category": "Destructible Platform"
+              }
+            }
+          },
+          {
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] BP_DestructiblePlatform_Platform_C) 'ActivePlatform'": {
+              "MetaDataMap": {
+                "DisplayName": "Active Platform",
+                "Category": "Destructible Platform"
+              }
+            }
+          },
+          {
+            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'RespawnTime'": {
+              "MetaDataMap": {
+                "DisplayName": "Respawn Time",
+                "Category": "Destructible Platform"
+              }
+            }
+          },
+          {
+            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PreBreakDuration'": {
+              "MetaDataMap": {
+                "DisplayName": "Pre Break Duration",
+                "Category": "Destructible Platform"
+              }
             }
           }
         ],
@@ -2276,9 +2243,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
             "prop-bool 'Temp_bool_IsClosed_Variable'": ""
@@ -2293,87 +2258,55 @@
             "prop-bool 'Temp_bool_Has_Been_Initd_Variable\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_MyComp",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-35] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-35] PrimitiveComponent) 'K2Node_Event_MyComp'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_Other",
-            "Value": "ImportIndex[-21] Actor"
+            "prop-object Value(ImportIndex[-21] Actor) 'K2Node_Event_Other'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_Event_OtherComp",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-35] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-35] PrimitiveComponent) 'K2Node_Event_OtherComp'": ""
           },
           {
             "prop-bool 'K2Node_Event_bSelfMoved'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_HitLocation",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'K2Node_Event_HitLocation'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_HitNormal",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'K2Node_Event_HitNormal'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_NormalImpulse",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'K2Node_Event_NormalImpulse'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Hit",
-            "PropertyFlags": "CPF_ConstParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-102] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-102] HitResult) 'K2Node_Event_Hit'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_X"
+            "prop-double 'CallFunc_BreakVector_X'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_Y"
+            "prop-double 'CallFunc_BreakVector_Y'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_Z"
+            "prop-double 'CallFunc_BreakVector_Z'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsCharacter",
-            "Value": "ImportIndex[-26] Character"
+            "prop-object Value(ImportIndex[-26] Character) 'K2Node_DynamicCast_AsCharacter'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_X\"1"
+            "prop-double 'CallFunc_BreakVector_X\"1'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_Y\"1"
+            "prop-double 'CallFunc_BreakVector_Y\"1'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_BreakVector_Z\"1"
+            "prop-double 'CallFunc_BreakVector_Z\"1'": ""
           },
           {
             "prop-bool 'CallFunc_IsFalling_ReturnValue'": ""
@@ -2385,77 +2318,46 @@
             "prop-bool 'CallFunc_ActorHasTag_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetComponentToWorld_ReturnValue",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-100] Transform"
+            "prop-struct ElementSize(96) Value(ImportIndex[-100] Transform) 'CallFunc_K2_GetComponentToWorld_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-102] HitResult"
+            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-102] HitResult) 'CallFunc_K2_SetWorldRotation_SweepHitResult'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
-            "Value": "ImportIndex[-21] Actor"
+            "prop-object Value(ImportIndex[-21] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
-            "Value": "ImportIndex[-4] BP_DestructiblePlatform_Platform_C"
+            "prop-object Value(ImportIndex[-4] BP_DestructiblePlatform_Platform_C) 'CallFunc_FinishSpawningActor_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetComponentToWorld_ReturnValue\"1",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-100] Transform"
+            "prop-struct ElementSize(96) Value(ImportIndex[-100] Transform) 'CallFunc_K2_GetComponentToWorld_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue\"1",
-            "Value": "ImportIndex[-21] Actor"
+            "prop-object Value(ImportIndex[-21] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue\"1",
-            "Value": "ImportIndex[-3] BP_DestructiblePlatform_Destruction_C"
+            "prop-object Value(ImportIndex[-3] BP_DestructiblePlatform_Destruction_C) 'CallFunc_FinishSpawningActor_ReturnValue\"1'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_ReturnValue"
+            "prop-double 'CallFunc_Divide_DoubleDouble_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetTimer_ReturnValue",
-            "ElementSize": 8,
-            "Value": "ImportIndex[-105] TimerHandle"
+            "prop-struct ElementSize(8) Value(ImportIndex[-105] TimerHandle) 'CallFunc_K2_SetTimer_ReturnValue'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967247,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967247) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetTimerDelegate_ReturnValue",
-            "ElementSize": 8,
-            "Value": "ImportIndex[-105] TimerHandle"
+            "prop-struct ElementSize(8) Value(ImportIndex[-105] TimerHandle) 'CallFunc_K2_SetTimerDelegate_ReturnValue'": ""
           },
           {
             "prop-bool 'CallFunc_K2_AttachToComponent_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Divide_DoubleDouble_A_ImplicitCast"
+            "prop-double 'CallFunc_Divide_DoubleDouble_A_ImplicitCast'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "CallFunc_K2_SetTimer_Time_ImplicitCast"
+            "prop-float 'CallFunc_K2_SetTimer_Time_ImplicitCast'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -2509,53 +2411,28 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "MyComp",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-35] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-35] PrimitiveComponent) 'MyComp'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Other",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-21] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-21] Actor) 'Other'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "OtherComp",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference",
-            "Value": "ImportIndex[-35] PrimitiveComponent"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-35] PrimitiveComponent) 'OtherComp'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bSelfMoved'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "HitLocation",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-101] Vector) 'HitLocation'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "HitNormal",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-101] Vector) 'HitNormal'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "NormalImpulse",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-101] Vector) 'NormalImpulse'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Hit",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-102] HitResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-102] HitResult) 'Hit'": ""
           }
         ],
         "FunctionFlags": 138545152,
@@ -2655,62 +2532,37 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_RandomFloatInRange_ReturnValue"
+            "prop-double 'CallFunc_RandomFloatInRange_ReturnValue'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_RandomIntegerInRange_ReturnValue"
+            "prop-int 'CallFunc_RandomIntegerInRange_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_MakeVector_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "CallFunc_Conv_IntToDouble_ReturnValue"
+            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_MakeRotator_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-99] Rotator"
+            "prop-struct ElementSize(24) Value(ImportIndex[-99] Rotator) 'CallFunc_MakeRotator_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetRelativeLocation_SweepHitResult",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-102] HitResult"
+            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-102] HitResult) 'CallFunc_K2_SetRelativeLocation_SweepHitResult'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_SetWorldRotation_SweepHitResult",
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "ElementSize": 264,
-            "Value": "ImportIndex[-102] HitResult"
+            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-102] HitResult) 'CallFunc_K2_SetWorldRotation_SweepHitResult'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CallFunc_K2_GetComponentLocation_ReturnValue",
-            "ElementSize": 24,
-            "Value": "ImportIndex[-101] Vector"
+            "prop-struct ElementSize(24) Value(ImportIndex[-101] Vector) 'CallFunc_K2_GetComponentLocation_ReturnValue'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "CallFunc_SpawnSystemAtLocation_ReturnValue",
-            "PropertyFlags": "CPF_InstancedReference",
-            "Value": "ImportIndex[-44] NiagaraComponent"
+            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-44] NiagaraComponent) 'CallFunc_SpawnSystemAtLocation_ReturnValue'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "CallFunc_MakeRotator_Roll_ImplicitCast"
+            "prop-float 'CallFunc_MakeRotator_Roll_ImplicitCast'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "CallFunc_MakeRotator_Pitch_ImplicitCast"
+            "prop-float 'CallFunc_MakeRotator_Pitch_ImplicitCast'": ""
           }
         ],
         "FunctionFlags": 209846272,

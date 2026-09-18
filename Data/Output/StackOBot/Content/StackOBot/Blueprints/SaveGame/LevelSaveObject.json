@@ -636,12 +636,7 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-25] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-25] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
             "__type": "FArrayProperty",
@@ -656,10 +651,7 @@
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
-              "__type": "FStructProperty",
-              "NamePrivate": "CollectablePickups",
-              "ElementSize": 112,
-              "Value": "ImportIndex[-26] CollectableObjectData"
+              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
             }
           }
         ],
@@ -859,15 +851,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Collectable_",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 112,
-            "Value": "ImportIndex[-26] CollectableObjectData"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'Collectable_'": ""
           },
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "CallFunc_Array_AddUnique_ReturnValue"
+            "prop-int 'CallFunc_Array_AddUnique_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 201457664,
@@ -895,9 +882,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           }
         ],
         "FunctionFlags": 32769,
@@ -931,10 +916,7 @@
             "ElementSize": 16,
             "PropertyTypeName": "StructProperty",
             "SingleField": {
-              "__type": "FStructProperty",
-              "NamePrivate": "CollectablePickups",
-              "ElementSize": 112,
-              "Value": "ImportIndex[-26] CollectableObjectData"
+              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
             }
           }
         ],
@@ -963,11 +945,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "CollectableData",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "ElementSize": 112,
-            "Value": "ImportIndex[-26] CollectableObjectData"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectableData'": ""
           },
           {
             "prop-bool 'CallFunc_Array_RemoveItem_ReturnValue'": ""

@@ -1169,43 +1169,30 @@
         ],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "UberGraphFrame",
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "ElementSize": 16,
-            "Value": "ImportIndex[-49] PointerToUberGraphFrame"
+            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-49] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Controller",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Controller",
-              "Category": "Context"
-            },
-            "Value": "ImportIndex[-1] BP_AIController_C"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-1] BP_AIController_C) 'Controller'": {
+              "MetaDataMap": {
+                "DisplayName": "Controller",
+                "Category": "Context"
+              }
+            }
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Target Player Pawn",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Target Player Pawn",
-              "Category": "Output"
-            },
-            "Value": "ImportIndex[-25] Pawn"
+            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-25] Pawn) 'Target Player Pawn'": {
+              "MetaDataMap": {
+                "DisplayName": "Target Player Pawn",
+                "Category": "Output"
+              }
+            }
           },
           {
-            "__type": "FDoubleProperty",
-            "NamePrivate": "Forget Cooldown Time",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Forget Cooldown Time",
-              "Category": "Params"
+            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Forget Cooldown Time'": {
+              "MetaDataMap": {
+                "DisplayName": "Forget Cooldown Time",
+                "Category": "Params"
+              }
             }
           },
           {
@@ -1484,52 +1471,31 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FIntProperty",
-            "NamePrivate": "EntryPoint",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm"
+            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967265,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967265) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_Actor\"1",
-            "Value": "ImportIndex[-19] Actor"
+            "prop-object Value(ImportIndex[-19] Actor) 'K2Node_CustomEvent_Actor\"1'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_CustomEvent_Stimulus",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-47] AIStimulus"
+            "prop-struct ElementSize(96) Value(ImportIndex[-47] AIStimulus) 'K2Node_CustomEvent_Stimulus'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"1",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967266,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967266) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"1'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsPawn",
-            "Value": "ImportIndex[-25] Pawn"
+            "prop-object Value(ImportIndex[-25] Pawn) 'K2Node_DynamicCast_AsPawn'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_CustomEvent_Actor",
-            "Value": "ImportIndex[-19] Actor"
+            "prop-object Value(ImportIndex[-19] Actor) 'K2Node_CustomEvent_Actor'": ""
           },
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "K2Node_DynamicCast_AsPawn\"1",
-            "Value": "ImportIndex[-25] Pawn"
+            "prop-object Value(ImportIndex[-25] Pawn) 'K2Node_DynamicCast_AsPawn\"1'": ""
           },
           {
             "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
@@ -1541,42 +1507,25 @@
             "prop-bool 'CallFunc_IsPlayerControlled_ReturnValue\"1'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"2",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967265,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967265) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"2'": ""
           },
           {
-            "__type": "FDelegateProperty",
-            "NamePrivate": "K2Node_CreateDelegate_OutputDelegate\"3",
-            "ElementSize": 32,
-            "SignatureFunction": 4294967266,
-            "Ptr": 0
+            "prop-delegate ElementSize(32) SignatureFunction(4294967266) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"3'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Transition\"1",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-52] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-52] StateTreeTransitionResult) 'K2Node_Event_Transition\"1'": ""
           },
           {
             "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "K2Node_Event_Transition",
-            "PropertyFlags": "CPF_ConstParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-52] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-52] StateTreeTransitionResult) 'K2Node_Event_Transition'": ""
           },
           {
             "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue\"1'": ""
           },
           {
-            "__type": "FFloatProperty",
-            "NamePrivate": "CallFunc_RetriggerableDelay_Duration_ImplicitCast"
+            "prop-float 'CallFunc_RetriggerableDelay_Duration_ImplicitCast'": ""
           }
         ],
         "FunctionFlags": 8421377,
@@ -1604,10 +1553,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Actor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-19] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-19] Actor) 'Actor'": ""
           }
         ],
         "FunctionFlags": 201326592,
@@ -1635,17 +1581,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FObjectProperty",
-            "NamePrivate": "Actor",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": "ImportIndex[-19] Actor"
+            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-19] Actor) 'Actor'": ""
           },
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Stimulus",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "ElementSize": 96,
-            "Value": "ImportIndex[-47] AIStimulus"
+            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(96) Value(ImportIndex[-47] AIStimulus) 'Stimulus'": ""
           }
         ],
         "FunctionFlags": 201326592,
@@ -1674,11 +1613,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Transition",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-52] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-52] StateTreeTransitionResult) 'Transition'": ""
           }
         ],
         "FunctionFlags": 138545152,
@@ -1707,11 +1642,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStructProperty",
-            "NamePrivate": "Transition",
-            "PropertyFlags": "CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm",
-            "ElementSize": 72,
-            "Value": "ImportIndex[-52] StateTreeTransitionResult"
+            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-52] StateTreeTransitionResult) 'Transition'": ""
           }
         ],
         "FunctionFlags": 138545152,
