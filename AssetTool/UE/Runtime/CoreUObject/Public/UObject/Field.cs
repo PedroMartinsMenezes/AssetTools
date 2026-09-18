@@ -100,15 +100,15 @@ namespace AssetTool
                     nameof(FMapProperty) => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
                     nameof(FMulticastDelegateProperty) => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
                     nameof(FMulticastSparseDelegateProperty) => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
-                    nameof(FNameProperty) => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
+                    //nameof(FNameProperty) => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
                     nameof(FNumericProperty) => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
                     nameof(FObjectPropertyBase) => JsonSerializer.Deserialize<FObjectPropertyBase>(root.GetRawText(), options)!,
                     nameof(FObjectPtrProperty) => JsonSerializer.Deserialize<FObjectPtrProperty>(root.GetRawText(), options)!,
                     nameof(FOptionalProperty) => JsonSerializer.Deserialize<FOptionalProperty>(root.GetRawText(), options)!,
                     nameof(FProperty) => JsonSerializer.Deserialize<FProperty>(root.GetRawText(), options)!,
                     nameof(FSetProperty) => JsonSerializer.Deserialize<FSetProperty>(root.GetRawText(), options)!,
-                    nameof(FSoftClassProperty) => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
-                    nameof(FSoftObjectProperty) => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
+                    //nameof(FSoftClassProperty) => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
+                    //nameof(FSoftObjectProperty) => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
                     nameof(FStrProperty) => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
                     nameof(FTextProperty) => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
                     nameof(FWeakObjectProperty) => JsonSerializer.Deserialize<FWeakObjectProperty>(root.GetRawText(), options)!,
@@ -133,7 +133,10 @@ namespace AssetTool
                     "prop-int8" => new FInt8PropertySerializer().Read(root, options),
                     "prop-interface" => new FInterfacePropertySerializer().Read(root, options),
                     "prop-int" => new FIntPropertySerializer().Read(root, options),
+                    "prop-name" => new FNamePropertySerializer().Read(root, options),
                     "prop-object" => new FObjectPropertySerializer().Read(root, options),
+                    "prop-softclass" => new FSoftClassPropertySerializer().Read(root, options),
+                    "prop-softobject" => new FSoftObjectPropertySerializer().Read(root, options),
                     "prop-struct" => new FStructPropertySerializer().Read(root, options),
                     "prop-uint16" => new FUInt16PropertySerializer().Read(root, options),
                     "prop-uint32" => new FUInt32PropertySerializer().Read(root, options),
@@ -163,7 +166,10 @@ namespace AssetTool
                 case FInterfaceProperty interfaceProperty: new FInterfacePropertySerializer().Write(writer, interfaceProperty, options); return;
                 case FIntProperty intProperty: new FIntPropertySerializer().Write(writer, intProperty, options); return;
                 case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
+                case FNameProperty nameProperty: new FNamePropertySerializer().Write(writer, nameProperty, options); return;
                 case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
+                case FSoftClassProperty softClassProperty: new FSoftClassPropertySerializer().Write(writer, softClassProperty, options); return;
+                case FSoftObjectProperty softObjectProperty: new FSoftObjectPropertySerializer().Write(writer, softObjectProperty, options); return;
                 case FStructProperty structProperty: new FStructPropertySerializer().Write(writer, structProperty, options); return;
                 case FUInt16Property uint16Property: new FUInt16PropertySerializer().Write(writer, uint16Property, options); return;
                 case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
