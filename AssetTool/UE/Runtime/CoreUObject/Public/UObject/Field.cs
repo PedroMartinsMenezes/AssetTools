@@ -88,7 +88,7 @@ namespace AssetTool
                     //nameof(FInt8Property) => new FInt8PropertySerializer().Read(root, options),
                     //nameof(FInterfaceProperty) => new FInterfacePropertySerializer().Read(root, options),
                     //nameof(FIntProperty) => new FIntPropertySerializer().Read(root, options),
-                    nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
+                    //nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                     //nameof(FObjectProperty) => new FObjectPropertySerializer().Read(root, options),
                     //nameof(FStructProperty) => new FStructPropertySerializer().Read(root, options),
                     //nameof(FUInt16Property) => new FUInt16PropertySerializer().Read(root, options),
@@ -143,6 +143,7 @@ namespace AssetTool
                     "prop-uint16" => new FUInt16PropertySerializer().Read(root, options),
                     "prop-uint32" => new FUInt32PropertySerializer().Read(root, options),
                     "prop-uint64" => new FUInt64PropertySerializer().Read(root, options),
+                    "prop-multicast-inline-delegate" => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                     _ => throw new JsonException($"Unknown field key '{key}'.")
                 };
             }

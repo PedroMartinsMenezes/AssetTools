@@ -29,29 +29,45 @@ namespace AssetTool
     {
         public FMulticastInlineDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
-            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
-            obj.PropertyValuePtr = root.GetProperty("PropertyValuePtr").GetUInt32();
-            if (root.TryGetProperty("InvocationList", out var invocationListProperty) && invocationListProperty.ValueKind == JsonValueKind.Array)
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+
+            obj.PropertyValuePtr = key.GetNonNull("PropertyValuePtr({0})", x => uint.Parse(x), (uint)0);
+
+            if (root.TryGetProperty("InvocationList", out var invocationList) && invocationList.ValueKind == JsonValueKind.Array)
             {
-                obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(invocationListProperty.GetRawText(), options);
+                obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(invocationList.GetRawText(), options);
             }
+
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FMulticastInlineDelegateProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteNumber("ElementSize", value.ElementSize);
-            writer.WriteNumber("PropertyValuePtr", value.PropertyValuePtr);
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["PropertyValuePtr"] = value.PropertyValuePtr,
+            };
+
+            Dictionary<string, object> fields = null;
             if (value.InvocationList is { })
             {
-                writer.WritePropertyName("InvocationList");
-                writer.WriteStartArray();
-                JsonSerializer.Serialize(writer, value.InvocationList, options);
-                writer.WriteEndArray();
+                fields = new()
+                {
+                    ["InvocationList"] = value.InvocationList,
+                };
             }
+
+            WriteKeyValue(writer, options, value, "prop-multicast-inline-delegate", inlineFields, fields);
+
             writer.WriteEndObject();
         }
     }
