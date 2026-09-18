@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+﻿using System.Text.Json;
+
+namespace AssetTool
 {
     public class FMulticastDelegateProperty : FProperty
     {
@@ -20,6 +22,53 @@
         {
             transfer.Move(ref Delegates);
             return this;
+        }
+    }
+
+    public class FMulticastDelegatePropertySerializer : FPropertySerializerBase<FMulticastDelegateProperty>
+    {
+        public FMulticastDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+
+            obj.SignatureFunction = key.GetNonNull("SignatureFunction({0})", x => uint.Parse(x), (uint)0);
+
+            if (root.TryGetProperty("Delegates", out var delegates) && delegates.ValueKind == JsonValueKind.Object)
+            {
+                obj.Delegates = JsonSerializer.Deserialize<Dictionary<FObjectPtr, FName>>(delegates.GetRawText(), options);
+            }
+
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FMulticastDelegateProperty value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["SignatureFunction"] = value.SignatureFunction,
+            };
+
+            Dictionary<string, object> fields = null;
+            if (value.Delegates is { })
+            {
+                fields = new()
+                {
+                    ["Delegates"] = value.Delegates,
+                };
+            }
+
+            WriteKeyValue(writer, options, value, "prop-multicast-delegate", inlineFields, fields);
+
+            writer.WriteEndObject();
         }
     }
 }

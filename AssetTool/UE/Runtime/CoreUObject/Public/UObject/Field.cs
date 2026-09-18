@@ -96,9 +96,9 @@ namespace AssetTool
                     //nameof(FUInt64Property) => new FUInt64PropertySerializer().Read(root, options),
 
                     nameof(FFieldPathProperty) => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
-                    nameof(FLazyObjectProperty) => JsonSerializer.Deserialize<FLazyObjectProperty>(root.GetRawText(), options)!,
+                    //nameof(FLazyObjectProperty) => JsonSerializer.Deserialize<FLazyObjectProperty>(root.GetRawText(), options)!,
                     nameof(FMapProperty) => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
-                    nameof(FMulticastDelegateProperty) => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
+                    //nameof(FMulticastDelegateProperty) => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
                     nameof(FMulticastSparseDelegateProperty) => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
                     //nameof(FNameProperty) => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
                     nameof(FNumericProperty) => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
@@ -133,6 +133,8 @@ namespace AssetTool
                     "prop-int8" => new FInt8PropertySerializer().Read(root, options),
                     "prop-interface" => new FInterfacePropertySerializer().Read(root, options),
                     "prop-int" => new FIntPropertySerializer().Read(root, options),
+                    "prop-lazyobject" => new FLazyObjectPropertySerializer().Read(root, options),
+                    "prop-multicast-delegate" => new FMulticastDelegatePropertySerializer().Read(root, options),
                     "prop-name" => new FNamePropertySerializer().Read(root, options),
                     "prop-object" => new FObjectPropertySerializer().Read(root, options),
                     "prop-softclass" => new FSoftClassPropertySerializer().Read(root, options),
@@ -168,6 +170,8 @@ namespace AssetTool
                 case FInt8Property int8Property: new FInt8PropertySerializer().Write(writer, int8Property, options); return;
                 case FInterfaceProperty interfaceProperty: new FInterfacePropertySerializer().Write(writer, interfaceProperty, options); return;
                 case FIntProperty intProperty: new FIntPropertySerializer().Write(writer, intProperty, options); return;
+                case FLazyObjectProperty lazyObjectProperty: new FLazyObjectPropertySerializer().Write(writer, lazyObjectProperty, options); return;
+                case FMulticastDelegateProperty multicastDelegateProperty: new FMulticastDelegatePropertySerializer().Write(writer, multicastDelegateProperty, options); return;
                 case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
                 case FNameProperty nameProperty: new FNamePropertySerializer().Write(writer, nameProperty, options); return;
                 case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
