@@ -74,7 +74,6 @@ namespace AssetTool
 
                 return typeName switch
                 {
-                    nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
                     nameof(FFieldPathProperty) => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
                     nameof(FMapProperty) => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
                     nameof(FMulticastSparseDelegateProperty) => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
@@ -93,6 +92,7 @@ namespace AssetTool
                 string key = prop.Name[0..prop.Name.IndexOf(' ')];
                 return key switch
                 {
+                    "prop-array" => new FArrayPropertySerializer().Read(root, options),
                     "prop-bool" => new FBoolPropertySerializer().Read(root, options),
                     "prop-byte" => new FBytePropertySerializer().Read(root, options),
                     "prop-class" => new FClassPropertySerializer().Read(root, options),

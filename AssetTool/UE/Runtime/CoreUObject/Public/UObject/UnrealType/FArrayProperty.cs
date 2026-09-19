@@ -25,44 +25,36 @@ namespace AssetTool
     {
         public FArrayProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
-            obj.ElementSize = root.GetProperty("ElementSize").GetInt32();
-            obj.PropertyTypeName = new FName(root.GetProperty("PropertyTypeName").GetString());
-            obj.SingleField = JsonSerializer.Deserialize<FField>(root.GetProperty("SingleField").GetRawText(), options);
+            string key = root.EnumerateObject().First().Name;
+            JsonElement value = root.EnumerateObject().First().Value;
+            var obj = ReadKeyValue(key, value);
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
+            obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
+            if (value.TryGetProperty("SingleField", out var singleField))
+            {
+                obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
+            }
             return obj;
-
-            //JsonElement fields = root.EnumerateObject().First().Value;
-
-            //var obj = ReadKeyValue(root.EnumerateObject().First().Name, fields);
-
-            //obj.ElementSize = fields.GetProperty("ElementSize").GetInt32();
-            //obj.PropertyTypeName = new FName(fields.GetProperty("PropertyTypeName").GetString());
-            //obj.SingleField = JsonSerializer.Deserialize<FField>(fields.GetProperty("SingleField").GetRawText(), options);
-            //return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FArrayProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteNumber("ElementSize", value.ElementSize);
-            writer.WriteString("PropertyTypeName", value.PropertyTypeName.ToString());
-
-            writer.WritePropertyName("SingleField");
-            JsonSerializer.Serialize(writer, value.SingleField, options);
-
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["PropertyTypeName"] = value.PropertyTypeName
+            };
+            Dictionary<string, object> fields = null;
+            if (value.SingleField is { })
+            {
+                fields = new()
+                {
+                    ["SingleField"] = value.SingleField,
+                };
+            }
+            WriteKeyValue(writer, options, value, "prop-array", inlineFields, fields);
             writer.WriteEndObject();
-
-            //writer.WriteStartObject();
-
-            //Dictionary<string, object> fields = new()
-            //{
-            //    ["ElementSize"] = value.ElementSize,
-            //    ["PropertyTypeName"] = value.PropertyTypeName,
-            //    ["SingleField"] = value.SingleField
-            //};
-            //WriteKeyValue(writer, options, value, "prop-array", fields);
-            //writer.WriteEndObject();
         }
     }
 }
