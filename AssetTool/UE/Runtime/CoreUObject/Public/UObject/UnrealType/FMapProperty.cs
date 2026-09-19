@@ -1,4 +1,5 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -222,4 +223,47 @@ namespace AssetTool
         }
         #endregion
     }
+
+    #region Serializer
+    public class FMapPropertySerializer : FPropertySerializerBase<FMapProperty>
+    {
+        public FMapProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+            JsonElement value = root.EnumerateObject().First().Value;
+            var obj = ReadKeyValue(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
+            obj.PropertyTypeName1 = key.GetNonNull("PropertyTypeName1({0})", x => new FName(x));
+            obj.PropertyTypeName2 = key.GetNonNull("PropertyTypeName2({0})", x => new FName(x));
+            if (value.TryGetProperty("SingleField1", out var singleField1))
+            {
+                obj.SingleField1 = JsonSerializer.Deserialize<FField>(singleField1.GetRawText(), options);
+            }
+            if (value.TryGetProperty("SingleField2", out var singleField2))
+            {
+                obj.SingleField2 = JsonSerializer.Deserialize<FField>(singleField2.GetRawText(), options);
+            }
+            return obj;
+        }
+
+        public void Write(Utf8JsonWriter writer, FMapProperty value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = value.ElementSize,
+                ["PropertyTypeName1"] = value.PropertyTypeName1,
+                ["PropertyTypeName2"] = value.PropertyTypeName2
+            };
+            Dictionary<string, object> fields = new()
+            {
+                ["SingleField1"] = value.SingleField1,
+                ["SingleField2"] = value.SingleField2
+            };
+            WriteKeyValue(writer, options, value, "prop-map", inlineFields, fields);
+            writer.WriteEndObject();
+        }
+    }
+    #endregion
 }
