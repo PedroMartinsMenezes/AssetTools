@@ -50,18 +50,6 @@ namespace AssetTool
                 AssetPackage asset = await ToStreamThenToObjectAsync(self);
                 bool success = await asset.MoveAsync(transfer, context);
 
-                if (transfer.AppConfig.DebugSaveJson)
-                {
-                    (string json, string path) = (null, null);
-                    lock (_lock)
-                    {
-                        json = JsonSerializer.Serialize(self, DefaultOptions);
-                        path = transfer.GlobalObjects.FileName.GetTempJsonPath();
-                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    }
-                    await File.WriteAllTextAsync(path, json);
-                }
-
                 if (transfer.AppConfig.DebugSaveUasset)
                 {
                     string path = null;

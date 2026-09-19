@@ -12,8 +12,9 @@ namespace AssetTool
         {
             var AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
             AssetConverter.AppConfig = AppConfig;
-            AssetConverter.AppConfig.DebugSaveJson = args.Contains("-DebugSaveJson");
             AssetConverter.AppConfig.DebugCheckMember = args.Contains("-DebugCheckMember");
+            AssetConverter.AppConfig.DebugSaveJson = args.Contains("-DebugSaveJson");
+            AssetConverter.AppConfig.DebugIgnoreFooterWhenSavingJson = args.Contains("-DebugIgnoreFooterWhenSavingJson");
 
             Stopwatch stopwatch = Stopwatch.StartNew();
             var cultureInfo = CultureInfo.InvariantCulture;

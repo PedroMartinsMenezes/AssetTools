@@ -12,6 +12,9 @@
         /// Save the JSON file from UASSET
         public bool DebugSaveJson { get; set; }
 
+        /// Do not save the Footer byte array
+        public bool DebugIgnoreFooterWhenSavingJson { get; set; }
+
         /// Save the UASSET file from JSON
         public bool DebugSaveUasset { get; set; }
 

@@ -89,16 +89,14 @@ namespace AssetTool
                     Console.WriteLine($"Version is too old: {InAssetPath}");
                     return true;
                 }
-                if (AppConfig.DebugSaveJson)
+                if (!success && AppConfig.DebugSaveJson)
                 {
-                    (string json, string path) = (null, null);
-                    json = asset.ToJson();
-                    path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
-                    if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    File.WriteAllText(path, json);
+                    SaveAssetToJsonFile(asset, transferReader);
                 }
                 if (!success)
+                {
                     break;
+                }
                 #endregion
 
                 #region Write Output
@@ -106,7 +104,15 @@ namespace AssetTool
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").GetAwaiter().GetResult();
-                if (!success) break;
+
+                if (AppConfig.DebugSaveJson)
+                {
+                    SaveAssetToJsonFile(asset, transferReader);
+                }
+                if (!success)
+                {
+                    break;
+                }
                 #endregion
 
                 #region Compare Output
@@ -149,6 +155,22 @@ namespace AssetTool
             }
 
             return success;
+        }
+
+        private static void SaveAssetToJsonFile(AssetPackage asset, Transfer transferReader)
+        {
+            (string json, string path) = (null, null);
+
+            FooterData footer = asset.Footer;
+            if (AppConfig.DebugIgnoreFooterWhenSavingJson)
+                asset.Footer = null;
+
+            json = asset.ToJson();
+            asset.Footer = footer;
+
+            path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
+            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
+            File.WriteAllText(path, json);
         }
 
         #region RunUassetToJson
