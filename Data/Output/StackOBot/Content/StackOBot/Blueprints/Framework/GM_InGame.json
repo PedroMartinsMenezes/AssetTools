@@ -1845,32 +1845,24 @@
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Objective Tracker",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Objective Tracker",
-              "Category": "Gameplay",
-              "MultiLine": "true"
-            },
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(24) Value(ImportIndex[-102] ST_Objective) 'Objective Tracker'": ""
+            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) 'Objective Tracker'": {
+              "SingleField": {
+                "prop-struct ElementSize(24) Value(ImportIndex[-102] ST_Objective) 'Objective Tracker'": ""
+              },
+              "MetaDataMap": {
+                "DisplayName": "Objective Tracker",
+                "Category": "Gameplay",
+                "MultiLine": "true"
+              }
             }
           },
           {
-            "__type": "FMulticastInlineDelegateProperty",
-            "NamePrivate": "PlayerRespawned",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Player Respawned",
-              "Category": "Default"
-            },
-            "ElementSize": 24,
-            "PropertyValuePtr": 17
+            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(17) 'PlayerRespawned'": {
+              "MetaDataMap": {
+                "DisplayName": "Player Respawned",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -2211,13 +2203,10 @@
             "prop-object Value(ImportIndex[-28] Actor) 'K2Node_Event_Trigger_Ref\"1'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-7] BP_SpawnPad_C) 'CallFunc_GetAllActorsOfClassWithTag_OutActors'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetAllActorsOfClassWithTag_OutActors'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-7] BP_SpawnPad_C) 'CallFunc_GetAllActorsOfClassWithTag_OutActors'": ""
+              }
             }
           },
           {
@@ -2269,13 +2258,10 @@
             "prop-object Value(ImportIndex[-28] Actor) 'K2Node_Event_Trigger_Ref'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-46] LevelSequenceActor) 'CallFunc_GetAllActorsOfClassWithTag_OutActors\"1'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetAllActorsOfClassWithTag_OutActors\"1'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-46] LevelSequenceActor) 'CallFunc_GetAllActorsOfClassWithTag_OutActors\"1'": ""
+              }
             }
           },
           {

@@ -1269,28 +1269,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FEnumProperty",
-            "NamePrivate": "Formatting",
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "Value": 4294967271,
-            "PropertyTypeName": "ByteProperty",
-            "SingleField": {
-              "prop-byte Value(0) 'UnderlyingType'": ""
-            }
+            "prop-enum PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967271) PropertyTypeName(ByteProperty) 'Formatting'": ""
           },
           {
-            "__type": "FTextProperty",
-            "TypeName": "TextProperty",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Parm, CPF_OutParm, CPF_ReturnParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-text PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) ElementSize(16) 'ReturnValue'": ""
           },
           {
             "prop-struct ElementSize(72) Value(ImportIndex[-45] FormatArgumentData) 'K2Node_MakeStruct_FormatArgumentData'": ""
@@ -1302,28 +1284,14 @@
             "prop-struct ElementSize(72) Value(ImportIndex[-45] FormatArgumentData) 'K2Node_MakeStruct_FormatArgumentData\"1'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "K2Node_MakeArray_Array",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(72) Value(ImportIndex[-45] FormatArgumentData) 'K2Node_MakeArray_Array'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'K2Node_MakeArray_Array'": {
+              "SingleField": {
+                "prop-struct ElementSize(72) Value(ImportIndex[-45] FormatArgumentData) 'K2Node_MakeArray_Array'": ""
+              }
             }
           },
           {
-            "__type": "FTextProperty",
-            "TypeName": "TextProperty",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Format_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-text ElementSize(16) 'CallFunc_Format_ReturnValue'": ""
           }
         ],
         "FunctionFlags": 1288177664,

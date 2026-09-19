@@ -1414,18 +1414,7 @@
             "TypeName": "SetProperty",
             "PropertyTypeName": "StrProperty",
             "Field": {
-              "__type": "FStrProperty",
-              "TypeName": "StrProperty",
-              "ArrayDim": 1,
-              "ElementSize": 16,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "Temp_string_Variable",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
+              "prop-str ElementSize(16) 'Temp_string_Variable'": ""
             },
             "NumElementsToRemove": 0,
             "Num": 0,
@@ -1467,36 +1456,27 @@
             "prop-object Value(ImportIndex[-30] PCGPointData) 'CallFunc_PointLoop_OutData'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_Set_ToArray_Result",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "NameProperty",
-            "SingleField": {
-              "prop-name 'CallFunc_Set_ToArray_Result'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(NameProperty) 'CallFunc_Set_ToArray_Result'": {
+              "SingleField": {
+                "prop-name 'CallFunc_Set_ToArray_Result'": ""
+              }
             }
           },
           {
             "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_MakeTaggedData_ReturnValue'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "K2Node_MakeArray_Array",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'K2Node_MakeArray_Array'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'K2Node_MakeArray_Array'": {
+              "SingleField": {
+                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'K2Node_MakeArray_Array'": ""
+              }
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetInputsByPinLabel_ReturnValue",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'CallFunc_GetInputsByPinLabel_ReturnValue'": {
+              "SingleField": {
+                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue'": ""
+              }
             }
           },
           {
@@ -1510,18 +1490,7 @@
             "TypeName": "SetProperty",
             "PropertyTypeName": "StrProperty",
             "Field": {
-              "__type": "FStrProperty",
-              "TypeName": "StrProperty",
-              "ArrayDim": 1,
-              "ElementSize": 16,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "CallFunc_BreakTaggedData_Tags",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
+              "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags'": ""
             },
             "NumElementsToRemove": 0,
             "Num": 0,
@@ -1549,13 +1518,10 @@
             "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetInputsByPinLabel_ReturnValue\"1",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue\"1'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'CallFunc_GetInputsByPinLabel_ReturnValue\"1'": {
+              "SingleField": {
+                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue\"1'": ""
+              }
             }
           },
           {
@@ -1566,18 +1532,7 @@
             "TypeName": "SetProperty",
             "PropertyTypeName": "StrProperty",
             "Field": {
-              "__type": "FStrProperty",
-              "TypeName": "StrProperty",
-              "ArrayDim": 1,
-              "ElementSize": 16,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "CallFunc_BreakTaggedData_Tags\"1",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
+              "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags\"1'": ""
             },
             "NumElementsToRemove": 0,
             "Num": 0,

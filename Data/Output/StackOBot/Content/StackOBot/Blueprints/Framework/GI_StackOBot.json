@@ -2484,34 +2484,21 @@
             "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-94] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FMulticastInlineDelegateProperty",
-            "NamePrivate": "OnCoinsUpdated",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "On Coins Updated",
-              "Category": "Default",
-              "MultiLine": "true"
-            },
-            "ElementSize": 24,
-            "PropertyValuePtr": 38
+            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(38) 'OnCoinsUpdated'": {
+              "MetaDataMap": {
+                "DisplayName": "On Coins Updated",
+                "Category": "Default",
+                "MultiLine": "true"
+              }
+            }
           },
           {
-            "__type": "FStrProperty",
-            "TypeName": "StrProperty",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "SaveGameSlotName",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Save Game Slot Name",
-              "Category": "Default",
-              "MultiLine": "true"
+            "prop-str PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) 'SaveGameSlotName'": {
+              "MetaDataMap": {
+                "DisplayName": "Save Game Slot Name",
+                "Category": "Default",
+                "MultiLine": "true"
+              }
             }
           },
           {
@@ -2533,16 +2520,12 @@
             }
           },
           {
-            "__type": "FMulticastInlineDelegateProperty",
-            "NamePrivate": "OnObjectiveCompleted",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "On Objective Completed",
-              "Category": "Default"
-            },
-            "ElementSize": 24,
-            "PropertyValuePtr": 39
+            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(39) 'OnObjectiveCompleted'": {
+              "MetaDataMap": {
+                "DisplayName": "On Objective Completed",
+                "Category": "Default"
+              }
+            }
           },
           {
             "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Music Playing'": {
@@ -3390,18 +3373,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStrProperty",
-            "TypeName": "StrProperty",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetCurrentLevelName_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-str ElementSize(16) 'CallFunc_GetCurrentLevelName_ReturnValue'": ""
           },
           {
             "prop-object Value(ImportIndex[-5] LevelSaveObject_C) 'CallFunc_CreateSaveGameObject_ReturnValue'": ""
@@ -3723,18 +3695,7 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FStrProperty",
-            "TypeName": "StrProperty",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "LevelName",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-str PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(16) 'LevelName'": ""
           },
           {
             "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Success'": ""

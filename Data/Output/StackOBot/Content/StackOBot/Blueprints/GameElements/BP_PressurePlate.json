@@ -1784,18 +1784,14 @@
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Triggerables",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Triggerables",
-              "Category": "Default"
-            },
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-23] Actor) 'Triggerables'": ""
+            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) 'Triggerables'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-23] Actor) 'Triggerables'": ""
+              },
+              "MetaDataMap": {
+                "DisplayName": "Triggerables",
+                "Category": "Default"
+              }
             }
           },
           {
@@ -2318,13 +2314,10 @@
             "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-90] HitResult) 'CallFunc_K2_SetRelativeLocation_SweepHitResult'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetOverlappingActors_OverlappingActors",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-23] Actor) 'CallFunc_GetOverlappingActors_OverlappingActors'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetOverlappingActors_OverlappingActors'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-23] Actor) 'CallFunc_GetOverlappingActors_OverlappingActors'": ""
+              }
             }
           },
           {
@@ -2513,13 +2506,10 @@
             "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CallFunc_GetComponentsByInterface_ReturnValue",
-            "PropertyFlags": "CPF_ReferenceParm, CPF_ContainsInstancedReference",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) 'CallFunc_GetComponentsByInterface_ReturnValue'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetComponentsByInterface_ReturnValue'": {
+              "SingleField": {
+                "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) 'CallFunc_GetComponentsByInterface_ReturnValue'": ""
+              }
             }
           },
           {

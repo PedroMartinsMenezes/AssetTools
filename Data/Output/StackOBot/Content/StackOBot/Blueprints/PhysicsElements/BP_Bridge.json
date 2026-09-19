@@ -1901,18 +1901,14 @@
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Mesh References",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_ContainsInstancedReference",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Mesh References",
-              "Category": "Default"
-            },
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-35] StaticMeshComponent) 'Mesh References'": ""
+            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_ContainsInstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) 'Mesh References'": {
+              "SingleField": {
+                "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-35] StaticMeshComponent) 'Mesh References'": ""
+              },
+              "MetaDataMap": {
+                "DisplayName": "Mesh References",
+                "Category": "Default"
+              }
             }
           },
           {

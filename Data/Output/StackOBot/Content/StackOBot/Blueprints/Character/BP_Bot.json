@@ -5756,19 +5756,15 @@
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Materials",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Materials",
-              "Category": "My Character",
-              "MultiLine": "true"
-            },
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-57] MaterialInstanceDynamic) 'Materials'": ""
+            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) 'Materials'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-57] MaterialInstanceDynamic) 'Materials'": ""
+              },
+              "MetaDataMap": {
+                "DisplayName": "Materials",
+                "Category": "My Character",
+                "MultiLine": "true"
+              }
             }
           },
           {
@@ -7922,13 +7918,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Temp_object_Variable",
-            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-36] Actor) 'Temp_object_Variable'": ""
+            "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'Temp_object_Variable'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-36] Actor) 'Temp_object_Variable'": ""
+              }
             }
           },
           {
@@ -8735,13 +8728,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "Temp_object_Variable",
-            "PropertyFlags": "CPF_ConstParm, CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "ObjectProperty",
-            "SingleField": {
-              "prop-object Value(ImportIndex[-36] Actor) 'Temp_object_Variable'": ""
+            "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'Temp_object_Variable'": {
+              "SingleField": {
+                "prop-object Value(ImportIndex[-36] Actor) 'Temp_object_Variable'": ""
+              }
             }
           },
           {

@@ -2593,16 +2593,12 @@
             }
           },
           {
-            "__type": "FMulticastInlineDelegateProperty",
-            "NamePrivate": "Set Active",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Set Active",
-              "Category": "Default"
-            },
-            "ElementSize": 24,
-            "PropertyValuePtr": 38
+            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(38) 'Set Active'": {
+              "MetaDataMap": {
+                "DisplayName": "Set Active",
+                "Category": "Default"
+              }
+            }
           }
         ],
         "FuncMap": {
@@ -4074,23 +4070,17 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "K2Node_MakeArray_Array",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "NameProperty",
-            "SingleField": {
-              "prop-name 'K2Node_MakeArray_Array'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(NameProperty) 'K2Node_MakeArray_Array'": {
+              "SingleField": {
+                "prop-name 'K2Node_MakeArray_Array'": ""
+              }
             }
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "K2Node_MakeArray_Array\"1",
-            "PropertyFlags": "CPF_ReferenceParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "NameProperty",
-            "SingleField": {
-              "prop-name 'K2Node_MakeArray_Array\"1'": ""
+            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(NameProperty) 'K2Node_MakeArray_Array\"1'": {
+              "SingleField": {
+                "prop-name 'K2Node_MakeArray_Array\"1'": ""
+              }
             }
           }
         ],

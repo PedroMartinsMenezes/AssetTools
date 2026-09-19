@@ -639,19 +639,15 @@
             "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-25] PointerToUberGraphFrame) 'UberGraphFrame'": ""
           },
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CollectablePickups",
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "MetaDataMap": {
-              "DisplayName": "Collectable Pickups",
-              "Category": "Default",
-              "MultiLine": "true"
-            },
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
+            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) 'CollectablePickups'": {
+              "SingleField": {
+                "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
+              },
+              "MetaDataMap": {
+                "DisplayName": "Collectable Pickups",
+                "Category": "Default",
+                "MultiLine": "true"
+              }
             }
           }
         ],
@@ -910,13 +906,10 @@
         "ChildArray": [],
         "ChildProperties": [
           {
-            "__type": "FArrayProperty",
-            "NamePrivate": "CollectablePickups",
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "ElementSize": 16,
-            "PropertyTypeName": "StructProperty",
-            "SingleField": {
-              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
+            "prop-array PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(16) PropertyTypeName(StructProperty) 'CollectablePickups'": {
+              "SingleField": {
+                "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
+              }
             }
           }
         ],
