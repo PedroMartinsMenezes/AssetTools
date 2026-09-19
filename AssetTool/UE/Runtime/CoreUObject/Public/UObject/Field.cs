@@ -75,43 +75,15 @@ namespace AssetTool
                 return typeName switch
                 {
                     nameof(FArrayProperty) => new FArrayPropertySerializer().Read(root, options),
-                    //nameof(FBoolProperty) => new FBoolPropertySerializer().Read(root, options),
-                    //nameof(FByteProperty) => new FBytePropertySerializer().Read(root, options),
-                    //nameof(FClassProperty) => new FClassPropertySerializer().Read(root, options),
-                    //nameof(FClassPtrProperty) => new FClassPtrPropertySerializer().Read(root, options),
-                    //nameof(FDelegateProperty) => new FDelegatePropertySerializer().Read(root, options),
-                    //nameof(FDoubleProperty) => new FDoublePropertySerializer().Read(root, options),
-                    nameof(FEnumProperty) => new FEnumPropertySerializer().Read(root, options),
-                    //nameof(FFloatProperty) => new FFloatPropertySerializer().Read(root, options),
-                    //nameof(FInt16Property) => new FInt16PropertySerializer().Read(root, options),
-                    //nameof(FInt64Property) => new FInt64PropertySerializer().Read(root, options),
-                    //nameof(FInt8Property) => new FInt8PropertySerializer().Read(root, options),
-                    //nameof(FInterfaceProperty) => new FInterfacePropertySerializer().Read(root, options),
-                    //nameof(FIntProperty) => new FIntPropertySerializer().Read(root, options),
-                    //nameof(FMulticastInlineDelegateProperty) => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
-                    //nameof(FObjectProperty) => new FObjectPropertySerializer().Read(root, options),
-                    //nameof(FStructProperty) => new FStructPropertySerializer().Read(root, options),
-                    //nameof(FUInt16Property) => new FUInt16PropertySerializer().Read(root, options),
-                    //nameof(FUInt32Property) => new FUInt32PropertySerializer().Read(root, options),
-                    //nameof(FUInt64Property) => new FUInt64PropertySerializer().Read(root, options),
-
                     nameof(FFieldPathProperty) => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
-                    //nameof(FLazyObjectProperty) => JsonSerializer.Deserialize<FLazyObjectProperty>(root.GetRawText(), options)!,
                     nameof(FMapProperty) => JsonSerializer.Deserialize<FMapProperty>(root.GetRawText(), options)!,
-                    //nameof(FMulticastDelegateProperty) => JsonSerializer.Deserialize<FMulticastDelegateProperty>(root.GetRawText(), options)!,
                     nameof(FMulticastSparseDelegateProperty) => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
-                    //nameof(FNameProperty) => JsonSerializer.Deserialize<FNameProperty>(root.GetRawText(), options)!,
                     nameof(FNumericProperty) => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
                     nameof(FObjectPropertyBase) => JsonSerializer.Deserialize<FObjectPropertyBase>(root.GetRawText(), options)!,
                     nameof(FObjectPtrProperty) => JsonSerializer.Deserialize<FObjectPtrProperty>(root.GetRawText(), options)!,
                     nameof(FOptionalProperty) => JsonSerializer.Deserialize<FOptionalProperty>(root.GetRawText(), options)!,
                     nameof(FProperty) => JsonSerializer.Deserialize<FProperty>(root.GetRawText(), options)!,
                     nameof(FSetProperty) => JsonSerializer.Deserialize<FSetProperty>(root.GetRawText(), options)!,
-                    //nameof(FSoftClassProperty) => JsonSerializer.Deserialize<FSoftClassProperty>(root.GetRawText(), options)!,
-                    //nameof(FSoftObjectProperty) => JsonSerializer.Deserialize<FSoftObjectProperty>(root.GetRawText(), options)!,
-                    //nameof(FStrProperty) => JsonSerializer.Deserialize<FStrProperty>(root.GetRawText(), options)!,
-                    //nameof(FTextProperty) => JsonSerializer.Deserialize<FTextProperty>(root.GetRawText(), options)!,
-                    nameof(FWeakObjectProperty) => JsonSerializer.Deserialize<FWeakObjectProperty>(root.GetRawText(), options)!,
                     _ => throw new JsonException($"Unknown field type '{typeName}'.")
                 };
             }
@@ -127,6 +99,7 @@ namespace AssetTool
                     "prop-classptr" => new FClassPtrPropertySerializer().Read(root, options),
                     "prop-delegate" => new FDelegatePropertySerializer().Read(root, options),
                     "prop-double" => new FDoublePropertySerializer().Read(root, options),
+                    "prop-enum" => new FEnumPropertySerializer().Read(root, options),
                     "prop-float" => new FFloatPropertySerializer().Read(root, options),
                     "prop-int16" => new FInt16PropertySerializer().Read(root, options),
                     "prop-int64" => new FInt64PropertySerializer().Read(root, options),
@@ -145,6 +118,7 @@ namespace AssetTool
                     "prop-uint16" => new FUInt16PropertySerializer().Read(root, options),
                     "prop-uint32" => new FUInt32PropertySerializer().Read(root, options),
                     "prop-uint64" => new FUInt64PropertySerializer().Read(root, options),
+                    "prop-weakobject" => new FWeakObjectPropertySerializer().Read(root, options),
                     "prop-multicast-inline-delegate" => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
                     _ => throw new JsonException($"Unknown field key '{key}'.")
                 };
@@ -156,7 +130,6 @@ namespace AssetTool
             switch (value)
             {
                 case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
-                //
                 case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
                 case FByteProperty byteProperty: new FBytePropertySerializer().Write(writer, byteProperty, options); return;
                 case FClassPtrProperty classPtrProperty: new FClassPtrPropertySerializer().Write(writer, classPtrProperty, options); return;
@@ -183,6 +156,7 @@ namespace AssetTool
                 case FUInt16Property uint16Property: new FUInt16PropertySerializer().Write(writer, uint16Property, options); return;
                 case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
                 case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
+                case FWeakObjectProperty weakObjectProperty: new FWeakObjectPropertySerializer().Write(writer, weakObjectProperty, options); return;
 
                 default:
                     writer.WriteStartObject();

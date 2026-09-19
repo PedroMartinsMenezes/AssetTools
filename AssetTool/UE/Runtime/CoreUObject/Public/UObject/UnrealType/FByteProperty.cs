@@ -45,9 +45,10 @@ namespace AssetTool
         {
             writer.WriteStartObject();
 
-            Dictionary<string, object> inlineFields = new();
-
-            inlineFields.Add("Value", value.Value);
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["Value"] = value.Value
+            };
 
             WriteKeyValue(writer, options, value, "prop-byte", inlineFields);
 

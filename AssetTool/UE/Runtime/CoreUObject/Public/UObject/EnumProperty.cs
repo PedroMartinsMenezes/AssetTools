@@ -40,22 +40,36 @@ namespace AssetTool
     {
         public FEnumProperty Read(JsonElement root, JsonSerializerOptions options)
         {
-            var obj = ReadBaseProperties(root);
+            string key = root.EnumerateObject().First().Name;
+            JsonElement value = root.EnumerateObject().First().Value;
+            var obj = ReadKeyValue(key, value);
             obj.ElementSize = 1;
-            obj.Value = root.GetProperty("Value").GetUInt32();
-            obj.PropertyTypeName = new FName(root.GetProperty("PropertyTypeName").GetString());
-            obj.SingleField = JsonSerializer.Deserialize<FField>(root.GetProperty("SingleField").GetRawText(), options);
+            obj.Value = key.GetNonNull("Value({0})", x => uint.Parse(x), (uint)0);
+            obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
+            if (value.TryGetProperty("SingleField", out var singleField))
+            {
+                obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
+            }
             return obj;
         }
 
         public void Write(Utf8JsonWriter writer, FEnumProperty value, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
-            WriteBaseProperties(writer, value);
-            writer.WriteNumber("Value", value.Value);
-            writer.WriteString("PropertyTypeName", value.PropertyTypeName.ToString());
-            writer.WritePropertyName("SingleField");
-            JsonSerializer.Serialize(writer, value.SingleField, options);
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["Value"] = value.Value,
+                ["PropertyTypeName"] = value.PropertyTypeName
+            };
+            Dictionary<string, object> fields = null;
+            if (value.SingleField is { })
+            {
+                fields = new()
+                {
+                    ["SingleField"] = value.SingleField,
+                };
+            }
+            WriteKeyValue(writer, options, value, "prop-enum", inlineFields, fields);
             writer.WriteEndObject();
         }
     }

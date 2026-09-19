@@ -134,7 +134,14 @@ namespace AssetTool
             {
                 foreach (var pair in inlineFields)
                 {
-                    builder.Append($"{pair.Key}({pair.Value}) ");
+                    if (pair.Value is { })
+                    {
+                        builder.Append($"{pair.Key}({pair.Value}) ");
+                    }
+                    else
+                    {
+                        builder.Append($"{pair.Key} ");
+                    }
                 }
             }
 
@@ -157,7 +164,22 @@ namespace AssetTool
             else
             {
                 writer.WritePropertyName(key);
-                JsonSerializer.Serialize(writer, fields, options);
+
+                writer.WriteStartObject();
+                foreach (var pair in fields)
+                {
+                    if (pair.Value is FField field)
+                    {
+                        writer.WritePropertyName(pair.Key);
+                        JsonSerializer.Serialize(writer, field, options);
+                    }
+                    else
+                    {
+                        writer.WritePropertyName(pair.Key);
+                        JsonSerializer.Serialize(writer, pair.Value, options);
+                    }
+                }
+                writer.WriteEndObject();
             }
         }
     }
