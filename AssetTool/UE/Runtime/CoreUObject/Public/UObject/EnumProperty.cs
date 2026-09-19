@@ -46,10 +46,18 @@ namespace AssetTool
             obj.ElementSize = 1;
             obj.Value = key.GetNonNull("Value({0})", x => uint.Parse(x), (uint)0);
             obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
-            if (value.TryGetProperty("SingleField", out var singleField))
+            obj.SingleField = new FByteProperty
             {
-                obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
-            }
+                ArrayDim = 1,
+                PropertyFlags = EPropertyFlags.CPF_None,
+                RepIndex = 0,
+                RepNotifyFunc = new FName("None"),
+                BlueprintReplicationCondition = 0,
+                FlagsPrivate = EObjectFlags.RF_Public,
+                HasMetaData = false,
+                ElementSize = 1,
+                NamePrivate = new FName("UnderlyingType")
+            };
             return obj;
         }
 
@@ -61,15 +69,7 @@ namespace AssetTool
                 ["Value"] = value.Value,
                 ["PropertyTypeName"] = value.PropertyTypeName
             };
-            Dictionary<string, object> fields = null;
-            if (value.SingleField is { })
-            {
-                fields = new()
-                {
-                    ["SingleField"] = value.SingleField,
-                };
-            }
-            WriteKeyValue(writer, options, value, "prop-enum", inlineFields, fields);
+            WriteKeyValue(writer, options, value, "prop-enum", inlineFields);
             writer.WriteEndObject();
         }
     }
