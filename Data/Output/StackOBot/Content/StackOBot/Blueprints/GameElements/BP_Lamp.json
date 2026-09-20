@@ -1152,53 +1152,16 @@
           "ExportIndex[13] ImportIndex[-13]: Function",
           "ExportIndex[14] ImportIndex[-13]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-45] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-2] BPC_InteractionHandler_C) 'BPC_InteractionHandler'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] StaticMeshComponent) 'StaticMesh'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] StaticMeshComponent) 'LampMesh'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-float FlagsPrivate(RF_Public, RF_LoadCompleted) 'Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB'": ""
-          },
-          {
-            "prop-byte FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967265) 'Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] TimelineComponent) 'Timeline'": {
-              "MetaDataMap": {
-                "Category": "BP_Lamp"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Default State On'": {
-              "MetaDataMap": {
-                "DisplayName": "Default State On",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-45] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-2] BPC_InteractionHandler_C) MetaDataMap( Category(•Default•) ) NamePrivate(•BPC_InteractionHandler•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•StaticMesh•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•LampMesh•) ": "",
+          "prop-float FlagsPrivate(RF_Public, RF_LoadCompleted) NamePrivate(•Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB•) ": "",
+          "prop-byte FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967265) NamePrivate(•Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] TimelineComponent) MetaDataMap( Category(•BP_Lamp•) ) NamePrivate(•Timeline•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default State On•) Category(•Default•) ) NamePrivate(•Default State On•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Lamp": 14,
           "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature": 13,
@@ -1594,7 +1557,7 @@
           "ScriptData": "XlpeRg4AAAAd1wEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1618,7 +1581,7 @@
           "ScriptData": "XlpeRg4AAAAd3gEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1642,20 +1605,12 @@
           "ScriptData": "TgABAAAAVwAAAAAAAAAOAAAAXlpeGQEBAAAArQAAAAAAAAACAAAAGAAAAAAAAAAAAAAAHN7///8dAAAAAAEBAAAAugAAAAAAAAACAAAAFloPAAAAAAAAAAAAAQAAAC4AAAAAAAAADgAAADgEAQEAAAC6AAAAAAAAAAIAAAAPAQAAAC8AAAAAAAAADgAAAAABAAAALwAAAAAAAAAOAAAAaN////8AAQAAAC4AAAAAAAAADgAAADcAAAAAAAA5QBZeDwAAAAAAAAAAAAEAAAAwAAAAAAAAAA4AAAA4AwABAAAALwAAAAAAAAAOAAAAGQEBAAAAbwAAAAAAAAACAAAAGAAAAAAAAAAAAAAAHN7///8dAAAAAAABAAAAMAAAAAAAAAAOAAAAFloG5QEAAF4ZAQEAAACtAAAAAAAAAAIAAAAMAAAAAAAAAAAAAAAc3f///ycoFlpeGQEBAAAAtgAAAAAAAAACAAAACgAAAAAAAAAAAAAAHNv///8WWgblAQAAXhkBAQAAALYAAAAAAAAAAgAAAAoAAAAAAAAAAAAAABzc////FloG5QEAAF5aBtkAAABeRbIAAAAAAAAAFloG5QEAAF5FsQAAAAAAAAAWWgblAQAAXlpeGQEBAAAArQAAAAAAAAACAAAADAAAAAAAAAAAAAAAHN3///8oKBZaBiQBAABeWl5aB+UBAAABAQAAAEIAAAAAAAAAAgAAAFpeRbIAAAAAAAAAFloG5QEAAF5eWgblAQAAXloGUgEAAF5aBmcBAAAEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_A_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_SetCustomPrimitiveDataFloat_Value_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_A_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_SetCustomPrimitiveDataFloat_Value_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1680,7 +1635,7 @@
           "ScriptData": "XlpeRg4AAAAdpwEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1704,7 +1659,7 @@
           "ScriptData": "XlpeRg4AAAAdSwEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1728,7 +1683,7 @@
           "ScriptData": "XlpeRg4AAAAdfAEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1752,7 +1707,7 @@
           "ScriptData": "XlpeRg4AAAAd0AEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1776,7 +1731,7 @@
           "ScriptData": "XlpeRg4AAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,

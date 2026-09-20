@@ -1293,83 +1293,18 @@
           "ExportIndex[13] ImportIndex[-10]: Function",
           "ExportIndex[10] ImportIndex[-10]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-37] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] Character) 'Pawn'": {
-              "MetaDataMap": {
-                "DisplayName": "Pawn",
-                "Category": "Context"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Walk Speed While Active'": {
-              "MetaDataMap": {
-                "DisplayName": "Walk Speed While Active",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Walk Speed On Exit'": {
-              "MetaDataMap": {
-                "DisplayName": "Walk Speed on Exit",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Rotation Rate While Active'": {
-              "MetaDataMap": {
-                "DisplayName": "Rotation Rate While Active",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Rotation Rate On Exit'": {
-              "MetaDataMap": {
-                "DisplayName": "Rotation Rate on Exit",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Ground Friction While Active'": {
-              "MetaDataMap": {
-                "DisplayName": "Ground Friction While Active",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Ground Friction On Exit'": {
-              "MetaDataMap": {
-                "DisplayName": "Ground Friction on Exit",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Acceleration While Active'": {
-              "MetaDataMap": {
-                "DisplayName": "Acceleration While Active",
-                "Category": "Params"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Acceleration On Exit'": {
-              "MetaDataMap": {
-                "DisplayName": "Acceleration on Exit",
-                "Category": "Params"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-37] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] Character) MetaDataMap( DisplayName(•Pawn•) Category(•Context•) ) NamePrivate(•Pawn•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Walk Speed While Active•) Category(•Params•) ) NamePrivate(•Walk Speed While Active•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Walk Speed on Exit•) Category(•Params•) ) NamePrivate(•Walk Speed On Exit•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Rotation Rate While Active•) Category(•Params•) ) NamePrivate(•Rotation Rate While Active•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Rotation Rate on Exit•) Category(•Params•) ) NamePrivate(•Rotation Rate On Exit•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Ground Friction While Active•) Category(•Params•) ) NamePrivate(•Ground Friction While Active•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Ground Friction on Exit•) Category(•Params•) ) NamePrivate(•Ground Friction On Exit•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Acceleration While Active•) Category(•Params•) ) NamePrivate(•Acceleration While Active•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Acceleration on Exit•) Category(•Params•) ) NamePrivate(•Acceleration On Exit•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_STT_SetMovementParameters": 10,
           "ReceiveLatentEnterState": 13,
@@ -1554,29 +1489,15 @@
           "ScriptData": "TgABAAAAQAAAAAAAAAAKAAAAXg8BAAAAXQAAAAAAAADx////GRkBAQAAAHcAAAAAAAAAAgAAAAkAAAABAAAAKgAAAAAAAADy////AQEAAAAqAAAAAAAAAPL///8JAAAAAQAAAF0AAAAAAAAA8f///wEBAAAAXQAAAAAAAADx////AQEAAACuAAAAAAAAAAIAAABaDwEAAAAlAAAAAgAAAAoAAAAAAQAAACUAAAACAAAACgAAAGjl////HgAAAAAeAAAAAAEBAAAAhwAAAAAAAAACAAAAFl4PAQAAAIgAAAAAAAAA8f///xkZAQEAAAB3AAAAAAAAAAIAAAAJAAAAAQAAACoAAAAAAAAA8v///wEBAAAAKgAAAAAAAADy////CQAAAAEAAACIAAAAAAAAAPH///8BAQAAAIgAAAAAAAAA8f///wABAAAAJQAAAAIAAAAKAAAAWl4PAQAAAFUAAAAAAAAA8f///xkZAQEAAAB3AAAAAAAAAAIAAAAJAAAAAQAAACoAAAAAAAAA8v///wEBAAAAKgAAAAAAAADy////CQAAAAEAAABVAAAAAAAAAPH///8BAQAAAFUAAAAAAAAA8f///wEBAAAAUwAAAAAAAAACAAAAWl4PAQAAAFwAAAAAAAAA8f///xkZAQEAAAB3AAAAAAAAAAIAAAAJAAAAAQAAACoAAAAAAAAA8v///wEBAAAAKgAAAAAAAADy////CQAAAAEAAABcAAAAAAAAAPH///8BAQAAAFwAAAAAAAAA8f///wEBAAAABgAAAAAAAAACAAAAWgZJAwAAXloUAAEAAAAkAAAAAAAAAAoAAABo5v///0IBAAAAKQAAAAAAAADY////AAEAAABYAAAAAgAAAAoAAAAkARZeWgdJAwAAAAEAAAAkAAAAAAAAAAoAAABaBgoAAABeDwEAAABcAAAAAAAAAPH///8ZGQEBAAAAdwAAAAAAAAACAAAACQAAAAEAAAAqAAAAAAAAAPL///8BAQAAACoAAAAAAAAA8v///wkAAAABAAAAXAAAAAAAAADx////AQEAAABcAAAAAAAAAPH///8BAQAAAAcAAAAAAAAAAgAAAFoGSQMAAF4PAQAAAFUAAAAAAAAA8f///xkZAQEAAAB3AAAAAAAAAAIAAAAJAAAAAQAAACoAAAAAAAAA8v///wEBAAAAKgAAAAAAAADy////CQAAAAEAAABVAAAAAAAAAPH///8BAQAAAFUAAAAAAAAA8f///wEBAAAAVAAAAAAAAAACAAAAWgaiAQAADwEAAAAlAAAAAAAAAAoAAAAAAQAAACUAAAAAAAAACgAAAGjl////HgAAAAAeAAAAAAEBAAAAhwAAAAAAAAACAAAAFl4PAQAAAIgAAAAAAAAA8f///xkZAQEAAAB3AAAAAAAAAAIAAAAJAAAAAQAAACoAAAAAAAAA8v///wEBAAAAKgAAAAAAAADy////CQAAAAEAAACIAAAAAAAAAPH///8BAQAAAIgAAAAAAAAA8f///wABAAAAJQAAAAAAAAAKAAAAWgbwAQAAXg8BAAAAXQAAAAAAAADx////GRkBAQAAAHcAAAAAAAAAAgAAAAkAAAABAAAAKgAAAAAAAADy////AQEAAAAqAAAAAAAAAPL///8JAAAAAQAAAF0AAAAAAAAA8f///wEBAAAAXQAAAAAAAADx////AQEAAACuAAAAAAAAAAIAAABaBj4CAABeWhQAAQAAACQAAAACAAAACgAAAGjm////QgEAAAApAAAAAAAAANj///8AAQAAAFgAAAAAAAAACgAAACQBFl5aB0kDAAAAAQAAACQAAAACAAAACgAAAFoGuwIAAAQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-36] Rotator) 'CallFunc_MakeRotator_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-36] Rotator) 'CallFunc_MakeRotator_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) 'K2Node_Event_Transition\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) 'K2Node_Event_Transition'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue\"1'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-36] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-36] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue\"1•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) NamePrivate(•K2Node_Event_Transition\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_ByteByte_ReturnValue•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) NamePrivate(•K2Node_Event_Transition•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_ByteByte_ReturnValue\"1•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1601,11 +1522,9 @@
           "ScriptData": "XlpeZAEAAABYAAAAAgAAAAoAAABIAQAAAKMAAAAAAAAACwAAAFpeRgoAAAAdYgEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) 'Transition'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) NamePrivate(•Transition•) ": ""
+        },
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1630,14 +1549,10 @@
           "ScriptData": "XlpeDwEAAACFAAAAAAAAAAwAAABIAQAAAIUAAAAAAAAADAAAACkBH1NldCBDaGFyYWN0ZXIgTW92ZW1lbnQgcGFyYW1ldGVycyB3aGlsZSB0aGUgc3RhdGUgaXMgYWN0aXZlLgAfQkY5Q0U3RUI0OUFBRkQ0MjU1ODU5QTkxQUE0QkQ2RUIAHwBaBEgBAAAAhQAAAAAAAAAMAAAAUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-enum PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967274) PropertyTypeName(ByteProperty) 'Formatting'": ""
-          },
-          {
-            "prop-text PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) ElementSize(16) 'ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-enum PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967274) PropertyTypeName(ByteProperty) NamePrivate(•Formatting•) ": "",
+          "prop-text PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) ElementSize(16) NamePrivate(•ReturnValue•) ": ""
+        },
         "FunctionFlags": 1279789056,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1662,11 +1577,9 @@
           "ScriptData": "XlpeZAEAAABYAAAAAAAAAAoAAABIAQAAAKMAAAAAAAAADQAAAFpeRgoAAAAdCQMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) 'Transition'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-40] StateTreeTransitionResult) NamePrivate(•Transition•) ": ""
+        },
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,

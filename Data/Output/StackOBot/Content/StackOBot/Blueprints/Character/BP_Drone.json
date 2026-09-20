@@ -975,32 +975,12 @@
           "ExportIndex[10] ImportIndex[-6]: Function",
           "ExportIndex[9] ImportIndex[-6]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-43] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-11] CameraComponent) 'Camera'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] FloatingPawnMovement) 'FloatingPawnMovement'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-16] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-43] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-11] CameraComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Camera•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] FloatingPawnMovement) MetaDataMap( Category(•Default•) ) NamePrivate(•FloatingPawnMovement•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-16] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Drone": 9,
           "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent\"0": 10,
@@ -1152,116 +1132,44 @@
           "ScriptData": "TgABAAAAUQAAAAAAAAAJAAAAXloPAQAAAC8AAAAAAAAACQAAAAABAAAALwAAAAAAAAAJAAAAaOP///8AAQAAAG8AAAACAAAACQAAABZeDwEAAACfAAAAAAAAAAkAAAAAAQAAAJ8AAAAAAAAACQAAAAABAAAALwAAAAAAAAAJAAAAWl4PAAAAAAAAAAAAAQAAAJ4AAAACAAAACQAAADgEAAEAAABwAAAAAgAAAAkAAAAPAQAAAJ4AAAACAAAACQAAAAABAAAAngAAAAIAAAAJAAAAAAEAAACeAAAAAgAAAAkAAABaXg8AAAAAAAAAAAABAAAAngAAAAAAAAAJAAAAOAQAAQAAAHIAAAACAAAACQAAAA8BAAAAngAAAAAAAAAJAAAAAAEAAACeAAAAAAAAAAkAAAAAAQAAAJ4AAAAAAAAACQAAAFpeXwABAAAAnQAAAAAAAAAJAAAAAAEAAABxAAAAAgAAAAkAAABaDwEAAAAxAAAAAAAAAAkAAAAAAQAAADEAAAAAAAAACQAAABzo////Fmjm////AAEAAACfAAAAAAAAAAkAAAAAAQAAACwAAAAAAAAACQAAAAABAAAALQAAAAAAAAAJAAAAFg8BAAAALgAAAAAAAAAJAAAAAAEAAAAuAAAAAAAAAAkAAABo5f///wABAAAALQAAAAAAAAAJAAAAFg8BAAAALgAAAAIAAAAJAAAAAAEAAAAuAAAAAgAAAAkAAABo5f///wABAAAALAAAAAAAAAAJAAAAFg8BAAAAMgAAAAAAAAAJAAAAAAEAAAAyAAAAAAAAAAkAAABo5P///wABAAAALgAAAAIAAAAJAAAAAAEAAAAxAAAAAAAAAAkAAAAWDwEAAAAwAAAAAAAAAAkAAAAAAQAAADAAAAAAAAAACQAAABzp////Fg8BAAAAMgAAAAIAAAAJAAAAAAEAAAAyAAAAAgAAAAkAAABo5P///wABAAAALgAAAAAAAAAJAAAAAAEAAAAwAAAAAAAAAAkAAAAWDwEAAAApAAAAAAAAAAkAAAAAAQAAACkAAAAAAAAACQAAAGjn////AAEAAAAyAAAAAgAAAAkAAAAAAQAAADIAAAAAAAAACQAAABZeGw0AAAAAAAAAAAEAAAApAAAAAAAAAAkAAAAeAACAPygWWgavAwAAXloPAQAAAC8AAAACAAAACQAAAAABAAAALwAAAAIAAAAJAAAAaOP///8AAQAAAG8AAAAAAAAACQAAABZeDwEAAACfAAAAAgAAAAkAAAAAAQAAAJ8AAAACAAAACQAAAAABAAAALwAAAAIAAAAJAAAAWl4PAAAAAAAAAAAAAQAAAJ4AAAAEAAAACQAAADgEAAEAAABwAAAAAAAAAAkAAAAPAQAAAJ4AAAAEAAAACQAAAAABAAAAngAAAAQAAAAJAAAAAAEAAACeAAAABAAAAAkAAABaXg8AAAAAAAAAAAABAAAAngAAAAMAAAAJAAAAOAQAAQAAAHIAAAAAAAAACQAAAA8BAAAAngAAAAMAAAAJAAAAAAEAAACeAAAAAwAAAAkAAAAAAQAAAJ4AAAADAAAACQAAAFpeXwABAAAAnQAAAAIAAAAJAAAAAAEAAABxAAAAAAAAAAkAAABaaOb///8AAQAAAJ8AAAACAAAACQAAAAABAAAALAAAAAIAAAAJAAAAAAEAAAAtAAAAAgAAAAkAAAAWXg8AAAAAAAAAAAABAAAAKwAAAAAAAAAJAAAAOAMAAQAAACwAAAACAAAACQAAABsMAAAAAAAAAAABAAAAKwAAAAAAAAAJAAAAFlpo5v///wABAAAAnwAAAAIAAAAJAAAAAAEAAAAsAAAAAgAAAAkAAAAAAQAAAC0AAAACAAAACQAAABZeDwAAAAAAAAAAAAEAAAAqAAAAAAAAAAkAAAA4AwABAAAALQAAAAIAAAAJAAAAGwsAAAAAAAAAAAEAAAAqAAAAAAAAAAkAAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_GetActorRightVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(32) Value(ImportIndex[-44] InputActionValue) 'K2Node_EnhancedInputActionEvent_ActionValue\"1'": ""
-          },
-          {
-            "prop-float 'K2Node_EnhancedInputActionEvent_ElapsedTime\"1'": ""
-          },
-          {
-            "prop-float 'K2Node_EnhancedInputActionEvent_TriggeredTime\"1'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-21] InputAction) 'K2Node_EnhancedInputActionEvent_SourceAction\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-21] InputAction) 'Temp_object_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) 'CallFunc_Conv_InputActionValueToAxis2D_ReturnValue'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"1'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) 'Temp_struct_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(32) Value(ImportIndex[-44] InputActionValue) 'K2Node_EnhancedInputActionEvent_ActionValue'": ""
-          },
-          {
-            "prop-float 'K2Node_EnhancedInputActionEvent_ElapsedTime'": ""
-          },
-          {
-            "prop-float 'K2Node_EnhancedInputActionEvent_TriggeredTime'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-21] InputAction) 'K2Node_EnhancedInputActionEvent_SourceAction'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector2D_X'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector2D_Y'": ""
-          },
-          {
-            "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) 'CallFunc_Conv_InputActionValueToAxis2D_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_Conv_DoubleToVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_Conv_DoubleToVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-21] InputAction) 'Temp_object_Variable\"1'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"2'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"2'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"3'": ""
-          },
-          {
-            "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) 'Temp_struct_Variable\"1'": ""
-          },
-          {
-            "prop-double 'Temp_real_Variable\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector2D_X\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector2D_Y\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_GetActorForwardVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) 'CallFunc_Add_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-float 'CallFunc_AddControllerYawInput_Val_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_AddControllerPitchInput_Val_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_GetActorRightVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(32) Value(ImportIndex[-44] InputActionValue) NamePrivate(•K2Node_EnhancedInputActionEvent_ActionValue\"1•) ": "",
+          "prop-float NamePrivate(•K2Node_EnhancedInputActionEvent_ElapsedTime\"1•) ": "",
+          "prop-float NamePrivate(•K2Node_EnhancedInputActionEvent_TriggeredTime\"1•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-21] InputAction) NamePrivate(•K2Node_EnhancedInputActionEvent_SourceAction\"1•) ": "",
+          "prop-object Value(ImportIndex[-21] InputAction) NamePrivate(•Temp_object_Variable•) ": "",
+          "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) NamePrivate(•CallFunc_Conv_InputActionValueToAxis2D_ReturnValue•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"1•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"1•) ": "",
+          "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) NamePrivate(•Temp_struct_Variable•) ": "",
+          "prop-struct ElementSize(32) Value(ImportIndex[-44] InputActionValue) NamePrivate(•K2Node_EnhancedInputActionEvent_ActionValue•) ": "",
+          "prop-float NamePrivate(•K2Node_EnhancedInputActionEvent_ElapsedTime•) ": "",
+          "prop-float NamePrivate(•K2Node_EnhancedInputActionEvent_TriggeredTime•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-21] InputAction) NamePrivate(•K2Node_EnhancedInputActionEvent_SourceAction•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector2D_X•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector2D_Y•) ": "",
+          "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) NamePrivate(•CallFunc_Conv_InputActionValueToAxis2D_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_Conv_DoubleToVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_Conv_DoubleToVector_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_Multiply_VectorVector_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-21] InputAction) NamePrivate(•Temp_object_Variable\"1•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"2•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"2•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"3•) ": "",
+          "prop-struct ElementSize(16) Value(ImportIndex[-42] Vector2D) NamePrivate(•Temp_struct_Variable\"1•) ": "",
+          "prop-double NamePrivate(•Temp_real_Variable\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector2D_X\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector2D_Y\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_GetActorForwardVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_Multiply_VectorVector_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-41] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_AddControllerYawInput_Val_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_AddControllerPitchInput_Val_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1285,20 +1193,12 @@
           "ScriptData": "XlpeZAEAAABvAAAAAAAAAAkAAAAAAQAAAAYAAAAAAAAACgAAAGQBAAAAcAAAAAAAAAAJAAAAAAEAAABLAAAAAAAAAAoAAABkAQAAAHIAAAAAAAAACQAAAAABAAAApQAAAAAAAAAKAAAAZAEAAABxAAAAAAAAAAkAAAAAAQAAAJgAAAAAAAAACgAAAFpeRgkAAAAdLAIAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-44] InputActionValue) 'ActionValue'": ""
-          },
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'ElapsedTime'": ""
-          },
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'TriggeredTime'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-21] InputAction) 'SourceAction'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-44] InputActionValue) NamePrivate(•ActionValue•) ": "",
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•ElapsedTime•) ": "",
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•TriggeredTime•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-21] InputAction) NamePrivate(•SourceAction•) ": ""
+        },
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1322,20 +1222,12 @@
           "ScriptData": "XlpeZAEAAABvAAAAAgAAAAkAAAAAAQAAAAYAAAAAAAAACwAAAGQBAAAAcAAAAAIAAAAJAAAAAAEAAABLAAAAAAAAAAsAAABkAQAAAHIAAAACAAAACQAAAAABAAAApQAAAAAAAAALAAAAZAEAAABxAAAAAgAAAAkAAAAAAQAAAJgAAAAAAAAACwAAAFpeRgkAAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-44] InputActionValue) 'ActionValue'": ""
-          },
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'ElapsedTime'": ""
-          },
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'TriggeredTime'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-21] InputAction) 'SourceAction'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(32) Value(ImportIndex[-44] InputActionValue) NamePrivate(•ActionValue•) ": "",
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•ElapsedTime•) ": "",
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•TriggeredTime•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-21] InputAction) NamePrivate(•SourceAction•) ": ""
+        },
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,

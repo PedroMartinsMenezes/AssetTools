@@ -1035,46 +1035,13 @@
           "ExportIndex[11] ImportIndex[-8]: Function",
           "ExportIndex[10] ImportIndex[-8]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] PCGComponent) 'PCG'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-17] SplineComponent) 'Spline'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Distance'": {
-              "MetaDataMap": {
-                "DisplayName": "Distance",
-                "Category": "PCG",
-                "ExposeOnSpawn": "true"
-              }
-            }
-          },
-          {
-            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(10) 'Show Coins'": {
-              "MetaDataMap": {
-                "DisplayName": "Show Coins",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] PCGComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•PCG•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-17] SplineComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Spline•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Distance•) Category(•PCG•) ExposeOnSpawn(•true•) ) NamePrivate(•Distance•) ": "",
+          "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(10) MetaDataMap( DisplayName(•Show Coins•) Category(•Default•) ) NamePrivate(•Show Coins•) ": ""
+        },
         "FuncMap": {
           "Show Coins__DelegateSignature": 10,
           "Update Primary Coin": 11,
@@ -1231,11 +1198,9 @@
           "ScriptData": "XlpeYwoAAAABAQAAAHwAAAAAAAAAAgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-10] Actor) 'DestroyedActor'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-10] Actor) NamePrivate(•DestroyedActor•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1259,7 +1224,7 @@
           "ScriptData": "XloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 202506240,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1283,14 +1248,10 @@
           "ScriptData": "XlphHAAAAAAAAAAAAQAAAFAAAAAAAAAACwAAABdeXBkAAQAAACEAAAAAAAAACwAAAAkAAAABAAAAZQAAAAAAAAD2////AQEAAABlAAAAAAAAAPb///8AAQAAAFAAAAAAAAAACwAAAFoEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-2] BP_Coin_C) 'Coin'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967267) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-2] BP_Coin_C) NamePrivate(•Coin•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967267) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

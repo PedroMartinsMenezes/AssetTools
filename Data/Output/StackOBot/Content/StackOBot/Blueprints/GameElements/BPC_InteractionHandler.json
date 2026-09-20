@@ -1448,70 +1448,20 @@
           "ExportIndex[22] ImportIndex[-16]: Function",
           "ExportIndex[21] ImportIndex[-16]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-49] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(21) 'Trigger Complete'": {
-              "MetaDataMap": {
-                "DisplayName": "Trigger Complete",
-                "Category": "Default"
-              }
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-49] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(21) MetaDataMap( DisplayName(•Trigger Complete•) Category(•Default•) ) NamePrivate(•Trigger Complete•) ": "",
+          "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(22) MetaDataMap( DisplayName(•Trigger Reverse•) Category(•Default•) ) NamePrivate(•Trigger Reverse•) ": "",
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Activation Counter•) Category(•Default•) ) NamePrivate(•Activation Counter•) ": "",
+          "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) MetaDataMap( DisplayName(•Trigger Refs•) Category(•Default•) ) NamePrivate(•Trigger Refs•) ": {
+            "SingleField": {
+              "prop-object Value(ImportIndex[-18] Actor) NamePrivate(•Trigger Refs•) ": ""
             }
           },
-          {
-            "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(22) 'Trigger Reverse'": {
-              "MetaDataMap": {
-                "DisplayName": "Trigger Reverse",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Activation Counter'": {
-              "MetaDataMap": {
-                "DisplayName": "Activation Counter",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) 'Trigger Refs'": {
-              "SingleField": {
-                "prop-object Value(ImportIndex[-18] Actor) 'Trigger Refs'": ""
-              },
-              "MetaDataMap": {
-                "DisplayName": "Trigger Refs",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Is Objective'": {
-              "MetaDataMap": {
-                "DisplayName": "Is Objective",
-                "Category": "Objective"
-              }
-            }
-          },
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Objective Index'": {
-              "MetaDataMap": {
-                "DisplayName": "Objective Index",
-                "Category": "Objective"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'Objective Payload'": {
-              "MetaDataMap": {
-                "DisplayName": "Objective Payload",
-                "Category": "Objective"
-              }
-            }
-          }
-        ],
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Is Objective•) Category(•Objective•) ) NamePrivate(•Is Objective•) ": "",
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Objective Index•) Category(•Objective•) ) NamePrivate(•Objective Index•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-50] ST_Objective) MetaDataMap( DisplayName(•Objective Payload•) Category(•Objective•) ) NamePrivate(•Objective Payload•) ": ""
+        },
         "FuncMap": {
           "Trigger Complete__DelegateSignature": 21,
           "Trigger Reverse__DelegateSignature": 22,
@@ -1830,7 +1780,7 @@
           "ScriptData": "XlpeRg4AAAAdAgQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1854,74 +1804,30 @@
           "ScriptData": "TA4EAABOAAEAAABQAAAAAAAAAA4AAABeWl5aTwEBAAAAawAAAAAAAAACAAAAWl8AAQAAADMAAAAAAAAADgAAAGji////FxZeDwAAAAAAAAAAAAEAAABtAAAAAAAAAA4AAABS/v///wABAAAAMwAAAAAAAAAOAAAADwAAAAAAAAAAAAEAAABuAAAAAAAAAA4AAAA4AgABAAAAbQAAAAAAAAAOAAAAWk8AAQAAAG4AAAAAAAAADgAAAFpeGVEAAQAAAG0AAAAAAAAADgAAACAAAAAAAAAAAAAAAEXJAAAAAAAAAAEBAAAAkgAAAAAAAAACAAAAAQEAAACTAAAAAAAAAAIAAAAWWk1eWk1eWl4PAQAAADAAAAAAAAAADgAAAAABAAAAMAAAAAAAAAAOAAAAGSDa////HAAAAAEAAAAwAAAAAAAAAA4AAAAc4f///wEBAAAAwQAAAAAAAAACAAAAAAEAAABzAAAAAgAAAA4AAAAWWg8BAAAAMQAAAAAAAAAOAAAAAAEAAAAxAAAAAAAAAA4AAAAZINr///8TAAAAAQAAADEAAAAAAAAADgAAABzg////AQEAAADBAAAAAAAAAAIAAAAWFAABAAAANAAAAAAAAAAOAAAAaN7///8AAQAAADEAAAAAAAAADgAAAAEBAAAACAAAAAAAAAACAAAAFl5aTwABAAAANAAAAAAAAAAOAAAAWl5jFQAAAAEBAAAAvgAAAAAAAAACAAAAFlpeWk8BAQAAAGsAAAAAAAAAAgAAAFpeFEIBAAAAPAAAAAAAAADO////AQEAAACTAAAAAAAAAAIAAAAnWl8AAQAAADMAAAACAAAADgAAAGji////FxZeDwAAAAAAAAAAAAEAAABtAAAAAgAAAA4AAABS/v///wABAAAAMwAAAAIAAAAOAAAADwAAAAAAAAAAAAEAAABuAAAAAgAAAA4AAAA4AgABAAAAbQAAAAIAAAAOAAAAWk8AAQAAAG4AAAACAAAADgAAAFpeGVEAAQAAAG0AAAACAAAADgAAACAAAAAAAAAAAAAAAEXJAAAAAAAAAAEBAAAAkgAAAAAAAAACAAAAAQEAAACTAAAAAAAAAAIAAAAWWk1eWl4UAAEAAAAyAAAAAAAAAA4AAAAZINr///8cAAAAAQAAADIAAAAAAAAADgAAABzf////AQEAAADBAAAAAAAAAAIAAAAAAQAAAHMAAAAAAAAADgAAABZaDwEAAAAxAAAAAgAAAA4AAAAAAQAAADEAAAACAAAADgAAABkg2v///xMAAAABAAAAMQAAAAIAAAAOAAAAHOD///8BAQAAAMEAAAAAAAAAAgAAABYUAAEAAAA1AAAAAAAAAA4AAABo3f///wABAAAAMQAAAAIAAAAOAAAAAQEAAAAIAAAAAAAAAAIAAAAWXlpPAAEAAAA1AAAAAAAAAA4AAABaXmMWAAAAAQEAAADCAAAAAAAAAAIAAAAWWl5aTwEBAAAAawAAAAAAAAACAAAAWl4UQgEAAAA8AAAAAAAAAM7///8BAQAAAJMAAAAAAAAAAgAAAChaXwABAAAAMwAAAAMAAAAOAAAAaOL///8XFl4PAAAAAAAAAAAAAQAAAG0AAAADAAAADgAAAFL+////AAEAAAAzAAAAAwAAAA4AAAAPAAAAAAAAAAAAAQAAAG4AAAADAAAADgAAADgCAAEAAABtAAAAAwAAAA4AAABaTwABAAAAbgAAAAMAAAAOAAAAWl4ZUQABAAAAbQAAAAMAAAAOAAAAIAAAAAAAAAAAAAAARckAAAAAAAAAAQEAAACSAAAAAAAAAAIAAAABAQAAAJMAAAAAAAAAAgAAABZaTV5aXlpo3P///xcv0P///yAAAABbDwAAAB3T87NKIVYAAAAAAAAAFzAWTV5aTV5aTV5aTV5aTQQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-int 'K2Node_Event_Objective_Index'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'K2Node_Event_Objective_Complete'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-18] Actor) 'K2Node_Event_Trigger_Ref\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_Length_ReturnValue'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_AddUnique_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-18] Actor) 'K2Node_Event_Trigger_Ref'": ""
-          },
-          {
-            "prop-bool 'CallFunc_GreaterEqual_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_Length_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Array_RemoveItem_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-bool 'K2Node_Event_In_Out'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue\"1'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] GameModeBase) 'CallFunc_GetGameMode_ReturnValue\"2'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Gameplay\"2'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-3] BP_SpawnPad_C) 'K2Node_Event_NewParam'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-int NamePrivate(•K2Node_Event_Objective_Index•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-50] ST_Objective) NamePrivate(•K2Node_Event_Objective_Complete•) ": "",
+          "prop-object Value(ImportIndex[-18] Actor) NamePrivate(•K2Node_Event_Trigger_Ref\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_Length_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_AddUnique_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-18] Actor) NamePrivate(•K2Node_Event_Trigger_Ref•) ": "",
+          "prop-bool NamePrivate(•CallFunc_GreaterEqual_IntInt_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_Length_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Array_RemoveItem_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_IntInt_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-23] GameModeBase) NamePrivate(•CallFunc_GetGameMode_ReturnValue•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-bool NamePrivate(•K2Node_Event_In_Out•) ": "",
+          "prop-object Value(ImportIndex[-23] GameModeBase) NamePrivate(•CallFunc_GetGameMode_ReturnValue\"1•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"1•) ": "",
+          "prop-object Value(ImportIndex[-23] GameModeBase) NamePrivate(•CallFunc_GetGameMode_ReturnValue\"2•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay\"2•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"2•) ": "",
+          "prop-object Value(ImportIndex[-3] BP_SpawnPad_C) NamePrivate(•K2Node_Event_NewParam•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1946,7 +1852,7 @@
           "ScriptData": "XlpeRg4AAAAdzAMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1970,11 +1876,9 @@
           "ScriptData": "XlpeDwEAAACwAAAAAAAAABAAAABIAQAAALAAAAAAAAAAEAAAACsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADwPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPA/AAAAAAAA8D8AAAAAAADwP1oEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(96) Value(ImportIndex[-47] Transform) 'Spawn Transform'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(96) Value(ImportIndex[-47] Transform) NamePrivate(•Spawn Transform•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1998,11 +1902,9 @@
           "ScriptData": "XlpeZAEAAABwAAAAAAAAAA4AAAAAAQAAAIUAAAAAAAAAEQAAAFpeRg4AAAAdCwQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-3] BP_SpawnPad_C) 'NewParam'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-3] BP_SpawnPad_C) NamePrivate(•NewParam•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2026,7 +1928,7 @@
           "ScriptData": "XlpeRg4AAAAdCAQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2050,11 +1952,9 @@
           "ScriptData": "XlpeZAEAAABvAAAAAAAAAA4AAAAAAQAAAGQAAAAAAAAAEwAAAFpeRg4AAAAdBQQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'In/Out'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•In/Out•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2078,11 +1978,9 @@
           "ScriptData": "XlpeZAEAAABzAAAAAgAAAA4AAAAAAQAAAMAAAAAAAAAAFAAAAFpeRg4AAAAdvgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) 'Trigger Ref'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) NamePrivate(•Trigger Ref•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2106,7 +2004,7 @@
           "ScriptData": "XloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 202506240,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2130,7 +2028,7 @@
           "ScriptData": "XloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 202506240,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2154,11 +2052,9 @@
           "ScriptData": "XlpeZAEAAABzAAAAAAAAAA4AAAAAAQAAAMAAAAAAAAAAFwAAAFpeRg4AAAAdSQIAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) 'Trigger Ref'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-18] Actor) NamePrivate(•Trigger Ref•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2182,14 +2078,10 @@
           "ScriptData": "XlpeZAEAAAByAAAAAAAAAA4AAAAAAQAAAJIAAAAAAAAAGAAAAGQBAAAAcQAAAAAAAAAOAAAAAAEAAACRAAAAAAAAABgAAABaXkYOAAAAHbsAAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Objective Index'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-50] ST_Objective) 'Objective Complete'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Objective Index•) ": "",
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-50] ST_Objective) NamePrivate(•Objective Complete•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

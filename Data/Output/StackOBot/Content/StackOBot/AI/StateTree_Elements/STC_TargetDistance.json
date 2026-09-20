@@ -1094,40 +1094,12 @@
           "ExportIndex[10] ImportIndex[-9]: Function",
           "ExportIndex[11] ImportIndex[-9]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-11] Actor) 'Actor'": {
-              "MetaDataMap": {
-                "DisplayName": "Actor",
-                "Category": "Context"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-37] Vector) 'Target Location'": {
-              "MetaDataMap": {
-                "DisplayName": "Target Location",
-                "Category": "Inputs"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Distance'": {
-              "MetaDataMap": {
-                "DisplayName": "Distance",
-                "Category": "Inputs"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Farther Away'": {
-              "MetaDataMap": {
-                "DisplayName": "Farther Away",
-                "Category": "Params"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-11] Actor) MetaDataMap( DisplayName(•Actor•) Category(•Context•) ) NamePrivate(•Actor•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-37] Vector) MetaDataMap( DisplayName(•Target Location•) Category(•Inputs•) ) NamePrivate(•Target Location•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Distance•) Category(•Inputs•) ) NamePrivate(•Distance•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Farther Away•) Category(•Params•) ) NamePrivate(•Farther Away•) ": ""
+        },
         "FuncMap": {
           "ReceiveTestCondition": 11,
           "ReceiveGetDescription": 10
@@ -1301,43 +1273,25 @@
           "ScriptData": "XloPAQAAAAYAAAAAAAAA2v///0IBAAAABgAAAAAAAADa////AAEAAABSAAAAAAAAAAoAAAAfZGlzdAAPAQAAAAwAAAAAAAAA2v///0IBAAAADAAAAAAAAADa////AAEAAABSAAAAAAAAAAoAAAAkAw8BAAAABwAAAAAAAADa////QgEAAAAHAAAAAAAAANr///8AAQAAAFIAAAAAAAAACgAAACkADwEAAAALAAAAAAAAANr///9CAQAAAAsAAAAAAAAA2v///wABAAAAUgAAAAAAAAAKAAAANQAAAAAAAAAADwEAAAAJAAAAAAAAANr///9CAQAAAAkAAAAAAAAA2v///wABAAAAUgAAAAAAAAAKAAAAHgAAAAAPAQAAAAgAAAAAAAAA2v///0IBAAAACAAAAAAAAADa////AAEAAABSAAAAAAAAAAoAAAABAQAAADMAAAAAAAAAAgAAAA8BAAAACgAAAAAAAADa////QgEAAAAKAAAAAAAAANr///8AAQAAAFIAAAAAAAAACgAAACQADwEAAAAGAAAAAAAAANr///9CAQAAAAYAAAAAAAAA2v///wABAAAAUgAAAAIAAAAKAAAAH2Rpc3QADwEAAAAMAAAAAAAAANr///9CAQAAAAwAAAAAAAAA2v///wABAAAAUgAAAAIAAAAKAAAAJAMPAQAAAAcAAAAAAAAA2v///0IBAAAABwAAAAAAAADa////AAEAAABSAAAAAgAAAAoAAAApAA8BAAAACwAAAAAAAADa////QgEAAAALAAAAAAAAANr///8AAQAAAFIAAAACAAAACgAAADUAAAAAAAAAAA8BAAAACQAAAAAAAADa////QgEAAAAJAAAAAAAAANr///8AAQAAAFIAAAACAAAACgAAAB4AAAAADwEAAAAIAAAAAAAAANr///9CAQAAAAgAAAAAAAAA2v///wABAAAAUgAAAAIAAAAKAAAAAQEAAAAzAAAAAAAAAAIAAAAPAQAAAAoAAAAAAAAA2v///0IBAAAACgAAAAAAAADa////AAEAAABSAAAAAgAAAAoAAAAkADEAAQAAAFEAAAAAAAAACgAAAAABAAAAUgAAAAAAAAAKAAAAMjEAAQAAAFEAAAACAAAACgAAAAABAAAAUgAAAAIAAAAKAAAAMg8BAAAAIAAAAAAAAAAKAAAAAAEAAAAgAAAAAAAAAAoAAABo5P///ykBH0FjdG9yIGlzIGZhcnRoZXIgYXdheSB0aGFuIHtkaXN0fSBjbSBmcm9tIHRhcmdldCBsb2NhdGlvbi4AH0E1QkQ3OUZFNDIxQkE5OTNGOThCMENBNENCRDdFRTYwAB8AAAEAAABRAAAAAAAAAAoAAAAWDwEAAAAgAAAAAgAAAAoAAAAAAQAAACAAAAACAAAACgAAAGjk////KQEfQWN0b3IgaXMgY2xvc2VyIHRoYW4ge2Rpc3R9IGNtIGZyb20gdGFyZ2V0IGxvY2F0aW9uLgAfMjQ5MjQwOUU0RUJCMUQ4QTBFRjVCRTgwNzAxRDlDMUEAHwAAAQAAAFEAAAACAAAACgAAABYPAQAAACQAAAAAAAAACgAAAAABAAAAJAAAAAAAAAAKAAAAaOj///8AAQAAACAAAAAAAAAACgAAAAABAAAAIAAAAAIAAAAKAAAAAQEAAABAAAAAAAAAAAIAAAAWXg8BAAAAeQAAAAAAAAAKAAAASAEAAAB5AAAAAAAAAAoAAAAAAQAAACQAAAAAAAAACgAAAFoESAEAAAB5AAAAAAAAAAoAAABT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-enum PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967276) PropertyTypeName(ByteProperty) 'Formatting'": ""
-          },
-          {
-            "prop-text PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) ElementSize(16) 'ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) 'K2Node_MakeStruct_FormatArgumentData'": ""
-          },
-          {
-            "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) 'K2Node_MakeStruct_FormatArgumentData\"1'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'K2Node_MakeArray_Array'": {
-              "SingleField": {
-                "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) 'K2Node_MakeArray_Array'": ""
-              }
+        "ChildProperties": {
+          "prop-enum PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967276) PropertyTypeName(ByteProperty) NamePrivate(•Formatting•) ": "",
+          "prop-text PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) ElementSize(16) NamePrivate(•ReturnValue•) ": "",
+          "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) NamePrivate(•K2Node_MakeStruct_FormatArgumentData•) ": "",
+          "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) NamePrivate(•K2Node_MakeStruct_FormatArgumentData\"1•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•K2Node_MakeArray_Array•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) NamePrivate(•K2Node_MakeArray_Array•) ": ""
             }
           },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'K2Node_MakeArray_Array\"1'": {
-              "SingleField": {
-                "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) 'K2Node_MakeArray_Array\"1'": ""
-              }
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•K2Node_MakeArray_Array\"1•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(72) Value(ImportIndex[-38] FormatArgumentData) NamePrivate(•K2Node_MakeArray_Array\"1•) ": ""
             }
           },
-          {
-            "prop-text ElementSize(16) 'CallFunc_Format_ReturnValue'": ""
-          },
-          {
-            "prop-text ElementSize(16) 'CallFunc_Format_ReturnValue\"1'": ""
-          },
-          {
-            "prop-text ElementSize(16) 'CallFunc_SelectText_ReturnValue'": ""
-          }
-        ],
+          "prop-text ElementSize(16) NamePrivate(•CallFunc_Format_ReturnValue•) ": "",
+          "prop-text ElementSize(16) NamePrivate(•CallFunc_Format_ReturnValue\"1•) ": "",
+          "prop-text ElementSize(16) NamePrivate(•CallFunc_SelectText_ReturnValue•) ": ""
+        },
         "FunctionFlags": 1288177664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1362,35 +1316,17 @@
           "ScriptData": "XloPAQAAACUAAAAAAAAACwAAAAABAAAAJQAAAAAAAAALAAAAaOf///8BAQAAADMAAAAAAAAAAgAAABYUAAEAAACKAAAAAAAAAAsAAAABAQAAAEAAAAAAAAAAAgAAAA8BAAAAIgAAAAAAAAALAAAAAAEAAAAiAAAAAAAAAAsAAAAZAQEAAAAFAAAAAAAAAAIAAAAKAAAAAQAAACIAAAAAAAAACwAAABzr////Fg8BAAAAJgAAAAAAAAALAAAAAAEAAAAmAAAAAAAAAAsAAABo5v///wABAAAAIgAAAAAAAAALAAAAAQEAAACJAAAAAAAAAAIAAAAWDwEAAAAnAAAAAAAAAAsAAAAAAQAAACcAAAAAAAAACwAAAGjl////AAEAAAAmAAAAAAAAAAsAAAAWFAABAAAAIQAAAAAAAAALAAAAaOr///8AAQAAACcAAAAAAAAACwAAAAABAAAAJQAAAAAAAAALAAAAFhQAAQAAACMAAAAAAAAACwAAAGjp////AAEAAAAhAAAAAAAAAAsAAAAWXhRIAQAAAHkAAAAAAAAACwAAAGkCAEIBAAAAAQAAAIoAAAAAAAAACwAAACgrAQAAAAEAAAAjAAAAAAAAAAsAAAAnOQEAAAABAAAAIQAAAAAAAAALAAAAAAEAAABTAAAAAAAAAAsAAABaBEgBAAAAeQAAAAAAAAALAAAAUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_Variable'": ""
-          },
-          {
-            "prop-double 'CallFunc_Square_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-37] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-37] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_VSizeXYSquared_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Not_PreBool_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'K2Node_Select_Default'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) NamePrivate(•ReturnValue•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_Variable•) ": "",
+          "prop-double NamePrivate(•CallFunc_Square_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-37] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-37] Vector) NamePrivate(•CallFunc_Subtract_VectorVector_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_VSizeXYSquared_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Greater_DoubleDouble_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Not_PreBool_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•K2Node_Select_Default•) ": ""
+        },
         "FunctionFlags": 1279395840,
         "RepOffset": 0,
         "EventGraphFunction": 0,

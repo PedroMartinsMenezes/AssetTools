@@ -1097,15 +1097,9 @@
         "ChildArray": [
           "ExportIndex[6] ImportIndex[-13]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": ""
+        },
         "FuncMap": {
           "UserConstructionScript": 6
         },
@@ -1185,158 +1179,53 @@
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) 'Y'": {
-              "MetaDataMap": {
-                "FriendlyName": "Y",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) 'NewLocalVar'": {
-              "MetaDataMap": {
-                "FriendlyName": "New Local Var",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) 'X'": {
-              "MetaDataMap": {
-                "FriendlyName": "X",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-46] Transform) 'Temp_struct_Variable'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-19] InstancedStaticMeshComponent) 'CallFunc_AddComponent_ReturnValue'": ""
-          },
-          {
-            "prop-int 'Temp_int_Variable'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LessEqual_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-int 'Temp_int_Variable\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LessEqual_IntInt_ReturnValue\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue\"1'": ""
-          },
-          {
-            "prop-int 'Temp_int_Variable\"2'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LessEqual_IntInt_ReturnValue\"2'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue\"2'": ""
-          },
-          {
-            "prop-int 'Temp_int_Variable\"3'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LessEqual_IntInt_ReturnValue\"3'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-47] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue\"2'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-45] Rotator) 'CallFunc_MakeRotator_ReturnValue'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-46] Transform) 'Temp_struct_Variable\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-46] Transform) 'CallFunc_MakeTransform_ReturnValue'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-19] InstancedStaticMeshComponent) 'CallFunc_AddComponent_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue\"3'": ""
-          },
-          {
-            "prop-int 'CallFunc_AddInstance_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue\"4'": ""
-          },
-          {
-            "prop-double 'CallFunc_Conv_IntToDouble_ReturnValue\"5'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue\"4'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue\"5'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-45] Rotator) 'CallFunc_MakeRotator_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-47] Vector) 'CallFunc_MakeVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-46] Transform) 'CallFunc_MakeTransform_ReturnValue\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_AddInstance_ReturnValue\"1'": ""
-          },
-          {
-            "prop-float 'CallFunc_MakeRotator_Yaw_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_MakeRotator_Yaw_ImplicitCast\"1'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) MetaDataMap( FriendlyName(•Y•) Category(•Default•) ) NamePrivate(•Y•) ": "",
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) MetaDataMap( FriendlyName(•New Local Var•) Category(•Default•) ) NamePrivate(•NewLocalVar•) ": "",
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible) MetaDataMap( FriendlyName(•X•) Category(•Default•) ) NamePrivate(•X•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-46] Transform) NamePrivate(•Temp_struct_Variable•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-19] InstancedStaticMeshComponent) NamePrivate(•CallFunc_AddComponent_ReturnValue•) ": "",
+          "prop-int NamePrivate(•Temp_int_Variable•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LessEqual_IntInt_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue•) ": "",
+          "prop-int NamePrivate(•Temp_int_Variable\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LessEqual_IntInt_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•Temp_int_Variable\"2•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LessEqual_IntInt_ReturnValue\"2•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue\"2•) ": "",
+          "prop-int NamePrivate(•Temp_int_Variable\"3•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LessEqual_IntInt_ReturnValue\"3•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-47] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue\"2•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-45] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-46] Transform) NamePrivate(•Temp_struct_Variable\"1•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-46] Transform) NamePrivate(•CallFunc_MakeTransform_ReturnValue•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-19] InstancedStaticMeshComponent) NamePrivate(•CallFunc_AddComponent_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue\"3•) ": "",
+          "prop-int NamePrivate(•CallFunc_AddInstance_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue\"4•) ": "",
+          "prop-double NamePrivate(•CallFunc_Conv_IntToDouble_ReturnValue\"5•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue\"4•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue\"5•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-45] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-47] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-46] Transform) NamePrivate(•CallFunc_MakeTransform_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_AddInstance_ReturnValue\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_MakeRotator_Yaw_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_MakeRotator_Yaw_ImplicitCast\"1•) ": ""
+        },
         "FunctionFlags": 209848320,
         "RepOffset": 0,
         "EventGraphFunction": 0,

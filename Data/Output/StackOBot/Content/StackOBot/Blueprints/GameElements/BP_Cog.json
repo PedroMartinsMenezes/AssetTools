@@ -1332,68 +1332,16 @@
           "ExportIndex[7] ImportIndex[-10]: Function",
           "ExportIndex[6] ImportIndex[-10]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-47] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] RotatingMovementComponent) 'RotatingMovement'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-25] StaticMeshComponent) 'SM_Cog'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Rotation Rate Z (Yaw)'": {
-              "MetaDataMap": {
-                "DisplayName": "Rotation Rate Z (Yaw)",
-                "Category": "Settings",
-                "tooltip": "If set to 0 the cog will not move."
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'FlipRotation'": {
-              "MetaDataMap": {
-                "DisplayName": "Flip Rotation",
-                "Category": "Settings"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'ScaleMultiplier'": {
-              "MetaDataMap": {
-                "DisplayName": "Scale Multiplier",
-                "Category": "Scale",
-                "tooltip": "Multiply the Relative Scale"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-43] LinearColor) 'Color'": {
-              "MetaDataMap": {
-                "DisplayName": "Color",
-                "Category": "Settings"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-45] Vector) 'Scale'": {
-              "MetaDataMap": {
-                "DisplayName": "Scale",
-                "Category": "Scale",
-                "tooltip": "Set the Relative Scale for the Cog"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-47] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] RotatingMovementComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•RotatingMovement•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-25] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•SM_Cog•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Rotation Rate Z (Yaw)•) Category(•Settings•) tooltip(•If set to 0 the cog will not move.•) ) NamePrivate(•Rotation Rate Z (Yaw)•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Flip Rotation•) Category(•Settings•) ) NamePrivate(•FlipRotation•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Scale Multiplier•) Category(•Scale•) tooltip(•Multiply the Relative Scale•) ) NamePrivate(•ScaleMultiplier•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-43] LinearColor) MetaDataMap( DisplayName(•Color•) Category(•Settings•) ) NamePrivate(•Color•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-45] Vector) MetaDataMap( DisplayName(•Scale•) Category(•Scale•) tooltip(•Set the Relative Scale for the Cog•) ) NamePrivate(•Scale•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Cog": 6,
           "ReceiveTick": 7,
@@ -1486,14 +1434,10 @@
           "ScriptData": "TgABAAAAUwAAAAAAAAAGAAAAXloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-float 'K2Node_Event_DeltaSeconds'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-float NamePrivate(•K2Node_Event_DeltaSeconds•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1518,11 +1462,9 @@
           "ScriptData": "XlpeZAEAAABsAAAAAAAAAAYAAAAAAQAAAEMAAAAAAAAABwAAAFpeRgYAAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'DeltaSeconds'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•DeltaSeconds•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1547,41 +1489,19 @@
           "ScriptData": "XloPAAAAAAAAAAAAAQAAACwAAAAAAAAACAAAADgEAQEAAACiAAAAAAAAAAIAAAAUAAEAAAAtAAAAAAAAAAgAAABo4P///wABAAAALAAAAAAAAAAIAAAANwAAAAAAAAAAFl4ZAQEAAAChAAAAAAAAAAIAAAAXAAAAAAAAAAAAAAAbrwAAAAAAAAAAAQAAAC0AAAAAAAAACAAAABZaDwEAAAAlAAAAAAAAAAgAAAAAAQAAACUAAAAAAAAACAAAAGjk////AQEAAACqAAAAAAAAAAIAAAAWDwEAAAArAAAAAAAAAAgAAAAAAQAAACsAAAAAAAAACAAAAGjh////AQEAAACpAAAAAAAAAAIAAAAAAQAAACUAAAAAAAAACAAAABZeGQEBAAAAtgAAAAAAAAACAAAAEwAAAAAAAAAAAAAAHN3///8AAQAAACsAAAAAAAAACAAAABZaDwAAAAAAAAAAAAEAAAApAAAAAAAAAAgAAAA4BAEBAAAAogAAAAAAAAACAAAADwEAAAAqAAAAAAAAAAgAAAAAAQAAACoAAAAAAAAACAAAAGji////AAEAAAApAAAAAAAAAAgAAAA3AAAAAAAA8L8WDwAAAAAAAAAAAAEAAAAuAAAAAAAAAAgAAAA4BAEBAAAAogAAAAAAAAACAAAADwEAAAAvAAAAAAAAAAgAAAAAAQAAAC8AAAAAAAAACAAAAGjf////AAEAAAAqAAAAAAAAAAgAAAAAAQAAAC4AAAAAAAAACAAAAAEBAAAAXgAAAAAAAAACAAAAFg8AAAAAAAAAAAABAAAAKAAAAAAAAAAIAAAAOAMAAQAAAC8AAAAAAAAACAAAAA8BAAAAJwAAAAAAAAAIAAAAAAEAAAAnAAAAAAAAAAgAAABo4////x4AAAAAHgAAAAAAAQAAACgAAAAAAAAACAAAABZeDwEAAACjAAAAAAAAAOv///8ZAQEAAAChAAAAAAAAAAIAAAAJAAAAAQAAAKMAAAAAAAAA6////wEBAAAAowAAAAAAAADr////AAEAAAAnAAAAAAAAAAgAAABaXl8AAQAAACYAAAAAAAAACAAAABkBAQAAALYAAAAAAAAAAgAAACkAAAABAAAAJgAAAAAAAAAIAAAAGzkAAAAAAAAAHQIAAAAg2////yGEAAAAAAAAABZaXhkBAQAAALYAAAAAAAAAAgAAABwAAAAAAAAAAAAAABuwAAAAAAAAAB0CAAAAAAEAAAAmAAAAAAAAAAgAAAAWWl4ZAAEAAAAmAAAAAAAAAAgAAAAgAAAAAAAAAAAAAAAc3v///yHBAAAAAAAAAAEBAAAAMwAAAAAAAAACAAAAFloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool 'CallFunc_NotEqual_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-45] Vector) 'CallFunc_Conv_DoubleToVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-45] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-18] MaterialInstanceDynamic) 'CallFunc_CreateDynamicMaterialInstance_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-44] Rotator) 'CallFunc_MakeRotator_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_NotEqual_DoubleDouble_A_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_B_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_A_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_MakeRotator_Yaw_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool NamePrivate(•CallFunc_NotEqual_DoubleDouble_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-45] Vector) NamePrivate(•CallFunc_Conv_DoubleToVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-45] Vector) NamePrivate(•CallFunc_Multiply_VectorVector_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-18] MaterialInstanceDynamic) NamePrivate(•CallFunc_CreateDynamicMaterialInstance_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-44] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_NotEqual_DoubleDouble_A_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_B_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_A_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_MakeRotator_Yaw_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 201459712,
         "RepOffset": 0,
         "EventGraphFunction": 0,

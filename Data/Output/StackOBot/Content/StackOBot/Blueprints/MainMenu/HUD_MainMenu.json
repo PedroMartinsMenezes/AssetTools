@@ -1381,46 +1381,13 @@
           "ExportIndex[11] ImportIndex[-14]: Function",
           "ExportIndex[7] ImportIndex[-14]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-60] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-30] UserWidget) 'MyMainMenu'": {
-              "MetaDataMap": {
-                "EditInline": "true",
-                "DisplayName": "My Main Menu",
-                "Category": "Default",
-                "BlueprintPrivate": "true"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-62] UI_LoadingScreen_C) 'MyLoadingWidget'": {
-              "MetaDataMap": {
-                "EditInline": "true",
-                "DisplayName": "My Loading Widget",
-                "Category": "Default",
-                "BlueprintPrivate": "true"
-              }
-            }
-          },
-          {
-            "prop-softobject PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(48) Value(4294967267) 'Start Level'": {
-              "MetaDataMap": {
-                "DisplayName": "Start Level",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-60] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-26] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-30] UserWidget) MetaDataMap( EditInline(•true•) DisplayName(•My Main Menu•) Category(•Default•) BlueprintPrivate(•true•) ) NamePrivate(•MyMainMenu•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-62] UI_LoadingScreen_C) MetaDataMap( EditInline(•true•) DisplayName(•My Loading Widget•) Category(•Default•) BlueprintPrivate(•true•) ) NamePrivate(•MyLoadingWidget•) ": "",
+          "prop-softobject PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_UObjectWrapper) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(48) Value(4294967267) MetaDataMap( DisplayName(•Start Level•) Category(•Default•) ) NamePrivate(•Start Level•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_HUD_MainMenu": 7,
           "ReceiveBeginPlay": 11,
@@ -1546,48 +1513,20 @@
           "ScriptData": "TIUCAABOAAEAAABGAAAAAAAAAAcAAABeWk1eWl5aXwABAAAAJwAAAAAAAAAHAAAAaNj///8XHQAAAAAWFAABAAAAKAAAAAAAAAAHAAAAaNb///8AAQAAACcAAAAAAAAABwAAABZeWgcPAAAAAAEAAAAoAAAAAAAAAAcAAABaXlpfAAEAAAAmAAAAAAAAAAcAAAAc1////xZfAAEAAAAnAAAAAAAAAAcAAABo2P///xcdAAAAABZeGQABAAAAJwAAAAAAAAAHAAAAFwAAAAAAAAAAAAAAGz0AAAAAAAAAAAEAAAAmAAAAAAAAAAcAAAAWWk1eWk1eWk1eWk1eWk1eWk1eWk1eWk1eWl5M4QAAAFoGbgEAAF5aXwABAAAAJQAAAAAAAAAHAAAAaNn///8XFl4PAAAAAAAAAAAAAQAAAG8AAAAAAAAABwAAAFL+////AAEAAAAlAAAAAAAAAAcAAAAPAAAAAAAAAAAAAQAAAHAAAAAAAAAABwAAADgCAAEAAABvAAAAAAAAAAcAAABaTwABAAAAcAAAAAAAAAAHAAAAWl4ZUQABAAAAbwAAAAAAAAAHAAAADgAAAAAAAAAAAAAARZsAAAAAAAAAFlpNXwABAAAAJgAAAAIAAAAHAAAAHNf///8WXl8AAQAAACQAAAAAAAAABwAAABkgwP///x0AAAABAAAAJAAAAAAAAAAHAAAAHNT///8XIMH///8AAQAAACYAAAACAAAABwAAABZaXl8BAQAAAIQAAAAAAAAAAgAAAAABAAAAJAAAAAAAAAAHAAAAWl4ZAQEAAACEAAAAAAAAAAIAAAAPAAAAAAAAAAAAAAAc1f///x0AAAAAFlpfAAEAAAAmAAAAAAAAAAcAAAAc1////xZeGSDA////IAAAAAAAAAAAAAAAHNP///8AAQAAACYAAAAAAAAABwAAAAEBAAAAhAAAAAAAAAACAAAAJAAoKBZaXwABAAAAJgAAAAAAAAAHAAAAHNf///8WXhQZAAEAAAAmAAAAAAAAAAcAAAAJAAAAAQAAACAAAAAAAAAA5////wEBAAAAIAAAAAAAAADn////J1oGEgAAAAQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-bool 'K2Node_Event_Paused'": ""
-          },
-          {
-            "prop-int 'K2Node_Event_Index'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-61] ST_Objective) 'K2Node_Event_Objective_Info'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-25] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-24] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-25] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue\"1'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-63] UI_MainMenu_C) 'CallFunc_Create_ReturnValue'": {
-              "MetaDataMap": {
-                "EditInline": "true"
-              }
-            }
-          },
-          {
-            "prop-object Value(ImportIndex[-20] GameInstance) 'CallFunc_GetGameInstance_ReturnValue'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Game_Instance'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-bool NamePrivate(•K2Node_Event_Paused•) ": "",
+          "prop-int NamePrivate(•K2Node_Event_Index•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-61] ST_Objective) NamePrivate(•K2Node_Event_Objective_Info•) ": "",
+          "prop-object Value(ImportIndex[-25] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-24] Pawn) NamePrivate(•CallFunc_GetPlayerPawn_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-25] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue\"1•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-63] UI_MainMenu_C) MetaDataMap( EditInline(•true•) ) NamePrivate(•CallFunc_Create_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-20] GameInstance) NamePrivate(•CallFunc_GetGameInstance_ReturnValue•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Game_Instance•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1611,7 +1550,7 @@
           "ScriptData": "XlpeRgcAAAAdvgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1635,7 +1574,7 @@
           "ScriptData": "XlpeRgcAAAAdwQAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1659,7 +1598,7 @@
           "ScriptData": "XlpeRgcAAAAdxAAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1684,7 +1623,7 @@
           "ScriptData": "XlpeRgcAAAAd0wAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1708,7 +1647,7 @@
           "ScriptData": "XlpeRgcAAAAdygAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1732,11 +1671,9 @@
           "ScriptData": "XlpeZAEAAABzAAAAAAAAAAcAAAAAAQAAAJgAAAAAAAAADQAAAFpeRgcAAAAdxwAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Paused'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Paused•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1760,7 +1697,7 @@
           "ScriptData": "XlpeRgcAAAAdzQAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1784,14 +1721,10 @@
           "ScriptData": "XlpeZAEAAABxAAAAAAAAAAcAAAAAAQAAAGIAAAAAAAAADwAAAGQBAAAAcgAAAAAAAAAHAAAAAAEAAACQAAAAAAAAAA8AAABaXkYHAAAAHdAAAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Index'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-61] ST_Objective) 'Objective Info'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Index•) ": "",
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-61] ST_Objective) NamePrivate(•Objective Info•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

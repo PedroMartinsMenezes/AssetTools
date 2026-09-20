@@ -822,27 +822,11 @@
           "ExportIndex[8] ImportIndex[-10]: Function",
           "ExportIndex[7] ImportIndex[-10]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-34] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-1] BP_AIController_C) 'Controller'": {
-              "MetaDataMap": {
-                "DisplayName": "Controller",
-                "Category": "Context"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-16] Pawn) 'Target Player Pawn'": {
-              "MetaDataMap": {
-                "DisplayName": "Target Player Pawn",
-                "Category": "Output"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-34] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-1] BP_AIController_C) MetaDataMap( DisplayName(•Controller•) Category(•Context•) ) NamePrivate(•Controller•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-16] Pawn) MetaDataMap( DisplayName(•Target Player Pawn•) Category(•Output•) ) NamePrivate(•Target Player Pawn•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_STT_ForgetPlayer": 7,
           "ReceiveLatentEnterState": 8
@@ -961,17 +945,11 @@
           "ScriptData": "TgABAAAAPQAAAAAAAAAHAAAAXloUAAEAAAAjAAAAAAAAAAcAAABo5////0IBAAAAJwAAAAAAAADb////AAEAAABNAAAAAAAAAAcAAAAkARZeWgd9AAAAAAEAAAAjAAAAAAAAAAcAAABaXhkZAQEAAAAtAAAAAAAAAAIAAAAJAAAAAQAAAAcAAAAAAAAA/////wEBAAAABwAAAAAAAAD/////CgAAAAAAAAAAAAAAHOj///8WWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-37] StateTreeTransitionResult) 'K2Node_Event_Transition'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(72) Value(ImportIndex[-37] StateTreeTransitionResult) NamePrivate(•K2Node_Event_Transition•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_ByteByte_ReturnValue•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -996,11 +974,9 @@
           "ScriptData": "XlpeZAEAAABNAAAAAAAAAAcAAABIAQAAAIwAAAAAAAAACAAAAFpeRgcAAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-37] StateTreeTransitionResult) 'Transition'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(72) Value(ImportIndex[-37] StateTreeTransitionResult) NamePrivate(•Transition•) ": ""
+        },
         "FunctionFlags": 138545152,
         "RepOffset": 0,
         "EventGraphFunction": 0,

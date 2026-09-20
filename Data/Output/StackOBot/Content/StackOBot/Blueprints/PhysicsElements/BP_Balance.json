@@ -1136,47 +1136,14 @@
           "ExportIndex[7] ImportIndex[-7]: Function",
           "ExportIndex[6] ImportIndex[-7]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-29] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] StaticMeshComponent) 'SM_HBeam'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] PhysicsConstraintComponent) 'PhysicsConstraint'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] StaticMeshComponent) 'Cube'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-15] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'In Mass Scale'": {
-              "MetaDataMap": {
-                "DisplayName": "In Mass Scale",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-29] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•SM_HBeam•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] PhysicsConstraintComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•PhysicsConstraint•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-18] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Cube•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-15] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•In Mass Scale•) Category(•Default•) ) NamePrivate(•In Mass Scale•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Balance": 6,
           "ReceiveBeginPlay": 7,
@@ -1266,11 +1233,9 @@
           "ScriptData": "TgABAAAAUQAAAAAAAAAGAAAAXlpeGQEBAAAAOQAAAAAAAAACAAAAJAAAAAAAAAAAAAAAG5oAAAAAAAAAIXUAAAAAAAAAAQEAAABhAAAAAAAAAAIAAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1295,7 +1260,7 @@
           "ScriptData": "XlpeRgYAAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1320,7 +1285,7 @@
           "ScriptData": "XlpeGQEBAAAAfwAAAAAAAAACAAAALgAAAAAAAAAAAAAAHOv///8qIXUAAAAAAAAAAQEAAAA5AAAAAAAAAAIAAAAhdQAAAAAAAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201459712,
         "RepOffset": 0,
         "EventGraphFunction": 0,

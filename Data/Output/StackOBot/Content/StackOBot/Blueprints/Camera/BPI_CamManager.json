@@ -894,7 +894,7 @@
           "ExportIndex[10] ImportIndex[-4]: Function",
           "ExportIndex[14] ImportIndex[-4]: Function"
         ],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FuncMap": {
           "SetCameraState": 14,
           "GetCameraState": 10,
@@ -1040,11 +1040,9 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-byte PropertyFlags(CPF_Parm, CPF_OutParm) Value(4294967277) 'CameraState'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-byte PropertyFlags(CPF_Parm, CPF_OutParm) Value(4294967277) NamePrivate(•CameraState•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1068,17 +1066,11 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Yaw'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Pitch'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Locked'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Yaw•) ": "",
+          "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Pitch•) ": "",
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Locked•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1102,14 +1094,10 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-9] CameraComponent) 'Camera'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-11] SpringArmComponent) 'Camera Boom'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-9] CameraComponent) NamePrivate(•Camera•) ": "",
+          "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-11] SpringArmComponent) NamePrivate(•Camera Boom•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1133,7 +1121,7 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1157,11 +1145,9 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-byte PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967277) 'New Camera State'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-byte PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967277) NamePrivate(•New Camera State•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1185,17 +1171,11 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Active'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetPitch'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetYaw'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Active•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•PresetPitch•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•PresetYaw•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

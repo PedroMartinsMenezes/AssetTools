@@ -1681,44 +1681,13 @@
           "ExportIndex[16] ImportIndex[-26]: Function",
           "ExportIndex[18] ImportIndex[-26]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-97] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-54] SphereComponent) 'DamageSphere'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Dying'": {
-              "MetaDataMap": {
-                "DisplayName": "Dying",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Max Leash Distance from Spawn Point'": {
-              "MetaDataMap": {
-                "DisplayName": "Max Leash Distance From Spawn Point",
-                "Category": "AI",
-                "ExposeOnSpawn": "true"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Min Leash Distance from Spawn Point to Resume Roaming'": {
-              "MetaDataMap": {
-                "DisplayName": "Min Leash Distance From Spawn Point To Resume Roaming",
-                "Category": "AI",
-                "ExposeOnSpawn": "true"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-97] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-54] SphereComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DamageSphere•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Dying•) Category(•Default•) ) NamePrivate(•Dying•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Max Leash Distance From Spawn Point•) Category(•AI•) ExposeOnSpawn(•true•) ) NamePrivate(•Max Leash Distance from Spawn Point•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_ExposeOnSpawn) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Min Leash Distance From Spawn Point To Resume Roaming•) Category(•AI•) ExposeOnSpawn(•true•) ) NamePrivate(•Min Leash Distance from Spawn Point to Resume Roaming•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Bug": 18,
           "BndEvt__BP_Bug_Sphere_K2Node_ComponentBoundEvent_0_ComponentBeginOverlapSignature__DelegateSignature": 16,
@@ -2038,7 +2007,7 @@
           "ScriptData": "XlpeRhIAAAAdgAUAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2062,26 +2031,14 @@
           "ScriptData": "XlpeZAEAAADEAAAAAAAAABIAAAAAAQAAAAUBAAAAAAAAEAAAAGQBAAAAwQAAAAAAAAASAAAAAAEAAAD/AAAAAAAAABAAAABkAQAAAMMAAAAAAAAAEgAAAAABAAAAAQEAAAAAAAAQAAAAZAEAAADCAAAAAAAAABIAAAAAAQAAAAABAAAAAAAAEAAAAGQBAAAAwAAAAAAAAAASAAAAAAEAAAAhAAAAAAAAABAAAABkAQAAAMUAAAAAAAAAEgAAAEgBAAAAOgEAAAAAAAAQAAAAWl5GEgAAAB2xBgAAFloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'OverlappedComponent'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) 'OtherActor'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'OtherComp'": ""
-          },
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'OtherBodyIndex'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'bFromSweep'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) 'SweepResult'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) NamePrivate(•OverlappedComponent•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) NamePrivate(•OtherActor•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) NamePrivate(•OtherComp•) ": "",
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•OtherBodyIndex•) ": "",
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•bFromSweep•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) NamePrivate(•SweepResult•) ": ""
+        },
         "FunctionFlags": 138412032,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2105,35 +2062,17 @@
           "ScriptData": "XloPAQAAAEUAAAAAAAAAEQAAAAABAAAARQAAAAAAAAARAAAAHMP///8WDwEAAABFAAAAAgAAABEAAAAAAQAAAEUAAAACAAAAEQAAABkAAQAAACkBAAAAAAAAEQAAAAoAAAABAAAARQAAAAIAAAARAAAAHMP///8WDwEAAABJAAAAAAAAABEAAAAAAQAAAEkAAAAAAAAAEQAAAGi6////AAEAAABFAAAAAgAAABEAAAAAAQAAAEUAAAAAAAAAEQAAABYPAQAAAEgAAAAAAAAAEQAAAAABAAAASAAAAAAAAAARAAAAaLv///8AAQAAAEkAAAAAAAAAEQAAAB4Xt9E4Fg8BAAAAQAAAAAAAAAARAAAAAAEAAABAAAAAAAAAABEAAABov////wABAAAASAAAAAAAAAARAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAADwPxYUAAEAAABDAAAAAAAAABEAAABovv///wABAAAAQAAAAAAAAAARAAAANzMzMzMzM+M/Fl4USAEAAAC9AAAAAAAAABEAAAAAAQAAAEMAAAAAAAAAEQAAAA8BAAAAdwAAAAAAAAARAAAASAEAAAB3AAAAAAAAABEAAAAAAQAAAEgAAAAAAAAAEQAAAFoEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) 'self2'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'JumpedOnEnemy'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-94] Vector) 'Direction'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Normal_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Dot_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-29] Actor) NamePrivate(•self2•) ": "",
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•JumpedOnEnemy•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•Direction•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_Subtract_VectorVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_Normal_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Dot_VectorVector_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Greater_DoubleDouble_ReturnValue•) ": ""
+        },
         "FunctionFlags": 474087424,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2157,122 +2096,46 @@
           "ScriptData": "TOsGAABOAAEAAACRAAAAAAAAABIAAABeWl8AAQAAAEIAAAAAAAAAEgAAAGjC////Fx0AAAAAFl4ZAAEAAABCAAAAAAAAABIAAAAOAAAAAAAAAAAAAAAbvAAAAAAAAAAWWg8BAAAARgAAAAAAAAASAAAAAAEAAABGAAAAAAAAABIAAABovf///zcAAAAAAAAAADcAAAAAAAAAADcAAAAAAOCFQBZfAAEAAABCAAAAAAAAABIAAABowv///xcdAAAAABZfAAEAAABBAAAAAAAAABIAAAAZAAEAAABCAAAAAAAAABIAAAAOAAAAAQAAAEEAAAAAAAAAEgAAABuoAAAAAAAAABZfAAEAAABCAAAABAAAABIAAABowv///xcdAAAAABZfAAEAAABBAAAAAgAAABIAAAAZAAEAAABCAAAABAAAABIAAAAOAAAAAQAAAEEAAAACAAAAEgAAABuoAAAAAAAAABYPAQAAAEcAAAAAAAAAEgAAAAABAAAARwAAAAAAAAASAAAAaLz///8ZAAEAAABBAAAAAgAAABIAAAAJAAAAAQAAAFIBAAAAAAAA1f///wEBAAAAUgEAAAAAAADV////IwAAAAAAAPA/AAAAAAAA8D8AAAAAAAAAABYPAQAAADsAAAAAAAAAEgAAAAABAAAAOwAAAAAAAAASAAAAaMD///8AAQAAAEcAAAAAAAAAEgAAAAABAAAARgAAAAAAAAASAAAAFl4PAQAAAFIBAAAAAAAA1f///xkAAQAAAEEAAAAAAAAAEgAAAAkAAAABAAAAUgEAAAAAAADV////AQEAAABSAQAAAAAAANX///8AAQAAADsAAAAAAAAAEgAAAFpNDwEAAABFAAAAAAAAABIAAAAAAQAAAEUAAAAAAAAAEgAAABzD////Fl5owf///xcgm////wABAAAARQAAAAAAAAASAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB6amZk+HgAAQEAeAAAAACCc////KioqFlpeFAEBAAAAfwAAAAAAAAADAAAAJ1peGQEBAAAAUgAAAAAAAADd////DgAAAAAAAAAAAAAAG3gAAAAAAAAAFlpeXwABAAAAPgAAAAAAAAASAAAAaMT///8BAQAAANsAAAAAAAAA3f///yD+////HgAAgD8eAAAAACHtAAAAAAAAACcWWhQAAQAAAEQA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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-name 'K2Node_CustomEvent_NotifyName\"4'": ""
-          },
-          {
-            "prop-name 'K2Node_CustomEvent_NotifyName\"3'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
-          },
-          {
-            "prop-name 'K2Node_CustomEvent_NotifyName\"2'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"1'": ""
-          },
-          {
-            "prop-name 'K2Node_CustomEvent_NotifyName\"1'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"2'": ""
-          },
-          {
-            "prop-name 'K2Node_CustomEvent_NotifyName'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"3'": ""
-          },
-          {
-            "prop-name 'Temp_name_Variable'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate\"4'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-12] PlayMontageCallbackProxy) 'CallFunc_CreateProxyObjectForPlayMontage_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue\"1'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"2'": ""
-          },
-          {
-            "prop-interface Value(4294967289) 'K2Node_DynamicCast_AsBPI_Bot'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-bool 'CallFunc_CheckHitDirection_JumpedOnEnemy'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_CheckHitDirection_Direction'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-35] Character) 'CallFunc_GetPlayerCharacter_ReturnValue\"3'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_IsClosed_Variable'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) 'CallFunc_GetMovementComponent_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) 'CallFunc_Add_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'K2Node_ComponentBoundEvent_OverlappedComponent'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-29] Actor) 'K2Node_ComponentBoundEvent_OtherActor'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) 'K2Node_ComponentBoundEvent_OtherComp'": ""
-          },
-          {
-            "prop-int 'K2Node_ComponentBoundEvent_OtherBodyIndex'": ""
-          },
-          {
-            "prop-bool 'K2Node_ComponentBoundEvent_bFromSweep'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) 'K2Node_ComponentBoundEvent_SweepResult'": ""
-          },
-          {
-            "prop-bool 'CallFunc_DoesImplementInterface_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-name NamePrivate(•K2Node_CustomEvent_NotifyName\"4•) ": "",
+          "prop-name NamePrivate(•K2Node_CustomEvent_NotifyName\"3•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate•) ": "",
+          "prop-name NamePrivate(•K2Node_CustomEvent_NotifyName\"2•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate\"1•) ": "",
+          "prop-name NamePrivate(•K2Node_CustomEvent_NotifyName\"1•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate\"2•) ": "",
+          "prop-name NamePrivate(•K2Node_CustomEvent_NotifyName•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate\"3•) ": "",
+          "prop-name NamePrivate(•Temp_name_Variable•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_Has_Been_Initd_Variable•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967238) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate\"4•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-12] PlayMontageCallbackProxy) NamePrivate(•CallFunc_CreateProxyObjectForPlayMontage_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-35] Character) NamePrivate(•CallFunc_GetPlayerCharacter_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"1•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) NamePrivate(•CallFunc_GetMovementComponent_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-35] Character) NamePrivate(•CallFunc_GetPlayerCharacter_ReturnValue\"1•) ": "",
+          "prop-object Value(ImportIndex[-35] Character) NamePrivate(•CallFunc_GetPlayerCharacter_ReturnValue\"2•) ": "",
+          "prop-interface Value(4294967289) NamePrivate(•K2Node_DynamicCast_AsBPI_Bot•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-bool NamePrivate(•CallFunc_CheckHitDirection_JumpedOnEnemy•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_CheckHitDirection_Direction•) ": "",
+          "prop-object Value(ImportIndex[-35] Character) NamePrivate(•CallFunc_GetPlayerCharacter_ReturnValue\"3•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_IsClosed_Variable•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-45] PawnMovementComponent) NamePrivate(•CallFunc_GetMovementComponent_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_Multiply_VectorVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-94] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) NamePrivate(•K2Node_ComponentBoundEvent_OverlappedComponent•) ": "",
+          "prop-object Value(ImportIndex[-29] Actor) NamePrivate(•K2Node_ComponentBoundEvent_OtherActor•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-46] PrimitiveComponent) NamePrivate(•K2Node_ComponentBoundEvent_OtherComp•) ": "",
+          "prop-int NamePrivate(•K2Node_ComponentBoundEvent_OtherBodyIndex•) ": "",
+          "prop-bool NamePrivate(•K2Node_ComponentBoundEvent_bFromSweep•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-95] HitResult) NamePrivate(•K2Node_ComponentBoundEvent_SweepResult•) ": "",
+          "prop-bool NamePrivate(•CallFunc_DoesImplementInterface_ReturnValue•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2296,11 +2159,9 @@
           "ScriptData": "XlpeZAEAAADHAAAAAgAAABIAAAAAAQAAAO8AAAAAAAAAEwAAAFpeRhIAAAAdwQQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NotifyName'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•NotifyName•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2324,11 +2185,9 @@
           "ScriptData": "XlpeZAEAAADHAAAAAAAAABIAAAAAAQAAAO8AAAAAAAAAFAAAAFpeRhIAAAAd4QQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NotifyName'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•NotifyName•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2352,11 +2211,9 @@
           "ScriptData": "XlpeZAEAAADHAAAAAwAAABIAAAAAAQAAAO8AAAAAAAAAFQAAAFpeRhIAAAAdoQQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NotifyName'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•NotifyName•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2380,11 +2237,9 @@
           "ScriptData": "XlpeZAEAAADHAAAABAAAABIAAAAAAQAAAO8AAAAAAAAAFgAAAFpeRhIAAAAdgQQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NotifyName'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•NotifyName•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2408,11 +2263,9 @@
           "ScriptData": "XlpeZAEAAADHAAAABQAAABIAAAAAAQAAAO8AAAAAAAAAFwAAAFpeRhIAAAAdYQQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'NotifyName'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-name PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•NotifyName•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,

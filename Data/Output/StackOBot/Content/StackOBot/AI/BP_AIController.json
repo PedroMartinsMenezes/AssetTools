@@ -972,25 +972,11 @@
           "ExportIndex[9] ImportIndex[-16]: Function",
           "ExportIndex[8] ImportIndex[-16]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-46] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] AIPerceptionComponent) 'AIPerception'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] StateTreeAIComponent) 'StateTreeAI'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-46] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] AIPerceptionComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•AIPerception•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] StateTreeAIComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•StateTreeAI•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_AIController": 8,
           "OnPossessedPawnChanged_Event": 9,
@@ -1081,29 +1067,15 @@
           "ScriptData": "TgABAAAANQAAAAAAAAAIAAAAXloUAAEAAAAdAAAAAAAAAAgAAABo3v///wABAAAATAAAAAAAAAAIAAAAFl5aB2cAAAAAAQAAAB0AAAAAAAAACAAAAFpeWl4ZAQEAAAB8AAAAAAAAAAQAAAAOAAAAAAAAAAAAAAAbegAAAAAAAAAWWgYIAQAAXloGCAEAAF5aXwABAAAAHgAAAAAAAAAIAAAAHN////8WFAABAAAAHQAAAAIAAAAIAAAAaN7///8AAQAAAB4AAAAAAAAACAAAABZeWge5AAAAAAEAAAAdAAAAAgAAAAgAAABaXloGPAAAAF5aBggBAABeWgZuAAAAYWYAAAAAAAAAAAEAAABLAAAAAAAAAAgAAAAXXlwBAQAAAGQAAAAAAAAA6////wABAAAASwAAAAAAAAAIAAAAWgbAAAAAXloGxwAAAF5aXloGCgAAAAQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967266) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-24] Pawn) 'K2Node_CustomEvent_OldPawn'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-24] Pawn) 'K2Node_CustomEvent_NewPawn'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-24] Pawn) 'CallFunc_K2_GetPawn_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue\"1'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967266) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate•) ": "",
+          "prop-object Value(ImportIndex[-24] Pawn) NamePrivate(•K2Node_CustomEvent_OldPawn•) ": "",
+          "prop-object Value(ImportIndex[-24] Pawn) NamePrivate(•K2Node_CustomEvent_NewPawn•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-24] Pawn) NamePrivate(•CallFunc_K2_GetPawn_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue\"1•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1127,14 +1099,10 @@
           "ScriptData": "XlpeZAEAAABNAAAAAAAAAAgAAAAAAQAAAGMAAAAAAAAACQAAAGQBAAAATAAAAAAAAAAIAAAAAAEAAABbAAAAAAAAAAkAAABaXkYIAAAAHf8AAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) 'OldPawn'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) 'NewPawn'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) NamePrivate(•OldPawn•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-24] Pawn) NamePrivate(•NewPawn•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1159,7 +1127,7 @@
           "ScriptData": "XlpeRggAAAAd+AAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,

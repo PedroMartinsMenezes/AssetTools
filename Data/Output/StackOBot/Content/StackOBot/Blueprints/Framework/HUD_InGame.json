@@ -1279,45 +1279,13 @@
           "ExportIndex[10] ImportIndex[-12]: Function",
           "ExportIndex[9] ImportIndex[-12]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-54] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-23] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-name PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'MainMenuLevelName'": {
-              "MetaDataMap": {
-                "DisplayName": "Main Menu Level Name",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-58] UI_PauseMenu_C) 'PauseMenuWidget'": {
-              "MetaDataMap": {
-                "EditInline": "true",
-                "DisplayName": "Pause Menu Widget",
-                "Category": "Default",
-                "BlueprintPrivate": "true"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-57] UI_Game_C) 'HeadupDisplay'": {
-              "MetaDataMap": {
-                "EditInline": "true",
-                "DisplayName": "Headup Display",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-54] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-23] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-name PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Main Menu Level Name•) Category(•Default•) ) NamePrivate(•MainMenuLevelName•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-58] UI_PauseMenu_C) MetaDataMap( EditInline(•true•) DisplayName(•Pause Menu Widget•) Category(•Default•) BlueprintPrivate(•true•) ) NamePrivate(•PauseMenuWidget•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-57] UI_Game_C) MetaDataMap( EditInline(•true•) DisplayName(•Headup Display•) Category(•Default•) ) NamePrivate(•HeadupDisplay•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_HUD_InGame": 9,
           "ReceiveBeginPlay": 10,
@@ -1487,65 +1455,23 @@
           "ScriptData": "TKADAABOAAEAAABHAAAAAAAAAAkAAABfAAEAAAAnAAAAAAAAAAkAAAAc3f///xZeXwABAAAAJgAAAAAAAAAJAAAAGSDF////HQAAAAEAAAAmAAAAAAAAAAkAAAAc2v///xcgxv///wABAAAAJwAAAAAAAAAJAAAAFlpeXwEBAAAAkgAAAAAAAAACAAAAAAEAAAAmAAAAAAAAAAkAAABaTV4ZAQEAAABbAAAAAAAAAAIAAAAPAAAAAAAAAAAAAAAc2////x0AAAAAFlpNXhQAAQAAACkAAAAAAAAACQAAAGje////FygWWl8AAQAAACcAAAACAAAACQAAABzd////Fl4UGQABAAAAJwAAAAIAAAAJAAAACQAAAAEAAAAiAAAAAAAAAOr///8BAQAAACIAAAAAAAAA6v///yhaXwABAAAAJwAAAAIAAAAJAAAAHN3///8WXhkgxf///xQAAAAAAAAAAAAAABzZ////AAEAAAAnAAAAAgAAAAkAAAAoFlpeGQEBAAAAkgAAAAAAAAACAAAADgAAAAAAAAAAAAAAG5sAAAAAAAAAFlpNXhQAAQAAACkAAAACAAAACQAAAGje////FycWWk1eTHsBAABaBg8AAABeTIcBAABaBg4CAABeWg8BAAAAKAAAAAAAAAAJAAAAAAEAAAAoAAAAAAAAAAkAAABo3////xZeFAABAAAAbQAAAAAAAAAJAAAAaNz///8AAQAAACgAAAAAAAAACQAAAB9BbmRyb2lkABZaB3sCAAAAAQAAAG0AAAAAAAAACQAAABQAAQAAAG0AAAAAAAAACQAAAGjc////AAEAAAAoAAAAAAAAAAkAAAAfSU9TABZaB3sCAAAAAQAAAG0AAAAAAAAACQAAAFpNXwABAAAAJwAAAAMAAAAJAAAAHN3///8WXl8AAQAAACYAAAACAAAACQAAABkgxf///x0AAAABAAAAJgAAAAIAAAAJAAAAHNr///8XIMf///8AAQAAACcAAAADAAAACQAAABZaXl8BAQAAAFsAAAAAAAAAAgAAAAABAAAAJgAAAAIAAAAJAAAAWgZ4AAAAXwABAAAAJwAAAAQAAAAJAAAAHN3///8WXl8AAQAAACYAAAADAAAACQAAABkgxf///x0AAAABAAAAJgAAAAMAAAAJAAAAHNr///8XIMj///8AAQAAACcAAAAEAAAACQAAABZaXhkAAQAAACYAAAADAAAACQAAAA8AAAAAAAAAAAAAABzb////HQAAAAAWWk1eWl5aB6AAAAAAAQAAAGwAAAAAAAAACQAAAFpeGQEBAAAAkgAAAAAAAAACAAAADwAAAAAAAAAAAAAAHNv///8dAAAAABZaBlYBAABeWl4ZAQEAAABbAAAAAAAAAAIAAAAOAAAAAAAAAAAAAABFqwAAAAAAAAAWWk1eWl4ZAQEAAABbAAAAAAAAAAIAAAAgAAAAAAAAAAAAAABFvQAAAAAAAAAAAQAAAGoAAAAAAAAACQAAAAABAAAAawAAAAAAAAAJAAAAFlpNXloGbwEAAAQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-22] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-58] UI_PauseMenu_C) 'CallFunc_Create_ReturnValue'": {
-              "MetaDataMap": {
-                "EditInline": "true"
-              }
-            }
-          },
-          {
-            "prop-bool 'CallFunc_SetGamePaused_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_SetGamePaused_ReturnValue\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-22] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_Event_Paused'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-22] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue\"2'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-57] UI_Game_C) 'CallFunc_Create_ReturnValue\"1'": {
-              "MetaDataMap": {
-                "EditInline": "true"
-              }
-            }
-          },
-          {
-            "prop-int 'K2Node_Event_Index'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-55] ST_Objective) 'K2Node_Event_Objective_Info'": ""
-          },
-          {
-            "prop-str ElementSize(16) 'CallFunc_GetPlatformName_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchString_CmpSuccess'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-22] PlayerController) 'CallFunc_GetOwningPlayerController_ReturnValue\"3'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-56] UI_TouchSimple_C) 'CallFunc_Create_ReturnValue\"2'": {
-              "MetaDataMap": {
-                "EditInline": "true"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-object Value(ImportIndex[-22] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-58] UI_PauseMenu_C) MetaDataMap( EditInline(•true•) ) NamePrivate(•CallFunc_Create_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_SetGamePaused_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_SetGamePaused_ReturnValue\"1•) ": "",
+          "prop-object Value(ImportIndex[-22] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_Event_Paused•) ": "",
+          "prop-object Value(ImportIndex[-22] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue\"2•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-57] UI_Game_C) MetaDataMap( EditInline(•true•) ) NamePrivate(•CallFunc_Create_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•K2Node_Event_Index•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-55] ST_Objective) NamePrivate(•K2Node_Event_Objective_Info•) ": "",
+          "prop-str ElementSize(16) NamePrivate(•CallFunc_GetPlatformName_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchString_CmpSuccess•) ": "",
+          "prop-object Value(ImportIndex[-22] PlayerController) NamePrivate(•CallFunc_GetOwningPlayerController_ReturnValue\"3•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-56] UI_TouchSimple_C) MetaDataMap( EditInline(•true•) ) NamePrivate(•CallFunc_Create_ReturnValue\"2•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1570,7 +1496,7 @@
           "ScriptData": "XlpeRgkAAAAdmQMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1594,11 +1520,9 @@
           "ScriptData": "XlpeZAEAAABsAAAAAAAAAAkAAAAAAQAAAJEAAAAAAAAACwAAAFpeRgkAAAAd9gIAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Paused'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Paused•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1622,7 +1546,7 @@
           "ScriptData": "XlpeRgkAAAAdNQMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1646,14 +1570,10 @@
           "ScriptData": "XlpeZAEAAABqAAAAAAAAAAkAAAAAAQAAAGEAAAAAAAAADQAAAGQBAAAAawAAAAAAAAAJAAAAAAEAAACJAAAAAAAAAA0AAABaXkYJAAAAHV4DAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Index'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-55] ST_Objective) 'Objective Info'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Index•) ": "",
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-55] ST_Objective) NamePrivate(•Objective Info•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

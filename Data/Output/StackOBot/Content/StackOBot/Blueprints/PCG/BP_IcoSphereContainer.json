@@ -974,34 +974,15 @@
           "ScriptData": ""
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] StaticMeshComponent) 'Cube'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] PCGComponent) 'PCG'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) 'ExitPoints'": {
-              "SingleField": {
-                "prop-struct ElementSize(24) Value(ImportIndex[-27] Vector) 'ExitPoints'": ""
-              },
-              "MetaDataMap": {
-                "DisplayName": "Exit Points",
-                "Category": "Default",
-                "MakeEditWidget": "true"
-              }
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-13] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Cube•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-14] PCGComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•PCG•) ": "",
+          "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) MetaDataMap( DisplayName(•Exit Points•) Category(•Default•) MakeEditWidget(•true•) ) NamePrivate(•ExitPoints•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(24) Value(ImportIndex[-27] Vector) NamePrivate(•ExitPoints•) ": ""
             }
           }
-        ],
+        },
         "FuncMap": {},
         "ClassFlags": 8651012,
         "ClassWithin": 4294967291,

@@ -500,20 +500,10 @@
         "ChildArray": [
           "ExportIndex[5] ImportIndex[-2]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-16] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Orbs'": {
-              "MetaDataMap": {
-                "DisplayName": "Orbs",
-                "Category": "Default",
-                "MultiLine": "true"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-16] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-int PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Orbs•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•Orbs•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_PlayerSaveObject": 5
         },
@@ -584,11 +574,9 @@
           "ScriptData": "TgABAAAAHAAAAAAAAAAFAAAABAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,

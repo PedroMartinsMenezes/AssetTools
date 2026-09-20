@@ -1270,56 +1270,14 @@
           "ExportIndex[7] ImportIndex[-18]: Function",
           "ExportIndex[6] ImportIndex[-18]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] PCGSpatialData) 'Orientation Targets'": {
-              "MetaDataMap": {
-                "DisplayName": "Orientation Targets",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] PCGSpatialData) 'Points'": {
-              "MetaDataMap": {
-                "DisplayName": "Points",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-64] Vector) 'Pole Vector'": {
-              "MetaDataMap": {
-                "DisplayName": "Pole Vector",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967264) 'Look At Axis'": {
-              "MetaDataMap": {
-                "DisplayName": "Look at Axis",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Pole World Space'": {
-              "MetaDataMap": {
-                "DisplayName": "Pole World Space",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Invert Look At'": {
-              "MetaDataMap": {
-                "DisplayName": "Invert Look At",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] PCGSpatialData) MetaDataMap( DisplayName(•Orientation Targets•) Category(•Default•) ) NamePrivate(•Orientation Targets•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] PCGSpatialData) MetaDataMap( DisplayName(•Points•) Category(•Default•) ) NamePrivate(•Points•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-64] Vector) MetaDataMap( DisplayName(•Pole Vector•) Category(•Default•) ) NamePrivate(•Pole Vector•) ": "",
+          "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967264) MetaDataMap( DisplayName(•Look at Axis•) Category(•Default•) ) NamePrivate(•Look At Axis•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Pole World Space•) Category(•Default•) ) NamePrivate(•Pole World Space•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Invert Look At•) Category(•Default•) ) NamePrivate(•Invert Look At•) ": ""
+        },
         "FuncMap": {
           "ExecuteWithContext": 6,
           "PointLoopBody": 7
@@ -1399,115 +1357,65 @@
           "ScriptData": "TC8DAABeWg8BAAAAOQAAAAAAAAAGAAAAAAEAAAA5AAAAAAAAAAYAAAAZFwoAAAABAAAAOQAAAAAAAAAGAAAAHNP///8WXjEAAQAAAEcAAAAAAAAABgAAADIZIP////8cAAAAAAAAAAAAAAAc3////wABAAAAOQAAAAAAAAAGAAAAAAEAAABHAAAAAAAAAAYAAAAWWl5MfAAAAFoGWAIAAF5aXg8BAAAAPgAAAAIAAAAGAAAAAAEAAAA+AAAAAgAAAAYAAABozv///0gBAAAAjAAAAAAAAAAGAAAAawABAAAARwAAAAAAAAAGAAAAHQEAAAAWWmjP////awABAAAAPgAAAAIAAAAGAAAAHQAAAAAAAQAAADIAAAACAAAABgAAAAABAAAANAAAAAIAAAAGAAAAAAEAAAAzAAAAAgAAAAYAAAAAAQAAADEAAAACAAAABgAAABZeDwAAAAAAAAAAAAEAAACVAAAAAgAAAAYAAAAu4f///wABAAAAMgAAAAIAAAAGAAAADwAAAAAAAAAAAAEAAACWAAAAAgAAAAYAAAA4AQABAAAAlQAAAAIAAAAGAAAAWk8AAQAAAJYAAAACAAAABgAAAFpeXwEBAAAA0gAAAAAAAAACAAAAAAEAAACVAAAAAgAAAAYAAABaXwABAAAASAAAAAAAAAAGAAAAGQEBAAAA0gAAAAAAAAACAAAAEwAAAAEAAABIAAAAAAAAAAYAAAAcy////0gBAAAAhQAAAAAAAAAGAAAAFl4c0f///0gBAAAAhQAAAAAAAAAGAAAAAAEAAABIAAAAAAAAAAYAAAAAAQAAAEUAAAAAAAAABgAAACoWWg8BAAAAQgAAAAAAAAAGAAAAAAEAAABCAAAAAAAAAAYAAABozf///wABAAAARQAAAAAAAAAGAAAAAAEAAAABAQAAAAAAAAYAAAAhtAAAAAAAAAAWMQABAAAAlwAAAAAAAAAGAAAAAAEAAABCAAAAAAAAAAYAAAAyDwEAAAD7AAAAAAAAAL3///9CAQAAAPsAAAAAAAAAvf///wABAAAAmAAAAAAAAAAGAAAAAAEAAACXAAAAAAAAAAYAAAAUQgEAAAATAAAAAAAAAL3///8AAQAAAJgAAAAAAAAABgAAACheDwEAAADCAAAAAAAAAAYAAABIAQAAAMIAAAAAAAAABgAAAAABAAAAmAAAAAAAAAAGAAAAWgYvAwAAXg8BAAAAPgAAAAAAAAAGAAAAAAEAAAA+AAAAAAAAAAYAAABozv///0gBAAAAjAAAAAAAAAAGAAAAawABAAAARwAAAAAAAAAGAAAAHQAAAAAWWmjP////awABAAAAPgAAAAAAAAAGAAAAHQAAAAAAAQAAADIAAAAAAAAABgAAAAABAAAANAAAAAAAAAAGAAAAAAEAAAAzAAAAAAAAAAYAAAAAAQAAADEAAAAAAAAABgAAABZeDwAAAAAAAAAAAAEAAACVAAAAAAAAAAYAAAAu4f///wABAAAAMgAAAAAAAAAGAAAADwAAAAAAAAAAAAEAAACWAAAAAAAAAAYAAAA4AQABAAAAlQAAAAAAAAAGAAAAWk8AAQAAAJYAAAAAAAAABgAAAFpeXwEBAAAAvgAAAAAAAAACAAAAAAEAAACVAAAAAAAAAAYAAABaTQQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(688) Value(ImportIndex[-66] PCGContext) 'InContext'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) 'Input'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) 'Output'": ""
-          },
-          {
-            "prop-set PropertyFlags(CPF_ConstParm) ElementSize(80) PropertyTypeName(StrProperty) 'Temp_string_Variable'": {
-              "Field": {
-                "prop-str ElementSize(16) 'Temp_string_Variable'": ""
-              }
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(688) Value(ImportIndex[-66] PCGContext) NamePrivate(•InContext•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) NamePrivate(•Input•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) NamePrivate(•Output•) ": "",
+          "prop-set PropertyFlags(CPF_ConstParm) ElementSize(80) PropertyTypeName(StrProperty) NamePrivate(•Temp_string_Variable•) ": {
+            "Field": {
+              "prop-str ElementSize(16) NamePrivate(•Temp_string_Variable•) ": ""
             }
           },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-30] PCGPointData) 'CallFunc_ToPointDataWithContext_ReturnValue'": ""
-          },
-          {
-            "prop-set ElementSize(80) PropertyTypeName(NameProperty) 'CallFunc_CustomInputLabels_ReturnValue'": {
-              "Field": {
-                "prop-name 'CallFunc_CustomInputLabels_ReturnValue'": ""
-              }
+          "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-30] PCGPointData) NamePrivate(•CallFunc_ToPointDataWithContext_ReturnValue•) ": "",
+          "prop-set ElementSize(80) PropertyTypeName(NameProperty) NamePrivate(•CallFunc_CustomInputLabels_ReturnValue•) ": {
+            "Field": {
+              "prop-name NamePrivate(•CallFunc_CustomInputLabels_ReturnValue•) ": ""
             }
           },
-          {
-            "prop-object Value(ImportIndex[-30] PCGPointData) 'CallFunc_PointLoop_OutData'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(NameProperty) 'CallFunc_Set_ToArray_Result'": {
-              "SingleField": {
-                "prop-name 'CallFunc_Set_ToArray_Result'": ""
-              }
+          "prop-object Value(ImportIndex[-30] PCGPointData) NamePrivate(•CallFunc_PointLoop_OutData•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(NameProperty) NamePrivate(•CallFunc_Set_ToArray_Result•) ": {
+            "SingleField": {
+              "prop-name NamePrivate(•CallFunc_Set_ToArray_Result•) ": ""
             }
           },
-          {
-            "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_MakeTaggedData_ReturnValue'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'K2Node_MakeArray_Array'": {
-              "SingleField": {
-                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'K2Node_MakeArray_Array'": ""
-              }
+          "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) NamePrivate(•CallFunc_MakeTaggedData_ReturnValue•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•K2Node_MakeArray_Array•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) NamePrivate(•K2Node_MakeArray_Array•) ": ""
             }
           },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'CallFunc_GetInputsByPinLabel_ReturnValue'": {
-              "SingleField": {
-                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue'": ""
-              }
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•CallFunc_GetInputsByPinLabel_ReturnValue•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) NamePrivate(•CallFunc_GetInputsByPinLabel_ReturnValue•) ": ""
             }
           },
-          {
-            "prop-struct ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) 'K2Node_MakeStruct_PCGDataCollection'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-26] PCGData) 'CallFunc_BreakTaggedData_Data'": ""
-          },
-          {
-            "prop-set ElementSize(80) PropertyTypeName(StrProperty) 'CallFunc_BreakTaggedData_Tags'": {
-              "Field": {
-                "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags'": ""
-              }
+          "prop-struct ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) NamePrivate(•K2Node_MakeStruct_PCGDataCollection•) ": "",
+          "prop-object Value(ImportIndex[-26] PCGData) NamePrivate(•CallFunc_BreakTaggedData_Data•) ": "",
+          "prop-set ElementSize(80) PropertyTypeName(StrProperty) NamePrivate(•CallFunc_BreakTaggedData_Tags•) ": {
+            "Field": {
+              "prop-str ElementSize(16) NamePrivate(•CallFunc_BreakTaggedData_Tags•) ": ""
             }
           },
-          {
-            "prop-name 'CallFunc_BreakTaggedData_Pin'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakTaggedData_bIsUsedMultipleTimes'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-31] PCGSpatialData) 'K2Node_DynamicCast_AsPCGSpatial_Data'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) 'CallFunc_GetInputsByPinLabel_ReturnValue\"1'": {
-              "SingleField": {
-                "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) 'CallFunc_GetInputsByPinLabel_ReturnValue\"1'": ""
-              }
+          "prop-name NamePrivate(•CallFunc_BreakTaggedData_Pin•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakTaggedData_bIsUsedMultipleTimes•) ": "",
+          "prop-object Value(ImportIndex[-31] PCGSpatialData) NamePrivate(•K2Node_DynamicCast_AsPCGSpatial_Data•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•CallFunc_GetInputsByPinLabel_ReturnValue\"1•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(128) Value(ImportIndex[-69] PCGTaggedData) NamePrivate(•CallFunc_GetInputsByPinLabel_ReturnValue\"1•) ": ""
             }
           },
-          {
-            "prop-object Value(ImportIndex[-26] PCGData) 'CallFunc_BreakTaggedData_Data\"1'": ""
-          },
-          {
-            "prop-set ElementSize(80) PropertyTypeName(StrProperty) 'CallFunc_BreakTaggedData_Tags\"1'": {
-              "Field": {
-                "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags\"1'": ""
-              }
+          "prop-object Value(ImportIndex[-26] PCGData) NamePrivate(•CallFunc_BreakTaggedData_Data\"1•) ": "",
+          "prop-set ElementSize(80) PropertyTypeName(StrProperty) NamePrivate(•CallFunc_BreakTaggedData_Tags\"1•) ": {
+            "Field": {
+              "prop-str ElementSize(16) NamePrivate(•CallFunc_BreakTaggedData_Tags\"1•) ": ""
             }
           },
-          {
-            "prop-name 'CallFunc_BreakTaggedData_Pin\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakTaggedData_bIsUsedMultipleTimes\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-31] PCGSpatialData) 'K2Node_DynamicCast_AsPCGSpatial_Data\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
-          }
-        ],
+          "prop-name NamePrivate(•CallFunc_BreakTaggedData_Pin\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakTaggedData_bIsUsedMultipleTimes\"1•) ": "",
+          "prop-object Value(ImportIndex[-31] PCGSpatialData) NamePrivate(•K2Node_DynamicCast_AsPCGSpatial_Data\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"1•) ": ""
+        },
         "FunctionFlags": 214042624,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1532,113 +1440,43 @@
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(688) Value(ImportIndex[-66] PCGContext) 'InContext'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-30] PCGPointData) 'InData'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(208) Value(ImportIndex[-68] PCGPoint) 'InPoint'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(208) Value(ImportIndex[-68] PCGPoint) 'OutPoint'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-28] PCGMetadata) 'OutMetadata'": ""
-          },
-          {
-            "prop-int64 PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Iteration'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_Conv_DoubleToVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_BreakTransform_Location'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_BreakTransform_Rotation'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_BreakTransform_Scale'": ""
-          },
-          {
-            "prop-byte Value(4294967264) 'Temp_byte_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'Temp_struct_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_TransformLocation_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_FindLookAtRotation_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_FindLookAtRotation_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_GetForwardVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_GetForwardVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_SelectVector_ReturnValue'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-30] PCGPointData) 'CallFunc_ToPointDataWithContext_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_GetClosestPoint_bOutFound'": ""
-          },
-          {
-            "prop-struct ElementSize(208) Value(ImportIndex[-68] PCGPoint) 'CallFunc_GetClosestPoint_OutPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_BreakTransform_Location\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_BreakTransform_Rotation\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_BreakTransform_Scale\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_FindLookAtRotation_ReturnValue\"2'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_GetForwardVector_ReturnValue\"2'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_GetUpVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_GetRightVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'K2Node_Select_Default'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'CallFunc_Multiply_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) 'K2Node_Select_Default\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) 'CallFunc_MakeRotFromXZ_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-63] Transform) 'CallFunc_MakeTransform_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(688) Value(ImportIndex[-66] PCGContext) NamePrivate(•InContext•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-30] PCGPointData) NamePrivate(•InData•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(208) Value(ImportIndex[-68] PCGPoint) NamePrivate(•InPoint•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(208) Value(ImportIndex[-68] PCGPoint) NamePrivate(•OutPoint•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-28] PCGMetadata) NamePrivate(•OutMetadata•) ": "",
+          "prop-int64 PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Iteration•) ": "",
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) NamePrivate(•ReturnValue•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_Variable•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_Conv_DoubleToVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_BreakTransform_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_BreakTransform_Rotation•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_BreakTransform_Scale•) ": "",
+          "prop-byte Value(4294967264) NamePrivate(•Temp_byte_Variable•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•Temp_struct_Variable•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_TransformLocation_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_FindLookAtRotation_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_FindLookAtRotation_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_GetForwardVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_GetForwardVector_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_SelectVector_ReturnValue•) ": "",
+          "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-30] PCGPointData) NamePrivate(•CallFunc_ToPointDataWithContext_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_GetClosestPoint_bOutFound•) ": "",
+          "prop-struct ElementSize(208) Value(ImportIndex[-68] PCGPoint) NamePrivate(•CallFunc_GetClosestPoint_OutPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_BreakTransform_Location\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_BreakTransform_Rotation\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_BreakTransform_Scale\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_FindLookAtRotation_ReturnValue\"2•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_GetForwardVector_ReturnValue\"2•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_GetUpVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_GetRightVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•K2Node_Select_Default•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•CallFunc_Multiply_VectorVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-64] Vector) NamePrivate(•K2Node_Select_Default\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-62] Rotator) NamePrivate(•CallFunc_MakeRotFromXZ_ReturnValue•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-63] Transform) NamePrivate(•CallFunc_MakeTransform_ReturnValue•) ": ""
+        },
         "FunctionFlags": 1287784448,
         "RepOffset": 0,
         "EventGraphFunction": 0,

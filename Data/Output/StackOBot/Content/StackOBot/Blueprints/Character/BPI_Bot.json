@@ -513,7 +513,7 @@
           "ExportIndex[7] ImportIndex[-3]: Function",
           "ExportIndex[6] ImportIndex[-3]: Function"
         ],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FuncMap": {
           "RecieveDamage": 6,
           "ResetJetpack": 7
@@ -591,17 +591,11 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-13] Vector) 'Attack Direction'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Knockback Strength'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'InvFramesTime'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-13] Vector) NamePrivate(•Attack Direction•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Knockback Strength•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•InvFramesTime•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -625,7 +619,7 @@
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

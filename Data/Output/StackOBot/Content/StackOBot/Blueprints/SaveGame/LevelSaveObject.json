@@ -634,23 +634,14 @@
           "ExportIndex[13] ImportIndex[-6]: Function",
           "ExportIndex[12] ImportIndex[-6]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-25] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) 'CollectablePickups'": {
-              "SingleField": {
-                "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
-              },
-              "MetaDataMap": {
-                "DisplayName": "Collectable Pickups",
-                "Category": "Default",
-                "MultiLine": "true"
-              }
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-25] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) MetaDataMap( DisplayName(•Collectable Pickups•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•CollectablePickups•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) NamePrivate(•CollectablePickups•) ": ""
             }
           }
-        ],
+        },
         "FuncMap": {
           "ExecuteUbergraph_LevelSaveObject": 12,
           "GetCollectablesOnMap": 13,
@@ -845,14 +836,10 @@
           "ScriptData": "XlpeDwEAAAAUAAAAAAAAAAsAAAAAAQAAABQAAAAAAAAACwAAABkg7v///xwAAAABAAAAFAAAAAAAAAALAAAAHPD///8BAQAAABoAAAAAAAAAAgAAAAABAAAAGAAAAAAAAAALAAAAFloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'Collectable_'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_AddUnique_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) NamePrivate(•Collectable_•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_AddUnique_ReturnValue•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -876,11 +863,9 @@
           "ScriptData": "TgABAAAAKAAAAAAAAAAMAAAABAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": ""
+        },
         "FunctionFlags": 32769,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -904,15 +889,13 @@
           "ScriptData": "XlpeDwEAAAAaAAAAAAAAAA0AAABIAQAAABoAAAAAAAAADQAAAAEBAAAAGgAAAAAAAAACAAAAWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-array PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(16) PropertyTypeName(StructProperty) 'CollectablePickups'": {
-              "SingleField": {
-                "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectablePickups'": ""
-              }
+        "ChildProperties": {
+          "prop-array PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(16) PropertyTypeName(StructProperty) NamePrivate(•CollectablePickups•) ": {
+            "SingleField": {
+              "prop-struct ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) NamePrivate(•CollectablePickups•) ": ""
             }
           }
-        ],
+        },
         "FunctionFlags": 474087424,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -936,14 +919,10 @@
           "ScriptData": "XlpeFAABAAAAFQAAAAAAAAAOAAAAGSDu////HAAAAAEAAAAVAAAAAAAAAA4AAAAc7////wEBAAAAGgAAAAAAAAACAAAASAEAAAAZAAAAAAAAAA4AAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) 'CollectableData'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Array_RemoveItem_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_ConstParm, CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_OutParm, CPF_ReferenceParm) ElementSize(112) Value(ImportIndex[-26] CollectableObjectData) NamePrivate(•CollectableData•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Array_RemoveItem_ReturnValue•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,

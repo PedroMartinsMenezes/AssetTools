@@ -4182,363 +4182,53 @@
           "ExportIndex[53] ImportIndex[-25]: Function",
           "ExportIndex[38] ImportIndex[-25]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-119] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'SnapToPlayer'": {
-              "MetaDataMap": {
-                "DisplayName": "Snap to Player",
-                "Category": "SideScrollingCamera"
-              }
-            }
-          },
-          {
-            "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967176) 'Camera State'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera State",
-                "Category": "Camera Global"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] Actor) 'CameraTargetRef'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera Target Ref",
-                "Category": "SideScrollingCamera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-114] Rotator) 'Default Camera Rotation'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Camera Rotation",
-                "Category": "SideScrollingCamera"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-30] CameraActor) 'ProxyCameraTransition'": {
-              "MetaDataMap": {
-                "DisplayName": "Proxy Camera Transition",
-                "Category": "SideScrollingCamera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'Current Actor Location'": {
-              "MetaDataMap": {
-                "DisplayName": "Current Actor Location",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'Next Camera Location'": {
-              "MetaDataMap": {
-                "DisplayName": "Next Camera Location",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-114] Rotator) 'Next Camera Rotation'": {
-              "MetaDataMap": {
-                "DisplayName": "Next Camera Rotation",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'Cached Actor Location'": {
-              "MetaDataMap": {
-                "DisplayName": "Cached Actor Location",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Camera Zoom'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera Zoom",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Camera Speed Z'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera Speed Z",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Camera X Goal'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera X Goal",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Camera Y Goal'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera Y Goal",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Camera  Z Goal'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera  Z Goal",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Update Camera Z'": {
-              "MetaDataMap": {
-                "DisplayName": "Update Camera Z",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'TransitionOutBlendTime'": {
-              "MetaDataMap": {
-                "DisplayName": "Transition Out Blend Time",
-                "Category": "Side Scrolling Camera"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] CameraComponent) 'PlayerCamera'": {
-              "MetaDataMap": {
-                "DisplayName": "Player Camera",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-44] SpringArmComponent) 'Camera Boom'": {
-              "MetaDataMap": {
-                "DisplayName": "Camera Boom",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'TransitionToLocked'": {
-              "MetaDataMap": {
-                "DisplayName": "Transition to Locked",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultTargetArmLength'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Target Arm Length",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultViewPitchMin'": {
-              "MetaDataMap": {
-                "DisplayName": "Default View Pitch Min",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultViewPitchMax'": {
-              "MetaDataMap": {
-                "DisplayName": "Default View Pitch Max",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultViewYawMax'": {
-              "MetaDataMap": {
-                "DisplayName": "Default View Yaw Max",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultViewYawMin'": {
-              "MetaDataMap": {
-                "DisplayName": "Default View Yaw Min",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultCameraRotationLagSpeed'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Camera Rotation Lag Speed",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultCameraLagSpeed'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Camera Lag Speed",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'DefaultCameraLagMaxDistance'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Camera Lag Max Distance",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedPitchBounds'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Pitch Bounds",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedYawBounds'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Yaw Bounds",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'DefaultTargetOffset'": {
-              "MetaDataMap": {
-                "DisplayName": "Default Target Offset",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedArmLength'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Arm Length",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967176) 'NextCameraState'": {
-              "MetaDataMap": {
-                "DisplayName": "Next Camera State",
-                "Category": "Camera Global"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PresetYaw'": {
-              "MetaDataMap": {
-                "DisplayName": "Preset Yaw",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Preset Pitch'": {
-              "MetaDataMap": {
-                "DisplayName": "Preset Pitch",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PresetAngleCache'": {
-              "MetaDataMap": {
-                "DisplayName": "Preset Angle Cache",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedCameraPresetNeedsCache'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Camera Preset Needs Cache",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedCameraInterpSpeed'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Camera Interp Speed",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'LockedCameraLagInterpSpeed'": {
-              "MetaDataMap": {
-                "DisplayName": "Locked Camera Lag Interp Speed",
-                "Category": "Locked Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'ThirdPersonActorLocation'": {
-              "MetaDataMap": {
-                "DisplayName": "Third Person Actor Location",
-                "Category": "Third Person Camera"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) 'GroundLocation'": {
-              "MetaDataMap": {
-                "DisplayName": "Ground Location",
-                "Category": "Third Person Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'CurrentCameraOffset'": {
-              "MetaDataMap": {
-                "DisplayName": "Current Camera Offset",
-                "Category": "Third Person Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PawnZ'": {
-              "MetaDataMap": {
-                "DisplayName": "Pawn Z",
-                "Category": "Third Person Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'MaxCameraOffset'": {
-              "MetaDataMap": {
-                "DisplayName": "Max Camera Offset",
-                "Category": "Third Person Camera"
-              }
-            }
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'CurrentGroundDistance'": {
-              "MetaDataMap": {
-                "DisplayName": "Current Ground Distance",
-                "Category": "Third Person Camera"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-119] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Snap to Player•) Category(•SideScrollingCamera•) ) NamePrivate(•SnapToPlayer•) ": "",
+          "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967176) MetaDataMap( DisplayName(•Camera State•) Category(•Camera Global•) ) NamePrivate(•Camera State•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] Actor) MetaDataMap( DisplayName(•Camera Target Ref•) Category(•SideScrollingCamera•) ) NamePrivate(•CameraTargetRef•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-114] Rotator) MetaDataMap( DisplayName(•Default Camera Rotation•) Category(•SideScrollingCamera•) ) NamePrivate(•Default Camera Rotation•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-30] CameraActor) MetaDataMap( DisplayName(•Proxy Camera Transition•) Category(•SideScrollingCamera•) ) NamePrivate(•ProxyCameraTransition•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Current Actor Location•) Category(•Side Scrolling Camera•) ) NamePrivate(•Current Actor Location•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Next Camera Location•) Category(•Side Scrolling Camera•) ) NamePrivate(•Next Camera Location•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-114] Rotator) MetaDataMap( DisplayName(•Next Camera Rotation•) Category(•Side Scrolling Camera•) ) NamePrivate(•Next Camera Rotation•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Cached Actor Location•) Category(•Side Scrolling Camera•) ) NamePrivate(•Cached Actor Location•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Camera Zoom•) Category(•Side Scrolling Camera•) ) NamePrivate(•Camera Zoom•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Camera Speed Z•) Category(•Side Scrolling Camera•) ) NamePrivate(•Camera Speed Z•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Camera X Goal•) Category(•Side Scrolling Camera•) ) NamePrivate(•Camera X Goal•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Camera Y Goal•) Category(•Side Scrolling Camera•) ) NamePrivate(•Camera Y Goal•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Camera  Z Goal•) Category(•Side Scrolling Camera•) ) NamePrivate(•Camera  Z Goal•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Update Camera Z•) Category(•Side Scrolling Camera•) ) NamePrivate(•Update Camera Z•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Transition Out Blend Time•) Category(•Side Scrolling Camera•) ) NamePrivate(•TransitionOutBlendTime•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] CameraComponent) MetaDataMap( DisplayName(•Player Camera•) Category(•Default•) ) NamePrivate(•PlayerCamera•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-44] SpringArmComponent) MetaDataMap( DisplayName(•Camera Boom•) Category(•Default•) ) NamePrivate(•Camera Boom•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Transition to Locked•) Category(•Locked Camera•) ) NamePrivate(•TransitionToLocked•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default Target Arm Length•) Category(•Locked Camera•) ) NamePrivate(•DefaultTargetArmLength•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default View Pitch Min•) Category(•Locked Camera•) ) NamePrivate(•DefaultViewPitchMin•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default View Pitch Max•) Category(•Locked Camera•) ) NamePrivate(•DefaultViewPitchMax•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default View Yaw Max•) Category(•Locked Camera•) ) NamePrivate(•DefaultViewYawMax•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default View Yaw Min•) Category(•Locked Camera•) ) NamePrivate(•DefaultViewYawMin•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default Camera Rotation Lag Speed•) Category(•Locked Camera•) ) NamePrivate(•DefaultCameraRotationLagSpeed•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default Camera Lag Speed•) Category(•Locked Camera•) ) NamePrivate(•DefaultCameraLagSpeed•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Default Camera Lag Max Distance•) Category(•Locked Camera•) ) NamePrivate(•DefaultCameraLagMaxDistance•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Pitch Bounds•) Category(•Locked Camera•) ) NamePrivate(•LockedPitchBounds•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Yaw Bounds•) Category(•Locked Camera•) ) NamePrivate(•LockedYawBounds•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Default Target Offset•) Category(•Locked Camera•) ) NamePrivate(•DefaultTargetOffset•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Arm Length•) Category(•Locked Camera•) ) NamePrivate(•LockedArmLength•) ": "",
+          "prop-byte PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967176) MetaDataMap( DisplayName(•Next Camera State•) Category(•Camera Global•) ) NamePrivate(•NextCameraState•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Preset Yaw•) Category(•Locked Camera•) ) NamePrivate(•PresetYaw•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Preset Pitch•) Category(•Locked Camera•) ) NamePrivate(•Preset Pitch•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Preset Angle Cache•) Category(•Locked Camera•) ) NamePrivate(•PresetAngleCache•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Camera Preset Needs Cache•) Category(•Locked Camera•) ) NamePrivate(•LockedCameraPresetNeedsCache•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Camera Interp Speed•) Category(•Locked Camera•) ) NamePrivate(•LockedCameraInterpSpeed•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Locked Camera Lag Interp Speed•) Category(•Locked Camera•) ) NamePrivate(•LockedCameraLagInterpSpeed•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Third Person Actor Location•) Category(•Third Person Camera•) ) NamePrivate(•ThirdPersonActorLocation•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) Value(ImportIndex[-116] Vector) MetaDataMap( DisplayName(•Ground Location•) Category(•Third Person Camera•) ) NamePrivate(•GroundLocation•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Current Camera Offset•) Category(•Third Person Camera•) ) NamePrivate(•CurrentCameraOffset•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Pawn Z•) Category(•Third Person Camera•) ) NamePrivate(•PawnZ•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Max Camera Offset•) Category(•Third Person Camera•) ) NamePrivate(•MaxCameraOffset•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Current Ground Distance•) Category(•Third Person Camera•) ) NamePrivate(•CurrentGroundDistance•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_CamManager": 38,
           "Update Camera When Pawn Changes": 53,
@@ -5291,212 +4981,77 @@
           "ScriptData": "XlpeWl5aFAABAAAAdwAAAAAAAAAjAAAAaKL///8AAQAAAKMAAAAAAAAAIwAAABZeWgfWBQAAAAEAAAB3AAAAAAAAACMAAABaXlpeXwEBAAAApAAAAAAAAAACAAAAAAEAAACjAAAAAAAAACMAAABaDwEAAAB4AAAAAAAAACMAAAAAAQAAAHgAAAAAAAAAIwAAABkBAQAAAKQAAAAAAAAAAgAAAAoAAAABAAAAeAAAAAAAAAAjAAAAHMn///8WXg8BAAAAtQAAAAAAAAACAAAAAQEAAAC1AAAAAAAAAAIAAAAAAQAAAHgAAAAAAAAAIwAAAFpot////wEBAAAAtQAAAAAAAAACAAAAAAEAAABfAAAABQAAACMAAAAAAQAAAGAAAAAFAAAAIwAAAAABAAAAYQAAAAUAAAAjAAAAFg8BAAAARQAAAAAAAAAjAAAAAAEAAABFAAAAAAAAACMAAABovP///wABAAAAYQAAAAUAAAAjAAAANwAAAAAAwHJAFg8BAAAAggAAAAIAAAAjAAAAAAEAAACCAAAAAgAAACMAAABor////wABAAAAXwAAAAUAAAAjAAAAAAEAAABgAAAABQAAACMAAAAAAQAAAEUAAAAAAAAAIwAAABZeDwEAAAC1AAAAAAAAAAIAAAABAQAAALUAAAAAAAAAAgAAAAABAAAAggAAAAIAAAAjAAAAWmi3////AQEAAAC1AAAAAAAAAAIAAAAAAQAAAF8AAAAGAAAAIwAAAAABAAAAYAAAAAYAAAAjAAAAAAEAAABhAAAABgAAACMAAAAWDwEAAACOAAAAAAAAACMAAAAAAQAAAI4AAAAAAAAAIwAAAGio////AAEAAABgAAAABgAAACMAAAABAQAAAJwAAAAAAAAAAgAAABZeDwEAAACbAAAAAAAAAAIAAAABAQAAAJsAAAAAAAAAAgAAAAABAAAAjgAAAAAAAAAjAAAAWjEAAQAAAEEBAAAAAAAAIwAAAAEBAAAApAAAAAAAAAACAAAAMg8BAAAARgAAAAAAAAAjAAAAAAEAAABGAAAAAAAAACMAAABou////wEBAAAAtQAAAAAAAAACAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAECPwBZeFAABAAAAfwAAAAAAAAAjAAAAaKH///8XAQEAAAC1AAAAAAAAAAIAAAAAAQAAAEYAAAAAAAAAIwAAACQAKAABAAAAQQEAAAAAAAAjAAAAJAAAAQAAAH4AAAAAAAAAIwAAACcvj////xAAAAAeVkSNPR6oqhA9HgAAgD8eAACAPzAvj////xAAAAAeAAAAAB4AAIA/HgAAAAAeAACAPzAeAACgQBZaaML///8AAQAAAH4AAAAAAAAAIwAAAAABAAAASgAAAAAAAAAjAAAAAAEAAABLAAAAAAAAACMAAAAAAQAAAFkAAAAAAAAAIwAAAAABAAAATQAAAAAAAAAjAAAAAAEAAABWAAAAAAAAACMAAAAAAQAAAFUAAAAAAAAAIwAAAAABAAAAVwAAAAAAAAAjAAAAAAEAAABUAAAAAAAAACMAAAAAAQAAAFgAAAAAAAAAIwAAAAABAAAAUAAAAAAAAAAjAAAAAAEAAABSAAAAAAAAACMAAAAAAQAAAFEAAAAAAAAAIwAAAAABAAAATAAAAAAAAAAjAAAAAAEAAABTAAAAAAAAACMAAAAAAQAAAE4AAAAAAAAAIwAAAAABAAAATwAAAAAAAAAjAAAAAAEAAABbAAAAAAAAACMAAAAAAQAAAFoAAAAAAAAAIwAAABYUAAEAAACGAAAAAAAAACMAAABorP///wABAAAASgAAAAAAAAAjAAAAFl4UAQEAAAAFAgAAAAAAAAIAAAAAAQAAAIYAAAAAAAAAIwAAAFpeWgfdBQAAAQEAAAAFAgAAAAAAAAIAAABaaLf///8BAQAAALUAAAAAAAAAAgAAAAABAAAAXwAAAAIAAAAjAAAAAAEAAABgAAAAAgAAACMAAAAAAQAAAGEAAAACAAAAIwAAABZeDwEAAACVAAAAAAAAAAIAAAABAQAAAJUAAAAAAAAAAgAAAAABAAAAYQAAAAIAAAAjAAAAWl4PAQAAAJgAAAAAAAAAAgAAAAEBAAAAmAAAAAAAAAACAAAAHgAAQEBaXhQBAQAAAAUCAAAAAAAAAgAAAChaRagAAAAAAAAAAAEAAABiAAAAAAAAACMAAAAWXloHCQcAAAABAAAAYgAAAAAAAAAjAAAAWmi3////AQEAAAC1AAAAAAAAAAIAAAAAAQAAAF8AAAADAAAAIwAAAAABAAAAYAAAAAMAAAAjAAAAAAEAAABhAAAAAwAAACMAAAAWXg8BAAAAmgAAAAAAAAACAAAAAQEAAACaAAAAAAAAAAIAAAAAAQAAAF8AAAADAAAAIwAAAFoPAQAAAIIAAAAAAAAAIwAAAAABAAAAggAAAAAAAAAjAAAAaK////8BAQAAAJoAAAAAAAAAAgAAAAEBAAAAmwAAAAAAAAACAAAAAQEAAACVAAAAAAAAAAIAAAAWXkXXAQAAAAAAAAABAAAAggAAAAAAAAAjAAAAAAEAAACLAAAAAAAAACMAAAAAAQAAAIwAAAAAAAAAIwAAABZaXg8BAAAAhgEAAAAAAAACAAAAAQEAAACGAQAAAAAAAAIAAAAAAQAAAIsAAAAAAAAAIwAAAFpeDwEAAACHAQAAAAAAAAIAAAABAQAAAIcBAAAAAAAAAgAAAAABAAAAjAAAAAAAAAAjAAAAWg8BAAAAeAAAAAIAAAAjAAAAAAEAAAB4AAAAAgAAACMAAAAcyf///xZeDwEAAAA/AAAAAAAAAAIAAAABAQAAAD8AAAAAAAAAAgAAAAABAAAAeAAAAAIAAAAjAAAAWhQAAQAAAGQAAAAAAAAAIwAAAGi2////AQEAAACZAAAAAAAAAAIAAAAkAhZeDwEAAAB3AQAAAAAAACMAAABIAQAAAHcBAAAAAAAAIwAAAAEBAAAAhgEAAAAAAAACAAAADwEAAAB4AQAAAAAAACMAAABIAQAAAHgBAAAAAAAAIwAAAAEBAAAAhwEAAAAAAAACAAAADwEAAAB2AQAAAAAAACMAAABIAQAAAHYBAAAAAAAAIwAAAB4AAJZCFEgBAAAAvwEAAAAAAAAjAAAAAAEAAABkAAAAAAAAACMAAABaBg0IAABeWgYNCAAAXg8BAAAAmAAAAAAAAAACAAAAAQEAAACYAAAAAAAAAAIAAAAeAAAAQFpot////wEBAAAAtQAAAAAAAAACAAAAAAEAAABfAAAAAgAAACMAAAAAAQAAAGAAAAACAAAAIwAAAAABAAAAYQAAAAIAAAAjAAAAFhQAAQAAAIUAAAACAAAAIwAAAGit////AQEAAACVAAAAAAAAAAIAAAAAAQAAAGEAAAACAAAAIwAAADcAAAAAAABZQBYPAQAAAHUAAAAAAAAAIwAAAAABAAAAdQAAAAAAAAAjAAAAaL3///8XFg8BAAAAagAAAAAAAAAjAAAAAAEAAABqAAAAAAAAACMAAABos////wEBAAAAlQAAAAAAAAACAAAAAAEAAABhAAAAAgAAACMAAAAAAQAAAHUAAAAAAAAAIwAAADcAAAAAAAAQQBYPAQAAAIoAAAACAAAAIwAAAAABAAAAigAAAAIAAAAjAAAAaKn///8BAQAAAJUAAAAAAAAAAgAAAAABAAAAagAAAAAAAAAjAAAAAAEAAACFAAAAAgAAACMAAAAWXg8BAAAAlQAAAAAAAAACAAAAAQEAAACVAAAAAAAAAAIAAAAAAQAAAIoAAAACAAAAIwAAAFoGCAQAAA8BAAAAbAAAAAAAAAAjAAAAAAEAAABsAAAAAAAAACMAAAAbBgEAAAAAAAAWaLf///8AAQAAAGwAAAAAAAAAIwAAAAABAAAAXwAAAAAAAAAjAAAAAAEAAABgAAAAAAAAACMAAAAAAQAAAGEAAAAAAAAAIwAAABZot////wEBAAAAtQAAAAAAAAACAAAAAAEAAABfAAAABAAAACMAAAAAAQAAAGAAAAAEAAAAIwAAAAABAAAAYQAAAAQAAAAjAAAAFhQAAQAAAIUAAAAAAAAAIwAAAGit////AAEAAABfAAAAAAAAACMAAAAAAQAAAF8AAAAEAAAAIwAAADcAAAAAAABpQBYPAQAAAIoAAAAAAAAAIwAAAAABAAAAigAAAAAAAAAjAAAAaKn///8AAQAAAF8AAAAAAAAAIwAAAAABAAAAXwAAAAQAAAAjAAAAAAEAAACFAAAAAAAAACMAAAAWXg8BAAAAmgAAAAAAAAACAAAAAQEAAACaAAAAAAAAAAIAAAAAAQAAAIoAAAAAAAAAIwAAAFoGewQAAARIAQAAAL8BAAAAAAAAIwAAAFM="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-27] Actor) 'CameraTarget'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-116] Vector) 'NewCameraLocation'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-114] Rotator) 'NewCameraRotation'": ""
-          },
-          {
-            "prop-float PropertyFlags(CPF_Parm, CPF_OutParm) 'NewCameraFOV'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) 'ReturnValue'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible) 'NewLocalVar'": {
-              "MetaDataMap": {
-                "FriendlyName": "New Local Var",
-                "Category": "Default"
-              }
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-27] Actor) NamePrivate(•CameraTarget•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•NewCameraLocation•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•NewCameraRotation•) ": "",
+          "prop-float PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•NewCameraFOV•) ": "",
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm, CPF_ReturnParm) NamePrivate(•ReturnValue•) ": "",
+          "prop-double PropertyFlags(CPF_Edit, CPF_BlueprintVisible) MetaDataMap( FriendlyName(•New Local Var•) Category(•Default•) ) NamePrivate(•NewLocalVar•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_GetCameraLocation_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"2•) ": "",
+          "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•K2Node_MakeArray_Array•) ": {
+            "SingleField": {
+              "prop-object Value(ImportIndex[-27] Actor) NamePrivate(•K2Node_MakeArray_Array•) ": ""
             }
           },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_GetCameraLocation_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"2'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'K2Node_MakeArray_Array'": {
-              "SingleField": {
-                "prop-object Value(ImportIndex[-27] Actor) 'K2Node_MakeArray_Array'": ""
-              }
-            }
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_Add_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"3'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) 'CallFunc_LineTraceSingle_OutHit'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LineTraceSingle_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_NearlyEqual_FloatFloat_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakHitResult_bBlockingHit'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakHitResult_bInitialOverlap'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakHitResult_Time'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakHitResult_Distance'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_Location'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_ImpactPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_Normal'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_ImpactNormal'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-45] PhysicalMaterial) 'CallFunc_BreakHitResult_PhysMat'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-27] Actor) 'CallFunc_BreakHitResult_HitActor'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-40] PrimitiveComponent) 'CallFunc_BreakHitResult_HitComponent'": ""
-          },
-          {
-            "prop-name 'CallFunc_BreakHitResult_HitBoneName'": ""
-          },
-          {
-            "prop-name 'CallFunc_BreakHitResult_BoneName'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_HitItem'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_ElementIndex'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_FaceIndex'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_TraceStart'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_TraceEnd'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Not_PreBool_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"4'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"4'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"4'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_SideViewCameraInterpolation_Location'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) 'CallFunc_SideViewCameraInterpolation_Rotation'": ""
-          },
-          {
-            "prop-double 'CallFunc_Add_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_MakeVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_CheckForMovingPlatform_On_Moving_Geometry'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_ByteByte_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"5'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"5'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"5'": ""
-          },
-          {
-            "prop-bool 'CallFunc_NearlyEqual_FloatFloat_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_GetWorldDeltaSeconds_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_ReturnValue\"1'": ""
-          }
-        ],
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"3•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) NamePrivate(•CallFunc_LineTraceSingle_OutHit•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LineTraceSingle_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_NearlyEqual_FloatFloat_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakHitResult_bBlockingHit•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakHitResult_bInitialOverlap•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakHitResult_Time•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakHitResult_Distance•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_ImpactPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_Normal•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_ImpactNormal•) ": "",
+          "prop-object Value(ImportIndex[-45] PhysicalMaterial) NamePrivate(•CallFunc_BreakHitResult_PhysMat•) ": "",
+          "prop-object Value(ImportIndex[-27] Actor) NamePrivate(•CallFunc_BreakHitResult_HitActor•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-40] PrimitiveComponent) NamePrivate(•CallFunc_BreakHitResult_HitComponent•) ": "",
+          "prop-name NamePrivate(•CallFunc_BreakHitResult_HitBoneName•) ": "",
+          "prop-name NamePrivate(•CallFunc_BreakHitResult_BoneName•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_HitItem•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_ElementIndex•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_FaceIndex•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_TraceStart•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_TraceEnd•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Not_PreBool_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"4•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"4•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"4•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_SideViewCameraInterpolation_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•CallFunc_SideViewCameraInterpolation_Rotation•) ": "",
+          "prop-double NamePrivate(•CallFunc_Add_DoubleDouble_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_CheckForMovingPlatform_On_Moving_Geometry•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_ByteByte_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"5•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"5•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"5•) ": "",
+          "prop-bool NamePrivate(•CallFunc_NearlyEqual_FloatFloat_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_GetWorldDeltaSeconds_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_ReturnValue\"1•) ": ""
+        },
         "FunctionFlags": 214042632,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -5520,74 +5075,30 @@
           "ScriptData": "XloPAQAAAHQAAAAAAAAAJAAAAAABAAAAdAAAAAAAAAAkAAAAGQEBAAAApAAAAAAAAAACAAAADgAAAAEAAAB0AAAAAAAAACQAAAAbDwEAAAAAAAAWaLf///8BAQAAAD8AAAAAAAAAAgAAAAABAAAAXwAAAAAAAAAkAAAAAAEAAABgAAAAAAAAACQAAAAAAQAAAGEAAAAAAAAAJAAAABZot////wABAAAAdAAAAAAAAAAkAAAAAAEAAABfAAAAAgAAACQAAAAAAQAAAGAAAAACAAAAJAAAAAABAAAAYQAAAAIAAAAkAAAAFg8BAAAAeAAAAAAAAAAkAAAAAAEAAAB4AAAAAAAAACQAAAAZAQEAAACkAAAAAAAAAAIAAAAKAAAAAQAAAHgAAAAAAAAAJAAAABzJ////FhQAAQAAAGUAAAAAAAAAJAAAAGi1////AAEAAABgAAAAAgAAACQAAAA3AAAAAAAAAAAWaLf///8AAQAAAHgAAAAAAAAAJAAAAAABAAAAXwAAAAMAAAAkAAAAAAEAAABgAAAAAwAAACQAAAAAAQAAAGEAAAADAAAAJAAAABYUAAEAAAB9AAAAAAAAACQAAABosf///wABAAAAYAAAAAIAAAAkAAAANwAAAAAAAAAAFg8BAAAAjgAAAAAAAAAkAAAAAAEAAACOAAAAAAAAACQAAABoqP///wABAAAAYAAAAAAAAAAkAAAAAAEAAABgAAAAAwAAACQAAAAWFAABAAAAdgAAAAAAAAAkAAAAaLL///8AAQAAAGAAAAACAAAAJAAAADcAAAAAAAAAABYUAAEAAAB9AAAAAgAAACQAAABosf///wABAAAAjgAAAAAAAAAkAAAAAAEAAABgAAAAAgAAACQAAAAWFAABAAAAdgAAAAIAAAAkAAAAaLL///8AAQAAAI4AAAAAAAAAJAAAAAABAAAAYAAAAAIAAAAkAAAAFhQAAQAAAEgAAAAAAAAAJAAAAGi6////AAEAAAB9AAAAAAAAACQAAAAAAQAAAH0AAAACAAAAJAAAABYUAAEAAABIAAAAAgAAACQAAABouv///wABAAAAdgAAAAAAAAAkAAAAAAEAAAB2AAAAAgAAACQAAAAWFAABAAAASQAAAAAAAAAkAAAAaLn///8AAQAAAEgAAAACAAAAJAAAAAABAAAASAAAAAAAAAAkAAAAFhQAAQAAAEkAAAACAAAAJAAAAGi5////AAEAAABJAAAAAAAAACQAAAAAAQAAAGUAAAAAAAAAJAAAABZeFEgBAAAAmgEAAAAAAAAkAAAAAAEAAABJAAAAAgAAACQAAABaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'On Moving Geometry'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_GetVelocity_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"2'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Greater_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BooleanAND_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BooleanAND_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BooleanOR_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BooleanOR_ReturnValue\"1'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•On Moving Geometry•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_GetVelocity_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"1•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"2•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Greater_DoubleDouble_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Greater_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanAND_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanAND_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanOR_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanOR_ReturnValue\"1•) ": ""
+        },
         "FunctionFlags": 474087424,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -5611,144 +5122,56 @@
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool 'Temp_bool_Variable'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z'": ""
-          },
-          {
-            "prop-double 'CallFunc_GetWorldDeltaSeconds_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FClamp_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) 'CallFunc_K2_SetRelativeLocation_SweepHitResult'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'K2Node_MakeArray_Array'": {
-              "SingleField": {
-                "prop-object Value(ImportIndex[-27] Actor) 'K2Node_MakeArray_Array'": ""
-              }
+        "ChildProperties": {
+          "prop-bool NamePrivate(•Temp_bool_Variable•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_Subtract_VectorVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_Subtract_VectorVector_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z•) ": "",
+          "prop-double NamePrivate(•CallFunc_GetWorldDeltaSeconds_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FClamp_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_GetPlayerPawn_ReturnValue•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) NamePrivate(•CallFunc_K2_SetRelativeLocation_SweepHitResult•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-array PropertyFlags(CPF_ConstParm, CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•K2Node_MakeArray_Array•) ": {
+            "SingleField": {
+              "prop-object Value(ImportIndex[-27] Actor) NamePrivate(•K2Node_MakeArray_Array•) ": ""
             }
           },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) 'CallFunc_LineTraceSingle_OutHit'": ""
-          },
-          {
-            "prop-bool 'CallFunc_LineTraceSingle_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakHitResult_bBlockingHit'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BreakHitResult_bInitialOverlap'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakHitResult_Time'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakHitResult_Distance'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_Location'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_ImpactPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_Normal'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_ImpactNormal'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-45] PhysicalMaterial) 'CallFunc_BreakHitResult_PhysMat'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-27] Actor) 'CallFunc_BreakHitResult_HitActor'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-40] PrimitiveComponent) 'CallFunc_BreakHitResult_HitComponent'": ""
-          },
-          {
-            "prop-name 'CallFunc_BreakHitResult_HitBoneName'": ""
-          },
-          {
-            "prop-name 'CallFunc_BreakHitResult_BoneName'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_HitItem'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_ElementIndex'": ""
-          },
-          {
-            "prop-int 'CallFunc_BreakHitResult_FaceIndex'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_TraceStart'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_BreakHitResult_TraceEnd'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_Subtract_VectorVector_ReturnValue\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_VSize_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_BooleanAND_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'K2Node_Select_Default'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue'": ""
-          }
-        ],
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) NamePrivate(•CallFunc_LineTraceSingle_OutHit•) ": "",
+          "prop-bool NamePrivate(•CallFunc_LineTraceSingle_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakHitResult_bBlockingHit•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BreakHitResult_bInitialOverlap•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakHitResult_Time•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakHitResult_Distance•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_ImpactPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_Normal•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_ImpactNormal•) ": "",
+          "prop-object Value(ImportIndex[-45] PhysicalMaterial) NamePrivate(•CallFunc_BreakHitResult_PhysMat•) ": "",
+          "prop-object Value(ImportIndex[-27] Actor) NamePrivate(•CallFunc_BreakHitResult_HitActor•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-40] PrimitiveComponent) NamePrivate(•CallFunc_BreakHitResult_HitComponent•) ": "",
+          "prop-name NamePrivate(•CallFunc_BreakHitResult_HitBoneName•) ": "",
+          "prop-name NamePrivate(•CallFunc_BreakHitResult_BoneName•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_HitItem•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_ElementIndex•) ": "",
+          "prop-int NamePrivate(•CallFunc_BreakHitResult_FaceIndex•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_TraceStart•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_BreakHitResult_TraceEnd•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_Subtract_VectorVector_ReturnValue\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_VSize_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_DoubleDouble_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanAND_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•K2Node_Select_Default•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue•) ": ""
+        },
         "FunctionFlags": 209846272,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -5772,164 +5195,60 @@
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-delegate ElementSize(32) SignatureFunction(4294967248) Ptr(0) 'K2Node_CreateDelegate_OutputDelegate'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue\"1'": ""
-          },
-          {
-            "prop-float 'K2Node_Event_DeltaSeconds'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue\"2'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_K2_GetPawn_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchEnum_CmpSuccess'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Cam_Manager'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_GetPlayerPawn_ReturnValue\"1'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-115] Transform) 'CallFunc_MakeTransform_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue\"3'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) 'CallFunc_K2_SetActorTransform_SweepHitResult'": ""
-          },
-          {
-            "prop-bool 'CallFunc_K2_SetActorTransform_ReturnValue'": ""
-          },
-          {
-            "prop-byte Value(4294967176) 'K2Node_Event_New_Camera_State'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchEnum_CmpSuccess\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchEnum_CmpSuccess\"2'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchEnum_CmpSuccess\"3'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue\"4'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Cam_Manager\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Cam_Manager\"2'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"2'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Cam_Manager\"3'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"3'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_K2_GetPawn_ReturnValue\"1'": ""
-          },
-          {
-            "prop-interface Value(4294967293) 'K2Node_DynamicCast_AsBPI_Touch_Interface'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"4'": ""
-          },
-          {
-            "prop-interface Value(4294967293) 'K2Node_DynamicCast_AsBPI_Touch_Interface\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"5'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-115] Transform) 'CallFunc_MakeTransform_ReturnValue\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_Event_Active'": ""
-          },
-          {
-            "prop-double 'K2Node_Event_PresetPitch'": ""
-          },
-          {
-            "prop-double 'K2Node_Event_PresetYaw'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-27] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-30] CameraActor) 'CallFunc_FinishSpawningActor_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'K2Node_SwitchEnum_CmpSuccess\"4'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue\"5'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'K2Node_CustomEvent_OldPawn'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'K2Node_CustomEvent_NewPawn'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-37] Pawn) 'CallFunc_K2_GetPawn_ReturnValue\"2'": ""
-          },
-          {
-            "prop-interface Value(4294967294) 'K2Node_DynamicCast_AsBPI_Cam_Manager\"4'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"6'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-31] CameraComponent) 'CallFunc_GetPlayerCamera_Camera'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) 'CallFunc_GetPlayerCamera_Camera_Boom'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_LockedCameraInterpolation_DeltaTime_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_A_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_Delay_Duration_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_Delay_Duration_ImplicitCast\"1'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-delegate ElementSize(32) SignatureFunction(4294967248) Ptr(0) NamePrivate(•K2Node_CreateDelegate_OutputDelegate•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_GetPlayerPawn_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"1•) ": "",
+          "prop-float NamePrivate(•K2Node_Event_DeltaSeconds•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"2•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_K2_GetPawn_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchEnum_CmpSuccess•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Cam_Manager•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_GetPlayerPawn_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-115] Transform) NamePrivate(•CallFunc_MakeTransform_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"3•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-117] HitResult) NamePrivate(•CallFunc_K2_SetActorTransform_SweepHitResult•) ": "",
+          "prop-bool NamePrivate(•CallFunc_K2_SetActorTransform_ReturnValue•) ": "",
+          "prop-byte Value(4294967176) NamePrivate(•K2Node_Event_New_Camera_State•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchEnum_CmpSuccess\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchEnum_CmpSuccess\"2•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchEnum_CmpSuccess\"3•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"4•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Cam_Manager\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"1•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Cam_Manager\"2•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"2•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Cam_Manager\"3•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"3•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_K2_GetPawn_ReturnValue\"1•) ": "",
+          "prop-interface Value(4294967293) NamePrivate(•K2Node_DynamicCast_AsBPI_Touch_Interface•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"4•) ": "",
+          "prop-interface Value(4294967293) NamePrivate(•K2Node_DynamicCast_AsBPI_Touch_Interface\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"5•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-115] Transform) NamePrivate(•CallFunc_MakeTransform_ReturnValue\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_Event_Active•) ": "",
+          "prop-double NamePrivate(•K2Node_Event_PresetPitch•) ": "",
+          "prop-double NamePrivate(•K2Node_Event_PresetYaw•) ": "",
+          "prop-object Value(ImportIndex[-27] Actor) NamePrivate(•CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-30] CameraActor) NamePrivate(•CallFunc_FinishSpawningActor_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•K2Node_SwitchEnum_CmpSuccess\"4•) ": "",
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"5•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•K2Node_CustomEvent_OldPawn•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•K2Node_CustomEvent_NewPawn•) ": "",
+          "prop-object Value(ImportIndex[-37] Pawn) NamePrivate(•CallFunc_K2_GetPawn_ReturnValue\"2•) ": "",
+          "prop-interface Value(4294967294) NamePrivate(•K2Node_DynamicCast_AsBPI_Cam_Manager\"4•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"6•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-31] CameraComponent) NamePrivate(•CallFunc_GetPlayerCamera_Camera•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) NamePrivate(•CallFunc_GetPlayerCamera_Camera_Boom•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_LockedCameraInterpolation_DeltaTime_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_A_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_Delay_Duration_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_Delay_Duration_ImplicitCast\"1•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -5953,11 +5272,9 @@
           "ScriptData": "XlpeDwEAAACiAAAAAAAAACcAAABIAQAAAKIAAAAAAAAAJwAAAAEBAAAAmQAAAAAAAAACAAAAWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-byte PropertyFlags(CPF_Parm, CPF_OutParm) Value(4294967176) 'CameraState'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-byte PropertyFlags(CPF_Parm, CPF_OutParm) Value(4294967176) NamePrivate(•CameraState•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -5981,17 +5298,11 @@
           "ScriptData": "XlpeDwEAAAAZAgAAAAAAACgAAABIAQAAABkCAAAAAAAAKAAAAAEBAAAAswEAAAAAAAACAAAADwEAAACsAQAAAAAAACgAAABIAQAAAKwBAAAAAAAAKAAAAAEBAAAAsAEAAAAAAAACAAAAFEgBAAAAWAEAAAAAAAAoAAAAAQEAAACxAQAAAAAAAAIAAABaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Yaw'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) 'Pitch'": ""
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) 'Locked'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Yaw•) ": "",
+          "prop-double PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Pitch•) ": "",
+          "prop-bool PropertyFlags(CPF_Parm, CPF_OutParm) NamePrivate(•Locked•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6015,14 +5326,10 @@
           "ScriptData": "XlpeX0gBAAAAlAAAAAAAAAApAAAAKl9IAQAAAJYAAAAAAAAAKQAAACpaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-31] CameraComponent) 'Camera'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) 'Camera Boom'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-31] CameraComponent) NamePrivate(•Camera•) ": "",
+          "prop-object PropertyFlags(CPF_Parm, CPF_OutParm, CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) NamePrivate(•Camera Boom•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6046,83 +5353,33 @@
           "ScriptData": "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AAIAAAAAAQAAAJAAAAAAAAAAKgAAAAABAAAAkQAAAAAAAAAqAAAAFl4PAQAAAOgBAAAAAAAA1P///xkAAQAAAJ0AAAAAAAAAKgAAAAkAAAABAAAA6AEAAAAAAADU////AQEAAADoAQAAAAAAANT///8AAQAAAJIAAAAAAAAAKgAAAFpNDwAAAAAAAAAAAAEAAABoAAAABAAAACoAAAA4BBkAAQAAAJ0AAAAAAAAAKgAAAAkAAAABAAAAoAAAAAAAAADU////AQEAAACgAAAAAAAAANT///8PAAAAAAAAAAAAAQAAAGsAAAADAAAAKgAAADgEAQEAAADAAAAAAAAAAAIAAAAPAQAAAGoAAAACAAAAKgAAAAABAAAAagAAAAIAAAAqAAAAaLP///8AAQAAAGgAAAAEAAAAKgAAAAABAAAAawAAAAMAAAAqAAAAAAEAAADUAAAAAAAAACoAAAABAQAAAF0BAAAAAAAAAgAAABZeDwAAAAAAAAAAAAEAAABFAQAAAAAAACoAAAA4AwABAAAAagAAAAIAAAAqAAAADwEAAACgAAAAAAAAANT///8ZAAEAAACdAAAAAAAAACoAAAAJAAAAAQAAAKAAAAAAAAAA1P///wEBAAAAoAAAAAAAAADU////AAEAAABFAQAAAAAAACoAAABaTQQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'DeltaTime'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) 'CameraBoom'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"2'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_VInterpTo_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"4'": ""
-          },
-          {
-            "prop-float 'CallFunc_VInterpTo_DeltaTime_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Current_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Current_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Current_ImplicitCast\"2'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Current_ImplicitCast\"3'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Current_ImplicitCast\"4'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Target_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Target_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Target_ImplicitCast\"2'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_CameraRotationLagSpeed_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_CameraLagSpeed_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_VInterpTo_InterpSpeed_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_Target_ImplicitCast\"3'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_TargetArmLength_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_TargetArmLength_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_CameraLagMaxDistance_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•DeltaTime•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm, CPF_InstancedReference) Value(ImportIndex[-44] SpringArmComponent) NamePrivate(•CameraBoom•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"2•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_VInterpTo_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"4•) ": "",
+          "prop-float NamePrivate(•CallFunc_VInterpTo_DeltaTime_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Current_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Current_ImplicitCast\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Current_ImplicitCast\"2•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Current_ImplicitCast\"3•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Current_ImplicitCast\"4•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Target_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Target_ImplicitCast\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Target_ImplicitCast\"2•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_CameraRotationLagSpeed_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_CameraLagSpeed_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_VInterpTo_InterpSpeed_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_Target_ImplicitCast\"3•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_TargetArmLength_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_TargetArmLength_ImplicitCast\"1•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_CameraLagMaxDistance_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6147,7 +5404,7 @@
           "ScriptData": "XlpeRiYAAAAd6QIAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6172,11 +5429,9 @@
           "ScriptData": "XlpeZAEAAAA9AQAAAAAAACYAAAAAAQAAANMAAAAAAAAALAAAAFpeRiYAAAAdagUAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'DeltaSeconds'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•DeltaSeconds•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6200,7 +5455,7 @@
           "ScriptData": "XlpeRiYAAAAdeA4AABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6224,11 +5479,9 @@
           "ScriptData": "XlpeZAEAAAA+AQAAAAAAACYAAAAAAQAAAHUBAAAAAAAALgAAAFpeRiYAAAAddwwAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-byte PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967176) 'New Camera State'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-byte PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(4294967176) NamePrivate(•New Camera State•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6252,14 +5505,10 @@
           "ScriptData": "XlpfAAEAAABxAAAAAAAAAC8AAABowP///xcdAAAAABZeDwEAAADKAAAAAAAAAAIAAAABAQAAAMoAAAAAAAAAAgAAABkAAQAAAHEAAAAAAAAALwAAAAkAAAABAAAAEQIAAAAAAADa////AQEAAAARAgAAAAAAANr///9aXwABAAAAcQAAAAAAAAAvAAAAaMD///8XHQAAAAAWXg8BAAAAyQAAAAAAAAACAAAAAQEAAADJAAAAAAAAAAIAAAAZAAEAAABxAAAAAAAAAC8AAAAJAAAAAQAAABACAAAAAAAA2v///wEBAAAAEAIAAAAAAADa////Wl8AAQAAAHEAAAAAAAAALwAAAGjA////Fx0AAAAAFl4PAQAAAMsAAAAAAAAAAgAAAAEBAAAAywAAAAAAAAACAAAAGQABAAAAcQAAAAAAAAAvAAAACQAAAAEAAAASAgAAAAAAANr///8BAQAAABICAAAAAAAA2v///1pfAAEAAABxAAAAAAAAAC8AAABowP///xcdAAAAABZeDwEAAADMAAAAAAAAAAIAAAABAQAAAMwAAAAAAAAAAgAAABkAAQAAAHEAAAAAAAAALwAAAAkAAAABAAAAEwIAAAAAAADa////AQEAAAATAgAAAAAAANr///9aXlpeWhQAAQAAAHcAAAAAAAAALwAAAGii////AQEAAACWAAAAAAAAAAIAAAAWXloHbgIAAAABAAAAdwAAAAAAAAAvAAAAWl5aXg8BAAAAxgAAAAAAAAACAAAAAQEAAADGAAAAAAAAAAIAAAAZAQEAAACWAAAAAAAAAAIAAAAJAAAAAQAAAOcBAAAAAAAA1P///wEBAAAA5wEAAAAAAADU////Wl4PAQAAAMEAAAAAAAAAAgAAAAEBAAAAwQAAAAAAAAACAAAAGQEBAAAAlgAAAAAAAAACAAAACQAAAAEAAAChAAAAAAAAANT///8BAQAAAKEAAAAAAAAA1P///1peDwEAAADAAAAAAAAAAAIAAAABAQAAAMAAAAAAAAAAAgAAABkBAQAAAJYAAAAAAAAAAgAAAAkAAAABAAAAoAAAAAAAAADU////AQEAAACgAAAAAAAAANT///9aXg8BAAAAvwAAAAAAAAACAAAAAQEAAAC/AAAAAAAAAAIAAAAZAQEAAACWAAAAAAAAAAIAAAAJAAAAAQAAAJ8AAAAAAAAA1P///wEBAAAAnwAAAAAAAADU////Wl4PAQAAAMcAAAAAAAAAAgAAAAEBAAAAxwAAAAAAAAACAAAAGQEBAAAAlgAAAAAAAAACAAAACQAAAAEAAADoAQAAAAAAANT///8BAQAAAOgBAAAAAAAA1P///1oGcAIAAF5aBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object Value(ImportIndex[-38] PlayerCameraManager) 'CallFunc_GetPlayerCameraManager_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsValid_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object Value(ImportIndex[-38] PlayerCameraManager) NamePrivate(•CallFunc_GetPlayerCameraManager_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6283,65 +5532,27 @@
           "ScriptData": "XloPAQAAAG0AAAAAAAAAMAAAAAABAAAAbQAAAAAAAAAwAAAAGwcBAAAAAAAAFmi3////AAEAAAARAQAAAAAAADAAAAAAAQAAAF8AAAAAAAAAMAAAAAABAAAAYAAAAAAAAAAwAAAAAAEAAABhAAAAAAAAADAAAAAWDwEAAABsAAAAAAAAADAAAAAAAQAAAGwAAAAAAAAAMAAAABsGAQAAAAAAABZot////wABAAAAbAAAAAAAAAAwAAAAAAEAAABfAAAAAgAAADAAAAAAAQAAAGAAAAACAAAAMAAAAAABAAAAYQAAAAIAAAAwAAAAFg8BAAAAdQAAAAAAAAAwAAAAAAEAAAB1AAAAAAAAADAAAABovf///xcWDwEAAABqAAAAAAAAADAAAAAAAQAAAGoAAAAAAAAAMAAAAGiz////AAEAAABfAAAAAgAAADAAAAAAAQAAAF8AAAAAAAAAMAAAAAABAAAAdQAAAAAAAAAwAAAANwAAAAAAAPA/Fg8AAAAAAAAAAAABAAAAhwAAAAAAAAAwAAAAOAMAAQAAAHUAAAAAAAAAMAAAAA8BAAAAiAAAAAAAAAAwAAAAAAEAAACIAAAAAAAAADAAAABoqv///wABAAAAbQAAAAAAAAAwAAAAAQEAAAC+AAAAAAAAAAIAAAAAAQAAAIcAAAAAAAAAMAAAAB4AAABAFg8AAAAAAAAAAAABAAAAaQAAAAAAAAAwAAAAOAQBAQAAAJgAAAAAAAAAAgAAAA8BAAAAagAAAAIAAAAwAAAAAAEAAABqAAAAAgAAADAAAABos////wABAAAAYQAAAAIAAAAwAAAAAAEAAABhAAAAAAAAADAAAAAAAQAAAHUAAAAAAAAAMAAAAAABAAAAaQAAAAAAAAAwAAAAFg8BAAAAagAAAAMAAAAwAAAAAAEAAABqAAAAAwAAADAAAABos////wABAAAAYAAAAAIAAAAwAAAAAAEAAABgAAAAAAAAADAAAAAAAQAAAHUAAAAAAAAAMAAAADcAAAAAAADwPxYPAQAAAIIAAAAAAAAAMAAAAAABAAAAggAAAAAAAAAwAAAAaK////8AAQAAAGoAAAAAAAAAMAAAAAABAAAAagAAAAMAAAAwAAAAAAEAAABqAAAAAgAAADAAAAAWXg8BAAAAVwEAAAAAAAAwAAAASAEAAABXAQAAAAAAADAAAAAAAQAAAIIAAAAAAAAAMAAAAA8BAAAAyAEAAAAAAAAwAAAASAEAAADIAQAAAAAAADAAAAAAAQAAAIgAAAAAAAAAMAAAAFoEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-116] Vector) 'GoalVector'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-116] Vector) 'Location'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-114] Rotator) 'Rotation'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) 'CallFunc_GetCameraRotation_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_GetCameraLocation_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_X\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Y\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_BreakVector_Z\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_GetWorldDeltaSeconds_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) 'CallFunc_RInterpTo_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_ReturnValue\"2'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_FInterpTo_InterpSpeed_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_RInterpTo_DeltaTime_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•GoalVector•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•Location•) ": "",
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•Rotation•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•CallFunc_GetCameraRotation_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_GetCameraLocation_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_X\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Y\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_BreakVector_Z\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_GetWorldDeltaSeconds_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•CallFunc_RInterpTo_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_ReturnValue\"2•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-116] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_FInterpTo_InterpSpeed_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_RInterpTo_DeltaTime_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 205651968,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6365,7 +5576,7 @@
           "ScriptData": "XlpeRiYAAAAdGwYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6389,7 +5600,7 @@
           "ScriptData": "XlpeRiYAAAAdmwwAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6413,11 +5624,9 @@
           "ScriptData": "XlpfAAEAAABxAAAAAAAAADMAAABowP///xcdAAAAABZeDwEAAAARAgAAAAAAANr///8ZAAEAAABxAAAAAAAAADMAAAAJAAAAAQAAABECAAAAAAAA2v///wEBAAAAEQIAAAAAAADa////AQEAAADKAAAAAAAAAAIAAABaXwABAAAAcQAAAAAAAAAzAAAAaMD///8XHQAAAAAWXg8BAAAAEAIAAAAAAADa////GQABAAAAcQAAAAAAAAAzAAAACQAAAAEAAAAQAgAAAAAAANr///8BAQAAABACAAAAAAAA2v///wEBAAAAyQAAAAAAAAACAAAAWl8AAQAAAHEAAAAAAAAAMwAAAGjA////Fx0AAAAAFl4PAQAAABICAAAAAAAA2v///xkAAQAAAHEAAAAAAAAAMwAAAAkAAAABAAAAEgIAAAAAAADa////AQEAAAASAgAAAAAAANr///8BAQAAAMsAAAAAAAAAAgAAAFpfAAEAAABxAAAAAAAAADMAAABowP///xcdAAAAABZeDwEAAAATAgAAAAAAANr///8ZAAEAAABxAAAAAAAAADMAAAAJAAAAAQAAABMCAAAAAAAA2v///wEBAAAAEwIAAAAAAADa////AQEAAADMAAAAAAAAAAIAAABaXhQBAQAAAP4BAAAAAAAAAgAAAChaXg8BAAAAmQAAAAAAAAACAAAAAQEAAACZAAAAAAAAAAIAAAABAQAAAIgBAAAAAAAAAgAAAFoEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object Value(ImportIndex[-38] PlayerCameraManager) 'CallFunc_GetPlayerCameraManager_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object Value(ImportIndex[-38] PlayerCameraManager) NamePrivate(•CallFunc_GetPlayerCameraManager_ReturnValue•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6441,74 +5650,30 @@
           "ScriptData": "XlpfAAEAAAByAAAAAAAAADQAAABov////xcdAAAAABYPAQAAAG4AAAAAAAAANAAAAAABAAAAbgAAAAAAAAA0AAAAGQABAAAAcgAAAAAAAAA0AAAADgAAAAEAAABuAAAAAAAAADQAAAAbCQEAAAAAAAAWaLj///8AAQAAAG4AAAAAAAAANAAAAAABAAAAXQAAAAAAAAA0AAAAAAEAAABcAAAAAAAAADQAAAAAAQAAAF4AAAAAAAAANAAAABYPAAAAAAAAAAAAAQAAAIkAAAAAAAAANAAAADgEAAEAAABcAAAAAAAAADQAAAAPAQAAAIoAAAACAAAANAAAAAABAAAAigAAAAIAAAA0AAAAaKn///8BAQAAALABAAAAAAAAAgAAAAABAAAAiQAAAAAAAAA0AAAAAQEAAABeAQAAAAAAAAIAAAAWDwAAAAAAAAAAAAEAAACNAAAAAgAAADQAAAA4BAEBAAAAXwEAAAAAAAACAAAADwEAAACOAAAAAgAAADQAAAAAAQAAAI4AAAACAAAANAAAAGio////AAEAAACKAAAAAgAAADQAAAAAAQAAAI0AAAACAAAANAAAABZfAAEAAABxAAAAAAAAADQAAABowP///xcdAAAAABZeDwAAAAAAAAAAAAEAAABJAQAAAAAAADQAAAA4AwABAAAAjgAAAAIAAAA0AAAADwEAAAARAgAAAAAAANr///8ZAAEAAABxAAAAAAAAADQAAAAJAAAAAQAAABECAAAAAAAA2v///wEBAAAAEQIAAAAAAADa////AAEAAABJAQAAAAAAADQAAABaXwABAAAAcgAAAAAAAAA0AAAAaL////8XHQAAAAAWDwEAAABuAAAAAAAAADQAAAAAAQAAAG4AAAAAAAAANAAAABkAAQAAAHIAAAAAAAAANAAAAA4AAAABAAAAbgAAAAAAAAA0AAAAGwkBAAAAAAAAFmi4////AAEAAABuAAAAAAAAADQAAAAAAQAAAF0AAAAAAAAANAAAAAABAAAAXAAAAAAAAAA0AAAAAAEAAABeAAAAAAAAADQAAAAWDwAAAAAAAAAAAAEAAACJAAAAAAAAADQAAAA4BAABAAAAXAAAAAAAAAA0AAAADwEAAACKAAAAAgAAADQAAAAAAQAAAIoAAAACAAAANAAAAGip////AQEAAACwAQAAAAAAAAIAAAAAAQAAAIkAAAAAAAAANAAAAAEBAAAAXgEAAAAAAAACAAAAFg8AAAAAAAAAAAABAAAARAAAAAIAAAA0AAAAOAQBAQAAAF8BAAAAAAAAAgAAAA8BAAAARQAAAAIAAAA0AAAAAAEAAABFAAAAAgAAADQAAABovP///wABAAAAigAAAAIAAAA0AAAAAAEAAABEAAAAAgAAADQAAAAWXwABAAAAcQAAAAAAAAA0AAAAaMD///8XHQAAAAAWXg8AAAAAAAAAAAABAAAASAEAAAAAAAA0AAAAOAMAAQAAAEUAAAACAAAANAAAAA8BAAAAEAIAAAAAAADa////GQABAAAAcQAAAAAAAAA0AAAACQAAAAEAAAAQAgAAAAAAANr///8BAQAAABACAAAAAAAA2v///wABAAAASAEAAAAAAAA0AAAAWl8AAQAAAHIAAAAAAAAANAAAAGi/////Fx0AAAAAFg8BAAAAbgAAAAAAAAA0AAAAAAEAAABuAAAAAAAAADQAAAAZAAEAAAByAAAAAAAAADQAAAAOAAAAAQAAAG4AAAAAAAAANAAAABsJAQAAAAAAABZouP///wABAAAAbgAAAAAAAAA0AAAAAAEAAABdAAAAAAAAADQAAAAAAQAAAFwAAAAAAAAANAAAAAABAAAAXgAAAAAAAAA0AAAAFg8AAAAAAAAAAAABAAAAiQAAAAIAAAA0AAAAOAQAAQAAAF4AAAAAAAAANAAAAA8BAAAAigAAAAAAAAA0AAAAAAEAAACKAAAAAAAAADQAAABoqf///wEBAAAAswEAAAAAAAACAAAAAAEAAACJAAAAAgAAADQAAAABAQAAAF4BAAAAAAAAAgAAABYPAAAAAAAAAAAAAQAAAEQAAAAAAAAANAAAADgEAQEAAABgAQAAAAAAAAIAAAAPAQAAAEUAAAAAAAAANAAAAAABAAAARQAAAAAAAAA0AAAAaLz///8AAQAAAIoAAAAAAAAANAAAAAABAAAARAAAAAAAAAA0AAAAFl8AAQAAAHEAAAAAAAAANAAAAGjA////Fx0AAAAAFl4PAAAAAAAAAAAAAQAAAEoBAAAAAAAANAAAADgDAAEAAABFAAAAAAAAADQAAAAPAQAAABICAAAAAAAA2v///xkAAQAAAHEAAAAAAAAANAAAAAkAAAABAAAAEgIAAAAAAADa////AQEAAAASAgAAAAAAANr///8AAQAAAEoBAAAAAAAANAAAAFpfAAEAAAByAAAAAAAAADQAAABov////xcdAAAAABYPAQAAAG4AAAAAAAAANAAAAAABAAAAbgAAAAAAAAA0AAAAGQABAAAAcgAAAAAAAAA0AAAADgAAAAEAAABuAAAAAAAAADQAAAAbCQEAAAAAAAAWaLj///8AAQAAAG4AAAAAAAAANAAAAAABAAAAXQAAAAAAAAA0AAAAAAEAAABcAAAAAAAAADQAAAAAAQAAAF4AAAAAAAAANAAAABYPAAAAAAAAAAAAAQAAAIkAAAACAAAANAAAADgEAAEAAABeAAAAAAAAADQAAAAPAQAAAIoAAAAAAAAANAAAAAABAAAAigAAAAAAAAA0AAAAaKn///8BAQAAALMBAAAAAAAAAgAAAAABAAAAiQAAAAIAAAA0AAAAAQEAAABeAQAAAAAAAAIAAAAWDwAAAAAAAAAAAAEAAACNAAAAAAAAADQAAAA4BAEBAAAAYAEAAAAAAAACAAAADwEAAACOAAAAAAAAADQAAAAAAQAAAI4AAAAAAAAANAAAAGio////AAEAAACKAAAAAAAAADQAAAAAAQAAAI0AAAAAAAAANAAAABZfAAEAAABxAAAAAAAAADQAAABowP///xcdAAAAABZeDwAAAAAAAAAAAAEAAABLAQAAAAAAADQAAAA4AwABAAAAjgAAAAAAAAA0AAAADwEAAAATAgAAAAAAANr///8ZAAEAAABxAAAAAAAAADQAAAAJAAAAAQAAABMCAAAAAAAA2v///wEBAAAAEwIAAAAAAADa////AAEAAABLAQAAAAAAADQAAABaXg8BAAAA6AEAAAAAAADU////GQEBAAAAlgAAAAAAAAACAAAACQAAAAEAAADoAQAAAAAAANT///8BAQAAAOgBAAAAAAAA1P///yMAAAAAAAAAAAAAAAAAAAAAAAAAAABAb0BaXg8BAAAAoAAAAAAAAADU////GQEBAAAAlgAAAAAAAAACAAAACQAAAAEAAACgAAAAAAAAANT///8BAQAAAKAAAAAAAAAA1P///x4AAABAWl4PAQAAAKEAAAAAAAAA1P///xkBAQAAAJYAAAAAAAAAAgAAAAkAAAABAAAAoQAAAAAAAADU////AQEAAAChAAAAAAAAANT///8eAACAP1peDwEAAACfAAAAAAAAANT///8ZAQEAAACWAAAAAAAAAAIAAAAJAAAAAQAAAJ8AAAAAAAAA1P///wEBAAAAnwAAAAAAAADU////HgAAekRaXhQBAQAAAP4BAAAAAAAAAgAAACdaXg8BAAAAmQAAAAAAAAACAAAAAQEAAACZAAAAAAAAAAIAAAABAQAAAIgBAAAAAAAAAgAAAFpeFAEBAAAAXgEAAAAAAAACAAAAKFoEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object Value(ImportIndex[-39] PlayerController) 'CallFunc_GetPlayerController_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) 'CallFunc_GetControlRotation_ReturnValue'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakRotator_Roll'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakRotator_Pitch'": ""
-          },
-          {
-            "prop-float 'CallFunc_BreakRotator_Yaw'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Add_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Add_DoubleDouble_ReturnValue\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-38] PlayerCameraManager) 'CallFunc_GetPlayerCameraManager_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_B_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_SelectFloat_B_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Add_DoubleDouble_B_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_B_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_ViewYawMin_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_ViewYawMax_ImplicitCast'": ""
-          },
-          {
-            "prop-double 'CallFunc_Add_DoubleDouble_B_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-double 'CallFunc_Subtract_DoubleDouble_B_ImplicitCast\"1'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_ViewPitchMin_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'K2Node_VariableSet_ViewPitchMax_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object Value(ImportIndex[-39] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-114] Rotator) NamePrivate(•CallFunc_GetControlRotation_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakRotator_Roll•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakRotator_Pitch•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakRotator_Yaw•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Add_DoubleDouble_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Add_DoubleDouble_ReturnValue\"1•) ": "",
+          "prop-object Value(ImportIndex[-38] PlayerCameraManager) NamePrivate(•CallFunc_GetPlayerCameraManager_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_B_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_SelectFloat_B_ImplicitCast\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Add_DoubleDouble_B_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_B_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_ViewYawMin_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_ViewYawMax_ImplicitCast•) ": "",
+          "prop-double NamePrivate(•CallFunc_Add_DoubleDouble_B_ImplicitCast\"1•) ": "",
+          "prop-double NamePrivate(•CallFunc_Subtract_DoubleDouble_B_ImplicitCast\"1•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_ViewPitchMin_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•K2Node_VariableSet_ViewPitchMax_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6532,14 +5697,10 @@
           "ScriptData": "XlpeZAEAAAA4AQAAAAAAACYAAAAAAQAAAJkBAAAAAAAANQAAAGQBAAAANwEAAAAAAAAmAAAAAAEAAACCAQAAAAAAADUAAABaXkYmAAAAHXsOAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-37] Pawn) 'OldPawn'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-37] Pawn) 'NewPawn'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-37] Pawn) NamePrivate(•OldPawn•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-37] Pawn) NamePrivate(•NewPawn•) ": ""
+        },
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -6563,17 +5724,11 @@
           "ScriptData": "XlpeZAEAAAA8AQAAAAAAACYAAAAAAQAAAAcAAAAAAAAANgAAAGQBAAAAPwEAAAAAAAAmAAAAAAEAAACyAQAAAAAAADYAAABkAQAAAEABAAAAAAAAJgAAAAABAAAAswEAAAAAAAA2AAAAWl5GJgAAAB2iDAAAFloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Active'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetPitch'": ""
-          },
-          {
-            "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'PresetYaw'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Active•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•PresetPitch•) ": "",
+          "prop-double PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•PresetYaw•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,

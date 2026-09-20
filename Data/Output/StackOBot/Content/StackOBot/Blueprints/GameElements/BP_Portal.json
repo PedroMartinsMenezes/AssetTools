@@ -1245,67 +1245,17 @@
           "ExportIndex[12] ImportIndex[-15]: Function",
           "ExportIndex[10] ImportIndex[-15]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-79] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) 'StaticMesh2'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-20] CameraComponent) 'Camera'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] SceneComponent) 'Scene'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] BPC_InteractionHandler_C) 'BPC_InteractionHandler'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-34] SphereComponent) 'Sphere'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) 'StaticMesh1'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) 'StaticMesh'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-79] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•StaticMesh2•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-20] CameraComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Camera•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Scene•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-4] BPC_InteractionHandler_C) MetaDataMap( Category(•Default•) ) NamePrivate(•BPC_InteractionHandler•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-34] SphereComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Sphere•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•StaticMesh1•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-35] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•StaticMesh•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-31] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_Portal": 10,
           "ReceiveTick": 12,
@@ -1464,7 +1414,7 @@
           "ScriptData": "XlpeRgoAAAAdtgIAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1488,56 +1438,24 @@
           "ScriptData": "TDQEAABOAAEAAAB5AAAAAAAAAAoAAABeWl8AAQAAADcAAAAAAAAACgAAAGjQ////FxZeDwAAAAAAAAAAAAEAAACTAAAAAAAAAAoAAABS/f///wABAAAANwAAAAAAAAAKAAAADwAAAAAAAAAAAAEAAACUAAAAAAAAAAoAAAA4AgABAAAAkwAAAAAAAAAKAAAAWk8AAQAAAJQAAAAAAAAACgAAAFpeGVEAAQAAAJMAAAAAAAAACgAAAA4AAAAAAAAAAAAAAEV1AAAAAAAAABZaTV5aB64AAAAAAQAAAOgAAAAAAAAACgAAAFpNXhQAAQAAAOgAAAAAAAAACgAAACdaXlpeXwABAAAAPwAAAAAAAAAKAAAAaMj///8gw////wEBAAAAVwAAAAAAAAACAAAAIa8AAAAAAAAAIwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAkAicnJAEnFlpfAAEAAAA4AAAAAAAAAAoAAABoz////xcdAAAAABZeGQABAAAAOAAAAAAAAAAKAAAAHAAAAAAAAAAAAAAAG9gAAAAAAAAAFx4AAEBAJAQeAAAAQCcWWl8AAQAAADgAAAAAAAAACgAAAGjP////Fx0AAAAAFl8AAQAAADoAAAAAAAAACgAAABkAAQAAADgAAAAAAAAACgAAAAoAAAABAAAAOgAAAAAAAAAKAAAAHNH///8WXhkAAQAAADgAAAAAAAAACgAAABcAAAAAAAAAAAAAABtkAAAAAAAAAAABAAAAOAAAAAAAAAAKAAAAFhkAAQAAADoAAAAAAAAACgAAABcAAAAAAAAAAAAAABtkAAAAAAAAAAABAAAAOAAAAAAAAAAKAAAAFlpeG9QAAAAAAAAAJxZaXlpozP///xceAACgQC+y////IAAAAFsPAAAAHZ+ORg0hfgAAAAAAAAAXMBZNXhQAAQAAAOgAAAAAAAAACgAAACdaTV5MfQIAAFoGhAIAAF5aBpwAAABeWgeWAgAAAAEAAADnAAAAAAAAAAoAAABaTV4UAAEAAADnAAAAAAAAAAoAAAAnWl5aTyhaBmMCAABeWl5aBnECAABeWl4ZAQEAAADgAAAAAAAAAAIAAAAUAAAAAAAAAAAAAAAcy////x0AAAAAHgAAyEEWWl4ZAQEAAADiAAAAAAAAAAIAAAAUAAAAAAAAAAAAAAAcy////x0AAAAAHgAAgD8WWl4ZAQEAAADiAAAAAAAAAAIAAAAMAAAAAAAAAAAAAAAcyf///ygoFlpeGQEBAAAA3QAAAAAAAAACAAAAEAAAAAAAAAAAAAAAG9UAAAAAAAAAJAMWWk1eWgatAgAAXloPAAAAAAAAAAAAAQAAAD0AAAAAAAAACgAAADgEAAEAAACVAAAAAAAAAAoAAAAPAQAAAD4AAAAAAAAACgAAAAABAAAAPgAAAAAAAAAKAAAAaM3///8AAQAAAD0AAAAAAAAACgAAADcAAAAAAAAUQBYPAAAAAAAAAAAAAQAAADwAAAAAAAAACgAAADgDAAEAAAA+AAAAAAAAAAoAAAAPAQAAADsAAAAAAAAACgAAAAABAAAAOwAAAAAAAAAKAAAAaM7///8eAAAAAB4AAAAAAAEAAAA8AAAAAAAAAAoAAAAWXhkBAQAAANEAAAAAAAAAAgAAAB4AAAAAAAAAAAAAABzK////AAEAAAA7AAAAAAAAAAoAAAAoAAEAAAA5AAAAAAAAAAoAAAAoFlpNBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-24] GameModeBase) 'CallFunc_GetGameMode_ReturnValue'": ""
-          },
-          {
-            "prop-interface Value(4294967293) 'K2Node_DynamicCast_AsBPI_Gameplay'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_IsClosed_Variable'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-17] Actor) 'K2Node_Event_OtherActor'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-29] PlayerController) 'CallFunc_GetPlayerController_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-28] Pawn) 'CallFunc_K2_GetPawn_ReturnValue'": ""
-          },
-          {
-            "prop-float 'K2Node_Event_DeltaSeconds'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-37] NiagaraComponent) 'CallFunc_SpawnSystemAttached_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-75] Rotator) 'CallFunc_MakeRotator_ReturnValue'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-77] HitResult) 'CallFunc_K2_AddLocalRotation_SweepHitResult'": ""
-          },
-          {
-            "prop-double 'CallFunc_Multiply_DoubleDouble_A_ImplicitCast'": ""
-          },
-          {
-            "prop-float 'CallFunc_MakeRotator_Yaw_ImplicitCast'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-object Value(ImportIndex[-24] GameModeBase) NamePrivate(•CallFunc_GetGameMode_ReturnValue•) ": "",
+          "prop-interface Value(4294967293) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_IsClosed_Variable•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_Has_Been_Initd_Variable•) ": "",
+          "prop-object Value(ImportIndex[-17] Actor) NamePrivate(•K2Node_Event_OtherActor•) ": "",
+          "prop-object Value(ImportIndex[-29] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-28] Pawn) NamePrivate(•CallFunc_K2_GetPawn_ReturnValue•) ": "",
+          "prop-float NamePrivate(•K2Node_Event_DeltaSeconds•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-37] NiagaraComponent) NamePrivate(•CallFunc_SpawnSystemAttached_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-75] Rotator) NamePrivate(•CallFunc_MakeRotator_ReturnValue•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-77] HitResult) NamePrivate(•CallFunc_K2_AddLocalRotation_SweepHitResult•) ": "",
+          "prop-double NamePrivate(•CallFunc_Multiply_DoubleDouble_A_ImplicitCast•) ": "",
+          "prop-float NamePrivate(•CallFunc_MakeRotator_Yaw_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1562,11 +1480,9 @@
           "ScriptData": "XlpeZAEAAACWAAAAAAAAAAoAAAAAAQAAALQAAAAAAAAACwAAAFpeRgoAAAAdXQMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-17] Actor) 'OtherActor'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-17] Actor) NamePrivate(•OtherActor•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1591,11 +1507,9 @@
           "ScriptData": "XlpeZAEAAACVAAAAAAAAAAoAAAAAAQAAAGEAAAAAAAAADAAAAFpeRgoAAAAdZAMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'DeltaSeconds'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-float PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•DeltaSeconds•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,

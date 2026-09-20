@@ -1198,70 +1198,17 @@
           "ExportIndex[9] ImportIndex[-11]: Function",
           "ExportIndex[8] ImportIndex[-11]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-66] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] GeometryCollectionComponent) 'GeometryCollection'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] StaticMeshComponent) 'RingBase1'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] StaticMeshComponent) 'Ring'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) 'FieldLocation'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) 'DefaultSceneRoot'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'PreShatterTime'": {
-              "MetaDataMap": {
-                "DisplayName": "Pre Shatter Time",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] GeometryCollectionComponent) 'GC'": {
-              "MetaDataMap": {
-                "DisplayName": "GC",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(96) Value(ImportIndex[-64] Transform) 'Relative Transform'": {
-              "MetaDataMap": {
-                "DisplayName": "Relative Transform",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-66] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] GeometryCollectionComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•GeometryCollection•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•RingBase1•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Ring•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•FieldLocation•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-21] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Pre Shatter Time•) Category(•Default•) ) NamePrivate(•PreShatterTime•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-28] GeometryCollectionComponent) MetaDataMap( DisplayName(•GC•) Category(•Default•) ) NamePrivate(•GC•) ": "",
+          "prop-struct PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(96) Value(ImportIndex[-64] Transform) MetaDataMap( DisplayName(•Relative Transform•) Category(•Default•) ) NamePrivate(•Relative Transform•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_DestructiblePlatform_Destruction": 8,
           "ReceiveBeginPlay": 9
@@ -1403,32 +1350,16 @@
           "ScriptData": "TgABAAAAVQAAAAAAAAAIAAAAXloPAQAAAC0AAAAAAAAACAAAAAABAAAALQAAAAAAAAAIAAAAGQEBAAAAXgAAAAAAAAACAAAACgAAAAEAAAAtAAAAAAAAAAgAAAAc1v///xZo1////wABAAAALQAAAAAAAAAIAAAAAAEAAAApAAAAAAAAAAgAAAAAAQAAACoAAAAAAAAACAAAAAABAAAAKwAAAAAAAAAIAAAAFl5fAAEAAAAuAAAAAAAAAAgAAABo1f///xcgz////wABAAAAKQAAAAAAAAAIAAAAIgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACMAAAAAAADwPwAAAAAAAPA/AAAAAAAA8D8nJyQAJxZaDwEAAAAtAAAAAAAAAAgAAAAAAQAAAC0AAAAAAAAACAAAABkBAQAAAF4AAAAAAAAAAgAAAAoAAAABAAAALQAAAAAAAAAIAAAAHNb///8WaNf///8AAQAAAC0AAAAAAAAACAAAAAABAAAAKQAAAAAAAAAIAAAAAAEAAAAqAAAAAAAAAAgAAAAAAQAAACsAAAAAAAAACAAAABZeaNj///8XIL3///8AAQAAACkAAAAAAAAACAAAACIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAeAACAQB4AAIA/HgAAAAAqKioqFloPAQAAAC0AAAAAAAAACAAAAAABAAAALQAAAAAAAAAIAAAAGQEBAAAAXgAAAAAAAAACAAAACgAAAAEAAAAtAAAAAAAAAAgAAAAc1v///xZeXwABAAAAKAAAAAAAAAAIAAAAaNr///8XIP7///8AAQAAAC0AAAAAAAAACAAAACQAKiQBFloPAQAAAC0AAAAAAAAACAAAAAABAAAALQAAAAAAAAAIAAAAGQEBAAAAXgAAAAAAAAACAAAACgAAAAEAAAAtAAAAAAAAAAgAAAAc1v///xZeXwABAAAALAAAAAAAAAAIAAAAaNn///8AAQAAACgAAAAAAAAACAAAAAABAAAALQAAAAAAAAAIAAAAJAEWWl4PAQAAAAUAAAAAAAAA/v///xkAAQAAACwAAAAAAAAACAAAAAkAAAABAAAABQAAAAAAAAD+////AQEAAAAFAAAAAAAAAP7///8kAVpeGQABAAAALAAAAAAAAAAIAAAAEwAAAAAAAAAAAAAAG7sAAAAAAAAAHgAAgD8WWl4buwAAAAAAAAAeAACAQBZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(96) Value(ImportIndex[-64] Transform) 'CallFunc_K2_GetComponentToWorld_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-13] Actor) 'CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-65] Vector) 'CallFunc_BreakTransform_Location'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-63] Rotator) 'CallFunc_BreakTransform_Rotation'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-65] Vector) 'CallFunc_BreakTransform_Scale'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-2] FS_MasterField_C) 'CallFunc_FinishSpawningActor_ReturnValue'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-29] NiagaraComponent) 'CallFunc_SpawnSystemAtLocation_ReturnValue'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-64] Transform) NamePrivate(•CallFunc_K2_GetComponentToWorld_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-13] Actor) NamePrivate(•CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-65] Vector) NamePrivate(•CallFunc_BreakTransform_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-63] Rotator) NamePrivate(•CallFunc_BreakTransform_Rotation•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-65] Vector) NamePrivate(•CallFunc_BreakTransform_Scale•) ": "",
+          "prop-object Value(ImportIndex[-2] FS_MasterField_C) NamePrivate(•CallFunc_FinishSpawningActor_ReturnValue•) ": "",
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-29] NiagaraComponent) NamePrivate(•CallFunc_SpawnSystemAtLocation_ReturnValue•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -1453,7 +1384,7 @@
           "ScriptData": "XlpeRggAAAAdCgAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,

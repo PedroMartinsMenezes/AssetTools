@@ -1712,97 +1712,25 @@
           "ExportIndex[24] ImportIndex[-20]: Function",
           "ExportIndex[20] ImportIndex[-20]: Function"
         ],
-        "ChildProperties": [
-          {
-            "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-91] PointerToUberGraphFrame) 'UberGraphFrame'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-43] StaticMeshComponent) 'Plate'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-91] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-43] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Plate•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-43] StaticMeshComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Base•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] BoxComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•Trigger•) ": "",
+          "prop-float FlagsPrivate(RF_Public, RF_LoadCompleted) NamePrivate(•MoveButton_ButtonMovement_5204A78A4FF63255842B12BB9B2CF574•) ": "",
+          "prop-byte FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967243) NamePrivate(•MoveButton__Direction_5204A78A4FF63255842B12BB9B2CF574•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-44] TimelineComponent) MetaDataMap( Category(•BP_PressurePlate•) ) NamePrivate(•MoveButton•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-34] MaterialInstanceDynamic) MetaDataMap( DisplayName(•Mat•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•Mat•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Mobile•) Category(•Default•) ) NamePrivate(•Mobile•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•One Shot•) Category(•Pressure Plate•) ) NamePrivate(•OneShot•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-47] WidgetComponent) MetaDataMap( DisplayName(•Widget•) Category(•Default•) ) NamePrivate(•Widget•) ": "",
+          "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) MetaDataMap( DisplayName(•Triggerables•) Category(•Default•) ) NamePrivate(•Triggerables•) ": {
+            "SingleField": {
+              "prop-object Value(ImportIndex[-23] Actor) NamePrivate(•Triggerables•) ": ""
             }
           },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-43] StaticMeshComponent) 'Base'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-27] BoxComponent) 'Trigger'": {
-              "MetaDataMap": {
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-float FlagsPrivate(RF_Public, RF_LoadCompleted) 'MoveButton_ButtonMovement_5204A78A4FF63255842B12BB9B2CF574'": ""
-          },
-          {
-            "prop-byte FlagsPrivate(RF_Public, RF_LoadCompleted) Value(4294967243) 'MoveButton__Direction_5204A78A4FF63255842B12BB9B2CF574'": ""
-          },
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-44] TimelineComponent) 'MoveButton'": {
-              "MetaDataMap": {
-                "Category": "BP_PressurePlate"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-34] MaterialInstanceDynamic) 'Mat'": {
-              "MetaDataMap": {
-                "DisplayName": "Mat",
-                "Category": "Default",
-                "MultiLine": "true"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Mobile'": {
-              "MetaDataMap": {
-                "DisplayName": "Mobile",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'OneShot'": {
-              "MetaDataMap": {
-                "DisplayName": "One Shot",
-                "Category": "Pressure Plate"
-              }
-            }
-          },
-          {
-            "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_InstancedReference) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-47] WidgetComponent) 'Widget'": {
-              "MetaDataMap": {
-                "DisplayName": "Widget",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(ObjectProperty) 'Triggerables'": {
-              "SingleField": {
-                "prop-object Value(ImportIndex[-23] Actor) 'Triggerables'": ""
-              },
-              "MetaDataMap": {
-                "DisplayName": "Triggerables",
-                "Category": "Default"
-              }
-            }
-          },
-          {
-            "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) 'Player Only Trigger'": {
-              "MetaDataMap": {
-                "DisplayName": "Player Only Trigger",
-                "Category": "Default"
-              }
-            }
-          }
-        ],
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Player Only Trigger•) Category(•Default•) ) NamePrivate(•Player Only Trigger•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_PressurePlate": 20,
           "ReceiveActorEndOverlap": 24,
@@ -2291,60 +2219,28 @@
           "ScriptData": "TH8EAABOAAEAAACFAAAAAAAAABQAAAAPAQAAAEcAAAAAAAAAFAAAAAABAAAARwAAAAAAAAAUAAAAHMn///8WXmjG////FyCj////AAEAAABHAAAAAAAAABQAAAAiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHgAAgD8eAACAPx4AAAAAIKT///8qKioWWk1eGQEBAAAAxAAAAAAAAAACAAAACgAAAAAAAAAAAAAAHLr///8WWk1eGQEBAAAAxAAAAAAAAAACAAAACgAAAAAAAAAAAAAAHLv///8WWk1eWgfXAAAAAAEAAAAgAQAAAAAAABQAAABaTV4UAAEAAAAgAQAAAAAAABQAAAAnWl5aXhkBAQAAAOsAAAAAAAAAAgAAABQAAAAAAAAAAAAAABy9////HQAAAAAeAABAQRZaXkUxAQAAAAAAACcWWl5MLwEAAFoGQgEAAF5MOwEAAFoGDwAAAF5aBqIAAABeWk8BAQAAAN4AAAAAAAAAAgAAAFpeGQEBAAAALwEAAAAAAAACAAAAEAAAAAAAAAAAAAAAGw0BAAAAAAAAJAAWWk1eFAABAAAAIAEAAAAAAAAUAAAAJ1pNXhQAAQAAACABAAAAAAAAFAAAAChaXhQAAQAAAB8BAAAAAAAAFAAAACdaTV5MrQEAAFoGtAEAAF5aBsUAAABeWgfGAQAAAAEAAAAfAQAAAAAAABQAAABaTV4UAAEAAAAfAQAAAAAAABQAAAAnWl5aTyhaBngBAABeWl5aBqEBAABeWg8AAAAAAAAAAAABAAAASQAAAAAAAAAUAAAAOAQBAQAAAMgAAAAAAAAAAgAAAA8BAAAASgAAAAAAAAAUAAAAAAEAAABKAAAAAAAAABQAAABowf///zcAAAAAAAA0QDcAAAAAAAAQQAABAAAASQAAAAAAAAAUAAAAFg8BAAAATAAAAAAAAAAUAAAAAAEAAABMAAAAAAAAABQAAABov////zcAAAAAAAAAADcAAAAAAAAAAAABAAAASgAAAAAAAAAUAAAAFl4ZAQEAAADrAAAAAAAAAAIAAAAeAAAAAAAAAAAAAAAcvP///wABAAAATAAAAAAAAAAUAAAAKAABAAAASAAAAAAAAAAUAAAAKBZaTV5aB0gDAAABAQAAAO0AAAAAAAAAAgAAAFpeDwAAAAAAAAAAAAEAAACtAAAAAAAAABQAAAAu3f///wABAAAArwAAAAIAAAAUAAAADwAAAAAAAAAAAAEAAACuAAAAAAAAABQAAAA4AQABAAAArQAAAAAAAAAUAAAAWk8AAQAAAK4AAAAAAAAAFAAAAFoUAAEAAABGAAAAAAAAABQAAAAZAAEAAACtAAAAAAAAABQAAAAOAAAAAQAAAEYAAAAAAAAAFAAAABupAAAAAAAAABZeWgdPAwAAAAEAAABGAAAAAAAAABQAAABaXloG3QEAAF5aTV5eWl5aBoYBAABeTGgDAABaBlMDAABeWl4ZAQEAAADrAAAAAAAAAAIAAAAUAAAAAAAAAAAAAAAcvf///x0AAAAAHgAAAAAWWl5FMQEAAAAAAAAoFloGfwAAAF5aTV5aXloGqgIAADEAAQAAAEUAAAAAAAAAFAAAADIZAQEAAAAvAQAAAAAAAAIAAAAcAAAAAAAAAAAAAAAcvv///wABAAAARQAAAAAAAAAUAAAAIOn///8WDwEAAABCAAAAAAAAABQAAAAAAQAAAEIAAAAAAAAAFAAAABkguP///xMAAAABAAAAQgAAAAAAAAAUAAAAHMT///8AAQAAAEUAAAAAAAAAFAAAABYUAAEAAABDAAAAAAAAABQAAABowv///wABAAAAQgAAAAAAAAAUAAAAHQAAAAAWXlpPAAEAAABDAAAAAAAAABQAAABaBlwDAABeWgavAwAAXlpeWge4AwAAAQEAAADeAAAAAAAAAAIAAABaTQQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'EntryPoint'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-89] Vector) 'CallFunc_K2_GetActorLocation_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_IsClosed_Variable'": ""
-          },
-          {
-            "prop-double 'CallFunc_Lerp_ReturnValue'": ""
-          },
-          {
-            "prop-struct ElementSize(24) Value(ImportIndex[-89] Vector) 'CallFunc_MakeVector_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'Temp_bool_Has_Been_Initd_Variable'": ""
-          },
-          {
-            "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-90] HitResult) 'CallFunc_K2_SetRelativeLocation_SweepHitResult'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetOverlappingActors_OverlappingActors'": {
-              "SingleField": {
-                "prop-object Value(ImportIndex[-23] Actor) 'CallFunc_GetOverlappingActors_OverlappingActors'": ""
-              }
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-89] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_IsClosed_Variable•) ": "",
+          "prop-double NamePrivate(•CallFunc_Lerp_ReturnValue•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-89] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•Temp_bool_Has_Been_Initd_Variable•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-90] HitResult) NamePrivate(•CallFunc_K2_SetRelativeLocation_SweepHitResult•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•CallFunc_GetOverlappingActors_OverlappingActors•) ": {
+            "SingleField": {
+              "prop-object Value(ImportIndex[-23] Actor) NamePrivate(•CallFunc_GetOverlappingActors_OverlappingActors•) ": ""
             }
           },
-          {
-            "prop-int 'CallFunc_Array_Length_ReturnValue'": ""
-          },
-          {
-            "prop-bool 'CallFunc_EqualEqual_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] Actor) 'K2Node_Event_OtherActor\"1'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-35] Pawn) 'K2Node_DynamicCast_AsPawn'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] Actor) 'K2Node_Event_OtherActor'": ""
-          },
-          {
-            "prop-bool 'CallFunc_IsPlayerControlled_ReturnValue'": ""
-          },
-          {
-            "prop-double 'CallFunc_Lerp_Alpha_ImplicitCast'": ""
-          }
-        ],
+          "prop-int NamePrivate(•CallFunc_Array_Length_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_EqualEqual_IntInt_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-23] Actor) NamePrivate(•K2Node_Event_OtherActor\"1•) ": "",
+          "prop-object Value(ImportIndex[-35] Pawn) NamePrivate(•K2Node_DynamicCast_AsPawn•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-object Value(ImportIndex[-23] Actor) NamePrivate(•K2Node_Event_OtherActor•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsPlayerControlled_ReturnValue•) ": "",
+          "prop-double NamePrivate(•CallFunc_Lerp_Alpha_ImplicitCast•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2368,7 +2264,7 @@
           "ScriptData": "XlpeRhQAAAAdrAMAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2392,7 +2288,7 @@
           "ScriptData": "XlpeRhQAAAAd5gEAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134217728,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2417,11 +2313,9 @@
           "ScriptData": "XlpeZAEAAACvAAAAAgAAABQAAAAAAQAAAOAAAAAAAAAAFwAAAFpeRhQAAAAdZAQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-23] Actor) 'OtherActor'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-23] Actor) NamePrivate(•OtherActor•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2446,11 +2340,9 @@
           "ScriptData": "XlpeZAEAAACvAAAAAAAAABQAAAAAAQAAAOAAAAAAAAAAGAAAAFpeRhQAAAAdawQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-23] Actor) 'OtherActor'": ""
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-23] Actor) NamePrivate(•OtherActor•) ": ""
+        },
         "FunctionFlags": 134350848,
         "RepOffset": 0,
         "EventGraphFunction": 0,
@@ -2474,66 +2366,30 @@
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) 'Trigger/UnTrigger'": ""
-          },
-          {
-            "prop-int 'Temp_int_Array_Index_Variable'": ""
-          },
-          {
-            "prop-int 'Temp_int_Loop_Counter_Variable'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-int 'Temp_int_Loop_Counter_Variable\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_Add_IntInt_ReturnValue\"1'": ""
-          },
-          {
-            "prop-int 'Temp_int_Array_Index_Variable\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_Length_ReturnValue'": ""
-          },
-          {
-            "prop-object Value(ImportIndex[-23] Actor) 'CallFunc_Array_Get_Item'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_IntInt_ReturnValue'": ""
-          },
-          {
-            "prop-array PropertyFlags(CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(16) PropertyTypeName(ObjectProperty) 'CallFunc_GetComponentsByInterface_ReturnValue'": {
-              "SingleField": {
-                "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) 'CallFunc_GetComponentsByInterface_ReturnValue'": ""
-              }
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Trigger/UnTrigger•) ": "",
+          "prop-int NamePrivate(•Temp_int_Array_Index_Variable•) ": "",
+          "prop-int NamePrivate(•Temp_int_Loop_Counter_Variable•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue•) ": "",
+          "prop-int NamePrivate(•Temp_int_Loop_Counter_Variable\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•Temp_int_Array_Index_Variable\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_Length_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-23] Actor) NamePrivate(•CallFunc_Array_Get_Item•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_IntInt_ReturnValue•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm, CPF_ContainsInstancedReference) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•CallFunc_GetComponentsByInterface_ReturnValue•) ": {
+            "SingleField": {
+              "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) NamePrivate(•CallFunc_GetComponentsByInterface_ReturnValue•) ": ""
             }
           },
-          {
-            "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) 'CallFunc_Array_Get_Item\"1'": ""
-          },
-          {
-            "prop-int 'CallFunc_Array_Length_ReturnValue\"1'": ""
-          },
-          {
-            "prop-interface Value(4294967293) 'K2Node_DynamicCast_AsBPI_Gameplay'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess'": ""
-          },
-          {
-            "prop-bool 'CallFunc_Less_IntInt_ReturnValue\"1'": ""
-          },
-          {
-            "prop-interface Value(4294967293) 'K2Node_DynamicCast_AsBPI_Gameplay\"1'": ""
-          },
-          {
-            "prop-bool 'K2Node_DynamicCast_bSuccess\"1'": ""
-          }
-        ],
+          "prop-object PropertyFlags(CPF_InstancedReference) Value(ImportIndex[-24] ActorComponent) NamePrivate(•CallFunc_Array_Get_Item\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Array_Length_ReturnValue\"1•) ": "",
+          "prop-interface Value(4294967293) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-bool NamePrivate(•CallFunc_Less_IntInt_ReturnValue\"1•) ": "",
+          "prop-interface Value(4294967293) NamePrivate(•K2Node_DynamicCast_AsBPI_Gameplay\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"1•) ": ""
+        },
         "FunctionFlags": 209846272,
         "RepOffset": 0,
         "EventGraphFunction": 0,
