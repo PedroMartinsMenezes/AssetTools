@@ -68,6 +68,11 @@ namespace AssetTool.Test
 
         private void PrintCallback(string msg)
         {
+            ///Used only by sequential tests to build the NonRepeated.txt
+            ///if (msg.StartsWith("[True ]"))
+            ///{
+            ///    File.AppendAllLines("C:\\UE\\AssetTools\\AssetTool.Test\\InputFiles\\NonRepeated.txt", [msg.Split("[True ]")[1]]);
+            ///}
             TestContext.WriteLine(msg);
         }
 
@@ -127,7 +132,6 @@ namespace AssetTool.Test
                 string file = files[i];
                 bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
-                //TestContext.WriteLine($"File {i + 1,-8}: {file}");
                 if (!AppConfig.ContinueAfterError && !success)
                 {
                     break;
@@ -138,9 +142,6 @@ namespace AssetTool.Test
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
-            //TestContext.WriteLine($"Scenario     : {name}.txt");
-            //TestContext.WriteLine($"File Count   : {files.Length}");
-            //TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
             Assert.That(failedFiles.Count == 0);
         }
 
