@@ -66,9 +66,9 @@ namespace AssetTool.Test
             stopwatch.Start();
         }
 
-        private void PrintFileSkipped(string file)
+        private void PrintCallback(string msg)
         {
-            TestContext.WriteLine($"  -> File Skipped: {file}");
+            TestContext.WriteLine(msg);
         }
 
         protected void Test_UE_Files(string name, FileVersion fileVersion = null)
@@ -80,7 +80,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, fileSkipped: PrintFileSkipped);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -103,11 +103,11 @@ namespace AssetTool.Test
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+                //TestContext.WriteLine($"File {i + 1,-8}: {file}");
                 if (!AppConfig.ContinueAfterError && !success)
                 {
-                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
                     break;
                 }
             }
@@ -116,9 +116,9 @@ namespace AssetTool.Test
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
-            TestContext.WriteLine($"Scenario     : {name}.txt");
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
+            //TestContext.WriteLine($"Scenario     : {name}.txt");
+            //TestContext.WriteLine($"File Count   : {files.Length}");
+            //TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
             Assert.That(failedFiles.Count == 0);
         }
 
