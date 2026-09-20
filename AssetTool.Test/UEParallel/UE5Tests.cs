@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace AssetTool.Test.UE5Tests
+namespace AssetTool.Test.UEParallel
 {
     public class UE50AssetTests : TestBase
     {
