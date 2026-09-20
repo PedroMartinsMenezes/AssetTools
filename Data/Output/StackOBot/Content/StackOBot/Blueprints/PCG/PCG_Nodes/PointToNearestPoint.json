@@ -1410,47 +1410,21 @@
             "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(48) Value(ImportIndex[-67] PCGDataCollection) 'Output'": ""
           },
           {
-            "__type": "FSetProperty",
-            "TypeName": "SetProperty",
-            "PropertyTypeName": "StrProperty",
-            "Field": {
-              "prop-str ElementSize(16) 'Temp_string_Variable'": ""
-            },
-            "NumElementsToRemove": 0,
-            "Num": 0,
-            "ArrayDim": 1,
-            "ElementSize": 80,
-            "PropertyFlags": "CPF_ConstParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Temp_string_Variable",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-set PropertyFlags(CPF_ConstParm) ElementSize(80) PropertyTypeName(StrProperty) 'Temp_string_Variable'": {
+              "Field": {
+                "prop-str ElementSize(16) 'Temp_string_Variable'": ""
+              }
+            }
           },
           {
             "prop-object PropertyFlags(CPF_ConstParm) Value(ImportIndex[-30] PCGPointData) 'CallFunc_ToPointDataWithContext_ReturnValue'": ""
           },
           {
-            "__type": "FSetProperty",
-            "TypeName": "SetProperty",
-            "PropertyTypeName": "NameProperty",
-            "Field": {
-              "prop-name 'CallFunc_CustomInputLabels_ReturnValue'": ""
-            },
-            "NumElementsToRemove": 0,
-            "Num": 0,
-            "ArrayDim": 1,
-            "ElementSize": 80,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_CustomInputLabels_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-set ElementSize(80) PropertyTypeName(NameProperty) 'CallFunc_CustomInputLabels_ReturnValue'": {
+              "Field": {
+                "prop-name 'CallFunc_CustomInputLabels_ReturnValue'": ""
+              }
+            }
           },
           {
             "prop-object Value(ImportIndex[-30] PCGPointData) 'CallFunc_PointLoop_OutData'": ""
@@ -1486,24 +1460,11 @@
             "prop-object Value(ImportIndex[-26] PCGData) 'CallFunc_BreakTaggedData_Data'": ""
           },
           {
-            "__type": "FSetProperty",
-            "TypeName": "SetProperty",
-            "PropertyTypeName": "StrProperty",
-            "Field": {
-              "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags'": ""
-            },
-            "NumElementsToRemove": 0,
-            "Num": 0,
-            "ArrayDim": 1,
-            "ElementSize": 80,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakTaggedData_Tags",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-set ElementSize(80) PropertyTypeName(StrProperty) 'CallFunc_BreakTaggedData_Tags'": {
+              "Field": {
+                "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags'": ""
+              }
+            }
           },
           {
             "prop-name 'CallFunc_BreakTaggedData_Pin'": ""
@@ -1528,24 +1489,11 @@
             "prop-object Value(ImportIndex[-26] PCGData) 'CallFunc_BreakTaggedData_Data\"1'": ""
           },
           {
-            "__type": "FSetProperty",
-            "TypeName": "SetProperty",
-            "PropertyTypeName": "StrProperty",
-            "Field": {
-              "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags\"1'": ""
-            },
-            "NumElementsToRemove": 0,
-            "Num": 0,
-            "ArrayDim": 1,
-            "ElementSize": 80,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakTaggedData_Tags\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+            "prop-set ElementSize(80) PropertyTypeName(StrProperty) 'CallFunc_BreakTaggedData_Tags\"1'": {
+              "Field": {
+                "prop-str ElementSize(16) 'CallFunc_BreakTaggedData_Tags\"1'": ""
+              }
+            }
           },
           {
             "prop-name 'CallFunc_BreakTaggedData_Pin\"1'": ""
