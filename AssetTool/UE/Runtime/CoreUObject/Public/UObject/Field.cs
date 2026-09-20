@@ -93,7 +93,7 @@ namespace AssetTool
             value.BlueprintReplicationCondition = key.GetNonNull("BlueprintReplicationCondition({0})", x => byte.Parse(x), (byte)0);
 
             //MetaDataMap inlined
-            string metadataMap = key.GetNonNull("MetaDataMap( {0} ) '", x => x);
+            string metadataMap = key.GetNonNull("MetaDataMap( {0} ) ", x => x);
             if (metadataMap is { })
             {
                 value.HasMetaData = true;
@@ -106,10 +106,7 @@ namespace AssetTool
                 }
             }
 
-            //NamePrivate
-            int i1 = key.LastIndexOf('\'');
-            int i2 = key.LastIndexOf('\'', i1 - 1);
-            value.NamePrivate = new FName(key[(i2 + 1)..i1]);
+            value.NamePrivate = key.GetNonNull("NamePrivate(•{0}•)", x => new FName(x));
 
             return value;
         }
@@ -156,7 +153,7 @@ namespace AssetTool
             }
 
             //NamePrivate
-            builder.Append($"'{value.NamePrivate}'");
+            builder.Append($"NamePrivate(•{value.NamePrivate}•) ");
 
             string key = builder.ToString();
 
