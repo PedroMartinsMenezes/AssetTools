@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -73,6 +74,40 @@ namespace AssetTool
             return this;
         }
         #endregion
+
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+            JsonElement value = root.EnumerateObject().First().Value;
+            var obj = ReadKeyValue<FSetProperty>(key, value);
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
+            obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
+            if (value.TryGetProperty("Field", out var field))
+            {
+                obj.Field = JsonSerializer.Deserialize<FField>(field.GetRawText(), options);
+            }
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = this.ElementSize,
+                ["PropertyTypeName"] = this.PropertyTypeName
+            };
+            Dictionary<string, object> fields = null;
+            if (this.Field is { })
+            {
+                fields = new()
+                {
+                    ["Field"] = this.Field,
+                };
+            }
+            WriteKeyValue(writer, options, this, "prop-set", inlineFields, fields);
+            writer.WriteEndObject();
+        }
 
         static FSetProperty()
         {

@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -19,28 +19,25 @@ namespace AssetTool
             transfer.Move(ref value);
             return value;
         }
-    }
 
-    public class FUInt64PropertySerializer : FPropertySerializerBase<FUInt64Property>
-    {
-        public FUInt64Property Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FUInt64Property>(key, value);
 
             obj.ElementSize = 8;
 
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FUInt64Property value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
-            WriteKeyValue(writer, options, value, "prop-uint64");
+            WriteKeyValue(writer, options, this, "prop-uint64");
 
             writer.WriteEndObject();
         }

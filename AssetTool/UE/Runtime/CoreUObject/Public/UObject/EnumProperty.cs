@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Text.Json;
 
@@ -34,15 +34,12 @@ namespace AssetTool
             transfer.MoveEnum(ref value);
             return value;
         }
-    }
 
-    public class FEnumPropertySerializer : FPropertySerializerBase<FEnumProperty>
-    {
-        public FEnumProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
             JsonElement value = root.EnumerateObject().First().Value;
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FEnumProperty>(key, value);
             obj.ElementSize = 1;
             obj.Value = key.GetNonNull("Value({0})", x => uint.Parse(x), (uint)0);
             obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
@@ -61,15 +58,15 @@ namespace AssetTool
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FEnumProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
             Dictionary<string, object> inlineFields = new()
             {
-                ["Value"] = value.Value,
-                ["PropertyTypeName"] = value.PropertyTypeName
+                ["Value"] = this.Value,
+                ["PropertyTypeName"] = this.PropertyTypeName
             };
-            WriteKeyValue(writer, options, value, "prop-enum", inlineFields);
+            WriteKeyValue(writer, options, this, "prop-enum", inlineFields);
             writer.WriteEndObject();
         }
     }

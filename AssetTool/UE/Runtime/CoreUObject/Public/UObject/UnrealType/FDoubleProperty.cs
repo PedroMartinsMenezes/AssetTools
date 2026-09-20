@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -19,28 +19,25 @@ namespace AssetTool
             transfer.Move(ref value);
             return value;
         }
-    }
 
-    public class FDoublePropertySerializer : FPropertySerializerBase<FDoubleProperty>
-    {
-        public FDoubleProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FDoubleProperty>(key, value);
 
             obj.ElementSize = 8;
 
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FDoubleProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
-            WriteKeyValue(writer, options, value, "prop-double");
+            WriteKeyValue(writer, options, this, "prop-double");
 
             writer.WriteEndObject();
         }

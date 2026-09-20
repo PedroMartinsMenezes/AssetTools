@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+using System.Text.Json;
+
+namespace AssetTool
 {
     public class FOptionalProperty : FProperty
     {
@@ -30,6 +32,53 @@
                 }
             }
             return this;
+        }
+
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue<FOptionalProperty>(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+            obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
+            obj.Value = key.GetNonNull("Value({0})", x => uint.Parse(x), (uint)0);
+            obj.BoolProperty = key.GetNonNull("BoolProperty({0})", x => byte.Parse(x), (byte)0);
+
+            if (value.TryGetProperty("SingleField", out var singleField))
+            {
+                obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
+            }
+
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = this.ElementSize,
+                ["PropertyTypeName"] = this.PropertyTypeName,
+                ["Value"] = this.Value,
+                ["BoolProperty"] = this.BoolProperty
+            };
+
+            Dictionary<string, object> fields = null;
+            if (this.SingleField is { })
+            {
+                fields = new()
+                {
+                    ["SingleField"] = this.SingleField
+                };
+            }
+
+            WriteKeyValue(writer, options, this, "prop-optional", inlineFields, fields);
+
+            writer.WriteEndObject();
         }
     }
 }

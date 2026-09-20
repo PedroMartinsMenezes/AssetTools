@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
@@ -108,9 +108,47 @@ namespace AssetTool
         }
         #endregion
 
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+            JsonElement value = root.EnumerateObject().First().Value;
+            var obj = ReadKeyValue<FMapProperty>(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
+            obj.PropertyTypeName1 = key.GetNonNull("PropertyTypeName1({0})", x => new FName(x));
+            obj.PropertyTypeName2 = key.GetNonNull("PropertyTypeName2({0})", x => new FName(x));
+            if (value.TryGetProperty("SingleField1", out var singleField1))
+            {
+                obj.SingleField1 = JsonSerializer.Deserialize<FField>(singleField1.GetRawText(), options);
+            }
+            if (value.TryGetProperty("SingleField2", out var singleField2))
+            {
+                obj.SingleField2 = JsonSerializer.Deserialize<FField>(singleField2.GetRawText(), options);
+            }
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = this.ElementSize,
+                ["PropertyTypeName1"] = this.PropertyTypeName1,
+                ["PropertyTypeName2"] = this.PropertyTypeName2
+            };
+            Dictionary<string, object> fields = new()
+            {
+                ["SingleField1"] = this.SingleField1,
+                ["SingleField2"] = this.SingleField2
+            };
+            WriteKeyValue(writer, options, this, "prop-map", inlineFields, fields);
+            writer.WriteEndObject();
+        }
+
         static FMapProperty()
         {
-            #region keyTypeMovers and valueTypeMovers            
+            #region keyTypeMovers and valueTypeMovers
             AddTypeKeyMover<FName>("EFaceTextureType");
             AddTypeKeyMover<FName>("EDMMaterialPropertyType");
             AddTypeValueMover<TUInt32>("EVRToolType");
@@ -183,7 +221,7 @@ namespace AssetTool
             AddNameValueMover<FVarArgument>("VarArguments");
             AddNameValueMover<FLinearColor>("MaterialVectorParameters_11_57DB292F489BB4FB3E7BE2A66B0245D4");
             AddNameValueMover<FVector>("SocketLocationMap_21_ABF6AA244A5F84728A5E83BE2328C7FA");//Taken from BP_FluidSim_01.uasset
-            AddNameValueMover<FVector>("SocketVelocityMap_26_82B0E24B45935A12E1949F918A59A537");//Taken from BP_FluidSim_01.uasset            
+            AddNameValueMover<FVector>("SocketVelocityMap_26_82B0E24B45935A12E1949F918A59A537");//Taken from BP_FluidSim_01.uasset
             #endregion
         }
 
@@ -223,47 +261,4 @@ namespace AssetTool
         }
         #endregion
     }
-
-    #region Serializer
-    public class FMapPropertySerializer : FPropertySerializerBase<FMapProperty>
-    {
-        public FMapProperty Read(JsonElement root, JsonSerializerOptions options)
-        {
-            string key = root.EnumerateObject().First().Name;
-            JsonElement value = root.EnumerateObject().First().Value;
-            var obj = ReadKeyValue(key, value);
-
-            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
-            obj.PropertyTypeName1 = key.GetNonNull("PropertyTypeName1({0})", x => new FName(x));
-            obj.PropertyTypeName2 = key.GetNonNull("PropertyTypeName2({0})", x => new FName(x));
-            if (value.TryGetProperty("SingleField1", out var singleField1))
-            {
-                obj.SingleField1 = JsonSerializer.Deserialize<FField>(singleField1.GetRawText(), options);
-            }
-            if (value.TryGetProperty("SingleField2", out var singleField2))
-            {
-                obj.SingleField2 = JsonSerializer.Deserialize<FField>(singleField2.GetRawText(), options);
-            }
-            return obj;
-        }
-
-        public void Write(Utf8JsonWriter writer, FMapProperty value, JsonSerializerOptions options)
-        {
-            writer.WriteStartObject();
-            Dictionary<string, object> inlineFields = new()
-            {
-                ["ElementSize"] = value.ElementSize,
-                ["PropertyTypeName1"] = value.PropertyTypeName1,
-                ["PropertyTypeName2"] = value.PropertyTypeName2
-            };
-            Dictionary<string, object> fields = new()
-            {
-                ["SingleField1"] = value.SingleField1,
-                ["SingleField2"] = value.SingleField2
-            };
-            WriteKeyValue(writer, options, value, "prop-map", inlineFields, fields);
-            writer.WriteEndObject();
-        }
-    }
-    #endregion
 }

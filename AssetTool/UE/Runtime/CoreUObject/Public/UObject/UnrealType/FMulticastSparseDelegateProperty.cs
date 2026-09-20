@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+using System.Text.Json;
+
+namespace AssetTool
 {
     using FMulticastScriptDelegate = TMulticastScriptDelegate;
 
@@ -14,6 +16,47 @@
         {
             transfer.Move(ref Delegate);
             return this;
+        }
+
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue<FMulticastSparseDelegateProperty>(key, value);
+
+            obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
+
+            if (value.TryGetProperty("Delegate", out var del))
+            {
+                obj.Delegate = JsonSerializer.Deserialize<FMulticastScriptDelegate>(del.GetRawText(), options);
+            }
+
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["ElementSize"] = this.ElementSize
+            };
+
+            Dictionary<string, object> fields = null;
+            if (this.Delegate is { })
+            {
+                fields = new()
+                {
+                    ["Delegate"] = this.Delegate
+                };
+            }
+
+            WriteKeyValue(writer, options, this, "prop-multicast-sparse-delegate", inlineFields, fields);
+
+            writer.WriteEndObject();
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -24,17 +24,14 @@ namespace AssetTool
             transfer.Move(ref Ptr);
             return this;
         }
-    }
 
-    public class FDelegatePropertySerializer : FPropertySerializerBase<FDelegateProperty>
-    {
-        public FDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FDelegateProperty>(key, value);
 
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
             obj.SignatureFunction = key.GetNonNull("SignatureFunction({0})", x => uint.Parse(x), (uint)0);
@@ -43,18 +40,18 @@ namespace AssetTool
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FDelegateProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
             Dictionary<string, object> inlineFields = new()
             {
-                ["ElementSize"] = value.ElementSize,
-                ["SignatureFunction"] = value.SignatureFunction,
-                ["Ptr"] = value.Ptr
+                ["ElementSize"] = this.ElementSize,
+                ["SignatureFunction"] = this.SignatureFunction,
+                ["Ptr"] = this.Ptr
             };
 
-            WriteKeyValue(writer, options, value, "prop-delegate", inlineFields);
+            WriteKeyValue(writer, options, this, "prop-delegate", inlineFields);
 
             writer.WriteEndObject();
         }

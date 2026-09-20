@@ -1,4 +1,6 @@
-﻿namespace AssetTool
+using System.Text.Json;
+
+namespace AssetTool
 {
     public class FFieldPathProperty : FProperty
     {
@@ -23,6 +25,51 @@
         {
             transfer.Move(ref FieldPtr);
             return this;
+        }
+
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            string key = root.EnumerateObject().First().Name;
+
+            JsonElement value = root.EnumerateObject().First().Value;
+
+            var obj = ReadKeyValue<FFieldPathProperty>(key, value);
+
+            obj.InOwner = key.GetNonNull("InOwner({0})", x => uint.Parse(x), (uint)0);
+            obj.InName = key.GetNonNull("InName({0})", x => new FName(x), new FName("None"));
+            obj.InObjectFlags = key.GetNonNull("InObjectFlags({0})", x => uint.Parse(x), (uint)0);
+
+            if (value.TryGetProperty("FieldPtr", out var fieldPtr))
+            {
+                obj.FieldPtr = JsonSerializer.Deserialize<FFieldPath>(fieldPtr.GetRawText(), options);
+            }
+
+            return obj;
+        }
+
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+
+            Dictionary<string, object> inlineFields = new()
+            {
+                ["InOwner"] = this.InOwner,
+                ["InName"] = this.InName,
+                ["InObjectFlags"] = this.InObjectFlags
+            };
+
+            Dictionary<string, object> fields = null;
+            if (this.FieldPtr is { })
+            {
+                fields = new()
+                {
+                    ["FieldPtr"] = this.FieldPtr
+                };
+            }
+
+            WriteKeyValue(writer, options, this, "prop-fieldpath", inlineFields, fields);
+
+            writer.WriteEndObject();
         }
     }
 }

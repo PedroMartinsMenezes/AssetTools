@@ -1,4 +1,6 @@
-﻿using System.Text.Json;
+﻿using System.Collections.Immutable;
+using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace AssetTool
@@ -60,10 +62,201 @@ namespace AssetTool
                 Field.Move(transfer);
             }
         }
+
+        public virtual FProperty Read(JsonElement root, JsonSerializerOptions options)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            writer.WriteString("__type", this.GetType().Name);
+            JsonElement element = JsonSerializer.SerializeToElement(this, options);
+            foreach (JsonProperty property in element.EnumerateObject())
+                property.WriteTo(writer);
+            writer.WriteEndObject();
+        }
+
+        protected static T ReadKeyValue<T>(string key, JsonElement root) where T : FProperty, new()
+        {
+            T value = new T();
+
+            value.NamePrivate = new FName(key[(key.IndexOf('\'') + 1)..^1]);
+
+            value.PropertyFlags = key.GetNonNull("PropertyFlags({0})", x => Enum.Parse<EPropertyFlags>(x), EPropertyFlags.CPF_None);
+            value.FlagsPrivate = key.GetNonNull("FlagsPrivate({0})", x => Enum.Parse<EObjectFlags>(x), EObjectFlags.RF_Public);
+            value.ArrayDim = key.GetNonNull("ArrayDim({0})", x => int.Parse(x), 1);
+            value.RepIndex = key.GetNonNull("RepIndex({0})", x => ushort.Parse(x), (ushort)0);
+            value.RepNotifyFunc = key.GetNonNull("RepNotifyFunc({0})", x => new FName(x), new FName("None"));
+            value.BlueprintReplicationCondition = key.GetNonNull("BlueprintReplicationCondition({0})", x => byte.Parse(x), (byte)0);
+
+            if (root.ValueKind == JsonValueKind.Object)
+            {
+                if (root.TryGetProperty("MetaDataMap", out var metaDataMap))
+                {
+                    value.HasMetaData = true;
+                    foreach (var property in metaDataMap.EnumerateObject())
+                    {
+                        value.MetaDataMap.Add(new FName(property.Name), new FString(property.Value.GetString() ?? string.Empty));
+                    }
+                }
+            }
+
+            return value;
+        }
+
+        protected static void WriteKeyValue<T>(Utf8JsonWriter writer, JsonSerializerOptions options, T value, string name, Dictionary<string, object> inlineFields = null, Dictionary<string, object> fields = null) where T : FProperty
+        {
+            StringBuilder builder = new();
+
+            builder.Append($"{name} ");
+
+            //Base members
+            if (value.PropertyFlags != EPropertyFlags.CPF_None) builder.Append($"PropertyFlags({value.PropertyFlags}) ");
+            if (value.FlagsPrivate != EObjectFlags.RF_Public) builder.Append($"FlagsPrivate({value.FlagsPrivate}) ");
+            if (value.ArrayDim != 1) builder.Append($"ArrayDim({value.ArrayDim}) ");
+            if (value.RepIndex != 0) builder.Append($"RepIndex({value.RepIndex}) ");
+            if (value.RepNotifyFunc.Value != "None") builder.Append($"RepNotifyFunc({value.RepNotifyFunc}) ");
+            if (value.BlueprintReplicationCondition != 0) builder.Append($"BlueprintReplicationCondition({value.BlueprintReplicationCondition}) ");
+
+            //Derived members inlined
+            if (inlineFields is { } && inlineFields.Count > 0)
+            {
+                foreach (var pair in inlineFields)
+                {
+                    if (pair.Value is { })
+                    {
+                        builder.Append($"{pair.Key}({pair.Value}) ");
+                    }
+                    else
+                    {
+                        builder.Append($"{pair.Key} ");
+                    }
+                }
+            }
+
+            //NamePrivate
+            builder.Append($"'{value.NamePrivate}'");
+
+            //Derived members body
+            if (value.HasMetaData)
+            {
+                fields ??= new();
+                fields["MetaDataMap"] = value.MetaDataMap;
+            }
+
+            string key = builder.ToString();
+
+            if (fields is null)
+            {
+                writer.WriteString(key, string.Empty);
+            }
+            else
+            {
+                writer.WritePropertyName(key);
+
+                writer.WriteStartObject();
+                foreach (var pair in fields)
+                {
+                    if (pair.Value is FField field)
+                    {
+                        writer.WritePropertyName(pair.Key);
+                        JsonSerializer.Serialize(writer, field, options);
+                    }
+                    else
+                    {
+                        writer.WritePropertyName(pair.Key);
+                        JsonSerializer.Serialize(writer, pair.Value, options);
+                    }
+                }
+                writer.WriteEndObject();
+            }
+        }
     }
 
     public sealed class FFieldJsonConverter : JsonConverter<FField>
     {
+        public static readonly ImmutableDictionary<string, Type> PropertyTypes = ImmutableDictionary.CreateRange(new Dictionary<string, Type>
+        {
+            [nameof(FArrayProperty)] = typeof(FArrayProperty),
+            [nameof(FBoolProperty)] = typeof(FBoolProperty),
+            [nameof(FByteProperty)] = typeof(FByteProperty),
+            [nameof(FClassProperty)] = typeof(FClassProperty),
+            [nameof(FClassPtrProperty)] = typeof(FClassPtrProperty),
+            [nameof(FDelegateProperty)] = typeof(FDelegateProperty),
+            [nameof(FDoubleProperty)] = typeof(FDoubleProperty),
+            [nameof(FEnumProperty)] = typeof(FEnumProperty),
+            [nameof(FFieldPathProperty)] = typeof(FFieldPathProperty),
+            [nameof(FFloatProperty)] = typeof(FFloatProperty),
+            [nameof(FInt16Property)] = typeof(FInt16Property),
+            [nameof(FInt64Property)] = typeof(FInt64Property),
+            [nameof(FInt8Property)] = typeof(FInt8Property),
+            [nameof(FInterfaceProperty)] = typeof(FInterfaceProperty),
+            [nameof(FIntProperty)] = typeof(FIntProperty),
+            [nameof(FLazyObjectProperty)] = typeof(FLazyObjectProperty),
+            [nameof(FMapProperty)] = typeof(FMapProperty),
+            [nameof(FMulticastDelegateProperty)] = typeof(FMulticastDelegateProperty),
+            [nameof(FMulticastInlineDelegateProperty)] = typeof(FMulticastInlineDelegateProperty),
+            [nameof(FMulticastSparseDelegateProperty)] = typeof(FMulticastSparseDelegateProperty),
+            [nameof(FNameProperty)] = typeof(FNameProperty),
+            [nameof(FNumericProperty)] = typeof(FNumericProperty),
+            [nameof(FObjectProperty)] = typeof(FObjectProperty),
+            [nameof(FObjectPropertyBase)] = typeof(FObjectPropertyBase),
+            [nameof(FObjectPtrProperty)] = typeof(FObjectPtrProperty),
+            [nameof(FOptionalProperty)] = typeof(FOptionalProperty),
+            [nameof(FSetProperty)] = typeof(FSetProperty),
+            [nameof(FSoftClassProperty)] = typeof(FSoftClassProperty),
+            [nameof(FSoftObjectProperty)] = typeof(FSoftObjectProperty),
+            [nameof(FStrProperty)] = typeof(FStrProperty),
+            [nameof(FStructProperty)] = typeof(FStructProperty),
+            [nameof(FTextProperty)] = typeof(FTextProperty),
+            [nameof(FUInt16Property)] = typeof(FUInt16Property),
+            [nameof(FUInt32Property)] = typeof(FUInt32Property),
+            [nameof(FUInt64Property)] = typeof(FUInt64Property),
+            [nameof(FWeakObjectProperty)] = typeof(FWeakObjectProperty),
+        });
+
+        public static readonly ImmutableDictionary<string, Type> PropertyTypesByPrefix = ImmutableDictionary.CreateRange(new Dictionary<string, Type>
+        {
+            ["prop-array"] = typeof(FArrayProperty),
+            ["prop-bool"] = typeof(FBoolProperty),
+            ["prop-byte"] = typeof(FByteProperty),
+            ["prop-class"] = typeof(FClassProperty),
+            ["prop-classptr"] = typeof(FClassPtrProperty),
+            ["prop-delegate"] = typeof(FDelegateProperty),
+            ["prop-double"] = typeof(FDoubleProperty),
+            ["prop-enum"] = typeof(FEnumProperty),
+            ["prop-fieldpath"] = typeof(FFieldPathProperty),
+            ["prop-float"] = typeof(FFloatProperty),
+            ["prop-int16"] = typeof(FInt16Property),
+            ["prop-int64"] = typeof(FInt64Property),
+            ["prop-int8"] = typeof(FInt8Property),
+            ["prop-interface"] = typeof(FInterfaceProperty),
+            ["prop-int"] = typeof(FIntProperty),
+            ["prop-lazyobject"] = typeof(FLazyObjectProperty),
+            ["prop-map"] = typeof(FMapProperty),
+            ["prop-multicast-delegate"] = typeof(FMulticastDelegateProperty),
+            ["prop-multicast-sparse-delegate"] = typeof(FMulticastSparseDelegateProperty),
+            ["prop-name"] = typeof(FNameProperty),
+            ["prop-numeric"] = typeof(FNumericProperty),
+            ["prop-object"] = typeof(FObjectProperty),
+            ["prop-object-base"] = typeof(FObjectPropertyBase),
+            ["prop-objectptr"] = typeof(FObjectPtrProperty),
+            ["prop-optional"] = typeof(FOptionalProperty),
+            ["prop-set"] = typeof(FSetProperty),
+            ["prop-softclass"] = typeof(FSoftClassProperty),
+            ["prop-softobject"] = typeof(FSoftObjectProperty),
+            ["prop-str"] = typeof(FStrProperty),
+            ["prop-struct"] = typeof(FStructProperty),
+            ["prop-text"] = typeof(FTextProperty),
+            ["prop-uint16"] = typeof(FUInt16Property),
+            ["prop-uint32"] = typeof(FUInt32Property),
+            ["prop-uint64"] = typeof(FUInt64Property),
+            ["prop-weakobject"] = typeof(FWeakObjectProperty),
+            ["prop-multicast-inline-delegate"] = typeof(FMulticastInlineDelegateProperty),
+        });
+
         public override FField Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             using JsonDocument document = JsonDocument.ParseValue(ref reader);
@@ -71,103 +264,27 @@ namespace AssetTool
             if (root.TryGetProperty("__type", out _))
             {
                 string typeName = root.GetProperty("__type").GetString();
-
-                return typeName switch
-                {
-                    nameof(FFieldPathProperty) => JsonSerializer.Deserialize<FFieldPathProperty>(root.GetRawText(), options)!,
-                    nameof(FMulticastSparseDelegateProperty) => JsonSerializer.Deserialize<FMulticastSparseDelegateProperty>(root.GetRawText(), options)!,
-                    nameof(FNumericProperty) => JsonSerializer.Deserialize<FNumericProperty>(root.GetRawText(), options)!,
-                    nameof(FObjectPropertyBase) => JsonSerializer.Deserialize<FObjectPropertyBase>(root.GetRawText(), options)!,
-                    nameof(FObjectPtrProperty) => JsonSerializer.Deserialize<FObjectPtrProperty>(root.GetRawText(), options)!,
-                    nameof(FOptionalProperty) => JsonSerializer.Deserialize<FOptionalProperty>(root.GetRawText(), options)!,
-                    nameof(FProperty) => JsonSerializer.Deserialize<FProperty>(root.GetRawText(), options)!,
-                    nameof(FSetProperty) => JsonSerializer.Deserialize<FSetProperty>(root.GetRawText(), options)!,
-                    _ => throw new JsonException($"Unknown field type '{typeName}'.")
-                };
+                Type correctType = PropertyTypes[typeName];
+                return (FField)JsonSerializer.Deserialize(root.GetRawText(), correctType, options);
             }
             else
             {
                 JsonProperty prop = root.EnumerateObject().First();
                 string key = prop.Name[0..prop.Name.IndexOf(' ')];
-                return key switch
+
+                if (!PropertyTypesByPrefix.TryGetValue(key, out Type correctType))
                 {
-                    "prop-array" => new FArrayPropertySerializer().Read(root, options),
-                    "prop-bool" => new FBoolPropertySerializer().Read(root, options),
-                    "prop-byte" => new FBytePropertySerializer().Read(root, options),
-                    "prop-class" => new FClassPropertySerializer().Read(root, options),
-                    "prop-classptr" => new FClassPtrPropertySerializer().Read(root, options),
-                    "prop-delegate" => new FDelegatePropertySerializer().Read(root, options),
-                    "prop-double" => new FDoublePropertySerializer().Read(root, options),
-                    "prop-enum" => new FEnumPropertySerializer().Read(root, options),
-                    "prop-float" => new FFloatPropertySerializer().Read(root, options),
-                    "prop-int16" => new FInt16PropertySerializer().Read(root, options),
-                    "prop-int64" => new FInt64PropertySerializer().Read(root, options),
-                    "prop-int8" => new FInt8PropertySerializer().Read(root, options),
-                    "prop-interface" => new FInterfacePropertySerializer().Read(root, options),
-                    "prop-int" => new FIntPropertySerializer().Read(root, options),
-                    "prop-lazyobject" => new FLazyObjectPropertySerializer().Read(root, options),
-                    "prop-map" => new FMapPropertySerializer().Read(root, options),
-                    "prop-multicast-delegate" => new FMulticastDelegatePropertySerializer().Read(root, options),
-                    "prop-name" => new FNamePropertySerializer().Read(root, options),
-                    "prop-object" => new FObjectPropertySerializer().Read(root, options),
-                    "prop-softclass" => new FSoftClassPropertySerializer().Read(root, options),
-                    "prop-softobject" => new FSoftObjectPropertySerializer().Read(root, options),
-                    "prop-str" => new FStrPropertySerializer().Read(root, options),
-                    "prop-struct" => new FStructPropertySerializer().Read(root, options),
-                    "prop-text" => new FTextPropertySerializer().Read(root, options),
-                    "prop-uint16" => new FUInt16PropertySerializer().Read(root, options),
-                    "prop-uint32" => new FUInt32PropertySerializer().Read(root, options),
-                    "prop-uint64" => new FUInt64PropertySerializer().Read(root, options),
-                    "prop-weakobject" => new FWeakObjectPropertySerializer().Read(root, options),
-                    "prop-multicast-inline-delegate" => new FMulticastInlineDelegatePropertySerializer().Read(root, options),
-                    _ => throw new JsonException($"Unknown field key '{key}'.")
-                };
+                    throw new JsonException($"Unknown field key '{key}'.");
+                }
+
+                FField field = (FField)Activator.CreateInstance(correctType);
+                return field.Read(root, options);
             }
         }
 
         public override void Write(Utf8JsonWriter writer, FField value, JsonSerializerOptions options)
         {
-            switch (value)
-            {
-                case FBoolProperty boolProperty: new FBoolPropertySerializer().Write(writer, boolProperty, options); return;
-                case FArrayProperty arrayProperty: new FArrayPropertySerializer().Write(writer, arrayProperty, options); return;
-                case FByteProperty byteProperty: new FBytePropertySerializer().Write(writer, byteProperty, options); return;
-                case FClassPtrProperty classPtrProperty: new FClassPtrPropertySerializer().Write(writer, classPtrProperty, options); return;
-                case FClassProperty classProperty: new FClassPropertySerializer().Write(writer, classProperty, options); return;
-                case FDelegateProperty delegateProperty: new FDelegatePropertySerializer().Write(writer, delegateProperty, options); return;
-                case FDoubleProperty doubleProperty: new FDoublePropertySerializer().Write(writer, doubleProperty, options); return;
-                case FEnumProperty enumProperty: new FEnumPropertySerializer().Write(writer, enumProperty, options); return;
-                case FFloatProperty floatProperty: new FFloatPropertySerializer().Write(writer, floatProperty, options); return;
-                case FInt16Property int16Property: new FInt16PropertySerializer().Write(writer, int16Property, options); return;
-                case FInt64Property int64Property: new FInt64PropertySerializer().Write(writer, int64Property, options); return;
-                case FInt8Property int8Property: new FInt8PropertySerializer().Write(writer, int8Property, options); return;
-                case FInterfaceProperty interfaceProperty: new FInterfacePropertySerializer().Write(writer, interfaceProperty, options); return;
-                case FIntProperty intProperty: new FIntPropertySerializer().Write(writer, intProperty, options); return;
-                case FLazyObjectProperty lazyObjectProperty: new FLazyObjectPropertySerializer().Write(writer, lazyObjectProperty, options); return;
-                case FMapProperty mapProperty: new FMapPropertySerializer().Write(writer, mapProperty, options); return;
-                case FMulticastDelegateProperty multicastDelegateProperty: new FMulticastDelegatePropertySerializer().Write(writer, multicastDelegateProperty, options); return;
-                case FMulticastInlineDelegateProperty multicastInlineDelegateProperty: new FMulticastInlineDelegatePropertySerializer().Write(writer, multicastInlineDelegateProperty, options); return;
-                case FNameProperty nameProperty: new FNamePropertySerializer().Write(writer, nameProperty, options); return;
-                case FObjectProperty objectProperty: new FObjectPropertySerializer().Write(writer, objectProperty, options); return;
-                case FSoftClassProperty softClassProperty: new FSoftClassPropertySerializer().Write(writer, softClassProperty, options); return;
-                case FSoftObjectProperty softObjectProperty: new FSoftObjectPropertySerializer().Write(writer, softObjectProperty, options); return;
-                case FStrProperty strProperty: new FStrPropertySerializer().Write(writer, strProperty, options); return;
-                case FStructProperty structProperty: new FStructPropertySerializer().Write(writer, structProperty, options); return;
-                case FTextProperty textProperty: new FTextPropertySerializer().Write(writer, textProperty, options); return;
-                case FUInt16Property uint16Property: new FUInt16PropertySerializer().Write(writer, uint16Property, options); return;
-                case FUInt32Property uint32Property: new FUInt32PropertySerializer().Write(writer, uint32Property, options); return;
-                case FUInt64Property uint64Property: new FUInt64PropertySerializer().Write(writer, uint64Property, options); return;
-                case FWeakObjectProperty weakObjectProperty: new FWeakObjectPropertySerializer().Write(writer, weakObjectProperty, options); return;
-
-                default:
-                    writer.WriteStartObject();
-                    writer.WriteString("__type", value.GetType().Name);
-                    JsonElement element = JsonSerializer.SerializeToElement(value, value.GetType(), options);
-                    foreach (JsonProperty property in element.EnumerateObject())
-                        property.WriteTo(writer);
-                    writer.WriteEndObject();
-                    return;
-            }
+            value.Write(writer, options);
         }
     }
 

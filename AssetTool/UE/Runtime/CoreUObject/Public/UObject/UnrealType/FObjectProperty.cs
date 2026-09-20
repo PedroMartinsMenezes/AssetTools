@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -22,17 +22,14 @@ namespace AssetTool
             transfer.Move(ref value);
             return value;
         }
-    }
 
-    public class FObjectPropertySerializer : FPropertySerializerBase<FObjectProperty>
-    {
-        public FObjectProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FObjectProperty>(key, value);
 
             obj.ElementSize = 8;
 
@@ -41,16 +38,16 @@ namespace AssetTool
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FObjectProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
             Dictionary<string, object> inlineFields = new()
             {
-                ["Value"] = value.Value
+                ["Value"] = this.Value
             };
 
-            WriteKeyValue(writer, options, value, "prop-object", inlineFields);
+            WriteKeyValue(writer, options, this, "prop-object", inlineFields);
 
             writer.WriteEndObject();
         }

@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -23,17 +23,14 @@ namespace AssetTool
             transfer.Move(ref Delegates);
             return this;
         }
-    }
 
-    public class FMulticastDelegatePropertySerializer : FPropertySerializerBase<FMulticastDelegateProperty>
-    {
-        public FMulticastDelegateProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FMulticastDelegateProperty>(key, value);
 
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
 
@@ -47,26 +44,26 @@ namespace AssetTool
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FMulticastDelegateProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
             Dictionary<string, object> inlineFields = new()
             {
-                ["ElementSize"] = value.ElementSize,
-                ["SignatureFunction"] = value.SignatureFunction,
+                ["ElementSize"] = this.ElementSize,
+                ["SignatureFunction"] = this.SignatureFunction,
             };
 
             Dictionary<string, object> fields = null;
-            if (value.Delegates is { })
+            if (this.Delegates is { })
             {
                 fields = new()
                 {
-                    ["Delegates"] = value.Delegates,
+                    ["Delegates"] = this.Delegates,
                 };
             }
 
-            WriteKeyValue(writer, options, value, "prop-multicast-delegate", inlineFields, fields);
+            WriteKeyValue(writer, options, this, "prop-multicast-delegate", inlineFields, fields);
 
             writer.WriteEndObject();
         }

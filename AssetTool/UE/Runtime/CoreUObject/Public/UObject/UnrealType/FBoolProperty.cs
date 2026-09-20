@@ -1,4 +1,4 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 
 namespace AssetTool
 {
@@ -32,17 +32,14 @@ namespace AssetTool
             transfer.Move(ref value);
             return value;
         }
-    }
 
-    public class FBoolPropertySerializer : FPropertySerializerBase<FBoolProperty>
-    {
-        public FBoolProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
         {
             string key = root.EnumerateObject().First().Name;
 
             JsonElement value = root.EnumerateObject().First().Value;
 
-            var obj = ReadKeyValue(key, value);
+            var obj = ReadKeyValue<FBoolProperty>(key, value);
 
             obj.ElementSize = 1;
 
@@ -56,20 +53,20 @@ namespace AssetTool
             return obj;
         }
 
-        public void Write(Utf8JsonWriter writer, FBoolProperty value, JsonSerializerOptions options)
+        public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
             writer.WriteStartObject();
 
             Dictionary<string, object> inlineFields = new();
 
-            if (value.FieldSize != 1) inlineFields.Add("FieldSize", value.FieldSize);
-            if (value.ByteOffset != 0) inlineFields.Add("ByteOffset", value.ByteOffset);
-            if (value.ByteMask != 1) inlineFields.Add("ByteMask", value.ByteMask);
-            if (value.FieldMask != 255) inlineFields.Add("FieldMask", value.FieldMask);
-            if (value.BoolSize != 1) inlineFields.Add("BoolSize", value.BoolSize);
-            if (value.NativeBool != 1) inlineFields.Add("NativeBool", value.NativeBool);
+            if (this.FieldSize != 1) inlineFields.Add("FieldSize", this.FieldSize);
+            if (this.ByteOffset != 0) inlineFields.Add("ByteOffset", this.ByteOffset);
+            if (this.ByteMask != 1) inlineFields.Add("ByteMask", this.ByteMask);
+            if (this.FieldMask != 255) inlineFields.Add("FieldMask", this.FieldMask);
+            if (this.BoolSize != 1) inlineFields.Add("BoolSize", this.BoolSize);
+            if (this.NativeBool != 1) inlineFields.Add("NativeBool", this.NativeBool);
 
-            WriteKeyValue(writer, options, value, "prop-bool", inlineFields);
+            WriteKeyValue(writer, options, this, "prop-bool", inlineFields);
 
             writer.WriteEndObject();
         }
