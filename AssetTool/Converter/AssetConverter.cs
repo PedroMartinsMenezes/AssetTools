@@ -47,7 +47,7 @@ namespace AssetTool
 
                 if (!FileCache.TryAdd(currFileKey, InAssetPath))
                 {
-                    callback?.Invoke($"[True ] Skip repeated: {InAssetPath}");
+                    callback?.Invoke($"[False] Skip repeated: {InAssetPath}");
                     return true;
                 }
                 else
@@ -61,7 +61,7 @@ namespace AssetTool
             long fileLength = fileInfo.Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
-                callback?.Invoke($"[True ] Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
+                callback?.Invoke($"[False] Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
                 return true;
             }
             if (!string.IsNullOrEmpty(outDir))
@@ -86,7 +86,7 @@ namespace AssetTool
                 success = asset.Move(transferReader, "Reading");
                 if (asset.VersionIsTooOld)
                 {
-                    callback?.Invoke($"[True ] Version is too old: {InAssetPath}");
+                    callback?.Invoke($"[False] Version is too old: {InAssetPath}");
                     return true;
                 }
                 if (!success && AppConfig.DebugSaveJson)
