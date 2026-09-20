@@ -16,11 +16,11 @@ namespace AssetTool
             CultureInfo.DefaultThreadCurrentUICulture = cultureInfo;
         }
 
-        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null, Action<string> fileSkipped = null)
+        public static bool RebuildAssetFast(string InAssetPath, string outDir = null, FileVersion fileVersion = null, Action<string> callback = null)
         {
             if (!File.Exists(InAssetPath))
             {
-                Console.WriteLine($"File not found: {InAssetPath}");
+                callback?.Invoke($"[False] File not found: {InAssetPath}");
                 return false;
             }
             if (AppConfig is null)
@@ -47,7 +47,7 @@ namespace AssetTool
 
                 if (!FileCache.TryAdd(currFileKey, InAssetPath))
                 {
-                    fileSkipped?.Invoke($"Skipping file: {InAssetPath} (already processed)");
+                    callback?.Invoke($"[True ] Skip repeated: {InAssetPath}");
                     return true;
                 }
                 else
@@ -61,7 +61,7 @@ namespace AssetTool
             long fileLength = fileInfo.Length;
             if (fileLength > AppConfig.MaxFileSize)
             {
-                Log.Info($"Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
+                callback?.Invoke($"[True ] Max File Size Exeeded: {fileLength}. File: {InAssetPath}");
                 return true;
             }
             if (!string.IsNullOrEmpty(outDir))
@@ -86,7 +86,7 @@ namespace AssetTool
                 success = asset.Move(transferReader, "Reading");
                 if (asset.VersionIsTooOld)
                 {
-                    Console.WriteLine($"Version is too old: {InAssetPath}");
+                    callback?.Invoke($"[True ] Version is too old: {InAssetPath}");
                     return true;
                 }
                 if (!success && AppConfig.DebugSaveJson)
@@ -154,6 +154,7 @@ namespace AssetTool
                 }
             }
 
+            callback?.Invoke($"[{success,-5}] {InAssetPath}");
             return success;
         }
 
