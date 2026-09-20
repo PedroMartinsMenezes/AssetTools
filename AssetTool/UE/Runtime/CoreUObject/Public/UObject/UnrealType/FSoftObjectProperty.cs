@@ -33,11 +33,11 @@ namespace AssetTool
             return value;
         }
 
-        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
-            string key = root.EnumerateObject().First().Name;
+            string key = elem.Name;
 
-            JsonElement value = root.EnumerateObject().First().Value;
+            JsonElement value = elem.Value;
 
             var obj = ReadKeyValue<FSoftObjectProperty>(key, value);
 
@@ -50,17 +50,12 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
-
             Dictionary<string, object> inlineFields = new()
             {
                 ["ElementSize"] = this.ElementSize,
                 ["Value"] = this.Value
             };
-
             WriteKeyValue(writer, options, this, "prop-softobject", inlineFields);
-
-            writer.WriteEndObject();
         }
     }
 }

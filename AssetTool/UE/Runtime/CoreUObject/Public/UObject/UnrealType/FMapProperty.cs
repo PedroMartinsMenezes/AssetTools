@@ -108,10 +108,10 @@ namespace AssetTool
         }
         #endregion
 
-        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
-            string key = root.EnumerateObject().First().Name;
-            JsonElement value = root.EnumerateObject().First().Value;
+            string key = elem.Name;
+            JsonElement value = elem.Value;
             var obj = ReadKeyValue<FMapProperty>(key, value);
 
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
@@ -130,7 +130,6 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
             Dictionary<string, object> inlineFields = new()
             {
                 ["ElementSize"] = this.ElementSize,
@@ -143,7 +142,6 @@ namespace AssetTool
                 ["SingleField2"] = this.SingleField2
             };
             WriteKeyValue(writer, options, this, "prop-map", inlineFields, fields);
-            writer.WriteEndObject();
         }
 
         static FMapProperty()

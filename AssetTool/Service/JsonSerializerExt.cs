@@ -472,6 +472,7 @@ namespace AssetTool
 
                 #region Properties
                 new FFieldJsonConverter(),
+                new FFieldListJsonConverter(),
                 #endregion
             }
         };

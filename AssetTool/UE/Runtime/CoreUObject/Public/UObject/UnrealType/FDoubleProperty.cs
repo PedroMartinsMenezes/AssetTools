@@ -20,11 +20,11 @@ namespace AssetTool
             return value;
         }
 
-        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
-            string key = root.EnumerateObject().First().Name;
+            string key = elem.Name;
 
-            JsonElement value = root.EnumerateObject().First().Value;
+            JsonElement value = elem.Value;
 
             var obj = ReadKeyValue<FDoubleProperty>(key, value);
 
@@ -35,11 +35,7 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
-
             WriteKeyValue(writer, options, this, "prop-double");
-
-            writer.WriteEndObject();
         }
     }
 }

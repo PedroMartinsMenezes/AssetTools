@@ -63,21 +63,23 @@ namespace AssetTool
             }
         }
 
-        public virtual FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public virtual FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
             throw new NotImplementedException();
         }
 
         public virtual void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
             writer.WriteString("__type", this.GetType().Name);
             JsonElement element = JsonSerializer.SerializeToElement(this, options);
+
             foreach (JsonProperty property in element.EnumerateObject())
+            {
                 property.WriteTo(writer);
-            writer.WriteEndObject();
+            }
         }
 
+        #region Custom JsonConverter
         protected static T ReadKeyValue<T>(string key, JsonElement root) where T : FProperty, new()
         {
             T value = new T();
@@ -173,10 +175,80 @@ namespace AssetTool
                 writer.WriteEndObject();
             }
         }
+        #endregion
     }
 
     public sealed class FFieldJsonConverter : JsonConverter<FField>
     {
+        public override FField Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            using JsonDocument document = JsonDocument.ParseValue(ref reader);
+            JsonElement root = document.RootElement;
+            if (root.TryGetProperty("__type", out _))
+            {
+                string typeName = root.GetProperty("__type").GetString();
+                Type correctType = FFieldClass.PropertyTypes[typeName];
+                return (FField)JsonSerializer.Deserialize(root.GetRawText(), correctType, options);
+            }
+            else
+            {
+                JsonProperty prop = root.EnumerateObject().First();
+                string key = prop.Name[0..prop.Name.IndexOf(' ')];
+                if (!FFieldClass.PropertyTypesByPrefix.TryGetValue(key, out Type correctType))
+                {
+                    throw new JsonException($"Unknown field key '{key}'.");
+                }
+                FField field = (FField)Activator.CreateInstance(correctType);
+
+                return field.Read(prop, options);
+            }
+        }
+
+        public override void Write(Utf8JsonWriter writer, FField value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            value.Write(writer, options);
+            writer.WriteEndObject();
+        }
+    }
+
+    public sealed class FFieldListJsonConverter : JsonConverter<List<FField>>
+    {
+        public override List<FField> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            List<FField> fields = [];
+            using JsonDocument document = JsonDocument.ParseValue(ref reader);
+            JsonElement root = document.RootElement;
+            foreach (JsonProperty elem in root.EnumerateObject())
+            {
+                string name = elem.Name;
+                string key = name[0..name.IndexOf(' ')];
+                if (!FFieldClass.PropertyTypesByPrefix.TryGetValue(key, out Type correctType))
+                {
+                    throw new JsonException($"Unknown field key '{key}'.");
+                }
+                FField field = (FField)Activator.CreateInstance(correctType);
+                field = field.Read(elem, options);
+                fields.Add(field);
+            }
+            return fields;
+        }
+
+        public override void Write(Utf8JsonWriter writer, List<FField> value, JsonSerializerOptions options)
+        {
+            writer.WriteStartObject();
+            foreach (FField field in value)
+            {
+                field.Write(writer, options);
+            }
+            writer.WriteEndObject();
+        }
+    }
+
+    public static class FFieldClass
+    {
+        private static Dictionary<string, Func<FField>> NameToFieldClassMap { get; set; } = [];
+
         public static readonly ImmutableDictionary<string, Type> PropertyTypes = ImmutableDictionary.CreateRange(new Dictionary<string, Type>
         {
             [nameof(FArrayProperty)] = typeof(FArrayProperty),
@@ -256,41 +328,6 @@ namespace AssetTool
             ["prop-weakobject"] = typeof(FWeakObjectProperty),
             ["prop-multicast-inline-delegate"] = typeof(FMulticastInlineDelegateProperty),
         });
-
-        public override FField Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-        {
-            using JsonDocument document = JsonDocument.ParseValue(ref reader);
-            JsonElement root = document.RootElement;
-            if (root.TryGetProperty("__type", out _))
-            {
-                string typeName = root.GetProperty("__type").GetString();
-                Type correctType = PropertyTypes[typeName];
-                return (FField)JsonSerializer.Deserialize(root.GetRawText(), correctType, options);
-            }
-            else
-            {
-                JsonProperty prop = root.EnumerateObject().First();
-                string key = prop.Name[0..prop.Name.IndexOf(' ')];
-
-                if (!PropertyTypesByPrefix.TryGetValue(key, out Type correctType))
-                {
-                    throw new JsonException($"Unknown field key '{key}'.");
-                }
-
-                FField field = (FField)Activator.CreateInstance(correctType);
-                return field.Read(root, options);
-            }
-        }
-
-        public override void Write(Utf8JsonWriter writer, FField value, JsonSerializerOptions options)
-        {
-            value.Write(writer, options);
-        }
-    }
-
-    public static class FFieldClass
-    {
-        private static Dictionary<string, Func<FField>> NameToFieldClassMap { get; set; } = [];
 
         static FFieldClass()
         {

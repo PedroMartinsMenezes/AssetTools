@@ -24,11 +24,11 @@ namespace AssetTool
             return this;
         }
 
-        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
-            string key = root.EnumerateObject().First().Name;
+            string key = elem.Name;
 
-            JsonElement value = root.EnumerateObject().First().Value;
+            JsonElement value = elem.Value;
 
             var obj = ReadKeyValue<FMulticastDelegateProperty>(key, value);
 
@@ -36,7 +36,7 @@ namespace AssetTool
 
             obj.SignatureFunction = key.GetNonNull("SignatureFunction({0})", x => uint.Parse(x), (uint)0);
 
-            if (root.TryGetProperty("Delegates", out var delegates) && delegates.ValueKind == JsonValueKind.Object)
+            if (value.TryGetProperty("Delegates", out var delegates) && delegates.ValueKind == JsonValueKind.Object)
             {
                 obj.Delegates = JsonSerializer.Deserialize<Dictionary<FObjectPtr, FName>>(delegates.GetRawText(), options);
             }
@@ -46,8 +46,6 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
-
             Dictionary<string, object> inlineFields = new()
             {
                 ["ElementSize"] = this.ElementSize,
@@ -64,8 +62,6 @@ namespace AssetTool
             }
 
             WriteKeyValue(writer, options, this, "prop-multicast-delegate", inlineFields, fields);
-
-            writer.WriteEndObject();
         }
     }
 }

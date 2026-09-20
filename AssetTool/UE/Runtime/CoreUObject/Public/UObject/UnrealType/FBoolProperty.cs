@@ -33,11 +33,11 @@ namespace AssetTool
             return value;
         }
 
-        public override FProperty Read(JsonElement root, JsonSerializerOptions options)
+        public override FProperty Read(JsonProperty elem, JsonSerializerOptions options)
         {
-            string key = root.EnumerateObject().First().Name;
+            string key = elem.Name;
 
-            JsonElement value = root.EnumerateObject().First().Value;
+            JsonElement value = elem.Value;
 
             var obj = ReadKeyValue<FBoolProperty>(key, value);
 
@@ -55,8 +55,6 @@ namespace AssetTool
 
         public override void Write(Utf8JsonWriter writer, JsonSerializerOptions options)
         {
-            writer.WriteStartObject();
-
             Dictionary<string, object> inlineFields = new();
 
             if (this.FieldSize != 1) inlineFields.Add("FieldSize", this.FieldSize);
@@ -67,8 +65,6 @@ namespace AssetTool
             if (this.NativeBool != 1) inlineFields.Add("NativeBool", this.NativeBool);
 
             WriteKeyValue(writer, options, this, "prop-bool", inlineFields);
-
-            writer.WriteEndObject();
         }
     }
 }
