@@ -82,7 +82,7 @@ namespace AssetTool
             var obj = ReadKeyValue<FSetProperty>(key, value);
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
             obj.PropertyTypeName = key.GetNonNull("PropertyTypeName({0})", x => new FName(x));
-            if (value.TryGetProperty("Field", out var field))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("Field", out var field))
             {
                 obj.Field = JsonSerializer.Deserialize<FField>(field.GetRawText(), options);
             }

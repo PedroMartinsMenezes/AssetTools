@@ -36,7 +36,7 @@ namespace AssetTool
 
             obj.SignatureFunction = key.GetNonNull("SignatureFunction({0})", x => uint.Parse(x), (uint)0);
 
-            if (value.TryGetProperty("Delegates", out var delegates) && delegates.ValueKind == JsonValueKind.Object)
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("Delegates", out var delegates) && delegates.ValueKind == JsonValueKind.Object)
             {
                 obj.Delegates = JsonSerializer.Deserialize<Dictionary<FObjectPtr, FName>>(delegates.GetRawText(), options);
             }

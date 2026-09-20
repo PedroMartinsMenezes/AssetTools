@@ -47,7 +47,7 @@ namespace AssetTool
             obj.Value = key.GetNonNull("Value({0})", x => uint.Parse(x), (uint)0);
             obj.BoolProperty = key.GetNonNull("BoolProperty({0})", x => byte.Parse(x), (byte)0);
 
-            if (value.TryGetProperty("SingleField", out var singleField))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("SingleField", out var singleField))
             {
                 obj.SingleField = JsonSerializer.Deserialize<FField>(singleField.GetRawText(), options);
             }

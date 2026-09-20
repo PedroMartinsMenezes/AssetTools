@@ -39,7 +39,7 @@ namespace AssetTool
             obj.InName = key.GetNonNull("InName({0})", x => new FName(x), new FName("None"));
             obj.InObjectFlags = key.GetNonNull("InObjectFlags({0})", x => uint.Parse(x), (uint)0);
 
-            if (value.TryGetProperty("FieldPtr", out var fieldPtr))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("FieldPtr", out var fieldPtr))
             {
                 obj.FieldPtr = JsonSerializer.Deserialize<FFieldPath>(fieldPtr.GetRawText(), options);
             }

@@ -28,7 +28,7 @@ namespace AssetTool
 
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x), 0);
 
-            if (value.TryGetProperty("Delegate", out var del))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("Delegate", out var del))
             {
                 obj.Delegate = JsonSerializer.Deserialize<FMulticastScriptDelegate>(del.GetRawText(), options);
             }

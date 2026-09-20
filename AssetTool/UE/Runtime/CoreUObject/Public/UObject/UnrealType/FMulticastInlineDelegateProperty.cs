@@ -36,7 +36,7 @@ namespace AssetTool
 
             obj.PropertyValuePtr = key.GetNonNull("PropertyValuePtr({0})", x => uint.Parse(x), (uint)0);
 
-            if (value.TryGetProperty("InvocationList", out var invocationList) && invocationList.ValueKind == JsonValueKind.Array)
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("InvocationList", out var invocationList) && invocationList.ValueKind == JsonValueKind.Array)
             {
                 obj.InvocationList = JsonSerializer.Deserialize<List<TScriptDelegate>>(invocationList.GetRawText(), options);
             }

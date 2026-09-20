@@ -117,11 +117,11 @@ namespace AssetTool
             obj.ElementSize = key.GetNonNull("ElementSize({0})", x => int.Parse(x));
             obj.PropertyTypeName1 = key.GetNonNull("PropertyTypeName1({0})", x => new FName(x));
             obj.PropertyTypeName2 = key.GetNonNull("PropertyTypeName2({0})", x => new FName(x));
-            if (value.TryGetProperty("SingleField1", out var singleField1))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("SingleField1", out var singleField1))
             {
                 obj.SingleField1 = JsonSerializer.Deserialize<FField>(singleField1.GetRawText(), options);
             }
-            if (value.TryGetProperty("SingleField2", out var singleField2))
+            if (value.ValueKind == JsonValueKind.Object && value.TryGetProperty("SingleField2", out var singleField2))
             {
                 obj.SingleField2 = JsonSerializer.Deserialize<FField>(singleField2.GetRawText(), options);
             }
