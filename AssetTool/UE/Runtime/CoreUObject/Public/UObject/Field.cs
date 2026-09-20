@@ -84,8 +84,7 @@ namespace AssetTool
         {
             T value = new T();
 
-            value.NamePrivate = new FName(key[(key.IndexOf('\'') + 1)..^1]);
-
+            //Base members
             value.PropertyFlags = key.GetNonNull("PropertyFlags({0})", x => Enum.Parse<EPropertyFlags>(x), EPropertyFlags.CPF_None);
             value.FlagsPrivate = key.GetNonNull("FlagsPrivate({0})", x => Enum.Parse<EObjectFlags>(x), EObjectFlags.RF_Public);
             value.ArrayDim = key.GetNonNull("ArrayDim({0})", x => int.Parse(x), 1);
@@ -93,17 +92,24 @@ namespace AssetTool
             value.RepNotifyFunc = key.GetNonNull("RepNotifyFunc({0})", x => new FName(x), new FName("None"));
             value.BlueprintReplicationCondition = key.GetNonNull("BlueprintReplicationCondition({0})", x => byte.Parse(x), (byte)0);
 
-            if (root.ValueKind == JsonValueKind.Object)
+            //MetaDataMap inlined
+            string metadataMap = key.GetNonNull("MetaDataMap( {0} ) '", x => x);
+            if (metadataMap is { })
             {
-                if (root.TryGetProperty("MetaDataMap", out var metaDataMap))
+                value.HasMetaData = true;
+                string[] parts = metadataMap[..^2].Split("•) ");
+                foreach (string part in parts)
                 {
-                    value.HasMetaData = true;
-                    foreach (var property in metaDataMap.EnumerateObject())
-                    {
-                        value.MetaDataMap.Add(new FName(property.Name), new FString(property.Value.GetString() ?? string.Empty));
-                    }
+                    string name = part[0..part.IndexOf("(•")];
+                    string val = part[(part.IndexOf("(•") + 2)..];
+                    value.MetaDataMap.Add(new FName(name), new FString(val));
                 }
             }
+
+            //NamePrivate
+            int i1 = key.LastIndexOf('\'');
+            int i2 = key.LastIndexOf('\'', i1 - 1);
+            value.NamePrivate = new FName(key[(i2 + 1)..i1]);
 
             return value;
         }
@@ -138,15 +144,19 @@ namespace AssetTool
                 }
             }
 
-            //NamePrivate
-            builder.Append($"'{value.NamePrivate}'");
-
-            //Derived members body
+            //MetaDataMap inlined
             if (value.HasMetaData)
             {
-                fields ??= new();
-                fields["MetaDataMap"] = value.MetaDataMap;
+                builder.Append("MetaDataMap( ");
+                foreach (var pair in value.MetaDataMap)
+                {
+                    builder.Append($"{pair.Key}(•{pair.Value}•) ");
+                }
+                builder.Append(") ");
             }
+
+            //NamePrivate
+            builder.Append($"'{value.NamePrivate}'");
 
             string key = builder.ToString();
 
