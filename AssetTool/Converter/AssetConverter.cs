@@ -159,18 +159,28 @@ namespace AssetTool
 
         private static void SaveAssetToJsonFile(AssetPackage asset, Transfer transferReader)
         {
-            (string json, string path) = (null, null);
-
             FooterData footer = asset.Footer;
             if (AppConfig.DebugIgnoreFooterWhenSavingJson)
                 asset.Footer = null;
 
-            json = asset.ToJson();
+            string json = asset.ToJson();
             asset.Footer = footer;
 
-            path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
-            if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-            File.WriteAllText(path, json);
+            string path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
+            string dir = Path.GetDirectoryName(path);
+
+            _ = Task.Run(() =>
+            {
+                try
+                {
+                    if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                    File.WriteAllText(path, json);
+                }
+                catch (Exception ex)
+                {
+                    Log.Error($"SaveAssetToJsonFile failed for '{path}'. {ex.Message}");
+                }
+            });
         }
 
         #region RunUassetToJson
