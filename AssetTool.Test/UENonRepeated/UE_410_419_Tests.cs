@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace AssetTool.Test.NonRepeated
+namespace AssetTool.Test.UENonRepeated
 {
     public class UE410AssetTests : TestBase
     {

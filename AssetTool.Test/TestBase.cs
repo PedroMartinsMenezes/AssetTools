@@ -18,6 +18,7 @@ namespace AssetTool.Test
         protected string IndividualLog = string.Empty;
         protected static Dictionary<string, FileVersion> FileVersions = [];
         protected static AppConfig AppConfig = new AppConfig();
+        protected static bool UpdateNonRepeatedFile = false;
 
         public TestBase()
         {
@@ -66,18 +67,12 @@ namespace AssetTool.Test
             stopwatch.Start();
         }
 
-        private void PrintCallback(string msg)
-        {
-            ///Used only by sequential tests to build the NonRepeated.txt
-            ///if (msg.StartsWith("[True ]"))
-            ///{
-            ///    File.AppendAllLines("C:\\UE\\AssetTools\\AssetTool.Test\\InputFiles\\NonRepeated.txt", [msg.Split("[True ]")[1]]);
-            ///}
-            TestContext.WriteLine(msg);
-        }
-
         protected void Test_UE_Files(string name, FileVersion fileVersion = null)
         {
+            Action<string> printFile = (string msg) =>
+            {
+                TestContext.WriteLine(msg);
+            };
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
@@ -85,7 +80,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: printFile);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -107,7 +102,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
@@ -115,13 +110,18 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
-            IndividualLog += $"  Scenario     : {name}.txt\n";
-            IndividualLog += $"  File Count   : {files.Length}\n";
-            IndividualLog += $"  Total Seconds: {w.Elapsed.TotalSeconds:0.00}\n";
         }
 
         protected void Test_UE_Files_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)
         {
+            Action<string> updateFile = (string msg) =>
+            {
+                if (UpdateNonRepeatedFile && msg.StartsWith("[True ]"))
+                {
+                    File.AppendAllLines("AssetTool.Test\\InputFiles\\NonRepeated.txt", [msg.Split("[True ]")[1]]);
+                }
+            };
+
             ConcurrentBag<string> failedFiles = new();
             ConcurrentBag<string> succeededFiles = new();
             Stopwatch w = new Stopwatch();
@@ -130,7 +130,7 @@ namespace AssetTool.Test
             for (int i = 0; i < files.Length; i++)
             {
                 string file = files[i];
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: PrintCallback);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: updateFile);
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
                 if (!AppConfig.ContinueAfterError && !success)
                 {
@@ -142,46 +142,6 @@ namespace AssetTool.Test
             {
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
-            Assert.That(failedFiles.Count == 0);
-        }
-
-        protected void Test_UE_Files_Sequential_Separated(string name, bool saveFiles = false)
-        {
-            ConcurrentBag<string> failedFiles = new();
-            ConcurrentBag<string> succeededFiles = new();
-            Stopwatch w = new Stopwatch();
-            var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
-            w.Start();
-            for (int i = 0; i < files.Length; i++)
-            {
-                string file = files[i];
-
-                (string json, byte[] inputBytes) = AssetConverter.RunUassetToJson(file, "");
-
-                UpdateFailedFiles(json is { }, file, failedFiles, succeededFiles);
-                if (!AppConfig.ContinueAfterError && json is null)
-                {
-                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
-                    break;
-                }
-
-                byte[] outputBytes = AssetConverter.RunJsonToUasset(json, "");
-
-                string msg = DataComparer.CompareBytes(inputBytes, outputBytes, 0, inputBytes.Length);
-                if (!AppConfig.ContinueAfterError && (outputBytes.Length == 0 || msg.Length > 0))
-                {
-                    TestContext.WriteLine($"File {i + 1,-8}: {file}");
-                    break;
-                }
-            }
-            w.Stop();
-            if (saveFiles)
-            {
-                SaveFiles(name, files, failedFiles, succeededFiles);
-            }
-            TestContext.WriteLine($"Scenario     : {name}.txt");
-            TestContext.WriteLine($"File Count   : {files.Length}");
-            TestContext.WriteLine($"Total Seconds: {w.Elapsed.TotalSeconds:0.00}");
             Assert.That(failedFiles.Count == 0);
         }
 
