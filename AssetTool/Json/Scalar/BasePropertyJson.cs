@@ -77,61 +77,40 @@
         //Simplificar na versão nova gravando uma chave simples
         public virtual string BuildKey(string type, FPropertyTag tag)
         {
-            string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
-            string arrayIndex = tag.ArrayIndex.GetValueOrDefault() > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-            string guidValue = tag.HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-            string typeNamespace = tag.TypeNamespace is { } ? $" {tag.TypeNamespace.Value}" : string.Empty;
-            string enumInnerType = tag.EnumInnerType is { } ? $" {tag.EnumInnerType.Value}" : string.Empty;
-            return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";
+            string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"({tag.EnumName.Value}) ";
+
+            string arrayIndex = tag.ArrayIndex.GetValueOrDefault() <= 0 ? string.Empty : $"[{tag.ArrayIndex}] ";
+
+            string guidValue = tag.HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : $"{{{tag.GuidValue}}} ";
+
+            string enumInnerType = tag.EnumInnerType is null ? string.Empty : $"EnumInnerType({tag.EnumInnerType.Value}) ";
+
+            string typeNamespace = tag.TypeNamespace is null ? string.Empty : $"TypeNamespace({tag.TypeNamespace.Value}) ";
+
+            string prefix = $"{enumName}{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";
+
+            return $"{type} {prefix}'{tag.Name.ToString()}'";
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
         public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string enumInnerType, out string typeNamespace)
         {
+            key = key[(key.IndexOf(' ') + 1)..];
             key = key.Contains(FName.DOUBLE_SEPARATOR) ? key.Substring(0, key.IndexOf(FName.DOUBLE_SEPARATOR)) : key;
-            int name1 = key.IndexOf('\'');
-            int name2 = name1 == -1 ? -1 : key.IndexOf('\'', name1 + 1);
-            int enumName1 = key.IndexOf('(') is var validEnumName1 && validEnumName1 < name1 ? validEnumName1 : -1;
-            int enumName2 = key.IndexOf(')') is var validEnumName2 && validEnumName2 < name1 ? validEnumName2 : -1;
-            int index1 = key.IndexOf('[') is var validIndex1 && validIndex1 > name2 ? validIndex1 : -1;
-            int index2 = index1 == -1 ? -1 : key.IndexOf(']') is var validIndex2 && validIndex2 > name2 ? validIndex2 : -1;
-            int guid1 = key.IndexOf('{') is var validGuid1 && validGuid1 > name2 ? validGuid1 : -1;
-            int guid2 = guid1 == -1 ? -1 : key.IndexOf('}') is var validGuid2 && validGuid2 > name2 ? validGuid2 : -1;
 
-            name = name1 > 0 && name2 > 0 ? key[(name1 + 1)..(name2)] : default;
-            enumName = enumName1 > 0 && enumName2 > 0 ? key[(enumName1 + 1)..(enumName2)] : default;
-            index = index1 > 0 && index2 > 0 ? key[(index1 + 1)..(index2)] : default;
-            guid = guid1 > 0 && guid2 > 0 ? key[(guid1 + 1)..(guid2)] : default;
+            string prefix = key[0..(key.IndexOf("'"))];
 
-            int lastIndex = Math.Max(name2, Math.Max(index2, guid2)) + 1;
+            enumName = prefix.GetNonNull("({0})", x => x);
+            index = prefix.GetNonNull("[{0}]", x => x);
+            guid = prefix.GetNonNull("{{0}}", x => x);
+            enumInnerType = prefix.GetNonNull("EnumInnerType({0})", x => x);
+            typeNamespace = prefix.GetNonNull("TypeNamespace({0})", x => x);
 
-            enumInnerType = default;
-            typeNamespace = default;
+            name = key[(key.IndexOf("'") + 1)..^1];
 
-            if (lastIndex < key.Length - 1)
+            if (typeNamespace is { } && enumName is null)
             {
-                if (enumName == default)
-                {
-                    enumName = "None";
-                    typeNamespace = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
-                }
-                else
-                {
-                    string suffix = key[lastIndex] != '.' ? key.Substring(lastIndex + 1) : default;
-                    if (suffix is { })
-                    {
-                        string[] parts = suffix.Split(' ');
-                        if (parts.Length == 2)
-                        {
-                            enumInnerType = suffix.Split(' ')[0];
-                            typeNamespace = suffix.Split(' ')[1];
-                        }
-                        else
-                        {
-                            typeNamespace = suffix.Split(' ')[0];
-                        }
-                    }
-                }
+                enumName = "None";
             }
         }
 
