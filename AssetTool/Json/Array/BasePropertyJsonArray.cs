@@ -17,8 +17,8 @@ namespace AssetTool
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
             string key = new BasePropertyJson().BuildKey(Name, tag);
-            string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
-            Add(key, values);
+            object value = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
+            Add(key, value);
             return this;
         }
 
