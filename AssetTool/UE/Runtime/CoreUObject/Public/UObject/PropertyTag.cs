@@ -368,17 +368,21 @@ namespace AssetTool
             else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().FromNative(tag);
 
-            //array types
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new Vector3fPropertyJsonArray(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new Quat4fPropertyJsonArray(tag);
+            //simple array types
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new Vector3fPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new Quat4fPropertyJsonArray().FromNative(tag);
+
+            //struct array type
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
+
             else return tag;
         }
         #endregion
@@ -396,7 +400,7 @@ namespace AssetTool
             if (pair.Key.Contains('\''))
             {
                 string key = pair.Key;
-                var value = pair.Value;
+                object value = pair.Value;
                 string type = pair.Key.Split(' ')[0];
 
                 if (NativeConstructors.TryGetValue(type, out var func))
@@ -429,17 +433,20 @@ namespace AssetTool
                 else if (type == "long") return new FInt64PropertyJson().GetNative(transfer, key, value.ToObject<TInt64>(transfer));
                 else if (type == "ulong") return new FUInt64PropertyJson().GetNative(transfer, key, value.ToObject<TUInt64>(transfer));
 
-                //array types
-                else if (type == "obj[]") return new FObjectPropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "bool[]") return new FBoolPropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "int[]") return new FIntPropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "long[]") return new FInt64PropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "float[]") return new FFloatPropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "vector3f[]") return new Vector3fPropertyJsonArray().GetNative(transfer, key, value.ToString());
-                else if (type == "quat4f[]") return new Quat4fPropertyJsonArray().GetNative(transfer, key, value.ToString());
+                //simple array types
+                else if (type == "obj[]") return new FObjectPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "bool[]") return new FBoolPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "int[]") return new FIntPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "long[]") return new FInt64PropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "float[]") return new FFloatPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "vector3f[]") return new Vector3fPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "quat4f[]") return new Quat4fPropertyJsonArray().GetNative(transfer, key, value);
+
+                //struct array type
+                else if (type == "struct[]") return new FStructPropertyJsonArray().GetNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {
@@ -700,14 +707,13 @@ namespace AssetTool
                         object value = tag.Value;
                         return new Dictionary<string, object> { { key, value } };
                     });
-
                 }
             });
             #endregion
 
             #region Elegant Json Creation From PropertTag (Array)
-            DerivedConstructors.Add(new Vector3fPropertyJsonArray().Name, (tag) => new Vector3fPropertyJsonArray(tag));
-            DerivedConstructors.Add(new Quat4fPropertyJsonArray().Name, (tag) => new Quat4fPropertyJsonArray(tag));
+            DerivedConstructors.Add(new Vector3fPropertyJsonArray().Name, (tag) => new Vector3fPropertyJsonArray().FromNative(tag));
+            DerivedConstructors.Add(new Quat4fPropertyJsonArray().Name, (tag) => new Quat4fPropertyJsonArray().FromNative(tag));
             #endregion
 
             #region PropertTag Creation From Elegant Json

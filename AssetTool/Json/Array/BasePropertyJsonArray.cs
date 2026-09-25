@@ -14,11 +14,12 @@ namespace AssetTool
 
         public BasePropertyJsonArray() { }
 
-        public BasePropertyJsonArray(FPropertyTag tag)
+        public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
             string key = new BasePropertyJson().BuildKey(Name, tag);
             string values = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
             Add(key, values);
+            return this;
         }
 
         public FPropertyTag ToNative(Transfer transfer)
@@ -26,8 +27,9 @@ namespace AssetTool
             return GetNative(transfer, Keys.First(), (string)Values.First());
         }
 
-        public FPropertyTag GetNative(Transfer transfer, string key, string value)
+        public virtual FPropertyTag GetNative(Transfer transfer, string key, object val)
         {
+            string value = val.ToString();
             string name, enumName, index, guid, enumInnerType, typeNamespace;
             BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);

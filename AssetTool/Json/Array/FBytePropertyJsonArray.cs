@@ -7,7 +7,6 @@ namespace AssetTool
     public class FBytePropertyJsonArray : BasePropertyJsonArray<TUInt8>
     {
         public FBytePropertyJsonArray() { }
-        public FBytePropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "byte[]";
         public override int Size => 1;

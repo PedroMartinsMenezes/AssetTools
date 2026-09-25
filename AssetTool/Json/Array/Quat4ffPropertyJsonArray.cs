@@ -6,7 +6,6 @@ namespace AssetTool
     public class Quat4fPropertyJsonArray : BasePropertyJsonArray<FQuat4f>
     {
         public Quat4fPropertyJsonArray() { }
-        public Quat4fPropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "quat4f[]";
         public override int Size => 16;

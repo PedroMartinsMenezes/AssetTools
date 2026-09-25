@@ -7,7 +7,6 @@ namespace AssetTool
     public class FByte64PropertyJsonArray : BasePropertyJsonArray<TUInt64>
     {
         public FByte64PropertyJsonArray() { }
-        public FByte64PropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "byte64[]";
         public override int Size => 8;

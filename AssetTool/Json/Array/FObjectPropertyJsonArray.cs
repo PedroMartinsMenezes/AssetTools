@@ -7,7 +7,6 @@ namespace AssetTool
     public class FObjectPropertyJsonArray : BasePropertyJsonArray<TInt32>
     {
         public FObjectPropertyJsonArray() { }
-        public FObjectPropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "obj[]";
         public override int Size => 4;

@@ -7,7 +7,6 @@ namespace AssetTool
     public class FDoublePropertyJsonArray : BasePropertyJsonArray<TDouble>
     {
         public FDoublePropertyJsonArray() { }
-        public FDoublePropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "double[]";
         public override int Size => 8;

@@ -6,7 +6,6 @@ namespace AssetTool
     public class Vector3fPropertyJsonArray : BasePropertyJsonArray<FVector3f>
     {
         public Vector3fPropertyJsonArray() { }
-        public Vector3fPropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "vector3f[]";
         public override int Size => 12;

@@ -7,7 +7,6 @@ namespace AssetTool
     public class FIntPropertyJsonArray : BasePropertyJsonArray<TInt32>
     {
         public FIntPropertyJsonArray() { }
-        public FIntPropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "int[]";
         public override int Size => 4;

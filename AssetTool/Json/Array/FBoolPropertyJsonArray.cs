@@ -7,7 +7,6 @@ namespace AssetTool
     public class FBoolPropertyJsonArray : BasePropertyJsonArray<TUInt8>
     {
         public FBoolPropertyJsonArray() { }
-        public FBoolPropertyJsonArray(FPropertyTag tag) : base(tag) { }
 
         public override string Name => "bool[]";
         public override int Size => 1;
