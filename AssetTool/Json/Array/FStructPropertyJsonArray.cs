@@ -1,43 +1,93 @@
-﻿//using System.Diagnostics;
+﻿using System.Diagnostics;
 
-//namespace AssetTool
-//{
-//    [DebuggerDisplay("struct[]")]
-//    public class FStructPropertyJsonArray : BasePropertyJsonArray<FStructPropertyJson>
-//    {
-//        public FStructPropertyJsonArray() { }
-//        public FStructPropertyJsonArray(FPropertyTag tag) : base(tag) { }
+namespace AssetTool
+{
+    [DebuggerDisplay("struct[]")]
+    public class FStructPropertyJsonArray : BasePropertyJsonArray<FPropertyTag>
+    {
+        public FStructPropertyJsonArray() { }
 
-//        public override string Name => "struct[]";
-//        public override int Size => 0;
-//        public override string InnerTypeName => FStructProperty.TYPE_NAME;
-//        public override string StructName => null;
-//        public override string ItemToValue(object item) => null;
-//        public override object StringToItem<T2>(string str) => null;
+        public override string Name => "struct[]";
+        public override int Size => throw new NotImplementedException();
+        public override string InnerTypeName => FStructProperty.TYPE_NAME;
+        public override string StructName => throw new NotImplementedException();
+        public override string ItemToString(object item) => throw new NotImplementedException();
+        public override object StringToItem<T2>(string str) => throw new NotImplementedException();
 
-//        public static string BuildKey(string type, FPropertyTag tag)
-//        {
-//            string enumName = !tag.EnumName.IsFilled() ? " " : $" ({tag.EnumName.Value}) ";
-//            string arrayIndex = tag.ArrayIndex.GetValueOrDefault() > 0 ? $"[{tag.ArrayIndex}]" : string.Empty;
-//            string guidValue = tag.HasPropertyGuid.GetValueOrDefault() == 0 ? string.Empty : $" {{{tag.GuidValue}}}";
-//            string typeNamespace = tag.TypeNamespace is { } ? $" {tag.TypeNamespace.Value}" : string.Empty;
-//            string enumInnerType = tag.EnumInnerType is { } ? $" {tag.EnumInnerType.Value}" : string.Empty;
-//            string maybeInnerTag = string.Empty;
+        public static string ExtraFields(FPropertyTag tag)
+        {
+            string innerTagName = tag.MaybeInnerTag is { } && tag.MaybeInnerTag.Name.Value != tag.Name.Value ? tag.MaybeInnerTag.Name.Value : string.Empty;
 
-//            if (tag.MaybeInnerTag is { })
-//            {
-//                maybeInnerTag = $" @ {tag.MaybeInnerTag.Name} {tag.MaybeInnerTag.Type} {tag.MaybeInnerTag.StructName} {tag.MaybeInnerTag.Size}";
-//            }
+            string a = tag.StructName is { } ? $"StructName({tag.StructName}) " : string.Empty;
+            string b = $"Size({tag.Size}) ";
+            string c = tag.PropertyTagFlags is { } ? $"PropertyTagFlags({tag.PropertyTagFlags}) " : string.Empty;
+            string d = tag.PropertyTagExtensions is { } ? $"PropertyTagExtensions({tag.PropertyTagExtensions}) " : string.Empty;
+            string e = tag.OverrideOperation is { } ? $"OverrideOperation({tag.OverrideOperation}) " : string.Empty;
+            string f = tag.bExperimentalOverridableLogic is { } ? $"bExperimentalOverridableLogic({tag.bExperimentalOverridableLogic}) " : string.Empty;
+            string g = tag.StructGuid.HasValue ? $"StructGuid({tag.StructGuid}) " : string.Empty;
+            string h = tag.MaybeInnerTag is null ? string.Empty : $"MaybeInnerTag({tag.MaybeInnerTag.StructName} {tag.MaybeInnerTag.Size} {tag.MaybeInnerTag.StructGuid} {innerTagName}) ";
 
-//            return $"{type}{enumName}'{tag.Name.ToString()}'{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}{maybeInnerTag}";
-//        }
+            return $"{a}{b}{c}{d}{e}{f}{g}{h}";
+        }
 
-//        public FStructPropertyJsonArray ToDict(FPropertyTag tag)
-//        {
-//            string key = BuildKey(Name, tag);
-//            object value = tag.Value;
-//            Add(key, value);
-//            return this;
-//        }
-//    }
-//}
+        public override object FromNative(FPropertyTag tag, Transfer transfer = null)
+        {
+            string key = new BasePropertyJson().BuildKey(Name, tag, ExtraFields);
+            object value = tag.Value;
+            Add(key, value);
+            return this;
+        }
+
+        public override FPropertyTag GetNative(Transfer transfer, string key, object val)
+        {
+            string structName = key.GetNonNull("StructName({0})", x => x);
+
+            var basePropertyJson = new BasePropertyJson
+            {
+                TypeName = FArrayProperty.TYPE_NAME,
+                InnerType = FStructProperty.TYPE_NAME,
+                StructName = structName,
+            };
+
+            FPropertyTag tag = basePropertyJson.GetNative(transfer, key, val);
+
+            string name, enumName, index, guid, enumInnerType, typeNamespace;
+            string prefix = BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+
+            int size = prefix.GetNonNull("Size({0})", x => int.Parse(x));
+            string propertyTagFlags = prefix.GetNonNull("PropertyTagFlags({0})", x => x);
+            string propertyTagExtensions = prefix.GetNonNull("PropertyTagExtensions({0})", x => x);
+            string overrideOperation = prefix.GetNonNull("OverrideOperation({0})", x => x);
+            string bExperimentalOverridableLogic = prefix.GetNonNull("bExperimentalOverridableLogic({0})", x => x);
+            string structGuid = prefix.GetNonNull("StructGuid({0})", x => x);
+
+            FPropertyTag maybeInnerTag = null;
+            if (prefix.GetNonNull("MaybeInnerTag({0})", x => x) is string maybeInnerTagFields)
+            {
+                string[] parts = maybeInnerTagFields.Split(' ');
+                string innerName = parts[3].Length == 0 ? name : parts[3];
+
+                maybeInnerTag = new()
+                {
+                    Name = new FName(innerName, transfer),
+                    Type = new FName(InnerTypeName, transfer),
+                    StructName = new FName(parts[0], transfer),
+                    Size = int.Parse(parts[1]),
+                    StructGuid = parts[2].Length > 0 ? new FGuid(parts[2]) : null,
+                };
+            }
+
+            tag.StructName = structName is null ? null : new FName(structName);
+            tag.Size = size;
+            tag.PropertyTagFlags = propertyTagFlags is { } ? (EPropertyTagFlags?)Enum.Parse(typeof(EPropertyTagFlags), propertyTagFlags) : null;
+            tag.PropertyTagExtensions = propertyTagExtensions is { } ? (EPropertyTagExtension?)Enum.Parse(typeof(EPropertyTagExtension), propertyTagExtensions) : null;
+            tag.OverrideOperation = overrideOperation is { } ? (EOverriddenPropertyOperation?)Enum.Parse(typeof(EOverriddenPropertyOperation), overrideOperation) : null;
+            tag.bExperimentalOverridableLogic = bExperimentalOverridableLogic is { } ? (bool?)bool.Parse(bExperimentalOverridableLogic) : null;
+            tag.StructGuid = structGuid is { } ? new FGuid(structGuid) : null;
+
+            tag.MaybeInnerTag = maybeInnerTag;
+
+            return tag;
+        }
+    }
+}

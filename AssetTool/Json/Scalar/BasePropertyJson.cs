@@ -5,8 +5,9 @@
         public virtual string Name { get; }
         public virtual int Size { get; }
         public virtual int ComputedSize(Transfer transfer, object value) => 0;
-        public virtual string TypeName { get; }
-        public virtual string StructName { get; }
+        public virtual string TypeName { get; init; }
+        public virtual string StructName { get; init; }
+        public virtual string InnerType { get; init; }
         public virtual object DerivedValue(object value) => value;
         public virtual object BaseValue(Transfer transfer, object value) => value;
 
@@ -32,7 +33,7 @@
             ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, default, default, name, enumInnerType, typeNamespace);
+            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, InnerType, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
             return new FPropertyTag
             {
@@ -48,6 +49,7 @@
                 PropertyGuid = guid is { } ? new FGuid(guid) : default,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
+                InnerType = InnerType is { } ? new FName(InnerType, transfer) : default,
             };
         }
 
@@ -75,9 +77,9 @@
         }
 
         //Simplificar na versão nova gravando uma chave simples
-        public virtual string BuildKey(string type, FPropertyTag tag)
+        public virtual string BuildKey(string type, FPropertyTag tag, Func<FPropertyTag, string> extraFieldsCallback = null)
         {
-            string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"({tag.EnumName.Value}) ";
+            string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"<{tag.EnumName.Value}> ";
 
             string arrayIndex = tag.ArrayIndex.GetValueOrDefault() <= 0 ? string.Empty : $"[{tag.ArrayIndex}] ";
 
@@ -87,31 +89,34 @@
 
             string typeNamespace = tag.TypeNamespace is null ? string.Empty : $"TypeNamespace({tag.TypeNamespace.Value}) ";
 
-            string prefix = $"{enumName}{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}";
+            string extraFields = extraFieldsCallback?.Invoke(tag) ?? string.Empty;
 
-            return $"{type} {prefix}'{tag.Name.ToString()}'";
+            return $"{type} {enumName}{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}{extraFields}'{tag.Name.ToString()}'";
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
-        public static void ExtractKey(string key, out string name, out string enumName, out string index, out string guid, out string enumInnerType, out string typeNamespace)
+        public static string ExtractKey(string key, out string name, out string enumName, out string arrayIndex, out string guidValue, out string enumInnerType, out string typeNamespace)
         {
             key = key[(key.IndexOf(' ') + 1)..];
             key = key.Contains(FName.DOUBLE_SEPARATOR) ? key.Substring(0, key.IndexOf(FName.DOUBLE_SEPARATOR)) : key;
 
             string prefix = key[0..(key.IndexOf("'"))];
 
-            enumName = prefix.GetNonNull("({0})", x => x);
-            index = prefix.GetNonNull("[{0}]", x => x);
-            guid = prefix.GetNonNull("{{0}}", x => x);
+            enumName = prefix.GetNonNull("<{0}>", x => x);
+            arrayIndex = prefix.GetNonNull("[{0}]", x => x);
+            guidValue = prefix.GetNonNull("{{0}}", x => x);
             enumInnerType = prefix.GetNonNull("EnumInnerType({0})", x => x);
             typeNamespace = prefix.GetNonNull("TypeNamespace({0})", x => x);
 
             name = key[(key.IndexOf("'") + 1)..^1];
 
-            if (typeNamespace is { } && enumName is null)
-            {
-                enumName = "None";
-            }
+            //@@@
+            //if (typeNamespace is { } && enumName is null)
+            //{
+            //    enumName = "None";
+            //}
+
+            return prefix;
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
@@ -177,15 +182,20 @@
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
+                if (structName is { }) //@@@
+                {
+                    typeName.Nodes[1].InnerCount = 1;
+                    typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
+                }
                 if (enumName is { })
                 {
                     typeName.Nodes[1].InnerCount = 1;
                     typeName.Nodes.Add(new() { Name = new FName(enumName, transfer), InnerCount = 1 });
                 }
-                if (typeNamespace == default)
-                    typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
-                else
+                if (typeNamespace is { })
                     typeName.Nodes.Add(new() { Name = new FName(typeNamespace, transfer), InnerCount = 0 });
+                else
+                    typeName.Nodes.Add(new() { Name = new FName(1, 0, transfer), InnerCount = 0 });
             }
             else
             {
