@@ -80,7 +80,7 @@ namespace AssetTool.Test
             w.Start();
             Parallel.ForEach(files, file =>
             {
-                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: printFile);
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
                 if (!AppConfig.ContinueAfterError)
                 {
                     Assert.That(success, file);
