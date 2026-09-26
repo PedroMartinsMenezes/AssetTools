@@ -170,18 +170,15 @@ namespace AssetTool
             string path = transferReader.GlobalObjects.FileName.GetTempJsonPath();
             string dir = Path.GetDirectoryName(path);
 
-            _ = Task.Run(() =>
+            try
             {
-                try
-                {
-                    if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
-                    File.WriteAllText(path, json);
-                }
-                catch (Exception ex)
-                {
-                    Log.Error($"SaveAssetToJsonFile failed for '{path}'. {ex.Message}");
-                }
-            });
+                if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+                File.WriteAllText(path, json);
+            }
+            catch (Exception ex)
+            {
+                Log.Error($"SaveAssetToJsonFile failed for '{path}'. {ex.Message}");
+            }
         }
 
         #region RunUassetToJson
