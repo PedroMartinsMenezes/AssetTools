@@ -3,9 +3,9 @@
 namespace AssetTool
 {
     [DebuggerDisplay("soft")]
-    public class SoftObjectPropertyJson : BasePropertyJson
+    public class FSoftObjectPropertyJson : BasePropertyJson
     {
-        public SoftObjectPropertyJson() { }
+        public FSoftObjectPropertyJson() { }
 
         public override string Name => "soft";
         public override int Size => 4;

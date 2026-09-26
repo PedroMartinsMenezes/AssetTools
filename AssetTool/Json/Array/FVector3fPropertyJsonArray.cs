@@ -3,9 +3,9 @@
 namespace AssetTool
 {
     [DebuggerDisplay("vector3f[]")]
-    public class Vector3fPropertyJsonArray : BasePropertyJsonArray<FVector3f>
+    public class FVector3fPropertyJsonArray : BasePropertyJsonArray<FVector3f>
     {
-        public Vector3fPropertyJsonArray() { }
+        public FVector3fPropertyJsonArray() { }
 
         public override string Name => "vector3f[]";
         public override int Size => 12;

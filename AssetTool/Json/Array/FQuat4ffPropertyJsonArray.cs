@@ -3,9 +3,9 @@
 namespace AssetTool
 {
     [DebuggerDisplay("quat4f[]")]
-    public class Quat4fPropertyJsonArray : BasePropertyJsonArray<FQuat4f>
+    public class FQuat4fPropertyJsonArray : BasePropertyJsonArray<FQuat4f>
     {
-        public Quat4fPropertyJsonArray() { }
+        public FQuat4fPropertyJsonArray() { }
 
         public override string Name => "quat4f[]";
         public override int Size => 16;

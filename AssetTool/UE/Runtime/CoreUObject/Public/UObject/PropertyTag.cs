@@ -349,7 +349,7 @@ namespace AssetTool
 
             //primitive types
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new SoftObjectPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new FSoftObjectPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().FromNative(tag);
             else if (tag.Type.Value == FInt8Property.TYPE_NAME && tag.Size == 1) return new FInt8PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().FromNative(tag);
@@ -377,8 +377,8 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new Vector3fPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new Quat4fPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new FQuat4fPropertyJsonArray().FromNative(tag);
 
             //struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
@@ -413,7 +413,7 @@ namespace AssetTool
                 else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
 
                 //scalar types
-                else if (type == "soft") return new SoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "soft") return new FSoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "bool") return new FBoolPropertyJson().GetNative(transfer, key, value.ToObject<bool>(transfer));
                 else if (type == "byte") return new FBytePropertyJson().GetNative(transfer, key, value.ToObject<TUInt8>(transfer));
                 else if (type == "int8") return new FInt8PropertyJson().GetNative(transfer, key, value.ToObject<TInt8>(transfer));
@@ -442,8 +442,8 @@ namespace AssetTool
                 else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "vector3f[]") return new Vector3fPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "quat4f[]") return new Quat4fPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "quat4f[]") return new FQuat4fPropertyJsonArray().GetNative(transfer, key, value);
 
                 //struct array type
                 else if (type == "struct[]") return new FStructPropertyJsonArray().GetNative(transfer, key, value);
@@ -712,8 +712,8 @@ namespace AssetTool
             #endregion
 
             #region Elegant Json Creation From PropertTag (Array)
-            DerivedConstructors.Add(new Vector3fPropertyJsonArray().Name, (tag) => new Vector3fPropertyJsonArray().FromNative(tag));
-            DerivedConstructors.Add(new Quat4fPropertyJsonArray().Name, (tag) => new Quat4fPropertyJsonArray().FromNative(tag));
+            DerivedConstructors.Add(new FVector3fPropertyJsonArray().Name, (tag) => new FVector3fPropertyJsonArray().FromNative(tag));
+            DerivedConstructors.Add(new FQuat4fPropertyJsonArray().Name, (tag) => new FQuat4fPropertyJsonArray().FromNative(tag));
             #endregion
 
             #region PropertTag Creation From Elegant Json
@@ -792,8 +792,8 @@ namespace AssetTool
             #endregion
 
             #region PropertTag Creation From Elegant Json (Array)
-            NativeConstructors.Add(new Vector3fPropertyJsonArray().Name, (transfer, key, value) => new Vector3fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
-            NativeConstructors.Add(new Quat4fPropertyJsonArray().Name, (transfer, key, value) => new Quat4fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
+            NativeConstructors.Add(new FVector3fPropertyJsonArray().Name, (transfer, key, value) => new FVector3fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
+            NativeConstructors.Add(new FQuat4fPropertyJsonArray().Name, (transfer, key, value) => new FQuat4fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
             #endregion
 
             RegisterTransfesForNames();
