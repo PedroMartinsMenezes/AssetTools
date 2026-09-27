@@ -9,7 +9,7 @@ namespace AssetTool
 
         public override string Name => "string[]";
         public override int Size => 0;
-        public override string InnerTypeName => "StrProperty";
+        public override string InnerTypeName => FStrProperty.TYPE_NAME;
         public override string Separator => " • ";
 
         public override object StringToItem<T2>(string str) => new FString(str);

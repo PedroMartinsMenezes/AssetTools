@@ -344,7 +344,7 @@ namespace AssetTool
             if (tag == default || !tag.Type.IsFilled()) return tag;
 
             //struct types
-            if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
+            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
 
             //primitive types
@@ -378,6 +378,7 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJsonArray().FromNative(tag);
 
             //simple struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
@@ -406,13 +407,11 @@ namespace AssetTool
                 object value = pair.Value;
                 string type = pair.Key.Split(' ')[0];
 
-                if (NativeConstructors.TryGetValue(type, out var func))
-                {
-                    return func(transfer, key, value);
-                }
+                if (NativeConstructors.TryGetValue(type, out var func)) return func(transfer, key, value);
+
 
                 //struct types
-                if (type == "struct" || type == "class") return new FStructPropertyJson().GetNative(transfer, key, value);
+                else if (type == "struct" || type == "class") return new FStructPropertyJson().GetNative(transfer, key, value);
                 else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
 
                 //scalar types
@@ -446,6 +445,7 @@ namespace AssetTool
                 else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "string[]") return new FStrPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "name[]") return new FNamePropertyJsonArray().GetNative(transfer, key, value);
 
                 //simple struct array type
                 else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().GetNative(transfer, key, value);
