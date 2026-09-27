@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("short[]")]
-    public class FInt16PropertyJsonArray : BasePropertyJsonArray<TInt16>
+    public class FInt16PropertyJsonArray : BasePropertyJsonArray
     {
         public FInt16PropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override int Size => 2;
         public override string InnerTypeName => FInt16Property.TYPE_NAME;
 
-        public override object StringToItem<T2>(string str) => new TInt16 { Value = short.Parse(str, CultureInfo.InvariantCulture) };
+        public override object StringToItem(string str) => new TInt16 { Value = short.Parse(str, CultureInfo.InvariantCulture) };
     }
 }

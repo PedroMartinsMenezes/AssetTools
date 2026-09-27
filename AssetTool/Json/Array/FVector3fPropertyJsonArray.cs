@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("vector3f[]")]
-    public class FVector3fPropertyJsonArray : BasePropertyJsonArray<FVector3f>
+    public class FVector3fPropertyJsonArray : BasePropertyJsonArray
     {
         public FVector3fPropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override string InnerTypeName => FStructProperty.TYPE_NAME;
         public override string StructName => FVector3f.StructName;
         public override string ItemToString(object item) => ((FVector3f)item).GetString();
-        public override object StringToItem<T2>(string str) => FVector3f.FromString(str);
+        public override object StringToItem(string str) => FVector3f.FromString(str);
     }
 }

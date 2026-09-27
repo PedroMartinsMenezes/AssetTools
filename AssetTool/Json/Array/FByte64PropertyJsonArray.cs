@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("byte64[]")]
-    public class FByte64PropertyJsonArray : BasePropertyJsonArray<TUInt64>
+    public class FByte64PropertyJsonArray : BasePropertyJsonArray
     {
         public FByte64PropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override int Size => 8;
         public override string InnerTypeName => FByteProperty.TYPE_NAME;
 
-        public override object StringToItem<T2>(string str) => new TUInt64 { Value = UInt64.Parse(str, CultureInfo.InvariantCulture) };
+        public override object StringToItem(string str) => new TUInt64 { Value = UInt64.Parse(str, CultureInfo.InvariantCulture) };
     }
 }

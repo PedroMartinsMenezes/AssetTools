@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("int[]")]
-    public class FIntPropertyJsonArray : BasePropertyJsonArray<TInt32>
+    public class FIntPropertyJsonArray : BasePropertyJsonArray
     {
         public FIntPropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override int Size => 4;
         public override string InnerTypeName => FIntProperty.TYPE_NAME;
 
-        public override object StringToItem<T2>(string str) => new TInt32 { Value = Int32.Parse(str, CultureInfo.InvariantCulture) };
+        public override object StringToItem(string str) => new TInt32 { Value = Int32.Parse(str, CultureInfo.InvariantCulture) };
     }
 }

@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("bool[]")]
-    public class FBoolPropertyJsonArray : BasePropertyJsonArray<TUInt8>
+    public class FBoolPropertyJsonArray : BasePropertyJsonArray
     {
         public FBoolPropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override int Size => 1;
         public override string InnerTypeName => FBoolProperty.TYPE_NAME;
 
-        public override object StringToItem<T2>(string str) => new TUInt8 { Value = uint8.Parse(str, CultureInfo.InvariantCulture) };
+        public override object StringToItem(string str) => new TUInt8 { Value = uint8.Parse(str, CultureInfo.InvariantCulture) };
     }
 }

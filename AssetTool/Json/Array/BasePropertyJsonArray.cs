@@ -2,7 +2,7 @@
 
 namespace AssetTool
 {
-    public class BasePropertyJsonArray<T> : Dictionary<string, object>, IPropertytag
+    public class BasePropertyJsonArray : Dictionary<string, object>, IPropertytag
     {
         public string Pattern = "(?:\\((\\S+)\\))?\\s*'(.*)'\\s*(?:\\[(\\d+)\\])?\\s*(?:{([-a-fA-F0-9]+)})?";
         public virtual string Name { get; }
@@ -11,9 +11,9 @@ namespace AssetTool
         public virtual string StructName { get; }
         public virtual string Separator => " ";
         public virtual string ItemToString(object item) => item.ToString();
-        public virtual object StringToItem<T2>(string str) => Convert.ChangeType(str, typeof(T2), CultureInfo.InvariantCulture);
-        public virtual string WriteExtraFields(FPropertyTag tag) => string.Empty;
-        public virtual void ReadExtraFields(FPropertyTag tag, string key) { }
+        public virtual object StringToItem(string str) => Convert.ChangeType(str, typeof(object), CultureInfo.InvariantCulture);
+        public virtual string FromNativeFields(FPropertyTag tag) => string.Empty;
+        public virtual void ToNativeFields(FPropertyTag tag, string key) { }
 
         public BasePropertyJsonArray() { }
 
@@ -24,7 +24,7 @@ namespace AssetTool
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            string key = new BasePropertyJson().BuildKey(Name, tag, WriteExtraFields);
+            string key = new BasePropertyJson().BuildKey(Name, tag, FromNativeFields);
             object value = FromNativeValue(tag);
             Add(key, value);
             return this;
@@ -38,13 +38,12 @@ namespace AssetTool
         public virtual List<object> ToNativeValue(object val)
         {
             string value = val.ToString();
-            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem<T>(x)).ToList();
+            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem(x)).ToList();
             return values;
         }
 
         public virtual FPropertyTag ToNative(Transfer transfer, string key, object val)
         {
-
             string name, enumName, index, guid, enumInnerType, typeNamespace;
             BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
@@ -88,7 +87,7 @@ namespace AssetTool
                 PropertyTagFlags = propertyTagFlags,
             };
 
-            ReadExtraFields(tag, key);
+            ToNativeFields(tag, key);
 
             return tag;
         }

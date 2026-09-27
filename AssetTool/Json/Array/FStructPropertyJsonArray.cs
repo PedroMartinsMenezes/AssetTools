@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("struct[]")]
-    public class FStructPropertyJsonArray : BasePropertyJsonArray<FPropertyTag>
+    public class FStructPropertyJsonArray : BasePropertyJsonArray
     {
         public FStructPropertyJsonArray() { }
 
@@ -12,7 +12,7 @@ namespace AssetTool
         public override string InnerTypeName => FStructProperty.TYPE_NAME;
         public override string StructName => throw new NotImplementedException();
         public override string ItemToString(object item) => throw new NotImplementedException();
-        public override object StringToItem<T2>(string str) => throw new NotImplementedException();
+        public override object StringToItem(string str) => throw new NotImplementedException();
 
         public static string ExtraFields(FPropertyTag tag)
         {

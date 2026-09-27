@@ -307,7 +307,7 @@ namespace AssetTool
                 {
                     if (tag.Name.IsFilled())
                     {
-                        var item = tag.Name.IsFilled() && indent >= 0 ? DerivedTag(transfer, tag) : tag;
+                        var item = tag.Name.IsFilled() && indent >= 0 ? FromNative(transfer, tag) : tag;
                         if (item is Dictionary<string, object> dict)
                         {
                             string suffix = members.ContainsKey(dict.Keys.First()) ? $"{FName.DOUBLE_SEPARATOR}{tag.ValueOffset.ToString()}" : string.Empty;
@@ -334,7 +334,7 @@ namespace AssetTool
         #endregion
 
         #region DerivedTag
-        private static object DerivedTag(Transfer transfer, FPropertyTag tag)
+        private static object FromNative(Transfer transfer, FPropertyTag tag)
         {
             if (tag is { } && DerivedConstructors.TryGetValue(tag.JsonKey, out var func))
             {
@@ -394,6 +394,9 @@ namespace AssetTool
 
             //general struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
+
+            //generic array type
+            else if (tag.Type.Value == Consts.ArrayProperty) return new GenericPropertyJsonArray().FromNative(tag, transfer);
 
             else return tag;
         }
@@ -467,6 +470,9 @@ namespace AssetTool
 
                 //general struct array type
                 else if (type == "struct[]") return new FStructPropertyJsonArray().ToNative(transfer, key, value);
+
+                //generic array type
+                else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {

@@ -4,7 +4,7 @@ using System.Globalization;
 namespace AssetTool
 {
     [DebuggerDisplay("sbyte[]")]
-    public class FInt8PropertyJsonArray : BasePropertyJsonArray<TInt64>
+    public class FInt8PropertyJsonArray : BasePropertyJsonArray
     {
         public FInt8PropertyJsonArray() { }
 
@@ -12,6 +12,6 @@ namespace AssetTool
         public override int Size => 1;
         public override string InnerTypeName => FInt8Property.TYPE_NAME;
 
-        public override object StringToItem<T2>(string str) => new TInt8 { Value = sbyte.Parse(str, CultureInfo.InvariantCulture) };
+        public override object StringToItem(string str) => new TInt8 { Value = sbyte.Parse(str, CultureInfo.InvariantCulture) };
     }
 }

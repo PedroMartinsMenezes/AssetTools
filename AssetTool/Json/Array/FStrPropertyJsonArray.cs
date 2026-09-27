@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("string[]")]
-    public class FStrPropertyJsonArray : BasePropertyJsonArray<FString>
+    public class FStrPropertyJsonArray : BasePropertyJsonArray
     {
         public FStrPropertyJsonArray() { }
 
@@ -11,12 +11,12 @@ namespace AssetTool
         public override int Size => 0;
         public override string InnerTypeName => FStrProperty.TYPE_NAME;
 
-        public override string WriteExtraFields(FPropertyTag tag)
+        public override string FromNativeFields(FPropertyTag tag)
         {
             return $"Size({tag.Size}) ";
         }
 
-        public override void ReadExtraFields(FPropertyTag tag, string key)
+        public override void ToNativeFields(FPropertyTag tag, string key)
         {
             tag.Size = key.GetNonNull("Size({0})", x => int.Parse(x));
             if (tag.Size == 8)

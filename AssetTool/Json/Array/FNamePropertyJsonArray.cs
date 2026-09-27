@@ -3,7 +3,7 @@
 namespace AssetTool
 {
     [DebuggerDisplay("name[]")]
-    public class FNamePropertyJsonArray : BasePropertyJsonArray<FName>
+    public class FNamePropertyJsonArray : BasePropertyJsonArray
     {
         public FNamePropertyJsonArray() { }
 
