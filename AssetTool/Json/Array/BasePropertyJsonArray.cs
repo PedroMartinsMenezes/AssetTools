@@ -9,15 +9,18 @@ namespace AssetTool
         public virtual int Size { get; }
         public virtual string InnerTypeName { get; }
         public virtual string StructName { get; }
+        public virtual string Separator => " ";
         public virtual string ItemToString(object item) => item.ToString();
         public virtual object StringToItem<T2>(string str) => Convert.ChangeType(str, typeof(T2), CultureInfo.InvariantCulture);
+        public virtual string WriteExtraFields(FPropertyTag tag) => string.Empty;
+        public virtual void ReadExtraFields(FPropertyTag tag, string key) { }
 
         public BasePropertyJsonArray() { }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            string key = new BasePropertyJson().BuildKey(Name, tag);
-            object value = string.Join(' ', (tag.Value as List<object>).Select(x => ItemToString(x)));
+            string key = new BasePropertyJson().BuildKey(Name, tag, WriteExtraFields);
+            object value = string.Join(Separator, (tag.Value as List<object>).Select(x => ItemToString(x)));
             Add(key, value);
             return this;
         }
@@ -36,7 +39,7 @@ namespace AssetTool
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
-            List<object> values = value.Length == 0 ? [] : value.Split(' ').Select(x => StringToItem<T>(x)).ToList();
+            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem<T>(x)).ToList();
             int size = 4 + values.Count * Size;
 
             FPropertyTag maybeInnerTag = default;
@@ -54,7 +57,7 @@ namespace AssetTool
                 size += maybeInnerTag.HeaderSize(transfer);
             }
 
-            return new FPropertyTag
+            var tag = new FPropertyTag
             {
                 Name = new FName(name, transfer),
                 EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
@@ -70,6 +73,10 @@ namespace AssetTool
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
             };
+
+            ReadExtraFields(tag, key);
+
+            return tag;
         }
     }
 }

@@ -377,10 +377,13 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
+
+            //simple struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new FQuat4fPropertyJsonArray().FromNative(tag);
 
-            //struct array type
+            //general struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
 
             else return tag;
@@ -442,10 +445,13 @@ namespace AssetTool
                 else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "string[]") return new FStrPropertyJsonArray().GetNative(transfer, key, value);
+
+                //simple struct array type
                 else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().GetNative(transfer, key, value);
                 else if (type == "quat4f[]") return new FQuat4fPropertyJsonArray().GetNative(transfer, key, value);
 
-                //struct array type
+                //general struct array type
                 else if (type == "struct[]") return new FStructPropertyJsonArray().GetNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
