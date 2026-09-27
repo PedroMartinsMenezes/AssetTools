@@ -284,7 +284,7 @@ namespace AssetTool
             (bool quit, int i) = (false, 0);
             while (!quit)
             {
-                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : BaseTag(members.ElementAt(i), transfer);
+                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : ToNative(members.ElementAt(i), transfer);
                 tag.ParentTag = ParentTag;
                 tag.HeaderOffset = transfer.Position;
                 tag.Move(transfer);
@@ -392,7 +392,7 @@ namespace AssetTool
         #endregion
 
         #region BaseTag
-        private static FPropertyTag BaseTag(object item, Transfer transfer)
+        private static FPropertyTag ToNative(object item, Transfer transfer)
         {
             KeyValuePair<string, object> pair = (KeyValuePair<string, object>)item;
 
@@ -411,48 +411,48 @@ namespace AssetTool
 
 
                 //struct types
-                else if (type == "struct" || type == "class") return new FStructPropertyJson().GetNative(transfer, key, value);
-                else if (type == "guid") return new FGuidPropertyJson().GetNative(transfer, key, value.ToObject<Guid>(transfer));
+                else if (type == "struct" || type == "class") return new FStructPropertyJson().ToNative(transfer, key, value);
+                else if (type == "guid") return new FGuidPropertyJson().ToNative(transfer, key, value.ToObject<Guid>(transfer));
 
                 //scalar types
-                else if (type == "soft") return new FSoftObjectPropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
-                else if (type == "bool") return new FBoolPropertyJson().GetNative(transfer, key, value.ToObject<bool>(transfer));
-                else if (type == "byte") return new FBytePropertyJson().GetNative(transfer, key, value.ToObject<TUInt8>(transfer));
-                else if (type == "int8") return new FInt8PropertyJson().GetNative(transfer, key, value.ToObject<TInt8>(transfer));
-                else if (type == "byte32") return new FByte32PropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
-                else if (type == "byte64") return new FByte64PropertyJson().GetNative(transfer, key, value.ToObject<TUInt64>(transfer));
-                else if (type == "enum32") return new FEnum32PropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
-                else if (type == "enum64") return new FEnum64PropertyJson().GetNative(transfer, key, value.ToObject<TUInt64>(transfer));
-                else if (type == "float") return new FFloatPropertyJson().GetNative(transfer, key, value.ToObject<TFloat>(transfer));
-                else if (type == "double") return new FDoublePropertyJson().GetNative(transfer, key, value.ToObject<TDouble>(transfer));
-                else if (type == "int") return new FIntPropertyJson().GetNative(transfer, key, value.ToObject<TInt32>(transfer));
-                else if (type == "name") return new FNamePropertyJson().GetNative(transfer, key, value.ToString());
-                else if (type == "obj") return new FObjectPropertyJson().GetNative(transfer, key, value.ToObject<TInt32>(transfer));
-                else if (type == "string") return new FStrPropertyJson().GetNative(transfer, key, value.ToString());
-                else if (type == "short") return new FInt16PropertyJson().GetNative(transfer, key, value.ToObject<TInt16>(transfer));
-                else if (type == "ushort") return new FUInt16PropertyJson().GetNative(transfer, key, value.ToObject<TUInt16>(transfer));
-                else if (type == "uint") return new FUInt32PropertyJson().GetNative(transfer, key, value.ToObject<TUInt32>(transfer));
-                else if (type == "long") return new FInt64PropertyJson().GetNative(transfer, key, value.ToObject<TInt64>(transfer));
-                else if (type == "ulong") return new FUInt64PropertyJson().GetNative(transfer, key, value.ToObject<TUInt64>(transfer));
+                else if (type == "soft") return new FSoftObjectPropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "bool") return new FBoolPropertyJson().ToNative(transfer, key, value.ToObject<bool>(transfer));
+                else if (type == "byte") return new FBytePropertyJson().ToNative(transfer, key, value.ToObject<TUInt8>(transfer));
+                else if (type == "int8") return new FInt8PropertyJson().ToNative(transfer, key, value.ToObject<TInt8>(transfer));
+                else if (type == "byte32") return new FByte32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "byte64") return new FByte64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
+                else if (type == "enum32") return new FEnum32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "enum64") return new FEnum64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
+                else if (type == "float") return new FFloatPropertyJson().ToNative(transfer, key, value.ToObject<TFloat>(transfer));
+                else if (type == "double") return new FDoublePropertyJson().ToNative(transfer, key, value.ToObject<TDouble>(transfer));
+                else if (type == "int") return new FIntPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
+                else if (type == "name") return new FNamePropertyJson().ToNative(transfer, key, value.ToString());
+                else if (type == "obj") return new FObjectPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
+                else if (type == "string") return new FStrPropertyJson().ToNative(transfer, key, value.ToString());
+                else if (type == "short") return new FInt16PropertyJson().ToNative(transfer, key, value.ToObject<TInt16>(transfer));
+                else if (type == "ushort") return new FUInt16PropertyJson().ToNative(transfer, key, value.ToObject<TUInt16>(transfer));
+                else if (type == "uint") return new FUInt32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "long") return new FInt64PropertyJson().ToNative(transfer, key, value.ToObject<TInt64>(transfer));
+                else if (type == "ulong") return new FUInt64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
 
                 //simple array types
-                else if (type == "obj[]") return new FObjectPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "bool[]") return new FBoolPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "int[]") return new FIntPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "long[]") return new FInt64PropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "float[]") return new FFloatPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "double[]") return new FDoublePropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "byte[]") return new FBytePropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "byte64[]") return new FByte64PropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "string[]") return new FStrPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "name[]") return new FNamePropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "obj[]") return new FObjectPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "bool[]") return new FBoolPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "int[]") return new FIntPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "long[]") return new FInt64PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "float[]") return new FFloatPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "double[]") return new FDoublePropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "byte[]") return new FBytePropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "byte64[]") return new FByte64PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "string[]") return new FStrPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "name[]") return new FNamePropertyJsonArray().ToNative(transfer, key, value);
 
                 //simple struct array type
-                else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().GetNative(transfer, key, value);
-                else if (type == "quat4f[]") return new FQuat4fPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "quat4f[]") return new FQuat4fPropertyJsonArray().ToNative(transfer, key, value);
 
                 //general struct array type
-                else if (type == "struct[]") return new FStructPropertyJsonArray().GetNative(transfer, key, value);
+                else if (type == "struct[]") return new FStructPropertyJsonArray().ToNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {
@@ -798,8 +798,8 @@ namespace AssetTool
             #endregion
 
             #region PropertTag Creation From Elegant Json (Array)
-            NativeConstructors.Add(new FVector3fPropertyJsonArray().Name, (transfer, key, value) => new FVector3fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
-            NativeConstructors.Add(new FQuat4fPropertyJsonArray().Name, (transfer, key, value) => new FQuat4fPropertyJsonArray().GetNative(transfer, key, value.ToString()));
+            NativeConstructors.Add(new FVector3fPropertyJsonArray().Name, (transfer, key, value) => new FVector3fPropertyJsonArray().ToNative(transfer, key, value.ToString()));
+            NativeConstructors.Add(new FQuat4fPropertyJsonArray().Name, (transfer, key, value) => new FQuat4fPropertyJsonArray().ToNative(transfer, key, value.ToString()));
             #endregion
 
             RegisterTransfesForNames();

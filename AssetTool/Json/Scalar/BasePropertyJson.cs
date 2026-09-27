@@ -8,25 +8,25 @@
         public virtual string TypeName { get; init; }
         public virtual string StructName { get; init; }
         public virtual string InnerType { get; init; }
-        public virtual object DerivedValue(object value) => value;
-        public virtual object BaseValue(Transfer transfer, object value) => value;
+        public virtual object FromNativeValue(object value) => value;
+        public virtual object ToNativeValue(Transfer transfer, object value) => value;
 
         public BasePropertyJson() { }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
             string key = BuildKey(Name, tag);
-            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : DerivedValue(tag.Value);
+            object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : FromNativeValue(tag.Value);
             Add(key, value);
             return this;
         }
 
         public FPropertyTag ToNative(Transfer transfer)
         {
-            return GetNative(transfer, Keys.First(), Values.First());
+            return ToNative(transfer, Keys.First(), Values.First());
         }
 
-        public virtual FPropertyTag GetNative(Transfer transfer, string key, object value)
+        public virtual FPropertyTag ToNative(Transfer transfer, string key, object value)
         {
             byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
             string name, enumName, index, guid, enumInnerType, typeNamespace;
@@ -42,7 +42,7 @@
                 Type = new FName(TypeName, transfer),
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
                 BoolVal = boolVal == 1 ? 1 : null,
-                Value = BaseValue(transfer, value),
+                Value = ToNativeValue(transfer, value),
                 Size = Math.Max(Size, ComputedSize(transfer, value)),
                 ArrayIndex = int.TryParse(index, out int i) && i > 0 ? i : null,
                 HasPropertyGuid = hasPropertyGuid == 1 ? 1 : null,

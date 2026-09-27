@@ -17,29 +17,43 @@ namespace AssetTool
 
         public BasePropertyJsonArray() { }
 
+        public virtual object FromNativeValue(FPropertyTag tag)
+        {
+            return string.Join(Separator, (tag.Value as List<object>).Select(x => ItemToString(x)));
+        }
+
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
             string key = new BasePropertyJson().BuildKey(Name, tag, WriteExtraFields);
-            object value = string.Join(Separator, (tag.Value as List<object>).Select(x => ItemToString(x)));
+            object value = FromNativeValue(tag);
             Add(key, value);
             return this;
         }
 
         public FPropertyTag ToNative(Transfer transfer)
         {
-            return GetNative(transfer, Keys.First(), (string)Values.First());
+            return ToNative(transfer, Keys.First(), (string)Values.First());
         }
 
-        public virtual FPropertyTag GetNative(Transfer transfer, string key, object val)
+        public virtual List<object> ToNativeValue(object val)
         {
             string value = val.ToString();
+            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem<T>(x)).ToList();
+            return values;
+        }
+
+        public virtual FPropertyTag ToNative(Transfer transfer, string key, object val)
+        {
+
             string name, enumName, index, guid, enumInnerType, typeNamespace;
             BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
-            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem<T>(x)).ToList();
+
+            List<object> values = ToNativeValue(val);
+
             int size = 4 + values.Count * Size;
 
             FPropertyTag maybeInnerTag = default;

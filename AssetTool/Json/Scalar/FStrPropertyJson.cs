@@ -11,7 +11,7 @@ namespace AssetTool
         public override int Size => 0;
         public override int ComputedSize(Transfer transfer, object value) => new FString((string)value).TagSize(transfer);
         public override string TypeName => FStrProperty.TYPE_NAME;
-        public override object DerivedValue(object value) => ((FString)value).Value;
-        public override object BaseValue(Transfer transfer, object value) => new FString((string)value);
+        public override object FromNativeValue(object value) => ((FString)value).Value;
+        public override object ToNativeValue(Transfer transfer, object value) => new FString((string)value);
     }
 }

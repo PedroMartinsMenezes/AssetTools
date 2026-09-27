@@ -10,14 +10,10 @@ namespace AssetTool
         public override string Name => "string[]";
         public override int Size => 0;
         public override string InnerTypeName => FStrProperty.TYPE_NAME;
-        public override string Separator => " • ";
-
-        public override object StringToItem<T2>(string str) => new FString(str);
 
         public override string WriteExtraFields(FPropertyTag tag)
         {
-            string size = $"Size({tag.Size}) ";
-            return size;
+            return $"Size({tag.Size}) ";
         }
 
         public override void ReadExtraFields(FPropertyTag tag, string key)
@@ -27,6 +23,16 @@ namespace AssetTool
             {
                 tag.Value = new List<object> { new FString("") };
             }
+        }
+
+        public override object FromNativeValue(FPropertyTag tag)
+        {
+            return tag.Value;
+        }
+
+        public override List<object> ToNativeValue(object val)
+        {
+            return val.ToObject<List<object>>();
         }
     }
 }

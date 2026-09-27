@@ -48,7 +48,7 @@
             return this;
         }
 
-        public override FPropertyTag GetNative(Transfer transfer, string key, object value)
+        public override FPropertyTag ToNative(Transfer transfer, string key, object value)
         {
             //reading the indices of name
             int name1 = key.IndexOf('\'');

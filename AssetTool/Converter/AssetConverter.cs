@@ -48,6 +48,7 @@ namespace AssetTool
                 if (!FileCache.TryAdd(currFileKey, InAssetPath))
                 {
                     callback?.Invoke($"[False] Skip repeated: {InAssetPath}");
+                    // File.AppendAllLines($"AssetTool.Test\\InputFiles\\RepeatedFiles.txt", [InAssetPath]);
                     return true;
                 }
                 else

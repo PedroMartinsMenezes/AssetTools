@@ -38,7 +38,7 @@ namespace AssetTool
             return this;
         }
 
-        public override FPropertyTag GetNative(Transfer transfer, string key, object val)
+        public override FPropertyTag ToNative(Transfer transfer, string key, object val)
         {
             string structName = key.GetNonNull("StructName({0})", x => x);
 
@@ -49,7 +49,7 @@ namespace AssetTool
                 StructName = structName,
             };
 
-            FPropertyTag tag = basePropertyJson.GetNative(transfer, key, val);
+            FPropertyTag tag = basePropertyJson.ToNative(transfer, key, val);
 
             string name, enumName, index, guid, enumInnerType, typeNamespace;
             string prefix = BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
