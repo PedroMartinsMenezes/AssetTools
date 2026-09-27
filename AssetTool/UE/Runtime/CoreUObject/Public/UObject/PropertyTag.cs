@@ -379,6 +379,7 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FTextProperty.TYPE_NAME) return new FTextPropertyJsonArray().FromNative(tag);
 
             //simple struct array type
             else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
@@ -446,6 +447,7 @@ namespace AssetTool
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "string[]") return new FStrPropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "name[]") return new FNamePropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "text[]") return new FTextPropertyJsonArray().ToNative(transfer, key, value);
 
                 //simple struct array type
                 else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().ToNative(transfer, key, value);
