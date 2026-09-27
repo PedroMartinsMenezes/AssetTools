@@ -347,38 +347,43 @@ namespace AssetTool
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
 
-            //primitive types
+            //scalar types
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new FSoftObjectPropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FInt8Property.TYPE_NAME && tag.Size == 1) return new FInt8PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson().FromNative(tag);
             else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 8) return new FEnum64PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJson().FromNative(tag);
             else if (tag.Type.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FInt16Property.TYPE_NAME && tag.Size == 2) return new FInt16PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FUInt16Property.TYPE_NAME && tag.Size == 2) return new FUInt16PropertyJson().FromNative(tag);
-            else if (tag.Type.Value == FUInt32Property.TYPE_NAME && tag.Size == 4) return new FUInt32PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 1) return new FBytePropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 4) return new FByte32PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FByteProperty.TYPE_NAME && tag.Size == 8) return new FByte64PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FInt8Property.TYPE_NAME) return new FInt8PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FInt16Property.TYPE_NAME) return new FInt16PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FUInt16Property.TYPE_NAME) return new FUInt16PropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FUInt32Property.TYPE_NAME) return new FUInt32PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FInt64Property.TYPE_NAME && tag.Size == 8) return new FInt64PropertyJson().FromNative(tag);
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().FromNative(tag);
 
             //simple array types
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt32Property.TYPE_NAME) return new FUInt32PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 0) return new FBytePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt8Property.TYPE_NAME) return new FInt8PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt16Property.TYPE_NAME) return new FInt16PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt16Property.TYPE_NAME) return new FUInt16PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt32Property.TYPE_NAME) return new FUInt32PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt64Property.TYPE_NAME) return new FUInt64PropertyJsonArray().FromNative(tag);
+
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJsonArray().FromNative(tag);
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FTextProperty.TYPE_NAME) return new FTextPropertyJsonArray().FromNative(tag);
@@ -412,45 +417,49 @@ namespace AssetTool
 
                 if (NativeConstructors.TryGetValue(type, out var func)) return func(transfer, key, value);
 
-
                 //struct types
                 else if (type == "struct" || type == "class") return new FStructPropertyJson().ToNative(transfer, key, value);
                 else if (type == "guid") return new FGuidPropertyJson().ToNative(transfer, key, value.ToObject<Guid>(transfer));
 
                 //scalar types
-                else if (type == "soft") return new FSoftObjectPropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "bool") return new FBoolPropertyJson().ToNative(transfer, key, value.ToObject<bool>(transfer));
-                else if (type == "byte") return new FBytePropertyJson().ToNative(transfer, key, value.ToObject<TUInt8>(transfer));
-                else if (type == "int8") return new FInt8PropertyJson().ToNative(transfer, key, value.ToObject<TInt8>(transfer));
-                else if (type == "byte32") return new FByte32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
-                else if (type == "byte64") return new FByte64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
+                else if (type == "soft") return new FSoftObjectPropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "enum32") return new FEnum32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "enum64") return new FEnum64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
                 else if (type == "float") return new FFloatPropertyJson().ToNative(transfer, key, value.ToObject<TFloat>(transfer));
                 else if (type == "double") return new FDoublePropertyJson().ToNative(transfer, key, value.ToObject<TDouble>(transfer));
-                else if (type == "int") return new FIntPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
                 else if (type == "name") return new FNamePropertyJson().ToNative(transfer, key, value.ToString());
-                else if (type == "obj") return new FObjectPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
                 else if (type == "string") return new FStrPropertyJson().ToNative(transfer, key, value.ToString());
+                else if (type == "obj") return new FObjectPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
+                else if (type == "byte") return new FBytePropertyJson().ToNative(transfer, key, value.ToObject<TUInt8>(transfer));
+                else if (type == "byte32") return new FByte32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
+                else if (type == "byte64") return new FByte64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
+                else if (type == "int8") return new FInt8PropertyJson().ToNative(transfer, key, value.ToObject<TInt8>(transfer));
                 else if (type == "short") return new FInt16PropertyJson().ToNative(transfer, key, value.ToObject<TInt16>(transfer));
                 else if (type == "ushort") return new FUInt16PropertyJson().ToNative(transfer, key, value.ToObject<TUInt16>(transfer));
+                else if (type == "int") return new FIntPropertyJson().ToNative(transfer, key, value.ToObject<TInt32>(transfer));
                 else if (type == "uint") return new FUInt32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "long") return new FInt64PropertyJson().ToNative(transfer, key, value.ToObject<TInt64>(transfer));
                 else if (type == "ulong") return new FUInt64PropertyJson().ToNative(transfer, key, value.ToObject<TUInt64>(transfer));
 
                 //simple array types
-                else if (type == "obj[]") return new FObjectPropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "bool[]") return new FBoolPropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "int[]") return new FIntPropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "long[]") return new FInt64PropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "float[]") return new FFloatPropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "double[]") return new FDoublePropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "byte[]") return new FBytePropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "byte64[]") return new FByte64PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "sbyte[]") return new FInt8PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "short[]") return new FInt16PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "ushort[]") return new FUInt16PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "int[]") return new FIntPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "uint[]") return new FUInt32PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "long[]") return new FInt64PropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "ulong[]") return new FUInt64PropertyJsonArray().ToNative(transfer, key, value);
+
+                else if (type == "obj[]") return new FObjectPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "bool[]") return new FBoolPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "float[]") return new FFloatPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "double[]") return new FDoublePropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "string[]") return new FStrPropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "name[]") return new FNamePropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "text[]") return new FTextPropertyJsonArray().ToNative(transfer, key, value);
-                else if (type == "uint[]") return new FUInt32PropertyJsonArray().ToNative(transfer, key, value);
 
                 //simple struct array type
                 else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().ToNative(transfer, key, value);
