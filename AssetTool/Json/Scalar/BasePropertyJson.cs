@@ -79,7 +79,7 @@
         //Simplificar na versão nova gravando uma chave simples
         public virtual string BuildKey(string type, FPropertyTag tag, Func<FPropertyTag, string> extraFieldsCallback = null)
         {
-            string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"<{tag.EnumName.Value}> ";
+            string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"({tag.EnumName.Value}) ";
 
             string arrayIndex = tag.ArrayIndex.GetValueOrDefault() <= 0 ? string.Empty : $"[{tag.ArrayIndex}] ";
 
@@ -97,24 +97,20 @@
         //Simplificar na versão nova usando o GlobalTypeNames
         public static string ExtractKey(string key, out string name, out string enumName, out string arrayIndex, out string guidValue, out string enumInnerType, out string typeNamespace)
         {
+            string originalKey = key;
             key = key[(key.IndexOf(' ') + 1)..];
             key = key.Contains(FName.DOUBLE_SEPARATOR) ? key.Substring(0, key.IndexOf(FName.DOUBLE_SEPARATOR)) : key;
 
             string prefix = key[0..(key.IndexOf("'"))];
 
-            enumName = prefix.GetNonNull("<{0}>", x => x);
+            enumName = originalKey.IndexOf(' ') == originalKey.IndexOf('(') - 1 ? prefix.GetNonNull("({0})", x => x) : null;
+
             arrayIndex = prefix.GetNonNull("[{0}]", x => x);
             guidValue = prefix.GetNonNull("{{0}}", x => x);
             enumInnerType = prefix.GetNonNull("EnumInnerType({0})", x => x);
             typeNamespace = prefix.GetNonNull("TypeNamespace({0})", x => x);
 
             name = key[(key.IndexOf("'") + 1)..^1];
-
-            //@@@
-            //if (typeNamespace is { } && enumName is null)
-            //{
-            //    enumName = "None";
-            //}
 
             return prefix;
         }
