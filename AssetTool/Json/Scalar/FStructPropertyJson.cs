@@ -88,7 +88,6 @@
             FPropertyTag tag = new();
 
             string globalKey = $"{FStructProperty.TYPE_NAME} {structName}";
-
             if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
             {
                 tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;

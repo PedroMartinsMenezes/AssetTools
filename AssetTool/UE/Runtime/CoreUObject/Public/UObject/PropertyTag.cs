@@ -396,7 +396,7 @@ namespace AssetTool
             else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
 
             //generic array type
-            else if (tag.Type.Value == Consts.ArrayProperty) return new GenericPropertyJsonArray().FromNative(tag, transfer);
+            //else if (tag.Type.Value == Consts.ArrayProperty) return new GenericPropertyJsonArray().FromNative(tag, transfer);
 
             else return tag;
         }
@@ -472,7 +472,7 @@ namespace AssetTool
                 else if (type == "struct[]") return new FStructPropertyJsonArray().ToNative(transfer, key, value);
 
                 //generic array type
-                else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
+                //else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {

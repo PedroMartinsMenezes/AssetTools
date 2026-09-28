@@ -32,6 +32,12 @@ namespace AssetTool
 
         public override object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
+            string globalKey = $"{FArrayProperty.TYPE_NAME} {FStructProperty.TYPE_NAME} {tag.StructName}";
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && !transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            {
+                transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
+            }
+
             string key = new BasePropertyJson().BuildKey(Name, tag, ExtraFields);
             object value = tag.Value;
             Add(key, value);
@@ -50,6 +56,12 @@ namespace AssetTool
             };
 
             FPropertyTag tag = basePropertyJson.ToNative(transfer, key, val);
+
+            string globalKey = $"{FArrayProperty.TYPE_NAME} {FStructProperty.TYPE_NAME} {structName}";
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            {
+                tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
+            }
 
             string name, enumName, index, guid, enumInnerType, typeNamespace;
             string prefix = BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
