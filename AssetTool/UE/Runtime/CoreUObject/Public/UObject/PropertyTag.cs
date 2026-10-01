@@ -345,9 +345,10 @@ namespace AssetTool
 
             //struct types
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
-            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
+            else if (tag.Type.Value == FSetProperty.TYPE_NAME) return new FSetPropertyJson().FromNative(tag, transfer);
 
             //scalar types
+            else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FSoftObjectProperty.TYPE_NAME && tag.Size == 4) return new FSoftObjectPropertyJson().FromNative(tag);
             else if (tag.Type.Value == FEnumProperty.TYPE_NAME && tag.Size == 4) return new FEnum32PropertyJson().FromNative(tag);
@@ -395,15 +396,6 @@ namespace AssetTool
             //struct array type
             else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
 
-            //map type
-            else if (tag.Type.Value == FMapProperty.TYPE_NAME) return tag;
-
-            //set type
-            else if (tag.Type.Value == FSetProperty.TYPE_NAME) return tag;
-
-            //generic array type
-            else if (tag.Type.Value == FArrayProperty.TYPE_NAME) return new GenericPropertyJsonArray().FromNative(tag, transfer);
-
             else return tag;
         }
 
@@ -426,9 +418,10 @@ namespace AssetTool
 
                 //struct types
                 else if (type == "struct" || type == "class") return new FStructPropertyJson().ToNative(transfer, key, value);
-                else if (type == "guid") return new FGuidPropertyJson().ToNative(transfer, key, value.ToObject<Guid>(transfer));
+                else if (type == "set") return new FSetPropertyJson().ToNative(transfer, key, value);
 
                 //scalar types
+                else if (type == "guid") return new FGuidPropertyJson().ToNative(transfer, key, value.ToObject<Guid>(transfer));
                 else if (type == "bool") return new FBoolPropertyJson().ToNative(transfer, key, value.ToObject<bool>(transfer));
                 else if (type == "soft") return new FSoftObjectPropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
                 else if (type == "enum32") return new FEnum32PropertyJson().ToNative(transfer, key, value.ToObject<TUInt32>(transfer));
@@ -474,9 +467,6 @@ namespace AssetTool
 
                 //struct array type
                 else if (type == "struct[]") return new FStructPropertyJsonArray().ToNative(transfer, key, value);
-
-                //generic array type
-                else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {

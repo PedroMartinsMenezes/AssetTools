@@ -3,25 +3,33 @@
     public class BasePropertyJson : Dictionary<string, object>, IPropertytag
     {
         public virtual string Name { get; }
-        public virtual int Size { get; }
+        public virtual int Size { get; set; }
         public virtual int ComputedSize(Transfer transfer, object value) => 0;
-        public virtual string TypeName { get; init; }
-        public virtual string StructName { get; init; }
-        public virtual string InnerType { get; init; }
+        public virtual string TypeName { get; set; }
+        public virtual string StructName { get; set; }
+        public virtual string InnerType { get; set; }
         public virtual object FromNativeValue(object value) => value;
         public virtual object ToNativeValue(Transfer transfer, object value) => value;
+        public virtual string ExtraFields(FPropertyTag tag) => string.Empty;
+        public virtual string TypeNameFromNative(FPropertyTag tag) => string.Empty;
+        public virtual string TypeNameFromKey(string key) => string.Empty;
 
         public BasePropertyJson() { }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            string key = BuildKey(Name, tag);
+            string globalKey = TypeNameFromNative(tag);
+            if (globalKey.Length > 0 && transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && !transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            {
+                transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
+            }
+            string key = BuildKey(Name, tag, ExtraFields);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : FromNativeValue(tag.Value);
             Add(key, value);
             return this;
         }
 
-        public FPropertyTag ToNative(Transfer transfer)
+        public virtual FPropertyTag ToNative(Transfer transfer)
         {
             return ToNative(transfer, Keys.First(), Values.First());
         }
@@ -35,7 +43,8 @@
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, InnerType, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
-            return new FPropertyTag
+
+            FPropertyTag tag = new()
             {
                 Name = new FName(name, transfer),
                 EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
@@ -51,6 +60,14 @@
                 PropertyTagFlags = propertyTagFlags,
                 InnerType = InnerType is { } ? new FName(InnerType, transfer) : default,
             };
+
+            string globalKey = TypeNameFromKey(key);
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            {
+                tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
+            }
+
+            return tag;
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
@@ -172,7 +189,7 @@
             else if (type == FSetProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
-                typeName.Nodes.Add(new() { Name = new FName(valueType, transfer), InnerCount = 0 });
+                typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
             }
             else if (type == FArrayProperty.TYPE_NAME)
             {

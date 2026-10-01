@@ -30,7 +30,7 @@ namespace AssetTool
             return this;
         }
 
-        public FPropertyTag ToNative(Transfer transfer)
+        public virtual FPropertyTag ToNative(Transfer transfer)
         {
             return ToNative(transfer, Keys.First(), (string)Values.First());
         }
