@@ -50,7 +50,7 @@ namespace AssetTool
                     NAME_ByteProperty = (uint)i;
                 else if (name == FEnumProperty.TYPE_NAME)
                     NAME_EnumProperty = (uint)i;
-                else if (name == Consts.ArrayProperty)
+                else if (name == FArrayProperty.TYPE_NAME)
                     NAME_ArrayProperty = (uint)i;
                 else if (name == Consts.OptionalProperty)
                     NAME_OptionalProperty = (uint)i;

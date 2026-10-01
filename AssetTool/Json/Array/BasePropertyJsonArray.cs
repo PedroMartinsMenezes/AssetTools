@@ -48,7 +48,7 @@ namespace AssetTool
             BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, Consts.ArrayProperty, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
+            FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FArrayProperty.TYPE_NAME, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, StructName);
 
             List<object> values = ToNativeValue(val);
@@ -74,7 +74,7 @@ namespace AssetTool
             {
                 Name = new FName(name, transfer),
                 EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
-                Type = new FName(Consts.ArrayProperty, transfer),
+                Type = new FName(FArrayProperty.TYPE_NAME, transfer),
                 InnerType = new FName(InnerTypeName, transfer),
                 BoolVal = null,
                 Value = values,

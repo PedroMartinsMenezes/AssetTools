@@ -6,10 +6,6 @@
 
         public const byte CHAR_TERMINATOR = 127;
 
-        #region UObjects
-        public const string ArrayProperty = "ArrayProperty";
-        #endregion
-
         #region Property Types
         public const string OptionalProperty = "OptionalProperty";
         #endregion

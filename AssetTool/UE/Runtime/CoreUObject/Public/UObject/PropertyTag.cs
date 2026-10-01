@@ -111,7 +111,7 @@ namespace AssetTool
             if (propertyTagFlags.HasFlag(EPropertyTagFlags.HasPropertyExtensions))
                 SerializePropertyExtensions(transfer);
 
-            if (TypeName.Nodes[0].Name.Value == Consts.ArrayProperty && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
+            if (TypeName.Nodes[0].Name.Value == FArrayProperty.TYPE_NAME && TypeName.Nodes.Count == 4 && TypeName.Nodes[^1].Name.ComparisonIndex.Value != 1)
             {
                 TypeNamespace = TypeName.Nodes[3].Name;
             }
@@ -171,7 +171,7 @@ namespace AssetTool
                     transfer.Move(ref EnumName);
                 else if (Type.Value == FEnumProperty.TYPE_NAME)
                     transfer.Move(ref EnumName);
-                else if (Type.Value == Consts.ArrayProperty && transfer.Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
+                else if (Type.Value == FArrayProperty.TYPE_NAME && transfer.Supports.VAR_UE4_ARRAY_PROPERTY_INNER_TAGS)
                     transfer.Move(ref InnerType);
                 else if (Type.Value == Consts.OptionalProperty)
                     transfer.Move(ref InnerType);
@@ -219,7 +219,7 @@ namespace AssetTool
             {
                 return StructHeaderSize(transfer);
             }
-            else if (Type?.Value == Consts.ArrayProperty)
+            else if (Type?.Value == FArrayProperty.TYPE_NAME)
             {
                 return ArrayHeaderSize(transfer);
             }
@@ -333,7 +333,7 @@ namespace AssetTool
         }
         #endregion
 
-        #region DerivedTag
+        #region FromNative and ToNative
         private static object FromNative(Transfer transfer, FPropertyTag tag)
         {
             if (tag is { } && DerivedConstructors.TryGetValue(tag.JsonKey, out var func))
@@ -369,40 +369,44 @@ namespace AssetTool
             else if (tag.Type.Value == FUInt64Property.TYPE_NAME && tag.Size == 8) return new FUInt64PropertyJson().FromNative(tag);
 
             //simple array types
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 0) return new FBytePropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt8Property.TYPE_NAME) return new FInt8PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt16Property.TYPE_NAME) return new FInt16PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt16Property.TYPE_NAME) return new FUInt16PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt32Property.TYPE_NAME) return new FUInt32PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FUInt64Property.TYPE_NAME) return new FUInt64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 0) return new FBytePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 1) return new FBytePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FByteProperty.TYPE_NAME && tag.ArrayElementSize == 8) return new FByte64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FInt8Property.TYPE_NAME) return new FInt8PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FInt16Property.TYPE_NAME) return new FInt16PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FUInt16Property.TYPE_NAME) return new FUInt16PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FIntProperty.TYPE_NAME) return new FIntPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FUInt32Property.TYPE_NAME) return new FUInt32PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FInt64Property.TYPE_NAME) return new FInt64PropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FUInt64Property.TYPE_NAME) return new FUInt64PropertyJsonArray().FromNative(tag);
 
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FTextProperty.TYPE_NAME) return new FTextPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FObjectProperty.TYPE_NAME) return new FObjectPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FBoolProperty.TYPE_NAME) return new FBoolPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FFloatProperty.TYPE_NAME) return new FFloatPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FDoubleProperty.TYPE_NAME) return new FDoublePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FStrProperty.TYPE_NAME) return new FStrPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FNameProperty.TYPE_NAME) return new FNamePropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FTextProperty.TYPE_NAME) return new FTextPropertyJsonArray().FromNative(tag);
 
             //simple struct array type
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new FQuat4fPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.MaybeInnerTag?.StructName?.Value == FVector3f.StructName) return new FVector3fPropertyJsonArray().FromNative(tag);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.MaybeInnerTag?.StructName?.Value == FQuat4f.StructName) return new FQuat4fPropertyJsonArray().FromNative(tag);
 
-            //general struct array type
-            else if (tag.Type.Value == Consts.ArrayProperty && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
+            //struct array type
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME && tag.InnerType?.Value == FStructProperty.TYPE_NAME) return new FStructPropertyJsonArray().FromNative(tag, transfer);
+
+            //map type
+            else if (tag.Type.Value == FMapProperty.TYPE_NAME) return tag;
+
+            //set type
+            else if (tag.Type.Value == FSetProperty.TYPE_NAME) return tag;
 
             //generic array type
-            //else if (tag.Type.Value == Consts.ArrayProperty) return new GenericPropertyJsonArray().FromNative(tag, transfer);
+            else if (tag.Type.Value == FArrayProperty.TYPE_NAME) return new GenericPropertyJsonArray().FromNative(tag, transfer);
 
             else return tag;
         }
-        #endregion
 
-        #region BaseTag
         private static FPropertyTag ToNative(object item, Transfer transfer)
         {
             KeyValuePair<string, object> pair = (KeyValuePair<string, object>)item;
@@ -468,11 +472,11 @@ namespace AssetTool
                 else if (type == "vector3f[]") return new FVector3fPropertyJsonArray().ToNative(transfer, key, value);
                 else if (type == "quat4f[]") return new FQuat4fPropertyJsonArray().ToNative(transfer, key, value);
 
-                //general struct array type
+                //struct array type
                 else if (type == "struct[]") return new FStructPropertyJsonArray().ToNative(transfer, key, value);
 
                 //generic array type
-                //else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
+                else if (type == "array[]") return new GenericPropertyJsonArray().ToNative(transfer, key, value);
             }
             else if (pair.Value is IPropertytag propertytag)
             {
@@ -504,7 +508,7 @@ namespace AssetTool
 
             if (type == FStructProperty.TYPE_NAME)
                 tag.Value = MoveMemberStruct(transfer, structName, size, indent + inc, obj, tag);
-            else if (type == Consts.ArrayProperty)
+            else if (type == FArrayProperty.TYPE_NAME)
                 tag.Value = MoveMemberArray(transfer, tag, indent + inc, baseOffset, obj);
             else
                 tag.Value = TagMovers[type](transfer, size, tag.Value, name, innerType, keyType, valueType, indent + inc, obj);
@@ -599,7 +603,7 @@ namespace AssetTool
                 }
                 else
                 {
-                    if (tag.InnerType?.Value == Consts.ArrayProperty)
+                    if (tag.InnerType?.Value == FArrayProperty.TYPE_NAME)
                     {
                         tag.MaybeInnerTag ??= new FPropertyTag
                         {

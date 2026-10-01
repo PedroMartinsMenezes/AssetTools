@@ -174,7 +174,7 @@
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(valueType, transfer), InnerCount = 0 });
             }
-            else if (type == Consts.ArrayProperty)
+            else if (type == FArrayProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });

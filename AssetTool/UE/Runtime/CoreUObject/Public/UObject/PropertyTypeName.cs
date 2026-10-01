@@ -16,7 +16,7 @@ namespace AssetTool
                 default :
                 Nodes[0].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ?
                     Nodes[1].Name :
-                    Nodes[0].Name.Value == Consts.ArrayProperty && Nodes[1].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ?
+                    Nodes[0].Name.Value == FArrayProperty.TYPE_NAME && Nodes[1].Name.Value is FByteProperty.TYPE_NAME or FEnumProperty.TYPE_NAME ?
                         Nodes[2].Name :
                         default;
 
@@ -31,8 +31,7 @@ namespace AssetTool
                 else if (Nodes[0].Name.Value is FArrayProperty.TYPE_NAME or FSetProperty.TYPE_NAME or FOptionalProperty.TYPE_NAME)
                 {
                     if (Nodes.Count == 2) return Nodes[1].Name;
-                    else if (Nodes.Count == 4) return Nodes[2].Name;
-                    else if (Nodes.Count == 5) return Nodes[2].Name;
+                    else if (Nodes.Count >= 4) return Nodes[2].Name;
                     else return default;
                 }
                 return default;
