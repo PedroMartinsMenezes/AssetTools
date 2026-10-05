@@ -64,16 +64,5 @@ namespace AssetTool.Test.CodeGeneration
                 File.Delete(file);
             }
         }
-
-        [Test]
-        public void DeleteRepeatedFiles()
-        {
-            string[] files = File.ReadAllLines("AssetTool.Test\\InputFiles\\RepeatedFiles.txt");
-            foreach (string file in files)
-            {
-                if (File.Exists(file))
-                    File.Delete(file);
-            }
-        }
     }
 }
