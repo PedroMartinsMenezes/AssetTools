@@ -58,7 +58,8 @@ namespace AssetTool
     {
         public override List<FVector4d> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4d { X = double.Parse(v[0], CultureInfo.InvariantCulture), Y = double.Parse(v[1], CultureInfo.InvariantCulture), Z = double.Parse(v[2], CultureInfo.InvariantCulture), W = double.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList() : [];
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4d { X = double.Parse(v[0]), Y = double.Parse(v[1]), Z = double.Parse(v[2]), W = double.Parse(v[3]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector4d> value, JsonSerializerOptions options)
@@ -109,7 +110,8 @@ namespace AssetTool
     {
         public override FVector4f[] Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture), W = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToArray() : [];
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0]), Y = float.Parse(v[1]), Z = float.Parse(v[2]), W = float.Parse(v[3]) } : default).ToArray();
         }
 
         public override void Write(Utf8JsonWriter writer, FVector4f[] value, JsonSerializerOptions options)
@@ -121,7 +123,8 @@ namespace AssetTool
     {
         public override List<FVector4f> Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            return reader.GetString() is string s && s.Length > 0 ? s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0], CultureInfo.InvariantCulture), Y = float.Parse(v[1], CultureInfo.InvariantCulture), Z = float.Parse(v[2], CultureInfo.InvariantCulture), W = float.Parse(v[3], CultureInfo.InvariantCulture) } : default).ToList() : [];
+            string s = reader.GetString();
+            return s.Length == 0 ? [] : s.Split(" | ").Select(x => x.Split(' ') is var v ? new FVector4f { X = float.Parse(v[0]), Y = float.Parse(v[1]), Z = float.Parse(v[2]), W = float.Parse(v[3]) } : default).ToList();
         }
 
         public override void Write(Utf8JsonWriter writer, List<FVector4f> value, JsonSerializerOptions options)

@@ -1,7 +1,9 @@
-﻿using NUnit.Framework;
+﻿using AssetTool.Chaos;
+using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text.Json;
 
 namespace AssetTool.Test.InfraTest
 {
@@ -409,6 +411,47 @@ namespace AssetTool.Test.InfraTest
 
             Assert.That(line, Is.EqualTo("text-transform header=`Immutable` SourceText«text-base header=`Immutable` Key=`K0` Namespace=`N0` SourceString=`S0`» TransformType=`ToUpper`"));
             Assert.That(clone.AutoCheck(transferReader, "", transferWriter.Stream, [0, transferWriter.Position]));
+        }
+
+        [Test]
+        public void Test_16_TConvexHalfEdgeStructureData()
+        {
+            var obj = new TConvexHalfEdgeStructureData<TInt32>();
+
+            obj.Planes =
+            [
+                new() { FirstHalfEdgeIndex = new() { Value = 1 }, NumHalfEdges = new() { Value = 10 } },
+                new() { FirstHalfEdgeIndex = new() { Value = 2 }, NumHalfEdges = new() { Value = 20 } },
+                new() { FirstHalfEdgeIndex = new() { Value = 3 }, NumHalfEdges = new() { Value = 30 } },
+            ];
+
+            obj.HalfEdges =
+            [
+                new() { PlaneIndex = new() { Value = 1 }, VertexIndex = new() { Value = 10 }, TwinHalfEdgeIndex = new() { Value = 100 } },
+                new() { PlaneIndex = new() { Value = 2 }, VertexIndex = new() { Value = 20 }, TwinHalfEdgeIndex = new() { Value = 200 } },
+                new() { PlaneIndex = new() { Value = 3 }, VertexIndex = new() { Value = 30 }, TwinHalfEdgeIndex = new() { Value = 300 } },
+            ];
+
+            obj.Vertices =
+            [
+                new() { FirstHalfEdgeIndex = new() { Value = 1 } },
+                new() { FirstHalfEdgeIndex = new() { Value = 2 } },
+                new() { FirstHalfEdgeIndex = new() { Value = 3 } },
+            ];
+
+            obj.Edges =
+            [
+                new() { Value = 1 },
+                new() { Value = 2 },
+                new() { Value = 3 },
+            ];
+
+            JsonElement element = JsonSerializer.Deserialize<JsonElement>(obj.ToJson());
+
+            Assert.That(element.GetProperty("Planes").ValueKind, Is.EqualTo(JsonValueKind.String));
+            Assert.That(element.GetProperty("HalfEdges").ValueKind, Is.EqualTo(JsonValueKind.String));
+            Assert.That(element.GetProperty("Vertices").ValueKind, Is.EqualTo(JsonValueKind.String));
+            Assert.That(element.GetProperty("Edges").ValueKind, Is.EqualTo(JsonValueKind.String));
         }
 
         #region Private

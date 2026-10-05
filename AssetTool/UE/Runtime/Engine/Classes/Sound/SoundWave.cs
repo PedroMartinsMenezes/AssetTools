@@ -3,7 +3,7 @@
     [JsonAsset("SoundWave")]
     public class USoundWave : USoundBase
     {
-        public FBool bCooked;
+        public bool bCooked;
         public FName DummyCompressionName;
         public FGuid CompressedDataGuid;
         public bool bShouldStreamSound = true;
@@ -20,10 +20,6 @@
             if (transfer.Supports.VER_UE4_SOUND_COMPRESSION_TYPE_ADDED && !transfer.Supports.RemoveSoundWaveCompressionName)
             {
                 transfer.Move(ref DummyCompressionName);
-            }
-            if (bCooked)
-            {
-                throw new InvalidOperationException();
             }
             if (!transfer.Supports.SoundWaveVirtualizationUpdate)
             {

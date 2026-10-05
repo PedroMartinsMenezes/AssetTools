@@ -13,7 +13,7 @@ namespace AssetTool
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FQuat>), "FPCGMetadataAttributeFQuat")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FTransform>), "FPCGMetadataAttributeFTransform")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FString>), "FPCGMetadataAttributeFString")]
-    [JsonDerivedType(typeof(FPCGMetadataAttribute<FBool>), "FPCGMetadataAttributeFBool")]
+    //[JsonDerivedType(typeof(FPCGMetadataAttribute<bool>), "FPCGMetadataAttributeFBool")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FRotator>), "FPCGMetadataAttributeFRotator")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FName>), "FPCGMetadataAttributeFName")]
     [JsonDerivedType(typeof(FPCGMetadataAttribute<FSoftObjectPath>), "FPCGMetadataAttributeFSoftObjectPath")]

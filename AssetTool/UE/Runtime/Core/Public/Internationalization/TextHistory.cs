@@ -19,7 +19,7 @@ namespace AssetTool
     public class FTextHistory_FormatNumber : FTextHistory_Generated
     {
         public FFormatArgumentValue SourceValue;
-        public FBool bHasFormatOptions;
+        public bool bHasFormatOptions;
         public FNumberFormattingOptions Options;
         public FString CultureName;
         public override bool IsSimple() => SourceValue.IsSimple();
@@ -417,5 +417,22 @@ namespace AssetTool
     {
         ToLower,
         ToUpper,
+    }
+
+    public enum ETextHistoryType : sbyte
+    {
+        Base,
+        NamedFormat,
+        OrderedFormat,
+        ArgumentFormat,
+        AsNumber,
+        AsPercent,
+        AsCurrency,
+        AsDate,
+        AsTime,
+        AsDateTime,
+        Transform,
+        StringTableEntry,
+        TextGenerator,
     }
 }

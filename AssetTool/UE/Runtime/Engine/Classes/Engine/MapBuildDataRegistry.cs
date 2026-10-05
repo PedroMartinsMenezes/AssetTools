@@ -48,7 +48,7 @@
         public Dictionary<FGuid, FLightComponentMapBuildData> LightBuildData;
         public Dictionary<FGuid, FReflectionCaptureMapBuildData> ReflectionCaptureBuildData;
         public Dictionary<FGuid, FSkyAtmosphereMapBuildData> SkyAtmosphereBuildData;
-        public FBool bHasGrid;
+        public bool bHasGrid;
         public UScriptStruct ScriptStruct;
         public FVolumetricLightMapGridDesc VolumetricLightMapGridDesc;
 

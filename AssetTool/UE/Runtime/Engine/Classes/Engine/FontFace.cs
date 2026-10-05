@@ -3,8 +3,8 @@ namespace AssetTool
     [JsonAsset("FontFace")]
     public class UFontFace : UObject
     {
-        public FBool bCooked;
-        public FBool bLoadInlineData;
+        public bool bCooked;
+        public bool bLoadInlineData;
         public FFontFaceData FontFaceData;
 
         [Location("void UFontFace::Serialize(FArchive& Ar)")]

@@ -14,7 +14,7 @@
         public Int32 MaskG;
         public Int32 MaskB;
         public Int32 MaskA;
-        public FBool bUseConstantValue;
+        public bool bUseConstantValue;
 
         [Location("bool FExpressionInput::Serialize(FArchive& Ar)")]
         public virtual ITransferable Move(Transfer transfer)
@@ -50,7 +50,7 @@
 
     public class FMaterialInput<InputType> : FExpressionInput where InputType : ITransferable, new()
     {
-        public FBool UseConstant;
+        public bool UseConstant;
         public InputType Constant;
 
         [Location("static bool SerializeMaterialInput(FArchive& Ar, FMaterialInput<InputType>& Input)")]

@@ -307,7 +307,7 @@
     {
         public FRigVMOperand Arg;
         public Int32 InstructionIndex;
-        public FBool Condition;
+        public bool Condition;
 
         [Location("void FRigVMJumpIfOp::Serialize(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)

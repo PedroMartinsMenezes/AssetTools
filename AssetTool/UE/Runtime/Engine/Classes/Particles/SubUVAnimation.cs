@@ -3,7 +3,7 @@
     [JsonAsset("SubUVAnimation")]
     public class USubUVAnimation : UObject
     {
-        public FBool bCooked;
+        public bool bCooked;
         public FSubUVDerivedData DerivedData;
 
         public override ITransferable Move(Transfer transfer)

@@ -21,16 +21,16 @@ namespace AssetTool.Geometry
         public int GroupIDCounter;
         public TDynamicVector<FEdge> Edges;
         public FRefCountVector EdgeRefCounts;
-        public FBool bHasAttributes;
+        public bool bHasAttributes;
         public FDynamicMeshAttributeSet AttributeSet;
         #endregion
 
         #region SerializeInternal_CompactAndCompress_Default
-        public FBool bTriangleVectorHasHoles;
-        public FBool hasVertexNormals;
-        public FBool hasVertexColors;
-        public FBool hasVertexUVs;
-        public FBool hasTriangleGroups;
+        public bool bTriangleVectorHasHoles;
+        public bool hasVertexNormals;
+        public bool hasVertexColors;
+        public bool hasVertexUVs;
+        public bool hasTriangleGroups;
         #endregion
 
         #region SerializeInternal_CompactAndCompress_CompactData
@@ -120,10 +120,10 @@ namespace AssetTool.Geometry
 
         private static void SerializeVector<T>(Transfer transfer, ref TDynamicVector<T> vector, ref FDynamicMesh3SerializationOptions options) where T : ITransferable, new()
         {
-            transfer.Move(ref vector, true, options.bUseCompression.Value);
+            transfer.Move(ref vector, true, options.bUseCompression);
         }
 
-        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref FBool bHasOptionalVector) where T : ITransferable, new()
+        private static void SerializeOptionalVector<T>(Transfer transfer, ref TDynamicVector<T> optionalVector, ref FDynamicMesh3SerializationOptions options, ref bool bHasOptionalVector) where T : ITransferable, new()
         {
             transfer.Move(ref bHasOptionalVector);
             if (bHasOptionalVector)
@@ -141,7 +141,7 @@ namespace AssetTool.Geometry
 
         private static void SerializeRefCounts(Transfer transfer, ref FRefCountVector refCounts, ref FDynamicMesh3SerializationOptions options)
         {
-            transfer.Move(ref refCounts, options.bCompactData.Value, options.bUseCompression.Value);
+            transfer.Move(ref refCounts, options.bCompactData, options.bUseCompression);
         }
 
         private static void SerializeSmallListSet(Transfer transfer, ref FSmallListSet vertexEdgeLists, ref FDynamicMesh3SerializationOptions options)
@@ -166,7 +166,7 @@ namespace AssetTool.Geometry
             transfer.Move(ref bHasAttributes);
             if (bHasAttributes)
             {
-                transfer.Move(ref AttributeSet, CompactMaps, Options.bUseCompression.Value);
+                transfer.Move(ref AttributeSet, CompactMaps, Options.bUseCompression);
             }
         }
         #endregion
@@ -174,9 +174,9 @@ namespace AssetTool.Geometry
 
     public class FDynamicMesh3SerializationOptions : ITransferable
     {
-        public FBool bPreserveDataLayout;
-        public FBool bCompactData;
-        public FBool bUseCompression;
+        public bool bPreserveDataLayout;
+        public bool bCompactData;
+        public bool bUseCompression;
 
         [Location("friend FArchive& operator<<(FArchive& Ar, FDynamicMesh3SerializationOptions& Options)")]
         public ITransferable Move(Transfer transfer)
@@ -189,7 +189,7 @@ namespace AssetTool.Geometry
 
         public EImplementationVariant ImplementationVariant()
         {
-            return bCompactData.Value ? EImplementationVariant.CompactData : EImplementationVariant.Default;
+            return bCompactData ? EImplementationVariant.CompactData : EImplementationVariant.Default;
         }
     }
 

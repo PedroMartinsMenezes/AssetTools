@@ -4,7 +4,7 @@
     public class USparseVolumeTextureFrame : UObject
     {
         public FEditorBulkData SourceData;
-        public FBool bCooked;
+        public bool bCooked;
 
         [Location("void USparseVolumeTextureFrame::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("Actor")]
     public class AActor : UObject
     {
-        public FBool bIsCooked;
+        public bool bIsCooked;
         public FString ActorLabel;
 
         [Location("void AActor::Serialize(FArchive& Ar)")]
@@ -14,7 +14,7 @@ namespace AssetTool
             if (transfer.Supports.SerializeActorLabelInCookedBuilds)
             {
                 transfer.Move(ref bIsCooked);
-                if (bIsCooked.Value)
+                if (bIsCooked)
                 {
                     transfer.Move(ref ActorLabel);
                 }

@@ -5,7 +5,7 @@ namespace AssetTool
     public class UTexture2DArray : UTexture
     {
         public FStripDataFlags StripFlags2;
-        public FBool bCooked;
+        public bool bCooked;
 
         [Location("void UTexture2DArray::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

@@ -24,9 +24,9 @@ namespace AssetTool
         public List<FMorphTargetDelta> Vertices;
         public Int32 NumBaseMeshVerts;
         public Int32[] SectionIndices;
-        public FBool bVerticesAreStrippedForCookedBuilds;
+        public bool bVerticesAreStrippedForCookedBuilds;
         public Int32 NumVertices;
-        public FBool bGeneratedByEngine;
+        public bool bGeneratedByEngine;
         public FString SourceFilename;
 
         [Location("FArchive& operator<<(FArchive& Ar, FMorphTargetLODModel& M)")]

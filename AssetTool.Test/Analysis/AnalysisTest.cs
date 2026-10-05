@@ -101,7 +101,7 @@ namespace AssetTool.Test.Analysis
                 string[] files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{collection}.txt");
                 Parallel.ForEach(files, file =>
                 {
-                    string assetType = StructWriter.GetAssetType(file);
+                    string assetType = AssetConverter.GetAssetType(file);
                     if (assetType != string.Empty)
                     {
                         assetTypes.TryAdd(assetType, []);

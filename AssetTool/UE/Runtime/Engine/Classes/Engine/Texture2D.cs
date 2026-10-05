@@ -4,8 +4,8 @@ namespace AssetTool
     [JsonAsset("Texture2D")]
     public class UTexture2D : UTexture
     {
-        public FBool bCooked;
-        public FBool bSerializeMipData;
+        public bool bCooked;
+        public bool bSerializeMipData;
         public FName PixelFormatName;
         public FStripDataFlags StripDataFlags;
 
@@ -18,7 +18,7 @@ namespace AssetTool
 
             transfer.Move(ref bCooked);
 
-            if (bCooked.Value)
+            if (bCooked)
             {
                 throw new NotImplementedException();
                 ///    transfer.Move(ref bSerializeMipData);

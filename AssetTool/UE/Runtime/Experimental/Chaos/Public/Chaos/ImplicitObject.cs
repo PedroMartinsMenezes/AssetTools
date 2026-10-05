@@ -25,8 +25,8 @@ namespace AssetTool.Chaos
     [JsonDerivedType(typeof(FImplicitObjectUnion), "FImplicitObjectUnion")]
     public class FImplicitObject : ITransferable
     {
-        public FBool bIsConvex;
-        public FBool bDoCollide;
+        public bool bIsConvex;
+        public bool bDoCollide;
         public EImplicitObjectType CollisionType;
 
         [Location("void FImplicitObject::SerializeImp(FArchive& Ar)")]

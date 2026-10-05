@@ -9,6 +9,7 @@
         "FileVersionUE5": "OS_SUB_OBJECT_SHADOW_SERIALIZATION"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -43,6 +44,8 @@
       "SoftPackageReferencesOffset": 28506,
       "SearchableNamesOffset": 28514,
       "ThumbnailTableOffset": 28542,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "",
       "PersistentGuid": "5c3a2a43-4ecf-fec0-b580-dd9c4987325e",
       "OwnerPersistentGuid": "",
@@ -89,8 +92,7 @@
       "CellImportOffset": 26922,
       "MetaDataOffset": 11093,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(4400 439) /Game/StackOBot/Blueprints/Framework/GM_InGame",
@@ -1476,6 +1478,41 @@
           }
         ]
       }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {
+      "StructProperty EdGraphPinType": {
+        "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
+      },
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty PointerToUberGraphFrame": {
+        "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorTickFunction": {
+        "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "StructProperty GraphReference": {
+        "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0"
+      },
+      "StructProperty ActorComponentTickFunction": {
+        "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -1507,17 +1544,7 @@
               {
                 "name 'VarName'": "ActiveSpawnPad",
                 "guid 'VarGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "object obj(`-7`)",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "object obj(`-7`)",
                 "string 'FriendlyName'": "Active Spawn Pad",
                 "Category": {
                   "Name": "Category",
@@ -1525,8 +1552,7 @@
                   "Size": 19,
                   "BoolVal": 0,
                   "Value": "text header=`CultureInvariant` SourceString=`Spawn`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 67589,
                 "name 'RepNotifyFunc'": "None",
@@ -1544,25 +1570,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Debug_EnableIntroSequence",
                 "guid 'VarGuid' /Script/CoreUObject": "a1c1f1c5-48ce-1b88-e113-c8b9c4f1f479",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "bool",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "bool",
                 "string 'FriendlyName'": "Debug Enable Intro Sequence",
                 "Category": {
                   "Name": "Category",
@@ -1570,8 +1585,7 @@
                   "Size": 57,
                   "BoolVal": 0,
                   "Value": "text-base header=`None` Key=`330E67274DED06126F7D1F937590D8EB` Namespace=`\\0` SourceString=`Debug`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -1584,25 +1598,14 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "Objective Tracker",
                 "guid 'VarGuid' /Script/CoreUObject": "051fa107-4f4d-ee10-0e25-fe99faf6d1d3",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "struct obj(`-102`) container(`Array`)",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "struct obj(`-102`) container(`Array`)",
                 "string 'FriendlyName'": "Objective Tracker",
                 "Category": {
                   "Name": "Category",
@@ -1610,8 +1613,7 @@
                   "Size": 60,
                   "BoolVal": 0,
                   "Value": "text-base header=`None` Key=`25D6517847133C5766C2B8A93CD88848` Namespace=`\\0` SourceString=`Gameplay`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 65541,
                 "name 'RepNotifyFunc'": "None",
@@ -1629,25 +1631,14 @@
                       "string 'DataValue'": "true"
                     }
                   ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               },
               {
                 "name 'VarName'": "PlayerRespawned",
                 "guid 'VarGuid' /Script/CoreUObject": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 69,
-                  "StructName": "EdGraphPinType",
-                  "BoolVal": 0,
-                  "Value": "mcdelegate",
-                  "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
-                },
+                "class EdGraphPinType 69 'VarType'": "mcdelegate",
                 "string 'FriendlyName'": "Player Respawned",
                 "Category": {
                   "Name": "Category",
@@ -1655,8 +1646,7 @@
                   "Size": 46,
                   "BoolVal": 0,
                   "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0",
-                  "SerializeType": "Property"
+                  "TypeName": "TextProperty 0"
                 },
                 "ulong 'PropertyFlags'": 17592454545413,
                 "name 'RepNotifyFunc'": "None",
@@ -1669,14 +1659,12 @@
                   "BoolVal": 0,
                   "InnerType": "StructProperty",
                   "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0",
-                  "SerializeType": "Property"
+                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
                 },
                 "string 'DefaultValue'": ""
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
           },
           "CategorySorting": {
             "Name": "CategorySorting",
@@ -1693,8 +1681,7 @@
               "Debug",
               "Gameplay"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "ImplementedInterfaces": {
             "Name": "ImplementedInterfaces",
@@ -1709,8 +1696,7 @@
                 "obj[] 'Graphs'": "5"
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0"
           },
           "LastEditedDocuments": {
             "Name": "LastEditedDocuments",
@@ -1721,80 +1707,39 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Framework/GM_InGame",
-                      "AssetName": "GM_InGame"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Framework/GM_InGame",
+                    "AssetName": "GM_InGame"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -30.857143,
-                    "Y": -423.41666
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -30.857143,
+                  "Y": -423.41666
                 },
                 "float 'SavedZoomAmount'": 0.75
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 1,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/Blueprints/Framework/GM_InGame",
-                      "AssetName": "GM_InGame"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 1,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/Blueprints/Framework/GM_InGame",
+                    "AssetName": "GM_InGame"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": -616.40283,
-                    "Y": -2639.664
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": -616.40283,
+                  "Y": -2639.664
                 },
                 "float 'SavedZoomAmount'": 0.25
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 87,
           "obj 'GeneratedClass'": 2,
@@ -1824,7 +1769,6 @@
             "BoolVal": 0,
             "ValueType": "StructProperty",
             "Value": {
-              "__type": "FMapProperty",
               "TypeName": "MapProperty",
               "NumKeysToRemove": 0,
               "NumEntries": 4,
@@ -1850,12 +1794,10 @@
               "MetaDataMap": {}
             },
             "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-            "SerializeType": "BinaryOrNative"
+            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-35] GameModeBase",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -1874,134 +1816,18 @@
           "ExportIndex[16] ImportIndex[-26]: Function",
           "ExportIndex[17] ImportIndex[-26]: Function"
         ],
-        "ChildProperties": [
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-101] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "UberGraphFrame",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-43] SceneComponent",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "DefaultSceneRoot",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "Category": "Default"
-            }
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-7] BP_SpawnPad_C",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "ActiveSpawnPad",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Active Spawn Pad",
-              "Category": "Spawn",
-              "MultiLine": "true"
-            }
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Debug_EnableIntroSequence",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Debug Enable Intro Sequence",
-              "Category": "Debug"
-            }
-          },
-          {
-            "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
-            "PropertyTypeName": "StructProperty",
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-101] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-43] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-7] BP_SpawnPad_C) MetaDataMap( DisplayName(•Active Spawn Pad•) Category(•Spawn•) MultiLine(•true•) ) NamePrivate(•ActiveSpawnPad•) ": "",
+          "prop-bool PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Debug Enable Intro Sequence•) Category(•Debug•) ) NamePrivate(•Debug_EnableIntroSequence•) ": "",
+          "prop-array PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) PropertyTypeName(StructProperty) MetaDataMap( DisplayName(•Objective Tracker•) Category(•Gameplay•) MultiLine(•true•) ) NamePrivate(•Objective Tracker•) ": {
             "SingleField": {
-              "__type": "FStructProperty",
-              "TypeName": "StructProperty",
-              "Value": "ImportIndex[-102] ST_Objective",
-              "ArrayDim": 1,
-              "ElementSize": 24,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "Objective Tracker",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Objective Tracker",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Objective Tracker",
-              "Category": "Gameplay",
-              "MultiLine": "true"
+              "prop-struct ElementSize(24) Value(ImportIndex[-102] ST_Objective) NamePrivate(•Objective Tracker•) ": ""
             }
           },
-          {
-            "__type": "FMulticastInlineDelegateProperty",
-            "TypeName": "MulticastInlineDelegateProperty",
-            "PropertyValuePtr": 17,
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "PlayerRespawned",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Player Respawned",
-              "Category": "Default"
-            }
-          }
-        ],
+          "prop-multicast-inline-delegate PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance, CPF_BlueprintAssignable, CPF_BlueprintCallable) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(24) PropertyValuePtr(17) MetaDataMap( DisplayName(•Player Respawned•) Category(•Default•) ) NamePrivate(•PlayerRespawned•) ": ""
+        },
         "FuncMap": {
           "PlayerRespawned__DelegateSignature": 17,
           "ExecuteUbergraph_GM_InGame": 16,
@@ -2018,7 +1844,6 @@
         "ClassFlags": 8651532,
         "ClassWithin": 4294967269,
         "ClassConfigName": "Game",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [
           {
@@ -2027,11 +1852,8 @@
             "bImplementedByK2": true
           }
         ],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 26,
-        "Next": 0
+        "PerspectiveNewCDO": 26
       }
     },
     {
@@ -2306,19 +2128,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
           "ScriptData": "XlpeRhAAAAAdmgYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -2332,693 +2152,66 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 2125,
           "SerializedScriptSize": 2765,
           "ScriptData": "TEoIAABOAAEAAABtAAAAAAAAABAAAABeWk1eWl8AAQAAADsAAAACAAAAEAAAAGjD////FxZeDwAAAAAAAAAAAAEAAACjAAAAAgAAABAAAABS/P///wABAAAAOwAAAAIAAAAQAAAADwAAAAAAAAAAAAEAAAClAAAAAwAAABAAAAA4AgABAAAAowAAAAIAAAAQAAAAWk8AAQAAAKUAAAADAAAAEAAAAFpeGVEAAQAAAKMAAAACAAAAEAAAAA8AAAAAAAAAAAAAAEUMAQAAAAAAACgWWk1eWk1eWl5MsQAAAFoGjgIAAF5MvQAAAFoGwgIAAF5aXjEAAQAAADkAAAAAAAAAEAAAADJoxP///xcg+f///yF4AAAAAAAAAAABAAAAOQAAAAAAAAAQAAAAFloZILL///8hAAAAAAAAAAAAAAAcwP///wABAAAAOQAAAAAAAAAQAAAAHQAAAAAAAQAAADIAAAAAAAAAEAAAABZeXwEBAAAABgAAAAAAAAACAAAAAAEAAAAyAAAAAAAAABAAAABaXkXqAAAAAAAAAAABAAAARgAAAAAAAAAQAAAAFlpfAAEAAAA+AAAAAAAAABAAAABowf///xcdAAAAABZovf///wABAAAARgAAAAAAAAAQAAAAAAEAAAA1AAAAAAAAABAAAAAAAQAAADYAAAAAAAAAEAAAAAABAAAANwAAAAAAAAAQAAAAFl4UAAEAAABEAAAAAAAAABAAAAAZAAEAAAA+AAAAAAAAABAAAAAnAAAAAQAAAEQAAAAAAAAAEAAAABzJ////AAEAAAA1AAAAAAAAABAAAAAAAQAAADYAAAAAAAAAEAAAACgAAQAAAEUAAAAAAAAAEAAAACgWWl8AAQAAAD4AAAAAAAAAEAAAAGjB////Fx0AAAAAFl8AAQAAADoAAAAAAAAAEAAAABkAAQAAAD4AAAAAAAAAEAAAAAoAAAABAAAAOgAAAAAAAAAQAAAAHLn///8WaL3///8AAQAAAEYAAAAAAAAAEAAAAAABAAAANQAAAAAAAAAQAAAAAAEAAAA2AAAAAAAAABAAAAAAAQAAADcAAAAAAAAAEAAAABZeGQABAAAAOgAAAAAAAAAQAAAAFwAAAAAAAAAAAAAAG/QAAAAAAAAAAAEAAAA2AAAAAAAAABAAAAAWWk1eWmi8////Fy+c////IAAAAFsSAAAAHUEbDI0hdQAAAAAAAAAXMBZNFAABAAAAQQAAAAAAAAAQAAAAaLv///8WFAABAAAANAAAAAAAAAAQAAAAaL7///8BAQAAAFYAAAAAAAAAAgAAAAABAAAAQQAAAAAAAAAQAAAAFl5aTwABAAAANAAAAAAAAAAQAAAAWl4xAAEAAAA5AAAAAgAAABAAAAAyaMT///8XINL///8h/wAAAAAAAAAAAQAAADkAAAACAAAAEAAAABZaXlpeWhkgsv///yEAAAAAAAAAAAAAABzA////AAEAAAA5AAAAAgAAABAAAAAdAAAAAAABAAAAMgAAAAIAAAAQAAAAFhQAAQAAAEIAAAAAAAAAEAAAAGi6////AAEAAAAyAAAAAgAAABAAAAAWXloHDwAAAAABAAAAQgAAAAAAAAAQAAAAWl5aGSCy////IQAAAAAAAAAAAAAAHMD///8AAQAAADkAAAACAAAAEAAAAB0AAAAAAAEAAAAyAAAAAgAAABAAAAAWXwABAAAAPwAAAAAAAAAQAAAAGQABAAAAMgAAAAIAAAAQAAAACgAAAAEAAAA/AAAAAAAAABAAAAActv///xZeGQABAAAAPwAAAAAAAAAQAAAACgAAAAAAAAAAAAAAHLX///8WWk1eWl4ZAQEAAAAGAAAAAAAAAAIAAAAPAAAAAAAAAAAAAABFCwEAAAAAAAAoFlpeXwEBAAAABgAAAAAAAAACAAAAAAEAAACnAAAAAAAAABAAAABaXhkBAQAAAAYAAAAAAAAAAgAAAA8AAAAAAAAAAAAAAEULAQAAAAAAACcWWl8AAQAAADsAAAAAAAAAEAAAAGjD////FxZeDwAAAAAAAAAAAAEAAACjAAAAAAAAABAAAABS/P///wABAAAAOwAAAAAAAAAQAAAADwAAAAAAAAAAAAEAAAClAAAAAgAAABAAAAA4AgABAAAAowAAAAAAAAAQAAAAWk8AAQAAAKUAAAACAAAAEAAAAFpeGVEAAQAAAKMAAAAAAAAAEAAAAA4AAAAAAAAAAAAAAEUQAAAAAAAAABZaTV5aDwEAAABAAAAAAAAAABAAAAAAAQAAAEAAAAAAAAAAEAAAABkBAQAAAAYAAAAAAAAAAgAAAAoAAAABAAAAQAAAAAAAAAAQAAAAHMr///8WXl8AAQAAADMAAAAAAAAAEAAAAGjG////FyD+////AAEAAABAAAAAAAAAABAAAAAkACokARZaDwEAAABAAAAAAAAAABAAAAAAAQAAAEAAAAAAAAAAEAAAABkBAQAAAAYAAAAAAAAAAgAAAAoAAAABAAAAQAAAAAAAAAAQAAAAHMr///8WXl8AAQAAADgAAAAAAAAAEAAAAGjF////AAEAAAAzAAAAAAAAABAAAAAAAQAAAEAAAAAAAAAAEAAAACQBFlpfAAEAAAA9AAAAAAAAABAAAABowv///xcdAAAAABZeGQABAAAAPQAAAAAAAAAQAAAAEwAAAAAAAAAAAAAAHMf///8AAQAAADgAAAAAAAAAEAAAABZaXhkBAQAAAAYAAAAAAAAAAgAAAA8AAAAAAAAAAAAAAEUAAQAAAAAAACcWWl5jEQAAAAEBAAAA3gAAAAAAAAACAAAAAAEAAAA4AAAAAAAAABAAAAAWWk1eGQEBAAAABgAAAAAAAAACAAAADwAAAAAAAAAAAAAARQABAAAAAAAAKBZaTV5aBmgGAABeWk1eWl8AAQAAADsAAAADAAAAEAAAAGjD////FxZeDwAAAAAAAAAAAAEAAACjAAAAAwAAABAAAABS/P///wABAAAAOwAAAAMAAAAQAAAADwAAAAAAAAAAAAEAAAClAAAABAAAABAAAAA4AgABAAAAowAAAAMAAAAQAAAAWk8AAQAAAKUAAAAEAAAAEAAAAFpeGVEAAQAAAKMAAAADAAAAEAAAABsAAAAAAAAAAAAAAEXRAAAAAAAAACGvAAAAAAAAABZaTV5aXhkgsv///yYAAAAAAAAAAAAAABy/////AQEAAADOAAAAAAAAAAIAAAAAAQAAAKkAAAAAAAAAEAAAAAABAAAAqAAAAAAAAAAQAAAAJxZaXwABAAAAPQAAAAIAAAAQAAAAaML///8XHQAAAAAWXwABAAAAPAAAAAAAAAAQAAAAGQABAAAAPQAAAAIAAAAQAAAACgAAAAEAAAA8AAAAAAAAABAAAAAcuP///xZeDwAAAAAAAAAAAAEAAACkAAAAAAAAABAAAABS+P///wABAAAAPAAAAAAAAAAQAAAADwAAAAAAAAAAAAEAAAClAAAAAAAAABAAAAA4AgABAAAApAAAAAAAAAAQAAAAWk8AAQAAAKUAAAAAAAAAEAAAAFpeGVEAAQAAAKQAAAAAAAAAEAAAACoAAAAAAAAAAAAAAEUZAQAAAAAAAAABAAAAqQAAAAAAAAAQAAAAawEBAAAAzgAAAAAAAAACAAAAAAEAAACpAAAAAAAAABAAAAAWWk0EC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "EntryPoint",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-28] Actor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_Trigger_Ref\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
-            "PropertyTypeName": "ObjectProperty",
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-object Value(ImportIndex[-28] Actor) NamePrivate(•K2Node_Event_Trigger_Ref\"1•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•CallFunc_GetAllActorsOfClassWithTag_OutActors•) ": {
             "SingleField": {
-              "__type": "FObjectProperty",
-              "TypeName": "ObjectProperty",
-              "Value": "ImportIndex[-7] BP_SpawnPad_C",
-              "ArrayDim": 1,
-              "ElementSize": 8,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+              "prop-object Value(ImportIndex[-7] BP_SpawnPad_C) NamePrivate(•CallFunc_GetAllActorsOfClassWithTag_OutActors•) ": ""
+            }
           },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-41] Pawn",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetPlayerPawn_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-7] BP_SpawnPad_C",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Array_Get_Item",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-32] Controller",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetController_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Retrieve_Spawn_Transform_Spawn_Transform",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-7] BP_SpawnPad_C",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_NewParam",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-98] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakTransform_Location",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-96] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakTransform_Rotation",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-98] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakTransform_Scale",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-99] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 264,
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_SetActorLocationAndRotation_SweepHitResult",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_SetActorLocationAndRotation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_ConstParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetTransform_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-28] Actor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-2] BP_Bot_C",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_FinishSpawningActor_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-42] PlayerController",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetPlayerController_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_In_Out",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-28] Actor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_Trigger_Ref",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FArrayProperty",
-            "TypeName": "ArrayProperty",
-            "PropertyTypeName": "ObjectProperty",
+          "prop-object Value(ImportIndex[-41] Pawn) NamePrivate(•CallFunc_GetPlayerPawn_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-7] BP_SpawnPad_C) NamePrivate(•CallFunc_Array_Get_Item•) ": "",
+          "prop-object Value(ImportIndex[-32] Controller) NamePrivate(•CallFunc_GetController_ReturnValue•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-97] Transform) NamePrivate(•CallFunc_Retrieve_Spawn_Transform_Spawn_Transform•) ": "",
+          "prop-object Value(ImportIndex[-7] BP_SpawnPad_C) NamePrivate(•K2Node_Event_NewParam•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-98] Vector) NamePrivate(•CallFunc_BreakTransform_Location•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-96] Rotator) NamePrivate(•CallFunc_BreakTransform_Rotation•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-98] Vector) NamePrivate(•CallFunc_BreakTransform_Scale•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(264) Value(ImportIndex[-99] HitResult) NamePrivate(•CallFunc_K2_SetActorLocationAndRotation_SweepHitResult•) ": "",
+          "prop-bool NamePrivate(•CallFunc_K2_SetActorLocationAndRotation_ReturnValue•) ": "",
+          "prop-struct PropertyFlags(CPF_ConstParm) ElementSize(96) Value(ImportIndex[-97] Transform) NamePrivate(•CallFunc_GetTransform_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-28] Actor) NamePrivate(•CallFunc_BeginDeferredActorSpawnFromClass_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-2] BP_Bot_C) NamePrivate(•CallFunc_FinishSpawningActor_ReturnValue•) ": "",
+          "prop-object Value(ImportIndex[-42] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•K2Node_Event_In_Out•) ": "",
+          "prop-object Value(ImportIndex[-28] Actor) NamePrivate(•K2Node_Event_Trigger_Ref•) ": "",
+          "prop-array PropertyFlags(CPF_ReferenceParm) ElementSize(16) PropertyTypeName(ObjectProperty) NamePrivate(•CallFunc_GetAllActorsOfClassWithTag_OutActors\"1•) ": {
             "SingleField": {
-              "__type": "FObjectProperty",
-              "TypeName": "ObjectProperty",
-              "Value": "ImportIndex[-46] LevelSequenceActor",
-              "ArrayDim": 1,
-              "ElementSize": 8,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "RepNotifyFunc": "None",
-              "BlueprintReplicationCondition": 0,
-              "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
-              "FlagsPrivate": "RF_Public",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_ReferenceParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetAllActorsOfClassWithTag_OutActors\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
+              "prop-object Value(ImportIndex[-46] LevelSequenceActor) NamePrivate(•CallFunc_GetAllActorsOfClassWithTag_OutActors\"1•) ": ""
+            }
           },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-46] LevelSequenceActor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Array_Get_Item\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-47] LevelSequencePlayer",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetSequencePlayer_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_IsValid_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_IsPackagedForDistribution_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BooleanOR_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_Objective_Index",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-102] ST_Objective",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_Event_Objective_Complete",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-42] PlayerController",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetPlayerController_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-37] HUD",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetHUD_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FInterfaceProperty",
-            "TypeName": "InterfaceProperty",
-            "Value": 4294967288,
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_HUD",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_bSuccess",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-34] GameInstance",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetGameInstance_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FInterfaceProperty",
-            "TypeName": "InterfaceProperty",
-            "Value": 4294967292,
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-34] GameInstance",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetGameInstance_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FInterfaceProperty",
-            "TypeName": "InterfaceProperty",
-            "Value": 4294967292,
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-34] GameInstance",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetGameInstance_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FInterfaceProperty",
-            "TypeName": "InterfaceProperty",
-            "Value": 4294967292,
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_AsBPI_Game_Instance\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "K2Node_DynamicCast_bSuccess\"3",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+          "prop-object Value(ImportIndex[-46] LevelSequenceActor) NamePrivate(•CallFunc_Array_Get_Item\"1•) ": "",
+          "prop-object Value(ImportIndex[-47] LevelSequencePlayer) NamePrivate(•CallFunc_GetSequencePlayer_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsValid_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_IsPackagedForDistribution_ReturnValue•) ": "",
+          "prop-bool NamePrivate(•CallFunc_BooleanOR_ReturnValue•) ": "",
+          "prop-int NamePrivate(•K2Node_Event_Objective_Index•) ": "",
+          "prop-struct ElementSize(24) Value(ImportIndex[-102] ST_Objective) NamePrivate(•K2Node_Event_Objective_Complete•) ": "",
+          "prop-object Value(ImportIndex[-42] PlayerController) NamePrivate(•CallFunc_GetPlayerController_ReturnValue\"1•) ": "",
+          "prop-object Value(ImportIndex[-37] HUD) NamePrivate(•CallFunc_GetHUD_ReturnValue•) ": "",
+          "prop-interface Value(4294967288) NamePrivate(•K2Node_DynamicCast_AsBPI_HUD•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess•) ": "",
+          "prop-object Value(ImportIndex[-34] GameInstance) NamePrivate(•CallFunc_GetGameInstance_ReturnValue•) ": "",
+          "prop-interface Value(4294967292) NamePrivate(•K2Node_DynamicCast_AsBPI_Game_Instance•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"1•) ": "",
+          "prop-object Value(ImportIndex[-34] GameInstance) NamePrivate(•CallFunc_GetGameInstance_ReturnValue\"1•) ": "",
+          "prop-interface Value(4294967292) NamePrivate(•K2Node_DynamicCast_AsBPI_Game_Instance\"1•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"2•) ": "",
+          "prop-object Value(ImportIndex[-34] GameInstance) NamePrivate(•CallFunc_GetGameInstance_ReturnValue\"2•) ": "",
+          "prop-interface Value(4294967292) NamePrivate(•K2Node_DynamicCast_AsBPI_Game_Instance\"2•) ": "",
+          "prop-bool NamePrivate(•K2Node_DynamicCast_bSuccess\"3•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3032,35 +2225,19 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 5,
           "SerializedScriptSize": 5,
           "ScriptData": "XloEC1M="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-41] Pawn",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "PlayerPawn",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-41] Pawn) NamePrivate(•PlayerPawn•) ": ""
+        },
         "FunctionFlags": 202506240,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3075,19 +2252,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-56] ReceiveBeginPlay",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
           "ScriptData": "XlpeRhAAAAAdowAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3101,50 +2276,20 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 145,
           "SerializedScriptSize": 217,
           "ScriptData": "XlpeGQEBAAAABgAAAAAAAAACAAAADwAAAAAAAAAAAAAARQABAAAAAAAAKBZaDwEAAABDAAAAAAAAABMAAAAAAQAAAEMAAAAAAAAAEwAAABkZAQEAAAAGAAAAAAAAAAIAAAAJAAAAAQAAAOAAAAAAAAAA+f///wEBAAAA4AAAAAAAAAD5////CgAAAAEAAABDAAAAAAAAABMAAAAct////xZeDwEAAAD6AAAAAAAAABMAAABIAQAAAPoAAAAAAAAAEwAAAAABAAAAQwAAAAAAAAATAAAAWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_Parm, CPF_OutParm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Spawn Transform",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-97] Transform",
-            "ArrayDim": 1,
-            "ElementSize": 96,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetComponentToWorld_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Parm, CPF_OutParm) ElementSize(96) Value(ImportIndex[-97] Transform) NamePrivate(•Spawn Transform•) ": "",
+          "prop-struct ElementSize(96) Value(ImportIndex[-97] Transform) NamePrivate(•CallFunc_K2_GetComponentToWorld_ReturnValue•) ": ""
+        },
         "FunctionFlags": 214040576,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3158,35 +2303,19 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
           "ScriptData": "XlpeZAEAAACnAAAAAAAAABAAAAAAAQAAAL8AAAAAAAAAFAAAAFpeRhAAAAAdLwQAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-7] BP_SpawnPad_C",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "NewParam",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-7] BP_SpawnPad_C) NamePrivate(•NewParam•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3200,19 +2329,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
           "ScriptData": "XlpeRhAAAAAdHwUAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3226,40 +2353,19 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
           "ScriptData": "XlpeZAEAAACmAAAAAAAAABAAAAAAAQAAAJEAAAAAAAAAFgAAAFpeRhAAAAAdkAYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "In/Out",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-bool PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•In/Out•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3273,35 +2379,19 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
           "ScriptData": "XlpeZAEAAACqAAAAAAAAABAAAAAAAQAAABIBAAAAAAAAFwAAAFpeRhAAAAAdlwYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-28] Actor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Trigger Ref",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-28] Actor) NamePrivate(•Trigger Ref•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3315,35 +2405,19 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 42,
           "SerializedScriptSize": 54,
           "ScriptData": "XlpeZAEAAACqAAAAAgAAABAAAAAAAQAAABIBAAAAAAAAGAAAAFpeRhAAAAAdoAAAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-28] Actor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Trigger Ref",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) Value(ImportIndex[-28] Actor) NamePrivate(•Trigger Ref•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3357,49 +2431,20 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 60,
           "SerializedScriptSize": 88,
           "ScriptData": "XlpeZAEAAACpAAAAAAAAABAAAAAAAQAAAMwAAAAAAAAAGQAAAGQBAAAAqAAAAAAAAAAQAAAAAAEAAADLAAAAAAAAABkAAABaXkYQAAAAHTQHAAAWWgQLUw=="
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Objective Index",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-102] ST_Objective",
-            "ArrayDim": 1,
-            "ElementSize": 24,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Objective Complete",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•Objective Index•) ": "",
+          "prop-struct PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) ElementSize(24) Value(ImportIndex[-102] ST_Objective) NamePrivate(•Objective Complete•) ": ""
+        },
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -3412,18 +2457,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "BoolVal": 0,
-            "Value": {
-              "RawPointer": 201,
-              "UberGraphFunctionKey": 0
-            },
-            "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 201,
+            "UberGraphFunctionKey": 0
           },
           "PlayerRespawned": {
             "Name": "PlayerRespawned",
@@ -3433,7 +2469,6 @@
             "PropertyGuid": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c",
             "BoolVal": 0,
             "Value": {
-              "__type": "FMulticastInlineDelegateProperty",
               "TypeName": "MulticastInlineDelegateProperty",
               "PropertyValuePtr": 0,
               "InvocationList": [],
@@ -3447,38 +2482,19 @@
               "MetaDataMap": {}
             },
             "TypeName": "MulticastInlineDelegateProperty 0",
-            "PropertyTagFlags": "HasPropertyGuid",
-            "SerializeType": "Property"
+            "PropertyTagFlags": "HasPropertyGuid"
           },
           "obj 'PlayerControllerClass'": -3,
           "obj 'HUDClass'": -6,
           "obj 'DefaultPawnClass'": -2,
-          "PrimaryActorTick": {
-            "Name": "PrimaryActorTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorTickFunction 33 'PrimaryActorTick'": {
+            "bool 'bStartWithTickEnabled'": false
           },
           "string 'ActorLabel'": "MyGame_C-1"
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     },
     {
@@ -3491,18 +2507,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -38,
-              "name 'MemberName'": "Array_Set"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -38,
+            "name 'MemberName'": "Array_Set"
           },
           "int 'NodePosX'": 586,
           "int 'NodePosY'": -288,
@@ -3529,19 +2536,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "DelegateReference": {
-            "Name": "DelegateReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerRespawned",
-              "guid 'MemberGuid' /Script/CoreUObject": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'DelegateReference'": {
+            "name 'MemberName'": "PlayerRespawned",
+            "guid 'MemberGuid' /Script/CoreUObject": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": -832,
@@ -3566,18 +2564,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetGameInstance"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetGameInstance"
           },
           "int 'NodePosX'": 1184,
           "int 'NodePosY'": 400,
@@ -3600,18 +2589,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -32,
-              "name 'MemberName'": "SetControlRotation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -32,
+            "name 'MemberName'": "SetControlRotation"
           },
           "int 'NodePosX'": 2448,
           "int 'NodePosY'": -1616,
@@ -3635,18 +2615,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -48,
-              "name 'MemberName'": "Play"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -48,
+            "name 'MemberName'": "Play"
           },
           "int 'NodePosX'": 2480,
           "int 'NodePosY'": -1968,
@@ -3669,19 +2640,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "StartSpawnAnimation",
-              "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "StartSpawnAnimation",
+            "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
           },
           "int 'NodePosX'": 1328,
           "int 'NodePosY'": -848,
@@ -3706,18 +2668,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetPlayerController"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetPlayerController"
           },
           "int 'NodePosX'": 880,
           "int 'NodePosY'": -656,
@@ -3741,18 +2694,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -32,
-              "name 'MemberName'": "Possess"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -32,
+            "name 'MemberName'": "Possess"
           },
           "int 'NodePosX'": 960,
           "int 'NodePosY'": -848,
@@ -3777,18 +2721,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetGameInstance"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetGameInstance"
           },
           "int 'NodePosX'": 1248,
           "int 'NodePosY'": -2144,
@@ -3811,18 +2746,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -40,
-              "name 'MemberName'": "DelayUntilNextTick"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -40,
+            "name 'MemberName'": "DelayUntilNextTick"
           },
           "int 'NodePosX'": 1040,
           "int 'NodePosY'": -2272,
@@ -3847,19 +2773,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "StartSpawnAnimation",
-              "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "StartSpawnAnimation",
+            "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
           },
           "int 'NodePosX'": 2336,
           "int 'NodePosY'": -848,
@@ -3884,18 +2801,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetGameInstance"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetGameInstance"
           },
           "int 'NodePosX'": 416,
           "int 'NodePosY'": 768,
@@ -3918,19 +2826,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "ToggleActivation",
-              "guid 'MemberGuid' /Script/CoreUObject": "17870028-47a1-d784-7e8c-33be01b5dc48"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "ToggleActivation",
+            "guid 'MemberGuid' /Script/CoreUObject": "17870028-47a1-d784-7e8c-33be01b5dc48"
           },
           "int 'NodePosX'": 416,
           "int 'NodePosY'": 272,
@@ -3954,18 +2853,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetAllActorsOfClassWithTag"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetAllActorsOfClassWithTag"
           },
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": -1952,
@@ -3993,18 +2883,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -40,
-              "name 'MemberName'": "IsPackagedForDistribution"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -40,
+            "name 'MemberName'": "IsPackagedForDistribution"
           },
           "int 'NodePosX'": 1040,
           "int 'NodePosY'": -1792,
@@ -4027,18 +2908,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetPlayerController"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetPlayerController"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 16,
@@ -4063,18 +2935,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -42,
-              "name 'MemberName'": "GetHUD"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -42,
+            "name 'MemberName'": "GetHUD"
           },
           "int 'NodePosX'": 992,
           "int 'NodePosY'": -80,
@@ -4096,19 +2959,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "ToggleActivation",
-              "guid 'MemberGuid' /Script/CoreUObject": "17870028-47a1-d784-7e8c-33be01b5dc48"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "ToggleActivation",
+            "guid 'MemberGuid' /Script/CoreUObject": "17870028-47a1-d784-7e8c-33be01b5dc48"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 272,
@@ -4133,18 +2987,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "GetTransform",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "GetTransform",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": -672,
@@ -4166,18 +3011,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetAllActorsOfClassWithTag"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetAllActorsOfClassWithTag"
           },
           "int 'NodePosX'": 1056,
           "int 'NodePosY'": -1600,
@@ -4205,18 +3041,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -36,
-              "name 'MemberName'": "GetPlayerPawn"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -36,
+            "name 'MemberName'": "GetPlayerPawn"
           },
           "int 'NodePosX'": 2064,
           "int 'NodePosY'": -1344,
@@ -4240,18 +3067,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "K2_SetActorLocationAndRotation",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "K2_SetActorLocationAndRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2064,
           "int 'NodePosY'": -1616,
@@ -4280,18 +3098,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 66,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Retrieve Spawn Transform",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 66 'FunctionReference'": {
+            "name 'MemberName'": "Retrieve Spawn Transform",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1664,
           "int 'NodePosY'": -1616,
@@ -4319,18 +3128,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -41,
-              "name 'MemberName'": "GetController"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -41,
+            "name 'MemberName'": "GetController"
           },
           "int 'NodePosX'": 2384,
           "int 'NodePosY'": -1360,
@@ -4353,18 +3153,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -43,
-              "name 'MemberName'": "K2_GetComponentToWorld"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -43,
+            "name 'MemberName'": "K2_GetComponentToWorld"
           },
           "int 'NodePosX'": 304,
           "int 'NodePosY'": 122,
@@ -4386,19 +3177,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "StartSpawnAnimation",
-              "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "StartSpawnAnimation",
+            "guid 'MemberGuid' /Script/CoreUObject": "2f9a2dc9-4216-e428-466e-bf8669ba5d16"
           },
           "int 'NodePosY'": -16,
           "guid 'NodeGuid' /Script/CoreUObject": "0aa67d10-410e-7a9e-f647-5883987250bd"
@@ -4422,18 +3204,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bDefaultsToPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -39,
-              "name 'MemberName'": "BooleanOR"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -39,
+            "name 'MemberName'": "BooleanOR"
           },
           "int 'NodePosX'": 1312,
           "int 'NodePosY'": -1840,
@@ -4457,18 +3230,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 480,
@@ -4492,19 +3256,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "End Game",
-              "guid 'MemberGuid' /Script/CoreUObject": "faff6652-45c8-93f8-b9c6-c5a02efd374d"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "End Game",
+            "guid 'MemberGuid' /Script/CoreUObject": "faff6652-45c8-93f8-b9c6-c5a02efd374d"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 176,
@@ -4528,19 +3283,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "Spawn",
-              "guid 'MemberGuid' /Script/CoreUObject": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Spawn",
+            "guid 'MemberGuid' /Script/CoreUObject": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 176,
@@ -4564,19 +3310,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "TransitionGameplay",
-              "guid 'MemberGuid' /Script/CoreUObject": "557d15e0-45b3-342b-d56f-42a4ab0033af"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "TransitionGameplay",
+            "guid 'MemberGuid' /Script/CoreUObject": "557d15e0-45b3-342b-d56f-42a4ab0033af"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 1920,
@@ -4601,19 +3338,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "Update Objective",
-              "guid 'MemberGuid' /Script/CoreUObject": "18f66418-431e-c04f-2ad0-a18301af4597"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Update Objective",
+            "guid 'MemberGuid' /Script/CoreUObject": "18f66418-431e-c04f-2ad0-a18301af4597"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 176,
@@ -4639,19 +3367,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "Set Active Pad",
-              "guid 'MemberGuid' /Script/CoreUObject": "46557f5a-429c-db8d-5f56-eaba2cbeb111"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'EventReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Set Active Pad",
+            "guid 'MemberGuid' /Script/CoreUObject": "46557f5a-429c-db8d-5f56-eaba2cbeb111"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 176,
@@ -4699,17 +3418,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "PlayerRespawned"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "PlayerRespawned"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "20a46daa-43f3-c2fd-a438-a5bd39d839dd"
@@ -4740,19 +3450,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "Retrieve Spawn Transform",
-              "guid 'MemberGuid' /Script/CoreUObject": "252d7849-4678-3385-31c9-8f86b234be66"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Retrieve Spawn Transform",
+            "guid 'MemberGuid' /Script/CoreUObject": "252d7849-4678-3385-31c9-8f86b234be66"
           },
           "int 'NodePosX'": -288,
           "guid 'NodeGuid' /Script/CoreUObject": "9d544d7b-49e2-2c45-7250-80a26e76f6f0"
@@ -4774,18 +3475,9 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -28,
-              "name 'MemberName'": "UserConstructionScript"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -28,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid' /Script/CoreUObject": "b8239b83-4216-40ef-cb94-b8b05e3baded"
         },
@@ -4805,19 +3497,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -5,
-              "name 'MemberName'": "Retrieve Spawn Transform",
-              "guid 'MemberGuid' /Script/CoreUObject": "252d7849-4678-3385-31c9-8f86b234be66"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -5,
+            "name 'MemberName'": "Retrieve Spawn Transform",
+            "guid 'MemberGuid' /Script/CoreUObject": "252d7849-4678-3385-31c9-8f86b234be66"
           },
           "int 'NodePosX'": 368,
           "guid 'NodeGuid' /Script/CoreUObject": "60dfe1f6-459b-550a-d863-b79831ec0b89"
@@ -4946,19 +3629,10 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "MacroGraphReference": {
-            "Name": "MacroGraphReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "GraphReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MacroGraph'": -51,
-              "obj 'GraphBlueprint'": -1,
-              "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
-            },
-            "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct GraphReference 131 'MacroGraphReference'": {
+            "obj 'MacroGraph'": -51,
+            "obj 'GraphBlueprint'": -1,
+            "guid 'GraphGuid' /Script/CoreUObject": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
           },
           "int 'NodePosX'": 2144,
           "int 'NodePosY'": -1952,
@@ -4983,19 +3657,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -8,
-              "name 'MemberName'": "Update Objective UI",
-              "guid 'MemberGuid' /Script/CoreUObject": "9dafaff4-4cf6-0321-657a-f0bd40cd78ea"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -8,
+            "name 'MemberName'": "Update Objective UI",
+            "guid 'MemberGuid' /Script/CoreUObject": "9dafaff4-4cf6-0321-657a-f0bd40cd78ea"
           },
           "int 'NodePosX'": 1008,
           "int 'NodePosY'": -304,
@@ -5020,19 +3685,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -4,
-              "name 'MemberName'": "AsyncSave",
-              "guid 'MemberGuid' /Script/CoreUObject": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -4,
+            "name 'MemberName'": "AsyncSave",
+            "guid 'MemberGuid' /Script/CoreUObject": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
           },
           "int 'NodePosX'": 1184,
           "int 'NodePosY'": 272,
@@ -5055,19 +3711,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -4,
-              "name 'MemberName'": "ToggleLoadingScreen",
-              "guid 'MemberGuid' /Script/CoreUObject": "a2522242-4080-90e7-a311-0bbb227eb06b"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -4,
+            "name 'MemberName'": "ToggleLoadingScreen",
+            "guid 'MemberGuid' /Script/CoreUObject": "a2522242-4080-90e7-a311-0bbb227eb06b"
           },
           "int 'NodePosX'": 1248,
           "int 'NodePosY'": -2287,
@@ -5091,19 +3738,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 135,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -4,
-              "name 'MemberName'": "OpenLevel",
-              "guid 'MemberGuid' /Script/CoreUObject": "a6064e7b-487c-3284-9eae-e4b289ed715f"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 135 'FunctionReference'": {
+            "obj 'MemberParent'": -4,
+            "name 'MemberName'": "OpenLevel",
+            "guid 'MemberGuid' /Script/CoreUObject": "a6064e7b-487c-3284-9eae-e4b289ed715f"
           },
           "int 'NodePosX'": 416,
           "int 'NodePosY'": 608,
@@ -5157,18 +3795,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -46,
-              "name 'MemberName'": "SequencePlayer"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -46,
+            "name 'MemberName'": "SequencePlayer"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 112,
           "int 'NodePosX'": 2197,
@@ -5191,19 +3820,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1312,
           "int 'NodePosY'": -608,
@@ -5225,19 +3845,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": -592,
@@ -5259,19 +3870,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 416,
           "int 'NodePosY'": 432,
@@ -5293,19 +3895,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Debug_EnableIntroSequence",
-              "guid 'MemberGuid' /Script/CoreUObject": "a1c1f1c5-48ce-1b88-e113-c8b9c4f1f479",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Debug_EnableIntroSequence",
+            "guid 'MemberGuid' /Script/CoreUObject": "a1c1f1c5-48ce-1b88-e113-c8b9c4f1f479",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1040,
           "int 'NodePosY'": -1841,
@@ -5327,19 +3920,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Objective Tracker",
-              "guid 'MemberGuid' /Script/CoreUObject": "051fa107-4f4d-ee10-0e25-fe99faf6d1d3",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "Objective Tracker",
+            "guid 'MemberGuid' /Script/CoreUObject": "051fa107-4f4d-ee10-0e25-fe99faf6d1d3",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 608,
           "int 'NodePosY'": -96,
@@ -5361,19 +3945,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -208,
           "int 'NodePosY'": 160,
@@ -5396,18 +3971,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "PlayerSpawnLocation"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "PlayerSpawnLocation"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 112,
           "int 'NodePosX'": -16,
@@ -5430,19 +3996,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1408,
           "int 'NodePosY'": -1584,
@@ -5467,19 +4024,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 131,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "ActiveSpawnPad",
-              "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
-              "bool 'bSelfContext'": true
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 131 'VariableReference'": {
+            "name 'MemberName'": "ActiveSpawnPad",
+            "guid 'MemberGuid' /Script/CoreUObject": "775f2ea9-453f-01f3-d2ff-5d8892f685da",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 688,
           "int 'NodePosY'": 304,
@@ -5504,17 +4052,8 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 33,
-            "StructName": "ActorComponentTickFunction",
-            "BoolVal": 0,
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            },
-            "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "bIsCooked": false,
@@ -5551,8 +4090,7 @@
             "Size": 59,
             "BoolVal": 0,
             "Value": "text-base header=`None` Key=`8018E5234B31C585A50F1886630C4287` Namespace=`\\0` SourceString=`Default`",
-            "TypeName": "TextProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "TextProperty 0"
           },
           "guid 'VariableGuid' /Script/CoreUObject": "56bc9799-c494-e6e6-321d-42957d5eb316",
           "name 'InternalVariableName'": "DefaultSceneRoot"

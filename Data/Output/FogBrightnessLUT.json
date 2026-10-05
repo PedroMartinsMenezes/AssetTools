@@ -9,6 +9,7 @@
         "FileVersionUE5": "TRACK_OBJECT_EXPORT_IS_INHERITED"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -35,6 +36,8 @@
       "SoftPackageReferencesOffset": 1291,
       "SearchableNamesOffset": 1291,
       "ThumbnailTableOffset": 1307,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "b2d5585e-4c8c-1404-8e65-b4a6d4b6e9a2",
       "PersistentGuid": "44d81ded-439f-4704-8212-bdb0b2171bb5",
       "OwnerPersistentGuid": "",
@@ -78,8 +81,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -180,7 +182,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -206,59 +218,53 @@
       "Obj": {
         "__type": "UCurveFloat",
         "Members": {
-          "FloatCurve": {
-            "Name": "FloatCurve",
-            "Type": "StructProperty",
-            "Size": 175,
-            "StructName": "RichCurve",
-            "Value": {
-              "Keys": {
+          "struct RichCurve 175 'FloatCurve'": {
+            "Keys": {
+              "Name": "Keys",
+              "Type": "ArrayProperty",
+              "Size": 134,
+              "InnerType": "StructProperty",
+              "MaybeInnerTag": {
                 "Name": "Keys",
-                "Type": "ArrayProperty",
-                "Size": 134,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "Keys",
-                  "Type": "StructProperty",
-                  "Size": 81,
-                  "StructName": "RichCurveKey"
+                "Type": "StructProperty",
+                "Size": 81,
+                "StructName": "RichCurveKey"
+              },
+              "Value": [
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0,
+                  "Value": 0.0005,
+                  "ArriveTangent": 0,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0,
+                  "LeaveTangentWeight": 0
                 },
-                "Value": [
-                  {
-                    "InterpMode": "RCIM_Cubic",
-                    "TangentMode": "RCTM_Auto",
-                    "TangentWeightMode": "RCTWM_WeightedNone",
-                    "Time": 0,
-                    "Value": 0.0005,
-                    "ArriveTangent": 0,
-                    "ArriveTangentWeight": 0,
-                    "LeaveTangent": 0,
-                    "LeaveTangentWeight": 0
-                  },
-                  {
-                    "InterpMode": "RCIM_Cubic",
-                    "TangentMode": "RCTM_Auto",
-                    "TangentWeightMode": "RCTWM_WeightedNone",
-                    "Time": 0.25,
-                    "Value": 0.08,
-                    "ArriveTangent": 0.1995,
-                    "ArriveTangentWeight": 0,
-                    "LeaveTangent": 0.1995,
-                    "LeaveTangentWeight": 0
-                  },
-                  {
-                    "InterpMode": "RCIM_Linear",
-                    "TangentMode": "RCTM_Auto",
-                    "TangentWeightMode": "RCTWM_WeightedNone",
-                    "Time": 1,
-                    "Value": 0.2,
-                    "ArriveTangent": 0,
-                    "ArriveTangentWeight": 0,
-                    "LeaveTangent": 0,
-                    "LeaveTangentWeight": 0
-                  }
-                ]
-              }
+                {
+                  "InterpMode": "RCIM_Cubic",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 0.25,
+                  "Value": 0.08,
+                  "ArriveTangent": 0.1995,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0.1995,
+                  "LeaveTangentWeight": 0
+                },
+                {
+                  "InterpMode": "RCIM_Linear",
+                  "TangentMode": "RCTM_Auto",
+                  "TangentWeightMode": "RCTWM_WeightedNone",
+                  "Time": 1,
+                  "Value": 0.2,
+                  "ArriveTangent": 0,
+                  "ArriveTangentWeight": 0,
+                  "LeaveTangent": 0,
+                  "LeaveTangentWeight": 0
+                }
+              ]
             }
           },
           "obj 'AssetImportData'": 1

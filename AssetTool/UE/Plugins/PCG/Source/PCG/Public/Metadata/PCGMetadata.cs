@@ -31,7 +31,7 @@ namespace AssetTool
 
         public class ValidMetadataDomain : ITransferable<bool>
         {
-            public FBool bIsValid;
+            public bool bIsValid;
             public FPCGMetadataDomain NewMetadataDomain;
 
             public ITransferable Move(Transfer transfer, bool isDefault)

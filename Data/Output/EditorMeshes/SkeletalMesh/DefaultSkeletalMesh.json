@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "45, 12f88b9f-8875-4afc-a67c-d90c383abd29",
@@ -46,6 +47,8 @@
       "SoftPackageReferencesOffset": 4626,
       "SearchableNamesOffset": 4626,
       "ThumbnailTableOffset": 7807,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "c2c6ee8a-4ab5-f10f-907e-38aab861cf85",
       "PersistentGuid": "4e4e9d23-40a9-f8d7-4a3b-538566618ef0",
       "OwnerPersistentGuid": "",
@@ -89,8 +92,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -308,7 +310,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -377,70 +389,52 @@
             },
             "Value": [
               {
-                "ScreenSize": {
-                  "Name": "ScreenSize",
-                  "Type": "StructProperty",
-                  "Size": 12,
-                  "StructName": "PerPlatformFloat",
-                  "Value": {
-                    "bCooked": false,
-                    "Value": 1,
-                    "PerPlatform": {}
-                  }
+                "struct PerPlatformFloat 12 'ScreenSize'": {
+                  "bCooked": false,
+                  "Value": 1,
+                  "PerPlatform": {}
                 },
                 "float 'LODHysteresis'": 0.02,
                 "int[] 'LODMaterialMap'": "",
-                "BuildSettings": {
-                  "Name": "BuildSettings",
-                  "Type": "StructProperty",
-                  "Size": 332,
-                  "StructName": "SkeletalMeshBuildSettings",
-                  "Value": {
-                    "bool 'bRecomputeNormals'": true,
-                    "bool 'bRecomputeTangents'": true,
-                    "bool 'bUseMikkTSpace'": true,
-                    "bool 'bComputeWeightedNormals'": false,
-                    "bool 'bRemoveDegenerates'": true,
-                    "bool 'bUseHighPrecisionTangentBasis'": false,
-                    "bool 'bUseFullPrecisionUVs'": false,
-                    "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
-                    "float 'ThresholdPosition'": 2E-05,
-                    "float 'ThresholdTangentNormal'": 2E-05,
-                    "float 'ThresholdUV'": 0.0009765625,
-                    "float 'MorphThresholdPosition'": 0.015
-                  }
+                "struct SkeletalMeshBuildSettings 332 'BuildSettings'": {
+                  "bool 'bRecomputeNormals'": true,
+                  "bool 'bRecomputeTangents'": true,
+                  "bool 'bUseMikkTSpace'": true,
+                  "bool 'bComputeWeightedNormals'": false,
+                  "bool 'bRemoveDegenerates'": true,
+                  "bool 'bUseHighPrecisionTangentBasis'": false,
+                  "bool 'bUseFullPrecisionUVs'": false,
+                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                  "float 'ThresholdPosition'": 2E-05,
+                  "float 'ThresholdTangentNormal'": 2E-05,
+                  "float 'ThresholdUV'": 0.0009765625,
+                  "float 'MorphThresholdPosition'": 0.015
                 },
-                "ReductionSettings": {
-                  "Name": "ReductionSettings",
-                  "Type": "StructProperty",
-                  "Size": 758,
-                  "StructName": "SkeletalMeshOptimizationSettings",
-                  "Value": {
-                    "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 83,
-                    "float 'NumOfTrianglesPercentage'": 1,
-                    "float 'NumOfVertPercentage'": 0.5,
-                    "uint 'MaxNumOfTriangles'": 4,
-                    "uint 'MaxNumOfVerts'": 6,
-                    "uint 'MaxNumOfTrianglesPercentage'": 4294967295,
-                    "uint 'MaxNumOfVertsPercentage'": 4294967295,
-                    "float 'MaxDeviationPercentage'": 0,
-                    "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 82,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 81,
-                    "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 81,
-                    "bool 'bRemapMorphTargets'": false,
-                    "bool 'bRecalcNormals'": true,
-                    "float 'WeldingThreshold'": 0.1,
-                    "float 'NormalsThreshold'": 60,
-                    "int 'MaxBonesPerVertex'": 4,
-                    "bool 'bEnforceBoneBoundaries'": false,
-                    "bool 'bMergeCoincidentVertBones'": true,
-                    "float 'VolumeImportance'": 1,
-                    "bool 'bLockEdges'": false,
-                    "bool 'bLockColorBounaries'": false,
-                    "int 'BaseLOD'": 0
-                  }
+                "struct SkeletalMeshOptimizationSettings 758 'ReductionSettings'": {
+                  "byte64 (SkeletalMeshTerminationCriterion) 'TerminationCriterion'": 83,
+                  "float 'NumOfTrianglesPercentage'": 1,
+                  "float 'NumOfVertPercentage'": 0.5,
+                  "uint 'MaxNumOfTriangles'": 4,
+                  "uint 'MaxNumOfVerts'": 6,
+                  "uint 'MaxNumOfTrianglesPercentage'": 4294967295,
+                  "uint 'MaxNumOfVertsPercentage'": 4294967295,
+                  "float 'MaxDeviationPercentage'": 0,
+                  "byte64 (SkeletalMeshOptimizationType) 'ReductionMethod'": 82,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'SilhouetteImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'TextureImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'ShadingImportance'": 81,
+                  "byte64 (SkeletalMeshOptimizationImportance) 'SkinningImportance'": 81,
+                  "bool 'bRemapMorphTargets'": false,
+                  "bool 'bRecalcNormals'": true,
+                  "float 'WeldingThreshold'": 0.1,
+                  "float 'NormalsThreshold'": 60,
+                  "int 'MaxBonesPerVertex'": 4,
+                  "bool 'bEnforceBoneBoundaries'": false,
+                  "bool 'bMergeCoincidentVertBones'": true,
+                  "float 'VolumeImportance'": 1,
+                  "bool 'bLockEdges'": false,
+                  "bool 'bLockColorBounaries'": false,
+                  "int 'BaseLOD'": 0
                 },
                 "BonesToRemove": {
                   "Name": "BonesToRemove",
@@ -516,40 +510,28 @@
               }
             ]
           },
-          "SamplingInfo": {
-            "Name": "SamplingInfo",
-            "Type": "StructProperty",
-            "Size": 163,
-            "StructName": "SkeletalMeshSamplingInfo",
-            "Value": {
-              "BuiltData": {
-                "Name": "BuiltData",
-                "Type": "StructProperty",
-                "Size": 106,
-                "StructName": "SkeletalMeshSamplingBuiltData",
-                "Value": {
-                  "WholeMeshBuiltData": {
-                    "Name": "WholeMeshBuiltData",
-                    "Type": "ArrayProperty",
-                    "Size": 65,
-                    "InnerType": "StructProperty",
-                    "MaybeInnerTag": {
-                      "Name": "WholeMeshBuiltData",
-                      "Type": "StructProperty",
-                      "Size": 12,
-                      "StructName": "SkeletalMeshSamplingLODBuiltData"
-                    },
-                    "Value": [
-                      {
-                        "AreaWeightedSampler": {
-                          "Prob": "",
-                          "Alias": "",
-                          "TotalWeight": 0
-                        }
-                      }
-                    ]
+          "struct SkeletalMeshSamplingInfo 163 'SamplingInfo'": {
+            "struct SkeletalMeshSamplingBuiltData 106 'BuiltData'": {
+              "WholeMeshBuiltData": {
+                "Name": "WholeMeshBuiltData",
+                "Type": "ArrayProperty",
+                "Size": 65,
+                "InnerType": "StructProperty",
+                "MaybeInnerTag": {
+                  "Name": "WholeMeshBuiltData",
+                  "Type": "StructProperty",
+                  "Size": 12,
+                  "StructName": "SkeletalMeshSamplingLODBuiltData"
+                },
+                "Value": [
+                  {
+                    "AreaWeightedSampler": {
+                      "Prob": "",
+                      "Alias": "",
+                      "TotalWeight": 0
+                    }
                   }
-                }
+                ]
               }
             }
           }
@@ -559,8 +541,8 @@
           "ClassStripFlags": 0
         },
         "LocalImportedBounds": {
-          "Origin": "7.62939453125E-06 -96 14.39999771118164",
-          "BoxExtent": "64.00001525878906 192 49.599998474121094",
+          "Origin": "7.62939453125E-06 -96 14.399997711181641",
+          "BoxExtent": "64.000015258789062 192 49.599998474121094",
           "SphereRadius": 208.3750457763672
         },
         "bCooked": false,
@@ -588,8 +570,8 @@
             "(joint1) (-1) (joint1) ()"
           ],
           "RawRefBonePose": [
-            "(Translation) (Rotation) (Scale3D)",
-            "(0 -96 0) (0 -0 0 -0.9999998807907104) (1 1 1)"
+            "Translation ; Rotation ; Scale3D = X Y Z ; X Y Z W ; X Y Z",
+            "0 -96 0 ; 0 -0 0 -0.9999998807907104 ; 1 1 1"
           ],
           "RawNameToIndexMap": {
             "joint1": 0

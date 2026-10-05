@@ -9,6 +9,7 @@
         "FileVersionUE5": "ASSETREGISTRY_PACKAGEBUILDDEPENDENCIES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "4, 375ec13c-06e4-48fb-b500-84f0262a717e",
@@ -40,6 +41,8 @@
       "SoftPackageReferencesOffset": 2989,
       "SearchableNamesOffset": 2989,
       "ThumbnailTableOffset": 3017,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "095dff0e-4195-0f22-707f-608d031d5623",
       "PersistentGuid": "423ca036-402d-9928-5be3-56988abd7c3d",
       "OwnerPersistentGuid": "",
@@ -83,8 +86,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(18936 15917) /Script/CoreUObject",
@@ -290,6 +292,20 @@
           }
         ]
       }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {
+      "StructProperty MemberReference": {
+        "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      }
     }
   },
   "Objects": [
@@ -317,8 +333,7 @@
             "Value": [
               "None"
             ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | NameProperty 0"
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -339,7 +354,6 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-4] Interface",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -348,21 +362,17 @@
         "ChildArray": [
           "ExportIndex[5] ImportIndex[-3]: Function"
         ],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FuncMap": {
           "Attack": 5
         },
         "ClassFlags": 278528,
         "ClassWithin": 4294967290,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 3,
-        "Next": 0
+        "PerspectiveNewCDO": 3
       }
     },
     {
@@ -375,18 +385,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {},
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     },
     {
@@ -416,19 +417,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 3,
           "SerializedScriptSize": 3,
           "ScriptData": "BAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201457664,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -442,17 +441,8 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "int 'ExtraFlags'": 201457664,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 41,
-            "StructName": "MemberReference",
-            "BoolVal": 0,
-            "Value": {
-              "name 'MemberName'": "Attack"
-            },
-            "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+          "struct MemberReference 41 'FunctionReference'": {
+            "name 'MemberName'": "Attack"
           },
           "bool 'bIsEditable'": true,
           "guid 'NodeGuid' /Script/CoreUObject": "27f60e6d-41e9-9509-aafa-e9af4e08650b"

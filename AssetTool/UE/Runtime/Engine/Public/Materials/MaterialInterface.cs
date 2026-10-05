@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("MaterialInterfaceEditorOnlyData")]
     public class UMaterialInterfaceEditorOnlyData : UObject
     {
-        public FBool bSavedCachedExpressionData;
+        public bool bSavedCachedExpressionData;
         public UScriptStruct Struct;
 
         [Location("void UMaterialInterfaceEditorOnlyData::Serialize(FArchive& Ar)")]
@@ -11,7 +11,7 @@ namespace AssetTool
         {
             base.Move(transfer);
             transfer.Move(ref bSavedCachedExpressionData);
-            if (bSavedCachedExpressionData.Value)
+            if (bSavedCachedExpressionData)
             {
                 Struct ??= new();
                 Struct.SerializeTaggedProperties(transfer);
@@ -23,7 +23,7 @@ namespace AssetTool
     [JsonAsset("MaterialInterface")]
     public class UMaterialInterface : UObject
     {
-        public FBool bSavedCachedExpressionData;
+        public bool bSavedCachedExpressionData;
         public UScriptStruct Struct;
 
         public UMaterialInterface()

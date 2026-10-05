@@ -1,0 +1,153 @@
+﻿using System.Diagnostics;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+
+namespace AssetTool
+{
+    #region FName
+    [DebuggerDisplay("{Value}")]
+    public class FName : ITransferable
+    {
+        public const string SEPARATOR = "\"";
+        public const string DOUBLE_SEPARATOR = "\"\"";
+        public const int SIZE = 8;
+        [JsonIgnore] public bool IncompleteDeserialization;
+
+        public FName() { }
+
+        public FName(string name)
+        {
+            IncompleteDeserialization = true;
+            Value = name;
+        }
+
+        public FName(string name, Transfer transfer)
+        {
+            (uint index, uint number) = FName.GetIndexAndNumber(name, transfer);
+            ComparisonIndex.Value = index;
+            Number = number;
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
+        }
+
+        public FName(uint index, uint number, Transfer transfer)
+        {
+            ComparisonIndex.Value = index;
+            Number = number;
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
+        }
+
+        public FNameEntryId ComparisonIndex = new();
+        public UInt32 Number;
+
+        [JsonIgnore] public string Value { get; set; }
+
+        [JsonIgnore] public string ValidValue => Value != "None" ? Value : null;
+
+        public string DisplayValue => (Number == 0 && ComparisonIndex.Value == 0) ? "None" : Number == 0 ? Value : $"{Value}{SEPARATOR}{Number - 1}";
+
+        public override string ToString()
+        {
+            if (Value == default || (Value == "None" && ComparisonIndex.Value == 0))
+                return "None";
+            else if (Number == 0)
+                return Value;
+            else
+                return $"{Value}{SEPARATOR}{Math.Max(0, Number - 1)}";
+        }
+
+        public ITransferable Move(Transfer transfer)
+        {
+            if (IncompleteDeserialization)
+            {
+                IncompleteDeserialization = false;
+                (ComparisonIndex.Value, Number) = FName.GetIndexAndNumber(Value, transfer);
+            }
+
+            transfer.Move(ref ComparisonIndex);
+
+            if (!transfer.GlobalNames.IsValid(ComparisonIndex))
+                throw new InvalidOperationException($"Invalid name index {ComparisonIndex.Value}");
+
+            transfer.Move(ref Number);
+
+            Value = transfer.GlobalNames.Get(ComparisonIndex);
+
+            transfer.UpdateNameToIndexMap(this);
+
+            return this;
+        }
+
+        public static (uint, uint) GetIndexAndNumber(string name, Transfer transfer)
+        {
+            if (name.Contains(FName.SEPARATOR))
+            {
+                string[] parts = name.Split(FName.SEPARATOR);
+                return (transfer.GlobalNames.NameToIndex[parts[0]], 1 + uint.Parse(parts[1]));
+            }
+            else
+            {
+                return (transfer.GlobalNames.NameToIndex[name], 0);
+            }
+        }
+
+        public bool IsNone(Transfer transfer)
+        {
+            if (IncompleteDeserialization)
+            {
+                IncompleteDeserialization = false;
+                (ComparisonIndex.Value, Number) = FName.GetIndexAndNumber(Value, transfer);
+            }
+            return ComparisonIndex.Value == transfer.GlobalNames.None.ComparisonIndex.Value && Number == 0;
+        }
+    }
+
+    public class FNameJsonConverter : JsonConverter<FName>
+    {
+        public override FName Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FName { IncompleteDeserialization = true, Value = reader.GetString() };
+        }
+        public override FName ReadAsPropertyName(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return Read(ref reader, typeToConvert, options);
+        }
+        public override void Write(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
+        {
+            string text = value.ToString();
+            writer.WriteStringValue(text);
+        }
+        public override void WriteAsPropertyName(Utf8JsonWriter writer, FName value, JsonSerializerOptions options)
+        {
+            string text = value.ToString();
+            writer.WritePropertyName(text);
+        }
+    }
+    #endregion
+
+    #region FNameEntryId
+    [DebuggerDisplay("{Value}")]
+    public class FNameEntryId : ITransferable
+    {
+        public UInt32 Value;
+
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref Value);
+            return this;
+        }
+    }
+
+    public class FNameEntryIdJsonConverter : JsonConverter<FNameEntryId>
+    {
+        public override FNameEntryId Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+        {
+            return new FNameEntryId { Value = reader.GetUInt32() };
+        }
+
+        public override void Write(Utf8JsonWriter writer, FNameEntryId value, JsonSerializerOptions options)
+        {
+            writer.WriteNumberValue(value.Value);
+        }
+    }
+    #endregion
+}

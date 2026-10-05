@@ -6,9 +6,10 @@
       "LegacyUE3Version": 864,
       "FileVersionUE": {
         "FileVersionUE4": "VER_UE4_FIX_WIDE_STRING_CRC",
-        "FileVersionUE5": 0
+        "FileVersionUE5": "UNKNOWN"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "30, e4b068ed-f494-42e9-a231-da0b2e46bb41",
@@ -38,6 +39,8 @@
       "SoftPackageReferencesOffset": 5518,
       "SearchableNamesOffset": 5526,
       "ThumbnailTableOffset": 5542,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "0d94fa60-4928-b24e-6200-3083ba722e3c",
       "PersistentGuid": "",
       "OwnerPersistentGuid": "",
@@ -81,8 +84,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(26628 52933) /Game/StarterContent/Audio/Fire_Sparks01_Cue",
@@ -332,7 +334,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -348,8 +360,7 @@
         "ArrayDim": 1,
         "SaveFlags": 17180393476,
         "RepNotifyFunc": "None",
-        "BlueprintReplicationCondition": 0,
-        "Next": 0
+        "BlueprintReplicationCondition": 0
       },
       "Pad": "ImportIndex[-12] ParticleSystemComponent"
     },
@@ -367,7 +378,6 @@
           "obj 'SimpleConstructionScript'": 17
         },
         "AccessTrackedObjectPtr": "ImportIndex[-7] Actor",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -381,14 +391,10 @@
         "ClassFlags": 8652816,
         "ClassWithin": 4294967291,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 5,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 3,
-        "Next": 0
+        "PerspectiveNewCDO": 3
       }
     },
     {
@@ -402,16 +408,7 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "string 'ActorLabel'": "Blueprint_Effect_Sparks-1"
-        },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
-        "Next": 0
+        }
       }
     },
     {
@@ -470,41 +467,29 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 35,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                    "SubPathString": "UserConstructionScript",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
@@ -563,15 +548,9 @@
         "__type": "UK2Node_EditablePinBase",
         "Members": {
           "bool 'bEnforceConstCorrectness'": false,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -7,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -7,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "ffbe30ba-40b3-c0c8-bf3a-69adafc866ad"
         },
@@ -635,8 +614,7 @@
         "ArrayDim": 1,
         "SaveFlags": 17180393476,
         "RepNotifyFunc": "None",
-        "BlueprintReplicationCondition": 0,
-        "Next": 0
+        "BlueprintReplicationCondition": 0
       },
       "Pad": "ImportIndex[-8] AudioComponent"
     },
@@ -651,14 +629,8 @@
         "__type": "USceneComponent",
         "Members": {
           "obj 'Template'": -23,
-          "PrimaryComponentTick": {
-            "Name": "PrimaryComponentTick",
-            "Type": "StructProperty",
-            "Size": 34,
-            "StructName": "ActorComponentTickFunction",
-            "Value": {
-              "bool 'bStartWithTickEnabled'": false
-            }
+          "struct ActorComponentTickFunction 34 'PrimaryComponentTick'": {
+            "bool 'bStartWithTickEnabled'": false
           }
         },
         "bIsCooked": false

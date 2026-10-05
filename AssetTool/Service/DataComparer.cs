@@ -99,9 +99,9 @@ namespace AssetTool
             File.WriteAllBytes($"C:/Temp/AssetObject-{obj2.Index}-{obj2.ClassName}-After.dat", bytes2);
         }
 
-        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable//, new()
+        public static bool AutoCheck<T>(this T self, Transfer transfer, string name, Stream source, long[] offsets) where T : ITransferable
         {
-            if (transfer.IsWriting || !AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
+            if (transfer.IsWriting || !transfer.AppConfig.DebugCheckMember || (offsets[1] - offsets[0]) == 0) return true;
 
             string msg = string.Empty;
             long currentPosition = source.Position;
@@ -110,7 +110,7 @@ namespace AssetTool
             reader.BaseStream.Position = offsets[0];
             reader.Read(sourceBytes);
 
-            if (AppConfig.AutoCheckBinaryWriter)
+            if (transfer.AppConfig.AutoCheckBinaryWriter)
             {
                 Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 1;
                 using MemoryStream dest = new();
@@ -132,15 +132,32 @@ namespace AssetTool
 
             T copy = JsonSerializerExt.ToStreamThenToObject(self);
 
+            if (self is FPropertyTagValue before && copy is FPropertyTagValue after)
+            {
+                after.obj = before.obj;
+            }
+
             Log.WriteFileNumber = Log.WriteFileNumber == 0 ? 0 : 2;
             using MemoryStream dest2 = new();
             using BinaryWriter writer2 = new BinaryWriter(dest2);
             using TransferWriter transferWriter2 = new TransferWriter(writer2, transfer, true, true);
 
+            long offset = 0;
+            if (transfer.GlobalObjects.CurrentObject is { })
+            {
+                offset = transfer.GlobalObjects.CurrentObject.Offset;
+                transfer.GlobalObjects.CurrentObject.Offset = 0;
+            }
+
             if (copy is ITransferableAutoCheck copy2)
                 copy2.MoveAutoCheck(transferWriter2);
             else
                 copy.Move(transferWriter2);
+
+            if (transfer.GlobalObjects.CurrentObject is { })
+            {
+                transfer.GlobalObjects.CurrentObject.Offset = offset;
+            }
 
             byte[] destBytes2 = new byte[offsets[1] - offsets[0]];
             dest2.Position = 0;

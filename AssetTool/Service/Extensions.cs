@@ -22,6 +22,46 @@ namespace AssetTool
         }
 
         #region String to Array Conversions
+
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => bool.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Values separated by spaces</param>
+        /// <returns></returns>
+        public static bool[] ToBoolArray(this string input)
+        {
+            if (input.Length == 0) return [];
+            ReadOnlySpan<char> span = input.AsSpan();
+            int count = 1;
+            for (int i = 0; i < span.Length; i++)
+                if (span[i] == ' ') count++;
+
+            bool[] values = new bool[count];
+            int index = 0;
+            while (!span.IsEmpty)
+            {
+                int spaceIndex = span.IndexOf(' ');
+                ReadOnlySpan<char> part;
+                if (spaceIndex == -1)
+                {
+                    part = span;
+                    span = ReadOnlySpan<char>.Empty;
+                }
+                else
+                {
+                    part = span.Slice(0, spaceIndex);
+                    span = span.Slice(spaceIndex + 1);
+                }
+                values[index++] = bool.Parse(part);
+            }
+            return values;
+        }
+
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => byte.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static byte[] ToByteArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -51,6 +91,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => sbyte.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static sbyte[] ToSByteArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -80,6 +125,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => short.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int16[] ToInt16Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -109,6 +159,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => ushort.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt16[] ToUInt16Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -138,6 +193,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => int.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int32[] ToInt32Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -167,6 +227,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => uint.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt32[] ToUInt32Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -196,6 +261,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => long.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static Int64[] ToInt64Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -225,6 +295,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => ulong.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static UInt64[] ToUInt64Array(this string input)
         {
             if (input.Length == 0) return [];
@@ -254,6 +329,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => float.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static float[] ToFloatArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -283,6 +363,11 @@ namespace AssetTool
             return numbers;
         }
 
+        /// <summary>
+        /// Performs the faster version of input.Split(' ').Select(s => double.Parse(s)).ToArray()
+        /// </summary>
+        /// <param name="input">Numbers separated by spaces</param>
+        /// <returns></returns>
         public static double[] ToDoubleArray(this string input)
         {
             if (input.Length == 0) return [];
@@ -313,7 +398,17 @@ namespace AssetTool
         }
         #endregion
 
-        #region NaN Numbers
+        #region Float Numbers
+        public static bool IsZero(this float self)
+        {
+            var v = BitConverter.GetBytes(self);
+            return v[0] == 0 && v[1] == 0 && v[2] == 0 && v[3] == 0;
+        }
+        public static bool IsNonZero(this float self)
+        {
+            return !self.IsZero();
+        }
+
         public static string ToStr(this float self)
         {
             if (!float.IsNaN(self))
@@ -448,6 +543,7 @@ namespace AssetTool
         }
         #endregion
 
+        #region String Multi Fields
         public static void AppendNonNull(this StringBuilder self, string format, object arg1)
         {
             if (arg1 is { })
@@ -488,5 +584,6 @@ namespace AssetTool
             }
             return func(Text.ToString());
         }
+        #endregion
     }
 }

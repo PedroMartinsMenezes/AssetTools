@@ -4,7 +4,7 @@ namespace AssetTool
     public class UStaticMesh : UStreamableRenderAsset
     {
         public FStripDataFlags StripFlags;
-        public FBool bCooked;
+        public bool bCooked;
         public UInt32 LocalBodySetup;
         public UInt32 LocalNavCollision;
         public FRotator DummyThumbnailAngle;
@@ -13,7 +13,7 @@ namespace AssetTool
         public UInt32 Deprecated_HighResSourceMeshCRC;
         public FGuid LocalLightingGuid;
         public UInt32[] Sockets;
-        public FBool bHasSpeedTreeWind;
+        public bool bHasSpeedTreeWind;
         public FSpeedTreeWind SpeedTreeWind;
         public FMeshSectionInfoMap SectionInfoMap;
         public List<FStaticMaterial> StaticMaterials;
@@ -71,7 +71,7 @@ namespace AssetTool
             if (transfer.Supports.VER_UE4_SPEEDTREE_STATICMESH)
             {
                 transfer.Move(ref bHasSpeedTreeWind);
-                if (bHasSpeedTreeWind.Value)
+                if (bHasSpeedTreeWind)
                 {
                     transfer.Move(ref SpeedTreeWind);
                 }

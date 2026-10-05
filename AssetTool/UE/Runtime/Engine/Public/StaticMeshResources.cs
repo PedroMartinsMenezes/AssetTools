@@ -4,7 +4,7 @@ namespace AssetTool
 {
     public class FStaticMeshInstanceData : ITransferable
     {
-        public FBool bUseHalfFloat;
+        public bool bUseHalfFloat;
         public Int32 NumInstances;
         public Int32 NumCustomDataFloats;
         public TStaticMeshVertexData<FVector4f> InstanceOriginData;
@@ -47,7 +47,7 @@ namespace AssetTool
     {
         const int MAX_STATIC_TEXCOORDS = 8;
         const int MAX_STATIC_MESH_LODS = 8;
-        public FBool bCooked;
+        public bool bCooked;
         public Int32[] MaterialIndexToImportIndex;
         public UInt64 EstimatedNaniteTotalCompressedSize;
         public UInt64 EstimatedNaniteStreamingCompressedSize;
@@ -60,12 +60,12 @@ namespace AssetTool
 
         [Description("using FStaticMeshLODResourcesArray = TIndirectArray<FStaticMeshLODResources>;")]
         public UInt32[] LODResourcesPointers;
-        public List<FBool> IsValidCardRepresentationData;
-        public List<FBool> IsValidDistanceFieldData;
+        public List<TBool> IsValidCardRepresentationData;
+        public List<TBool> IsValidDistanceFieldData;
         public List<FStaticMeshLODResources> LODResources;
 
         public FBoxSphereBounds Bounds;
-        public FBool bLODsShareStaticLighting;
+        public bool bLODsShareStaticLighting;
 
         public float[] DummyFactor;
         public float[] ScreenSize;
@@ -91,7 +91,7 @@ namespace AssetTool
                     for (int ResourceIndex = 0; ResourceIndex < LODResources.Count; ResourceIndex++)
                     {
                         IsValidDistanceFieldData[ResourceIndex].Move(transfer);
-                        if (IsValidDistanceFieldData[ResourceIndex])
+                        if (IsValidDistanceFieldData[ResourceIndex].Value)
                         {
                             LODResources[ResourceIndex].MoveDistanceFieldData(transfer);
                         }
@@ -131,7 +131,7 @@ namespace AssetTool
                 for (int ResourceIndex = 0; ResourceIndex < LODResourcesPointers.Length; ResourceIndex++)
                 {
                     IsValidCardRepresentationData[ResourceIndex].Move(transfer);
-                    if (IsValidCardRepresentationData[ResourceIndex])
+                    if (IsValidCardRepresentationData[ResourceIndex].Value)
                     {
                         LODResources[ResourceIndex].MoveCardRepresentationData(transfer);
                     }

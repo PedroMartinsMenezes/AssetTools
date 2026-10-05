@@ -3,7 +3,7 @@ namespace AssetTool
     public class FStaticMeshSourceModel : ITransferable
     {
         public FRawMeshBulkData RawMeshBulkData;
-        public FBool bIsValid;
+        public bool bIsValid;
         public UMeshDescriptionBaseBulkData StaticMeshDescriptionBulkData;
 
         [Location("void FStaticMeshSourceModel::SerializeBulkData(FArchive& Ar, UObject* Owner)")]

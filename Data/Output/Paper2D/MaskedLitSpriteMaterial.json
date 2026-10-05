@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "45, 12f88b9f-8875-4afc-a67c-d90c383abd29",
@@ -39,6 +40,8 @@
       "SoftPackageReferencesOffset": 2606,
       "SearchableNamesOffset": 2606,
       "ThumbnailTableOffset": 9801,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "f01ec6b9-44a5-d4b5-a36b-c7b87234444d",
       "PersistentGuid": "e690cb37-4ac5-b62c-0797-288a4f7275a1",
       "OwnerPersistentGuid": "",
@@ -82,8 +85,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -235,7 +237,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -262,70 +274,52 @@
             },
             "Value": [
               {
-                "AtlasData": {
-                  "Name": "AtlasData",
-                  "Type": "StructProperty",
-                  "Size": 108,
-                  "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": {
-                    "bool 'bIsUsedAsAtlasPosition'": false,
-                    "Curve": {
-                      "Name": "Curve",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
-                    },
-                    "Atlas": {
-                      "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
                     }
                   }
                 },
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "RefractionDepthBias",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 18,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 18,
+                  "int 'Index'": -1
                 },
                 "float 'ParameterValue'": 0,
                 "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
               }
             ]
           },
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 130,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "bool 'bOverride_BlendMode'": true,
-              "bool 'TwoSided'": true,
-              "byte64 (EBlendMode) 'BlendMode'": 6,
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 130 'BasePropertyOverrides'": {
+            "bool 'bOverride_BlendMode'": true,
+            "bool 'TwoSided'": true,
+            "byte64 (EBlendMode) 'BlendMode'": 6,
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "ReferencedTextureGuids": {
             "Name": "ReferencedTextureGuids",

@@ -5,9 +5,9 @@ namespace AssetTool
     {
         public List<FName> Names;
         public Int32 NumLoadedResources;
-        public FBool bLocalSavedCachedExpressionData_DEPRECATED;
+        public bool bLocalSavedCachedExpressionData_DEPRECATED;
         public UScriptStruct Struct2;
-        public FBool bForceNaniteUsage;
+        public bool bForceNaniteUsage;
         public FMaterialResource LegacyResource;
 
         public UMaterial()

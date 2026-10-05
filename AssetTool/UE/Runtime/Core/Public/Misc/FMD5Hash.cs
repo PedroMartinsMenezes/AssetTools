@@ -2,7 +2,7 @@
 {
     public class FMD5Hash : ITransferable
     {
-        public FBool bIsValid;
+        public bool bIsValid;
         public byte[] Bytes = new byte[16];
 
         public ITransferable Move(Transfer transfer)

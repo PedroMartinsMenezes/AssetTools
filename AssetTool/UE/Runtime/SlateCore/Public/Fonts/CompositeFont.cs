@@ -3,7 +3,7 @@
     [TransferableStruct("FontData")]
     public class FFontData : ITransferable
     {
-        public FBool bIsCooked;
+        public bool bIsCooked;
         public UInt32 FontFaceAsset;
         public FString FontFilename;
         public EFontHinting Hinting;

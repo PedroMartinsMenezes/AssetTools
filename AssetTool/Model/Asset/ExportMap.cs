@@ -7,6 +7,7 @@ namespace AssetTool
     {
         public int ExportCount;
         public List<FObjectExport> ObjectExports;
+        public ExportMapPreloadDependencies PreloadDependencies;
 
         public FObjectExport this[int index]
         {
@@ -29,6 +30,25 @@ namespace AssetTool
         {
             transfer.Move(ref ObjectExports, ExportCount);
             ObjectExports.ForEach(x => x.UpdateIndexes(transfer));
+            return this;
+        }
+    }
+
+    public class ExportMapPreloadDependencies : ITransferable
+    {
+        public List<FObjectExport> ObjectExports;
+
+        public ExportMapPreloadDependencies(List<FObjectExport> objectExports)
+        {
+            ObjectExports = objectExports;
+        }
+
+        public ITransferable Move(Transfer transfer)
+        {
+            if (transfer.Supports.VER_UE4_PRELOAD_DEPENDENCIES_IN_COOKED_EXPORTS)
+            {
+                ObjectExports.ForEach(x => x.PreloadDependencies.Move(transfer));
+            }
             return this;
         }
     }

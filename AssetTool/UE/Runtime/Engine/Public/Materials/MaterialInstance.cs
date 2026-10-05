@@ -3,12 +3,12 @@ namespace AssetTool
     [JsonAsset("MaterialInstance")]
     public class UMaterialInstance : UMaterialInterface
     {
-        public FBool bSavedCachedData;
+        public bool bSavedCachedData;
         public UScriptStruct Struct2;
         public bool bHasStaticPermutationResource;
         public FStaticParameterSet StaticParameters_DEPRECATED;
-        public FBool bOverrideBaseProperties_DEPRECATED;
-        public FBool bHasPropertyOverrides;
+        public bool bOverrideBaseProperties_DEPRECATED;
+        public bool bHasPropertyOverrides;
         public FMaterialInstanceBasePropertyOverrides BasePropertyOverrides;
         public List<FMaterialResource> LoadedResources;
         public FMaterialResource LegacyResource;

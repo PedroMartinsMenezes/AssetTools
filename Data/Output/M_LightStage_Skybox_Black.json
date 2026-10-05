@@ -9,6 +9,7 @@
         "FileVersionUE5": "TRACK_OBJECT_EXPORT_IS_INHERITED"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "45, 12f88b9f-8875-4afc-a67c-d90c383abd29",
@@ -39,6 +40,8 @@
       "SoftPackageReferencesOffset": 2143,
       "SearchableNamesOffset": 2143,
       "ThumbnailTableOffset": 4366,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "29493016-41cb-6f9e-cc92-789f712f5c1f",
       "PersistentGuid": "eb80ef48-48b7-05b3-5978-f88c92741e0c",
       "OwnerPersistentGuid": "",
@@ -82,8 +85,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(52688 39861) BasePropertyOverrides",
@@ -209,7 +211,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -223,15 +235,9 @@
         "__type": "UMaterialInstance",
         "Members": {
           "obj 'Parent'": -5,
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 78,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "byte64 (EMaterialShadingModel) 'ShadingModel'": 8,
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 78 'BasePropertyOverrides'": {
+            "byte64 (EMaterialShadingModel) 'ShadingModel'": 8,
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "obj 'EditorOnlyData'": 2,
           "obj 'ThumbnailInfo'": 4,

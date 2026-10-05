@@ -10,10 +10,22 @@ namespace AssetTool
         public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Members.TryGetValue("AssemblyMetadata", out object value) && value is FPropertyTag tag && tag.Value is List<object> list)
+
+            foreach (var pair in Members)
             {
-                AssemblyMetadataCount = list.Count;
+                if (pair.Key.Contains("'AssemblyMetadata'"))
+                {
+                    if (pair.Value is FPropertyTag tag && tag.Value is List<object> list1)
+                    {
+                        AssemblyMetadataCount = list1.Count;
+                    }
+                    else if (pair.Value is List<object> list2)
+                    {
+                        AssemblyMetadataCount = list2.Count;
+                    }
+                }
             }
+
             transfer.Move(ref AssemblyMetadata, AssemblyMetadataCount);
             return this;
         }

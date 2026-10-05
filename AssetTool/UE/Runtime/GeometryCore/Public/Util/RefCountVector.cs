@@ -5,8 +5,8 @@
         public TDynamicVector<TUInt16> RefCounts;
         public TDynamicVector<TInt32> FreeIndices;
         public int UsedCount;
-        public FBool bCompactData;
-        public FBool bUseCompression;
+        public bool bCompactData;
+        public bool bUseCompression;
 
         public ITransferable Move(Transfer transfer)
         {
@@ -26,7 +26,7 @@
                 transfer.Move(ref bCompactData);
                 transfer.Move(ref bUseCompression);
                 transfer.Move(ref UsedCount);
-                transfer.Move(ref RefCounts, true, bUseCompression.Value);
+                transfer.Move(ref RefCounts, true, bUseCompression);
             }
             return this;
         }

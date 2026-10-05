@@ -9,6 +9,7 @@
         public GlobalObjects GlobalObjects { get; set; } = new();
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
+        public AppConfig AppConfig { get; set; } = new();
         private bool _disposed;
 
         public void Initialize(Transfer other)
@@ -17,6 +18,7 @@
             GlobalObjects = other?.GlobalObjects ?? GlobalObjects;
             Supports = new Supports(other ?? this);
             SupportsAfter = new SupportsAfter(other ?? this);
+            AppConfig = other?.AppConfig ?? AppConfig;
         }
 
         public abstract bool IsReading { get; }
@@ -92,6 +94,7 @@
         public abstract void Move(ref Int16[] value, int count);
         public abstract void Move(ref UInt16[] value, int count);
         public abstract void Move(ref UInt32[] value, int count);
+        public abstract void Move(ref bool[] value, int count);
 
         public abstract void Move(ref byte[] value);
         public abstract void Move(ref UInt16[] value);
@@ -101,6 +104,7 @@
         public abstract void Move(ref UInt64[] value);
         public abstract void Move(ref float[] value);
         public abstract void Move(ref double[] value);
+        public abstract void Move(ref bool[] value);
 
         public abstract void Move<T>(ref T value, Action<T> action) where T : new();
 
@@ -111,6 +115,7 @@
 
         public abstract void MoveRaw<T>(ref T value) where T : ITransferableRaw, new();
         public abstract void MoveRaw<T>(ref T[] value) where T : ITransferableRaw, new();
+        public abstract void MoveRaw<T>(ref List<T> value) where T : ITransferableRaw, new();
 
         public abstract void Move<T>(ref List<T> value) where T : ITransferable, new();
         public abstract void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b) where T : ITransferable<T1, T2>, new();
@@ -131,8 +136,6 @@
 
         public abstract void MoveWhile<T>(ref List<T> value, Func<bool> condition, Action<T> action) where T : new();
 
-        public abstract void Move(ref FBool value);
-        public abstract void Move(ref FBool? value);
         public abstract FGuid Move(FGuid value);
         public abstract void Move(ref FGuid value);
         public abstract void Move(ref FGuid? value);

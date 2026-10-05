@@ -5,7 +5,7 @@ namespace AssetTool
         public FByteBulkData TempBulkData;
         public FEditorBulkData BulkData;
         public FGuid Guid;
-        public FBool bGuidIsHash;
+        public bool bGuidIsHash;
 
         [Location("void FMeshDescriptionBulkData::Serialize( FArchive& Ar, UObject* Owner )")]
         public ITransferable Move(Transfer transfer)

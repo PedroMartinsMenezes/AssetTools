@@ -34,5 +34,8 @@
         Guids,
         Enums,
         Optimized,
+
+        CustomVersion_Automatic_Plus_One,
+	    Latest = CustomVersion_Automatic_Plus_One - 1
     }
 }

@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("DialogueWave")]
     public class UDialogueWave : UObject
     {
-        public FBool bCooked;
+        public bool bCooked;
 
         [Location("void UDialogueWave::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

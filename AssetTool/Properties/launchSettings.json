@@ -3,7 +3,7 @@
     "AssetTool": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "C:\\UE\\StackOBot\\Content\\__ExternalActors__\\StackOBot\\Maps\\LVL_StackOBot\\8\\A0\\VELIWFMO0GMQ69Q7UJEXOI.uasset -log"
+      "commandLineArgs": "C:\\UEFiles\\UE56\\Engine\\Plugins\\VirtualProduction\\CinematicAssemblyTools\\Content\\Schemas\\UnrealShot.uasset -log -DebugSaveJson -DebugCheckMember -DebugIgnoreFooterWhenSavingJson"
     },
     "FailedAssets": {
       "commandName": "Project",
@@ -28,12 +28,12 @@
     "UassetToJson": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "uasset-to-json -i Data/Input/Blueprint_CeilingLight.uasset -o Data/Output/Blueprint_CeilingLight.uasset"
+      "commandLineArgs": "uasset-to-json -i C:\\UE\\AssetTools\\Data\\Input\\StackOBot\\Content\\DevCom\\BP_DevCom.uasset -o C:\\UE\\AssetTools\\Data\\Output\\StackOBot\\Content\\DevCom\\BP_DevCom.json"
     },
     "JsonToUasset": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "json-to-uasset -i C:\\UE\\AssetTools\\Data\\Input\\Manny\\ABP_Manny.json -o C:\\UE\\AssetTools\\Data\\Input\\Manny\\ABP_Manny.uasset"
+      "commandLineArgs": "json-to-uasset -i C:\\UE\\AssetTools\\Data\\Output\\StackOBot\\Content\\DevCom\\BP_DevCom.json -o C:\\UE\\AssetTools\\Data\\Input\\StackOBot\\Content\\DevCom\\BP_DevCom.uasset"
     },
     "Diff": {
       "commandName": "Project",
@@ -43,7 +43,7 @@
     "GetType": {
       "commandName": "Project",
       "workingDirectory": "$(ProjectDir)..",
-      "commandLineArgs": "get-type C:\\UE\\Cropout\\Content\\Blueprint\\Core\\Player\\BP_Player.uasset -log"
+      "commandLineArgs": "get-type C:\\UECooked\\StackOBot\\Content\\DevCom\\Assets\\Meshes\\SM_CommentBubble.uasset -log"
     }
   }
 }

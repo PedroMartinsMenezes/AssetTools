@@ -2,11 +2,11 @@ namespace AssetTool
 {
     public struct FLightmassPrimitiveSettings : ITransferable
     {
-        public FBool bUseTwoSidedLighting;
-        public FBool bShadowIndirectOnly;
+        public bool bUseTwoSidedLighting;
+        public bool bShadowIndirectOnly;
         public float FullyOccludedSamplesFraction;
-        public FBool bUseEmissiveForStaticLighting;
-        public FBool bUseVertexNormalForHemisphereGather;
+        public bool bUseEmissiveForStaticLighting;
+        public bool bUseVertexNormalForHemisphereGather;
         public float EmissiveLightFalloffExponent;
         public float EmissiveLightExplicitInfluenceRadius;
         public float EmissiveBoost;

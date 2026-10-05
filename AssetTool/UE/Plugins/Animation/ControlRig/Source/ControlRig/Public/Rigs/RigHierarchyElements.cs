@@ -134,7 +134,7 @@ namespace AssetTool
     public class FRigComputedTransform : ITransferable
     {
         public FTransform Transform;
-        public FBool bDirty;
+        public bool bDirty;
 
         [Location("void FRigComputedTransform::Save(FArchive& Ar, bool& bDirty)")]
         public ITransferable Move(Transfer transfer)
@@ -257,31 +257,31 @@ namespace AssetTool
         public FName ControlTypeName;
         public FName DisplayName;
         public FName PrimaryAxisName;
-        public FBool bIsCurve;
-        public FBool bAnimatableDeprecated;
-        public FBool bLimitTranslation_DEPRECATED;
-        public FBool bLimitRotation_DEPRECATED;
-        public FBool bLimitScale_DEPRECATED;
+        public bool bIsCurve;
+        public bool bAnimatableDeprecated;
+        public bool bLimitTranslation_DEPRECATED;
+        public bool bLimitRotation_DEPRECATED;
+        public bool bLimitScale_DEPRECATED;
         public List<FRigControlLimitEnabled> LimitEnabled;
-        public FBool bDrawLimits;
+        public bool bDrawLimits;
         public FRigControlValue MinimumValue;
         public FRigControlValue MaximumValue;
         public FTransform MinimumTransform;
         public FTransform MaximumTransform;
-        public FBool bShapeEnabledDeprecated;
-        public FBool bShapeVisible;
+        public bool bShapeEnabledDeprecated;
+        public bool bShapeVisible;
         public FName ShapeVisibilityName;
         public FName ShapeName;
         public FLinearColor ShapeColor;
-        public FBool bIsTransientControl;
+        public bool bIsTransientControl;
         public FString ControlEnumPathName;
         public FRigControlElementCustomization Customization = new();
         public List<FRigElementKey> DrivenControls;
-        public FBool bGroupWithParentControl;
-        public FBool bRestrictSpaceSwitching;
+        public bool bGroupWithParentControl;
+        public bool bRestrictSpaceSwitching;
         public ERigControlTransformChannel[] FilteredChannels;
         public EEulerRotationOrder PreferredRotationOrder;
-        public FBool bUsePreferredRotationOrder;
+        public bool bUsePreferredRotationOrder;
 
         [Location("void FRigControlSettings::Load(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)
@@ -397,7 +397,7 @@ namespace AssetTool
 
     public class FRigCurveElement : FRigBaseElement
     {
-        public FBool bIsValueSet;
+        public bool bIsValueSet;
         public float Value;
 
         [Location("void FRigCurveElement::Load(FArchive& Ar, URigHierarchy* Hierarchy, ESerializationPhase SerializationPhase)")]
@@ -496,7 +496,7 @@ namespace AssetTool
     {
         public FString Description;
         public EConnectorType Type;
-        public FBool bOptional;
+        public bool bOptional;
         public List<FRigConnectionRuleStash> Rules;
 
         [Location("void FRigConnectorSettings::Load(FArchive& Ar)")]

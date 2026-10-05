@@ -4,7 +4,7 @@
     public class UTextureCube : UTexture
     {
         public FStripDataFlags StripFlags2;
-        public FBool bCooked;
+        public bool bCooked;
         public List<FName> PixelFormatNames = [];
         public List<TInt64> SkipOffsets = [];
 

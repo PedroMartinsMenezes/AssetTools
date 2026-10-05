@@ -2,8 +2,8 @@ namespace AssetTool
 {
     public class FDataflowOutput : FDataflowConnection
     {
-        public FBool bIsAnyType;
-        public FBool bIsHidden;
+        public bool bIsAnyType;
+        public bool bIsHidden;
 
         public override ITransferable Move(Transfer transfer)
         {
@@ -22,8 +22,8 @@ namespace AssetTool
 
     public class FDataflowInput : FDataflowConnection
     {
-        public FBool bIsAnyType;
-        public FBool bIsHidden;
+        public bool bIsAnyType;
+        public bool bIsHidden;
 
         public override ITransferable Move(Transfer transfer)
         {

@@ -41,6 +41,7 @@
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
     public enum EUnrealEngineObjectUE5Version
     {
+        UNKNOWN = 0,
         INITIAL_VERSION = 1000,
         NAMES_REFERENCED_FROM_EXPORT_DATA,
         PAYLOAD_TOC,

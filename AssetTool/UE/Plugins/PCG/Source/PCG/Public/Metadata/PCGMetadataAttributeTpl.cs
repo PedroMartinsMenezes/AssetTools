@@ -18,7 +18,7 @@
     public class FPCGMetadataAttributeBool : FPCGMetadataAttributeBase
     {
         public List<TUInt8> Values;
-        public FBool DefaultValue;
+        public bool DefaultValue;
 
         [Location("virtual void Serialize(UPCGMetadata* InMetadata, FArchive& InArchive) override")]
         public override ITransferable Move(Transfer transfer)

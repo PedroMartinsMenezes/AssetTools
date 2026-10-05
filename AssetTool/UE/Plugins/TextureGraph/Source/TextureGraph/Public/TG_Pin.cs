@@ -10,9 +10,10 @@ namespace AssetTool
         public override ITransferable Move(Transfer transfer)
         {
             base.Move(transfer);
-            if (Members.FirstOrDefault(x => x.Key.Contains("Argument")).Value is FPropertyTag tag)
+
+            if (Members.FirstOrDefault(x => x.Key.Contains("'Argument'")).Value is Dictionary<string, object> dict)
             {
-                Argument ??= new FTG_Argument(tag.Value as Dictionary<string, object>);
+                Argument ??= new FTG_Argument(dict);
             }
             if (Argument is { })
             {

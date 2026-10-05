@@ -6,9 +6,10 @@
       "LegacyUE3Version": 864,
       "FileVersionUE": {
         "FileVersionUE4": "VER_UE4_ADDED_PACKAGE_OWNER",
-        "FileVersionUE5": 0
+        "FileVersionUE5": "UNKNOWN"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -38,6 +39,8 @@
       "SoftPackageReferencesOffset": 16140,
       "SearchableNamesOffset": 16148,
       "ThumbnailTableOffset": 16164,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "bc10bbdb-4bef-df33-6b9c-80b8e1689861",
       "PersistentGuid": "",
       "OwnerPersistentGuid": "",
@@ -81,8 +84,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(21871 57011) /Game/Blueprints/BP_TestActor",
@@ -602,7 +604,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -616,589 +628,57 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 1773,
           "SerializedScriptSize": 2673,
           "ScriptData": "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"
         },
         "ChildArray": [],
-        "ChildProperties": [
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "EntryPoint",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_X",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_Y",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_Z",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_FClamp_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_FloatFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_FloatFloat_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Round_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorLocation_ReturnValue\"3",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_FloatFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_X\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_Y\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_BreakVector_Z\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Abs_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_FFloor_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_VectorFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Percent_IntInt_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-55] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorRotation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FIntProperty",
-            "TypeName": "IntProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_IntInt_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-55] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_GetActorRotation_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Conv_IntToFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-55] Rotator",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_NormalizedDeltaRotator_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_VectorFloat_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetForwardVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_VectorVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_GetRightVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_VLerp_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_FloatFloat_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Multiply_FloatFloat_ReturnValue\"3",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Divide_FloatFloat_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_MakeVector_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_VectorVector_ReturnValue\"1",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-56] Vector",
-            "ArrayDim": 1,
-            "ElementSize": 12,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_Add_VectorVector_ReturnValue\"2",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-57] HitResult",
-            "ArrayDim": 1,
-            "ElementSize": 144,
-            "PropertyFlags": "CPF_ContainsInstancedReference",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_SetActorLocation_SweepHitResult",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FBoolProperty",
-            "TypeName": "BoolProperty",
-            "FieldSize": 1,
-            "ByteOffset": 0,
-            "ByteMask": 1,
-            "FieldMask": 255,
-            "BoolSize": 1,
-            "NativeBool": 1,
-            "ArrayDim": 1,
-            "ElementSize": 1,
-            "PropertyFlags": "CPF_None",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "CallFunc_K2_SetActorLocation_ReturnValue",
-            "FlagsPrivate": "RF_Public",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          }
-        ],
+        "ChildProperties": {
+          "prop-int PropertyFlags(CPF_BlueprintVisible, CPF_BlueprintReadOnly, CPF_Parm) NamePrivate(•EntryPoint•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_X•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_Y•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_Z•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_FClamp_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"2•) ": "",
+          "prop-float NamePrivate(•CallFunc_Multiply_FloatFloat_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_Multiply_FloatFloat_ReturnValue\"1•) ": "",
+          "prop-int NamePrivate(•CallFunc_Round_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_K2_GetActorLocation_ReturnValue\"3•) ": "",
+          "prop-float NamePrivate(•CallFunc_Add_FloatFloat_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_X\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_Y\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_BreakVector_Z\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_Abs_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_FFloor_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_Multiply_VectorFloat_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Percent_IntInt_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-55] Rotator) NamePrivate(•CallFunc_K2_GetActorRotation_ReturnValue•) ": "",
+          "prop-int NamePrivate(•CallFunc_Add_IntInt_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-55] Rotator) NamePrivate(•CallFunc_K2_GetActorRotation_ReturnValue\"1•) ": "",
+          "prop-float NamePrivate(•CallFunc_Conv_IntToFloat_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-55] Rotator) NamePrivate(•CallFunc_NormalizedDeltaRotator_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_Multiply_VectorFloat_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_GetForwardVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_GetRightVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_VLerp_ReturnValue•) ": "",
+          "prop-float NamePrivate(•CallFunc_Multiply_FloatFloat_ReturnValue\"2•) ": "",
+          "prop-float NamePrivate(•CallFunc_Multiply_FloatFloat_ReturnValue\"3•) ": "",
+          "prop-float NamePrivate(•CallFunc_Divide_FloatFloat_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_MakeVector_ReturnValue•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue\"1•) ": "",
+          "prop-struct ElementSize(12) Value(ImportIndex[-56] Vector) NamePrivate(•CallFunc_Add_VectorVector_ReturnValue\"2•) ": "",
+          "prop-struct PropertyFlags(CPF_ContainsInstancedReference) ElementSize(144) Value(ImportIndex[-57] HitResult) NamePrivate(•CallFunc_K2_SetActorLocation_SweepHitResult•) ": "",
+          "prop-bool NamePrivate(•CallFunc_K2_SetActorLocation_ReturnValue•) ": ""
+        },
         "FunctionFlags": 8421377,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1212,19 +692,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[0] ",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
           "ScriptData": "XlpeRgEAAAAdiAYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 201326592,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1239,19 +717,17 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-28] ReceiveBeginPlay",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 22,
           "SerializedScriptSize": 18,
           "ScriptData": "XlpeRgEAAAAdaAYAABZaBAtT"
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FunctionFlags": 134744064,
         "RepOffset": 0,
         "EventGraphFunction": 0,
-        "EventGraphCallOffset": 0,
-        "Next": 0
+        "EventGraphCallOffset": 0
       }
     },
     {
@@ -1274,7 +750,6 @@
             "InnerType": "NameProperty",
             "ValueType": "StructProperty",
             "Value": {
-              "__type": "FMapProperty",
               "TypeName": "MapProperty",
               "NumKeysToRemove": 0,
               "NumEntries": 3,
@@ -1300,7 +775,6 @@
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-14] Actor",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
@@ -1311,95 +785,13 @@
           "ExportIndex[2] ImportIndex[-11]: Function",
           "ExportIndex[1] ImportIndex[-11]: Function"
         ],
-        "ChildProperties": [
-          {
-            "__type": "FStructProperty",
-            "TypeName": "StructProperty",
-            "Value": "ImportIndex[-59] PointerToUberGraphFrame",
-            "ArrayDim": 1,
-            "ElementSize": 16,
-            "PropertyFlags": "CPF_Transient, CPF_DuplicateTransient",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "UberGraphFrame",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": false,
-            "MetaDataMap": {}
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-20] SceneComponent",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "DefaultSceneRoot",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "Category": "Default"
-            }
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Width",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Width",
-              "Category": "Default",
-              "MultiLine": "true"
-            }
-          },
-          {
-            "__type": "FFloatProperty",
-            "TypeName": "FloatProperty",
-            "ArrayDim": 1,
-            "ElementSize": 4,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "Height",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Height",
-              "Category": "Default",
-              "MultiLine": "true"
-            }
-          },
-          {
-            "__type": "FObjectProperty",
-            "TypeName": "ObjectProperty",
-            "Value": "ImportIndex[-10] ConeActor",
-            "ArrayDim": 1,
-            "ElementSize": 8,
-            "PropertyFlags": "CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance",
-            "RepIndex": 0,
-            "RepNotifyFunc": "None",
-            "BlueprintReplicationCondition": 0,
-            "NamePrivate": "ConeActor",
-            "FlagsPrivate": "RF_Public, RF_LoadCompleted",
-            "HasMetaData": true,
-            "MetaDataMap": {
-              "DisplayName": "Cone Actor",
-              "Category": "Default",
-              "MultiLine": "true"
-            }
-          }
-        ],
+        "ChildProperties": {
+          "prop-struct PropertyFlags(CPF_Transient, CPF_DuplicateTransient) FlagsPrivate(RF_Public, RF_LoadCompleted) ElementSize(16) Value(ImportIndex[-59] PointerToUberGraphFrame) NamePrivate(•UberGraphFrame•) ": "",
+          "prop-object PropertyFlags(CPF_BlueprintVisible, CPF_InstancedReference, CPF_NonTransactional) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-20] SceneComponent) MetaDataMap( Category(•Default•) ) NamePrivate(•DefaultSceneRoot•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Width•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•Width•) ": "",
+          "prop-float PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) MetaDataMap( DisplayName(•Height•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•Height•) ": "",
+          "prop-object PropertyFlags(CPF_Edit, CPF_BlueprintVisible, CPF_DisableEditOnTemplate, CPF_DisableEditOnInstance) FlagsPrivate(RF_Public, RF_LoadCompleted) Value(ImportIndex[-10] ConeActor) MetaDataMap( DisplayName(•Cone Actor•) Category(•Default•) MultiLine(•true•) ) NamePrivate(•ConeActor•) ": ""
+        },
         "FuncMap": {
           "ExecuteUbergraph_BP_TestActor": 1,
           "SetupConeActor": 2,
@@ -1408,14 +800,10 @@
         "ClassFlags": 8652820,
         "ClassWithin": 4294967283,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 6,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 5,
-        "Next": 0
+        "PerspectiveNewCDO": 5
       }
     },
     {
@@ -1428,27 +816,12 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "UberGraphFrame": {
-            "Name": "UberGraphFrame",
-            "Type": "StructProperty",
-            "Size": 8,
-            "StructName": "PointerToUberGraphFrame",
-            "Value": {
-              "RawPointer": 172,
-              "UberGraphFunctionKey": 0
-            }
+          "struct PointerToUberGraphFrame 8 'UberGraphFrame'": {
+            "RawPointer": 172,
+            "UberGraphFunctionKey": 0
           },
           "string 'ActorLabel'": "BP_ConverActor1-1"
-        },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
-        "Next": 0
+        }
       }
     },
     {
@@ -1481,13 +854,7 @@
               {
                 "name 'VarName'": "Width",
                 "guid 'VarGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 61 'VarType'": "float",
                 "string 'FriendlyName'": "Width",
                 "Category": {
                   "Name": "Category",
@@ -1521,13 +888,7 @@
               {
                 "name 'VarName'": "Height",
                 "guid 'VarGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "float"
-                },
+                "struct EdGraphPinType 61 'VarType'": "float",
                 "string 'FriendlyName'": "Height",
                 "Category": {
                   "Name": "Category",
@@ -1561,13 +922,7 @@
               {
                 "name 'VarName'": "ConeActor",
                 "guid 'VarGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-                "VarType": {
-                  "Name": "VarType",
-                  "Type": "StructProperty",
-                  "Size": 61,
-                  "StructName": "EdGraphPinType",
-                  "Value": "object obj(`-10`)"
-                },
+                "struct EdGraphPinType 61 'VarType'": "object obj(`-10`)",
                 "string 'FriendlyName'": "Cone Actor",
                 "Category": {
                   "Name": "Category",
@@ -1624,41 +979,29 @@
             },
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 35,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                    "SubPathString": "UserConstructionScript",
-                    "AssetPath": {
-                      "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 35 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                  "SubPathString": "UserConstructionScript",
+                  "AssetPath": {
+                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "0 0",
                 "float 'SavedZoomAmount'": 1
               },
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 23,
-                  "StructName": "SoftObjectPath",
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                    "SubPathString": "EventGraph",
-                    "AssetPath": {
-                      "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                    },
-                    "SaveNum": 0
-                  }
+                "struct SoftObjectPath 23 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                  "SubPathString": "EventGraph",
+                  "AssetPath": {
+                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
+                  },
+                  "SaveNum": 0
                 },
                 "Vector2D 'SavedViewOffset'": "-305.8768310546875 -47.706207275390625",
                 "float 'SavedZoomAmount'": 0.675
@@ -1717,15 +1060,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "Delay"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": 896,
           "int 'NodePosY'": 304,
@@ -1752,15 +1089,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Conv_IntToFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Conv_IntToFloat"
           },
           "int 'NodePosX'": 1024,
           "int 'NodePosY'": 928,
@@ -1783,15 +1114,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_SetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_SetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1648,
           "int 'NodePosY'": 288,
@@ -1820,15 +1145,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "FFloor"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "FFloor"
           },
           "int 'NodePosX'": 592,
           "int 'NodePosY'": 1136,
@@ -1852,15 +1171,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "GetForwardVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "GetForwardVector"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1968,
@@ -1885,15 +1198,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 704,
           "int 'NodePosY'": 832,
@@ -1917,15 +1224,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 2016,
@@ -1948,15 +1249,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "NormalizedDeltaRotator"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "NormalizedDeltaRotator"
           },
           "int 'NodePosX'": 432,
           "int 'NodePosY'": 1920,
@@ -1982,15 +1277,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorRotation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorRotation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 176,
           "int 'NodePosY'": 1904,
@@ -2013,15 +1302,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Percent_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Percent_IntInt"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 1168,
@@ -2045,15 +1328,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -19,
-              "name 'MemberName'": "Delay"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -19,
+            "name 'MemberName'": "Delay"
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": 48,
@@ -2079,16 +1356,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "SetupConeActor",
-              "guid 'MemberGuid'": "b6cdf2af-4eda-f970-8526-a59e1eb0782f",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'FunctionReference'": {
+            "name 'MemberName'": "SetupConeActor",
+            "guid 'MemberGuid'": "b6cdf2af-4eda-f970-8526-a59e1eb0782f",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 32,
@@ -2112,15 +1383,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "FClamp"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "FClamp"
           },
           "int 'NodePosX'": 544,
           "int 'NodePosY'": 1632,
@@ -2145,15 +1410,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "TestFunc"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "TestFunc"
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 288,
@@ -2178,15 +1437,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "GetRightVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "GetRightVector"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1872,
@@ -2210,15 +1463,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Abs"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Abs"
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 576,
@@ -2242,15 +1489,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Round"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Round"
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 960,
@@ -2275,15 +1516,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 464,
@@ -2306,15 +1541,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "VLerp"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "VLerp"
           },
           "int 'NodePosX'": 912,
           "int 'NodePosY'": 1888,
@@ -2341,15 +1570,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 272,
           "int 'NodePosY'": 1632,
@@ -2376,15 +1599,9 @@
         "Members": {
           "bool 'bIsPureFunc'": true,
           "bool 'bIsConstFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 67,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "K2_GetActorLocation",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 67 'FunctionReference'": {
+            "name 'MemberName'": "K2_GetActorLocation",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 320,
           "int 'NodePosY'": 1136,
@@ -2410,15 +1627,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "MakeVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "MakeVector"
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 1456,
@@ -2444,15 +1655,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Divide_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Divide_FloatFloat"
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 1552,
@@ -2477,15 +1682,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_VectorFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_VectorFloat"
           },
           "int 'NodePosX'": 1136,
           "int 'NodePosY'": 880,
@@ -2510,15 +1709,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_VectorFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_VectorFloat"
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 512,
@@ -2543,15 +1736,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_VectorVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_VectorVector"
           },
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": 1472,
@@ -2576,15 +1763,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_IntInt"
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 1088,
@@ -2609,15 +1790,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_FloatFloat"
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 576,
@@ -2642,15 +1817,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 480,
           "int 'NodePosY'": 992,
@@ -2675,15 +1844,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_IntInt"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_IntInt"
           },
           "int 'NodePosX'": 928,
           "int 'NodePosY'": 992,
@@ -2709,15 +1872,9 @@
         "Members": {
           "int 'NumAdditionalInputs'": 1,
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Add_VectorVector"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Add_VectorVector"
           },
           "int 'NodePosX'": 1296,
           "int 'NodePosY'": 848,
@@ -2743,15 +1900,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": 576,
@@ -2776,15 +1927,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": 1472,
@@ -2809,15 +1954,9 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bIsPureFunc'": true,
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -18,
-              "name 'MemberName'": "Multiply_FloatFloat"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -18,
+            "name 'MemberName'": "Multiply_FloatFloat"
           },
           "int 'NodePosX'": 432,
           "int 'NodePosY'": 1472,
@@ -2863,15 +2002,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "EventReference": {
-            "Name": "EventReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -14,
-              "name 'MemberName'": "ReceiveBeginPlay"
-            }
+          "struct MemberReference 70 'EventReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -128,
@@ -2896,15 +2029,9 @@
       "Obj": {
         "__type": "UK2Node_EditablePinBase",
         "Members": {
-          "FunctionReference": {
-            "Name": "FunctionReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -14,
-              "name 'MemberName'": "UserConstructionScript"
-            }
+          "struct MemberReference 70 'FunctionReference'": {
+            "obj 'MemberParent'": -14,
+            "name 'MemberName'": "UserConstructionScript"
           },
           "guid 'NodeGuid'": "e515108b-41ba-9d2f-ff0d-5a821655fe55"
         },
@@ -2924,16 +2051,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 1376,
@@ -2955,16 +2076,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 32,
           "int 'NodePosY'": 1936,
@@ -2986,16 +2101,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 1456,
@@ -3017,16 +2126,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 240,
           "int 'NodePosY'": 1520,
@@ -3048,16 +2151,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 128,
           "int 'NodePosY'": 496,
@@ -3079,16 +2176,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 960,
@@ -3110,16 +2201,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 288,
           "int 'NodePosY'": 1040,
@@ -3141,15 +2226,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "Speed"
-            }
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "Speed"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 105,
           "int 'NodePosX'": 560,
@@ -3172,16 +2251,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": 688,
@@ -3203,16 +2276,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 608,
           "int 'NodePosY'": 496,
@@ -3234,16 +2301,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 1200,
@@ -3265,15 +2326,9 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 70,
-            "StructName": "MemberReference",
-            "Value": {
-              "obj 'MemberParent'": -10,
-              "name 'MemberName'": "Speed"
-            }
+          "struct MemberReference 70 'VariableReference'": {
+            "obj 'MemberParent'": -10,
+            "name 'MemberName'": "Speed"
           },
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 105,
           "int 'NodePosX'": 384,
@@ -3296,16 +2351,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 560,
@@ -3327,16 +2376,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 624,
@@ -3358,16 +2401,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "ConeActor",
-              "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "ConeActor",
+            "guid 'MemberGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1360,
           "int 'NodePosY'": 368,
@@ -3389,16 +2426,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Width",
-              "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Width",
+            "guid 'MemberGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 112,
           "int 'NodePosY'": 64,
@@ -3423,16 +2454,10 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "VariableReference": {
-            "Name": "VariableReference",
-            "Type": "StructProperty",
-            "Size": 132,
-            "StructName": "MemberReference",
-            "Value": {
-              "name 'MemberName'": "Height",
-              "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-              "bool 'bSelfContext'": true
-            }
+          "struct MemberReference 132 'VariableReference'": {
+            "name 'MemberName'": "Height",
+            "guid 'MemberGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+            "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 336,
           "int 'NodePosY'": 64,

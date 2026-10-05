@@ -1,58 +1,61 @@
 ﻿namespace AssetTool
 {
-    public static class AppConfig
+    public class AppConfig
     {
         #region Debug Only
         /// Check the bytes of each Tag member read from the current AssetObject
-        public static bool DebugCheckMember { get; set; } = false;
+        public bool DebugCheckMember { get; set; }
 
         /// Save the asset Header to a json file
-        public static bool DebugSaveHeader { get; set; } = false;
+        public bool DebugSaveHeader { get; set; }
 
         /// Save the JSON file from UASSET
-        public static bool DebugSaveJson { get; set; } = false;
+        public bool DebugSaveJson { get; set; }
+
+        /// Do not save the Footer byte array
+        public bool DebugIgnoreFooterWhenSavingJson { get; set; }
 
         /// Save the UASSET file from JSON
-        public static bool DebugSaveUasset { get; set; } = false;
+        public bool DebugSaveUasset { get; set; }
 
         /// Save the reconstructed asset to a json file
-        public static bool DebugSaveUnitTest { get; set; } = false;
+        public bool DebugSaveUnitTest { get; set; }
 
         /// Save each Tag member from the current AssetObject
-        public static bool DebugSaveMember { get; set; } = false;
+        public bool DebugSaveMember { get; set; }
 
         /// Makes no difference on performance. Maybe consumes less memory.
-        public static bool DebugIgnoreAssetPackageFooter { get; set; } = false;
+        public bool DebugIgnoreAssetPackageFooter { get; set; }
 
         /// Attempts to detect a bug when reading the FPropertyTag
-        public static bool BreakWhenTagSizeIsZero { get; set; } = false;
+        public bool BreakWhenTagSizeIsZero { get; set; }
 
         /// Log the bytes of WorkaroundPad to discover the hidden pattern
-        public static bool LogWorkaroundPad { get; set; } = false;
+        public bool LogWorkaroundPad { get; set; }
 
         /// Throws an exception when a name starts with a slash
-        public static bool DenyNamesStartedWithSlash { get; set; } = false;
+        public bool DenyNamesStartedWithSlash { get; set; }
         #endregion
 
         #region From Appsettings
-        public static bool AutoCheckBinaryWriter { get; set; } = false;
+        public bool AutoCheckBinaryWriter { get; set; }
 
-        public static bool ContinueAfterError { get; set; } = false;
+        public bool ContinueAfterError { get; set; }
 
-        public static bool DebugUnicodeStrings { get; set; } = false;
+        public bool DebugUnicodeStrings { get; set; }
 
-        public static long LogStartOffset { get; set; } = 0;
+        public long LogStartOffset { get; set; } = 0;
 
-        public static long LogEndOffset { get; set; } = 0;
+        public long LogEndOffset { get; set; } = 0;
 
-        public static int MaxArraySize { get; set; } = 10_000_000;
+        public int MaxArraySize { get; set; } = 10_000_000;
 
-        public static int MaxStringSize { get; set; } = 10_000_000;
+        public int MaxStringSize { get; set; } = 10_000_000;
 
-        public static int MaxFileSize { get; set; } = 200_000_000;
+        public int MaxFileSize { get; set; } = 200_000_000;
 
         /// Use the WorkaroundPad class to read unknown bytes
-        public static bool UseWorkaroundPad { get; set; } = false;
+        public bool UseWorkaroundPad { get; set; }
         #endregion
     }
 }

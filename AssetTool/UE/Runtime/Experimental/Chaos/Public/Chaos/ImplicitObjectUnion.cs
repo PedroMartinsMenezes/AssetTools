@@ -5,7 +5,7 @@
         public List<TRefCountPtr<FImplicitObject>> MObjects;
         public SerializeAsAABB3 MLocalBoundingBox;
         public FLargeImplicitObjectUnionData LegacyData;
-        public FBool bHierarchyBuilt;
+        public bool bHierarchyBuilt;
         public EBits Bits;
         public uint16 DummyNumLeafObjects;
         public int32 NumLeafObjects;

@@ -7,9 +7,9 @@ using System.Text.RegularExpressions;
 
 namespace AssetTool.Test.CodeGeneration
 {
-    [Ignore("Irrelevant")]
     public class CodeCleanupTest : TestBase
     {
+        [Ignore("Irrelevant")]
         [Test]
         public void ListJsonAssetClasses()
         {
@@ -25,6 +25,7 @@ namespace AssetTool.Test.CodeGeneration
             File.WriteAllText("C:/Temp/JsonAssetClasses.json", classNames.ToJson());
         }
 
+        [Ignore("Irrelevant")]
         [Test]
         public void ListEmptyClasses()
         {
@@ -53,6 +54,7 @@ namespace AssetTool.Test.CodeGeneration
             File.WriteAllLines("C:/Temp/FilesToDelete.txt", filesToDelete);
         }
 
+        [Ignore("Irrelevant")]
         [Test]
         public void DeleteEmptyFiles()
         {
@@ -60,6 +62,17 @@ namespace AssetTool.Test.CodeGeneration
             foreach (string file in files)
             {
                 File.Delete(file);
+            }
+        }
+
+        [Test]
+        public void DeleteRepeatedFiles()
+        {
+            string[] files = File.ReadAllLines("AssetTool.Test\\InputFiles\\RepeatedFiles.txt");
+            foreach (string file in files)
+            {
+                if (File.Exists(file))
+                    File.Delete(file);
             }
         }
     }

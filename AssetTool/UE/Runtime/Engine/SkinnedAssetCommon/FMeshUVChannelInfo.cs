@@ -2,8 +2,8 @@
 {
     public class FMeshUVChannelInfo : ITransferable
     {
-        public FBool bInitialized;
-        public FBool bOverrideDensities;
+        public bool bInitialized;
+        public bool bOverrideDensities;
         public float[] LocalUVDensities = new float[Consts.TEXSTREAM_MAX_NUM_UVCHANNELS];
 
         [Location("FArchive& operator<<(FArchive& Ar, FMeshUVChannelInfo& ChannelData)")]

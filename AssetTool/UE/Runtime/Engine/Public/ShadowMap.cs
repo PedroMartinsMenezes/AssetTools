@@ -36,7 +36,7 @@
         public UInt32 Texture;
         public FVector2D CoordinateScale;
         public FVector2D CoordinateBias;
-        public FBool[] bChannelValid;
+        public bool[] bChannelValid;
         public FVector4f InvUniformPenumbraSize;
 
         [Location("void FShadowMap2D::Serialize(FArchive& Ar)")]

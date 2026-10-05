@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "45, 12f88b9f-8875-4afc-a67c-d90c383abd29",
@@ -41,6 +42,8 @@
       "SoftPackageReferencesOffset": 2156,
       "SearchableNamesOffset": 2156,
       "ThumbnailTableOffset": 6698,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "ebe47d37-4d0e-6abb-fc0c-6880ae35f454",
       "PersistentGuid": "21a64a13-4696-7c2e-fb52-a480e7d7b73f",
       "OwnerPersistentGuid": "",
@@ -84,8 +87,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -216,7 +218,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -229,43 +241,31 @@
       "Obj": {
         "__type": "UMaterial",
         "Members": {
-          "BaseColor": {
-            "Name": "BaseColor",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ColorMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": "128 128 128 255",
-              "Expression": 2,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ColorMaterialInput 44 'BaseColor'": {
+            "UseConstant": false,
+            "Constant": "128 128 128 255",
+            "Expression": 2,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
-          "Roughness": {
-            "Name": "Roughness",
-            "Type": "StructProperty",
-            "Size": 44,
-            "StructName": "ScalarMaterialInput",
-            "Value": {
-              "UseConstant": false,
-              "Constant": 0.5,
-              "Expression": 3,
-              "OutputIndex": 0,
-              "InputName": "None",
-              "Mask": 0,
-              "MaskR": 0,
-              "MaskG": 0,
-              "MaskB": 0,
-              "MaskA": 0,
-              "bUseConstantValue": false
-            }
+          "struct ScalarMaterialInput 44 'Roughness'": {
+            "UseConstant": false,
+            "Constant": 0.5,
+            "Expression": 3,
+            "OutputIndex": 0,
+            "InputName": "None",
+            "Mask": 0,
+            "MaskR": 0,
+            "MaskG": 0,
+            "MaskB": 0,
+            "MaskA": 0,
+            "bUseConstantValue": false
           },
           "bool 'bUsedWithStaticLighting'": true,
           "obj[] 'Expressions'": "2 3",

@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -35,6 +36,8 @@
       "SoftPackageReferencesOffset": 1778,
       "SearchableNamesOffset": 1778,
       "ThumbnailTableOffset": 3683,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "db12d977-474a-751c-791a-abb8742ca72e",
       "PersistentGuid": "ca6a7c0f-46a5-430f-6698-1b94bd046939",
       "OwnerPersistentGuid": "",
@@ -78,8 +81,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(25266 24200) AlphaCoverageThresholds",
@@ -216,7 +218,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -262,22 +274,16 @@
             "X": 512,
             "Y": 512
           },
-          "Source": {
-            "Name": "Source",
-            "Type": "StructProperty",
-            "Size": 342,
-            "StructName": "TextureSource",
-            "Value": {
-              "guid 'Id'": "1975bfd2-421b-8ee6-798a-29add77b480a",
-              "int 'SizeX'": 512,
-              "int 'SizeY'": 512,
-              "int 'NumSlices'": 1,
-              "int 'NumMips'": 1,
-              "bool 'bPNGCompressed'": true,
-              "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 28,
-              "byte64 (ETextureSourceFormat) 'Format'": 29,
-              "long[] 'BlockDataOffsets'": "0"
-            }
+          "struct TextureSource 342 'Source'": {
+            "guid 'Id'": "1975bfd2-421b-8ee6-798a-29add77b480a",
+            "int 'SizeX'": 512,
+            "int 'SizeY'": 512,
+            "int 'NumSlices'": 1,
+            "int 'NumMips'": 1,
+            "bool 'bPNGCompressed'": true,
+            "byte64 (ETextureSourceCompressionFormat) 'CompressionFormat'": 28,
+            "byte64 (ETextureSourceFormat) 'Format'": 29,
+            "long[] 'BlockDataOffsets'": "0"
           },
           "guid 'LightingGuid'": "cbcc5345-4384-0383-d145-c8b2472f1807",
           "obj 'AssetImportData'": 1,

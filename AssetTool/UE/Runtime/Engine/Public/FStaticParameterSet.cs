@@ -25,7 +25,7 @@
 
         public class FStaticSwitchParameter : FStaticParameterBase, ITransferable
         {
-            public FBool Value;
+            public bool Value;
 
             public ITransferable Move(Transfer transfer)
             {
@@ -47,10 +47,10 @@
 
         public class FStaticComponentMaskParameter : FStaticParameterBase, ITransferable
         {
-            public FBool R;
-            public FBool G;
-            public FBool B;
-            public FBool A;
+            public bool R;
+            public bool G;
+            public bool B;
+            public bool A;
 
             public ITransferable Move(Transfer transfer)
             {
@@ -75,7 +75,7 @@
         public class FStaticParameterBase
         {
             public FMaterialParameterInfo ParameterInfo;
-            public FBool bOverride;
+            public bool bOverride;
             public FGuid ExpressionGUID;
         }
 
@@ -83,9 +83,9 @@
         {
             public FMaterialParameterInfo ParameterInfo_DEPRECATED;
             public FName LayerName;
-            public FBool bWeightBasedBlend;
+            public bool bWeightBasedBlend;
             public Int32 WeightmapIndex;
-            public FBool bOverride_DEPRECATED;
+            public bool bOverride_DEPRECATED;
             public FGuid ExpressionGUID_DEPRECATED;
 
             public ITransferable Move(Transfer transfer)

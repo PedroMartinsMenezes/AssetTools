@@ -20,7 +20,7 @@
     {
         public List<FGuid> LayerIDs;
         public List<FGuid> BlendIDs;
-        public List<FBool> LayerStates;
+        public bool[] LayerStates;
 
         [Location("void FMaterialLayersFunctionsID::SerializeForDDC(FArchive& Ar)")]
         public ITransferable Move(Transfer transfer)

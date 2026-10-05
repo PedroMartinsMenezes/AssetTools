@@ -6,7 +6,7 @@ namespace AssetTool
     public class UStruct : UField
     {
         [JsonPropertyOrder(-8)] public FObjectPtr AccessTrackedObjectPtr;
-        [JsonPropertyOrder(-8)] public UInt32 Children;
+        [JsonPropertyOrder(-8)] public UInt32? Children;
         [JsonPropertyOrder(-8)] public FStructScriptLoader ScriptLoadHelper;
         [JsonPropertyOrder(-8)] public List<FPackageIndex> ChildArray;
         [JsonPropertyOrder(-8)] public List<FField> ChildProperties;

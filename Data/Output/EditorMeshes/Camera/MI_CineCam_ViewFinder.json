@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "45, 12f88b9f-8875-4afc-a67c-d90c383abd29",
@@ -39,6 +40,8 @@
       "SoftPackageReferencesOffset": 2433,
       "SearchableNamesOffset": 2433,
       "ThumbnailTableOffset": 5397,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "f5c9b6b5-417b-2b48-222a-828b22147ef1",
       "PersistentGuid": "8f60c657-460d-fa6f-43d9-d68122164812",
       "OwnerPersistentGuid": "",
@@ -82,8 +85,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(45129 27107) ArrayProperty",
@@ -226,7 +228,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -253,53 +265,41 @@
             },
             "Value": [
               {
-                "AtlasData": {
-                  "Name": "AtlasData",
-                  "Type": "StructProperty",
-                  "Size": 108,
-                  "StructName": "ScalarParameterAtlasInstanceData",
-                  "Value": {
-                    "bool 'bIsUsedAsAtlasPosition'": false,
-                    "Curve": {
-                      "Name": "Curve",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
-                    },
-                    "Atlas": {
-                      "Name": "Atlas",
-                      "Type": "SoftObjectProperty",
-                      "Size": 12,
-                      "Value": {
-                        "bSerializeInternals": false,
-                        "SoftObjectPathIndex": 0,
-                        "AssetPathName": "None",
-                        "AssetPath": {
-                          "PackageName": "None"
-                        },
-                        "SaveNum": 0
-                      }
+                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                  "bool 'bIsUsedAsAtlasPosition'": false,
+                  "Curve": {
+                    "Name": "Curve",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
+                    }
+                  },
+                  "Atlas": {
+                    "Name": "Atlas",
+                    "Type": "SoftObjectProperty",
+                    "Size": 12,
+                    "Value": {
+                      "bSerializeInternals": false,
+                      "SoftObjectPathIndex": 0,
+                      "AssetPathName": "None",
+                      "AssetPath": {
+                        "PackageName": "None"
+                      },
+                      "SaveNum": 0
                     }
                   }
                 },
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "RefractionDepthBias",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "RefractionDepthBias",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
                 },
                 "float 'ParameterValue'": 0,
                 "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
@@ -319,30 +319,18 @@
             },
             "Value": [
               {
-                "ParameterInfo": {
-                  "Name": "ParameterInfo",
-                  "Type": "StructProperty",
-                  "Size": 111,
-                  "StructName": "MaterialParameterInfo",
-                  "Value": {
-                    "name 'Name'": "Color",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                    "int 'Index'": -1
-                  }
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "Color",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                  "int 'Index'": -1
                 },
                 "LinearColor 'ParameterValue'": "0 0 0 1",
                 "guid 'ExpressionGUID'": "5e26e355-44ef-b707-df57-eaade4b425e8"
               }
             ]
           },
-          "BasePropertyOverrides": {
-            "Name": "BasePropertyOverrides",
-            "Type": "StructProperty",
-            "Size": 37,
-            "StructName": "MaterialInstanceBasePropertyOverrides",
-            "Value": {
-              "float 'OpacityMaskClipValue'": 0.3333
-            }
+          "struct MaterialInstanceBasePropertyOverrides 37 'BasePropertyOverrides'": {
+            "float 'OpacityMaskClipValue'": 0.3333
           },
           "obj 'ThumbnailInfo'": 3,
           "guid 'LightingGuid'": "9d30596e-42a0-b9de-9c70-aebfabc6cc3e"

@@ -71,7 +71,7 @@ namespace AssetTool
         public EManagedArrayType ArrayType;
         public int ArrayScopeAsInt;
         public FName GroupIndexDependency;
-        public FBool bPersistent;
+        public bool bPersistent;
         public FManagedArrayBase ManagedArray;
 
         [Location("void FManagedArrayCollection::FValueType::Serialize(FArchive& Ar)")]

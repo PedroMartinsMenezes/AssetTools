@@ -4,7 +4,7 @@
     public class UVolumeTexture : UTexture
     {
         public FStripDataFlags StripFlags2;
-        public FBool bCooked;
+        public bool bCooked;
 
         [Location("void UVolumeTexture::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

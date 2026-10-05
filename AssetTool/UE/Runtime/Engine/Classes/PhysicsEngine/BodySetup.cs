@@ -6,8 +6,8 @@ namespace AssetTool
     public class UBodySetup : UObject
     {
         public FGuid BodySetupGuid;
-        public FBool bCooked;
-        public FBool bTemp;
+        public bool bCooked;
+        public bool bTemp;
         public FFormatContainer CookedFormatData;
         public List<FImplicitObject> ImplicitObject;
 

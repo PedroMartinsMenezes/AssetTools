@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("ParticleModuleRequired")]
     public class UParticleModuleRequired : UObject
     {
-        public FBool bCooked;
+        public bool bCooked;
         public FSubUVDerivedData DerivedData;
 
         [Location("void UParticleModuleRequired::Serialize(FStructuredArchive::FRecord Record)")]

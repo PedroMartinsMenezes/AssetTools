@@ -14,9 +14,10 @@ namespace AssetTool
             GlobalObjects.PackageFileSummary.CustomVersionContainer.Versions = [new() { Key = new(FEditorObjectVersion.Guid), Version = (int)FEditorObjectVersion.Enums.LatestVersion }];
         }
 
-        public TransferReader(BinaryReader reader)
+        public TransferReader(BinaryReader reader, AppConfig appConfig)
         {
             this.reader = reader;
+            this.AppConfig = appConfig;
             Initialize(this);
             FromJson = false;
             FromAutoCheck = false;
@@ -80,13 +81,17 @@ namespace AssetTool
         public override void MoveFloat(ref double? value) => value = reader.ReadSingle();
 
         public override void Move(ref bool value) => value = reader.ReadInt32() == 1;
-        public override void Move(ref bool? value) => value = reader.ReadInt32() == 1;
+        public override void Move(ref bool? value) => value = reader.ReadInt32() == 1 ? true : null;
 
         public override void Move(ref sbyte value) => reader.Read(ref value);
         public override void Move(ref sbyte? value) => value = reader.ReadSByte();
 
         public override void Move(ref byte value) => reader.Read(ref value);
-        public override void Move(ref byte? value) => value = reader.ReadByte();
+        public override void Move(ref byte? value)
+        {
+            value = reader.ReadByte();
+            value = value == 0 ? null : value;
+        }
 
         public override void Move(ref short value) => reader.Read(ref value);
         public override void Move(ref short? value) => value = reader.ReadInt16();
@@ -116,7 +121,7 @@ namespace AssetTool
         public override void MoveSingleOrDouble(ref double? value) => value = Supports.LARGE_WORLD_COORDINATES ? reader.ReadDouble() : reader.ReadSingle();
         #endregion
 
-        #region
+        #region Sized Arrays
         public override void Move(ref float[] value, int count)
         {
             reader.Read(MemoryMarshal.AsBytes((value = new float[count]).AsSpan()));
@@ -141,6 +146,15 @@ namespace AssetTool
         {
             reader.Read(MemoryMarshal.AsBytes((value = new UInt32[count]).AsSpan()));
         }
+        public override void Move(ref bool[] value, int count)
+        {
+            UInt32[] values;
+            reader.Read(MemoryMarshal.AsBytes((values = new UInt32[count]).AsSpan()));
+            value = values.Select(x => x == 1).ToArray();
+        }
+        #endregion
+
+        #region Array
         public override void Move(ref byte[] value)
         {
             reader.Read(value = new byte[reader.ReadInt32()]);
@@ -173,6 +187,10 @@ namespace AssetTool
         {
             reader.Read(MemoryMarshal.AsBytes((value = new double[reader.ReadInt32()]).AsSpan()));
         }
+        public override void Move(ref bool[] value)
+        {
+            reader.Read(MemoryMarshal.AsBytes((value = new bool[reader.ReadInt32()]).AsSpan()));
+        }
         #endregion
 
         public override void Move<T>(ref T value, Action<T> action)
@@ -195,6 +213,16 @@ namespace AssetTool
             {
                 value[i] ??= new();
                 value[i].MoveRaw(this);
+            }
+        }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            value ??= new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                T item = (T)new T().MoveRaw(this);
+                value.Add(item);
             }
         }
         #endregion
@@ -403,20 +431,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override void Move(ref FBool value)
-        {
-            int number = reader.ReadInt32();
-            if (number > 1)
-                throw new InvalidOperationException($"Wrong bool value {number} at {reader.BaseStream.Position}");
-            value = new FBool(number);
-        }
-        public override void Move(ref FBool? value)
-        {
-            int number = reader.ReadInt32();
-            if (number > 1)
-                throw new InvalidOperationException($"    [Warning] Wrong bool value {number} at {reader.BaseStream.Position}");
-            value = number == 0 ? null : new FBool(number);
-        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = reader.ReadBytes(16);
@@ -475,7 +489,11 @@ namespace AssetTool
         public override void Move(ref FString value)
         {
             int size = reader.ReadInt32();
-            if (size > AppConfig.MaxStringSize) throw new InvalidOperationException("FString to big");
+            if (size > AppConfig.MaxStringSize)
+                throw new InvalidOperationException("FString to big");
+            ///if (IsReading && size > (int)Length)
+            ///    throw new InvalidOperationException("FString to big");
+
             bool bLoadUnicodeChar = size < 0;
             if (bLoadUnicodeChar)
                 size = -2 * size;

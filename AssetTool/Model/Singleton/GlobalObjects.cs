@@ -68,6 +68,10 @@
 
         public Dictionary<long, FPropertyTag> MemberSizes { get; set; } = [];
 
+        public Dictionary<string, GlobalTypeName> GlobalTypeNames { get; set; }
+
+        public FileVersion FileVersion { get; set; }
+
         #endregion
 
         public int CustomVer(Guid guid)
@@ -82,12 +86,16 @@
 
         public bool UESupport(EUnrealEngineObjectUE4Version value)
         {
-            return (int)PackageFileSummary.FileVersionUE.FileVersionUE4 >= (int)value;
+            int currentVersion = (int)PackageFileSummary.FileVersionUE.FileVersionUE4;
+            int targetVersion = (int)value;
+            return currentVersion >= targetVersion;
         }
 
         public bool UESupport(EUnrealEngineObjectUE5Version value)
         {
-            return (int)PackageFileSummary.FileVersionUE.FileVersionUE5 >= (int)value;
+            int currentVersion = (int)PackageFileSummary.FileVersionUE.FileVersionUE5;
+            int targetVersion = (int)value;
+            return currentVersion >= targetVersion;
         }
 
         public bool IsFilterEditorOnly()

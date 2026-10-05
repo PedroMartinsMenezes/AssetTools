@@ -5,7 +5,7 @@
     {
         public const string StructName = "PerPlatformFloat";
 
-        public FBool bCooked;
+        public bool bCooked;
         public float Value;
         public Dictionary<FName, TInt32> PerPlatform = [];
 
@@ -13,7 +13,7 @@
         {
             transfer.Move(ref bCooked);
             transfer.Move(ref Value);
-            if (!bCooked.Value)
+            if (!bCooked)
             {
                 transfer.Move(ref PerPlatform);
             }

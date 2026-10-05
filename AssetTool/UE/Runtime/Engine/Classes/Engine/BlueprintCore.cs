@@ -3,7 +3,7 @@ namespace AssetTool
     [JsonAsset("BlueprintCore")]
     public class UBlueprintCore : UObject
     {
-        public FBool bLegacyGeneratedClassIsAuthoritative;
+        public bool bLegacyGeneratedClassIsAuthoritative;
 
         [Location("void UBlueprintCore::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

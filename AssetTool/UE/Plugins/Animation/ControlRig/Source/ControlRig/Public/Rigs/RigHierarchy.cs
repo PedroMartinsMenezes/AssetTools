@@ -12,7 +12,7 @@ namespace AssetTool
         public FRigHierarchySerializationSettings SerializationSettings;
         public List<FName> UniqueNames;
         public int32 UncompressedSize;
-        public FBool bStoreCompressedBytes;
+        public bool bStoreCompressedBytes;
         public byte[] CompressedBytes;
         public Dictionary<FRigHierarchyKey, FRigHierarchyKey> PreviousHierarchyNameMap;
         public Dictionary<FRigHierarchyKey, FRigHierarchyKey> PreviousHierarchyParentMap;
@@ -37,7 +37,7 @@ namespace AssetTool
                 transfer.Move(ref SerializationSettings.bUseCompressedArchive);
             }
 
-            if (SerializationSettings?.bUseCompressedArchive.Value == true)
+            if (SerializationSettings?.bUseCompressedArchive == true)
             {
                 transfer.Move(ref UniqueNames);
                 transfer.Move(ref UncompressedSize);

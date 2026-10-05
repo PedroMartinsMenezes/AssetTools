@@ -17,7 +17,7 @@ namespace AssetTool
         public UInt32 MagicNum;
         public Int32 Version;
         public FGuid Guid2;
-        public FBool bCooked;
+        public bool bCooked;
         public UInt32 AreaClass;
 
         [Location("void UNavCollision::Serialize(FArchive& Ar)")]
@@ -35,7 +35,7 @@ namespace AssetTool
             bool bUseConvexCollisionVer3 = bGatherConvexGeometry || (CylinderCollision.Count == 0 && BoxCollision.Count == 0);
             bool bUseConvexCollision = bGatherConvexGeometry || (BoxCollision.Count > 0) || (CylinderCollision.Count > 0);
             bool bProcessCookedData = (Version >= VerShapeGeoExport) ? bUseConvexCollision : bUseConvexCollisionVer3;
-            if (bCooked.Value && bProcessCookedData)
+            if (bCooked && bProcessCookedData)
                 throw new NotImplementedException();
             if (Version >= VerAreaClass)
                 transfer.Move(ref AreaClass);

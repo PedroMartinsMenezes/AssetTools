@@ -5,7 +5,7 @@
         public uint8[] Buffer;
         public int32 UncompressedSize;
         public int32 CompressedSize;
-        public FBool bIsCompressed;
+        public bool bIsCompressed;
 
         [Location("FArchive& operator<<(FArchive& Ar, FRigVMObjectArchive& Data)")]
         public ITransferable Move(Transfer transfer)

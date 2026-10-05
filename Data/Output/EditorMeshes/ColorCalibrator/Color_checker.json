@@ -9,6 +9,7 @@
         "FileVersionUE5": "LARGE_WORLD_COORDINATES"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -35,6 +36,8 @@
       "SoftPackageReferencesOffset": 1643,
       "SearchableNamesOffset": 1643,
       "ThumbnailTableOffset": 3555,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "1f6f3693-4f27-45b3-c365-17bc48ef60b1",
       "PersistentGuid": "720c56ab-448a-7cb7-226a-798ae25b1453",
       "OwnerPersistentGuid": "",
@@ -78,8 +81,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(25266 24200) AlphaCoverageThresholds",
@@ -211,7 +213,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -257,20 +269,14 @@
             "X": 512,
             "Y": 512
           },
-          "Source": {
-            "Name": "Source",
-            "Type": "StructProperty",
-            "Size": 275,
-            "StructName": "TextureSource",
-            "Value": {
-              "guid 'Id'": "b88ff702-4b60-d8f8-02a7-24856fcffed2",
-              "int 'SizeX'": 512,
-              "int 'SizeY'": 512,
-              "int 'NumSlices'": 1,
-              "int 'NumMips'": 1,
-              "byte64 (ETextureSourceFormat) 'Format'": 24,
-              "long[] 'BlockDataOffsets'": "0"
-            }
+          "struct TextureSource 275 'Source'": {
+            "guid 'Id'": "b88ff702-4b60-d8f8-02a7-24856fcffed2",
+            "int 'SizeX'": 512,
+            "int 'SizeY'": 512,
+            "int 'NumSlices'": 1,
+            "int 'NumMips'": 1,
+            "byte64 (ETextureSourceFormat) 'Format'": 24,
+            "long[] 'BlockDataOffsets'": "0"
           },
           "guid 'LightingGuid'": "a37cd1ba-4d89-f257-aeac-24a93ec28bf7",
           "obj 'AssetImportData'": 1,

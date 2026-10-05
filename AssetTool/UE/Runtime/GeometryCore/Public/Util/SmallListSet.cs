@@ -11,8 +11,8 @@
         public int32 FreeHeadIndex;
         #endregion
         #region
-        public FBool bCompactData;
-        public FBool bUseCompression;
+        public bool bCompactData;
+        public bool bUseCompression;
         public TDynamicVector<TInt32> Buffer;
         #endregion
 
@@ -34,7 +34,7 @@
                 transfer.Move(ref bUseCompression);
                 if (bCompactData || bUseCompression)
                 {
-                    transfer.Move(ref Buffer, true, bUseCompression.Value);
+                    transfer.Move(ref Buffer, true, bUseCompression);
                 }
                 else
                 {

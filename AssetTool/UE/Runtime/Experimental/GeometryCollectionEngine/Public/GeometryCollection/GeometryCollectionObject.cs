@@ -5,8 +5,8 @@ namespace AssetTool
     {
         public FGeometryCollection GeometryCollection;
         public List<List<FTransform>> DummyTransforms;
-        public FBool bIsCookedOrCooking;
-        public FBool bCooked;
+        public bool bIsCookedOrCooking;
+        public bool bCooked;
 
         [Location("void UGeometryCollection::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

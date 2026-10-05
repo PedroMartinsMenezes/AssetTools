@@ -9,6 +9,7 @@
         "FileVersionUE5": "OS_SUB_OBJECT_SHADOW_SERIALIZATION"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": [
           "17, 29e575dd-e0a3-4627-9d10-d276232cdcea",
@@ -40,6 +41,8 @@
       "SoftPackageReferencesOffset": 3746,
       "SearchableNamesOffset": 3754,
       "ThumbnailTableOffset": 3782,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "",
       "PersistentGuid": "6a116197-4b6e-6868-b057-078f9499555e",
       "OwnerPersistentGuid": "",
@@ -86,8 +89,7 @@
       "CellImportOffset": 3722,
       "MetaDataOffset": 2285,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(22985 64465) /Game/StackOBot/FX/_Shared/CamShake",
@@ -389,6 +391,29 @@
           }
         ]
       }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {
+      "StructProperty SoftObjectPath": {
+        "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
+      },
+      "StructProperty DeprecateSlateVector2D": {
+        "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "StructProperty FOscillator": {
+        "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0"
+      },
+      "StructProperty VOscillator": {
+        "TypeName": "StructProperty 1 | VOscillator 1 | /Script/EngineCameras 0"
+      }
     }
   },
   "Objects": [
@@ -414,44 +439,23 @@
             "InnerType": "StructProperty",
             "Value": [
               {
-                "EditedObjectPath": {
-                  "Name": "EditedObjectPath",
-                  "Type": "StructProperty",
-                  "Size": 4,
-                  "StructName": "SoftObjectPath",
-                  "BoolVal": 0,
-                  "Value": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPath": {
-                      "PackageName": "/Game/StackOBot/FX/_Shared/CamShake",
-                      "AssetName": "CamShake"
-                    },
-                    "SaveNum": 0
+                "class SoftObjectPath 4 'EditedObjectPath'": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPath": {
+                    "PackageName": "/Game/StackOBot/FX/_Shared/CamShake",
+                    "AssetName": "CamShake"
                   },
-                  "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                  "SaveNum": 0
                 },
-                "SavedViewOffset": {
-                  "Name": "SavedViewOffset",
-                  "Type": "StructProperty",
-                  "Size": 8,
-                  "StructName": "DeprecateSlateVector2D",
-                  "BoolVal": 0,
-                  "Value": {
-                    "X": 0,
-                    "Y": 0
-                  },
-                  "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0",
-                  "PropertyTagFlags": "HasBinaryOrNativeSerialize",
-                  "SerializeType": "BinaryOrNative"
+                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                  "X": 0,
+                  "Y": 0
                 },
                 "float 'SavedZoomAmount'": 1
               }
             ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0",
-            "SerializeType": "Property"
+            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
           },
           "obj 'ThumbnailInfo'": 6,
           "obj 'GeneratedClass'": 2,
@@ -473,26 +477,21 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-6] LegacyCameraShake",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 0,
           "SerializedScriptSize": 0,
           "ScriptData": ""
         },
         "ChildArray": [],
-        "ChildProperties": [],
+        "ChildProperties": {},
         "FuncMap": {},
         "ClassFlags": 8654848,
         "ClassWithin": 4294967294,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 1,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 3,
-        "Next": 0
+        "PerspectiveNewCDO": 3
       }
     },
     {
@@ -508,72 +507,27 @@
           "float 'OscillationDuration'": 0.1,
           "float 'OscillationBlendInTime'": 0.01,
           "float 'OscillationBlendOutTime'": 0.05,
-          "LocOscillation": {
-            "Name": "LocOscillation",
-            "Type": "StructProperty",
-            "Size": 479,
-            "StructName": "VOscillator",
-            "BoolVal": 0,
-            "Value": {
-              "X": {
-                "Name": "X",
-                "Type": "StructProperty",
-                "Size": 66,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 3,
-                  "float 'Frequency'": 1
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              },
-              "Y": {
-                "Name": "Y",
-                "Type": "StructProperty",
-                "Size": 66,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 3,
-                  "float 'Frequency'": 1
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              },
-              "Z": {
-                "Name": "Z",
-                "Type": "StructProperty",
-                "Size": 192,
-                "StructName": "FOscillator",
-                "BoolVal": 0,
-                "Value": {
-                  "float 'Amplitude'": 12,
-                  "float 'Frequency'": 8,
-                  "byte64 (EInitialOscillatorOffset) 'InitialOffset' /Script/EngineCameras": 22,
-                  "enum64 (EOscillatorWaveform) 'Waveform' ByteProperty /Script/EngineCameras": 24
-                },
-                "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0",
-                "SerializeType": "Property"
-              }
+          "struct VOscillator 479 'LocOscillation'": {
+            "struct FOscillator 66 'X'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
             },
-            "TypeName": "StructProperty 1 | VOscillator 1 | /Script/EngineCameras 0",
-            "SerializeType": "Property"
+            "struct FOscillator 66 'Y'": {
+              "float 'Amplitude'": 3,
+              "float 'Frequency'": 1
+            },
+            "struct FOscillator 192 'Z'": {
+              "float 'Amplitude'": 12,
+              "float 'Frequency'": 8,
+              "byte64 (EInitialOscillatorOffset) 'InitialOffset' /Script/EngineCameras": 22,
+              "enum64 (EOscillatorWaveform) 'Waveform' ByteProperty /Script/EngineCameras": 24
+            }
           },
           "obj 'RootShakePattern'": 5
         },
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
         "SparseClassDataStruct": {
           "Index": ""
-        },
-        "Next": 0
+        }
       }
     },
     {

@@ -32,6 +32,7 @@ namespace AssetTool
                 {
                     if (Nodes.Count == 2) return Nodes[1].Name;
                     else if (Nodes.Count == 4) return Nodes[2].Name;
+                    else if (Nodes.Count == 5) return Nodes[2].Name;
                     else return default;
                 }
                 return default;

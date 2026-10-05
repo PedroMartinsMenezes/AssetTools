@@ -26,7 +26,7 @@ namespace AssetTool
             {
                 TypeInfoResolver = new PolymorphicTypeResolver(),
                 Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault,
+                DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
                 WriteIndented = true,
                 IncludeFields = true,
                 Converters =
@@ -37,7 +37,6 @@ namespace AssetTool
                     new FTextKeyJsonConverter(),
                     new FStringJsonConverter(),
                     new FNameJsonConverter(),
-                    new FBoolJsonConverter(),
                 }
             };
             string json = JsonSerializer.Serialize(self, options);
@@ -51,26 +50,14 @@ namespace AssetTool
                 AssetPackage asset = await ToStreamThenToObjectAsync(self);
                 bool success = await asset.MoveAsync(transfer, context);
 
-                if (AppConfig.DebugSaveJson)
-                {
-                    (string json, string path) = (null, null);
-                    lock (_lock)
-                    {
-                        json = JsonSerializer.Serialize(self, DefaultOptions);
-                        path = transfer.GlobalObjects.FileName.GetTempJsonPath();
-                        if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                    }
-                    await File.WriteAllTextAsync(path, json);
-                }
-
-                if (AppConfig.DebugSaveUasset)
+                if (transfer.AppConfig.DebugSaveUasset)
                 {
                     string path = null;
                     lock (_lock)
                     {
                         path = transfer.GlobalObjects.FileName.GetTempAssetPath();
                         if (!Directory.Exists(Path.GetDirectoryName(path))) Directory.CreateDirectory(Path.GetDirectoryName(path));
-                        
+
                     }
                     using (FileStream fileStream = new FileStream(path, FileMode.Create, FileAccess.Write))
                     {
@@ -105,11 +92,13 @@ namespace AssetTool
             return obj;
         }
 
-        public static void SaveToJson(this object self, string path, Transfer transfer = null)
+        public static string SaveToJson(this object self, string path, Transfer transfer = null)
         {
             string outputDir = string.IsNullOrEmpty(Path.GetDirectoryName(path)) ? Directory.GetCurrentDirectory() : Path.GetDirectoryName(path);
             Directory.CreateDirectory(outputDir);
-            File.WriteAllText(path, JsonSerializer.Serialize(self, DefaultOptions));
+            string json = JsonSerializer.Serialize(self, DefaultOptions);
+            File.WriteAllText(path, json);
+            return json;
         }
 
         public static T ToObject<T>(this string json, Transfer transfer = null)
@@ -256,7 +245,7 @@ namespace AssetTool
                 new FNameJsonConverter(),
                 new FStringJsonConverter(),
                 new FGuidJsonConverter(),
-                new FBoolJsonConverter(),
+                new FGuidListJsonConverter(),
                 new FTextKeyJsonConverter(),
                 new FNameEntryIdJsonConverter(),
                 new FDateTimeJsonConverter(),
@@ -333,6 +322,7 @@ namespace AssetTool
                 //FColor
                 new FColorJsonConverter(),
                 new FLinearColorJsonConverter(),
+                new FLinearColorListJsonConverter(),
                 //FVector2DHalf
                 new FVector2DHalfJsonConverter(),
                 new FVector2DHalfArrayJsonConverter(),
@@ -347,31 +337,109 @@ namespace AssetTool
                 #endregion
 
                 #region Wrapper Types
+                new TBoolJsonConverter(),
+                new TListBoolJsonConverter(),
+                new TArrayBoolJsonConverter(),
+
                 new TInt8JsonConverter(),
-                new TUInt8ArrayJsonConverter(),
+                new TListInt8JsonConverter(),
+                new TArrayInt8JsonConverter(),
+
                 new TInt16JsonConverter(),
-                new TUInt16ArrayJsonConverter(),
+                new TListInt16JsonConverter(),
+                new TArrayInt16JsonConverter(),
+
                 new TInt32JsonConverter(),
                 new TListInt32JsonConverter(),
+                new TArrayInt32JsonConverter(),
+
                 new TInt64JsonConverter(),
+                new TListInt64JsonConverter(),
+                new TArrayInt64JsonConverter(),
+
                 new TUInt8JsonConverter(),
+                new TUInt8ArrayJsonConverter(),
+                new TListUInt8JsonConverter(),
+
                 new TUInt16JsonConverter(),
+                new TUInt16ArrayJsonConverter(),
+                new TListUInt16JsonConverter(),
+
                 new TUInt32JsonConverter(),
+                new TListUInt32JsonConverter(),
+                new TArrayUInt32JsonConverter(),
+
                 new TUInt64JsonConverter(),
+                new TListUInt64JsonConverter(),
+                new TArrayUInt64JsonConverter(),
+
                 new TFloatJsonConverter(),
+                new TListFloatJsonConverter(),
+                new TArrayFloatJsonConverter(),
+
                 new TDoubleJsonConverter(),
+                new TListDoubleJsonConverter(),
+                new TArrayDoubleJsonConverter(),
+                #endregion
+
+                #region Chaos
+                new Chaos.FPlaneDataJsonConverterTInt32(),
+                new Chaos.FPlaneDataJsonConverterTInt16(),
+                new Chaos.FPlaneDataJsonConverterTUInt8(),
+                new Chaos.FHalfEdgeDataJsonConverterTInt32(),
+                new Chaos.FHalfEdgeDataJsonConverterTInt16(),
+                new Chaos.FHalfEdgeDataJsonConverterTUInt8(),
+                new Chaos.FVertexDataJsonConverterTInt32(),
+                new Chaos.FVertexDataJsonConverterTInt16(),
+                new Chaos.FVertexDataJsonConverterTUInt8(),
+                new Chaos.TPlaneConcreteJsonConverter(),
+                new Chaos.TRotation3dJsonConverter(),
+                new Chaos.TRotation3fJsonConverter(),
+                new Chaos.SerializeAsAABB3JsonConverter(),
+                new Chaos.SerializeAsAABBsJsonConverter(),
                 #endregion
 
                 #region Array Types
+                new SByteArrayJsonConverter(),
+                new SByteListJsonConverter(),
+                new BoolArrayJsonConverter(),
+                new BoolListJsonConverter(),
                 new Int16ArrayJsonConverter(),
+                new Int16ListJsonConverter(),
                 new UInt16ArrayJsonConverter(),
+                new UInt16ListJsonConverter(),
                 new Int32ArrayJsonConverter(),
+                new Int32ListJsonConverter(),
                 new UInt32ArrayJsonConverter(),
+                new UInt32ListJsonConverter(),
                 new Int64ArrayJsonConverter(),
+                new Int64ListJsonConverter(),
                 new UInt64ArrayJsonConverter(),
+                new UInt64ListJsonConverter(),
                 new FloatArrayJsonConverter(),
+                new FloatListJsonConverter(),
                 new DoubleArrayJsonConverter(),
+                new DoubleListJsonConverter(),
                 #endregion
+
+                #region IntVector
+                new FIntVector2ListJsonConverter(),
+                new FIntVector3ListJsonConverter(),
+                new FIntVector4ListJsonConverter(),
+                new FUIntVector2ListJsonConverter(),
+                new FUIntVector3ListJsonConverter(),
+                new FUIntVector4ListJsonConverter(),
+                new FInt64Vector2ListJsonConverter(),
+                new FInt64Vector3ListJsonConverter(),
+                new FInt64Vector4ListJsonConverter(),
+                new FUInt64Vector2ListJsonConverter(),
+                new FUInt64Vector3ListJsonConverter(),
+                new FUInt64Vector4ListJsonConverter(),
+                #endregion
+
+                new FTransformListJsonConverter(),
+                new FTransform3fListJsonConverter(),
+                new FTransform3dListJsonConverter(),
 
                 #region Other Types
                 new FRigElementKeyJsonConverter(),
@@ -380,16 +448,12 @@ namespace AssetTool
                 new FRigVMOperandJsonConverter(),
                 new FGroupInfoJsonConverter(),
                 new AttributeStorageFAttributeKeyJsonConverter(),
-                #endregion
-
-                
                 new FSimpleMemberReferenceJsonConverter(),
                 new FEdGraphPinTypeJsonConverter(),
-                new EdGraphPinJsonConverter(),
+                new UEdGraphPinJsonConverter(),
                 new FPropertyTypeNameJsonConverter(),
                 new ParentPinWrapperJsonConverter(),
                 new LinkedToWrapperJsonConverter(),
-                new FTransformListJsonConverter(),
                 new FNameEntrySerializedJsonConverter(),
                 new FPackageIndexJsonConverter(),
                 new FObjectPtrJsonConverter(),
@@ -397,7 +461,19 @@ namespace AssetTool
                 new FDeprecatedSerializedPackedNormalJsonConverter(),
                 new FRigidBodyIndexPairJsonConverter(),
                 new FRigVMGraphFunctionIdentifierJsonConverter(),
+                new FFrameNumberJsonConverter(),
+                new ListFFrameNumberJsonConverter(),
+                new FSHVectorJsonConverter(),
+                new FSHVectorRGBJsonConverter(),
+                new FMovieSceneTangentDataJsonConverter(),
+                new FMovieSceneDoubleValueJsonConverter(),
+                new FMovieSceneFloatValueJsonConverter(),
+                #endregion
 
+                #region Properties
+                new FFieldJsonConverter(),
+                new FFieldListJsonConverter(),
+                #endregion
             }
         };
     }

@@ -5,7 +5,7 @@ namespace AssetTool
     {
         public FMeshMapBuildData LegacyMapBuildData;
         public FLandscapeComponentGrassData GrassData;
-        public FBool bCooked;
+        public bool bCooked;
 
         [Location("void ULandscapeComponent::Serialize(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)

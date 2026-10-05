@@ -136,6 +136,10 @@ namespace AssetTool
         {
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
+        public override void Move(ref bool[] value, int count)
+        {
+            writer.Write(MemoryMarshal.AsBytes(value.Select(x => x ? 1u : 0u).ToArray().AsSpan()));
+        }
         #endregion
 
         #region Arrays
@@ -179,6 +183,11 @@ namespace AssetTool
             writer.Write(value.Length);
             writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
         }
+        public override void Move(ref bool[] value)
+        {
+            writer.Write(value.Length);
+            writer.Write(MemoryMarshal.AsBytes(value.AsSpan()));
+        }
         #endregion
 
         public override void Move<T>(ref T value, Action<T> action)
@@ -189,6 +198,7 @@ namespace AssetTool
         #region ITransferableRaw
         public override void MoveRaw<T>(ref T value)
         {
+            value ??= new();
             value.MoveRaw(this);
         }
         public override void MoveRaw<T>(ref T[] value)
@@ -199,11 +209,20 @@ namespace AssetTool
                 item.MoveRaw(this);
             }
         }
+        public override void MoveRaw<T>(ref List<T> value)
+        {
+            writer.Write(value.Count);
+            foreach (var item in value)
+            {
+                item.MoveRaw(this);
+            }
+        }
         #endregion
 
         #region ITransferable
         public override void Move<T>(ref T value)
         {
+            value ??= new();
             value.Move(this);
         }
         public override void Move<T, T1>(ref T value, T1 arg1)
@@ -325,14 +344,6 @@ namespace AssetTool
         #endregion
 
         #region
-        public override void Move(ref FBool value)
-        {
-            writer.Write(value ? 1 : 0);
-        }
-        public override void Move(ref FBool? value)
-        {
-            writer.Write(value.GetValueOrDefault() ? 1 : 0);
-        }
         public override FGuid Move(FGuid value)
         {
             byte[] bytes = value.ToByteArray() ?? new byte[16];

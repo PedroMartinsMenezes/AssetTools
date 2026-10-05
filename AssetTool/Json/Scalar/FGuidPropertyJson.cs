@@ -11,7 +11,7 @@ namespace AssetTool
         public override int Size => 16;
         public override string TypeName => FStructProperty.TYPE_NAME;
         public override string StructName => Consts.Guid;
-        public override object DerivedValue(object value) => ((FGuid)value).Value;
-        public override object BaseValue(Transfer transfer, object value) => new FGuid((Guid)value);
+        public override object FromNativeValue(object value) => ((FGuid)value).Value;
+        public override object ToNativeValue(Transfer transfer, object value) => new FGuid((Guid)value);
     }
 }

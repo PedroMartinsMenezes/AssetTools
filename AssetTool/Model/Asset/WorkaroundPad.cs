@@ -18,7 +18,7 @@ namespace AssetTool
 
         public ITransferable Move(Transfer transfer)
         {
-            if (AppConfig.LogWorkaroundPad)
+            if (transfer.AppConfig.LogWorkaroundPad)
             {
                 lock (_lock)
                 {

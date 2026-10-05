@@ -6,9 +6,10 @@
       "LegacyUE3Version": 864,
       "FileVersionUE": {
         "FileVersionUE4": "VER_UE4_USERWIDGET_DEFAULT_FOCUSABLE_FALSE",
-        "FileVersionUE5": 0
+        "FileVersionUE5": "UNKNOWN"
       },
       "FileVersionLicenseeUE": 0,
+      "bUnversioned": false,
       "CustomVersionContainer": {
         "Versions": []
       },
@@ -30,6 +31,8 @@
       "SoftPackageReferencesOffset": 5051,
       "SearchableNamesOffset": 0,
       "ThumbnailTableOffset": 5063,
+      "ImportTypeHierarchiesCount": 0,
+      "ImportTypeHierarchiesOffset": 0,
       "Guid": "862a26e8-4a42-f13f-b193-ac87521abce8",
       "PersistentGuid": "",
       "OwnerPersistentGuid": "",
@@ -73,8 +76,7 @@
       "CellImportOffset": 0,
       "MetaDataOffset": 0,
       "EngineChangelist": 0,
-      "ChunkID": 0,
-      "FileVersionUE4IsZero": false
+      "ChunkID": 0
     },
     "NameMap": [
       "(0 0) /Game/StarterContent/Audio/Explosion_Cue",
@@ -364,7 +366,17 @@
           "Words": ""
         }
       }
-    }
+    },
+    "DataResourceMap": {
+      "Offset": 0,
+      "Version": 0,
+      "Count": 0
+    },
+    "ImportTypeHierarchiesMap": {
+      "Count": 0,
+      "ImportTypeHierarchies": {}
+    },
+    "GlobalTypeNames": {}
   },
   "Objects": [
     {
@@ -380,8 +392,7 @@
         "ArrayDim": 1,
         "SaveFlags": 17179869188,
         "RepNotifyFunc": "None",
-        "BlueprintReplicationCondition": 0,
-        "Next": 0
+        "BlueprintReplicationCondition": 0
       },
       "Pad": "ImportIndex[-14] ParticleSystemComponent"
     },
@@ -415,7 +426,6 @@
         "__type": "UFunction",
         "Members": {},
         "AccessTrackedObjectPtr": "ImportIndex[-19] UserConstructionScript",
-        "Children": 0,
         "ScriptLoadHelper": {
           "BytecodeBufferSize": 5,
           "SerializedScriptSize": 5,
@@ -454,14 +464,10 @@
         "ClassFlags": 12845072,
         "ClassWithin": 4294967290,
         "ClassConfigName": "Engine",
-        "NumInterfaces": 0,
         "ClassGeneratedBy": 7,
         "SerializedInterfaces": [],
-        "bDeprecatedForceScriptOrder": false,
         "Dummy": "None",
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 5,
-        "Next": 0
+        "PerspectiveNewCDO": 5
       }
     },
     {
@@ -473,16 +479,7 @@
       "ObjectFlags": "RF_Public, RF_ClassDefaultObject",
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
-        "Members": {},
-        "Children": 0,
-        "ClassFlags": 0,
-        "ClassWithin": 0,
-        "NumInterfaces": 0,
-        "ClassGeneratedBy": 0,
-        "bDeprecatedForceScriptOrder": false,
-        "bCookedAsBool": false,
-        "PerspectiveNewCDO": 0,
-        "Next": 0
+        "Members": {}
       }
     },
     {
@@ -593,17 +590,11 @@
       "ClassName": "EdGraphPin",
       "ObjectFlags": "RF_Transactional",
       "Obj": {
-        "__type": "UEdGraphPin",
+        "__type": "UEdGraphPin_Deprecated",
         "Members": {
           "string 'PinName'": "then",
           "byte64 (EEdGraphPinDirection) 'Direction'": 43,
-          "PinType": {
-            "Name": "PinType",
-            "Type": "StructProperty",
-            "Size": 61,
-            "StructName": "EdGraphPinType",
-            "Value": "exec"
-          }
+          "struct EdGraphPinType 61 'PinType'": "exec"
         }
       }
     },

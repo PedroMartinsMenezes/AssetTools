@@ -2,8 +2,8 @@
 {
     public class FPrecomputedLightVolumeData : ITransferable
     {
-        public FBool bValid;
-        public FBool bVolumeInitialized;
+        public bool bValid;
+        public bool bVolumeInitialized;
         public FBox Bounds;
         public float SampleSpacing;
         public Int32 NumSHSamples = 4;
