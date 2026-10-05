@@ -3,6 +3,7 @@ using System.Text;
 
 namespace AssetTool
 {
+    //@@@ Remove this class
     [DebuggerDisplay("array[]")]
     public class GenericPropertyJsonArray : BasePropertyJsonArray
     {
@@ -14,8 +15,6 @@ namespace AssetTool
 
         public override string FromNativeFields(FPropertyTag tag)
         {
-            //@@@ Read the Typename here
-
             var fields = new StringBuilder();
 
             fields.Append($"Size({tag.Size}) ");
@@ -32,8 +31,6 @@ namespace AssetTool
 
         public override void ToNativeFields(FPropertyTag tag, string key)
         {
-            //@@@ Write the Typename here
-
             tag.Size = key.GetNonNull("Size({0})", x => int.Parse(x));
             tag.InnerType = key.GetNonNull("InnerType({0})", x => new FName(x));
             tag.StructName = key.GetNonNull("StructName({0})", x => new FName(x));

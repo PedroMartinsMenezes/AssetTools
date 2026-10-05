@@ -278,7 +278,7 @@ namespace AssetTool
         }
         public long[] NameOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.NameCount == 0) //@@@ NameOffset
+            if (PackageFileSummary.NameCount == 0)
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.SoftObjectPathsOffset > 0)
                 return [PackageFileSummary.NameOffset, PackageFileSummary.SoftObjectPathsOffset];
@@ -289,7 +289,7 @@ namespace AssetTool
         }
         public long[] SoftObjectPathsOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.SoftObjectPathsCount == 0) //@@@ SoftObjectPathsOffset
+            if (PackageFileSummary.SoftObjectPathsCount == 0)
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.GatherableTextDataOffset > 0)
                 return [PackageFileSummary.SoftObjectPathsOffset, PackageFileSummary.GatherableTextDataOffset];
@@ -300,7 +300,7 @@ namespace AssetTool
         }
         public long[] GatherableOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.GatherableTextDataCount == 0) //@@@ GatherableTextDataOffset
+            if (PackageFileSummary.GatherableTextDataCount == 0)
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.GatherableTextDataOffset > 0 && PackageFileSummary.MetaDataOffset > 0)
                 return [PackageFileSummary.GatherableTextDataOffset, PackageFileSummary.MetaDataOffset];
@@ -322,14 +322,14 @@ namespace AssetTool
         }
         public long[] ImportOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.ImportCount == 0) //@@@ ImportOffset
+            if (PackageFileSummary.ImportCount == 0)
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.ImportOffset, PackageFileSummary.ExportOffset];
         }
         public long[] ExportOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.ExportCount == 0) //@@@ ExportOffset
+            if (PackageFileSummary.ExportCount == 0)
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.ExportOffset, PackageFileSummary.DependsOffset];
@@ -345,7 +345,7 @@ namespace AssetTool
         }
         public long[] SoftPackageReferenceOffsets(Transfer transfer)
         {
-            if (PackageFileSummary.SoftPackageReferencesCount == 0) //@@@ SoftPackageReferencesOffset
+            if (PackageFileSummary.SoftPackageReferencesCount == 0)
                 return [transfer.Position, transfer.Position];
             else if (PackageFileSummary.SearchableNamesOffset > 0)
                 return [PackageFileSummary.SoftPackageReferencesOffset, PackageFileSummary.SearchableNamesOffset];

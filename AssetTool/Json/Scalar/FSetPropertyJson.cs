@@ -10,17 +10,31 @@ namespace AssetTool
         public override string Name => "set";
         public override string TypeName => FSetProperty.TYPE_NAME;
 
-        public override string TypeNameFromNative(FPropertyTag tag) => $"{FSetProperty.TYPE_NAME} {tag.StructName}";
+        public override string BuildTypeNameKey(FPropertyTag tag) => tag.TypeNameString();
 
-        public override string TypeNameFromKey(string key) => $"{FSetProperty.TYPE_NAME} {key.GetNonNull("StructName({0})", x => x)}";
+        public override string RebuildTypeNameKey(string key)
+        {
+            string a = $"{FSetProperty.TYPE_NAME} ";
+            string b = key.GetNonNull("InnerType({0})", x => $"{x} ");
+            string c = key.GetNonNull("StructName({0})", x => $"{x}");
+            return $"{a}{b}{c}";
+        }
 
-        public override string ExtraFields(FPropertyTag tag)
+        public override object FromNative(FPropertyTag tag, Transfer transfer = null)
+        {
+            // File.AppendAllLines("C:/Temp/Before.json", [tag.ToJson()]);//@@@
+
+            return base.FromNative(tag, transfer);
+        }
+
+        public override string FromNativeFields(FPropertyTag tag)
         {
             FSetProperty prop = (FSetProperty)tag.Value;
             string a = $"Size({tag.Size}) ";
             string b = tag.InnerType is { } ? $"InnerType({tag.InnerType}) " : string.Empty;
-            string c = prop.NumElementsToRemove > 0 ? $"NumElementsToRemove({prop.NumElementsToRemove}) " : string.Empty;
-            return $"{a}{b}{c}";
+            string c = tag.StructName is { } ? $"StructName({tag.StructName}) " : string.Empty;
+            string d = prop.NumElementsToRemove > 0 ? $"NumElementsToRemove({prop.NumElementsToRemove}) " : string.Empty;
+            return $"{a}{b}{c}{d}";
         }
 
         public override object FromNativeValue(object value)
@@ -41,7 +55,12 @@ namespace AssetTool
         {
             Size = key.GetNonNull("Size({0})", x => int.Parse(x));
             InnerType = key.GetNonNull("InnerType({0})", x => x);
-            return base.ToNative(transfer, key, value);
+            StructName = key.GetNonNull("StructName({0})", x => x);
+            var tag = base.ToNative(transfer, key, value);
+
+            //File.AppendAllLines("C:/Temp/After.json", [tag.ToJson()]);//@@@
+
+            return tag;
         }
 
         public override object ToNativeValue(Transfer transfer, object value)
@@ -50,8 +69,8 @@ namespace AssetTool
             Dictionary<string, object> dict = value.ToObject<Dictionary<string, object>>(transfer);
             prop.Values = dict["Values"].ToObject<List<object>>(transfer);
             prop.Num = prop.Values.Count;
-            prop.ValuesToRemove = dict.ContainsKey("ValuesToRemove") ? dict["ValuesToRemove"].ToObject<List<object>>(transfer) : [];
-            prop.NumElementsToRemove = prop.ValuesToRemove.Count;
+            prop.ValuesToRemove = dict.ContainsKey("ValuesToRemove") ? dict["ValuesToRemove"].ToObject<List<object>>(transfer) : null;
+            prop.NumElementsToRemove = prop.ValuesToRemove?.Count ?? 0;
             return prop;
         }
     }

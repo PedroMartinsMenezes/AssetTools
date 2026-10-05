@@ -256,6 +256,18 @@ namespace AssetTool
         {
             return 48 + (transfer.Supports.VER_UE4_PROPERTY_GUID_IN_PROPERTY_TAG ? 1 : 0) + (transfer.Supports.PROPERTY_TAG_EXTENSION_AND_OVERRIDABLE_SERIALIZATION ? 1 : 0);
         }
+
+        public string TypeNameString()
+        {
+            if (TypeName is null)
+            {
+                return string.Empty;
+            }
+            else
+            {
+                return TypeName.Nodes.Where(n => !n.Name.Value.StartsWith('/')).Select(n => n.Name.Value).Aggregate((a, b) => $"{a} {b}");
+            }
+        }
     }
 
     public static class FPropertyTagExt
@@ -743,13 +755,13 @@ namespace AssetTool
                 {
                     NativeConstructors.Add(t.Item2.TypeName, (Func<Transfer, string, object, FPropertyTag>)((transfer, key, value) =>
                     {
-                        string name, enumName, index, guid, enumInnerType, typeNamespace;
-                        BasePropertyJson.ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+                        string name, native, enumName, index, guid, enumInnerType, typeNamespace;
+                        BasePropertyJson.ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
                         string structName = t.Item2.TypeName;
                         byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
                         int arrayIndex = index is { } ? int.Parse(index) : 0;
                         FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FStructProperty.TYPE_NAME, enumName, structName, default, default, name, enumInnerType, typeNamespace);
-                        EPropertyTagFlags propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, structName);
+                        EPropertyTagFlags? propertyTagFlags = BasePropertyJson.ExtractPropertyTagFlags(0, hasPropertyGuid, arrayIndex, native);
                         object tagValue = default;
                         int size = 0;
 

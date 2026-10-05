@@ -9,21 +9,21 @@
         public virtual string StructName { get; set; }
         public virtual string InnerType { get; set; }
         public virtual object FromNativeValue(object value) => value;
+        public virtual string FromNativeFields(FPropertyTag tag) => string.Empty;
+        public virtual string BuildTypeNameKey(FPropertyTag tag) => string.Empty;
         public virtual object ToNativeValue(Transfer transfer, object value) => value;
-        public virtual string ExtraFields(FPropertyTag tag) => string.Empty;
-        public virtual string TypeNameFromNative(FPropertyTag tag) => string.Empty;
-        public virtual string TypeNameFromKey(string key) => string.Empty;
+        public virtual string RebuildTypeNameKey(string key) => string.Empty;
 
         public BasePropertyJson() { }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            string globalKey = TypeNameFromNative(tag);
+            string globalKey = BuildTypeNameKey(tag);
             if (globalKey.Length > 0 && transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && !transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
             {
                 transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
             }
-            string key = BuildKey(Name, tag, ExtraFields);
+            string key = BuildKey(Name, tag, FromNativeFields);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : FromNativeValue(tag.Value);
             Add(key, value);
             return this;
@@ -37,31 +37,36 @@
         public virtual FPropertyTag ToNative(Transfer transfer, string key, object value)
         {
             byte boolVal = TypeName == FBoolProperty.TYPE_NAME ? (Convert.ToBoolean(value) ? (byte)1 : (byte)0) : (byte)0;
-            string name, enumName, index, guid, enumInnerType, typeNamespace;
-            ExtractKey(key, out name, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+            string name, native, enumName, index, guid, enumInnerType, typeNamespace;
+            ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, InnerType, default, name, enumInnerType, typeNamespace);
-            EPropertyTagFlags propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, StructName);
+            EPropertyTagFlags? propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, native);
+
+            if ((TypeName == FByteProperty.TYPE_NAME || TypeName == FEnumProperty.TYPE_NAME) && enumName is null)
+            {
+                enumName = "None";
+            }
 
             FPropertyTag tag = new()
             {
                 Name = new FName(name, transfer),
-                EnumName = enumName is { } ? new FName(enumName, transfer) : new FName("None", transfer),
+                EnumName = enumName is { } ? new FName(enumName, transfer) : null, //new FName("None", transfer),
                 Type = new FName(TypeName, transfer),
                 StructName = StructName is { } ? new FName(StructName, transfer) : default,
-                BoolVal = boolVal == 1 ? 1 : null,
+                BoolVal = boolVal == 1 ? (byte)1 : (byte)0,
                 Value = ToNativeValue(transfer, value),
                 Size = Math.Max(Size, ComputedSize(transfer, value)),
                 ArrayIndex = int.TryParse(index, out int i) && i > 0 ? i : null,
                 HasPropertyGuid = hasPropertyGuid == 1 ? 1 : null,
-                PropertyGuid = guid is { } ? new FGuid(guid) : default,
+                PropertyGuid = guid is { } ? new FGuid(guid) : null,
                 TypeName = typeName,
                 PropertyTagFlags = propertyTagFlags,
                 InnerType = InnerType is { } ? new FName(InnerType, transfer) : default,
             };
 
-            string globalKey = TypeNameFromKey(key);
+            string globalKey = RebuildTypeNameKey(key);
             if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
             {
                 tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
@@ -71,7 +76,7 @@
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
-        public static EPropertyTagFlags ExtractPropertyTagFlags(byte boolVal, byte hasPropertyGuid, int arrayIndex, string structName)
+        public static EPropertyTagFlags? ExtractPropertyTagFlags(byte boolVal, byte hasPropertyGuid, int arrayIndex, string native)
         {
             EPropertyTagFlags flags = EPropertyTagFlags.None;
             if (boolVal == 1)
@@ -86,16 +91,18 @@
             {
                 flags |= EPropertyTagFlags.HasArrayIndex;
             }
-            if (structName is { })
+            if (native is { })
             {
                 flags |= EPropertyTagFlags.HasBinaryOrNativeSerialize;
             }
-            return flags;
+            return flags == EPropertyTagFlags.None ? null : flags;
         }
 
         //Simplificar na versão nova gravando uma chave simples
         public virtual string BuildKey(string type, FPropertyTag tag, Func<FPropertyTag, string> extraFieldsCallback = null)
         {
+            string native = tag.PropertyTagFlags is { } && tag.PropertyTagFlags.Value.HasFlag(EPropertyTagFlags.HasBinaryOrNativeSerialize) ? "native " : string.Empty;
+
             string enumName = !tag.EnumName.IsFilled() ? string.Empty : $"({tag.EnumName.Value}) ";
 
             string arrayIndex = tag.ArrayIndex.GetValueOrDefault() <= 0 ? string.Empty : $"[{tag.ArrayIndex}] ";
@@ -108,11 +115,11 @@
 
             string extraFields = extraFieldsCallback?.Invoke(tag) ?? string.Empty;
 
-            return $"{type} {enumName}{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}{extraFields}'{tag.Name.ToString()}'";
+            return $"{type} {native}{enumName}{arrayIndex}{guidValue}{enumInnerType}{typeNamespace}{extraFields}'{tag.Name.ToString()}'";
         }
 
         //Simplificar na versão nova usando o GlobalTypeNames
-        public static string ExtractKey(string key, out string name, out string enumName, out string arrayIndex, out string guidValue, out string enumInnerType, out string typeNamespace)
+        public static string ExtractKey(string key, out string name, out string native, out string enumName, out string arrayIndex, out string guidValue, out string enumInnerType, out string typeNamespace)
         {
             string originalKey = key;
             key = key[(key.IndexOf(' ') + 1)..];
@@ -120,7 +127,10 @@
 
             string prefix = key[0..(key.IndexOf("'"))];
 
+            native = originalKey.IndexOf(" native ") == originalKey.IndexOf(' ') ? "native" : null;
+
             enumName = originalKey.IndexOf(' ') == originalKey.IndexOf('(') - 1 ? prefix.GetNonNull("({0})", x => x) : null;
+            enumName = enumName is { } ? enumName : originalKey.IndexOf(" native ") + 8 == originalKey.IndexOf('(') ? prefix.GetNonNull("({0})", x => x) : null;
 
             arrayIndex = prefix.GetNonNull("[{0}]", x => x);
             guidValue = prefix.GetNonNull("{{0}}", x => x);
@@ -132,7 +142,7 @@
             return prefix;
         }
 
-        //Simplificar na versão nova usando o GlobalTypeNames
+        //@@@ Incomplete logic: Should handle: InnerType(StructPropert) + StructName(Guid)
         public static FPropertyTypeName ExtractTypeName(Transfer transfer, string type, string enumName, string structName, string innerType, string valueType, string name, string enumInnerType, string typeNamespace)
         {
             if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
@@ -190,12 +200,17 @@
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
+                if (innerType == FStructProperty.TYPE_NAME)
+                {
+                    typeName.Nodes[1].InnerCount = 1;
+                    typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });
+                }
             }
             else if (type == FArrayProperty.TYPE_NAME)
             {
                 typeName.Nodes.Add(new() { Name = new FName(type, transfer), InnerCount = 1 });
                 typeName.Nodes.Add(new() { Name = new FName(innerType, transfer), InnerCount = 0 });
-                if (structName is { }) //@@@
+                if (structName is { })
                 {
                     typeName.Nodes[1].InnerCount = 1;
                     typeName.Nodes.Add(new() { Name = new FName(structName, transfer), InnerCount = 1 });

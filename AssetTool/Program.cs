@@ -10,6 +10,9 @@ namespace AssetTool
 
         static void Main(string[] args)
         {
+            //File.WriteAllText("C:/Temp/Before.json", "");//@@@
+            //File.WriteAllText("C:/Temp/After.json", "");//@@@
+
             var AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
             AssetConverter.AppConfig = AppConfig;
             AssetConverter.AppConfig.DebugCheckMember = args.Contains("-DebugCheckMember");
