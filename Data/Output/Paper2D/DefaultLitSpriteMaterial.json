@@ -470,22 +470,10 @@
           "bool 'TwoSided'": true,
           "obj[] 'Expressions'": "2 3 9 8 6 7 4 5",
           "guid 'StateId'": "4ef26f8f-442f-f1af-c696-668db9352df2",
-          "ReferencedTextureGuids": {
-            "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
-            "Size": 85,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
-              "Size": 32,
-              "StructName": "Guid"
-            },
-            "Value": [
-              "33eaaba1-459c-1080-dde0-76bef5b108c2",
-              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
-          },
+          "struct[] Size(85) MaybeInnerTag(Guid 32  ) 'ReferencedTextureGuids'": [
+            "33eaaba1-459c-1080-dde0-76bef5b108c2",
+            "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+          ],
           "struct LightmassMaterialInterfaceSettings 34 'LightmassSettings'": {
             "bool 'bCastShadowAsMasked'": true
           },

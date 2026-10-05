@@ -834,11 +834,20 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty ComponentKey": {
         "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BlueprintComponentChangedPropertyInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+      },
       "StructProperty BlueprintCookedComponentInstancingData": {
         "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty ComponentOverrideRecord": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -862,65 +871,47 @@
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
           "obj 'InheritableComponentHandler'": 6,
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
-                    "AssetName": "BP_FloatingPlatform_Small"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
+                  "AssetName": "BP_FloatingPlatform_Small"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
-                    "AssetName": "BP_FloatingPlatform_Small"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_FloatingPlatform_Small",
+                  "AssetName": "BP_FloatingPlatform_Small"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -388,
-                  "Y": -197
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -388,
+                "Y": -197
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "2945e2d9-4aac-597e-f9ee-ad88c67eee3f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "2945e2d9-4aac-597e-f9ee-ad88c67eee3f"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -985,7 +976,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "11 7 12 8 13 9",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "5c7e9859-4c53-3157-51f7-bd9ee40c37b7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "5c7e9859-4c53-3157-51f7-bd9ee40c37b7"
         }
       }
     },
@@ -1002,7 +993,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "14 10",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "6d2580fe-4412-a67d-90ad-ab82f839f949"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "6d2580fe-4412-a67d-90ad-ab82f839f949"
         }
       }
     },
@@ -1016,83 +1007,47 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "Records": {
-            "Name": "Records",
-            "Type": "ArrayProperty",
-            "Size": 1195,
-            "StructName": "ComponentOverrideRecord",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'ComponentClass'": -16,
-                "obj 'ComponentTemplate'": 20,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": "MovingComp",
-                  "guid 'AssociatedGuid' /Script/CoreUObject": "944b4e7a-4acb-26dd-ea62-c18cb1e7d4b1"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
+          "struct[] TypeNamespace(/Script/Engine) StructName(ComponentOverrideRecord) Size(1195) 'Records'": [
+            {
+              "obj 'ComponentClass'": -16,
+              "obj 'ComponentTemplate'": 20,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": "MovingComp",
+                "guid native TypeNamespace(/Script/CoreUObject) 'AssociatedGuid'": "944b4e7a-4acb-26dd-ea62-c18cb1e7d4b1"
               },
-              {
-                "obj 'ComponentClass'": -16,
-                "obj 'ComponentTemplate'": 18,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": " 2",
-                  "guid 'AssociatedGuid' /Script/CoreUObject": "64e085c9-4834-7be1-f998-308052bb492d"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
-              },
-              {
-                "obj 'ComponentClass'": -16,
-                "obj 'ComponentTemplate'": 19,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": " ",
-                  "guid 'AssociatedGuid' /Script/CoreUObject": "5843fcc7-4409-d9b8-dedc-499cd9546e2c"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
               }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
-          }
+            },
+            {
+              "obj 'ComponentClass'": -16,
+              "obj 'ComponentTemplate'": 18,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": " 2",
+                "guid native TypeNamespace(/Script/CoreUObject) 'AssociatedGuid'": "64e085c9-4834-7be1-f998-308052bb492d"
+              },
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
+              }
+            },
+            {
+              "obj 'ComponentClass'": -16,
+              "obj 'ComponentTemplate'": 19,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": " ",
+                "guid native TypeNamespace(/Script/CoreUObject) 'AssociatedGuid'": "5843fcc7-4409-d9b8-dedc-499cd9546e2c"
+              },
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
+              }
+            }
+          ]
         }
       }
     },
@@ -1109,12 +1064,12 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -1,
             "name 'MemberName'": "ReceiveBeginPlay",
-            "guid 'MemberGuid' /Script/CoreUObject": "79fe6279-40f1-4b52-6d29-c0b682d14a69"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "79fe6279-40f1-4b52-6d29-c0b682d14a69"
           },
           "int 'NodePosX'": 200,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "3f71ab1b-4068-1dcf-cb9b-dfb58b6c14fd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3f71ab1b-4068-1dcf-cb9b-dfb58b6c14fd"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`7 699383ca-41e0-0de5-6052-87949b43c93e`» LinkedTo«`11 cf63f94f-4b39-0017-a22a-8fab82b6931a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1139,9 +1094,9 @@
           },
           "int 'NodePosX'": 200,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "ed8e2478-4498-94a9-611c-6b85c8d6923b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ed8e2478-4498-94a9-611c-6b85c8d6923b"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`8 4d832c00-470c-6258-3cf5-f489b5c6d869`» LinkedTo«`12 ddd4e752-41f8-af38-a381-da967d6dd30b`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1167,9 +1122,9 @@
           },
           "int 'NodePosX'": 200,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "32c4ef9f-467a-18bf-2014-0a86b9814ce7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "32c4ef9f-467a-18bf-2014-0a86b9814ce7"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`9 e461fb9c-49b0-716c-3eeb-ccb1f34f60c8`» LinkedTo«`13 3d5525c9-448c-99ad-64d5-44800406cdd1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1192,10 +1147,10 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -1,
             "name 'MemberName'": "UserConstructionScript",
-            "guid 'MemberGuid' /Script/CoreUObject": "635587c7-4f9d-8fbb-c767-1cb7ec497e44"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "635587c7-4f9d-8fbb-c767-1cb7ec497e44"
           },
           "int 'NodePosX'": 200,
-          "guid 'NodeGuid' /Script/CoreUObject": "218bc8b6-4d84-7876-ae14-e8b674e44a02"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "218bc8b6-4d84-7876-ae14-e8b674e44a02"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`10 f1fc856b-40aa-1f81-b952-e1b71446a172`» LinkedTo«`14 b5bcdb10-49fb-349c-f264-e0a8e9d35956`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1219,11 +1174,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "1b81c0c9-42ee-4e3c-e11b-59993e5ad419"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1b81c0c9-42ee-4e3c-e11b-59993e5ad419"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1248,11 +1203,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "e47b52ef-4526-7b6c-bfa7-bba32bfc1a44"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e47b52ef-4526-7b6c-bfa7-bba32bfc1a44"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1278,11 +1233,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 47,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 47,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "4b24deb3-4083-3247-5338-5994f03e26e9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4b24deb3-4083-3247-5338-5994f03e26e9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1306,7 +1261,7 @@
             "obj 'MemberParent'": -8,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "95a2f619-438f-ca43-e2cd-5fbde84e95ec"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "95a2f619-438f-ca43-e2cd-5fbde84e95ec"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1350,7 +1305,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "1bd65c04-4fc8-0f70-427d-0693ecea493b",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "1bd65c04-4fc8-0f70-427d-0693ecea493b",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1416,7 +1371,7 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj[] 'OverrideMaterials'": "-18",
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "0.40000000000000002 0.40000000000000002 0.41922599999999999"
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "0.40000000000000002 0.40000000000000002 0.41922599999999999"
         },
         "LODData": [],
         "bSerializeAsCookedData": false,

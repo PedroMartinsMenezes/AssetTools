@@ -522,35 +522,23 @@
           "obj 'SimpleConstructionScript'": 19,
           "obj[] 'UbergraphPages'": "8",
           "obj[] 'FunctionGraphs'": "9",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Audio",
-              "Default"
-            ]
-          },
+          "name[] 'CategorySorting'": [
+            "Audio",
+            "Default"
+          ],
           "int 'BlueprintSystemVersion'": 2,
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 244,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'EditedObject'": 9,
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
-              },
-              {
-                "obj 'EditedObject'": 8,
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+          "struct[] Size(244) 'LastEditedDocuments'": [
+            {
+              "obj 'EditedObject'": 9,
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "obj 'EditedObject'": 8,
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 15,
           "obj 'GeneratedClass'": 4,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

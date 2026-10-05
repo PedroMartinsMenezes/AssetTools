@@ -743,11 +743,23 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty OptionalPinFromProperty": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -772,134 +784,89 @@
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "3",
           "obj[] 'FunctionGraphs'": "4",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 1133,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Pawn",
-                "guid 'VarGuid' /Script/CoreUObject": "91942b9c-4e6d-9df3-7a75-d7967e4c7108",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-13`)",
-                "string 'FriendlyName'": "Pawn",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`524994154D16EB053A0BF790CF56E074` Namespace=`\\0` SourceString=`Context`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(1133) 'NewVariables'": [
+            {
+              "name 'VarName'": "Pawn",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "91942b9c-4e6d-9df3-7a75-d7967e4c7108",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-13`)",
+              "string 'FriendlyName'": "Pawn",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`524994154D16EB053A0BF790CF56E074` Namespace=`\\0` SourceString=`Context`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Cached Location",
-                "guid 'VarGuid' /Script/CoreUObject": "a91e1ab3-47c8-15af-33a5-a5a09a343846",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-35`)",
-                "string 'FriendlyName'": "Cached Location",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`F8347FAA4A99DA82E49E3EB1E08CD640` Namespace=`\\0` SourceString=`Outputs`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Event Graph",
-              "Context",
-              "Outputs",
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STT_SaveLocation",
-                    "AssetName": "STT_SaveLocation"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -589.31964,
-                  "Y": -490.33505
-                },
-                "float 'SavedZoomAmount'": 0.675
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Cached Location",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "a91e1ab3-47c8-15af-33a5-a5a09a343846",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-35`)",
+              "string 'FriendlyName'": "Cached Location",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`F8347FAA4A99DA82E49E3EB1E08CD640` Namespace=`\\0` SourceString=`Outputs`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STT_SaveLocation",
-                    "AssetName": "STT_SaveLocation"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Event Graph",
+            "Context",
+            "Outputs",
+            "None"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STT_SaveLocation",
+                  "AssetName": "STT_SaveLocation"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -322.3966,
-                  "Y": -407.03836
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -589.31964,
+                "Y": -490.33505
+              },
+              "float 'SavedZoomAmount'": 0.675
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STT_SaveLocation",
+                  "AssetName": "STT_SaveLocation"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -322.3966,
+                "Y": -407.03836
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "0c67e47f-4193-48d3-77c8-96a7986545c3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "0c67e47f-4193-48d3-77c8-96a7986545c3"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -990,7 +957,7 @@
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "14 11 13 17 18 12 19 5 6 7",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "88f30d95-4f19-1d7e-72d9-98bde26ec7ce"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "88f30d95-4f19-1d7e-72d9-98bde26ec7ce"
         }
       }
     },
@@ -1006,7 +973,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "15 16",
-          "guid 'GraphGuid' /Script/CoreUObject": "43610a90-4509-db77-5d1f-19ad3e2f36f6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "43610a90-4509-db77-5d1f-19ad3e2f36f6"
         }
       }
     },
@@ -1020,7 +987,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 192,
           "int 'NodePosY'": 192,
@@ -1029,7 +996,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Are we transitioning into this state?",
-          "guid 'NodeGuid' /Script/CoreUObject": "9cba0e80-4f25-d671-83c8-66b46acf3419"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9cba0e80-4f25-d671-83c8-66b46acf3419"
         },
         "Pins": []
       }
@@ -1044,7 +1011,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 1552,
           "int 'NodePosY'": 208,
@@ -1053,7 +1020,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Save the actor's location",
-          "guid 'NodeGuid' /Script/CoreUObject": "1852e511-4e3d-c790-8c3c-ff931b1d38ab"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1852e511-4e3d-c790-8c3c-ff931b1d38ab"
         },
         "Pins": []
       }
@@ -1068,14 +1035,14 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosY'": -128,
           "int 'NodeHeight'": 128,
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "A simple StateTree task to cache the actor's location when it enters the owning state.",
-          "guid 'NodeGuid' /Script/CoreUObject": "a87ee0fc-4a1f-7d57-5719-d9939937c831"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a87ee0fc-4a1f-7d57-5719-d9939937c831"
         },
         "Pins": []
       }
@@ -1175,211 +1142,202 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 4290,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "NextActiveFrames",
-                "string 'PropertyFriendlyName'": "Next Active Frames",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 121,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:NextActiveFrames` Namespace=`UObjectToolTips` SourceString=`States selected as result of the transition.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(4290) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "NextActiveFrames",
+              "string 'PropertyFriendlyName'": "Next Active Frames",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 121,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:NextActiveFrames` Namespace=`UObjectToolTips` SourceString=`States selected as result of the transition.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "SourceState",
-                "string 'PropertyFriendlyName'": "Source State",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 96,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceState` Namespace=`UObjectToolTips` SourceString=`Transition source state.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "SourceState",
+              "string 'PropertyFriendlyName'": "Source State",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 96,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceState` Namespace=`UObjectToolTips` SourceString=`Transition source state.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "TargetState",
-                "string 'PropertyFriendlyName'": "Target State",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 126,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:TargetState` Namespace=`UObjectToolTips` SourceString=`Transition target state. It can be a completion state.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "TargetState",
+              "string 'PropertyFriendlyName'": "Target State",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 126,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:TargetState` Namespace=`UObjectToolTips` SourceString=`Transition target state. It can be a completion state.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "CurrentState",
-                "string 'PropertyFriendlyName'": "Current State",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 161,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:CurrentState` Namespace=`UObjectToolTips` SourceString=`The current state being executed. On enter/exit callbacks this is the state of the task.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "CurrentState",
+              "string 'PropertyFriendlyName'": "Current State",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 161,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:CurrentState` Namespace=`UObjectToolTips` SourceString=`The current state being executed. On enter/exit callbacks this is the state of the task.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "CurrentRunStatus",
-                "string 'PropertyFriendlyName'": "Current Run Status",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 96,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:CurrentRunStatus` Namespace=`UObjectToolTips` SourceString=`Current Run status.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "CurrentRunStatus",
+              "string 'PropertyFriendlyName'": "Current Run Status",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 96,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:CurrentRunStatus` Namespace=`UObjectToolTips` SourceString=`Current Run status.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "ChangeType",
-                "string 'PropertyFriendlyName'": "Change Type",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 190,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:ChangeType` Namespace=`UObjectToolTips` SourceString=`If the change type is Sustained, then the CurrentState was reselected, or if Changed then the state was just activated.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "ChangeType",
+              "string 'PropertyFriendlyName'": "Change Type",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 190,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:ChangeType` Namespace=`UObjectToolTips` SourceString=`If the change type is Sustained, then the CurrentState was reselected, or if Changed then the state was just activated.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Priority",
-                "string 'PropertyFriendlyName'": "Priority",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 125,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:Priority` Namespace=`UObjectToolTips` SourceString=`Priority of the transition that caused the state change.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Priority",
+              "string 'PropertyFriendlyName'": "Priority",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 125,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:Priority` Namespace=`UObjectToolTips` SourceString=`Priority of the transition that caused the state change.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "SourceStateTree",
-                "string 'PropertyFriendlyName'": "Source State Tree",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 142,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceStateTree` Namespace=`UObjectToolTips` SourceString=`StateTree asset that was active when the transition was requested.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "SourceStateTree",
+              "string 'PropertyFriendlyName'": "Source State Tree",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 142,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceStateTree` Namespace=`UObjectToolTips` SourceString=`StateTree asset that was active when the transition was requested.`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "SourceRootState",
-                "string 'PropertyFriendlyName'": "Source Root State",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 142,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceRootState` Namespace=`UObjectToolTips` SourceString=`Root state the execution frame where the transition was requested.`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Default",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "SourceRootState",
+              "string 'PropertyFriendlyName'": "Source Root State",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 142,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`StateTreeTransitionResult:SourceRootState` Namespace=`UObjectToolTips` SourceString=`Root state the execution frame where the transition was requested.`",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Default",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -39,
           "int 'NodePosX'": 256,
           "int 'NodePosY'": 384,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 62,
-          "guid 'NodeGuid' /Script/CoreUObject": "91f20d8c-4060-9280-bf97-58b69e22787a"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 62,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "91f20d8c-4060-9280-bf97-58b69e22787a"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-39`) isReference isConst`» Name«`StateTreeTransitionResult`» Id«`11 355f6232-419a-590b-d37c-c18d6fe2c6db`» LinkedTo«`14 cfd9c8e4-4b20-1247-61d3-a48d2048bf81`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1412,7 +1370,7 @@
           },
           "int 'NodePosX'": 1776,
           "int 'NodePosY'": 352,
-          "guid 'NodeGuid' /Script/CoreUObject": "7ae3fb47-42c1-8530-5b23-bfad85b4907e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "7ae3fb47-42c1-8530-5b23-bfad85b4907e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-13`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`12 8863ee42-4b59-9c42-7e56-57abcbd60bdc`» LinkedTo«`18 f431d437-47af-9d1b-f498-e3a57fa44151`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1432,7 +1390,7 @@
         "Members": {
           "int 'NodePosX'": 720,
           "int 'NodePosY'": 480,
-          "guid 'NodeGuid' /Script/CoreUObject": "955bf6d3-4e0d-d4b2-fdff-c791c67d0afb"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "955bf6d3-4e0d-d4b2-fdff-c791c67d0afb"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`ReturnValue`» Id«`13 94c6ec30-4140-8033-3486-9797c78f1626`» LinkedTo«`17 71709240-4cf4-bc3f-c49c-3393732efdfa`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1457,7 +1415,7 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "9c982657-4ab6-5c1e-c9df-48a83863b335"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9c982657-4ab6-5c1e-c9df-48a83863b335"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1482,7 +1440,7 @@
             "obj 'MemberParent'": -19,
             "name 'MemberName'": "ReceiveGetDescription"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "8c546d61-46af-b2e5-f6df-89aec1fce99a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8c546d61-46af-b2e5-f6df-89aec1fce99a"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1506,7 +1464,7 @@
             "name 'MemberName'": "ReceiveGetDescription"
           },
           "int 'NodePosX'": 384,
-          "guid 'NodeGuid' /Script/CoreUObject": "22961c28-4458-8114-6879-b29a2fcd8f35"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "22961c28-4458-8114-6879-b29a2fcd8f35"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1527,7 +1485,7 @@
         "Members": {
           "int 'NodePosX'": 1280,
           "int 'NodePosY'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "67d6958e-45c4-df3c-09a8-6a9b9483f594"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "67d6958e-45c4-df3c-09a8-6a9b9483f594"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`17 b5ffc05e-4b29-667a-f8ae-5db8d87e1753`» LinkedTo«`14 b0b524e9-40ad-0d94-555b-a3ad106eefb3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1549,12 +1507,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Pawn",
-            "guid 'MemberGuid' /Script/CoreUObject": "91942b9c-4e6d-9df3-7a75-d7967e4c7108",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "91942b9c-4e6d-9df3-7a75-d7967e4c7108",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": 390,
-          "guid 'NodeGuid' /Script/CoreUObject": "72213bb1-43b2-2adc-bb34-78ae643a1ea7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "72213bb1-43b2-2adc-bb34-78ae643a1ea7"
         },
         "Pins": [
           "output-pin Type«`object obj(`-13`)`» Name«`Pawn`» Id«`18 f431d437-47af-9d1b-f498-e3a57fa44151`» LinkedTo«`12 8863ee42-4b59-9c42-7e56-57abcbd60bdc`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1574,12 +1532,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Cached Location",
-            "guid 'MemberGuid' /Script/CoreUObject": "a91e1ab3-47c8-15af-33a5-a5a09a343846",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "a91e1ab3-47c8-15af-33a5-a5a09a343846",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2048,
           "int 'NodePosY'": 272,
-          "guid 'NodeGuid' /Script/CoreUObject": "44659d81-46de-3629-3d13-f0968bfd0945"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "44659d81-46de-3629-3d13-f0968bfd0945"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`19 c2f5da2f-4cca-d2fe-38b0-4382cefc3d08`» LinkedTo«`17 67567b00-4ee3-23f8-bf9f-74b480a13bd9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1604,7 +1562,7 @@
             "RawPointer": 101,
             "UberGraphFunctionKey": 0
           },
-          "Vector 'Cached Location' {a91e1ab3-47c8-15af-33a5-a5a09a343846} /Script/CoreUObject": "0 0 0"
+          "Vector native {a91e1ab3-47c8-15af-33a5-a5a09a343846} TypeNamespace(/Script/CoreUObject) 'Cached Location'": "0 0 0"
         },
         "SparseClassDataStruct": {
           "Index": ""

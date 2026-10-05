@@ -376,111 +376,55 @@
           "struct MaterialCachedExpressionData 856 'CachedExpressionData'": {
             "struct MaterialCachedParameters 718 'Parameters'": {
               "struct MaterialCachedParameterEntry 390 'Entries'[2]": {
-                "NameHashes": {
-                  "Name": "NameHashes",
-                  "Type": "ArrayProperty",
-                  "Size": 12,
-                  "InnerType": "UInt64Property",
-                  "Value": [
-                    13999004588085626704
-                  ]
-                },
-                "ParameterInfos": {
-                  "Name": "ParameterInfos",
-                  "Type": "ArrayProperty",
-                  "Size": 164,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "ParameterInfos",
-                    "Type": "StructProperty",
-                    "Size": 111,
-                    "StructName": "MaterialParameterInfo"
-                  },
-                  "Value": [
-                    {
-                      "name 'Name'": "SpriteTexture",
-                      "byte64 (EMaterialParameterAssociation) 'Association'": 36,
-                      "int 'Index'": -1
-                    }
-                  ]
-                },
-                "ExpressionGuids": {
-                  "Name": "ExpressionGuids",
-                  "Type": "ArrayProperty",
-                  "Size": 69,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "ExpressionGuids",
-                    "Type": "StructProperty",
-                    "Size": 16,
-                    "StructName": "Guid"
-                  },
-                  "Value": [
-                    "c8051a7a-4f3d-c03d-95f8-6892faa89d60"
-                  ]
-                },
+                "ulong[] 'NameHashes'": "13999004588085626704",
+                "struct[] Size(164) MaybeInnerTag(MaterialParameterInfo 111  ) 'ParameterInfos'": [
+                  {
+                    "name 'Name'": "SpriteTexture",
+                    "byte64 (EMaterialParameterAssociation) 'Association'": 36,
+                    "int 'Index'": -1
+                  }
+                ],
+                "struct[] Size(69) MaybeInnerTag(Guid 16  ) 'ExpressionGuids'": [
+                  "c8051a7a-4f3d-c03d-95f8-6892faa89d60"
+                ],
                 "bool[] 'Overrides'": "0"
               },
               "obj[] 'TextureValues'": "-13",
-              "TextureChannelNameValues": {
-                "Name": "TextureChannelNameValues",
-                "Type": "ArrayProperty",
-                "Size": 197,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "TextureChannelNameValues",
-                  "Type": "StructProperty",
-                  "Size": 144,
-                  "StructName": "ParameterChannelNames"
-                },
-                "Value": [
-                  {
-                    "R": {
-                      "Name": "R",
-                      "Type": "TextProperty",
-                      "Size": 9,
-                      "Value": "text header=`None` "
-                    },
-                    "G": {
-                      "Name": "G",
-                      "Type": "TextProperty",
-                      "Size": 9,
-                      "Value": "text header=`None` "
-                    },
-                    "B": {
-                      "Name": "B",
-                      "Type": "TextProperty",
-                      "Size": 9,
-                      "Value": "text header=`None` "
-                    },
-                    "A": {
-                      "Name": "A",
-                      "Type": "TextProperty",
-                      "Size": 9,
-                      "Value": "text header=`None` "
-                    }
+              "struct[] Size(197) MaybeInnerTag(ParameterChannelNames 144  ) 'TextureChannelNameValues'": [
+                {
+                  "R": {
+                    "Name": "R",
+                    "Type": "TextProperty",
+                    "Size": 9,
+                    "Value": "text header=`None` "
+                  },
+                  "G": {
+                    "Name": "G",
+                    "Type": "TextProperty",
+                    "Size": 9,
+                    "Value": "text header=`None` "
+                  },
+                  "B": {
+                    "Name": "B",
+                    "Type": "TextProperty",
+                    "Size": 9,
+                    "Value": "text header=`None` "
+                  },
+                  "A": {
+                    "Name": "A",
+                    "Type": "TextProperty",
+                    "Size": 9,
+                    "Value": "text header=`None` "
                   }
-                ]
-              }
+                }
+              ]
             },
             "obj[] 'ReferencedTextures'": "-13",
             "bool[] 'QualityLevelsUsed'": "0 1 0"
           },
-          "ReferencedTextureGuids": {
-            "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
-            "Size": 69,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
-              "Size": 16,
-              "StructName": "Guid"
-            },
-            "Value": [
-              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
-          },
+          "struct[] Size(69) MaybeInnerTag(Guid 16  ) 'ReferencedTextureGuids'": [
+            "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+          ],
           "struct LightmassMaterialInterfaceSettings 34 'LightmassSettings'": {
             "bool 'bCastShadowAsMasked'": true
           },

@@ -1852,14 +1852,29 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPInterfaceDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BlueprintEnhancedInputActionBinding": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintEnhancedInputActionBinding 1 | /Script/EnhancedInput 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -1882,214 +1897,142 @@
           "obj 'SimpleConstructionScript'": 93,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "8",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 2306,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "IsUsingGamepad",
-                "guid 'VarGuid' /Script/CoreUObject": "df213d31-4172-30e5-af13-a580e9027107",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Is Using Gamepad",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 79,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(2306) 'NewVariables'": [
+            {
+              "name 'VarName'": "IsUsingGamepad",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "df213d31-4172-30e5-af13-a580e9027107",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Is Using Gamepad",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "CameraTransitionActive",
-                "guid 'VarGuid' /Script/CoreUObject": "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Camera Transition Active",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 82,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(79) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "CameraTransitionActive",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Camera Transition Active",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "DroneRef",
-                "guid 'VarGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-3`)",
-                "string 'FriendlyName'": "Drone Ref",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 82,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "DroneRef",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-3`)",
+              "string 'FriendlyName'": "Drone Ref",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "PlayerRef",
-                "guid 'VarGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-38`)",
-                "string 'FriendlyName'": "Player Ref",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 82,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Event Graph",
-              "Default"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "ImplementedInterfaces": {
-            "Name": "ImplementedInterfaces",
-            "Type": "ArrayProperty",
-            "Size": 172,
-            "StructName": "BPInterfaceDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'Interface'": -2,
-                "obj[] 'Graphs'": "5 7 6"
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 82,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "PlayerRef",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "ea564f8c-4a28-054c-afbc-789142c03569",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-38`)",
+              "string 'FriendlyName'": "Player Ref",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "obj 'Interface'": -5,
-                "obj[] 'Graphs'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPInterfaceDescription 1 | /Script/Engine 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
-                    "AssetName": "BP_PC_Stack"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 82,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "None",
+            "Event Graph",
+            "Default"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPInterfaceDescription) Size(172) 'ImplementedInterfaces'": [
+            {
+              "obj 'Interface'": -2,
+              "obj[] 'Graphs'": "5 7 6"
+            },
+            {
+              "obj 'Interface'": -5,
+              "obj[] 'Graphs'": ""
+            }
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
+                  "AssetName": "BP_PC_Stack"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
-                    "AssetName": "BP_PC_Stack"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Character/BP_PC_Stack",
+                  "AssetName": "BP_PC_Stack"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -593.00977,
-                  "Y": -2042.6482
-                },
-                "float 'SavedZoomAmount'": 0.25
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -593.00977,
+                "Y": -2042.6482
+              },
+              "float 'SavedZoomAmount'": 0.25
+            }
+          ],
           "obj 'ThumbnailInfo'": 91,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "94e0e784-45bc-baa6-5786-76827e032f80"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "94e0e784-45bc-baa6-5786-76827e032f80"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -2257,7 +2200,7 @@
           "obj 'Schema'": -7,
           "obj[] 'Nodes'": "53 34 9 52 74 56 11 35 36 38 37 79 70 47 46 12 60 81 61 33 55 45 57 75 50 76 48 59 71 78 62 58 44 80 87 82 39 40 51 54 88 49 85 83 41 10 77 72 86 42 84 43 73",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "a2f1706b-45fe-fd17-9e5a-8ea01bc6219a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "a2f1706b-45fe-fd17-9e5a-8ea01bc6219a"
         }
       }
     },
@@ -2274,8 +2217,8 @@
           "obj 'Schema'": -7,
           "obj[] 'Nodes'": "63 67",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "0a368dc0-4d66-a9c7-8fc3-ffb46e4e5a38",
-          "guid 'InterfaceGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "0a368dc0-4d66-a9c7-8fc3-ffb46e4e5a38",
+          "guid native TypeNamespace(/Script/CoreUObject) 'InterfaceGuid'": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
         }
       }
     },
@@ -2292,8 +2235,8 @@
           "obj 'Schema'": -7,
           "obj[] 'Nodes'": "64 68",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "94ae0be8-4b93-088e-783c-108c6bc64126",
-          "guid 'InterfaceGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "94ae0be8-4b93-088e-783c-108c6bc64126",
+          "guid native TypeNamespace(/Script/CoreUObject) 'InterfaceGuid'": "0525ca22-4411-4751-829b-9a833a9050df"
         }
       }
     },
@@ -2310,8 +2253,8 @@
           "obj 'Schema'": -7,
           "obj[] 'Nodes'": "65 69",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "54039287-4ad2-dde6-2c2e-feb021d563a9",
-          "guid 'InterfaceGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "54039287-4ad2-dde6-2c2e-feb021d563a9",
+          "guid native TypeNamespace(/Script/CoreUObject) 'InterfaceGuid'": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
         }
       }
     },
@@ -2328,7 +2271,7 @@
           "obj 'Schema'": -7,
           "obj[] 'Nodes'": "66",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "20a4949b-4a5a-7015-ef1f-0e9826456b56"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "20a4949b-4a5a-7015-ef1f-0e9826456b56"
         }
       }
     },
@@ -2342,7 +2285,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.383246 0.990052 1 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.383246 0.990052 1 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 144,
           "int 'NodePosY'": -624,
@@ -2351,7 +2294,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Key Binding (Pause Menu)\r\nYou will notice we will have input proccessed here in the player controller and in the BP_Bot character.\r\nIn this projects case that is fine. The player controller handles everything expect the pawn controls. ",
-          "guid 'NodeGuid' /Script/CoreUObject": "bfd0510d-4ce0-3d28-b48d-cbb5aa18ee3c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "bfd0510d-4ce0-3d28-b48d-cbb5aa18ee3c"
         },
         "Pins": []
       }
@@ -2366,7 +2309,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 320,
           "int 'NodePosY'": 112,
@@ -2375,7 +2318,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Spawn Drone and Possess",
-          "guid 'NodeGuid' /Script/CoreUObject": "4bb4ac5e-4e05-c979-7108-8dad99b29104"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4bb4ac5e-4e05-c979-7108-8dad99b29104"
         },
         "Pins": []
       }
@@ -2390,7 +2333,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0 0 0 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0 0 0 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 144,
           "int 'NodePosY'": -1200,
@@ -2399,7 +2342,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Here the player controler handles the player camera manager, we add the hud and input that's not relavted to the character. ",
-          "guid 'NodeGuid' /Script/CoreUObject": "c3516fb0-4e9a-3748-a525-d6b8dfccecaa"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c3516fb0-4e9a-3748-a525-d6b8dfccecaa"
         },
         "Pins": []
       }
@@ -2414,7 +2357,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 64,
           "int 'NodePosY'": 608,
@@ -2423,7 +2366,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Change Controls based on Camera Type",
-          "guid 'NodeGuid' /Script/CoreUObject": "7f2648ef-4b9c-3098-2fa1-d8947d5ac2e0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "7f2648ef-4b9c-3098-2fa1-d8947d5ac2e0"
         },
         "Pins": []
       }
@@ -2438,32 +2381,23 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "InputActionDelegateBindings": {
-            "Name": "InputActionDelegateBindings",
-            "Type": "ArrayProperty",
-            "Size": 421,
-            "StructName": "BlueprintEnhancedInputActionBinding",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'InputAction'": -80,
-                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_Pause_K2Node_EnhancedInputActionEvent\"5"
-              },
-              {
-                "obj 'InputAction'": -79,
-                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_DroneSwitch_K2Node_EnhancedInputActionEvent\"3"
-              },
-              {
-                "obj 'InputAction'": -78,
-                "enum64 (ETriggerEvent) 'TriggerEvent' ByteProperty /Script/EnhancedInput": 123,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_CameraToggle_K2Node_EnhancedInputActionEvent\"4"
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintEnhancedInputActionBinding 1 | /Script/EnhancedInput 0"
-          }
+          "struct[] TypeNamespace(/Script/EnhancedInput) StructName(BlueprintEnhancedInputActionBinding) Size(421) 'InputActionDelegateBindings'": [
+            {
+              "obj 'InputAction'": -80,
+              "enum64 (ETriggerEvent) EnumInnerType(ByteProperty) TypeNamespace(/Script/EnhancedInput) 'TriggerEvent'": 123,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_Pause_K2Node_EnhancedInputActionEvent\"5"
+            },
+            {
+              "obj 'InputAction'": -79,
+              "enum64 (ETriggerEvent) EnumInnerType(ByteProperty) TypeNamespace(/Script/EnhancedInput) 'TriggerEvent'": 123,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_DroneSwitch_K2Node_EnhancedInputActionEvent\"3"
+            },
+            {
+              "obj 'InputAction'": -78,
+              "enum64 (ETriggerEvent) EnumInnerType(ByteProperty) TypeNamespace(/Script/EnhancedInput) 'TriggerEvent'": 123,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_CameraToggle_K2Node_EnhancedInputActionEvent\"4"
+            }
+          ]
         }
       }
     },
@@ -3056,7 +2990,7 @@
           },
           "int 'NodePosX'": 3008,
           "int 'NodePosY'": -528,
-          "guid 'NodeGuid' /Script/CoreUObject": "68119e86-4c40-bd20-2f4d-7fb48726fe17"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "68119e86-4c40-bd20-2f4d-7fb48726fe17"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`33 b4683dfd-437d-93a8-ba96-a4bdfc525bc6`» LinkedTo«`61 8e201238-4d79-9c7b-3304-ada893f02e0d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3083,7 +3017,7 @@
           },
           "int 'NodePosX'": 832,
           "int 'NodePosY'": -304,
-          "guid 'NodeGuid' /Script/CoreUObject": "5c61d207-4c54-c035-a2ca-c7b32556f5ae"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5c61d207-4c54-c035-a2ca-c7b32556f5ae"
         },
         "Pins": [
           "input-pin Type«`object obj(`-35`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`34 85964574-4007-7751-881e-c2924fd61073`» BitField«`1`» DefaultObject«`ImportIndex[-83] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3109,7 +3043,7 @@
           },
           "int 'NodePosX'": 96,
           "int 'NodePosY'": 976,
-          "guid 'NodeGuid' /Script/CoreUObject": "eeaf3011-4fe0-161d-6ffe-da8a17ee0124"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "eeaf3011-4fe0-161d-6ffe-da8a17ee0124"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`35 0e0bbaf4-4412-8465-7187-8ca721d285c9`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3136,7 +3070,7 @@
           },
           "int 'NodePosX'": 480,
           "int 'NodePosY'": 960,
-          "guid 'NodeGuid' /Script/CoreUObject": "7b2468ec-4162-a0ae-ea8e-aab7807083c1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "7b2468ec-4162-a0ae-ea8e-aab7807083c1"
         },
         "Pins": [
           "input-pin Type«`object obj(`-38`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`36 5989b719-4553-c0ce-e8e2-e19ceb4472a8`» LinkedTo«`35 5dc5e84f-4e6f-7ccf-2e15-848887bbfd4c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3160,7 +3094,7 @@
           },
           "int 'NodePosX'": 800,
           "int 'NodePosY'": 688,
-          "guid 'NodeGuid' /Script/CoreUObject": "c05e8a72-428e-c3db-3e32-9480b7ca8597"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c05e8a72-428e-c3db-3e32-9480b7ca8597"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`37 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» LinkedTo«`81 0b4f34bb-4310-8836-0b30-66bc9f27a4b1 | 81 589218e5-438c-aa18-8c0e-fe8c278709c9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3186,7 +3120,7 @@
           },
           "int 'NodePosX'": 800,
           "int 'NodePosY'": 992,
-          "guid 'NodeGuid' /Script/CoreUObject": "5c9b9056-4dbe-5876-bbaf-fcafbe3b413a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5c9b9056-4dbe-5876-bbaf-fcafbe3b413a"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`38 bbbee315-45e3-9057-1328-ad81ac1b4ce2`» LinkedTo«`81 36e2a44d-4f25-55f8-c706-ae9095980aa9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3212,7 +3146,7 @@
           },
           "int 'NodePosX'": 1952,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid' /Script/CoreUObject": "9eb1af4b-43e8-b19e-1e5b-f3a39a89ff4c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9eb1af4b-43e8-b19e-1e5b-f3a39a89ff4c"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`39 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» LinkedTo«`87 239c51bd-45d0-6313-e17a-c6ac1c7e643c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3239,7 +3173,7 @@
           },
           "int 'NodePosX'": 704,
           "int 'NodePosY'": 304,
-          "guid 'NodeGuid' /Script/CoreUObject": "feb82724-4718-87ce-8d2b-47922f20a700"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "feb82724-4718-87ce-8d2b-47922f20a700"
         },
         "Pins": [
           "input-pin Type«`object obj(`-38`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`40 a7fbaaa5-4c72-af9b-e08b-d7ae8b93e6aa`» LinkedTo«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3263,7 +3197,7 @@
           },
           "int 'NodePosX'": 1472,
           "int 'NodePosY'": -176,
-          "guid 'NodeGuid' /Script/CoreUObject": "2cc6f0f2-4fc4-181e-508d-74b053224544"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2cc6f0f2-4fc4-181e-508d-74b053224544"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`41 5b2c2cc8-4a40-4413-495b-18806458f26b`» LinkedTo«`49 52f3e516-4562-5ad5-7959-fe9e01f28d7c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3288,7 +3222,7 @@
           },
           "int 'NodePosX'": 880,
           "int 'NodePosY'": -176,
-          "guid 'NodeGuid' /Script/CoreUObject": "5d2fbd59-4c2e-4c68-d12f-b8bd8af841cc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5d2fbd59-4c2e-4c68-d12f-b8bd8af841cc"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`42 9b3e6351-4e3f-a927-1b08-6abd97fbb878`» LinkedTo«`82 7817efc5-4d10-88fc-b0af-5eafd7f7002c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3319,7 +3253,7 @@
           },
           "int 'NodePosX'": 496,
           "int 'NodePosY'": -128,
-          "guid 'NodeGuid' /Script/CoreUObject": "fab4fc94-47bf-582c-3d9f-dcad67c1b8c3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "fab4fc94-47bf-582c-3d9f-dcad67c1b8c3"
         },
         "Pins": [
           "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`43 0063652e-48d0-d8f4-ab42-7797eef8398b`» LinkedTo«`84 2dc76e25-48be-009b-6683-8e84a2de946d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3344,7 +3278,7 @@
           },
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 304,
-          "guid 'NodeGuid' /Script/CoreUObject": "25cad6fd-48c2-bd0b-b43d-409667f09c74"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "25cad6fd-48c2-bd0b-b43d-409667f09c74"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`44 31a6ff8f-47fe-098a-a63b-21a0027a516e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3369,7 +3303,7 @@
           },
           "int 'NodePosX'": 3472,
           "int 'NodePosY'": -256,
-          "guid 'NodeGuid' /Script/CoreUObject": "89ac8831-4978-13d8-f20a-b6a63882fe29"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "89ac8831-4978-13d8-f20a-b6a63882fe29"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`45 49d11cd9-42ee-7d6b-be48-d9bd7628536e`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3395,7 +3329,7 @@
           "int 'NodePosX'": 1456,
           "int 'NodePosY'": 992,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "07dd3ad8-4bdf-2445-28ec-01ab3066121a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "07dd3ad8-4bdf-2445-28ec-01ab3066121a"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`46 87669ab9-4d3a-304a-cf6c-c28af9bc1548`» LinkedTo«`38 d6f6a18c-4489-0232-7204-adb716182af1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3423,7 +3357,7 @@
           },
           "int 'NodePosX'": 1456,
           "int 'NodePosY'": 688,
-          "guid 'NodeGuid' /Script/CoreUObject": "5a67f636-4d37-655a-17ec-618dc879fd67"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5a67f636-4d37-655a-17ec-618dc879fd67"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`47 4ca536b6-4665-6531-f112-2aa9b02d05ef`» LinkedTo«`37 d6f6a18c-4489-0232-7204-adb716182af1`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3451,7 +3385,7 @@
           "int 'NodePosX'": 864,
           "int 'NodePosY'": -1040,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "5352d479-4dda-fd4c-3c39-f0bcc6614b70"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5352d479-4dda-fd4c-3c39-f0bcc6614b70"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`48 9d230b9b-4034-b0fc-373d-9a8fe55ca8ec`» LinkedTo«`59 fb895f95-44b5-4959-4f00-09a0586d1ed5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3479,7 +3413,7 @@
           },
           "int 'NodePosX'": 1232,
           "int 'NodePosY'": -176,
-          "guid 'NodeGuid' /Script/CoreUObject": "976dbebf-4cef-8c43-af9c-4e814ba8f19e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "976dbebf-4cef-8c43-af9c-4e814ba8f19e"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`49 d61bcf9c-4a5b-aa73-51c1-3cbc57b06141`» LinkedTo«`42 0d03f4df-440f-abf4-5eb3-baa7eb0dd179`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3506,7 +3440,7 @@
           },
           "int 'NodePosX'": 1920,
           "int 'NodePosY'": -352,
-          "guid 'NodeGuid' /Script/CoreUObject": "0fd2551a-442d-cf5e-15b7-96bf0953cb60"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0fd2551a-442d-cf5e-15b7-96bf0953cb60"
         },
         "Pins": [
           "input-pin Type«`object obj(`-40`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`50 822bee13-4855-8364-a6cc-4dbc809d42c5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3530,7 +3464,7 @@
           },
           "int 'NodePosX'": 1056,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid' /Script/CoreUObject": "d88053d2-4438-6224-2591-3dbc4ad7115d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d88053d2-4438-6224-2591-3dbc4ad7115d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`51 d64053ff-4046-2568-ac83-f68bafd37174`» LinkedTo«`88 74a4880f-4016-3ead-20b6-6e8bf9daf52e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3557,7 +3491,7 @@
           "int 'NodePosX'": 752,
           "int 'NodePosY'": -416,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "008de9b1-415e-6fad-8860-f58cda74e4f6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "008de9b1-415e-6fad-8860-f58cda74e4f6"
         },
         "Pins": [
           "input-pin Type«`object obj(`-40`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`52 0046d25c-4b8e-0580-47dc-83aac15b2e77`» ToolTip«`Target\nPlayer Controller Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3582,7 +3516,7 @@
           },
           "int 'NodePosX'": 656,
           "int 'NodePosY'": -327,
-          "guid 'NodeGuid' /Script/CoreUObject": "65705301-4376-0548-2324-52a9aeb04d9e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "65705301-4376-0548-2324-52a9aeb04d9e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`53 b9ca5ca8-488d-3f93-52e0-fca8acc5ffe3`» BitField«`1`» DefaultObject«`ImportIndex[-77] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3608,7 +3542,7 @@
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 304,
-          "guid 'NodeGuid' /Script/CoreUObject": "3cfc660e-4843-8eb9-8358-6f955ea4a819"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3cfc660e-4843-8eb9-8358-6f955ea4a819"
         },
         "Pins": [
           "input-pin Type«`object obj(`-26`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`54 5701f65d-4000-51fc-7cda-40b22ede733d`» LinkedTo«`44 510add9d-4baf-30b4-7635-31ae6c59aa83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3629,7 +3563,7 @@
           "name 'CustomFunctionName'": "Reset Player",
           "int 'NodePosX'": 2928,
           "int 'NodePosY'": -368,
-          "guid 'NodeGuid' /Script/CoreUObject": "555d636e-4989-0ef8-125e-908aad1a77aa"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "555d636e-4989-0ef8-125e-908aad1a77aa"
         },
         "SerializedItems": [
           {
@@ -3661,8 +3595,8 @@
           "obj 'InputAction'": -80,
           "int 'NodePosX'": 160,
           "int 'NodePosY'": -480,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
-          "guid 'NodeGuid' /Script/CoreUObject": "652b8017-40c9-4355-4c27-fea44ca19bba"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 115,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "652b8017-40c9-4355-4c27-fea44ca19bba"
         },
         "Pins": [
           "output-pin Type«`exec`» Name«`Triggered`» Id«`56 5005736d-42d6-fbe1-e1fc-589ba2d209a6`» LinkedTo«`73 0e5a2381-4f57-5338-92b4-0c8e57f9f723`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3690,8 +3624,8 @@
           "obj 'InputAction'": -78,
           "int 'NodePosX'": 1616,
           "int 'NodePosY'": -464,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
-          "guid 'NodeGuid' /Script/CoreUObject": "c6f59beb-410f-aa5b-f98d-47b13852aa36"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 115,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c6f59beb-410f-aa5b-f98d-47b13852aa36"
         },
         "Pins": [
           "output-pin Type«`exec`» Name«`Triggered`» Id«`57 76361531-40ce-72cd-e06f-cc90aeaa8466`» LinkedTo«`76 927c53f9-455f-436d-9994-4dad1a1df9d6`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3719,8 +3653,8 @@
           "obj 'InputAction'": -79,
           "int 'NodePosX'": 160,
           "int 'NodePosY'": -48,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
-          "guid 'NodeGuid' /Script/CoreUObject": "fc2c2fc1-4560-9d1f-c8d4-60a86d0f08d1"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 115,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "fc2c2fc1-4560-9d1f-c8d4-60a86d0f08d1"
         },
         "Pins": [
           "output-pin Type«`exec`» Name«`Triggered`» Id«`58 17ebd4ce-4af6-cfca-a47f-e6b0b01b8cae`» LinkedTo«`82 c271cc44-4364-7bae-28fe-1aa9fde53e95`» ToolTip«`Triggering occurred after one or more processing ticks`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3752,7 +3686,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 608,
           "int 'NodePosY'": -1024,
-          "guid 'NodeGuid' /Script/CoreUObject": "ab817c06-49ab-baf0-1900-afa8f31ed110"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ab817c06-49ab-baf0-1900-afa8f31ed110"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3774,12 +3708,12 @@
           "struct MemberReference 135 'EventReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "SetCameraState",
-            "guid 'MemberGuid' /Script/CoreUObject": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 128,
           "int 'NodePosY'": 768,
-          "guid 'NodeGuid' /Script/CoreUObject": "f50534fe-4536-37c1-3b52-9792d73d6d95"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f50534fe-4536-37c1-3b52-9792d73d6d95"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3806,7 +3740,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 2768,
           "int 'NodePosY'": -528,
-          "guid 'NodeGuid' /Script/CoreUObject": "15397cab-4065-907c-0c65-21b16216165b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "15397cab-4065-907c-0c65-21b16216165b"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3829,12 +3763,12 @@
           "struct MemberReference 135 'EventReference'": {
             "obj 'MemberParent'": -5,
             "name 'MemberName'": "Pause",
-            "guid 'MemberGuid' /Script/CoreUObject": "2736b3a4-4f42-b416-6c16-6f95b52c12b4"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "2736b3a4-4f42-b416-6c16-6f95b52c12b4"
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 448,
           "int 'NodePosY'": -416,
-          "guid 'NodeGuid' /Script/CoreUObject": "a6df4ccf-47e3-7e64-5a55-d28175a588a2"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a6df4ccf-47e3-7e64-5a55-d28175a588a2"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3856,9 +3790,9 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetCameraState",
-            "guid 'MemberGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "b619d1f7-43eb-5f65-e260-1d9001eb941c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b619d1f7-43eb-5f65-e260-1d9001eb941c"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3879,9 +3813,9 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetLockedCamera",
-            "guid 'MemberGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "0525ca22-4411-4751-829b-9a833a9050df"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "b165ed81-4be5-c156-07b1-14be8ace3727"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b165ed81-4be5-c156-07b1-14be8ace3727"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3902,9 +3836,9 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetPlayerCamera",
-            "guid 'MemberGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "99c3c928-4e43-fbc2-6c3f-70965c078682"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "99c3c928-4e43-fbc2-6c3f-70965c078682"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3926,7 +3860,7 @@
             "obj 'MemberParent'": -26,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "0a9a193e-4ba6-5677-947e-db9c15d81464"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0a9a193e-4ba6-5677-947e-db9c15d81464"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3947,10 +3881,10 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetCameraState",
-            "guid 'MemberGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
           },
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "2f05720a-4f93-70ef-bf31-26a5109e3409"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2f05720a-4f93-70ef-bf31-26a5109e3409"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3972,10 +3906,10 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetLockedCamera",
-            "guid 'MemberGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "0525ca22-4411-4751-829b-9a833a9050df"
           },
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "6a74fc4e-477a-9efd-12d0-809452eb5235"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6a74fc4e-477a-9efd-12d0-809452eb5235"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3999,10 +3933,10 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "GetPlayerCamera",
-            "guid 'MemberGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
           },
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "6717b1e8-46d0-5142-d6dd-5db7395ef9ab"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6717b1e8-46d0-5142-d6dd-5db7395ef9ab"
         },
         "SerializedItems": [],
         "Pins": [
@@ -4025,7 +3959,7 @@
           "obj 'CustomClass'": -48,
           "int 'NodePosX'": 1024,
           "int 'NodePosY'": 848,
-          "guid 'NodeGuid' /Script/CoreUObject": "6d435992-4062-0661-7cfa-0a8b8d178f7a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6d435992-4062-0661-7cfa-0a8b8d178f7a"
         },
         "Pins": [
           "input-pin Type«`object obj(`-40`)`» Name«`PlayerController`» Id«`70 add6b7a6-4493-e396-d2a5-049f5b1be00f`» LinkedTo«`79 c7d28ef1-4f9f-4400-2f09-ab97613b1152`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4046,7 +3980,7 @@
           "obj 'CustomClass'": -48,
           "int 'NodePosX'": 544,
           "int 'NodePosY'": -928,
-          "guid 'NodeGuid' /Script/CoreUObject": "a61f1bbc-4027-1d86-fd54-9da05570d9d7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a61f1bbc-4027-1d86-fd54-9da05570d9d7"
         },
         "Pins": [
           "input-pin Type«`object obj(`-40`)`» Name«`PlayerController`» Id«`71 97e6a11f-4729-ab19-11f7-b0930c3efcb0`» LinkedTo«`78 c8276a4a-4224-0de3-7336-1c9204f3fee4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4066,7 +4000,7 @@
         "Members": {
           "int 'NodePosX'": 3152,
           "int 'NodePosY'": -352,
-          "guid 'NodeGuid' /Script/CoreUObject": "ad49f39f-4f47-436a-f211-c898811cd182"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ad49f39f-4f47-436a-f211-c898811cd182"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`72 e7f35dbc-477e-3aaf-e138-cda77295b3b0`» LinkedTo«`55 138a865f-4df3-95c1-ff09-d4ba2d48e634`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4088,7 +4022,7 @@
         "Members": {
           "int 'NodePosX'": 736,
           "int 'NodePosY'": -448,
-          "guid 'NodeGuid' /Script/CoreUObject": "2bb9bcaf-4ea9-5d53-fd56-2fbc99da3fd3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2bb9bcaf-4ea9-5d53-fd56-2fbc99da3fd3"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`73 0e5a2381-4f57-5338-92b4-0c8e57f9f723`» LinkedTo«`56 5005736d-42d6-fbe1-e1fc-589ba2d209a6 | 62 f1685936-450d-ea88-8680-4e993c603419`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4109,11 +4043,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -6,
             "name 'MemberName'": "SetPaused",
-            "guid 'MemberGuid' /Script/CoreUObject": "f36b2f39-4571-82d3-cde8-97b2f2e8b78d"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "f36b2f39-4571-82d3-cde8-97b2f2e8b78d"
           },
           "int 'NodePosX'": 1056,
           "int 'NodePosY'": -496,
-          "guid 'NodeGuid' /Script/CoreUObject": "5d0913e0-4b4b-22b7-b130-b5adeee6aead"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5d0913e0-4b4b-22b7-b130-b5adeee6aead"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`74 dab2df6c-4fd8-981c-ea01-00ac6935051e`» LinkedTo«`73 545e19e2-4c32-70c4-cf5b-3fb2ee7595bc`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4136,11 +4070,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -4,
             "name 'MemberName'": "Spawn",
-            "guid 'MemberGuid' /Script/CoreUObject": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
           },
           "int 'NodePosX'": 3456,
           "int 'NodePosY'": -368,
-          "guid 'NodeGuid' /Script/CoreUObject": "3fc83e74-45dd-0b92-f5ab-029d689f3c62"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3fc83e74-45dd-0b92-f5ab-029d689f3c62"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`75 f1f064b2-4d6e-6862-3092-9faf696d7856`» LinkedTo«`72 2723e2ac-4f3a-a2c5-5cc9-3da91770e59d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4162,11 +4096,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -6,
             "name 'MemberName'": "Show UI",
-            "guid 'MemberGuid' /Script/CoreUObject": "11eee847-4a08-1466-36c7-7aaf39ff17df"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "11eee847-4a08-1466-36c7-7aaf39ff17df"
           },
           "int 'NodePosX'": 1968,
           "int 'NodePosY'": -480,
-          "guid 'NodeGuid' /Script/CoreUObject": "4391f3d5-4a12-4638-4074-18891f614a42"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4391f3d5-4a12-4638-4074-18891f614a42"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`76 927c53f9-455f-436d-9994-4dad1a1df9d6`» LinkedTo«`57 76361531-40ce-72cd-e06f-cc90aeaa8466`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4193,7 +4127,7 @@
           },
           "int 'NodePosX'": 3152,
           "int 'NodePosY'": -240,
-          "guid 'NodeGuid' /Script/CoreUObject": "3635f1ff-430a-d3fa-0108-cdaef973d9e7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3635f1ff-430a-d3fa-0108-cdaef973d9e7"
         },
         "Pins": [
           "input-pin Type«`object obj(`-25`)`» Name«`A`» Id«`77 2f715236-43e8-6a17-f103-b0acdbe46208`» LinkedTo«`55 65c08c9b-4b3d-c0d5-d269-05a86ace0755`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4215,7 +4149,7 @@
         "Members": {
           "int 'NodePosX'": 336,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "a9cf6460-40dd-f512-c188-3fb613b4ee2f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a9cf6460-40dd-f512-c188-3fb613b4ee2f"
         },
         "Pins": [
           "output-pin Type«`object-self`» Name«`self`» Id«`78 c8276a4a-4224-0de3-7336-1c9204f3fee4`» LinkedTo«`71 97e6a11f-4729-ab19-11f7-b0930c3efcb0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -4234,7 +4168,7 @@
         "Members": {
           "int 'NodePosX'": 864,
           "int 'NodePosY'": 896,
-          "guid 'NodeGuid' /Script/CoreUObject": "3e1e6171-4c60-720b-3be2-e38801b66d3e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3e1e6171-4c60-720b-3be2-e38801b66d3e"
         },
         "Pins": [
           "output-pin Type«`object-self`» Name«`self`» Id«`79 c7d28ef1-4f9f-4400-2f09-ab97613b1152`» LinkedTo«`70 add6b7a6-4493-e396-d2a5-049f5b1be00f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -4253,9 +4187,9 @@
         "Members": {
           "int 'NodePosX'": 1328,
           "int 'NodePosY'": 192,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 115,
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 115,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "ee54cc57-4be8-9e1c-c625-cdba04b2302e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ee54cc57-4be8-9e1c-c625-cdba04b2302e"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`80 6cc62964-48a5-450c-2780-37af0ac39a11`» LinkedTo«`51 b8a5c095-48fe-338a-8ced-7fa3de47b862`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4281,24 +4215,15 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'Enum'": -112,
-          "EnumEntries": {
-            "Name": "EnumEntries",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "NewEnumerator0",
-              "NewEnumerator5",
-              "NewEnumerator2",
-              "NewEnumerator3"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'EnumEntries'": [
+            "NewEnumerator0",
+            "NewEnumerator5",
+            "NewEnumerator2",
+            "NewEnumerator3"
+          ],
           "int 'NodePosX'": 448,
           "int 'NodePosY'": 784,
-          "guid 'NodeGuid' /Script/CoreUObject": "a4aa4600-4929-e5e5-adfb-9497a23965c8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a4aa4600-4929-e5e5-adfb-9497a23965c8"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`81 192162ba-4dda-1484-96e3-af84feb4eec0`» LinkedTo«`60 b38370fb-43da-4c3d-9839-cdbfc8129c6d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4321,15 +4246,15 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "enum64 (EGetNodeVariation) 'CurrentVariation' IntProperty /Script/BlueprintGraph": 109,
+          "enum64 (EGetNodeVariation) EnumInnerType(IntProperty) TypeNamespace(/Script/BlueprintGraph) 'CurrentVariation'": 109,
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "DroneRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 512,
           "int 'NodePosY'": -48,
-          "guid 'NodeGuid' /Script/CoreUObject": "48a6b3e6-41e0-b38c-ad00-de9449a9ad13"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "48a6b3e6-41e0-b38c-ad00-de9449a9ad13"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`82 c271cc44-4364-7bae-28fe-1aa9fde53e95`» LinkedTo«`58 17ebd4ce-4af6-cfca-a47f-e6b0b01b8cae`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4352,12 +4277,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "DroneRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1472,
           "int 'NodePosY'": -64,
-          "guid 'NodeGuid' /Script/CoreUObject": "81151449-4ea5-d0f7-5dce-3bba32b3c494"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "81151449-4ea5-d0f7-5dce-3bba32b3c494"
         },
         "Pins": [
           "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`83 2dc76e25-48be-009b-6683-8e84a2de946d`» LinkedTo«`41 382c895e-42b9-1887-4d3e-418495e354c7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4377,12 +4302,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "DroneRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 336,
           "int 'NodePosY'": -90,
-          "guid 'NodeGuid' /Script/CoreUObject": "bbbc8fe1-4615-467f-d0f0-d1ae7dff71b9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "bbbc8fe1-4615-467f-d0f0-d1ae7dff71b9"
         },
         "Pins": [
           "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`84 2dc76e25-48be-009b-6683-8e84a2de946d`» LinkedTo«`43 0063652e-48d0-d8f4-ab42-7797eef8398b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4402,12 +4327,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PlayerRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ea564f8c-4a28-054c-afbc-789142c03569",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1232,
           "int 'NodePosY'": -32,
-          "guid 'NodeGuid' /Script/CoreUObject": "2332f5d1-43ce-72fa-b561-d4aa92534a59"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2332f5d1-43ce-72fa-b561-d4aa92534a59"
         },
         "Pins": [
           "output-pin Type«`object obj(`-38`)`» Name«`PlayerRef`» Id«`85 8831628a-451b-3535-0cc6-97b2602ca11b`» LinkedTo«`49 53ea3d4f-489b-16ce-4f3d-5282f11347ce | 42 1d86c14d-4d10-b795-3a67-629f4f013563`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4427,12 +4352,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "DroneRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2992,
           "int 'NodePosY'": -176,
-          "guid 'NodeGuid' /Script/CoreUObject": "b510a5d9-4634-54d8-98ad-c88351ce669b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b510a5d9-4634-54d8-98ad-c88351ce669b"
         },
         "Pins": [
           "output-pin Type«`object obj(`-3`)`» Name«`DroneRef`» Id«`86 fc6d8e43-4b95-e102-b99d-39bba2c7bedf`» LinkedTo«`77 613766a7-428f-933f-1e56-a3a7625bc2ab`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4452,12 +4377,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "DroneRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ef6428e2-450e-326d-ca4f-f8a680653c1e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1760,
           "int 'NodePosY'": 208,
-          "guid 'NodeGuid' /Script/CoreUObject": "9dfdd101-4248-c797-28a5-d49e3049bfbc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9dfdd101-4248-c797-28a5-d49e3049bfbc"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`87 82d23299-4494-d9f3-49c6-04a72f51bc26`» LinkedTo«`80 d6c8cd69-449e-6dc8-cfd7-95832067ce8d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4480,12 +4405,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PlayerRef",
-            "guid 'MemberGuid' /Script/CoreUObject": "ea564f8c-4a28-054c-afbc-789142c03569",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "ea564f8c-4a28-054c-afbc-789142c03569",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 768,
           "int 'NodePosY'": 208,
-          "guid 'NodeGuid' /Script/CoreUObject": "b6f0037a-4c55-f4dd-537d-2fb7f4cfba5f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b6f0037a-4c55-f4dd-537d-2fb7f4cfba5f"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`88 ce40b46e-4a77-7c11-fd0b-2aa6a78c4ba2`» LinkedTo«`82 4673bdd3-47d2-a247-2aca-89a691bbc004`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4558,7 +4483,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "f11b5e38-4fb7-036f-7161-71958f931d7e",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "f11b5e38-4fb7-036f-7161-71958f931d7e",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }

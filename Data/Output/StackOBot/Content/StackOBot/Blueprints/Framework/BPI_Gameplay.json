@@ -749,6 +749,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       },
@@ -769,100 +772,82 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -6,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 15,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 15,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "9 5 6 7 8 10 4 11",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Interaction"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 592,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
-                    "AssetName": "BPI_Gameplay"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None",
+            "Interaction"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(592) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
+                  "AssetName": "BPI_Gameplay"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -630.76794,
-                  "Y": -454.60498
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
-                    "AssetName": "BPI_Gameplay"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -642.044,
-                  "Y": -454.60498
-                },
-                "float 'SavedZoomAmount'": 1
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -630.76794,
+                "Y": -454.60498
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
-                    "AssetName": "BPI_Gameplay"
-                  },
-                  "SaveNum": 0
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
+                  "AssetName": "BPI_Gameplay"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -648.044,
-                  "Y": -439.60498
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 3,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
-                    "AssetName": "BPI_Gameplay"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -642.044,
+                "Y": -454.60498
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
+                  "AssetName": "BPI_Gameplay"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -631.044,
-                  "Y": -454.60498
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -648.044,
+                "Y": -439.60498
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 3,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Framework/BPI_Gameplay",
+                  "AssetName": "BPI_Gameplay"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -631.044,
+                "Y": -454.60498
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "0514cac4-4166-ef8d-fa0a-92a927ae5f41"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "0514cac4-4166-ef8d-fa0a-92a927ae5f41"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -941,7 +926,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "20",
-          "guid 'GraphGuid' /Script/CoreUObject": "faff6652-45c8-93f8-b9c6-c5a02efd374d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "faff6652-45c8-93f8-b9c6-c5a02efd374d"
         }
       }
     },
@@ -957,7 +942,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "21 28",
-          "guid 'GraphGuid' /Script/CoreUObject": "252d7849-4678-3385-31c9-8f86b234be66"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "252d7849-4678-3385-31c9-8f86b234be66"
         }
       }
     },
@@ -973,7 +958,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "22",
-          "guid 'GraphGuid' /Script/CoreUObject": "46557f5a-429c-db8d-5f56-eaba2cbeb111"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "46557f5a-429c-db8d-5f56-eaba2cbeb111"
         }
       }
     },
@@ -989,7 +974,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "23",
-          "guid 'GraphGuid' /Script/CoreUObject": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "607e9bbb-47f0-3ee7-1588-dcaeb81cf230"
         }
       }
     },
@@ -1005,7 +990,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "24",
-          "guid 'GraphGuid' /Script/CoreUObject": "557d15e0-45b3-342b-d56f-42a4ab0033af"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "557d15e0-45b3-342b-d56f-42a4ab0033af"
         }
       }
     },
@@ -1021,7 +1006,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "25",
-          "guid 'GraphGuid' /Script/CoreUObject": "43904305-45da-2192-540d-9ab90ad0e4d8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "43904305-45da-2192-540d-9ab90ad0e4d8"
         }
       }
     },
@@ -1037,7 +1022,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "26",
-          "guid 'GraphGuid' /Script/CoreUObject": "c864d8ed-4adc-587b-118c-2bb752566edc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "c864d8ed-4adc-587b-118c-2bb752566edc"
         }
       }
     },
@@ -1053,7 +1038,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "27",
-          "guid 'GraphGuid' /Script/CoreUObject": "18f66418-431e-c04f-2ad0-a18301af4597"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "18f66418-431e-c04f-2ad0-a18301af4597"
         }
       }
     },
@@ -1277,7 +1262,7 @@
             "name 'MemberName'": "End Game"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "35d6e238-492c-2cb4-44e3-4db1552e0186"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "35d6e238-492c-2cb4-44e3-4db1552e0186"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1300,7 +1285,7 @@
             "name 'MemberName'": "Retrieve Spawn Transform"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "0144c167-4ac8-b044-c015-6795c81ae00f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0144c167-4ac8-b044-c015-6795c81ae00f"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1323,7 +1308,7 @@
             "name 'MemberName'": "Set Active Pad"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "a690523f-490e-db9f-608a-878eb3868ad2"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a690523f-490e-db9f-608a-878eb3868ad2"
         },
         "SerializedItems": [
           {
@@ -1356,7 +1341,7 @@
             "name 'MemberName'": "Spawn"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "f7d37a83-4fff-29ea-029c-47a00562a473"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f7d37a83-4fff-29ea-029c-47a00562a473"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1379,7 +1364,7 @@
             "name 'MemberName'": "TransitionGameplay"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "ac8cd90c-4edb-e955-ac9c-b28c069a3897"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ac8cd90c-4edb-e955-ac9c-b28c069a3897"
         },
         "SerializedItems": [
           {
@@ -1422,7 +1407,7 @@
             "name 'MemberName'": "Trigger"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "2a92e88d-40d5-391a-6247-8e8664b9d0a5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2a92e88d-40d5-391a-6247-8e8664b9d0a5"
         },
         "SerializedItems": [
           {
@@ -1465,7 +1450,7 @@
             "name 'MemberName'": "UnTrigger"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "2a92e88d-40d5-391a-6247-8e8664b9d0a5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2a92e88d-40d5-391a-6247-8e8664b9d0a5"
         },
         "SerializedItems": [
           {
@@ -1498,7 +1483,7 @@
             "name 'MemberName'": "Update Objective"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "8a120c50-498f-e7e8-cb5d-80b22d3006bf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8a120c50-498f-e7e8-cb5d-80b22d3006bf"
         },
         "SerializedItems": [
           {
@@ -1540,7 +1525,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "fc8fe118-41c7-74f8-2b76-efa514ecd4d7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "fc8fe118-41c7-74f8-2b76-efa514ecd4d7"
         },
         "SerializedItems": [
           {

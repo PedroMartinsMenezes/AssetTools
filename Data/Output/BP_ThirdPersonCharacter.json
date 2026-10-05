@@ -836,67 +836,49 @@
           "obj 'SimpleConstructionScript'": 57,
           "obj[] 'UbergraphPages'": "8",
           "obj[] 'FunctionGraphs'": "9",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 108,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Event Graph",
-              "Input",
-              "Camera",
-              "Character",
-              "Pawn",
-              "Replication",
-              "Rendering",
-              "Actor",
-              "Collision",
-              "HLOD",
-              "Transformation",
-              "Game"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 363,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 310,
-              "StructName": "EditedDocumentInfo"
-            },
-            "Value": [
-              {
-                "struct SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
-                    "AssetName": "BP_ThirdPersonCharacter"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None",
+            "Event Graph",
+            "Input",
+            "Camera",
+            "Character",
+            "Pawn",
+            "Replication",
+            "Rendering",
+            "Actor",
+            "Collision",
+            "HLOD",
+            "Transformation",
+            "Game"
+          ],
+          "struct[] Size(363) MaybeInnerTag(EditedDocumentInfo 310  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
+                  "AssetName": "BP_ThirdPersonCharacter"
                 },
-                "Vector2D 'SavedViewOffset'": "-536 -551",
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "struct SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
-                    "AssetName": "BP_ThirdPersonCharacter"
-                  },
-                  "SaveNum": 0
+              "Vector2D 'SavedViewOffset'": "-536 -551",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "struct SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/ThirdPerson/Blueprints/BP_ThirdPersonCharacter",
+                  "AssetName": "BP_ThirdPersonCharacter"
                 },
-                "Vector2D 'SavedViewOffset'": "-394.0950930132204 -2640.3641684455897",
-                "float 'SavedZoomAmount'": 0.375
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-394.0950930132204 -2640.3641684455897",
+              "float 'SavedZoomAmount'": 0.375
+            }
+          ],
           "obj 'ThumbnailInfo'": 53,
           "obj 'GeneratedClass'": 3,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1297,40 +1279,28 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "InputActionDelegateBindings": {
-            "Name": "InputActionDelegateBindings",
-            "Type": "ArrayProperty",
-            "Size": 497,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "InputActionDelegateBindings",
-              "Type": "StructProperty",
-              "Size": 444,
-              "StructName": "BlueprintEnhancedInputActionBinding"
+          "struct[] Size(497) MaybeInnerTag(BlueprintEnhancedInputActionBinding 444  ) 'InputActionDelegateBindings'": [
+            {
+              "obj 'InputAction'": -62,
+              "enum64 (ETriggerEvent) 'TriggerEvent'": 121,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent\"3"
             },
-            "Value": [
-              {
-                "obj 'InputAction'": -62,
-                "enum64 (ETriggerEvent) 'TriggerEvent'": 121,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent\"3"
-              },
-              {
-                "obj 'InputAction'": -63,
-                "enum64 (ETriggerEvent) 'TriggerEvent'": 123,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent\"0"
-              },
-              {
-                "obj 'InputAction'": -64,
-                "enum64 (ETriggerEvent) 'TriggerEvent'": 123,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent\"1"
-              },
-              {
-                "obj 'InputAction'": -62,
-                "enum64 (ETriggerEvent) 'TriggerEvent'": 122,
-                "name 'FunctionNameToBind'": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent\"2"
-              }
-            ]
-          }
+            {
+              "obj 'InputAction'": -63,
+              "enum64 (ETriggerEvent) 'TriggerEvent'": 123,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_Look_K2Node_EnhancedInputActionEvent\"0"
+            },
+            {
+              "obj 'InputAction'": -64,
+              "enum64 (ETriggerEvent) 'TriggerEvent'": 123,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_Move_K2Node_EnhancedInputActionEvent\"1"
+            },
+            {
+              "obj 'InputAction'": -62,
+              "enum64 (ETriggerEvent) 'TriggerEvent'": 122,
+              "name 'FunctionNameToBind'": "InpActEvt_IA_Jump_K2Node_EnhancedInputActionEvent\"2"
+            }
+          ]
         }
       }
     },

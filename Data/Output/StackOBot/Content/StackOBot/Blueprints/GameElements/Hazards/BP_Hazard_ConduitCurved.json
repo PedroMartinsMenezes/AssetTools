@@ -570,11 +570,20 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty ComponentKey": {
         "TypeName": "StructProperty 1 | ComponentKey 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BlueprintComponentChangedPropertyInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
+      },
       "StructProperty BlueprintCookedComponentInstancingData": {
         "TypeName": "StructProperty 1 | BlueprintCookedComponentInstancingData 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty ComponentOverrideRecord": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -601,66 +610,48 @@
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
           "obj 'InheritableComponentHandler'": 6,
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
-                    "AssetName": "BP_Hazard_ConduitCurved"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                  "AssetName": "BP_Hazard_ConduitCurved"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -362.54025,
-                  "Y": -277.75797
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
-                    "AssetName": "BP_Hazard_ConduitCurved"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -362.54025,
+                "Y": -277.75797
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/Hazards/BP_Hazard_ConduitCurved",
+                  "AssetName": "BP_Hazard_ConduitCurved"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 362.59122,
-                  "Y": -461.67453
-                },
-                "float 'SavedZoomAmount'": 0.5
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 362.59122,
+                "Y": -461.67453
+              },
+              "float 'SavedZoomAmount'": 0.5
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "f6f9a5a3-4b36-1410-b173-82846f3fe4b1"
+          "guid native 'BlueprintGuid'": "f6f9a5a3-4b36-1410-b173-82846f3fe4b1"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -724,7 +715,7 @@
         "Members": {
           "obj 'Schema'": -3,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "50fff0d4-4e19-bd18-df22-c495b848a8df"
+          "guid native 'GraphGuid'": "50fff0d4-4e19-bd18-df22-c495b848a8df"
         }
       }
     },
@@ -741,7 +732,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "7",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "94215dee-464b-ec20-77a7-55aa963de6c4"
+          "guid native 'GraphGuid'": "94215dee-464b-ec20-77a7-55aa963de6c4"
         }
       }
     },
@@ -755,105 +746,60 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "Records": {
-            "Name": "Records",
-            "Type": "ArrayProperty",
-            "Size": 1592,
-            "StructName": "ComponentOverrideRecord",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'ComponentClass'": -16,
-                "obj 'ComponentTemplate'": 8,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": "Niagara",
-                  "guid 'AssociatedGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
+          "struct[] TypeNamespace(/Script/Engine) StructName(ComponentOverrideRecord) Size(1592) 'Records'": [
+            {
+              "obj 'ComponentClass'": -16,
+              "obj 'ComponentTemplate'": 8,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": "Niagara",
+                "guid native 'AssociatedGuid'": "a2bd12ea-4454-49aa-5a81-4c863d49a042"
               },
-              {
-                "obj 'ComponentClass'": -14,
-                "obj 'ComponentTemplate'": 13,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": "Sphere",
-                  "guid 'AssociatedGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
-              },
-              {
-                "obj 'ComponentClass'": -15,
-                "obj 'ComponentTemplate'": 14,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": "StaticMesh",
-                  "guid 'AssociatedGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
-              },
-              {
-                "obj 'ComponentClass'": -11,
-                "obj 'ComponentTemplate'": 10,
-                "struct ComponentKey 135 'ComponentKey'": {
-                  "obj 'OwnerClass'": -1,
-                  "name 'SCSVariableName'": "DefaultSceneRoot",
-                  "guid 'AssociatedGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039"
-                },
-                "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
-                  "ChangedPropertyList": {
-                    "Name": "ChangedPropertyList",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "BlueprintComponentChangedPropertyInfo",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentChangedPropertyInfo 1 | /Script/Engine 0"
-                  },
-                  "bool 'bHasValidCookedData'": false
-                }
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
               }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | ComponentOverrideRecord 1 | /Script/Engine 0"
-          }
+            },
+            {
+              "obj 'ComponentClass'": -14,
+              "obj 'ComponentTemplate'": 13,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": "Sphere",
+                "guid native 'AssociatedGuid'": "f8a38d96-48c5-c55d-5dfe-3488c0f2406c"
+              },
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
+              }
+            },
+            {
+              "obj 'ComponentClass'": -15,
+              "obj 'ComponentTemplate'": 14,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": "StaticMesh",
+                "guid native 'AssociatedGuid'": "3d6c17aa-4535-c3c8-651c-3e8a86f4728b"
+              },
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
+              }
+            },
+            {
+              "obj 'ComponentClass'": -11,
+              "obj 'ComponentTemplate'": 10,
+              "struct ComponentKey 135 'ComponentKey'": {
+                "obj 'OwnerClass'": -1,
+                "name 'SCSVariableName'": "DefaultSceneRoot",
+                "guid native 'AssociatedGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039"
+              },
+              "struct BlueprintCookedComponentInstancingData 98 'CookedComponentInstancingData'": {
+                "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentChangedPropertyInfo) Size(4) 'ChangedPropertyList'": [],
+                "bool 'bHasValidCookedData'": false
+              }
+            }
+          ]
         }
       }
     },
@@ -871,7 +817,7 @@
             "obj 'MemberParent'": -6,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "da2f88fc-4cc4-f1b2-4c2d-5786e5f6263f"
+          "guid native 'NodeGuid'": "da2f88fc-4cc4-f1b2-4c2d-5786e5f6263f"
         },
         "SerializedItems": [],
         "Pins": [
@@ -947,7 +893,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039",
+          "guid native 'VariableGuid'": "7753b1d5-41b5-ef84-c630-2cb6f8922039",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -976,7 +922,7 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "Vector 'RelativeLocation'": "-5.8305863859658302 0 -10.911812404051233"
+          "Vector native 'RelativeLocation'": "-5.8305863859658302 0 -10.911812404051233"
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []

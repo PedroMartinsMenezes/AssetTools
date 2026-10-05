@@ -929,11 +929,17 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty RichCurveKey": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0"
       },
       "StructProperty RichCurve": {
         "TypeName": "StructProperty 1 | RichCurve 1 | /Script/Engine 0"
@@ -950,11 +956,20 @@
       "StructProperty ActorComponentTickFunction": {
         "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty ResponseChannel": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
+      },
       "StructProperty CollisionResponse": {
         "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
       },
       "StructProperty BodyInstance": {
         "TypeName": "StructProperty 1 | BodyInstance 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTFloatTrack": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTTrackId": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
       }
     }
   },
@@ -975,83 +990,65 @@
           "obj[] 'UbergraphPages'": "5",
           "obj[] 'FunctionGraphs'": "6",
           "obj[] 'Timelines'": "35",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph",
-              "BP Bounce Pad"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
-                    "AssetName": "BP_BouncePad"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph",
+            "BP Bounce Pad"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
+                  "AssetName": "BP_BouncePad"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
-                    "AssetName": "BP_BouncePad_C"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": -1
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
-                    "AssetName": "BP_BouncePad"
-                  },
-                  "SaveNum": 0
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
+                  "AssetName": "BP_BouncePad_C"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 856.4712,
-                  "Y": 183.39325
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": -1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_BouncePad",
+                  "AssetName": "BP_BouncePad"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 856.4712,
+                "Y": 183.39325
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "9d2a8180-416a-8f8e-7eea-39a311273fe6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "9d2a8180-416a-8f8e-7eea-39a311273fe6"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1144,51 +1141,41 @@
         "__type": "UCurveFloat",
         "Members": {
           "struct RichCurve 154 'FloatCurve'": {
-            "Keys": {
-              "Name": "Keys",
-              "Type": "ArrayProperty",
-              "Size": 85,
-              "StructName": "RichCurveKey",
-              "BoolVal": 0,
-              "InnerType": "StructProperty",
-              "Value": [
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": -0.0010727942,
-                  "Value": 0.98894143,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.02498293,
-                  "Value": 4.6365237,
-                  "ArriveTangent": 7.2549114,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 7.254914,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.5,
-                  "Value": 0.98894143,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                }
-              ],
-              "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-            }
+            "struct[] native TypeNamespace(/Script/Engine) StructName(RichCurveKey) Size(85) PropertyTagFlags(HasBinaryOrNativeSerialize) 'Keys'": [
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": -0.0010727942,
+                "Value": 0.98894143,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.02498293,
+                "Value": 4.6365237,
+                "ArriveTangent": 7.2549114,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 7.254914,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.5,
+                "Value": 0.98894143,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              }
+            ]
           }
         }
       }
@@ -1206,7 +1193,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "16 15 20 21 12 19 14 17 11 13",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "3cc41604-49f0-3d7c-508a-8686d4216975"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "3cc41604-49f0-3d7c-508a-8686d4216975"
         }
       }
     },
@@ -1223,7 +1210,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "18",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "72b3eb6b-4a0f-94ea-00c0-fdafcd69eef3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "72b3eb6b-4a0f-94ea-00c0-fdafcd69eef3"
         }
       }
     },
@@ -1351,8 +1338,8 @@
           },
           "int 'NodePosX'": 1744,
           "int 'NodePosY'": 480,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 94,
-          "guid 'NodeGuid' /Script/CoreUObject": "a633a614-41bd-d2de-fe02-3c89d7132386"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 94,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a633a614-41bd-d2de-fe02-3c89d7132386"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`11 0c1e5a36-4e9a-4101-7070-4c9fcc034f54`» LinkedTo«`17 39b0cf5e-42b8-589f-fb05-6bae77bd9caf`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1388,7 +1375,7 @@
           },
           "int 'NodePosX'": 2304,
           "int 'NodePosY'": 64,
-          "guid 'NodeGuid' /Script/CoreUObject": "1103bd60-4ff4-76d9-9f42-768bb35fee5d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1103bd60-4ff4-76d9-9f42-768bb35fee5d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`12 2640e16f-44ce-19d3-4a2d-55942b0b7c2d`» LinkedTo«`20 cd254d96-4c84-8390-144f-48ba2a503e73`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1418,7 +1405,7 @@
           },
           "int 'NodePosX'": 1744,
           "int 'NodePosY'": 400,
-          "guid 'NodeGuid' /Script/CoreUObject": "17a9d987-4185-03e8-b54e-19aec746014e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "17a9d987-4185-03e8-b54e-19aec746014e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-13`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`13 9cba11d9-4e28-da81-2ffa-38a134ddbcb1`» ToolTip«`Target\nActor Object Reference`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1442,7 +1429,7 @@
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 96,
-          "guid 'NodeGuid' /Script/CoreUObject": "d2774eab-4150-91fa-cfcf-2a985236ea16"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d2774eab-4150-91fa-cfcf-2a985236ea16"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`14 a5279290-42f2-792f-7477-699e06eae86e`» LinkedTo«`15 7a619f29-4b88-443c-ba72-b7a2911c3cad`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1467,7 +1454,7 @@
           "obj 'TargetType'": -16,
           "int 'NodePosX'": 864,
           "int 'NodePosY'": 112,
-          "guid 'NodeGuid' /Script/CoreUObject": "a39da644-44a6-0b54-0c63-60bc339ff8ff"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a39da644-44a6-0b54-0c63-60bc339ff8ff"
         },
         "PureState": "Impure",
         "Pins": [
@@ -1498,7 +1485,7 @@
           "int 'NodePosX'": 608,
           "int 'NodePosY'": 112,
           "bool 'bCommentBubblePinned'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "850a8eb7-4a32-fadb-80dd-939d5e48f3a3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "850a8eb7-4a32-fadb-80dd-939d5e48f3a3"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1520,7 +1507,7 @@
         "Members": {
           "int 'NodePosX'": 1376,
           "int 'NodePosY'": 112,
-          "guid 'NodeGuid' /Script/CoreUObject": "02490478-47cc-9b93-65b2-8d9557da7fcd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "02490478-47cc-9b93-65b2-8d9557da7fcd"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`17 3a59df40-4ce4-f8f9-f1fc-fca3ec027fc9`» LinkedTo«`14 07cc3718-4974-a4a8-930c-99a7fc886b98`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1543,7 +1530,7 @@
             "obj 'MemberParent'": -13,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "6bde5cec-489b-00d5-418b-5d9de3f1f293"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6bde5cec-489b-00d5-418b-5d9de3f1f293"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1569,7 +1556,7 @@
           },
           "int 'NodePosX'": 2046,
           "int 'NodePosY'": 266,
-          "guid 'NodeGuid' /Script/CoreUObject": "8ad26478-4082-987b-4088-b2bbdc9fe8de"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8ad26478-4082-987b-4088-b2bbdc9fe8de"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`19 139098d2-4327-7a2a-f620-ffadc4985009`» LinkedTo«`20 a56d8400-4bf3-5323-82ca-8baaf61d479a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1592,7 +1579,7 @@
           "int 'NodePosX'": 1760,
           "int 'NodePosY'": 80,
           "bool 'bCanRenameNode'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "8193052f-49b7-e997-9451-20a611adbbee"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8193052f-49b7-e997-9451-20a611adbbee"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`Play`» Id«`20 d6ce6313-46ed-2b3a-48c2-7587dcf46f00`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1625,7 +1612,7 @@
           },
           "int 'NodePosX'": 2112,
           "int 'NodePosY'": 135,
-          "guid 'NodeGuid' /Script/CoreUObject": "5097240d-4d8d-b20f-9749-02920ba2a651"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5097240d-4d8d-b20f-9749-02920ba2a651"
         },
         "Pins": [
           "output-pin Type«`object obj(`-30`)`» Name«`StaticMesh`» Id«`21 bb9558a0-491a-126f-fb86-9281923295fe`» LinkedTo«`12 9b622f1c-4996-e686-9981-28af20fdeb4e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1645,7 +1632,7 @@
         "Members": {
           "obj 'Asset'": -45,
           "struct NiagaraUserRedirectionParameterStore 8 'OverrideParameters'": {},
-          "Vector 'RelativeLocation' /Script/CoreUObject": "1.3176020274840994E-09 0 12.052403411201865"
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "1.3176020274840994E-09 0 12.052403411201865"
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []
@@ -1665,7 +1652,7 @@
           "float 'Intensity'": 803.2322,
           "class Color 4 'LightColor'": "255 152 13 255",
           "bool 'CastShadows'": false,
-          "Vector 'RelativeLocation' /Script/CoreUObject": "8.32623328506088E-07 0 33.776399061202568",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "8.32623328506088E-07 0 33.776399061202568",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1714,7 +1701,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "26 27 30",
-          "guid 'VariableGuid' /Script/CoreUObject": "031299ad-42c5-3b14-8051-8986c1b3072d",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "031299ad-42c5-3b14-8051-8986c1b3072d",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1740,7 +1727,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "29",
-          "guid 'VariableGuid' /Script/CoreUObject": "1f50df23-4b94-6b63-bd42-a4bb1fbe1858",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "1f50df23-4b94-6b63-bd42-a4bb1fbe1858",
           "name 'InternalVariableName'": "Cube"
         }
       }
@@ -1766,7 +1753,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "28",
-          "guid 'VariableGuid' /Script/CoreUObject": "b3e56dcf-45d3-0fae-cbc9-43b01b7d514c",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "b3e56dcf-45d3-0fae-cbc9-43b01b7d514c",
           "name 'InternalVariableName'": "FX_Pad"
         }
       }
@@ -1791,7 +1778,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "c156ee2c-4c73-36f7-4308-6495e0f29ea1",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "c156ee2c-4c73-36f7-4308-6495e0f29ea1",
           "name 'InternalVariableName'": "PointLight"
         }
       }
@@ -1816,7 +1803,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "a03386ac-4c71-775e-b948-c8b50613a78c",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "a03386ac-4c71-775e-b948-c8b50613a78c",
           "name 'InternalVariableName'": "StaticMesh"
         }
       }
@@ -1841,7 +1828,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "390903eb-4cc3-e025-d311-0d9036d2c9bf",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "390903eb-4cc3-e025-d311-0d9036d2c9bf",
           "name 'InternalVariableName'": "Sphere"
         }
       }
@@ -1877,56 +1864,47 @@
           "struct BodyInstance 1045 'BodyInstance'": {
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 955 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 886,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "WorldStatic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "WorldDynamic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Pawn",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 89
-                  },
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "PhysicsBody",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Vehicle",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Destructible",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Trigger",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(886) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "WorldStatic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "WorldDynamic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Pawn",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 89
+                },
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "PhysicsBody",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Vehicle",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Destructible",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Trigger",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                }
+              ]
             }
           },
-          "Vector 'RelativeLocation' /Script/CoreUObject": "-3.2258918736260966E-07 0 17.655554436541649",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "-3.2258918736260966E-07 0 17.655554436541649",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -1948,7 +1926,7 @@
         "Members": {
           "obj 'StaticMesh'": -61,
           "obj[] 'OverrideMaterials'": "0",
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "0.32345286768395454 0.32345286768395454 0.76444801518518934",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "0.32345286768395454 0.32345286768395454 0.76444801518518934",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -1973,32 +1951,23 @@
           "obj 'StaticMesh'": -60,
           "obj[] 'OverrideMaterials'": "-44",
           "struct BodyInstance 473 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 83,
-            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 86,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 83,
+            "byte64 (ECollisionEnabled) TypeNamespace(/Script/Engine) 'CollisionEnabled'": 86,
             "name 'CollisionProfileName'": "NoCollision",
             "struct CollisionResponse 269 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 200,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 88
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(200) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 88
+                }
+              ]
             }
           },
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "0.81026600000000004 0.81026593038343364 0.28811500000000001",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "0.81026600000000004 0.81026593038343364 0.28811500000000001",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -2021,45 +1990,27 @@
         "__type": "UObject",
         "Members": {
           "float 'TimelineLength'": 0.5,
-          "FloatTracks": {
-            "Name": "FloatTracks",
-            "Type": "ArrayProperty",
-            "Size": 182,
-            "StructName": "TTFloatTrack",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'CurveFloat'": 4,
-                "name 'PropertyName'": "Timeline_Bump_46D12550472E1D74840FB780644C2564",
-                "name 'TrackName'": "Bump",
-                "bool 'bIsExternalCurve'": false,
-                "bool 'bIsExpanded'": true,
-                "bool 'bIsCurveViewSynchronized'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
-          },
-          "guid 'TimelineGuid' /Script/CoreUObject": "46d12550-472e-1d74-840f-b780644c2564",
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTFloatTrack) Size(182) 'FloatTracks'": [
+            {
+              "obj 'CurveFloat'": 4,
+              "name 'PropertyName'": "Timeline_Bump_46D12550472E1D74840FB780644C2564",
+              "name 'TrackName'": "Bump",
+              "bool 'bIsExternalCurve'": false,
+              "bool 'bIsExpanded'": true,
+              "bool 'bIsCurveViewSynchronized'": true
+            }
+          ],
+          "guid native TypeNamespace(/Script/CoreUObject) 'TimelineGuid'": "46d12550-472e-1d74-840f-b780644c2564",
           "name 'VariableName'": "Timeline",
           "name 'DirectionPropertyName'": "Timeline__Direction_46D12550472E1D74840FB780644C2564",
           "name 'UpdateFunctionName'": "Timeline__UpdateFunc",
           "name 'FinishedFunctionName'": "Timeline__FinishedFunc",
-          "TrackDisplayOrder": {
-            "Name": "TrackDisplayOrder",
-            "Type": "ArrayProperty",
-            "Size": 70,
-            "StructName": "TTTrackId",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "int 'TrackType'": 1,
-                "int 'TrackIndex'": 0
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
-          }
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTTrackId) Size(70) 'TrackDisplayOrder'": [
+            {
+              "int 'TrackType'": 1,
+              "int 'TrackIndex'": 0
+            }
+          ]
         }
       }
     }

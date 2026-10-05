@@ -275,102 +275,66 @@
         "Members": {
           "obj 'Parent'": -5,
           "bool 'bHasStaticPermutationResource'": true,
-          "ScalarParameterValues": {
-            "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
-            "Size": 472,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ScalarParameterValues",
-              "Type": "StructProperty",
-              "Size": 419,
-              "StructName": "ScalarParameterValue"
-            },
-            "Value": [
-              {
-                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
-                  "bool 'bIsUsedAsAtlasPosition'": false,
-                  "Curve": {
-                    "Name": "Curve",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
-                  },
-                  "Atlas": {
-                    "Name": "Atlas",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
+          "struct[] Size(472) MaybeInnerTag(ScalarParameterValue 419  ) 'ScalarParameterValues'": [
+            {
+              "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                "bool 'bIsUsedAsAtlasPosition'": false,
+                "Curve": {
+                  "Name": "Curve",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
                   }
                 },
-                "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                  "name 'Name'": "RefractionDepthBias",
-                  "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                  "int 'Index'": -1
-                },
-                "float 'ParameterValue'": 0,
-                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-              }
-            ]
-          },
-          "TextureParameterValues": {
-            "Name": "TextureParameterValues",
-            "Type": "ArrayProperty",
-            "Size": 315,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "TextureParameterValues",
-              "Type": "StructProperty",
-              "Size": 262,
-              "StructName": "TextureParameterValue"
-            },
-            "Value": [
-              {
-                "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                  "name 'Name'": "HDRI_Cubemap",
-                  "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                  "int 'Index'": -1
-                },
-                "obj 'ParameterValue'": -11,
-                "guid 'ExpressionGUID'": "db1c437f-4487-6223-0ed8-b6abd33f41d5"
-              }
-            ]
-          },
+                "Atlas": {
+                  "Name": "Atlas",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
+                  }
+                }
+              },
+              "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                "name 'Name'": "RefractionDepthBias",
+                "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                "int 'Index'": -1
+              },
+              "float 'ParameterValue'": 0,
+              "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "struct[] Size(315) MaybeInnerTag(TextureParameterValue 262  ) 'TextureParameterValues'": [
+            {
+              "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                "name 'Name'": "HDRI_Cubemap",
+                "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                "int 'Index'": -1
+              },
+              "obj 'ParameterValue'": -11,
+              "guid 'ExpressionGUID'": "db1c437f-4487-6223-0ed8-b6abd33f41d5"
+            }
+          ],
           "struct MaterialInstanceBasePropertyOverrides 78 'BasePropertyOverrides'": {
             "byte64 (EMaterialShadingModel) 'ShadingModel'": 25,
             "float 'OpacityMaskClipValue'": 0.3333
           },
-          "ReferencedTextureGuids": {
-            "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
-            "Size": 69,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
-              "Size": 16,
-              "StructName": "Guid"
-            },
-            "Value": [
-              "625a7ad7-4b25-3ef0-48d0-5fb9624f7096"
-            ]
-          },
+          "struct[] Size(69) MaybeInnerTag(Guid 16  ) 'ReferencedTextureGuids'": [
+            "625a7ad7-4b25-3ef0-48d0-5fb9624f7096"
+          ],
           "obj 'EditorOnlyData'": 2,
           "obj 'ThumbnailInfo'": 4,
           "guid 'LightingGuid'": "af7cf10f-4810-c5dd-919e-ce96b822013a"
@@ -394,30 +358,18 @@
         "__type": "UMaterialInterfaceEditorOnlyData",
         "Members": {
           "struct StaticParameterSetEditorOnlyData 379 'StaticParameters'": {
-            "StaticSwitchParameters": {
-              "Name": "StaticSwitchParameters",
-              "Type": "ArrayProperty",
-              "Size": 338,
-              "InnerType": "StructProperty",
-              "MaybeInnerTag": {
-                "Name": "StaticSwitchParameters",
-                "Type": "StructProperty",
-                "Size": 285,
-                "StructName": "StaticSwitchParameter"
-              },
-              "Value": [
-                {
-                  "bool 'Value'": true,
-                  "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                    "name 'Name'": "HDRI",
-                    "byte64 (EMaterialParameterAssociation) 'Association'": 16,
-                    "int 'Index'": -1
-                  },
-                  "bool 'bOverride'": true,
-                  "guid 'ExpressionGUID'": "54300bef-4537-c2e1-95c7-ec8cd016b29f"
-                }
-              ]
-            }
+            "struct[] Size(338) MaybeInnerTag(StaticSwitchParameter 285  ) 'StaticSwitchParameters'": [
+              {
+                "bool 'Value'": true,
+                "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                  "name 'Name'": "HDRI",
+                  "byte64 (EMaterialParameterAssociation) 'Association'": 16,
+                  "int 'Index'": -1
+                },
+                "bool 'bOverride'": true,
+                "guid 'ExpressionGUID'": "54300bef-4537-c2e1-95c7-ec8cd016b29f"
+              }
+            ]
           }
         },
         "bSavedCachedExpressionData": false

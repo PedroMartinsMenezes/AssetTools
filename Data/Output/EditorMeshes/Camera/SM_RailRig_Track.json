@@ -447,71 +447,59 @@
       "Obj": {
         "__type": "UStaticMesh",
         "Members": {
-          "SourceModels": {
-            "Name": "SourceModels",
-            "Type": "ArrayProperty",
-            "Size": 1458,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "SourceModels",
-              "Type": "StructProperty",
-              "Size": 1405,
-              "StructName": "StaticMeshSourceModel"
-            },
-            "Value": [
-              {
-                "obj 'StaticMeshDescriptionBulkData'": 8,
-                "struct MeshBuildSettings 567 'BuildSettings'": {
-                  "bool 'bUseMikkTSpace'": true,
-                  "bool 'bRecomputeNormals'": false,
-                  "bool 'bRecomputeTangents'": true,
-                  "bool 'bComputeWeightedNormals'": false,
-                  "bool 'bRemoveDegenerates'": true,
-                  "bool 'bBuildReversedIndexBuffer'": true,
-                  "bool 'bUseHighPrecisionTangentBasis'": false,
-                  "bool 'bUseFullPrecisionUVs'": false,
-                  "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
-                  "bool 'bGenerateLightmapUVs'": true,
-                  "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
-                  "bool 'bSupportFaceRemap'": false,
-                  "int 'MinLightmapResolution'": 64,
-                  "int 'SrcLightmapIndex'": 0,
-                  "int 'DstLightmapIndex'": 1,
-                  "Vector 'BuildScale3D'": "1 1 1",
-                  "float 'DistanceFieldResolutionScale'": 1,
-                  "obj 'DistanceFieldReplacementMesh'": 0,
-                  "int 'MaxLumenMeshCards'": 12
-                },
-                "struct MeshReductionSettings 587 'ReductionSettings'": {
-                  "float 'PercentTriangles'": 1,
-                  "float 'PercentVertices'": 1,
-                  "float 'MaxDeviation'": 0,
-                  "float 'PixelError'": 8,
-                  "float 'WeldingThreshold'": 0,
-                  "float 'HardAngleThreshold'": 80,
-                  "int 'BaseLODModel'": 0,
-                  "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 45,
-                  "byte64 (EMeshFeatureImportance) 'TextureImportance'": 45,
-                  "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 45,
-                  "bool 'bRecalculateNormals'": false,
-                  "bool 'bGenerateUniqueLightmapUVs'": false,
-                  "bool 'bKeepSymmetry'": false,
-                  "bool 'bVisibilityAided'": false,
-                  "bool 'bCullOccluded'": false,
-                  "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 49,
-                  "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 44,
-                  "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 46
-                },
-                "struct PerPlatformFloat 12 'ScreenSize'": {
-                  "bCooked": false,
-                  "Value": 1,
-                  "PerPlatform": {}
-                },
-                "string 'SourceImportFilename'": "",
-                "bool 'bImportWithBaseMesh'": false
-              }
-            ]
-          },
+          "struct[] Size(1458) MaybeInnerTag(StaticMeshSourceModel 1405  ) 'SourceModels'": [
+            {
+              "obj 'StaticMeshDescriptionBulkData'": 8,
+              "struct MeshBuildSettings 567 'BuildSettings'": {
+                "bool 'bUseMikkTSpace'": true,
+                "bool 'bRecomputeNormals'": false,
+                "bool 'bRecomputeTangents'": true,
+                "bool 'bComputeWeightedNormals'": false,
+                "bool 'bRemoveDegenerates'": true,
+                "bool 'bBuildReversedIndexBuffer'": true,
+                "bool 'bUseHighPrecisionTangentBasis'": false,
+                "bool 'bUseFullPrecisionUVs'": false,
+                "bool 'bUseBackwardsCompatibleF16TruncUVs'": true,
+                "bool 'bGenerateLightmapUVs'": true,
+                "bool 'bGenerateDistanceFieldAsIfTwoSided'": false,
+                "bool 'bSupportFaceRemap'": false,
+                "int 'MinLightmapResolution'": 64,
+                "int 'SrcLightmapIndex'": 0,
+                "int 'DstLightmapIndex'": 1,
+                "Vector 'BuildScale3D'": "1 1 1",
+                "float 'DistanceFieldResolutionScale'": 1,
+                "obj 'DistanceFieldReplacementMesh'": 0,
+                "int 'MaxLumenMeshCards'": 12
+              },
+              "struct MeshReductionSettings 587 'ReductionSettings'": {
+                "float 'PercentTriangles'": 1,
+                "float 'PercentVertices'": 1,
+                "float 'MaxDeviation'": 0,
+                "float 'PixelError'": 8,
+                "float 'WeldingThreshold'": 0,
+                "float 'HardAngleThreshold'": 80,
+                "int 'BaseLODModel'": 0,
+                "byte64 (EMeshFeatureImportance) 'SilhouetteImportance'": 45,
+                "byte64 (EMeshFeatureImportance) 'TextureImportance'": 45,
+                "byte64 (EMeshFeatureImportance) 'ShadingImportance'": 45,
+                "bool 'bRecalculateNormals'": false,
+                "bool 'bGenerateUniqueLightmapUVs'": false,
+                "bool 'bKeepSymmetry'": false,
+                "bool 'bVisibilityAided'": false,
+                "bool 'bCullOccluded'": false,
+                "enum64 (EStaticMeshReductionTerimationCriterion) 'TerminationCriterion'": 49,
+                "byte64 (EMeshFeatureImportance) 'VisibilityAggressiveness'": 44,
+                "byte64 (EMeshFeatureImportance) 'VertexColorImportance'": 46
+              },
+              "struct PerPlatformFloat 12 'ScreenSize'": {
+                "bCooked": false,
+                "Value": 1,
+                "PerPlatform": {}
+              },
+              "string 'SourceImportFilename'": "",
+              "bool 'bImportWithBaseMesh'": false
+            }
+          ],
           "struct StaticMeshSourceModel 37 'HiResSourceModel'": {
             "obj 'StaticMeshDescriptionBulkData'": 7
           },
@@ -583,33 +571,21 @@
               }
             }
           },
-          "StaticMaterials": {
-            "Name": "StaticMaterials",
-            "Type": "ArrayProperty",
-            "Size": 381,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "StaticMaterials",
-              "Type": "StructProperty",
-              "Size": 328,
-              "StructName": "StaticMaterial"
-            },
-            "Value": [
-              {
-                "obj 'MaterialInterface'": -8,
-                "name 'MaterialSlotName'": "MI_CineMat_Rig",
-                "name 'ImportedMaterialSlotName'": "MI_CineMat_Rig",
-                "struct MeshUVChannelInfo 176 'UVChannelData'": {
-                  "bool 'bInitialized'": true,
-                  "bool 'bOverrideDensities'": false,
-                  "float 'LocalUVDensities'": 43.407047,
-                  "float 'LocalUVDensities'[1]": 81.01163,
-                  "float 'LocalUVDensities'[2]": 0,
-                  "float 'LocalUVDensities'[3]": 0
-                }
+          "struct[] Size(381) MaybeInnerTag(StaticMaterial 328  ) 'StaticMaterials'": [
+            {
+              "obj 'MaterialInterface'": -8,
+              "name 'MaterialSlotName'": "MI_CineMat_Rig",
+              "name 'ImportedMaterialSlotName'": "MI_CineMat_Rig",
+              "struct MeshUVChannelInfo 176 'UVChannelData'": {
+                "bool 'bInitialized'": true,
+                "bool 'bOverrideDensities'": false,
+                "float 'LocalUVDensities'": 43.407047,
+                "float [1] 'LocalUVDensities'": 81.01163,
+                "float [2] 'LocalUVDensities'": 0,
+                "float [3] 'LocalUVDensities'": 0
               }
-            ]
-          },
+            }
+          ],
           "float 'LightmapUVDensity'": 81.01163,
           "int 'LightMapResolution'": 64,
           "int 'LightMapCoordinateIndex'": 1,

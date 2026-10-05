@@ -282,51 +282,27 @@
           "bool 'bUsedWithStaticLighting'": true,
           "bool 'bCanMaskedBeAssumedOpaque'": true,
           "guid 'StateId'": "2bfc69aa-4d8a-e6bd-211f-11b459c59058",
-          "ReferencedTextureGuids": {
-            "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
-            "Size": 69,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
-              "Size": 16,
-              "StructName": "Guid"
-            },
-            "Value": [
-              "a37cd1ba-4d89-f257-aeac-24a93ec28bf7"
-            ]
-          },
+          "struct[] Size(69) MaybeInnerTag(Guid 16  ) 'ReferencedTextureGuids'": [
+            "a37cd1ba-4d89-f257-aeac-24a93ec28bf7"
+          ],
           "obj 'EditorOnlyData'": 2,
           "int 'TextureStreamingDataVersion'": 1,
-          "TextureStreamingData": {
-            "Name": "TextureStreamingData",
-            "Type": "ArrayProperty",
-            "Size": 213,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "TextureStreamingData",
-              "Type": "StructProperty",
-              "Size": 160,
-              "StructName": "MaterialTextureInfo"
-            },
-            "Value": [
-              {
-                "float 'SamplingScale'": 1,
-                "int 'UVChannelIndex'": 0,
-                "name 'TextureName'": "Color_checker",
-                "struct SoftObjectPath 12 'TextureReference'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker",
-                  "AssetPath": {
-                    "PackageName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker"
-                  },
-                  "SaveNum": 0
-                }
+          "struct[] Size(213) MaybeInnerTag(MaterialTextureInfo 160  ) 'TextureStreamingData'": [
+            {
+              "float 'SamplingScale'": 1,
+              "int 'UVChannelIndex'": 0,
+              "name 'TextureName'": "Color_checker",
+              "struct SoftObjectPath 12 'TextureReference'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker",
+                "AssetPath": {
+                  "PackageName": "/Engine/EditorMeshes/ColorCalibrator/Color_checker.Color_checker"
+                },
+                "SaveNum": 0
               }
-            ]
-          },
+            }
+          ],
           "obj 'ThumbnailInfo'": 7,
           "guid 'LightingGuid'": "24a0488a-4747-4422-9ec3-a2a998c3e175"
         },

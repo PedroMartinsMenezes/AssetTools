@@ -792,11 +792,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
@@ -828,105 +837,69 @@
           "obj 'SimpleConstructionScript'": 19,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 562,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "bEnableSteamVFX",
-                "guid 'VarGuid'": "a698345e-4feb-9cde-8ada-1dbc6648926d",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Enable Steam VFX",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 39,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_SteamVent",
-                    "AssetName": "BP_SteamVent"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -201.24472,
-                  "Y": -325.14423
-                },
-                "float 'SavedZoomAmount'": 1
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(562) 'NewVariables'": [
+            {
+              "name 'VarName'": "bEnableSteamVFX",
+              "guid native 'VarGuid'": "a698345e-4feb-9cde-8ada-1dbc6648926d",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Enable Steam VFX",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_SteamVent",
-                    "AssetName": "BP_SteamVent"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 39,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_SteamVent",
+                  "AssetName": "BP_SteamVent"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -480.46817,
-                  "Y": -42.48053
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -201.24472,
+                "Y": -325.14423
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_SteamVent",
+                  "AssetName": "BP_SteamVent"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -480.46817,
+                "Y": -42.48053
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "d00ea87e-4631-535f-4718-02ba28862af0"
+          "guid native 'BlueprintGuid'": "d00ea87e-4631-535f-4718-02ba28862af0"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1009,7 +982,7 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "bool 'bEnableSteamVFX' {a698345e-4feb-9cde-8ada-1dbc6648926d}": true,
+          "bool {a698345e-4feb-9cde-8ada-1dbc6648926d} 'bEnableSteamVFX'": true,
           "struct ActorTickFunction 33 'PrimaryActorTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1032,7 +1005,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "8 9 10",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "aa51856c-4c1f-d935-707e-d5a5e390e5de"
+          "guid native 'GraphGuid'": "aa51856c-4c1f-d935-707e-d5a5e390e5de"
         }
       }
     },
@@ -1049,7 +1022,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "11 12 7 13",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "112167a0-49d4-dda8-6851-ab82906775e5"
+          "guid native 'GraphGuid'": "112167a0-49d4-dda8-6851-ab82906775e5"
         }
       }
     },
@@ -1093,7 +1066,7 @@
             "name 'MemberName'": "SetEmitterEnable"
           },
           "int 'NodePosX'": 416,
-          "guid 'NodeGuid'": "13cfe8ac-4406-81b2-3a70-a9abdc17a5a5"
+          "guid native 'NodeGuid'": "13cfe8ac-4406-81b2-3a70-a9abdc17a5a5"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`7 5dae432c-4654-6757-d224-dbb2640d913d`» LinkedTo«`11 76b84ef0-42f5-51f6-f867-d58bc61a0b88`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1119,11 +1092,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 57,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 57,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "46ea8604-4374-dc89-e4eb-949de41e0bfb"
+          "guid native 'NodeGuid'": "46ea8604-4374-dc89-e4eb-949de41e0bfb"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1148,11 +1121,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 57,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 57,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "bf87038c-4940-e1e2-1107-16b6c2acabcd"
+          "guid native 'NodeGuid'": "bf87038c-4940-e1e2-1107-16b6c2acabcd"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1178,11 +1151,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 57,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 57,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "95ce8227-4109-4026-63b3-519ccee2e5a9"
+          "guid native 'NodeGuid'": "95ce8227-4109-4026-63b3-519ccee2e5a9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1207,7 +1180,7 @@
             "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosY'": 15,
-          "guid 'NodeGuid'": "85599e47-49f9-e38b-cb99-298a2903ae23"
+          "guid native 'NodeGuid'": "85599e47-49f9-e38b-cb99-298a2903ae23"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1227,12 +1200,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "bEnableSteamVFX",
-            "guid 'MemberGuid'": "a698345e-4feb-9cde-8ada-1dbc6648926d",
+            "guid native 'MemberGuid'": "a698345e-4feb-9cde-8ada-1dbc6648926d",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 144,
-          "guid 'NodeGuid'": "d711251c-4118-816c-a8b8-34ae716300a8"
+          "guid native 'NodeGuid'": "d711251c-4118-816c-a8b8-34ae716300a8"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`bEnableSteamVFX`» Id«`12 3cae6c7c-48ea-5633-c885-5ea02f1d9f6c`» LinkedTo«`7 b28cc1ae-40ff-e7fb-1221-1494e81e7301`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1256,7 +1229,7 @@
           },
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 96,
-          "guid 'NodeGuid'": "f3f9914c-423e-18a0-c319-a0b5700c833d"
+          "guid native 'NodeGuid'": "f3f9914c-423e-18a0-c319-a0b5700c833d"
         },
         "Pins": [
           "output-pin Type«`object obj(`-18`)`» Name«`Smoke`» Id«`13 819672b0-4208-8d37-8a89-6fa411e4a731`» LinkedTo«`7 3dd9f2d5-499b-577c-924b-68b9144333ab`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1277,7 +1250,7 @@
           "obj 'Asset'": -20,
           "struct NiagaraUserRedirectionParameterStore 8 'OverrideParameters'": {},
           "bool 'CastShadow'": true,
-          "Rotator 'RelativeRotation'": "90 0 0"
+          "Rotator native 'RelativeRotation'": "90 0 0"
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []
@@ -1323,7 +1296,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "17 18",
-          "guid 'VariableGuid'": "446acefd-4e55-1fce-1f81-9cb7addb6010",
+          "guid native 'VariableGuid'": "446acefd-4e55-1fce-1f81-9cb7addb6010",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1348,7 +1321,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "1cb2f39d-45e4-b25f-0f2c-6e99f5ecf564",
+          "guid native 'VariableGuid'": "1cb2f39d-45e4-b25f-0f2c-6e99f5ecf564",
           "name 'InternalVariableName'": "SM_SteamVent"
         }
       }
@@ -1373,7 +1346,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "6202ef19-4379-5322-684c-ae974c886169",
+          "guid native 'VariableGuid'": "6202ef19-4379-5322-684c-ae974c886169",
           "name 'InternalVariableName'": "Smoke"
         }
       }

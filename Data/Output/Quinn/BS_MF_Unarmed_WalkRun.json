@@ -259,62 +259,38 @@
           "float 'TargetWeightInterpolationSpeedPerSec'": 5,
           "float 'AnimLength'": 2.7333333,
           "int 'SampleIndexWithMarkers'": 0,
-          "SampleData": {
-            "Name": "SampleData",
-            "Type": "ArrayProperty",
-            "Size": 470,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "SampleData",
-              "Type": "StructProperty",
-              "Size": 417,
-              "StructName": "BlendSample"
+          "struct[] Size(470) MaybeInnerTag(BlendSample 417  ) 'SampleData'": [
+            {
+              "obj 'Animation'": -2,
+              "Vector 'SampleValue'": "500 0 0",
+              "float 'RateScale'": 0.9
             },
-            "Value": [
+            {
+              "obj 'Animation'": -3,
+              "Vector 'SampleValue'": "230 0 0",
+              "float 'RateScale'": 1
+            },
+            {
+              "obj 'Animation'": -1,
+              "Vector 'SampleValue'": "0 0 0",
+              "float 'RateScale'": 1
+            }
+          ],
+          "struct BlendSpaceData 342 'BlendSpaceData'": {
+            "struct[] Size(301) MaybeInnerTag(BlendSpaceSegment 248  ) 'Segments'": [
               {
-                "obj 'Animation'": -2,
-                "Vector 'SampleValue'": "500 0 0",
-                "float 'RateScale'": 0.9
+                "int 'SampleIndices'": 2,
+                "int [1] 'SampleIndices'": 1,
+                "float 'Vertices'": 0,
+                "float [1] 'Vertices'": 0.46
               },
               {
-                "obj 'Animation'": -3,
-                "Vector 'SampleValue'": "230 0 0",
-                "float 'RateScale'": 1
-              },
-              {
-                "obj 'Animation'": -1,
-                "Vector 'SampleValue'": "0 0 0",
-                "float 'RateScale'": 1
+                "int 'SampleIndices'": 1,
+                "int [1] 'SampleIndices'": 0,
+                "float 'Vertices'": 0.46,
+                "float [1] 'Vertices'": 1
               }
             ]
-          },
-          "struct BlendSpaceData 342 'BlendSpaceData'": {
-            "Segments": {
-              "Name": "Segments",
-              "Type": "ArrayProperty",
-              "Size": 301,
-              "InnerType": "StructProperty",
-              "MaybeInnerTag": {
-                "Name": "Segments",
-                "Type": "StructProperty",
-                "Size": 248,
-                "StructName": "BlendSpaceSegment"
-              },
-              "Value": [
-                {
-                  "int 'SampleIndices'": 2,
-                  "int 'SampleIndices'[1]": 1,
-                  "float 'Vertices'": 0,
-                  "float 'Vertices'[1]": 0.46
-                },
-                {
-                  "int 'SampleIndices'": 1,
-                  "int 'SampleIndices'[1]": 0,
-                  "float 'Vertices'": 0.46,
-                  "float 'Vertices'[1]": 1
-                }
-              ]
-            }
           },
           "struct BlendParameter 72 'BlendParameters'": {
             "string 'DisplayName'": "Speed",

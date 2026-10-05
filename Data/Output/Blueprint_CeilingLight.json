@@ -838,109 +838,73 @@
           "obj 'SimpleConstructionScript'": 52,
           "obj[] 'UbergraphPages'": "11",
           "obj[] 'FunctionGraphs'": "12",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 1386,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Brightness",
-                "guid 'VarGuid'": "a3784f10-4772-bf1d-e778-01a3979deaa3",
-                "struct EdGraphPinType 62 'VarType'": "float",
-                "string 'FriendlyName'": "Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`48CF3C8E4AC61DE1CB164D92BBA776C5` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+          "struct[] Size(1386) 'NewVariables'": [
+            {
+              "name 'VarName'": "Brightness",
+              "guid 'VarGuid'": "a3784f10-4772-bf1d-e778-01a3979deaa3",
+              "struct EdGraphPinType 62 'VarType'": "float",
+              "string 'FriendlyName'": "Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`48CF3C8E4AC61DE1CB164D92BBA776C5` Namespace=`` SourceString=`Light`"
               },
-              {
-                "name 'VarName'": "Color",
-                "guid 'VarGuid'": "dd8ab714-4a17-957d-a62f-2a9539a79b59",
-                "struct EdGraphPinType 63 'VarType'": "struct obj(`-33`)",
-                "string 'FriendlyName'": "Color",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`79BEA6344DBD368A3AC725A2DA296DB5` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Color",
+              "guid 'VarGuid'": "dd8ab714-4a17-957d-a62f-2a9539a79b59",
+              "struct EdGraphPinType 63 'VarType'": "struct obj(`-33`)",
+              "string 'FriendlyName'": "Color",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`79BEA6344DBD368A3AC725A2DA296DB5` Namespace=`` SourceString=`Light`"
               },
-              {
-                "name 'VarName'": "Source Radius",
-                "guid 'VarGuid'": "f3dc0c96-4780-e7d4-71e2-9d9632afde07",
-                "struct EdGraphPinType 62 'VarType'": "float",
-                "string 'FriendlyName'": "Source Radius",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`F322D3DA44D1342B41E8F2B5D5FEC267` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "Light"
-            ]
-          },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Source Radius",
+              "guid 'VarGuid'": "f3dc0c96-4780-e7d4-71e2-9d9632afde07",
+              "struct EdGraphPinType 62 'VarType'": "float",
+              "string 'FriendlyName'": "Source Radius",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`F322D3DA44D1342B41E8F2B5D5FEC267` Namespace=`` SourceString=`Light`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "Light"
+          ],
           "int 'BlueprintSystemVersion'": 2,
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 244,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'EditedObject'": 11,
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
-              },
-              {
-                "obj 'EditedObject'": 12,
-                "Vector2D 'SavedViewOffset'": "-91.60000610351562 -41",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+          "struct[] Size(244) 'LastEditedDocuments'": [
+            {
+              "obj 'EditedObject'": 11,
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "obj 'EditedObject'": 12,
+              "Vector2D 'SavedViewOffset'": "-91.60000610351562 -41",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 47,
           "obj 'GeneratedClass'": 8,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1816,15 +1780,9 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj 'StaticMesh'": -34,
-          "IrrelevantLights": {
-            "Name": "IrrelevantLights",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "StructProperty",
-            "Value": [
-              "a3d9747f-49cc-a512-98c0-7cad461db8dd"
-            ]
-          },
+          "struct[] Size(20) 'IrrelevantLights'": [
+            "a3d9747f-49cc-a512-98c0-7cad461db8dd"
+          ],
           "string 'StaticMeshDerivedDataKey'": "STATICMESH_34081786561B425A9523C94540EA599D_359a029847e84730ba516769d0f19427Simplygon_5_5_2156_18f808c3cf724e5a994f57de5c83cc4b_85D154384BE76DE2D2F072A409B57FAF000000000100000001000000000000000000803F0000803F00000000000000000000344203030300000000",
           "bool 'bHasCachedStaticLighting'": true,
           "struct BodyInstance 33 'BodyInstance'": {

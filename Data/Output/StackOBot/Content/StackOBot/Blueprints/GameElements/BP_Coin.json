@@ -1468,11 +1468,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
@@ -1483,11 +1492,17 @@
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty RichCurveKey": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0"
+      },
       "StructProperty RichCurve": {
         "TypeName": "StructProperty 1 | RichCurve 1 | /Script/Engine 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty ResponseChannel": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
       "StructProperty CollisionResponse": {
         "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
@@ -1497,6 +1512,12 @@
       },
       "StructProperty ActorComponentTickFunction": {
         "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTFloatTrack": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTTrackId": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
       }
     }
   },
@@ -1517,209 +1538,137 @@
           "obj[] 'UbergraphPages'": "7",
           "obj[] 'FunctionGraphs'": "10 9 8",
           "obj[] 'Timelines'": "107 108",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 2930,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "PlayerCharacter",
-                "guid 'VarGuid' /Script/CoreUObject": "77084af4-423b-a220-22e4-b899540073c2",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-21`)",
-                "string 'FriendlyName'": "Player Character",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 114,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 79,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(2930) 'NewVariables'": [
+            {
+              "name 'VarName'": "PlayerCharacter",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "77084af4-423b-a220-22e4-b899540073c2",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-21`)",
+              "string 'FriendlyName'": "Player Character",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "ActorTransform",
-                "guid 'VarGuid' /Script/CoreUObject": "78e70d02-41c7-b06c-8d99-ec8c49e2f5e5",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-100`)",
-                "string 'FriendlyName'": "Actor Transform",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 114,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 79,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 114,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(79) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "ActorTransform",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "78e70d02-41c7-b06c-8d99-ec8c49e2f5e5",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-100`)",
+              "string 'FriendlyName'": "Actor Transform",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "HiddenLocation",
-                "guid 'VarGuid' /Script/CoreUObject": "90b44563-4801-b5de-a7ae-4e8891254eff",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-101`)",
-                "string 'FriendlyName'": "Hidden Location",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 114,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 114,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(79) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HiddenLocation",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "90b44563-4801-b5de-a7ae-4e8891254eff",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-101`)",
+              "string 'FriendlyName'": "Hidden Location",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "CoinIndex",
-                "guid 'VarGuid' /Script/CoreUObject": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
-                "class EdGraphPinType 69 'VarType'": "int",
-                "string 'FriendlyName'": "Coin Index",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 114,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 114,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "CoinIndex",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
+              "class EdGraphPinType 69 'VarType'": "int",
+              "string 'FriendlyName'": "Coin Index",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "CoinOwner",
-                "guid 'VarGuid' /Script/CoreUObject": "1502782f-4d21-d0db-20c9-9ca91728a2ad",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-3`)",
-                "string 'FriendlyName'": "Coin Owner",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 114,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "CoinOwner",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "1502782f-4d21-d0db-20c9-9ca91728a2ad",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-3`)",
+              "string 'FriendlyName'": "Coin Owner",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
+              },
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 114,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph",
+            "BP Coin"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(151) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Coin",
+                  "AssetName": "BP_Coin"
                 },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 114,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph",
-              "BP Coin"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 151,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Coin",
-                    "AssetName": "BP_Coin"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -4370.7935,
-                  "Y": -3051.0876
-                },
-                "float 'SavedZoomAmount'": 0.25
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -4370.7935,
+                "Y": -3051.0876
+              },
+              "float 'SavedZoomAmount'": 0.25
+            }
+          ],
           "ComponentTemplateNameIndex": {
             "Name": "ComponentTemplateNameIndex",
             "Type": "MapProperty",
@@ -1750,7 +1699,7 @@
           "obj 'ThumbnailInfo'": 100,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "e0c55bc7-407b-a01b-1a81-28a3041128ac"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "e0c55bc7-407b-a01b-1a81-28a3041128ac"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1883,11 +1832,11 @@
             "UberGraphFunctionKey": 0
           },
           "struct Transform 235 'ActorTransform' {78e70d02-41c7-b06c-8d99-ec8c49e2f5e5}": {
-            "Quat 'Rotation' /Script/CoreUObject": "0 0 0 1",
-            "Vector 'Translation' /Script/CoreUObject": "0 0 0",
-            "Vector 'Scale3D' /Script/CoreUObject": "1 1 1"
+            "Quat native TypeNamespace(/Script/CoreUObject) 'Rotation'": "0 0 0 1",
+            "Vector native TypeNamespace(/Script/CoreUObject) 'Translation'": "0 0 0",
+            "Vector native TypeNamespace(/Script/CoreUObject) 'Scale3D'": "1 1 1"
           },
-          "Vector 'HiddenLocation' {90b44563-4801-b5de-a7ae-4e8891254eff} /Script/CoreUObject": "0 0 0",
+          "Vector native {90b44563-4801-b5de-a7ae-4e8891254eff} TypeNamespace(/Script/CoreUObject) 'HiddenLocation'": "0 0 0",
           "struct ActorTickFunction 33 'PrimaryActorTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -1909,40 +1858,30 @@
         "__type": "UCurveFloat",
         "Members": {
           "struct RichCurve 127 'FloatCurve'": {
-            "Keys": {
-              "Name": "Keys",
-              "Type": "ArrayProperty",
-              "Size": 58,
-              "StructName": "RichCurveKey",
-              "BoolVal": 0,
-              "InnerType": "StructProperty",
-              "Value": [
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": -0.0029650964,
-                  "Value": -0.00086665154,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.24818206,
-                  "Value": 1,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                }
-              ],
-              "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-            }
+            "struct[] native TypeNamespace(/Script/Engine) StructName(RichCurveKey) Size(58) PropertyTagFlags(HasBinaryOrNativeSerialize) 'Keys'": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": -0.0029650964,
+                "Value": -0.00086665154,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.24818206,
+                "Value": 1,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              }
+            ]
           }
         }
       }
@@ -1958,51 +1897,41 @@
         "__type": "UCurveFloat",
         "Members": {
           "struct RichCurve 154 'FloatCurve'": {
-            "Keys": {
-              "Name": "Keys",
-              "Type": "ArrayProperty",
-              "Size": 85,
-              "StructName": "RichCurveKey",
-              "BoolVal": 0,
-              "InnerType": "StructProperty",
-              "Value": [
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0,
-                  "Value": 1,
-                  "ArriveTangent": 12.000874,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 4.4348116,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.04746282,
-                  "Value": 1.1180016,
-                  "ArriveTangent": -2.3241801,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -2.3241866,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.24899143,
-                  "Value": 0.031154513,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                }
-              ],
-              "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-            }
+            "struct[] native TypeNamespace(/Script/Engine) StructName(RichCurveKey) Size(85) PropertyTagFlags(HasBinaryOrNativeSerialize) 'Keys'": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0,
+                "Value": 1,
+                "ArriveTangent": 12.000874,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 4.4348116,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.04746282,
+                "Value": 1.1180016,
+                "ArriveTangent": -2.3241801,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -2.3241866,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.24899143,
+                "Value": 0.031154513,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              }
+            ]
           }
         }
       }
@@ -2018,40 +1947,30 @@
         "__type": "UCurveFloat",
         "Members": {
           "struct RichCurve 127 'FloatCurve'": {
-            "Keys": {
-              "Name": "Keys",
-              "Type": "ArrayProperty",
-              "Size": 58,
-              "StructName": "RichCurveKey",
-              "BoolVal": 0,
-              "InnerType": "StructProperty",
-              "Value": [
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0,
-                  "Value": 0.0018751621,
-                  "ArriveTangent": 24.732128,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 24.732243,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.24866694,
-                  "Value": 1.0100735,
-                  "ArriveTangent": -0.042042855,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -0.042035595,
-                  "LeaveTangentWeight": 0
-                }
-              ],
-              "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-            }
+            "struct[] native TypeNamespace(/Script/Engine) StructName(RichCurveKey) Size(58) PropertyTagFlags(HasBinaryOrNativeSerialize) 'Keys'": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0,
+                "Value": 0.0018751621,
+                "ArriveTangent": 24.732128,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 24.732243,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.24866694,
+                "Value": 1.0100735,
+                "ArriveTangent": -0.042042855,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -0.042035595,
+                "LeaveTangentWeight": 0
+              }
+            ]
           }
         }
       }
@@ -2069,7 +1988,7 @@
           "obj 'Schema'": -4,
           "obj[] 'Nodes'": "69 87 51 32 68 94 33 75 11 15 12 13 31 78 73 63 64 88 35 65 14 89 34 36 81 37 39 38 90 40 30 66 41 91 42 82 43 92 83 74 44 67 45 76 46 48 86 16 97 47 93 49 50 79 80",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "a2a76392-44fe-8a07-b1f7-86a5ff02dee4"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "a2a76392-44fe-8a07-b1f7-86a5ff02dee4"
         }
       }
     },
@@ -2085,7 +2004,7 @@
         "Members": {
           "obj 'Schema'": -4,
           "obj[] 'Nodes'": "70 53 98 95 52",
-          "guid 'GraphGuid' /Script/CoreUObject": "1609e5a8-4a7a-4e1c-d621-c99780002aea"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "1609e5a8-4a7a-4e1c-d621-c99780002aea"
         }
       }
     },
@@ -2101,7 +2020,7 @@
         "Members": {
           "obj 'Schema'": -4,
           "obj[] 'Nodes'": "71 57 77 55 56 58 96 61 59 60 54 62 84 85",
-          "guid 'GraphGuid' /Script/CoreUObject": "32346e4b-48a0-08cb-3af5-02b4b53acee9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "32346e4b-48a0-08cb-3af5-02b4b53acee9"
         }
       }
     },
@@ -2118,7 +2037,7 @@
           "obj 'Schema'": -4,
           "obj[] 'Nodes'": "72",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "993b8f60-4e6f-2bf4-f445-afa3fb56b20b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "993b8f60-4e6f-2bf4-f445-afa3fb56b20b"
         }
       }
     },
@@ -2132,7 +2051,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "1 0.748813 0.876052 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "1 0.748813 0.876052 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -4112,
           "int 'NodePosY'": -1104,
@@ -2141,7 +2060,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Set a bit of random starting rotation per instance.",
-          "guid 'NodeGuid' /Script/CoreUObject": "fc44be4e-4675-bd49-39e4-d2953c1fb928"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "fc44be4e-4675-bd49-39e4-d2953c1fb928"
         },
         "Pins": []
       }
@@ -2156,7 +2075,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.935728 1 0.297052 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.935728 1 0.297052 1",
           "int 'FontSize'": 12,
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'CommentDepth'": -2,
@@ -2167,7 +2086,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Lerp location from actor location to player location with an offset, scaling it down over time. ",
-          "guid 'NodeGuid' /Script/CoreUObject": "a3fcc188-4013-a5f0-e3f5-93a3a7994574"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a3fcc188-4013-a5f0-e3f5-93a3a7994574"
         },
         "Pins": []
       }
@@ -2182,7 +2101,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.935728 1 0.297052 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.935728 1 0.297052 1",
           "int 'FontSize'": 12,
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -2800,
@@ -2192,7 +2111,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "when animation is finished remove this orb",
-          "guid 'NodeGuid' /Script/CoreUObject": "d316916c-4ff5-3a5b-6c82-09a896aed40f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d316916c-4ff5-3a5b-6c82-09a896aed40f"
         },
         "Pins": []
       }
@@ -2207,7 +2126,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -1424,
           "int 'NodePosY'": -544,
@@ -2216,7 +2135,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Hide and Unhide the Pickup",
-          "guid 'NodeGuid' /Script/CoreUObject": "620cc66b-434b-8b70-f897-6da6224e1b19"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "620cc66b-434b-8b70-f897-6da6224e1b19"
         },
         "Pins": []
       }
@@ -2231,7 +2150,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.935728 1 0.297052 1",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.935728 1 0.297052 1",
           "int 'FontSize'": 12,
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -3616,
@@ -2241,7 +2160,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "The root of this component is box collision that overlaps only the pawn. As we have only one pawn no additional checks are needed. ",
-          "guid 'NodeGuid' /Script/CoreUObject": "eca90da6-4d72-9865-9c3f-b9a0842b03bb"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "eca90da6-4d72-9865-9c3f-b9a0842b03bb"
         },
         "Pins": []
       }
@@ -2256,7 +2175,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor' /Script/CoreUObject": "0.15 0.15 0.15 0.5",
+          "LinearColor native TypeNamespace(/Script/CoreUObject) 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -2815,
           "int 'NodePosY'": -1239,
@@ -2265,7 +2184,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "If Coin has reference to Pickup Spline then establish show order.",
-          "guid 'NodeGuid' /Script/CoreUObject": "4e4502de-4f8e-c4e1-d400-258ce9905cd4"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4e4502de-4f8e-c4e1-d400-258ce9905cd4"
         },
         "Pins": []
       }
@@ -2649,11 +2568,11 @@
           "struct MemberReference 135 'DelegateReference'": {
             "obj 'MemberParent'": -3,
             "name 'MemberName'": "Show Coins",
-            "guid 'MemberGuid' /Script/CoreUObject": "480f233f-4284-3a6f-101e-be9462bbb343"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "480f233f-4284-3a6f-101e-be9462bbb343"
           },
           "int 'NodePosX'": -2112,
           "int 'NodePosY'": -1152,
-          "guid 'NodeGuid' /Script/CoreUObject": "5c1bc2d0-433d-aa76-5aea-f1863b16937d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5c1bc2d0-433d-aa76-5aea-f1863b16937d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`30 53ef40f1-4911-7df8-4b98-68a2ead07c24`» LinkedTo«`44 74441f6d-4a3e-5855-8cbe-d7a41aff2e8f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2680,7 +2599,7 @@
           },
           "int 'NodePosX'": -3582,
           "int 'NodePosY'": -297,
-          "guid 'NodeGuid' /Script/CoreUObject": "76cafdef-40a5-66a9-a475-52a6e91c221e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "76cafdef-40a5-66a9-a475-52a6e91c221e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-28`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`31 1fb9cf30-4490-5bd4-33f8-9ab0131febae`» BitField«`1`» DefaultObject«`ImportIndex[-81] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -2706,7 +2625,7 @@
           },
           "int 'NodePosX'": -2736,
           "int 'NodePosY'": -112,
-          "guid 'NodeGuid' /Script/CoreUObject": "8c1df78f-4513-199b-f333-d1aaaf52331f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8c1df78f-4513-199b-f333-d1aaaf52331f"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`32 fe1b1e20-4443-956e-8ad4-8da52680322d`» LinkedTo«`87 90d2ba3b-4031-5704-f479-21823631bda1`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2731,8 +2650,8 @@
           },
           "int 'NodePosX'": -3648,
           "int 'NodePosY'": -1025,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 157,
-          "guid 'NodeGuid' /Script/CoreUObject": "d541d6f7-4da9-babf-1a4e-30be081d64d4"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 157,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d541d6f7-4da9-babf-1a4e-30be081d64d4"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`33 a27a5b60-495d-69b1-9d2f-39bfd5c6eef0`» LinkedTo«`68 6c8d5899-4fd5-0c5b-6667-77864e40efaa`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2764,7 +2683,7 @@
           },
           "int 'NodePosX'": -1856,
           "int 'NodePosY'": -448,
-          "guid 'NodeGuid' /Script/CoreUObject": "e82bc8be-4c6a-c0a4-0fa2-f6a3a97aee25"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e82bc8be-4c6a-c0a4-0fa2-f6a3a97aee25"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`34 a839b20e-47ba-2b44-2ed7-b6852430b2cf`» LinkedTo«`87 7d1f0c2a-43c1-54f8-b4c8-c5932b580a93`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2797,7 +2716,7 @@
           },
           "int 'NodePosX'": -416,
           "int 'NodePosY'": 16,
-          "guid 'NodeGuid' /Script/CoreUObject": "02b023ce-4934-2545-90bd-2ea3d4cb3dae"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "02b023ce-4934-2545-90bd-2ea3d4cb3dae"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`35 2e4df17d-4d38-99da-f8ea-e0b9ed9d1333`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2823,7 +2742,7 @@
           },
           "int 'NodePosX'": -2240,
           "int 'NodePosY'": -320,
-          "guid 'NodeGuid' /Script/CoreUObject": "99c4e28c-4e4c-bc9b-e35b-7a9ad122568d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "99c4e28c-4e4c-bc9b-e35b-7a9ad122568d"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`36 1b2e4135-463c-3abb-0ea0-d38d281a5f61`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2846,12 +2765,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "Trigger Collection",
-            "guid 'MemberGuid' /Script/CoreUObject": "32346e4b-48a0-08cb-3af5-02b4b53acee9",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "32346e4b-48a0-08cb-3af5-02b4b53acee9",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3056,
           "int 'NodePosY'": -425,
-          "guid 'NodeGuid' /Script/CoreUObject": "d121f09f-417e-f7b3-e919-30a3b17b666e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d121f09f-417e-f7b3-e919-30a3b17b666e"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`37 e25f8dae-4bbb-1bd1-4ac3-29a04ac6d099`» LinkedTo«`73 f03b2cd3-4054-78a8-127e-368f9ff39cba`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2872,12 +2791,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "Toggle Hidden",
-            "guid 'MemberGuid' /Script/CoreUObject": "1609e5a8-4a7a-4e1c-d621-c99780002aea",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "1609e5a8-4a7a-4e1c-d621-c99780002aea",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1184,
           "int 'NodePosY'": -272,
-          "guid 'NodeGuid' /Script/CoreUObject": "ed9b2ab1-4081-51b3-9a66-3db5f7232900"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ed9b2ab1-4081-51b3-9a66-3db5f7232900"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`38 7c30a860-4a90-a483-21e6-518e02953285`» LinkedTo«`64 a2af045c-4b58-bbe4-07da-f6b2171e2688`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2899,12 +2818,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "Toggle Hidden",
-            "guid 'MemberGuid' /Script/CoreUObject": "1609e5a8-4a7a-4e1c-d621-c99780002aea",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "1609e5a8-4a7a-4e1c-d621-c99780002aea",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1184,
           "int 'NodePosY'": -464,
-          "guid 'NodeGuid' /Script/CoreUObject": "842c1643-4a28-ff9d-5b64-9184a9d07d9a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "842c1643-4a28-ff9d-5b64-9184a9d07d9a"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`39 7c30a860-4a90-a483-21e6-518e02953285`» LinkedTo«`63 4a71088c-4c09-5bda-f64c-67aa62e8c533`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2930,7 +2849,7 @@
           },
           "int 'NodePosX'": -432,
           "int 'NodePosY'": -304,
-          "guid 'NodeGuid' /Script/CoreUObject": "e55ef87b-49b1-6b4b-bd95-30b5be9fc6b9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e55ef87b-49b1-6b4b-bd95-30b5be9fc6b9"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`40 0a0ab84e-476a-a603-616f-e4acfcc0c10f`» LinkedTo«`88 c6514807-4df8-6d22-d8ee-e884a488cae5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2962,7 +2881,7 @@
           },
           "int 'NodePosX'": -1920,
           "int 'NodePosY'": -992,
-          "guid 'NodeGuid' /Script/CoreUObject": "718a5ea4-4b21-61b1-209c-d09a61f63a1e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "718a5ea4-4b21-61b1-209c-d09a61f63a1e"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`41 087b8d11-4c31-3186-266e-d8b1471e9cc9`» LinkedTo«`66 fc626b0a-427c-abb7-6faf-3aa984a195b7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2991,7 +2910,7 @@
           },
           "int 'NodePosX'": -2016,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "f6f720a0-42f7-f44c-ecff-c2b489ddf829"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f6f720a0-42f7-f44c-ecff-c2b489ddf829"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`42 f9232b66-49ce-4a9f-9c57-1e966091d31d`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3012,12 +2931,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "ShowPickup",
-            "guid 'MemberGuid' /Script/CoreUObject": "1cf2ed6a-483f-78b0-adbc-d788b2b75cf6",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "1cf2ed6a-483f-78b0-adbc-d788b2b75cf6",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1680,
           "int 'NodePosY'": -1008,
-          "guid 'NodeGuid' /Script/CoreUObject": "be0371e2-430e-0a8e-ad0b-6b9ed0aa6855"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "be0371e2-430e-0a8e-ad0b-6b9ed0aa6855"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`43 0ac7222d-4ac4-f0e8-211d-a6940141daba`» LinkedTo«`41 37172d0f-473e-15c2-e521-5e9b29d4ffc6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3038,12 +2957,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "HidePickup",
-            "guid 'MemberGuid' /Script/CoreUObject": "88a7131f-46b4-093c-3d23-57b2b4bdd895",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "88a7131f-46b4-093c-3d23-57b2b4bdd895",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2320,
           "int 'NodePosY'": -1168,
-          "guid 'NodeGuid' /Script/CoreUObject": "c9984f60-4716-6aeb-6836-bba6535863ba"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c9984f60-4716-6aeb-6836-bba6535863ba"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`44 a531b03e-41bc-75fa-2af6-6a942aa5e92d`» LinkedTo«`74 e888adad-4477-02d5-aa40-66bcea5661d2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3069,7 +2988,7 @@
           },
           "int 'NodePosX'": -3280,
           "int 'NodePosY'": -864,
-          "guid 'NodeGuid' /Script/CoreUObject": "c2c3d34d-475f-30dc-226d-dcb0bfc6f965"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c2c3d34d-475f-30dc-226d-dcb0bfc6f965"
         },
         "Pins": [
           "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`45 52471c9c-4789-dda1-d05f-9daaf259b08c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3094,7 +3013,7 @@
           },
           "int 'NodePosX'": -3952,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "928063e7-4366-2055-ac6d-79bb0dc92e5b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "928063e7-4366-2055-ac6d-79bb0dc92e5b"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`46 758d1140-4f26-9678-f2f0-489940f124b2`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3120,8 +3039,8 @@
           },
           "int 'NodePosX'": -1312,
           "int 'NodePosY'": -64,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 157,
-          "guid 'NodeGuid' /Script/CoreUObject": "c1d2a528-4be9-2e52-85c9-4babd8293669"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 157,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c1d2a528-4be9-2e52-85c9-4babd8293669"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`47 f2d6a35c-4b4e-fdd1-ef75-b382412a19db`» LinkedTo«`38 2dde0564-4263-d4ec-dbb9-e78566d05e63`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3154,11 +3073,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -3,
             "name 'MemberName'": "Update Primary Coin",
-            "guid 'MemberGuid' /Script/CoreUObject": "653cab4a-499a-a1bc-d88a-5d9599beee09"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "653cab4a-499a-a1bc-d88a-5d9599beee09"
           },
           "int 'NodePosX'": -2336,
           "int 'NodePosY'": -816,
-          "guid 'NodeGuid' /Script/CoreUObject": "c0cda263-433e-b453-fa97-4bb8f1d2fe73"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c0cda263-433e-b453-fa97-4bb8f1d2fe73"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`48 248d04ca-4619-fb4b-c742-b6865c163fe2`» LinkedTo«`74 c0543029-4256-ba0d-272e-0d9fcaa2c8f9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3185,7 +3104,7 @@
           },
           "int 'NodePosX'": -1728,
           "int 'NodePosY'": 159,
-          "guid 'NodeGuid' /Script/CoreUObject": "6459226e-474b-e95c-7045-a99b6a1cb0a5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6459226e-474b-e95c-7045-a99b6a1cb0a5"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`49 54625b09-4fca-21f4-6934-98b5f0da5400`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3211,7 +3130,7 @@
           },
           "int 'NodePosX'": -1648,
           "int 'NodePosY'": 64,
-          "guid 'NodeGuid' /Script/CoreUObject": "b1af6be2-44f6-5a2f-7a23-69bde09d42e0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b1af6be2-44f6-5a2f-7a23-69bde09d42e0"
         },
         "Pins": [
           "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`50 1f70c4f9-4280-0605-e2dd-fbaada1310dc`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3236,7 +3155,7 @@
           },
           "int 'NodePosX'": -2128,
           "int 'NodePosY'": -170,
-          "guid 'NodeGuid' /Script/CoreUObject": "d58abb2e-4b1c-5d0c-9c2e-8e81dc644aaa"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d58abb2e-4b1c-5d0c-9c2e-8e81dc644aaa"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`51 046711f9-4ff7-0fb4-57c8-d1b83ae1e75e`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3262,7 +3181,7 @@
           },
           "int 'NodePosX'": -2608,
           "int 'NodePosY'": 864,
-          "guid 'NodeGuid' /Script/CoreUObject": "ddbd2271-4924-aaa3-9e4b-4ca1458bc7af"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ddbd2271-4924-aaa3-9e4b-4ca1458bc7af"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`52 3b6cade0-4200-6625-e7c8-ad93cdcb79e8`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3287,7 +3206,7 @@
           },
           "int 'NodePosX'": -2432,
           "int 'NodePosY'": 752,
-          "guid 'NodeGuid' /Script/CoreUObject": "893cb9af-4654-fd5f-22a9-bc8dfb702a29"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "893cb9af-4654-fd5f-22a9-bc8dfb702a29"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`53 70e8ba91-477f-9850-0364-ef803cbdaf65`» LinkedTo«`70 bb2d90f5-4e31-edc1-383a-d09f9cade6a6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3314,7 +3233,7 @@
           },
           "int 'NodePosX'": -1200,
           "int 'NodePosY'": 57,
-          "guid 'NodeGuid' /Script/CoreUObject": "0c25efc1-48f4-61ac-9ef3-eea011ee57c3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0c25efc1-48f4-61ac-9ef3-eea011ee57c3"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`54 88cab5fa-4d69-04e2-f579-fb83949d0009`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3338,8 +3257,8 @@
           },
           "int 'NodePosX'": -832,
           "int 'NodePosY'": -224,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 157,
-          "guid 'NodeGuid' /Script/CoreUObject": "67bc69f2-438e-89f1-6f92-0ba5c0176292"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 157,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "67bc69f2-438e-89f1-6f92-0ba5c0176292"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`55 998a7bac-4a7b-0d03-1a77-be8e7b71161f`» LinkedTo«`57 21ebe614-4c6f-2e12-7948-47b3f7251942`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3376,7 +3295,7 @@
           },
           "int 'NodePosX'": -832,
           "int 'NodePosY'": -16,
-          "guid 'NodeGuid' /Script/CoreUObject": "02cb9c29-41b9-16c7-faa3-f999ab033a19"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "02cb9c29-41b9-16c7-faa3-f999ab033a19"
         },
         "Pins": [
           "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`56 5e05ccb1-40c4-a64a-739d-6fb84938f8c2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3401,7 +3320,7 @@
           "int 'NodePosX'": -1168,
           "int 'NodePosY'": -239,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "0d69ba56-45d3-8879-c52f-fa99a00d8f13"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0d69ba56-45d3-8879-c52f-fa99a00d8f13"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`57 cda6d449-4dcb-7492-af70-e182d85f1770`» LinkedTo«`77 e0a5a1de-403f-640b-d0aa-7d90c6185cc3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3428,7 +3347,7 @@
           },
           "int 'NodePosX'": -1408,
           "int 'NodePosY'": -80,
-          "guid 'NodeGuid' /Script/CoreUObject": "43b0608a-4e15-fc32-b77d-c6a0d8c864e3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "43b0608a-4e15-fc32-b77d-c6a0d8c864e3"
         },
         "Pins": [
           "input-pin Type«`object obj(`-28`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`58 aef7727b-4501-b487-80e3-e8beab8613bd`» BitField«`1`» DefaultObject«`ImportIndex[-81] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3453,7 +3372,7 @@
           },
           "int 'NodePosX'": -496,
           "int 'NodePosY'": -224,
-          "guid 'NodeGuid' /Script/CoreUObject": "9aae9fe6-4ebd-0516-2dcd-83a380f5800b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9aae9fe6-4ebd-0516-2dcd-83a380f5800b"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`59 a86caab8-4c4b-6392-ffcc-4881938cb97c`» LinkedTo«`55 129980c9-4ed5-7597-43b7-7c9730f40c5b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3489,7 +3408,7 @@
           },
           "int 'NodePosX'": -480,
           "int 'NodePosY'": 208,
-          "guid 'NodeGuid' /Script/CoreUObject": "46c02377-4272-91f5-6355-01b9b57860fa"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "46c02377-4272-91f5-6355-01b9b57860fa"
         },
         "Pins": [
           "input-pin Type«`object obj(`-21`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`60 de0020bf-49f4-d621-b63d-d4ba0bc45f83`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3509,12 +3428,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "StopShowPickup",
-            "guid 'MemberGuid' /Script/CoreUObject": "92350b3e-4e1c-af6a-3202-6d82701671c2",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "92350b3e-4e1c-af6a-3202-6d82701671c2",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -80,
           "int 'NodePosY'": -239,
-          "guid 'NodeGuid' /Script/CoreUObject": "0ac46f58-4195-a358-090b-b59afe7afeb9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0ac46f58-4195-a358-090b-b59afe7afeb9"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`61 dd982179-48a3-8d20-f027-f0aa6dc56354`» LinkedTo«`59 c4f2d4af-4114-ef54-4464-69b2ac9421cd`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3540,7 +3459,7 @@
           },
           "int 'NodePosX'": -1056,
           "int 'NodePosY'": 80,
-          "guid 'NodeGuid' /Script/CoreUObject": "8c2dfc58-4c54-50d7-3adb-50bd3c7d2614"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8c2dfc58-4c54-50d7-3adb-50bd3c7d2614"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`62 11bd2223-4027-ff1a-cd86-a0866a54212c`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3562,7 +3481,7 @@
           "name 'CustomFunctionName'": "HidePickup",
           "int 'NodePosX'": -1360,
           "int 'NodePosY'": -464,
-          "guid 'NodeGuid' /Script/CoreUObject": "88a7131f-46b4-093c-3d23-57b2b4bdd895"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "88a7131f-46b4-093c-3d23-57b2b4bdd895"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3584,7 +3503,7 @@
           "name 'CustomFunctionName'": "ShowPickup",
           "int 'NodePosX'": -1360,
           "int 'NodePosY'": -272,
-          "guid 'NodeGuid' /Script/CoreUObject": "1cf2ed6a-483f-78b0-adbc-d788b2b75cf6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1cf2ed6a-483f-78b0-adbc-d788b2b75cf6"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3606,7 +3525,7 @@
           "name 'CustomFunctionName'": "StopShowPickup",
           "int 'NodePosX'": -880,
           "int 'NodePosY'": -16,
-          "guid 'NodeGuid' /Script/CoreUObject": "92350b3e-4e1c-af6a-3202-6d82701671c2"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "92350b3e-4e1c-af6a-3202-6d82701671c2"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3628,7 +3547,7 @@
           "name 'CustomFunctionName'": "Show Coin",
           "int 'NodePosX'": -2112,
           "int 'NodePosY'": -1008,
-          "guid 'NodeGuid' /Script/CoreUObject": "18c1ebfc-47db-f733-12dd-3c9cfa99ecf5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "18c1ebfc-47db-f733-12dd-3c9cfa99ecf5"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3650,7 +3569,7 @@
           "obj 'TargetType'": -3,
           "int 'NodePosX'": -3280,
           "int 'NodePosY'": -1008,
-          "guid 'NodeGuid' /Script/CoreUObject": "4790c6e5-4e4a-6414-ea5c-dfb19208ab5d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4790c6e5-4e4a-6414-ea5c-dfb19208ab5d"
         },
         "PureState": "Impure",
         "Pins": [
@@ -3680,7 +3599,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -3904,
           "int 'NodePosY'": -1008,
-          "guid 'NodeGuid' /Script/CoreUObject": "e4f7e741-4aa6-d555-4250-7497ed45858e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e4f7e741-4aa6-d555-4250-7497ed45858e"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3707,7 +3626,7 @@
           "int 'NodePosX'": -3598,
           "int 'NodePosY'": -408,
           "bool 'bCommentBubblePinned'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "db80c072-4005-0e84-102f-09b836dde7bd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "db80c072-4005-0e84-102f-09b836dde7bd"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3734,7 +3653,7 @@
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -2864,
           "int 'NodePosY'": 768,
-          "guid 'NodeGuid' /Script/CoreUObject": "24dd6ac9-4d8a-e420-d476-3781059c2ee8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "24dd6ac9-4d8a-e420-d476-3781059c2ee8"
         },
         "SerializedItems": [
           {
@@ -3769,7 +3688,7 @@
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": -1648,
           "int 'NodePosY'": -240,
-          "guid 'NodeGuid' /Script/CoreUObject": "346457c3-47ea-bacb-f822-90b7c7f51c4b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "346457c3-47ea-bacb-f822-90b7c7f51c4b"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3791,7 +3710,7 @@
             "obj 'MemberParent'": -21,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "d54ab74f-4110-c30e-7f94-aab6c50bade4"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d54ab74f-4110-c30e-7f94-aab6c50bade4"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3811,7 +3730,7 @@
         "Members": {
           "int 'NodePosX'": -3278,
           "int 'NodePosY'": -408,
-          "guid 'NodeGuid' /Script/CoreUObject": "9f7365d2-4990-f414-ad62-4f81092cf04d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9f7365d2-4990-f414-ad62-4f81092cf04d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`73 d0f09cd2-42b3-fba4-651e-4b995f3c19da`» LinkedTo«`69 cb6a8b0c-45d3-a99f-bf36-60b055553a2b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3833,7 +3752,7 @@
         "Members": {
           "int 'NodePosX'": -2752,
           "int 'NodePosY'": -1008,
-          "guid 'NodeGuid' /Script/CoreUObject": "ccecb613-4bed-6cc9-cf37-4fbab5db7e0b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ccecb613-4bed-6cc9-cf37-4fbab5db7e0b"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`74 205ab8ee-4991-54a3-bfdf-e2a1d1604eb6`» LinkedTo«`97 265a1dd0-4d23-0f3b-1afc-1594a8fb47fa`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3855,7 +3774,7 @@
         "Members": {
           "int 'NodePosX'": -2400,
           "int 'NodePosY'": -160,
-          "guid 'NodeGuid' /Script/CoreUObject": "390e76b8-46b5-c864-5784-e6b10e5b2246"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "390e76b8-46b5-c864-5784-e6b10e5b2246"
         },
         "Pins": [
           "input-pin Type«`real-float`» Name«`InputPin`» Id«`75 26b658e8-4cdf-194a-c2d0-688229f958d2`» LinkedTo«`87 e4058544-40dc-db4c-ed04-fb9e51ae5dd6`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3875,7 +3794,7 @@
         "Members": {
           "int 'NodePosX'": -2608,
           "int 'NodePosY'": -911,
-          "guid 'NodeGuid' /Script/CoreUObject": "eddf2b88-4689-e01e-1ae0-aaa0f96a3bc5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "eddf2b88-4689-e01e-1ae0-aaa0f96a3bc5"
         },
         "Pins": [
           "input-pin Type«`object obj(`-3`)`» Name«`InputPin`» Id«`76 1500f8cd-4816-79cb-0fb6-56b16c5d5a6a`» LinkedTo«`97 0385e70f-4965-bb13-3599-9d8053c35771`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3896,11 +3815,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "UpdateCoins",
-            "guid 'MemberGuid' /Script/CoreUObject": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
           },
           "int 'NodePosX'": -1440,
           "int 'NodePosY'": -239,
-          "guid 'NodeGuid' /Script/CoreUObject": "6f556581-4bfa-727d-623c-589f490057ad"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6f556581-4bfa-727d-623c-589f490057ad"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`77 e901bb63-412a-2107-d012-56afeeaec1d4`» LinkedTo«`71 4098c1e5-436a-4648-9f42-06a3639b1ff6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3928,7 +3847,7 @@
           },
           "int 'NodePosX'": -3278,
           "int 'NodePosY'": -297,
-          "guid 'NodeGuid' /Script/CoreUObject": "8f67e8b1-4201-bd6a-e87c-569939ab2fcf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8f67e8b1-4201-bd6a-e87c-569939ab2fcf"
         },
         "Pins": [
           "input-pin Type«`object obj(`-20`)`» Name«`A`» Id«`78 8088a182-40e5-16ce-9a0b-f88525a5c78b`» LinkedTo«`69 436640a5-4ba4-9a27-1a70-dc8699f22108`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3956,7 +3875,7 @@
           },
           "int 'NodePosX'": -1568,
           "int 'NodePosY'": 160,
-          "guid 'NodeGuid' /Script/CoreUObject": "80d0ac2e-4df8-fe24-3e40-72a6d4c8c6d6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "80d0ac2e-4df8-fe24-3e40-72a6d4c8c6d6"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`79 4b380819-45a9-61ac-db61-ce9da54c9e9b`» LinkedTo«`49 8c9c9d3f-435f-bc29-df48-9f99ef1c4e16`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3983,7 +3902,7 @@
           },
           "int 'NodePosX'": -1376,
           "int 'NodePosY'": 160,
-          "guid 'NodeGuid' /Script/CoreUObject": "3a611b5f-4da4-9f34-44a8-adb03785ee65"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3a611b5f-4da4-9f34-44a8-adb03785ee65"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`80 da6d475a-4f6d-054b-4e21-40856297cfa0`» LinkedTo«`79 24a98b25-4cc7-ed0c-670c-f2bde80b01ec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4010,7 +3929,7 @@
           },
           "int 'NodePosX'": -2416,
           "int 'NodePosY'": -288,
-          "guid 'NodeGuid' /Script/CoreUObject": "94c60604-4d15-0fdf-c079-4d89a523810c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "94c60604-4d15-0fdf-c079-4d89a523810c"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`81 4ee61ad8-4d1e-a4e2-bd4a-a08b54e2c1ef`» LinkedTo«`87 0b7462e5-4b69-cd21-37d9-3980e7663066`» ToolTip«`A\nFloat (double-precision)`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4037,7 +3956,7 @@
           },
           "int 'NodePosX'": -1872,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "241fb849-4062-d440-c7b7-ac9a73e8b902"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "241fb849-4062-d440-c7b7-ac9a73e8b902"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`82 bc10dea1-4294-e779-bd97-e6ad53b141c1`» LinkedTo«`42 e2de48f6-496c-e246-828e-f8abbb98b6ae`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4064,7 +3983,7 @@
           },
           "int 'NodePosX'": -2720,
           "int 'NodePosY'": -848,
-          "guid 'NodeGuid' /Script/CoreUObject": "2e61bd30-4fa3-36f0-8e2c-f197ae7ff5e7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2e61bd30-4fa3-36f0-8e2c-f197ae7ff5e7"
         },
         "Pins": [
           "input-pin Type«`int`» Name«`A`» Id«`83 8b4c6797-4fc2-6f0c-be70-aab8660b9818`» LinkedTo«`92 64e2c960-491a-c48c-6976-84ae8db4ac70`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4092,7 +4011,7 @@
           },
           "int 'NodePosX'": -736,
           "int 'NodePosY'": 80,
-          "guid 'NodeGuid' /Script/CoreUObject": "2f37230a-44ba-71bf-27fc-098cb087bbf2"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2f37230a-44ba-71bf-27fc-098cb087bbf2"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`84 8a3e4d01-405d-eb5e-85bf-4ca0877fafa5`» LinkedTo«`85 7208fbb8-4ad2-02e0-be73-46ba09767be5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4119,7 +4038,7 @@
           },
           "int 'NodePosX'": -912,
           "int 'NodePosY'": 80,
-          "guid 'NodeGuid' /Script/CoreUObject": "db242c1b-415e-dd33-034e-6fad759c03f1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "db242c1b-415e-dd33-034e-6fad759c03f1"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`85 5e75c19e-4049-c247-68ac-af87c3146ca0`» LinkedTo«`62 049f5c03-400b-7a93-977d-99bbdb0ed79a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4140,7 +4059,7 @@
         "Members": {
           "int 'NodePosX'": -2320,
           "int 'NodePosY'": -672,
-          "guid 'NodeGuid' /Script/CoreUObject": "ea78ffbf-43ff-6f54-fcd8-29bd7c40e859"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ea78ffbf-43ff-6f54-fcd8-29bd7c40e859"
         },
         "Pins": [
           "output-pin Type«`object-self`» Name«`self`» Id«`86 84331291-41da-b280-f499-37af4cccf041`» LinkedTo«`48 0742f847-4d1d-c82a-1157-e6805b351bc6`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -4162,7 +4081,7 @@
           "int 'NodePosY'": -440,
           "bool 'bCanRenameNode'": true,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "220b78e2-4090-79fe-060d-ceadcf4ba429"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "220b78e2-4090-79fe-060d-ceadcf4ba429"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`Play`» Id«`87 e5785ba5-43d8-cc1f-6361-c785b2485a8f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4195,7 +4114,7 @@
           "int 'NodePosY'": -288,
           "bool 'bCanRenameNode'": true,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "48934537-414c-da77-ab26-1ca0ee14b8ff"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "48934537-414c-da77-ab26-1ca0ee14b8ff"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`Play`» Id«`88 b92ccbf9-43d8-ef44-2f97-8d8f509ec74d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4228,7 +4147,7 @@
           },
           "int 'NodePosX'": -1856,
           "int 'NodePosY'": -160,
-          "guid 'NodeGuid' /Script/CoreUObject": "8c0ea9bd-4a2e-8c42-c958-e0aa44b3bfe3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8c0ea9bd-4a2e-8c42-c958-e0aa44b3bfe3"
         },
         "Pins": [
           "output-pin Type«`object obj(`-41`)`» Name«`OrbMesh`» Id«`89 b38c27bc-4435-2260-85ca-cca5d601be11`» LinkedTo«`34 b6003687-4551-419e-7b68-6ea516a9856a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4252,7 +4171,7 @@
           },
           "int 'NodePosX'": -608,
           "int 'NodePosY'": -224,
-          "guid 'NodeGuid' /Script/CoreUObject": "2a18f7a1-4b5e-8ffa-f6cf-cca4143c0c95"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2a18f7a1-4b5e-8ffa-f6cf-cca4143c0c95"
         },
         "Pins": [
           "output-pin Type«`object obj(`-41`)`» Name«`OrbMesh`» Id«`90 4334a8a0-474f-0af2-7ad4-e0a3aedbfc62`» LinkedTo«`40 335592a6-4db5-52a1-4fe5-fd8cad79b303`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4272,12 +4191,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "CoinIndex",
-            "guid 'MemberGuid' /Script/CoreUObject": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2160,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "c853808c-49c3-406e-571a-dfaf3aeeee68"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c853808c-49c3-406e-571a-dfaf3aeeee68"
         },
         "Pins": [
           "output-pin Type«`int`» Name«`CoinIndex`» Id«`91 02c4bd21-4d81-1585-96ed-4fa9080474d7`» LinkedTo«`42 dbd7ebc5-4f04-40a4-f24a-be8cf46dda45`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4297,12 +4216,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "CoinIndex",
-            "guid 'MemberGuid' /Script/CoreUObject": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -2704,
           "int 'NodePosY'": -752,
-          "guid 'NodeGuid' /Script/CoreUObject": "f2584aca-4b80-a1dd-8c27-eabdca6a7aae"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f2584aca-4b80-a1dd-8c27-eabdca6a7aae"
         },
         "Pins": [
           "output-pin Type«`int`» Name«`CoinIndex`» Id«`92 64e2c960-491a-c48c-6976-84ae8db4ac70`» LinkedTo«`83 8b4c6797-4fc2-6f0c-be70-aab8660b9818`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4322,12 +4241,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "CoinIndex",
-            "guid 'MemberGuid' /Script/CoreUObject": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -1872,
           "int 'NodePosY'": 159,
-          "guid 'NodeGuid' /Script/CoreUObject": "39826a82-4b48-9eb1-8e33-5f9190c764e7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "39826a82-4b48-9eb1-8e33-5f9190c764e7"
         },
         "Pins": [
           "output-pin Type«`int`» Name«`CoinIndex`» Id«`93 efe4637f-4722-cf86-ed0e-5abab0ba9064`» LinkedTo«`49 620a7fee-41a6-b1e2-08fa-aba2a91eb349`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4351,7 +4270,7 @@
           },
           "int 'NodePosX'": -3648,
           "int 'NodePosY'": -1056,
-          "guid 'NodeGuid' /Script/CoreUObject": "c195b7dd-4a0a-6cfe-d2e9-e88e8fe26ff1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c195b7dd-4a0a-6cfe-d2e9-e88e8fe26ff1"
         },
         "Pins": [
           "output-pin Type«`object obj(`-41`)`» Name«`OrbMesh`» Id«`94 8c63b9cf-4a50-a552-cd20-42a281fa6c38`» LinkedTo«`33 bf49ef8c-474c-f809-5caf-75a97690b6c5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4375,7 +4294,7 @@
           },
           "int 'NodePosX'": -2096,
           "int 'NodePosY'": 896,
-          "guid 'NodeGuid' /Script/CoreUObject": "d66d9e73-4ea8-2da4-146e-0e8f02a4c829"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d66d9e73-4ea8-2da4-146e-0e8f02a4c829"
         },
         "Pins": [
           "output-pin Type«`object obj(`-40`)`» Name«`Sphere`» Id«`95 db79485f-49e1-5742-d5e4-558ea3841968`» LinkedTo«`98 845707ed-4fa1-3069-cd35-98b54b838b97`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4399,7 +4318,7 @@
           },
           "int 'NodePosX'": -1152,
           "int 'NodePosY'": -64,
-          "guid 'NodeGuid' /Script/CoreUObject": "2777adfe-4ae7-62da-e88b-d4a348056995"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2777adfe-4ae7-62da-e88b-d4a348056995"
         },
         "Pins": [
           "output-pin Type«`object obj(`-40`)`» Name«`Sphere`» Id«`96 9523b3b8-4680-4f7f-2e99-44bb35e83524`» LinkedTo«`57 50aba189-40d3-941c-90f6-21aa306c41ae`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4419,12 +4338,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "CoinOwner",
-            "guid 'MemberGuid' /Script/CoreUObject": "1502782f-4d21-d0db-20c9-9ca91728a2ad",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "1502782f-4d21-d0db-20c9-9ca91728a2ad",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -3008,
           "int 'NodePosY'": -992,
-          "guid 'NodeGuid' /Script/CoreUObject": "6c8b143c-4bfa-63ab-d656-c899ccf165fb"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6c8b143c-4bfa-63ab-d656-c899ccf165fb"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`97 c69f0bf2-46a3-9663-b959-d5898116f2ca`» LinkedTo«`67 b7c9bd23-4227-9bd3-e370-f9860f705f48`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4452,7 +4371,7 @@
           "byte64 (ESelfContextInfo) 'SelfContextInfo'": 164,
           "int 'NodePosX'": -2096,
           "int 'NodePosY'": 784,
-          "guid 'NodeGuid' /Script/CoreUObject": "0c6cdf86-425c-12cb-e49c-9cb64441c389"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0c6cdf86-425c-12cb-e49c-9cb64441c389"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`98 18d14ca1-4339-26a4-3253-7dbf2777e6ec`» LinkedTo«`53 f224bad5-4480-56f8-9a77-99a8ea4e61bc`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4511,7 +4430,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "f35fb265-4ae2-18c1-08df-9d9445b3efe0",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "f35fb265-4ae2-18c1-08df-9d9445b3efe0",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -4536,7 +4455,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "2722b045-4131-ba79-63fd-139dc7a2d7de",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "2722b045-4131-ba79-63fd-139dc7a2d7de",
           "name 'InternalVariableName'": "OrbMesh"
         }
       }
@@ -4562,7 +4481,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "102",
-          "guid 'VariableGuid' /Script/CoreUObject": "1289e1f2-49c7-a271-94ff-0d9bee062da7",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "1289e1f2-49c7-a271-94ff-0d9bee062da7",
           "name 'InternalVariableName'": "Sphere"
         }
       }
@@ -4598,53 +4517,44 @@
           "struct BodyInstance 1045 'BodyInstance'": {
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 955 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 886,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "WorldStatic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "WorldDynamic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Pawn",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 149
-                  },
-                  {
-                    "name 'Channel'": "PhysicsBody",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Vehicle",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Destructible",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Trigger",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(886) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "WorldStatic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "WorldDynamic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Pawn",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 149
+                },
+                {
+                  "name 'Channel'": "PhysicsBody",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Vehicle",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Destructible",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Trigger",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                }
+              ]
             }
           },
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
@@ -4671,33 +4581,24 @@
           "bool 'bGenerateOverlapEvents'": false,
           "bool 'bUseAsOccluder'": false,
           "struct BodyInstance 473 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 143,
-            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 146,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 143,
+            "byte64 (ECollisionEnabled) TypeNamespace(/Script/Engine) 'CollisionEnabled'": 146,
             "name 'CollisionProfileName'": "NoCollision",
             "struct CollisionResponse 269 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 200,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 148
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(200) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 148
+                }
+              ]
             }
           },
-          "Rotator 'RelativeRotation' /Script/CoreUObject": "0 -2.7069860423027161 0",
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "0.75 0.75 0.75",
+          "Rotator native TypeNamespace(/Script/CoreUObject) 'RelativeRotation'": "0 -2.7069860423027161 0",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "0.75 0.75 0.75",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -4720,58 +4621,40 @@
         "__type": "UObject",
         "Members": {
           "float 'TimelineLength'": 0.25,
-          "byte64 (ETimelineLengthMode) 'LengthMode' /Script/Engine": 351,
-          "FloatTracks": {
-            "Name": "FloatTracks",
-            "Type": "ArrayProperty",
-            "Size": 360,
-            "StructName": "TTFloatTrack",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'CurveFloat'": 4,
-                "name 'PropertyName'": "CollectCoinTransition_Distance_EB09B53B4207AFBAD8EE58B4CBD0195F",
-                "name 'TrackName'": "Distance",
-                "bool 'bIsExternalCurve'": false,
-                "bool 'bIsExpanded'": true,
-                "bool 'bIsCurveViewSynchronized'": true
-              },
-              {
-                "obj 'CurveFloat'": 5,
-                "name 'PropertyName'": "CollectCoinTransition_Scale_EB09B53B4207AFBAD8EE58B4CBD0195F",
-                "name 'TrackName'": "Scale",
-                "bool 'bIsExternalCurve'": false,
-                "bool 'bIsExpanded'": true,
-                "bool 'bIsCurveViewSynchronized'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
-          },
-          "guid 'TimelineGuid' /Script/CoreUObject": "eb09b53b-4207-afba-d8ee-58b4cbd0195f",
+          "byte64 (ETimelineLengthMode) TypeNamespace(/Script/Engine) 'LengthMode'": 351,
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTFloatTrack) Size(360) 'FloatTracks'": [
+            {
+              "obj 'CurveFloat'": 4,
+              "name 'PropertyName'": "CollectCoinTransition_Distance_EB09B53B4207AFBAD8EE58B4CBD0195F",
+              "name 'TrackName'": "Distance",
+              "bool 'bIsExternalCurve'": false,
+              "bool 'bIsExpanded'": true,
+              "bool 'bIsCurveViewSynchronized'": true
+            },
+            {
+              "obj 'CurveFloat'": 5,
+              "name 'PropertyName'": "CollectCoinTransition_Scale_EB09B53B4207AFBAD8EE58B4CBD0195F",
+              "name 'TrackName'": "Scale",
+              "bool 'bIsExternalCurve'": false,
+              "bool 'bIsExpanded'": true,
+              "bool 'bIsCurveViewSynchronized'": true
+            }
+          ],
+          "guid native TypeNamespace(/Script/CoreUObject) 'TimelineGuid'": "eb09b53b-4207-afba-d8ee-58b4cbd0195f",
           "name 'VariableName'": "CollectCoinTransition",
           "name 'DirectionPropertyName'": "CollectCoinTransition__Direction_EB09B53B4207AFBAD8EE58B4CBD0195F",
           "name 'UpdateFunctionName'": "CollectCoinTransition__UpdateFunc",
           "name 'FinishedFunctionName'": "CollectCoinTransition__FinishedFunc",
-          "TrackDisplayOrder": {
-            "Name": "TrackDisplayOrder",
-            "Type": "ArrayProperty",
-            "Size": 136,
-            "StructName": "TTTrackId",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "int 'TrackType'": 1,
-                "int 'TrackIndex'": 0
-              },
-              {
-                "int 'TrackType'": 1,
-                "int 'TrackIndex'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
-          }
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTTrackId) Size(136) 'TrackDisplayOrder'": [
+            {
+              "int 'TrackType'": 1,
+              "int 'TrackIndex'": 0
+            },
+            {
+              "int 'TrackType'": 1,
+              "int 'TrackIndex'": 1
+            }
+          ]
         }
       }
     },
@@ -4786,45 +4669,27 @@
         "__type": "UObject",
         "Members": {
           "float 'TimelineLength'": 0.25,
-          "FloatTracks": {
-            "Name": "FloatTracks",
-            "Type": "ArrayProperty",
-            "Size": 182,
-            "StructName": "TTFloatTrack",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'CurveFloat'": 6,
-                "name 'PropertyName'": "ShowPickupTransition_Scale_91E775AA4A33F2B8FA485B9800CA5532",
-                "name 'TrackName'": "Scale",
-                "bool 'bIsExternalCurve'": false,
-                "bool 'bIsExpanded'": true,
-                "bool 'bIsCurveViewSynchronized'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
-          },
-          "guid 'TimelineGuid' /Script/CoreUObject": "91e775aa-4a33-f2b8-fa48-5b9800ca5532",
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTFloatTrack) Size(182) 'FloatTracks'": [
+            {
+              "obj 'CurveFloat'": 6,
+              "name 'PropertyName'": "ShowPickupTransition_Scale_91E775AA4A33F2B8FA485B9800CA5532",
+              "name 'TrackName'": "Scale",
+              "bool 'bIsExternalCurve'": false,
+              "bool 'bIsExpanded'": true,
+              "bool 'bIsCurveViewSynchronized'": true
+            }
+          ],
+          "guid native TypeNamespace(/Script/CoreUObject) 'TimelineGuid'": "91e775aa-4a33-f2b8-fa48-5b9800ca5532",
           "name 'VariableName'": "ShowPickupTransition",
           "name 'DirectionPropertyName'": "ShowPickupTransition__Direction_91E775AA4A33F2B8FA485B9800CA5532",
           "name 'UpdateFunctionName'": "ShowPickupTransition__UpdateFunc",
           "name 'FinishedFunctionName'": "ShowPickupTransition__FinishedFunc",
-          "TrackDisplayOrder": {
-            "Name": "TrackDisplayOrder",
-            "Type": "ArrayProperty",
-            "Size": 70,
-            "StructName": "TTTrackId",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "int 'TrackType'": 1,
-                "int 'TrackIndex'": 0
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
-          }
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTTrackId) Size(70) 'TrackDisplayOrder'": [
+            {
+              "int 'TrackType'": 1,
+              "int 'TrackIndex'": 0
+            }
+          ]
         }
       }
     }

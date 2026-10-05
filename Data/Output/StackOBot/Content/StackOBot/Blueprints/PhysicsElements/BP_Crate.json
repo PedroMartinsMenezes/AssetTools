@@ -785,6 +785,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -793,6 +796,9 @@
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty ResponseChannel": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
       "StructProperty CollisionResponse": {
         "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
@@ -821,67 +827,49 @@
           "obj 'SimpleConstructionScript'": 22,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Crate",
-                    "AssetName": "BP_Crate"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Crate",
+                  "AssetName": "BP_Crate"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Crate",
-                    "AssetName": "BP_Crate"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Crate",
+                  "AssetName": "BP_Crate"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 149.3706,
-                  "Y": 84.41974
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 149.3706,
+                "Y": 84.41974
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 18,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "422db580-47d9-ad27-f283-dfa93f9544dd"
+          "guid native 'BlueprintGuid'": "422db580-47d9-ad27-f283-dfa93f9544dd"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -945,18 +933,9 @@
           "struct ActorTickFunction 33 'PrimaryActorTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
-          "Tags": {
-            "Name": "Tags",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "GRAB"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          }
+          "name[] 'Tags'": [
+            "GRAB"
+          ]
         },
         "SparseClassDataStruct": {
           "Index": ""
@@ -976,7 +955,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "6 11 9 15 13 10 14",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "23567c6e-4f40-4b7d-13d4-839c851cd858"
+          "guid native 'GraphGuid'": "23567c6e-4f40-4b7d-13d4-839c851cd858"
         }
       }
     },
@@ -993,7 +972,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "12",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "6a02434f-496d-c073-fad4-eb8d4feb7bfd"
+          "guid native 'GraphGuid'": "6a02434f-496d-c073-fad4-eb8d4feb7bfd"
         }
       }
     },
@@ -1007,7 +986,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0 0 0 1",
+          "LinearColor native 'CommentColor'": "0 0 0 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 32,
           "int 'NodePosY'": -32,
@@ -1016,7 +995,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "The crate has no functionality. It is a blueprint for the physics setup.\r\nWe set mass and damping on the static mesh so players can push them around.  ",
-          "guid 'NodeGuid'": "cf79e651-4c32-f185-b95d-21923b274d50"
+          "guid native 'NodeGuid'": "cf79e651-4c32-f185-b95d-21923b274d50"
         },
         "Pins": []
       }
@@ -1108,7 +1087,7 @@
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 624,
-          "guid 'NodeGuid'": "87701b17-4a05-1f7a-85b4-d4ac29ee354c"
+          "guid native 'NodeGuid'": "87701b17-4a05-1f7a-85b4-d4ac29ee354c"
         },
         "Pins": [
           "input-pin Type«`object obj(`-17`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`9 1ce5d1ad-45b8-8a89-0cb4-029be0393337`» BitField«`1`» DefaultObject«`ImportIndex[-34] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1133,8 +1112,8 @@
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 409,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 73,
-          "guid 'NodeGuid'": "1df5cc4f-4c6d-04c9-75cc-248584a351d7"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 73,
+          "guid native 'NodeGuid'": "1df5cc4f-4c6d-04c9-75cc-248584a351d7"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`10 c613f080-46fa-3bbe-a984-f0828676f6ee`» LinkedTo«`13 215c2a70-42f1-5e3b-9d62-f4a9c3b5c549`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1171,7 +1150,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 224,
           "int 'NodePosY'": 409,
-          "guid 'NodeGuid'": "02883eaf-44b1-b053-a365-1da94e44260a"
+          "guid native 'NodeGuid'": "02883eaf-44b1-b053-a365-1da94e44260a"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1202,7 +1181,7 @@
             "obj 'MemberParent'": -11,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "c8d00500-4433-7a47-324f-b4a6733b4567"
+          "guid native 'NodeGuid'": "c8d00500-4433-7a47-324f-b4a6733b4567"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1222,7 +1201,7 @@
         "Members": {
           "int 'NodePosX'": 642,
           "int 'NodePosY'": 409,
-          "guid 'NodeGuid'": "a5262bf3-4ef2-f1b1-a8ca-5aaabe7871d4"
+          "guid native 'NodeGuid'": "a5262bf3-4ef2-f1b1-a8ca-5aaabe7871d4"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`13 a069678c-44fb-da0b-7135-368e2eef27ce`» LinkedTo«`11 19cf983c-4ee5-d0f7-958d-ff8ee3c79f80`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1244,7 +1223,7 @@
         "Members": {
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 527,
-          "guid 'NodeGuid'": "f796c39e-41bb-40a6-ac17-59b28a54c3ae"
+          "guid native 'NodeGuid'": "f796c39e-41bb-40a6-ac17-59b28a54c3ae"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-47`)`» Name«`InputPin`» Id«`14 6ef90e82-4aae-136a-26d3-d196cc451faa`» LinkedTo«`11 697f85ca-4a37-e0c6-dfc2-8298f02e96a0`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1270,7 +1249,7 @@
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 544,
-          "guid 'NodeGuid'": "e71dbdae-495f-ee38-43e9-cab865756eb5"
+          "guid native 'NodeGuid'": "e71dbdae-495f-ee38-43e9-cab865756eb5"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`15 2a3611cb-4275-d699-dfff-5d90e39f93e9`» LinkedTo«`9 dfe44ea7-4b20-061f-d33d-42b2cf649991`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1341,7 +1320,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "8b1297a4-494f-1765-0faf-6ebeb1892d6b",
+          "guid native 'VariableGuid'": "8b1297a4-494f-1765-0faf-6ebeb1892d6b",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1366,7 +1345,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "c71b50e1-4499-37a0-eb9e-6ab0eaa6fa68",
+          "guid native 'VariableGuid'": "c71b50e1-4499-37a0-eb9e-6ab0eaa6fa68",
           "name 'InternalVariableName'": "StaticMesh"
         }
       }
@@ -1391,7 +1370,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "546f57a8-4bb8-96b0-9449-9388a4ab394f",
+          "guid native 'VariableGuid'": "546f57a8-4bb8-96b0-9449-9388a4ab394f",
           "name 'InternalVariableName'": "NavModifier"
         }
       }
@@ -1427,25 +1406,16 @@
           "obj[] 'OverrideMaterials'": "0 -35",
           "bool 'bUseAsOccluder'": false,
           "struct BodyInstance 480 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 64,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 64,
             "bool 'bNotifyRigidBodyCollision'": true,
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 171 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 102,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 67
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(102) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 67
+                }
+              ]
             },
             "float 'MassInKgOverride'": 40,
             "float 'LinearDamping'": 1,

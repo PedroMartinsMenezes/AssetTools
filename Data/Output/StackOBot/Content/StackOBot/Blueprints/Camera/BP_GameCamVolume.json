@@ -1536,11 +1536,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
@@ -1553,6 +1562,9 @@
       },
       "StructProperty GraphReference": {
         "TypeName": "StructProperty 1 | GraphReference 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty ResponseChannel": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
       "StructProperty CollisionResponse": {
         "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
@@ -1618,348 +1630,240 @@
           "obj 'SimpleConstructionScript'": 113,
           "obj[] 'UbergraphPages'": "7",
           "obj[] 'FunctionGraphs'": "8 6",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 5213,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "TriggerRadius",
-                "guid 'VarGuid'": "28d050bb-4b58-2458-40df-9f950cf483ae",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Trigger Radius",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(5213) 'NewVariables'": [
+            {
+              "name 'VarName'": "TriggerRadius",
+              "guid native 'VarGuid'": "28d050bb-4b58-2458-40df-9f950cf483ae",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Trigger Radius",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "SwitchToCameraState",
-                "guid 'VarGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
-                "class EdGraphPinType 69 'VarType'": "byte obj(`-97`)",
-                "string 'FriendlyName'": "Switch to Camera State",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SwitchToCameraState",
+              "guid native 'VarGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
+              "class EdGraphPinType 69 'VarType'": "byte obj(`-97`)",
+              "string 'FriendlyName'": "Switch to Camera State",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Align Player on Entry",
-                "guid 'VarGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Align Player On Entry",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Align Player on Entry",
+              "guid native 'VarGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Align Player On Entry",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Deactivate On Exit",
-                "guid 'VarGuid'": "dbaac6ca-43c4-3003-609d-959107215781",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Deactivate on Exit",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Deactivate On Exit",
+              "guid native 'VarGuid'": "dbaac6ca-43c4-3003-609d-959107215781",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Deactivate on Exit",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Reset on Exit",
-                "guid 'VarGuid'": "f4db4594-47c8-52dc-0cfb-5ba0ef175c57",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Reset On Exit",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Reset on Exit",
+              "guid native 'VarGuid'": "f4db4594-47c8-52dc-0cfb-5ba0ef175c57",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Reset On Exit",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`12570A15438D0DEDD2B0F3B658522F12` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "PresetYaw",
-                "guid 'VarGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Preset Yaw",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 71,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`969A06E24649DE73A9E46E8ADA988E2A` Namespace=`\\0` SourceString=`Locked Third Person`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "PresetYaw",
+              "guid native 'VarGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Preset Yaw",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 71,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`969A06E24649DE73A9E46E8ADA988E2A` Namespace=`\\0` SourceString=`Locked Third Person`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "PresetPitch",
-                "guid 'VarGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Preset Pitch",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 71,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`969A06E24649DE73A9E46E8ADA988E2A` Namespace=`\\0` SourceString=`Locked Third Person`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "PresetPitch",
+              "guid native 'VarGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Preset Pitch",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 71,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`969A06E24649DE73A9E46E8ADA988E2A` Namespace=`\\0` SourceString=`Locked Third Person`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "UsePresetAngle",
-                "guid 'VarGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Use Preset Angle",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 71,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`09BCBC9E4F67A3B6EA534084FAECEFBA` Namespace=`\\0` SourceString=`Locked Third Person`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "UsePresetAngle",
+              "guid native 'VarGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Use Preset Angle",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 71,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`09BCBC9E4F67A3B6EA534084FAECEFBA` Namespace=`\\0` SourceString=`Locked Third Person`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "AlignmentActive",
-                "guid 'VarGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Alignment Active",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 65,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`A7CF7CBE4DF2647380A9C8B6061433E9` Namespace=`\\0` SourceString=`Camera Volume`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 44,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph",
-              "Camera Volume",
-              "Locked Third Person"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
-                    "AssetName": "BP_GameCamVolume"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 105.128784,
-                  "Y": -399.03534
-                },
-                "float 'SavedZoomAmount'": 1
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AlignmentActive",
+              "guid native 'VarGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Alignment Active",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 65,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`A7CF7CBE4DF2647380A9C8B6061433E9` Namespace=`\\0` SourceString=`Camera Volume`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
-                    "AssetName": "BP_GameCamVolume"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 112,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph",
+            "Camera Volume",
+            "Locked Third Person"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
+                  "AssetName": "BP_GameCamVolume"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 537.5952,
-                  "Y": -1717.4856
-                },
-                "float 'SavedZoomAmount'": 0.25
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
-                    "AssetName": "BP_GameCamVolume"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 105.128784,
+                "Y": -399.03534
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
+                  "AssetName": "BP_GameCamVolume"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 1411.3684,
-                  "Y": -537.10297
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 537.5952,
+                "Y": -1717.4856
+              },
+              "float 'SavedZoomAmount'": 0.25
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_GameCamVolume",
+                  "AssetName": "BP_GameCamVolume"
                 },
-                "float 'SavedZoomAmount'": 0.675
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 1411.3684,
+                "Y": -537.10297
+              },
+              "float 'SavedZoomAmount'": 0.675
+            }
+          ],
           "obj 'ThumbnailInfo'": 108,
           "obj 'GeneratedClass'": 4,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "5504d7dd-451e-d6b7-49a4-2a97d900d27d"
+          "guid native 'BlueprintGuid'": "5504d7dd-451e-d6b7-49a4-2a97d900d27d"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -2092,15 +1996,15 @@
             "RawPointer": 240,
             "UberGraphFunctionKey": 0
           },
-          "double 'TriggerRadius' {28d050bb-4b58-2458-40df-9f950cf483ae}": 3500,
-          "bool 'Reset on Exit' {f4db4594-47c8-52dc-0cfb-5ba0ef175c57}": true,
-          "double 'PresetYaw' {631d51ea-4e4e-db68-b43f-85824d74bf69}": 90,
-          "double 'PresetPitch' {b57888bb-4490-6f96-eef2-b2a89782cb12}": -10,
-          "bool 'UsePresetAngle' {7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411}": true,
+          "double {28d050bb-4b58-2458-40df-9f950cf483ae} 'TriggerRadius'": 3500,
+          "bool {f4db4594-47c8-52dc-0cfb-5ba0ef175c57} 'Reset on Exit'": true,
+          "double {631d51ea-4e4e-db68-b43f-85824d74bf69} 'PresetYaw'": 90,
+          "double {b57888bb-4490-6f96-eef2-b2a89782cb12} 'PresetPitch'": -10,
+          "bool {7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411} 'UsePresetAngle'": true,
           "struct ActorTickFunction 33 'PrimaryActorTick'": {
             "bool 'bCanEverTick'": true
           },
-          "enum64 (EActorUpdateOverlapsMethod) 'UpdateOverlapsMethodDuringLevelStreaming' ByteProperty /Script/Engine": 135
+          "enum64 (EActorUpdateOverlapsMethod) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'UpdateOverlapsMethodDuringLevelStreaming'": 135
         },
         "SparseClassDataStruct": {
           "Index": ""
@@ -2119,7 +2023,7 @@
         "Members": {
           "obj 'Schema'": -6,
           "obj[] 'Nodes'": "58 28 30 26 86 29 31 25 27 60",
-          "guid 'GraphGuid'": "c58bb7bf-4a3a-7102-88ce-7c82aaabeff2"
+          "guid native 'GraphGuid'": "c58bb7bf-4a3a-7102-88ce-7c82aaabeff2"
         }
       }
     },
@@ -2136,7 +2040,7 @@
           "obj 'Schema'": -6,
           "obj[] 'Nodes'": "55 83 62 57 82 61 65 94 9 71 81 97 41 79 38 80 96 88 75 76 49 50 32 39 10 92 68 90 77 67 43 89 54 63 91 34 104 64 48 95 105 40 93 85 72 73 12 106 42 44 56 33 53 24 51 87 35 78 84 66 36 52 37 11 70 74",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "54c805a3-41b1-2835-d02f-df9b4f91b2e8"
+          "guid native 'GraphGuid'": "54c805a3-41b1-2835-d02f-df9b4f91b2e8"
         }
       }
     },
@@ -2153,7 +2057,7 @@
           "obj 'Schema'": -6,
           "obj[] 'Nodes'": "59 102 69 103 45 46 100 98 99 47 101",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "8d87b4fe-4874-c75e-2d10-cf9b1f35827e"
+          "guid native 'GraphGuid'": "8d87b4fe-4874-c75e-2d10-cf9b1f35827e"
         }
       }
     },
@@ -2167,7 +2071,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.254152 0.822786 0.651406 1",
+          "LinearColor native 'CommentColor'": "0.254152 0.822786 0.651406 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -944,
           "int 'NodePosY'": -96,
@@ -2176,7 +2080,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Overlap Events for Entering and Exiting the Trigger",
-          "guid 'NodeGuid'": "584bd036-4130-8952-92f4-1d8132f08823"
+          "guid native 'NodeGuid'": "584bd036-4130-8952-92f4-1d8132f08823"
         },
         "Pins": []
       }
@@ -2191,7 +2095,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.254152 0.822786 0.651406 1",
+          "LinearColor native 'CommentColor'": "0.254152 0.822786 0.651406 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'CommentDepth'": -2,
           "int 'NodePosX'": 703,
@@ -2201,7 +2105,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Logic for entering and exiting the volume",
-          "guid 'NodeGuid'": "7ef87d7d-45bc-f5f3-56d3-1c93e4377ac0"
+          "guid native 'NodeGuid'": "7ef87d7d-45bc-f5f3-56d3-1c93e4377ac0"
         },
         "Pins": []
       }
@@ -2216,7 +2120,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.254152 0.822786 0.651406 1",
+          "LinearColor native 'CommentColor'": "0.254152 0.822786 0.651406 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 720,
           "int 'NodePosY'": -944,
@@ -2225,7 +2129,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Logic for handling Player respawning inside a Camera Volume - we get the Player Pawn and see if it's inside the trigger, if so we re-trigger the entry logic",
-          "guid 'NodeGuid'": "571b2998-454e-d82b-156c-dcab42d18c85"
+          "guid native 'NodeGuid'": "571b2998-454e-d82b-156c-dcab42d18c85"
         },
         "Pins": []
       }
@@ -2240,7 +2144,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.254152 0.822786 0.651406 1",
+          "LinearColor native 'CommentColor'": "0.254152 0.822786 0.651406 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 704,
           "int 'NodePosY'": 1344,
@@ -2249,7 +2153,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Align Player Logic",
-          "guid 'NodeGuid'": "279bbada-4d56-3fee-d061-44ae9b9ef030"
+          "guid native 'NodeGuid'": "279bbada-4d56-3fee-d061-44ae9b9ef030"
         },
         "Pins": []
       }
@@ -2608,11 +2512,11 @@
           "struct MemberReference 135 'DelegateReference'": {
             "obj 'MemberParent'": -5,
             "name 'MemberName'": "PlayerRespawned",
-            "guid 'MemberGuid'": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c"
+            "guid native 'MemberGuid'": "f2eb86bc-40bd-a666-5e5c-d3a1846c767c"
           },
           "int 'NodePosX'": 1680,
           "int 'NodePosY'": -768,
-          "guid 'NodeGuid'": "2e31dd28-4669-a8c8-0cda-4ca63f32992f"
+          "guid native 'NodeGuid'": "2e31dd28-4669-a8c8-0cda-4ca63f32992f"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`24 aa8d3367-44bc-9aeb-224b-8396c6dfa918`» LinkedTo«`53 a5adba58-4c7b-acc0-c868-4ca1c75fde37`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2639,7 +2543,7 @@
           },
           "int 'NodePosX'": 2384,
           "int 'NodePosY'": 1008,
-          "guid 'NodeGuid'": "800c4e48-4552-eb0c-cab3-b4bd740d82ed"
+          "guid native 'NodeGuid'": "800c4e48-4552-eb0c-cab3-b4bd740d82ed"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`25 50da93a2-45e2-a17b-3d1a-8c9452926407`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -2665,7 +2569,7 @@
           },
           "int 'NodePosX'": 2352,
           "int 'NodePosY'": 496,
-          "guid 'NodeGuid'": "91ff86b3-4ca6-2a2c-4960-a5a89688bed3"
+          "guid native 'NodeGuid'": "91ff86b3-4ca6-2a2c-4960-a5a89688bed3"
         },
         "Pins": [
           "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`26 cff64a3d-439a-4be7-9f48-c680675b0289`» LinkedTo«`28 c080b163-47d1-7fa6-5614-8aa4211aa881`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2693,7 +2597,7 @@
           },
           "int 'NodePosX'": 2848,
           "int 'NodePosY'": 912,
-          "guid 'NodeGuid'": "e264c510-4a17-8178-869d-698386b6846d"
+          "guid native 'NodeGuid'": "e264c510-4a17-8178-869d-698386b6846d"
         },
         "Pins": [
           "input-pin Type«`object obj(`-35`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`27 1773499a-4ec8-6cbb-c74b-a9a17fccde2c`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2721,7 +2625,7 @@
           },
           "int 'NodePosX'": 2336,
           "int 'NodePosY'": 416,
-          "guid 'NodeGuid'": "8bfcb63d-47fa-0722-ed29-f886667fdf18"
+          "guid native 'NodeGuid'": "8bfcb63d-47fa-0722-ed29-f886667fdf18"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`28 7adfb9da-49ce-a889-21d7-2aa69edbd9d8`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -2748,7 +2652,7 @@
           },
           "int 'NodePosX'": 2016,
           "int 'NodePosY'": 896,
-          "guid 'NodeGuid'": "3a2846b0-467b-34eb-f016-29927affbe11"
+          "guid native 'NodeGuid'": "3a2846b0-467b-34eb-f016-29927affbe11"
         },
         "Pins": [
           "input-pin Type«`object obj(`-40`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`29 d7a81716-4682-5c7c-1ff1-849c56979549`» LinkedTo«`86 a6837a5e-4732-3731-f2fc-fa90594e0bbe`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2775,7 +2679,7 @@
           },
           "int 'NodePosX'": 3200,
           "int 'NodePosY'": 656,
-          "guid 'NodeGuid'": "4f2ea84a-4d98-9af8-03ff-60a0225e1034"
+          "guid native 'NodeGuid'": "4f2ea84a-4d98-9af8-03ff-60a0225e1034"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`30 a487287e-4fab-1280-e774-8bb0d61ba39b`» LinkedTo«`58 2947a41d-4de4-f2ef-f992-f5b1c6c16eda`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2809,7 +2713,7 @@
           },
           "int 'NodePosX'": 2864,
           "int 'NodePosY'": 688,
-          "guid 'NodeGuid'": "bdbd225a-4b36-8185-e1c9-d7a2b80b4e1b"
+          "guid native 'NodeGuid'": "bdbd225a-4b36-8185-e1c9-d7a2b80b4e1b"
         },
         "Pins": [
           "input-pin Type«`object obj(`-35`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`31 f3768e36-4b53-bffd-9e83-859abf817b3d`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2833,11 +2737,11 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "On Entry",
-            "guid 'MemberGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12",
+            "guid native 'MemberGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
-          "guid 'NodeGuid'": "418d6cac-419b-7130-2c95-75974d9621f9"
+          "guid native 'NodeGuid'": "418d6cac-419b-7130-2c95-75974d9621f9"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`32 530af466-48ad-b741-63b1-ff8f59012353`» LinkedTo«`62 c10b6fda-4c23-5dac-8d6a-1ea14416843c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2863,7 +2767,7 @@
           },
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": -848,
-          "guid 'NodeGuid'": "00cf8492-4d35-1f0f-d07d-d38e2050ddff"
+          "guid native 'NodeGuid'": "00cf8492-4d35-1f0f-d07d-d38e2050ddff"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`33 9487c276-4dd2-af33-3d87-e49f9de700dc`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -2884,12 +2788,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "AlignPlayerToTrigger",
-            "guid 'MemberGuid'": "c58bb7bf-4a3a-7102-88ce-7c82aaabeff2",
+            "guid native 'MemberGuid'": "c58bb7bf-4a3a-7102-88ce-7c82aaabeff2",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1520,
           "int 'NodePosY'": 1408,
-          "guid 'NodeGuid'": "78311549-46e8-dd5f-feff-5bafb4f41fbe"
+          "guid native 'NodeGuid'": "78311549-46e8-dd5f-feff-5bafb4f41fbe"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`34 aa7aa1d8-4b52-e5c2-a507-0eb04f5e4dc4`» LinkedTo«`63 b484f8ca-409f-26a6-98c7-37b19a43cbe5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2916,7 +2820,7 @@
           },
           "int 'NodePosX'": 1671,
           "int 'NodePosY'": -562,
-          "guid 'NodeGuid'": "04fcd857-4b5f-29fb-77c8-85b57dea1ebb"
+          "guid native 'NodeGuid'": "04fcd857-4b5f-29fb-77c8-85b57dea1ebb"
         },
         "Pins": [
           "input-pin Type«`object obj(`-39`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`35 a3d83abf-4dda-b8f3-3ec9-e2b362ae185d`» LinkedTo«`87 bbd82260-4246-1181-33b1-5aad70150645`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2937,12 +2841,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "On Entry",
-            "guid 'MemberGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12",
+            "guid native 'MemberGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2439,
           "int 'NodePosY'": -418,
-          "guid 'NodeGuid'": "8b48c297-46f9-7802-3591-1bbdae4a01e3"
+          "guid native 'NodeGuid'": "8b48c297-46f9-7802-3591-1bbdae4a01e3"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`36 566d1da9-488d-0e51-628a-d6879cd9b7ad`» LinkedTo«`66 2429d8c5-470b-6287-eeb5-f792e2848447`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2963,12 +2867,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "Break Loop",
-            "guid 'MemberGuid'": "10c2713f-4d59-b636-903a-dbb499bfb263",
+            "guid native 'MemberGuid'": "10c2713f-4d59-b636-903a-dbb499bfb263",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2720,
           "int 'NodePosY'": -416,
-          "guid 'NodeGuid'": "e06c516d-475f-08c9-a066-b59fee16d700"
+          "guid native 'NodeGuid'": "e06c516d-475f-08c9-a066-b59fee16d700"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`37 57f6bd46-4cb4-0eb1-c2b7-deb1bb3d51e0`» LinkedTo«`36 1af7703a-4f17-175d-6634-43bdfe3eebcb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2994,7 +2898,7 @@
           },
           "int 'NodePosX'": 1744,
           "int 'NodePosY'": 928,
-          "guid 'NodeGuid'": "5e5c92ca-4f64-bfeb-8323-a0ac178ef3ec"
+          "guid native 'NodeGuid'": "5e5c92ca-4f64-bfeb-8323-a0ac178ef3ec"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`38 418fdbaa-41fd-54dc-2847-8c9ba10865ab`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3016,12 +2920,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "On Exit",
-            "guid 'MemberGuid'": "1d2a45da-4ce8-2f93-df0e-1daac523c56b",
+            "guid native 'MemberGuid'": "1d2a45da-4ce8-2f93-df0e-1daac523c56b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 272,
-          "guid 'NodeGuid'": "2fdbf67c-4b70-ad84-000d-e7a0b54ce1b3"
+          "guid native 'NodeGuid'": "2fdbf67c-4b70-ad84-000d-e7a0b54ce1b3"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`39 be29d572-4a78-5417-453e-b093e52e610e`» LinkedTo«`61 c10b6fda-4c23-5dac-8d6a-1ea14416843c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3047,7 +2951,7 @@
           },
           "int 'NodePosX'": 2080,
           "int 'NodePosY'": 112,
-          "guid 'NodeGuid'": "7dbf0c54-4143-2df3-c2b6-a2a9f2499016"
+          "guid native 'NodeGuid'": "7dbf0c54-4143-2df3-c2b6-a2a9f2499016"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`40 418fdbaa-41fd-54dc-2847-8c9ba10865ab`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3074,7 +2978,7 @@
           },
           "int 'NodePosX'": 2790,
           "int 'NodePosY'": 96,
-          "guid 'NodeGuid'": "81c4170f-4ea9-94ac-c800-acbe39c1d938"
+          "guid native 'NodeGuid'": "81c4170f-4ea9-94ac-c800-acbe39c1d938"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`41 418fdbaa-41fd-54dc-2847-8c9ba10865ab`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3101,7 +3005,7 @@
           },
           "int 'NodePosX'": -896,
           "int 'NodePosY'": 208,
-          "guid 'NodeGuid'": "cca5b8b6-4f74-ab4b-ebb8-0383ccc12063"
+          "guid native 'NodeGuid'": "cca5b8b6-4f74-ab4b-ebb8-0383ccc12063"
         },
         "Pins": [
           "input-pin Type«`object obj(`-33`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`42 e36d20f8-4d59-034b-1b35-75952647c53a`» BitField«`1`» DefaultObject«`ImportIndex[-80] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -3127,7 +3031,7 @@
           },
           "int 'NodePosX'": 3246,
           "int 'NodePosY'": 817,
-          "guid 'NodeGuid'": "5a18cf95-4429-84e1-271b-11aa36de0b9b"
+          "guid native 'NodeGuid'": "5a18cf95-4429-84e1-271b-11aa36de0b9b"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`43 f276c052-4051-f13a-994c-dd80198cc0f3`» LinkedTo«`67 61143929-4c9b-594f-6ed6-10ae60964aea`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3153,7 +3057,7 @@
           },
           "int 'NodePosX'": -848,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "c76c4153-439b-8baf-2865-7885450d87ca"
+          "guid native 'NodeGuid'": "c76c4153-439b-8baf-2865-7885450d87ca"
         },
         "Pins": [
           "input-pin Type«`object obj(`-30`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`44 b0bcbc2b-495b-bd7a-0c24-8b9c19f5b01e`» LinkedTo«`42 6d7d42f3-45f1-f310-cd20-44867c8c6fce`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3177,7 +3081,7 @@
           },
           "int 'NodePosX'": 624,
           "int 'NodePosY'": -16,
-          "guid 'NodeGuid'": "4fbe7ffd-44cb-8632-6f5b-b281949bb7c3"
+          "guid native 'NodeGuid'": "4fbe7ffd-44cb-8632-6f5b-b281949bb7c3"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`45 daee7837-4daa-8194-a795-748468c113be`» LinkedTo«`69 650a3453-48c6-b244-2918-b3858dca3c5b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3204,8 +3108,8 @@
           },
           "int 'NodePosX'": 992,
           "int 'NodePosY'": -16,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 148,
-          "guid 'NodeGuid'": "efabceca-48d1-620d-5785-089f4590f0eb"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 148,
+          "guid native 'NodeGuid'": "efabceca-48d1-620d-5785-089f4590f0eb"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`46 72c64889-4439-81a8-b7c1-3990b9acba02`» LinkedTo«`45 9ccbd84d-45aa-d498-c915-cc870ec9f282`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3237,7 +3141,7 @@
           },
           "int 'NodePosX'": -400,
           "int 'NodePosY'": -16,
-          "guid 'NodeGuid'": "2e3e9dfb-456b-904a-77d3-f89211f04485"
+          "guid native 'NodeGuid'": "2e3e9dfb-456b-904a-77d3-f89211f04485"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`47 b2d6b8d5-4d68-0a14-19c0-ce897d3233ba`» LinkedTo«`59 ea580c1b-4bf8-a70d-f7d7-37a3a0f5fdb9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3265,7 +3169,7 @@
           },
           "int 'NodePosX'": 1008,
           "int 'NodePosY'": 1552,
-          "guid 'NodeGuid'": "d138949e-4b4c-c7a2-a8a0-018468f829b5"
+          "guid native 'NodeGuid'": "d138949e-4b4c-c7a2-a8a0-018468f829b5"
         },
         "Pins": [
           "input-pin Type«`object obj(`-35`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`48 8ead7183-42ac-f00d-e81d-c9b0ba95671d`» BitField«`1`» DefaultObject«`ImportIndex[-82] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -3288,7 +3192,7 @@
           "name 'CustomFunctionName'": "On Entry",
           "int 'NodePosX'": 880,
           "int 'NodePosY'": 160,
-          "guid 'NodeGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12"
+          "guid native 'NodeGuid'": "40ce58bf-422b-b66c-92cb-0e8f2bd6af12"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3310,7 +3214,7 @@
           "name 'CustomFunctionName'": "On Exit",
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 816,
-          "guid 'NodeGuid'": "1d2a45da-4ce8-2f93-df0e-1daac523c56b"
+          "guid native 'NodeGuid'": "1d2a45da-4ce8-2f93-df0e-1daac523c56b"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3332,7 +3236,7 @@
           "name 'CustomFunctionName'": "Player Respawn",
           "int 'NodePosX'": 1111,
           "int 'NodePosY'": -418,
-          "guid 'NodeGuid'": "609e4a13-41ca-e97f-cffc-e2a5f218b0ed"
+          "guid native 'NodeGuid'": "609e4a13-41ca-e97f-cffc-e2a5f218b0ed"
         },
         "SerializedItems": [
           {
@@ -3364,7 +3268,7 @@
           "name 'CustomFunctionName'": "Break Loop",
           "int 'NodePosX'": 1415,
           "int 'NodePosY'": -322,
-          "guid 'NodeGuid'": "10c2713f-4d59-b636-903a-dbb499bfb263"
+          "guid native 'NodeGuid'": "10c2713f-4d59-b636-903a-dbb499bfb263"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3386,7 +3290,7 @@
           "obj 'TargetType'": -5,
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": -768,
-          "guid 'NodeGuid'": "95064c9e-4b3f-8ee2-bda2-6093ff3a4570"
+          "guid native 'NodeGuid'": "95064c9e-4b3f-8ee2-bda2-6093ff3a4570"
         },
         "PureState": "Impure",
         "Pins": [
@@ -3416,7 +3320,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 1008,
           "int 'NodePosY'": 1424,
-          "guid 'NodeGuid'": "08c15dc1-4e82-867a-5e0c-6db4138b7457"
+          "guid native 'NodeGuid'": "08c15dc1-4e82-867a-5e0c-6db4138b7457"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3444,7 +3348,7 @@
           "int 'NodePosX'": -851,
           "int 'NodePosY'": 16,
           "bool 'bCommentBubblePinned'": true,
-          "guid 'NodeGuid'": "bf8d2e58-44bf-9528-f5d6-2aa5a9857627"
+          "guid native 'NodeGuid'": "bf8d2e58-44bf-9528-f5d6-2aa5a9857627"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3471,7 +3375,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": 896,
           "int 'NodePosY'": -768,
-          "guid 'NodeGuid'": "92b10a14-4b1b-77d3-0b9b-5a97163903be"
+          "guid native 'NodeGuid'": "92b10a14-4b1b-77d3-0b9b-5a97163903be"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3497,7 +3401,7 @@
           "bool 'bOverrideFunction'": true,
           "int 'NodePosX'": -840,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid'": "4f22b8f2-4e72-b5c9-21c3-17b46c8b07f9"
+          "guid native 'NodeGuid'": "4f22b8f2-4e72-b5c9-21c3-17b46c8b07f9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3524,7 +3428,7 @@
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 2240,
           "int 'NodePosY'": 672,
-          "guid 'NodeGuid'": "8523bdcc-4794-fd0c-8a7a-aeaef95cdbff"
+          "guid native 'NodeGuid'": "8523bdcc-4794-fd0c-8a7a-aeaef95cdbff"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3547,7 +3451,7 @@
             "name 'MemberName'": "UserConstructionScript"
           },
           "int 'NodePosX'": -720,
-          "guid 'NodeGuid'": "d0f4783d-4f02-a75a-9ba4-e1aeae21fc60"
+          "guid native 'NodeGuid'": "d0f4783d-4f02-a75a-9ba4-e1aeae21fc60"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3571,7 +3475,7 @@
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 3600,
           "int 'NodePosY'": 672,
-          "guid 'NodeGuid'": "8ab7864b-47c4-2cb4-2592-18bbb4f4e1b8"
+          "guid native 'NodeGuid'": "8ab7864b-47c4-2cb4-2592-18bbb4f4e1b8"
         },
         "SerializedItems": [
           {
@@ -3602,7 +3506,7 @@
         "Members": {
           "int 'NodePosX'": -192,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid'": "2ea222d6-4f0b-785d-572a-69928d5603b1"
+          "guid native 'NodeGuid'": "2ea222d6-4f0b-785d-572a-69928d5603b1"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`61 5eebec90-4cec-5d72-8ad0-009f5259d997`» LinkedTo«`57 3b0c62f8-499a-c326-1634-67b2e37a2700`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3624,7 +3528,7 @@
         "Members": {
           "int 'NodePosX'": -192,
           "int 'NodePosY'": 16,
-          "guid 'NodeGuid'": "c5b424cb-472f-f388-c5d0-b59a217dec31"
+          "guid native 'NodeGuid'": "c5b424cb-472f-f388-c5d0-b59a217dec31"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`62 5eebec90-4cec-5d72-8ad0-009f5259d997`» LinkedTo«`55 cd490c1f-4e82-7799-8bf5-40901440d61f`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3646,7 +3550,7 @@
         "Members": {
           "int 'NodePosX'": 1239,
           "int 'NodePosY'": 1424,
-          "guid 'NodeGuid'": "c9e496dd-45fb-88e1-55fa-10849cb2f07d"
+          "guid native 'NodeGuid'": "c9e496dd-45fb-88e1-55fa-10849cb2f07d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`63 50fde132-407b-6422-afd3-339a0be86f32`» LinkedTo«`54 cea08458-4e3a-a672-c8b8-a79408d7b0c5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3668,7 +3572,7 @@
         "Members": {
           "int 'NodePosX'": 1904,
           "int 'NodePosY'": 1425,
-          "guid 'NodeGuid'": "d8c2b3a4-40f5-d8e2-fe44-de97840210d1"
+          "guid native 'NodeGuid'": "d8c2b3a4-40f5-d8e2-fe44-de97840210d1"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`64 dc1cda2d-4a01-9b86-feb0-0ca2c88aceb2`» LinkedTo«`34 4e52ca0e-4b39-1d55-2d00-8e9f82aa0c3b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3690,7 +3594,7 @@
         "Members": {
           "int 'NodePosX'": 1376,
           "int 'NodePosY'": 832,
-          "guid 'NodeGuid'": "2a7d5d47-4cbf-11fe-9426-769cc5c6eda0"
+          "guid native 'NodeGuid'": "2a7d5d47-4cbf-11fe-9426-769cc5c6eda0"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`65 6d0e965b-44dc-4a69-9c6b-308128cbc507`» LinkedTo«`106 33899dcc-46b4-1fdc-8016-5aa5c78288b3`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3712,7 +3616,7 @@
         "Members": {
           "int 'NodePosX'": 2199,
           "int 'NodePosY'": -402,
-          "guid 'NodeGuid'": "8a612a33-45a1-f75c-fb88-b6b57e5a7845"
+          "guid native 'NodeGuid'": "8a612a33-45a1-f75c-fb88-b6b57e5a7845"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`66 661d0678-4f63-83e4-d3eb-b49e088311be`» LinkedTo«`78 529995b9-4cf5-3dc1-b9e3-7699359cf97e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3734,7 +3638,7 @@
         "Members": {
           "int 'NodePosX'": 2912,
           "int 'NodePosY'": 832,
-          "guid 'NodeGuid'": "c585216b-4a4b-3d34-7519-46a65fa74c36"
+          "guid native 'NodeGuid'": "c585216b-4a4b-3d34-7519-46a65fa74c36"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`67 d10dfb60-489f-7a4c-a55f-e4bde46015f1`» LinkedTo«`77 b36262e4-4576-3cb5-bd17-a48d8081503d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3756,7 +3660,7 @@
         "Members": {
           "int 'NodePosX'": 3246,
           "int 'NodePosY'": 208,
-          "guid 'NodeGuid'": "de77298a-4d40-d304-6a1d-ef982486e690"
+          "guid native 'NodeGuid'": "de77298a-4d40-d304-6a1d-ef982486e690"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`68 d10dfb60-489f-7a4c-a55f-e4bde46015f1`» LinkedTo«`81 33574229-4e89-ed2c-b385-3c812b6b984d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3777,7 +3681,7 @@
         "__type": "UEdGraphNode",
         "Members": {
           "int 'NodePosX'": 272,
-          "guid 'NodeGuid'": "1eba82d4-4d88-c936-6dcf-f383b117ba2a"
+          "guid native 'NodeGuid'": "1eba82d4-4d88-c936-6dcf-f383b117ba2a"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`69 b147cbda-494f-3134-ad7f-2b8553e45135`» LinkedTo«`47 b30cf527-4a0e-c6dc-9d7a-e8a4535dbfbb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3799,7 +3703,7 @@
         "Members": {
           "int 'NodePosX'": 1344,
           "int 'NodePosY'": -240,
-          "guid 'NodeGuid'": "a1b7b13c-4c0e-f258-3e63-e59b41a636d4"
+          "guid native 'NodeGuid'": "a1b7b13c-4c0e-f258-3e63-e59b41a636d4"
         },
         "Pins": [
           "input-pin Type«`object obj(`-36`)`» Name«`InputPin`» Id«`70 d5f3630e-41b8-470f-30e1-829952d211ae`» LinkedTo«`51 f2a8e89f-46c0-aa1c-1afc-9ca4d344e762`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3819,7 +3723,7 @@
         "Members": {
           "int 'NodePosX'": 2664,
           "int 'NodePosY'": 241,
-          "guid 'NodeGuid'": "8a209989-4ae8-469b-c6ad-0eb1befbfd76"
+          "guid native 'NodeGuid'": "8a209989-4ae8-469b-c6ad-0eb1befbfd76"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`71 eee2575f-4116-fbf3-9b15-b89ef99a29e2`» LinkedTo«`73 a25a2ae4-491c-b382-2f8f-37b17e708752 | 80 be7322b4-4349-20be-cc6a-ab9ec4ff6ab8`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3839,7 +3743,7 @@
         "Members": {
           "int 'NodePosX'": 1856,
           "int 'NodePosY'": 64,
-          "guid 'NodeGuid'": "c7489a94-49c8-4bcf-5e26-c6b561a1444b"
+          "guid native 'NodeGuid'": "c7489a94-49c8-4bcf-5e26-c6b561a1444b"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`72 e8da1ade-4661-8554-50ee-f98a0dbdd2f4`» LinkedTo«`85 df8aec2e-493d-d428-8ace-319df043f3f5 | 85 0a6d5c00-4b4a-d6dd-a6bf-b98aa9539ce9 | 85 0645b82a-461c-4b60-080b-d5912c21d15a`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3859,7 +3763,7 @@
         "Members": {
           "int 'NodePosX'": 2288,
           "int 'NodePosY'": 64,
-          "guid 'NodeGuid'": "a6207193-4474-faef-42b7-b2969e9a28bb"
+          "guid native 'NodeGuid'": "a6207193-4474-faef-42b7-b2969e9a28bb"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`73 9aed3ad8-4e0b-893d-85eb-2bae054f3656`» LinkedTo«`72 34aca1e6-43fb-5204-b5cd-e0bc9b8afc74`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3879,7 +3783,7 @@
         "Members": {
           "int 'NodePosX'": 1904,
           "int 'NodePosY'": -240,
-          "guid 'NodeGuid'": "839717cb-4022-f8f2-9cf0-20b30a9b00b8"
+          "guid native 'NodeGuid'": "839717cb-4022-f8f2-9cf0-20b30a9b00b8"
         },
         "Pins": [
           "input-pin Type«`object obj(`-36`)`» Name«`InputPin`» Id«`74 f85f6fe5-4a41-9639-471e-ab895d90f8a8`» LinkedTo«`70 bc7f47c0-4a62-b943-c43a-ee800186fff5`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3899,7 +3803,7 @@
         "Members": {
           "int 'NodePosX'": 1696,
           "int 'NodePosY'": 1024,
-          "guid 'NodeGuid'": "52125cf3-4c09-5acd-6b77-54847baacfea"
+          "guid native 'NodeGuid'": "52125cf3-4c09-5acd-6b77-54847baacfea"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`75 4984bd59-4673-62a6-95fb-1494afe08a3e`» LinkedTo«`65 d2bf268c-4013-e657-9ff6-fcb90c927a63`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3919,7 +3823,7 @@
         "Members": {
           "int 'NodePosX'": 2480,
           "int 'NodePosY'": 1023,
-          "guid 'NodeGuid'": "65311cb1-401a-9955-7afa-a0842cff4d27"
+          "guid native 'NodeGuid'": "65311cb1-401a-9955-7afa-a0842cff4d27"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`76 1ba0b7fb-4db7-8e2d-f623-dd94ec334949`» LinkedTo«`75 660327f8-426a-fa8b-3fbd-d8967aff4982`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3939,7 +3843,7 @@
         "Members": {
           "int 'NodePosX'": 2704,
           "int 'NodePosY'": 864,
-          "guid 'NodeGuid'": "356576e7-4d47-ff25-42e6-fb9f6ce7de5a"
+          "guid native 'NodeGuid'": "356576e7-4d47-ff25-42e6-fb9f6ce7de5a"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`InputPin`» Id«`77 86d2f16e-4002-ea09-e57e-7ba27d859763`» LinkedTo«`76 b3464d62-4476-3506-6b19-798760e36925 | 79 33574229-4e89-ed2c-b385-3c812b6b984d`» BitField«`8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3960,11 +3864,11 @@
           "struct GraphReference 131 'MacroGraphReference'": {
             "obj 'MacroGraph'": -47,
             "obj 'GraphBlueprint'": -2,
-            "guid 'GraphGuid'": "f0756027-4c57-42e3-91e8-4b8f394cfb36"
+            "guid native 'GraphGuid'": "f0756027-4c57-42e3-91e8-4b8f394cfb36"
           },
           "int 'NodePosX'": 1671,
           "int 'NodePosY'": -402,
-          "guid 'NodeGuid'": "1222d012-4b98-1bce-52ec-4eb9cb93abe7"
+          "guid native 'NodeGuid'": "1222d012-4b98-1bce-52ec-4eb9cb93abe7"
         },
         "SerializedItems": [],
         "Pins": [
@@ -3991,11 +3895,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -3,
             "name 'MemberName'": "SetCameraState",
-            "guid 'MemberGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+            "guid native 'MemberGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
           },
           "int 'NodePosX'": 2048,
           "int 'NodePosY'": 816,
-          "guid 'NodeGuid'": "17f7696e-4caf-168e-18dc-3bb8cbeee9e3"
+          "guid native 'NodeGuid'": "17f7696e-4caf-168e-18dc-3bb8cbeee9e3"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`79 8da7a66c-47ea-35a5-6a9d-ca887d8b5daa`» LinkedTo«`65 5436b723-4d4c-4f50-cd8e-33824a4fac33`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4018,12 +3922,12 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -3,
             "name 'MemberName'": "UsePresetAngle",
-            "guid 'MemberGuid'": "10e7bd66-4f01-6a97-9f52-f5b91b9cd0d9"
+            "guid native 'MemberGuid'": "10e7bd66-4f01-6a97-9f52-f5b91b9cd0d9"
           },
           "int 'NodePosX'": 2080,
           "int 'NodePosY'": 192,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid'": "eb6b1294-4bea-79b3-9709-e4ae45ad6498"
+          "guid native 'NodeGuid'": "eb6b1294-4bea-79b3-9709-e4ae45ad6498"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`80 63a72536-41fb-0ed4-e9d1-82ad52491824`» LinkedTo«`85 912ef83f-4562-093b-8293-3bbc9889f2b3`» ToolTip«`\nExec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4048,11 +3952,11 @@
           "struct MemberReference 135 'FunctionReference'": {
             "obj 'MemberParent'": -3,
             "name 'MemberName'": "SetCameraState",
-            "guid 'MemberGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+            "guid native 'MemberGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
           },
           "int 'NodePosX'": 2816,
           "int 'NodePosY'": 192,
-          "guid 'NodeGuid'": "7621dc1e-4146-2a5b-6f03-1ba7402a448e"
+          "guid native 'NodeGuid'": "7621dc1e-4146-2a5b-6f03-1ba7402a448e"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`81 8da7a66c-47ea-35a5-6a9d-ca887d8b5daa`» LinkedTo«`71 908d9cfe-458d-ea97-42de-90af06cc5b55`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4080,7 +3984,7 @@
           },
           "int 'NodePosX'": -480,
           "int 'NodePosY'": 409,
-          "guid 'NodeGuid'": "24e2cb6f-4e96-d8aa-1f88-24bcfb088614"
+          "guid native 'NodeGuid'": "24e2cb6f-4e96-d8aa-1f88-24bcfb088614"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`A`» Id«`82 626f81b3-4ee4-88d2-5b19-dc94aaa63c95`» LinkedTo«`44 83c0aedf-49ba-944a-d24d-929e2be77d73`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4108,7 +4012,7 @@
           },
           "int 'NodePosX'": -480,
           "int 'NodePosY'": 80,
-          "guid 'NodeGuid'": "02f1813b-4aeb-c175-1dbc-688c81593a9b"
+          "guid native 'NodeGuid'": "02f1813b-4aeb-c175-1dbc-688c81593a9b"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`A`» Id«`83 626f81b3-4ee4-88d2-5b19-dc94aaa63c95`» LinkedTo«`55 46ecb5db-4f01-f581-edaa-e1a48fcf6823`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4136,7 +4040,7 @@
           },
           "int 'NodePosX'": 2007,
           "int 'NodePosY'": -322,
-          "guid 'NodeGuid'": "a783aa47-4b7c-1a54-7fa3-6ba4ae456a73"
+          "guid native 'NodeGuid'": "a783aa47-4b7c-1a54-7fa3-6ba4ae456a73"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`A`» Id«`84 38da9d43-4b81-5f1d-341a-759edad0a12e`» LinkedTo«`78 347b14dc-4674-b7db-7987-abb56393b5c9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4157,24 +4061,15 @@
         "__type": "UEdGraphNode",
         "Members": {
           "obj 'Enum'": -97,
-          "EnumEntries": {
-            "Name": "EnumEntries",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "NewEnumerator0",
-              "NewEnumerator5",
-              "NewEnumerator2",
-              "NewEnumerator3"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'EnumEntries'": [
+            "NewEnumerator0",
+            "NewEnumerator5",
+            "NewEnumerator2",
+            "NewEnumerator3"
+          ],
           "int 'NodePosX'": 1362,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid'": "15ffec6c-4d23-598b-95cf-57b2c2f3f0bf"
+          "guid native 'NodeGuid'": "15ffec6c-4d23-598b-95cf-57b2c2f3f0bf"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`85 488baa92-4ef2-f560-b4b5-c6aa5d2b2774`» LinkedTo«`49 47ca2cef-40ce-f422-8b2e-a0906c306bdf`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4203,7 +4098,7 @@
           },
           "int 'NodePosX'": 1760,
           "int 'NodePosY'": 928,
-          "guid 'NodeGuid'": "49906a5f-451e-a8af-12f0-8c9d13d2654b"
+          "guid native 'NodeGuid'": "49906a5f-451e-a8af-12f0-8c9d13d2654b"
         },
         "Pins": [
           "output-pin Type«`object obj(`-43`)`» Name«`Sphere`» Id«`86 a6837a5e-4732-3731-f2fc-fa90594e0bbe`» LinkedTo«`29 d7a81716-4682-5c7c-1ff1-849c56979549`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4227,7 +4122,7 @@
           },
           "int 'NodePosX'": 1671,
           "int 'NodePosY'": -610,
-          "guid 'NodeGuid'": "9881b8bd-4c91-0720-eabb-12970ac25582"
+          "guid native 'NodeGuid'": "9881b8bd-4c91-0720-eabb-12970ac25582"
         },
         "Pins": [
           "output-pin Type«`object obj(`-43`)`» Name«`Sphere`» Id«`87 bbd82260-4246-1181-33b1-5aad70150645`» LinkedTo«`35 a3d83abf-4dda-b8f3-3ec9-e2b362ae185d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4247,12 +4142,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "UsePresetAngle",
-            "guid 'MemberGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
+            "guid native 'MemberGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2080,
           "int 'NodePosY'": 416,
-          "guid 'NodeGuid'": "68a05137-44ee-2eb5-d642-7289e5ac83ef"
+          "guid native 'NodeGuid'": "68a05137-44ee-2eb5-d642-7289e5ac83ef"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`UsePresetAngle`» Id«`88 9297550a-4ada-a2de-99fe-aaaf7d63b89f`» LinkedTo«`80 5b1fa1f1-4ee8-6bd8-acef-1ea3de69ba4a`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4272,12 +4167,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Deactivate On Exit",
-            "guid 'MemberGuid'": "dbaac6ca-43c4-3003-609d-959107215781",
+            "guid native 'MemberGuid'": "dbaac6ca-43c4-3003-609d-959107215781",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2912,
           "int 'NodePosY'": 944,
-          "guid 'NodeGuid'": "c18f31b0-445f-df71-e6ea-48bac42d2271"
+          "guid native 'NodeGuid'": "c18f31b0-445f-df71-e6ea-48bac42d2271"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Deactivate On Exit`» Id«`89 992c8f8c-439c-3173-274f-a4b65b0affcd`» LinkedTo«`67 1a7ec3f5-4718-3f3d-5efa-348ad33b0d39`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4297,12 +4192,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Align Player on Entry",
-            "guid 'MemberGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
+            "guid native 'MemberGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3246,
           "int 'NodePosY'": 337,
-          "guid 'NodeGuid'": "67608738-426a-7284-84c1-3786dd061f6f"
+          "guid native 'NodeGuid'": "67608738-426a-7284-84c1-3786dd061f6f"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Align Player on Entry`» Id«`90 54982d6b-49ca-dc88-1c0b-e3a5fbc2a0b2`» LinkedTo«`68 1a7ec3f5-4718-3f3d-5efa-348ad33b0d39`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4322,12 +4217,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Align Player on Entry",
-            "guid 'MemberGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
+            "guid native 'MemberGuid'": "fd575b63-4b5d-88f5-80b8-b5b478f66028",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 760,
           "int 'NodePosY'": 1550,
-          "guid 'NodeGuid'": "78f1b0ef-4894-3beb-e754-02b4cf3304ef"
+          "guid native 'NodeGuid'": "78f1b0ef-4894-3beb-e754-02b4cf3304ef"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Align Player on Entry`» Id«`91 54982d6b-49ca-dc88-1c0b-e3a5fbc2a0b2`» LinkedTo«`48 0ccb829d-46da-a048-3338-3c9b812fbe98`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4347,12 +4242,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PresetPitch",
-            "guid 'MemberGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
+            "guid native 'MemberGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2080,
           "int 'NodePosY'": 464,
-          "guid 'NodeGuid'": "6be2fd1d-4c04-c1d7-5103-f988b27e0efd"
+          "guid native 'NodeGuid'": "6be2fd1d-4c04-c1d7-5103-f988b27e0efd"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`PresetPitch`» Id«`92 7660830c-40bc-acb9-fdaf-c5a658b6566c`» LinkedTo«`80 7d762e74-4f4b-7a37-6695-0c8608f9b11f`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4372,12 +4267,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "SwitchToCameraState",
-            "guid 'MemberGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
+            "guid native 'MemberGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1362,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "986e3f48-4a97-6ef0-225c-9083fcfcb326"
+          "guid native 'NodeGuid'": "986e3f48-4a97-6ef0-225c-9083fcfcb326"
         },
         "Pins": [
           "output-pin Type«`byte obj(`-97`)`» Name«`SwitchToCameraState`» Id«`93 d89b7320-4f5d-9a76-16ee-fd84b015f79f`» LinkedTo«`85 6778f4a5-4789-c0df-d643-4b98c6beecc0`» DefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4397,12 +4292,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Reset on Exit",
-            "guid 'MemberGuid'": "f4db4594-47c8-52dc-0cfb-5ba0ef175c57",
+            "guid native 'MemberGuid'": "f4db4594-47c8-52dc-0cfb-5ba0ef175c57",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1376,
           "int 'NodePosY'": 960,
-          "guid 'NodeGuid'": "5ba14c89-4409-9e78-d856-3b8b41442e2e"
+          "guid native 'NodeGuid'": "5ba14c89-4409-9e78-d856-3b8b41442e2e"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Reset on Exit`» Id«`94 1265572a-4eb0-e2bf-1627-fb98b47bbb53`» LinkedTo«`65 ad069576-4d13-7e65-050e-b5aa3ce0ac8a`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4422,12 +4317,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "AlignmentActive",
-            "guid 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
+            "guid native 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 768,
           "int 'NodePosY'": 1616,
-          "guid 'NodeGuid'": "96018cb9-4fb9-e1ba-eb71-0f9c0b0aca06"
+          "guid native 'NodeGuid'": "96018cb9-4fb9-e1ba-eb71-0f9c0b0aca06"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`AlignmentActive`» Id«`95 0737cfe5-4cfb-60f4-bbe1-ca9b8f3cb5a6`» LinkedTo«`48 71b78bba-4650-dedd-7ac4-52a3d0b03839`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4447,12 +4342,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PresetYaw",
-            "guid 'MemberGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
+            "guid native 'MemberGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2080,
           "int 'NodePosY'": 496,
-          "guid 'NodeGuid'": "41e09938-4ca3-9f48-7b7c-4faba2a1c88b"
+          "guid native 'NodeGuid'": "41e09938-4ca3-9f48-7b7c-4faba2a1c88b"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`PresetYaw`» Id«`96 fa7d7263-4eb8-d1ef-3f86-e7b3bd1f7fc1`» LinkedTo«`80 deaf56fd-4f30-622c-f751-19ae1b18d71a`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4472,12 +4367,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "SwitchToCameraState",
-            "guid 'MemberGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
+            "guid native 'MemberGuid'": "30261f32-42fe-b86e-27a8-63be6869dc41",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2815,
           "int 'NodePosY'": 352,
-          "guid 'NodeGuid'": "89b93359-45b2-d99a-c51c-97b2b90380ef"
+          "guid native 'NodeGuid'": "89b93359-45b2-d99a-c51c-97b2b90380ef"
         },
         "Pins": [
           "output-pin Type«`byte obj(`-97`)`» Name«`SwitchToCameraState`» Id«`97 df880f09-4d44-f4ec-a0bc-66ade16329a3`» LinkedTo«`81 472aa4fb-4164-95db-9014-3e9fe6c4f101`» DefaultValue«`NewEnumerator0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4501,7 +4396,7 @@
           },
           "int 'NodePosX'": -736,
           "int 'NodePosY'": 320,
-          "guid 'NodeGuid'": "cc8a6506-43fa-230c-8012-3e8af273bb07"
+          "guid native 'NodeGuid'": "cc8a6506-43fa-230c-8012-3e8af273bb07"
         },
         "Pins": [
           "output-pin Type«`object obj(`-43`)`» Name«`Sphere`» Id«`98 88122697-4fb3-a327-d8f7-7c90c6e7a307`» LinkedTo«`47 1ac4100e-4b7d-4e6a-73c1-d7bfbf1fdbec`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4521,12 +4416,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "TriggerRadius",
-            "guid 'MemberGuid'": "28d050bb-4b58-2458-40df-9f950cf483ae",
+            "guid native 'MemberGuid'": "28d050bb-4b58-2458-40df-9f950cf483ae",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -752,
           "int 'NodePosY'": 384,
-          "guid 'NodeGuid'": "e1b435d4-4a0a-8684-4d07-8c9173f93e6b"
+          "guid native 'NodeGuid'": "e1b435d4-4a0a-8684-4d07-8c9173f93e6b"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`TriggerRadius`» Id«`99 f118fa11-49b5-82f3-831f-1e8371943bcd`» LinkedTo«`47 1cd2d164-4daa-5630-d72a-ad975fdc093e`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4546,12 +4441,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PresetYaw",
-            "guid 'MemberGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
+            "guid native 'MemberGuid'": "631d51ea-4e4e-db68-b43f-85824d74bf69",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid'": "54b4dd04-4af7-5a52-eeaf-b88afc6c9a62"
+          "guid native 'NodeGuid'": "54b4dd04-4af7-5a52-eeaf-b88afc6c9a62"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`PresetYaw`» Id«`100 72d4e573-4a89-8521-c584-4398d3443ced`» LinkedTo«`46 d909256e-4a05-e146-f8a7-1bba74b61b70`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4571,12 +4466,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "PresetPitch",
-            "guid 'MemberGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
+            "guid native 'MemberGuid'": "b57888bb-4490-6f96-eef2-b2a89782cb12",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 784,
           "int 'NodePosY'": 240,
-          "guid 'NodeGuid'": "600bcdc1-4448-638a-323d-0aa5fa2290ff"
+          "guid native 'NodeGuid'": "600bcdc1-4448-638a-323d-0aa5fa2290ff"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`PresetPitch`» Id«`101 4801bcbd-4cf9-e098-b307-a2b251e603d8`» LinkedTo«`46 babb8107-4b02-ddf6-ae15-c0bcfa4af29a`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4596,12 +4491,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "UsePresetAngle",
-            "guid 'MemberGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
+            "guid native 'MemberGuid'": "7a8d88a8-4fcb-d7cb-19f7-80ba8a9a6411",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 48,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "a488075e-4345-12cb-2047-da982b2c5213"
+          "guid native 'NodeGuid'": "a488075e-4345-12cb-2047-da982b2c5213"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`UsePresetAngle`» Id«`102 39dbb756-40a2-14db-8270-82ae0dcb9a4e`» LinkedTo«`69 5f37a56f-46d2-b91a-edc6-a1bc0950bdaa`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4625,7 +4520,7 @@
           },
           "int 'NodePosX'": 624,
           "int 'NodePosY'": -80,
-          "guid 'NodeGuid'": "2684f3ab-4b36-dda5-8d4c-fcac61f8a754"
+          "guid native 'NodeGuid'": "2684f3ab-4b36-dda5-8d4c-fcac61f8a754"
         },
         "Pins": [
           "output-pin Type«`object obj(`-26`)`» Name«`Arrow`» Id«`103 55e8a796-482d-f8dd-0bdb-c7b5ce5d40f6`» LinkedTo«`45 aed41ef1-459c-63ce-add5-869b6a96f15b | 46 b5cf8a46-43d5-3a3a-bd17-9b85dc4a9409`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4645,12 +4540,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "AlignmentActive",
-            "guid 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
+            "guid native 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 3632,
           "int 'NodePosY'": 224,
-          "guid 'NodeGuid'": "4617739d-4ed1-4ad1-cdb6-1b911e0d5d7f"
+          "guid native 'NodeGuid'": "4617739d-4ed1-4ad1-cdb6-1b911e0d5d7f"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`104 09567030-4528-17bb-3f9f-e2898c265603`» LinkedTo«`68 61143929-4c9b-594f-6ed6-10ae60964aea`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4673,12 +4568,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "AlignmentActive",
-            "guid 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
+            "guid native 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 2161,
           "int 'NodePosY'": 1440,
-          "guid 'NodeGuid'": "1e9d0953-4a2c-82cd-04cc-fcba8d988c4c"
+          "guid native 'NodeGuid'": "1e9d0953-4a2c-82cd-04cc-fcba8d988c4c"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`105 5af13602-4734-4445-ab04-ac98947f07b4`» LinkedTo«`64 aba6878d-4ddc-c67b-1004-99b771729c2c`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4701,12 +4596,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "AlignmentActive",
-            "guid 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
+            "guid native 'MemberGuid'": "378bf8c8-43b6-6b26-83b2-908da23bea74",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1072,
           "int 'NodePosY'": 848,
-          "guid 'NodeGuid'": "13b606ef-41c8-7f92-d198-648d3756763c"
+          "guid native 'NodeGuid'": "13b606ef-41c8-7f92-d198-648d3756763c"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`106 10f54e09-4c5f-9365-e9e1-6dbe4488d025`» LinkedTo«`50 444ae0af-4ac0-709a-239d-d6b2e494abe2`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -4728,7 +4623,7 @@
         "__type": "USceneComponent",
         "Members": {
           "bool 'bVisualizeComponent'": true,
-          "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 138
+          "byte64 (EComponentMobility) TypeNamespace(/Script/Engine) 'Mobility'": 138
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []
@@ -4766,7 +4661,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "bff39697-4b1c-e8bf-9274-30a5e8a04355",
+          "guid native 'VariableGuid'": "bff39697-4b1c-e8bf-9274-30a5e8a04355",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -4791,7 +4686,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "a3248fd9-4d29-b28a-934a-a7b85ca4a488",
+          "guid native 'VariableGuid'": "a3248fd9-4d29-b28a-934a-a7b85ca4a488",
           "name 'InternalVariableName'": "Arrow"
         }
       }
@@ -4817,7 +4712,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "112 110",
-          "guid 'VariableGuid'": "c15b982e-44a0-fe07-592c-fc95c9a9527a",
+          "guid native 'VariableGuid'": "c15b982e-44a0-fe07-592c-fc95c9a9527a",
           "name 'InternalVariableName'": "Billboard"
         }
       }
@@ -4842,7 +4737,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "50a72c7a-44b5-50b8-e796-5fbd10c24b50",
+          "guid native 'VariableGuid'": "50a72c7a-44b5-50b8-e796-5fbd10c24b50",
           "name 'InternalVariableName'": "Sphere"
         }
       }
@@ -4878,53 +4773,44 @@
           "struct BodyInstance 1045 'BodyInstance'": {
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 955 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 886,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "WorldStatic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "WorldDynamic",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "Pawn",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 140
-                  },
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "PhysicsBody",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "Vehicle",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "Destructible",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  },
-                  {
-                    "name 'Channel'": "Trigger",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 139
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(886) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "WorldStatic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "WorldDynamic",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "Pawn",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 140
+                },
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "PhysicsBody",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "Vehicle",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "Destructible",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                },
+                {
+                  "name 'Channel'": "Trigger",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 139
+                }
+              ]
             }
           },
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {

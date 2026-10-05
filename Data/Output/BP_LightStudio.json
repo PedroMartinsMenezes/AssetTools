@@ -1332,1673 +1332,1007 @@
           "obj[] 'UbergraphPages'": "10",
           "obj[] 'FunctionGraphs'": "13 9 12 11 8",
           "obj[] 'ComponentTemplates'": "6 7 1 2",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 30393,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "NewVariables",
-              "Type": "StructProperty",
-              "Size": 30340,
-              "StructName": "BPVariableDescription"
+          "struct[] Size(30393) MaybeInnerTag(BPVariableDescription 30340  ) 'NewVariables'": [
+            {
+              "name 'VarName'": "GlobalBrightness",
+              "guid 'VarGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Global Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "Value": "text-base header=`None` Key=`A06F20C343EA3A04799F05B58F9CCDF2` Namespace=`\\0` SourceString=`Global`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
             },
-            "Value": [
-              {
-                "name 'VarName'": "GlobalBrightness",
-                "guid 'VarGuid'": "b534a3f1-4019-fa0e-fdcc-d28258b6bc7a",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Global Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "Value": "text-base header=`None` Key=`A06F20C343EA3A04799F05B58F9CCDF2` Namespace=`\\0` SourceString=`Global`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+            {
+              "name 'VarName'": "Use_HDRI",
+              "guid 'VarGuid'": "53b41b5d-4361-eb54-d7dd-53a079dd8e1f",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Use HDRI",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`9665DE5E48D412A6AB810A82CE5651BD` Namespace=`\\0` SourceString=`HDRI`"
               },
-              {
-                "name 'VarName'": "Use_HDRI",
-                "guid 'VarGuid'": "53b41b5d-4361-eb54-d7dd-53a079dd8e1f",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Use HDRI",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`9665DE5E48D412A6AB810A82CE5651BD` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "UseSunLight",
-                "guid 'VarGuid'": "2e97b9bc-4602-7f79-084a-6abe4da0d35e",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Use Sun Light",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`1A2E9ABB455D7A90670BFDAB65FD67AB` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "SunBrightness",
-                "guid 'VarGuid'": "889375e4-4160-e51d-1e05-bd9cf29e1dcb",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Sun Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`BD5A79824C2CC23D566426A20DBE33AD` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "SunTint",
-                "guid 'VarGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
-                "string 'FriendlyName'": "Sun Tint",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`F47919A44547793E009BD78FA04CF393` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "StationaryLightForSun",
-                "guid 'VarGuid'": "d42af7d8-482f-4714-de1a-50996d7204eb",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Stationary Light for Sun",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`A0B97A314E1C277AB2BED7992A634CB2` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "SunDirectionalLight",
-                "guid 'VarGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-24`)",
-                "string 'FriendlyName'": "Sun Directional Light",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`4075BB8B48641DD907FB8C960B0D74C0` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "UseAtmosphere",
-                "guid 'VarGuid'": "4877fe6d-4dcb-e9f8-d64a-52b671eee283",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Use Atmosphere",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`F8B99FF64676008D08F75FB356C09199` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereBrightness",
-                "guid 'VarGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`831410354CF12E772BFB8B84952EA38A` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereTint",
-                "guid 'VarGuid'": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
-                "string 'FriendlyName'": "Atmosphere Tint",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`670295ED4D6AFBAA061349B9C0D41811` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "PrevisArrowMaterial",
-                "guid 'VarGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
-                "string 'FriendlyName'": "Previs Arrow Material",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`81743CF0404E0AE9A5BFE3862C186804` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "LightColor",
-                "guid 'VarGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
-                "string 'FriendlyName'": "Light Color",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`13CA2D804928D6BD8D5F628CF3F7411B` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "SunColorCurve",
-                "guid 'VarGuid'": "f52475bd-4483-1b9b-743f-1fb28c55f29d",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-23`)",
-                "string 'FriendlyName'": "Sun Color Curve",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`720705744E0A67FC02EDACB8957E95F2` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "OverrideSunColor",
-                "guid 'VarGuid'": "8af81d70-4cca-875a-2b39-78aed8bccbf8",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Override Sun Color",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`0E82F6A74D8BC5C1034E728541FF2D40` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereDensityMultiplier",
-                "guid 'VarGuid'": "8e03d106-4baa-ed8b-6379-ea8ccc2133d1",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Density Multiplier",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`B938FC4C4E8838AD3859DB839AF7470A` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereAltitude",
-                "guid 'VarGuid'": "d293d5cd-40db-55f5-4010-d1862e5b9684",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Altitude",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`B0CE47B242DCCE72BBAE978C93296E68` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "DisableSunDisk",
-                "guid 'VarGuid'": "75ae9e1f-482b-a0dd-a866-93aff9c69ba1",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Disable Sun Disk",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`23A04B794B44500638177BA36940A3C3` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "UseFog",
-                "guid 'VarGuid'": "065d7e83-4510-76eb-5d22-c9bc7117c048",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Use Fog",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`51F5558D44809076CCD2ABAE2F4F7ABF` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogBrightness",
-                "guid 'VarGuid'": "cc070653-4cbd-a998-a8cd-30b35c6d4908",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`54B8DC3F4A496B906D44A58F24BF6ABE` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogTint",
-                "guid 'VarGuid'": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
-                "string 'FriendlyName'": "Fog Tint",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`B550CB9741BCC46D9C0A27A94DADA01E` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogAltitude",
-                "guid 'VarGuid'": "9cfc5cb7-48a6-3f1d-ae73-88b602e3e059",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Altitude",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`1C670C1E492D609C0A10438915F25311` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogMaxOpacity",
-                "guid 'VarGuid'": "bb638858-4e13-7b83-42c6-56ad34f64693",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Max Opacity",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`8E000DD34F643AE55C94DB96156F3012` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogHeightFalloff",
-                "guid 'VarGuid'": "192eaf5e-4f08-b760-1126-e58af5d1bf57",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Height Falloff",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`89228E82496ADA8CF3BB0EA9D04A58C8` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogDensity",
-                "guid 'VarGuid'": "7c31fab5-4277-2ac2-37da-78aa8040d1e3",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Density",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`3AE88B9D4A645FED21F883AFFF600F9D` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogBrightnessCurve",
-                "guid 'VarGuid'": "52d69615-4521-7b3a-9b81-b890bba9ea5b",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-22`)",
-                "string 'FriendlyName'": "Fog Brightness Curve",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`2E595A6146EFCB1AA215C4AD62C7CCDC` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "FogStartDistance",
-                "guid 'VarGuid'": "8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Fog Start Distance",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`B032A6A745E4CE04F009BC884C94D103` Namespace=`\\0` SourceString=`Fog`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "DisableGroundScattering",
-                "guid 'VarGuid'": "6ad3bb01-48fc-ef07-a856-52a0a244117d",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Disable Ground Scattering",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`07AD08874EEB5D22E7056C89C0079F38` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereDistanceScale",
-                "guid 'VarGuid'": "873f2ce8-4c36-b25f-5f0c-f19666b6c2c5",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Distance Scale",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`98CA7E9A4AD8D4299DA6A1A633796C48` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "SkyboxMaterial",
-                "guid 'VarGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
-                "string 'FriendlyName'": "Skybox Material",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`82067DA043F28F4222B15FAB50C2C6D9` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HDRI_Brightness",
-                "guid 'VarGuid'": "cc85d4e9-4de8-835b-83f4-5c890197f4bc",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "HDRI Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`C8E4A0E34BF3F8E1C4A252A57CB932F9` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HDRI_Contrast",
-                "guid 'VarGuid'": "3e26660f-46a2-e559-1448-6d983ff0c6fe",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "HDRI Contrast",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`F20F7AD540E4CE6B2C242791C2037FFF` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HDRI_Tint",
-                "guid 'VarGuid'": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
-                "string 'FriendlyName'": "HDRI Tint",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`81F0F73E47ACFAB7B90634A86CCED08B` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HDRI_Cubemap",
-                "guid 'VarGuid'": "50c68971-4b56-38ff-9bf8-e1b006ce0a0f",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-39`)",
-                "string 'FriendlyName'": "HDRI Cubemap",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`B595EA9D4709ADF72C899B84DE9BA07C` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HDRI_Rotation",
-                "guid 'VarGuid'": "ade074f9-4ea0-52d5-9398-10bcbb2d0122",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "HDRI Rotation",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`427F483D4CF93D40A862BCBDC7811C58` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereOpacityHorizon",
-                "guid 'VarGuid'": "d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Opacity Horizon",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`8C7446CC46BA8F0FAFA9D69A080506D3` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereOpacityZenith",
-                "guid 'VarGuid'": "bc38043d-4343-1754-30bd-3aa77303275a",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Opacity Zenith",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`None` Key=`2D505EA145EC69163A5724A95070E574` Namespace=`\\0` SourceString=`HDRI`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "HighDensityAtmosphere",
-                "guid 'VarGuid'": "41c593a0-4ba1-47e7-1ce4-b594972df5ed",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "High Density Atmosphere",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`FEAF3C454DB818FD581DFDB7B38FA009` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphericFog",
-                "guid 'VarGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-19`)",
-                "string 'FriendlyName'": "Atmospheric Fog",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`D634E9B34017B59E0ABE22AE8047AE14` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "UseSkylight",
-                "guid 'VarGuid'": "160b4703-4c72-62c6-eea7-5fbd477b3899",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Use Skylight",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 60,
-                  "Value": "text-base header=`None` Key=`E10F718340B23CDAC85F3F98274C9604` Namespace=`\\0` SourceString=`SkyLight`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "Shadowdistance",
-                "guid 'VarGuid'": "10b2b565-4a70-330d-7937-27baa46b6bb0",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Shadowdistance",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`631300C44EDECA632A2910B7D4BCB60B` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "LightShaftBloom",
-                "guid 'VarGuid'": "81d8a358-4c98-14f9-3c8a-28bbb88a9c8c",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Light Shaft Bloom",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`76A2D52F4E4D614A1D14DD9708D0E482` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "LightShaftOcclusion",
-                "guid 'VarGuid'": "9d886557-4d6d-288c-38ac-7fa404e3f344",
-                "struct EdGraphPinType 65 'VarType'": "bool",
-                "string 'FriendlyName'": "Light Shaft Occlusion",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`05CF58B94CFA981976E0B1B532A50545` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "OcclusionMaskDarkness",
-                "guid 'VarGuid'": "43306466-4da0-1920-0e1d-3eb3fc6a66bd",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Occlusion Mask Darkness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`639AFCBC451D106B1DEF41AB2E82F554` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "BloomScale",
-                "guid 'VarGuid'": "ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Bloom Scale",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`2F7E14D34C88BAD7D92F8B9076A6BB09` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "BloomThreshold",
-                "guid 'VarGuid'": "1c5bab01-40c0-92bb-9b8b-44a6f13db12a",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Bloom Threshold",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`8CA6D72F4420C233A40EAC919B062B11` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "BloomTint",
-                "guid 'VarGuid'": "ef774934-4224-db6b-4a33-769b09425cf2",
-                "struct EdGraphPinType 65 'VarType'": "struct obj(`-116`)",
-                "string 'FriendlyName'": "Bloom Tint",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 63,
-                  "Value": "text-base header=`None` Key=`33698AF64319265DA76B8BB6C3C9F11C` Namespace=`\\0` SourceString=`LightShafts`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereFogMultiplier",
-                "guid 'VarGuid'": "1f3bf6ed-49c5-cbd4-cee5-4280988fbde1",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Fog Multiplier",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`15D87B5147DA4A71402AA398C98DFDE1` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereDensityHeight",
-                "guid 'VarGuid'": "59086404-49c3-cbdb-fe91-219f04ac5dcb",
-                "struct EdGraphPinType 65 'VarType'": "float",
-                "string 'FriendlyName'": "Atmosphere Density Height",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`EA7411BD4B0FB5DDAB6C7899C4A683D6` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereMaxScatteringOrder",
-                "guid 'VarGuid'": "ea61632e-4960-ae59-1b96-b9a18444c606",
-                "struct EdGraphPinType 65 'VarType'": "int",
-                "string 'FriendlyName'": "Atmosphere Max Scattering Order",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`F90B7CEE45C51C8FF444EE9EADC66665` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "AtmosphereAltitudeSampleNumber",
-                "guid 'VarGuid'": "2d5b3e7f-4d53-13ec-49bf-25b5f9149634",
-                "struct EdGraphPinType 65 'VarType'": "int",
-                "string 'FriendlyName'": "Atmosphere Altitude Sample Number",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 62,
-                  "Value": "text-base header=`None` Key=`92EC6D75429279805868298F96AA4D47` Namespace=`\\0` SourceString=`Atmosphere`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "LightFunctionMaterial",
-                "guid 'VarGuid'": "95e17178-4350-ec83-c8b6-a7925237571f",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-32`)",
-                "string 'FriendlyName'": "Light Function Material",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "Value": "text-base header=`None` Key=`D49B6CA64F870940E93A56A71E38AE87` Namespace=`\\0` SourceString=`Sun`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "MIC_Black",
-                "guid 'VarGuid'": "9e65df5f-4dd9-cf65-0611-1bb8baf54fc3",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
-                "string 'FriendlyName'": "MIC Black",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`374342B648ADE9526621A582CF825A48` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "MIC_HDRI",
-                "guid 'VarGuid'": "2996f42d-4aa8-3a57-8754-6daa8c60a9b5",
-                "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
-                "string 'FriendlyName'": "MIC HDRI",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "Value": "text-base header=`None` Key=`32FCF11A4855022603C05AB1E06C702C` Namespace=`\\0` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 53,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 0,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 84,
-            "InnerType": "NameProperty",
-            "Value": [
-              "BP Day Light",
-              "Default",
-              "Global",
-              "HDRI",
-              "Sun",
-              "Atmosphere",
-              "Fog",
-              "Sky Light",
-              "Light Shafts",
-              "None"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 1084,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 1031,
-              "StructName": "EditedDocumentInfo"
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
             },
-            "Value": [
-              {
-                "struct SoftObjectPath 31 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "NormalizedSunAngle",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "-1216.253662109375 -285.4281005859375",
-                "float 'SavedZoomAmount'": 0.75
+            {
+              "name 'VarName'": "UseSunLight",
+              "guid 'VarGuid'": "2e97b9bc-4602-7f79-084a-6abe4da0d35e",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Use Sun Light",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`1A2E9ABB455D7A90670BFDAB65FD67AB` Namespace=`\\0` SourceString=`Sun`"
               },
-              {
-                "struct SoftObjectPath 23 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "1301.662109375 -10780.37890625",
-                "float 'SavedZoomAmount'": 0.2
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SunBrightness",
+              "guid 'VarGuid'": "889375e4-4160-e51d-1e05-bd9cf29e1dcb",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Sun Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`BD5A79824C2CC23D566426A20DBE33AD` Namespace=`\\0` SourceString=`Sun`"
               },
-              {
-                "struct SoftObjectPath 24 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "SunMobility",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "-515.0170288085938 -580.7666625976562",
-                "float 'SavedZoomAmount'": 0.75
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SunTint",
+              "guid 'VarGuid'": "60ecbc61-4651-d0e9-8db0-fea41386759a",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
+              "string 'FriendlyName'": "Sun Tint",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`F47919A44547793E009BD78FA04CF393` Namespace=`\\0` SourceString=`Sun`"
               },
-              {
-                "struct SoftObjectPath 30 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "AtmosphereDensity",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "-108.1142349243164 -386.8019714355469",
-                "float 'SavedZoomAmount'": 0.675
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "StationaryLightForSun",
+              "guid 'VarGuid'": "d42af7d8-482f-4714-de1a-50996d7204eb",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Stationary Light for Sun",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`A0B97A314E1C277AB2BED7992A634CB2` Namespace=`\\0` SourceString=`Sun`"
               },
-              {
-                "struct SoftObjectPath 30 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "CalculateSunColor",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "-822.1336669921875 -1432.414794921875",
-                "float 'SavedZoomAmount'": 0.25
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SunDirectionalLight",
+              "guid 'VarGuid'": "78fd5886-4eec-16ae-b6f6-8f93c2b8a0b1",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-24`)",
+              "string 'FriendlyName'": "Sun Directional Light",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`4075BB8B48641DD907FB8C960B0D74C0` Namespace=`\\0` SourceString=`Default`"
               },
-              {
-                "struct SoftObjectPath 35 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
-                  "SubPathString": "UserConstructionScript",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "UseAtmosphere",
+              "guid 'VarGuid'": "4877fe6d-4dcb-e9f8-d64a-52b671eee283",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Use Atmosphere",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`F8B99FF64676008D08F75FB356C09199` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereBrightness",
+              "guid 'VarGuid'": "ab92cacf-408b-5a32-8e88-b2a15d2a2a68",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`831410354CF12E772BFB8B84952EA38A` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereTint",
+              "guid 'VarGuid'": "2f3b7995-4025-1597-c5ed-52ac97c9d18f",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
+              "string 'FriendlyName'": "Atmosphere Tint",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`670295ED4D6AFBAA061349B9C0D41811` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "PrevisArrowMaterial",
+              "guid 'VarGuid'": "75139a51-464c-4c0a-6e6c-e592f39ee997",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
+              "string 'FriendlyName'": "Previs Arrow Material",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`81743CF0404E0AE9A5BFE3862C186804` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "LightColor",
+              "guid 'VarGuid'": "4e53c88b-4363-63dd-0d92-28a6e6cc2f6a",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
+              "string 'FriendlyName'": "Light Color",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`13CA2D804928D6BD8D5F628CF3F7411B` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SunColorCurve",
+              "guid 'VarGuid'": "f52475bd-4483-1b9b-743f-1fb28c55f29d",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-23`)",
+              "string 'FriendlyName'": "Sun Color Curve",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`720705744E0A67FC02EDACB8957E95F2` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "OverrideSunColor",
+              "guid 'VarGuid'": "8af81d70-4cca-875a-2b39-78aed8bccbf8",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Override Sun Color",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`0E82F6A74D8BC5C1034E728541FF2D40` Namespace=`\\0` SourceString=`Sun`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereDensityMultiplier",
+              "guid 'VarGuid'": "8e03d106-4baa-ed8b-6379-ea8ccc2133d1",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Density Multiplier",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`B938FC4C4E8838AD3859DB839AF7470A` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereAltitude",
+              "guid 'VarGuid'": "d293d5cd-40db-55f5-4010-d1862e5b9684",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Altitude",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`B0CE47B242DCCE72BBAE978C93296E68` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "DisableSunDisk",
+              "guid 'VarGuid'": "75ae9e1f-482b-a0dd-a866-93aff9c69ba1",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Disable Sun Disk",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`23A04B794B44500638177BA36940A3C3` Namespace=`\\0` SourceString=`Sun`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "UseFog",
+              "guid 'VarGuid'": "065d7e83-4510-76eb-5d22-c9bc7117c048",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Use Fog",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`51F5558D44809076CCD2ABAE2F4F7ABF` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogBrightness",
+              "guid 'VarGuid'": "cc070653-4cbd-a998-a8cd-30b35c6d4908",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`54B8DC3F4A496B906D44A58F24BF6ABE` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogTint",
+              "guid 'VarGuid'": "74b79417-4ae6-e21b-1abc-fdb03c5bb6d5",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
+              "string 'FriendlyName'": "Fog Tint",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`B550CB9741BCC46D9C0A27A94DADA01E` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogAltitude",
+              "guid 'VarGuid'": "9cfc5cb7-48a6-3f1d-ae73-88b602e3e059",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Altitude",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`1C670C1E492D609C0A10438915F25311` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogMaxOpacity",
+              "guid 'VarGuid'": "bb638858-4e13-7b83-42c6-56ad34f64693",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Max Opacity",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`8E000DD34F643AE55C94DB96156F3012` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogHeightFalloff",
+              "guid 'VarGuid'": "192eaf5e-4f08-b760-1126-e58af5d1bf57",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Height Falloff",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`89228E82496ADA8CF3BB0EA9D04A58C8` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogDensity",
+              "guid 'VarGuid'": "7c31fab5-4277-2ac2-37da-78aa8040d1e3",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Density",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`3AE88B9D4A645FED21F883AFFF600F9D` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogBrightnessCurve",
+              "guid 'VarGuid'": "52d69615-4521-7b3a-9b81-b890bba9ea5b",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-22`)",
+              "string 'FriendlyName'": "Fog Brightness Curve",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`2E595A6146EFCB1AA215C4AD62C7CCDC` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "FogStartDistance",
+              "guid 'VarGuid'": "8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Fog Start Distance",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`B032A6A745E4CE04F009BC884C94D103` Namespace=`\\0` SourceString=`Fog`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "DisableGroundScattering",
+              "guid 'VarGuid'": "6ad3bb01-48fc-ef07-a856-52a0a244117d",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Disable Ground Scattering",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`07AD08874EEB5D22E7056C89C0079F38` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereDistanceScale",
+              "guid 'VarGuid'": "873f2ce8-4c36-b25f-5f0c-f19666b6c2c5",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Distance Scale",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`98CA7E9A4AD8D4299DA6A1A633796C48` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "SkyboxMaterial",
+              "guid 'VarGuid'": "9fe94183-41fd-4265-332e-7c9ea05f0c99",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-31`)",
+              "string 'FriendlyName'": "Skybox Material",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`82067DA043F28F4222B15FAB50C2C6D9` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HDRI_Brightness",
+              "guid 'VarGuid'": "cc85d4e9-4de8-835b-83f4-5c890197f4bc",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "HDRI Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`C8E4A0E34BF3F8E1C4A252A57CB932F9` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HDRI_Contrast",
+              "guid 'VarGuid'": "3e26660f-46a2-e559-1448-6d983ff0c6fe",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "HDRI Contrast",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`F20F7AD540E4CE6B2C242791C2037FFF` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HDRI_Tint",
+              "guid 'VarGuid'": "da60cf40-4872-1ab4-1438-1ab9d55d9072",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-117`)",
+              "string 'FriendlyName'": "HDRI Tint",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`81F0F73E47ACFAB7B90634A86CCED08B` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HDRI_Cubemap",
+              "guid 'VarGuid'": "50c68971-4b56-38ff-9bf8-e1b006ce0a0f",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-39`)",
+              "string 'FriendlyName'": "HDRI Cubemap",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`B595EA9D4709ADF72C899B84DE9BA07C` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HDRI_Rotation",
+              "guid 'VarGuid'": "ade074f9-4ea0-52d5-9398-10bcbb2d0122",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "HDRI Rotation",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`427F483D4CF93D40A862BCBDC7811C58` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereOpacityHorizon",
+              "guid 'VarGuid'": "d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Opacity Horizon",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`8C7446CC46BA8F0FAFA9D69A080506D3` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereOpacityZenith",
+              "guid 'VarGuid'": "bc38043d-4343-1754-30bd-3aa77303275a",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Opacity Zenith",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`None` Key=`2D505EA145EC69163A5724A95070E574` Namespace=`\\0` SourceString=`HDRI`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "HighDensityAtmosphere",
+              "guid 'VarGuid'": "41c593a0-4ba1-47e7-1ce4-b594972df5ed",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "High Density Atmosphere",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`FEAF3C454DB818FD581DFDB7B38FA009` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphericFog",
+              "guid 'VarGuid'": "ce86142d-400e-4b5d-bdd9-3a8f2e1eab79",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-19`)",
+              "string 'FriendlyName'": "Atmospheric Fog",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`D634E9B34017B59E0ABE22AE8047AE14` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "UseSkylight",
+              "guid 'VarGuid'": "160b4703-4c72-62c6-eea7-5fbd477b3899",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Use Skylight",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 60,
+                "Value": "text-base header=`None` Key=`E10F718340B23CDAC85F3F98274C9604` Namespace=`\\0` SourceString=`SkyLight`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Shadowdistance",
+              "guid 'VarGuid'": "10b2b565-4a70-330d-7937-27baa46b6bb0",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Shadowdistance",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`631300C44EDECA632A2910B7D4BCB60B` Namespace=`\\0` SourceString=`Sun`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "LightShaftBloom",
+              "guid 'VarGuid'": "81d8a358-4c98-14f9-3c8a-28bbb88a9c8c",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Light Shaft Bloom",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`76A2D52F4E4D614A1D14DD9708D0E482` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "LightShaftOcclusion",
+              "guid 'VarGuid'": "9d886557-4d6d-288c-38ac-7fa404e3f344",
+              "struct EdGraphPinType 65 'VarType'": "bool",
+              "string 'FriendlyName'": "Light Shaft Occlusion",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`05CF58B94CFA981976E0B1B532A50545` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "OcclusionMaskDarkness",
+              "guid 'VarGuid'": "43306466-4da0-1920-0e1d-3eb3fc6a66bd",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Occlusion Mask Darkness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`639AFCBC451D106B1DEF41AB2E82F554` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "BloomScale",
+              "guid 'VarGuid'": "ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Bloom Scale",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`2F7E14D34C88BAD7D92F8B9076A6BB09` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "BloomThreshold",
+              "guid 'VarGuid'": "1c5bab01-40c0-92bb-9b8b-44a6f13db12a",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Bloom Threshold",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`8CA6D72F4420C233A40EAC919B062B11` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "BloomTint",
+              "guid 'VarGuid'": "ef774934-4224-db6b-4a33-769b09425cf2",
+              "struct EdGraphPinType 65 'VarType'": "struct obj(`-116`)",
+              "string 'FriendlyName'": "Bloom Tint",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 63,
+                "Value": "text-base header=`None` Key=`33698AF64319265DA76B8BB6C3C9F11C` Namespace=`\\0` SourceString=`LightShafts`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereFogMultiplier",
+              "guid 'VarGuid'": "1f3bf6ed-49c5-cbd4-cee5-4280988fbde1",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Fog Multiplier",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`15D87B5147DA4A71402AA398C98DFDE1` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereDensityHeight",
+              "guid 'VarGuid'": "59086404-49c3-cbdb-fe91-219f04ac5dcb",
+              "struct EdGraphPinType 65 'VarType'": "float",
+              "string 'FriendlyName'": "Atmosphere Density Height",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`EA7411BD4B0FB5DDAB6C7899C4A683D6` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereMaxScatteringOrder",
+              "guid 'VarGuid'": "ea61632e-4960-ae59-1b96-b9a18444c606",
+              "struct EdGraphPinType 65 'VarType'": "int",
+              "string 'FriendlyName'": "Atmosphere Max Scattering Order",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`F90B7CEE45C51C8FF444EE9EADC66665` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "AtmosphereAltitudeSampleNumber",
+              "guid 'VarGuid'": "2d5b3e7f-4d53-13ec-49bf-25b5f9149634",
+              "struct EdGraphPinType 65 'VarType'": "int",
+              "string 'FriendlyName'": "Atmosphere Altitude Sample Number",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 62,
+                "Value": "text-base header=`None` Key=`92EC6D75429279805868298F96AA4D47` Namespace=`\\0` SourceString=`Atmosphere`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "LightFunctionMaterial",
+              "guid 'VarGuid'": "95e17178-4350-ec83-c8b6-a7925237571f",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-32`)",
+              "string 'FriendlyName'": "Light Function Material",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "Value": "text-base header=`None` Key=`D49B6CA64F870940E93A56A71E38AE87` Namespace=`\\0` SourceString=`Sun`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "MIC_Black",
+              "guid 'VarGuid'": "9e65df5f-4dd9-cf65-0611-1bb8baf54fc3",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
+              "string 'FriendlyName'": "MIC Black",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`374342B648ADE9526621A582CF825A48` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "MIC_HDRI",
+              "guid 'VarGuid'": "2996f42d-4aa8-3a57-8754-6daa8c60a9b5",
+              "struct EdGraphPinType 65 'VarType'": "object obj(`-30`)",
+              "string 'FriendlyName'": "MIC HDRI",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "Value": "text-base header=`None` Key=`32FCF11A4855022603C05AB1E06C702C` Namespace=`\\0` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 135,
+              "struct[] Size(53) MaybeInnerTag(BPVariableMetaDataEntry 0  ) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "BP Day Light",
+            "Default",
+            "Global",
+            "HDRI",
+            "Sun",
+            "Atmosphere",
+            "Fog",
+            "Sky Light",
+            "Light Shafts",
+            "None"
+          ],
+          "struct[] Size(1084) MaybeInnerTag(EditedDocumentInfo 1031  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 31 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "NormalizedSunAngle",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
                 },
-                "Vector2D 'SavedViewOffset'": "4840.76708984375 301.88018798828125",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-1216.253662109375 -285.4281005859375",
+              "float 'SavedZoomAmount'": 0.75
+            },
+            {
+              "struct SoftObjectPath 23 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "1301.662109375 -10780.37890625",
+              "float 'SavedZoomAmount'": 0.2
+            },
+            {
+              "struct SoftObjectPath 24 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "SunMobility",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-515.0170288085938 -580.7666625976562",
+              "float 'SavedZoomAmount'": 0.75
+            },
+            {
+              "struct SoftObjectPath 30 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "AtmosphereDensity",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-108.1142349243164 -386.8019714355469",
+              "float 'SavedZoomAmount'": 0.675
+            },
+            {
+              "struct SoftObjectPath 30 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "CalculateSunColor",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-822.1336669921875 -1432.414794921875",
+              "float 'SavedZoomAmount'": 0.25
+            },
+            {
+              "struct SoftObjectPath 35 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio",
+                "SubPathString": "UserConstructionScript",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/BP_LightStudio.BP_LightStudio"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "4840.76708984375 301.88018798828125",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "ComponentTemplateNameIndex": {
             "Name": "ComponentTemplateNameIndex",
             "Type": "MapProperty",
@@ -3278,42 +2612,42 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "float 'GlobalBrightness' {b534a3f1-4019-fa0e-fdcc-d28258b6bc7a}": 1,
-          "bool 'UseSunLight' {2e97b9bc-4602-7f79-084a-6abe4da0d35e}": true,
-          "float 'SunBrightness' {889375e4-4160-e51d-1e05-bd9cf29e1dcb}": 1,
-          "LinearColor 'SunTint' {60ecbc61-4651-d0e9-8db0-fea41386759a}": "1 1 1 1",
-          "bool 'UseAtmosphere' {4877fe6d-4dcb-e9f8-d64a-52b671eee283}": true,
-          "float 'AtmosphereBrightness' {ab92cacf-408b-5a32-8e88-b2a15d2a2a68}": 1,
-          "LinearColor 'AtmosphereTint' {2f3b7995-4025-1597-c5ed-52ac97c9d18f}": "1 1 1 1",
-          "LinearColor 'LightColor' {4e53c88b-4363-63dd-0d92-28a6e6cc2f6a}": "0 0 0 0",
-          "obj 'SunColorCurve' {f52475bd-4483-1b9b-743f-1fb28c55f29d}": -43,
-          "float 'AtmosphereDensityMultiplier' {8e03d106-4baa-ed8b-6379-ea8ccc2133d1}": 1,
-          "float 'AtmosphereAltitude' {d293d5cd-40db-55f5-4010-d1862e5b9684}": 100000,
-          "float 'FogBrightness' {cc070653-4cbd-a998-a8cd-30b35c6d4908}": 1,
-          "LinearColor 'FogTint' {74b79417-4ae6-e21b-1abc-fdb03c5bb6d5}": "0.5 0.5 0.5 1",
-          "float 'FogMaxOpacity' {bb638858-4e13-7b83-42c6-56ad34f64693}": 1,
-          "float 'FogHeightFalloff' {192eaf5e-4f08-b760-1126-e58af5d1bf57}": 0.2,
-          "float 'FogDensity' {7c31fab5-4277-2ac2-37da-78aa8040d1e3}": 0.02,
-          "obj 'FogBrightnessCurve' {52d69615-4521-7b3a-9b81-b890bba9ea5b}": -42,
-          "float 'FogStartDistance' {8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d}": 3000,
-          "float 'AtmosphereDistanceScale' {873f2ce8-4c36-b25f-5f0c-f19666b6c2c5}": 1,
-          "float 'HDRI_Brightness' {cc85d4e9-4de8-835b-83f4-5c890197f4bc}": 1,
-          "float 'HDRI_Contrast' {3e26660f-46a2-e559-1448-6d983ff0c6fe}": 1,
-          "LinearColor 'HDRI_Tint' {da60cf40-4872-1ab4-1438-1ab9d55d9072}": "1 1 1 1",
-          "obj 'HDRI_Cubemap' {50c68971-4b56-38ff-9bf8-e1b006ce0a0f}": -124,
-          "float 'AtmosphereOpacityHorizon' {d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515}": 1,
-          "float 'AtmosphereOpacityZenith' {bc38043d-4343-1754-30bd-3aa77303275a}": 1,
-          "bool 'HighDensityAtmosphere' {41c593a0-4ba1-47e7-1ce4-b594972df5ed}": true,
-          "bool 'UseSkylight' {160b4703-4c72-62c6-eea7-5fbd477b3899}": true,
-          "float 'OcclusionMaskDarkness' {43306466-4da0-1920-0e1d-3eb3fc6a66bd}": 0.05,
-          "float 'BloomScale' {ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99}": 0.2,
+          "float {b534a3f1-4019-fa0e-fdcc-d28258b6bc7a} 'GlobalBrightness'": 1,
+          "bool {2e97b9bc-4602-7f79-084a-6abe4da0d35e} 'UseSunLight'": true,
+          "float {889375e4-4160-e51d-1e05-bd9cf29e1dcb} 'SunBrightness'": 1,
+          "LinearColor {60ecbc61-4651-d0e9-8db0-fea41386759a} 'SunTint'": "1 1 1 1",
+          "bool {4877fe6d-4dcb-e9f8-d64a-52b671eee283} 'UseAtmosphere'": true,
+          "float {ab92cacf-408b-5a32-8e88-b2a15d2a2a68} 'AtmosphereBrightness'": 1,
+          "LinearColor {2f3b7995-4025-1597-c5ed-52ac97c9d18f} 'AtmosphereTint'": "1 1 1 1",
+          "LinearColor {4e53c88b-4363-63dd-0d92-28a6e6cc2f6a} 'LightColor'": "0 0 0 0",
+          "obj {f52475bd-4483-1b9b-743f-1fb28c55f29d} 'SunColorCurve'": -43,
+          "float {8e03d106-4baa-ed8b-6379-ea8ccc2133d1} 'AtmosphereDensityMultiplier'": 1,
+          "float {d293d5cd-40db-55f5-4010-d1862e5b9684} 'AtmosphereAltitude'": 100000,
+          "float {cc070653-4cbd-a998-a8cd-30b35c6d4908} 'FogBrightness'": 1,
+          "LinearColor {74b79417-4ae6-e21b-1abc-fdb03c5bb6d5} 'FogTint'": "0.5 0.5 0.5 1",
+          "float {bb638858-4e13-7b83-42c6-56ad34f64693} 'FogMaxOpacity'": 1,
+          "float {192eaf5e-4f08-b760-1126-e58af5d1bf57} 'FogHeightFalloff'": 0.2,
+          "float {7c31fab5-4277-2ac2-37da-78aa8040d1e3} 'FogDensity'": 0.02,
+          "obj {52d69615-4521-7b3a-9b81-b890bba9ea5b} 'FogBrightnessCurve'": -42,
+          "float {8ca5d2a7-4de8-72ae-dbe7-46a4d917c80d} 'FogStartDistance'": 3000,
+          "float {873f2ce8-4c36-b25f-5f0c-f19666b6c2c5} 'AtmosphereDistanceScale'": 1,
+          "float {cc85d4e9-4de8-835b-83f4-5c890197f4bc} 'HDRI_Brightness'": 1,
+          "float {3e26660f-46a2-e559-1448-6d983ff0c6fe} 'HDRI_Contrast'": 1,
+          "LinearColor {da60cf40-4872-1ab4-1438-1ab9d55d9072} 'HDRI_Tint'": "1 1 1 1",
+          "obj {50c68971-4b56-38ff-9bf8-e1b006ce0a0f} 'HDRI_Cubemap'": -124,
+          "float {d0d7f66e-4767-b2f1-7ab4-4b9ca3d15515} 'AtmosphereOpacityHorizon'": 1,
+          "float {bc38043d-4343-1754-30bd-3aa77303275a} 'AtmosphereOpacityZenith'": 1,
+          "bool {41c593a0-4ba1-47e7-1ce4-b594972df5ed} 'HighDensityAtmosphere'": true,
+          "bool {160b4703-4c72-62c6-eea7-5fbd477b3899} 'UseSkylight'": true,
+          "float {43306466-4da0-1920-0e1d-3eb3fc6a66bd} 'OcclusionMaskDarkness'": 0.05,
+          "float {ba6ccb7c-409c-0486-d6e5-78b5b6fd0a99} 'BloomScale'": 0.2,
           "struct Color 4 'BloomTint' {ef774934-4224-db6b-4a33-769b09425cf2}": "255 255 255 0",
-          "float 'AtmosphereFogMultiplier' {1f3bf6ed-49c5-cbd4-cee5-4280988fbde1}": 1,
-          "float 'AtmosphereDensityHeight' {59086404-49c3-cbdb-fe91-219f04ac5dcb}": 0.5,
-          "int 'AtmosphereMaxScatteringOrder' {ea61632e-4960-ae59-1b96-b9a18444c606}": 4,
-          "int 'AtmosphereAltitudeSampleNumber' {2d5b3e7f-4d53-13ec-49bf-25b5f9149634}": 2,
-          "obj 'MIC_Black' {9e65df5f-4dd9-cf65-0611-1bb8baf54fc3}": -101,
-          "obj 'MIC_HDRI' {2996f42d-4aa8-3a57-8754-6daa8c60a9b5}": -102,
+          "float {1f3bf6ed-49c5-cbd4-cee5-4280988fbde1} 'AtmosphereFogMultiplier'": 1,
+          "float {59086404-49c3-cbdb-fe91-219f04ac5dcb} 'AtmosphereDensityHeight'": 0.5,
+          "int {ea61632e-4960-ae59-1b96-b9a18444c606} 'AtmosphereMaxScatteringOrder'": 4,
+          "int {2d5b3e7f-4d53-13ec-49bf-25b5f9149634} 'AtmosphereAltitudeSampleNumber'": 2,
+          "obj {9e65df5f-4dd9-cf65-0611-1bb8baf54fc3} 'MIC_Black'": -101,
+          "obj {2996f42d-4aa8-3a57-8754-6daa8c60a9b5} 'MIC_HDRI'": -102,
           "string 'ActorLabel'": "BP_DayLight_C-1"
         },
         "SparseClassDataStruct": {
@@ -9322,52 +8656,40 @@
             "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 750 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 709,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "ResponseArray",
-                  "Type": "StructProperty",
-                  "Size": 656,
-                  "StructName": "ResponseChannel"
+              "struct[] Size(709) MaybeInnerTag(ResponseChannel 656  ) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "WorldStatic",
+                  "byte64 (ECollisionResponse) 'Response'": 167
                 },
-                "Value": [
-                  {
-                    "name 'Channel'": "WorldStatic",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "WorldDynamic",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Pawn",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "PhysicsBody",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Vehicle",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Destructible",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  }
-                ]
-              }
+                {
+                  "name 'Channel'": "WorldDynamic",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Pawn",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "PhysicsBody",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Vehicle",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Destructible",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                }
+              ]
             },
             "bool 'bAutoWeld'": false
           },
@@ -9398,52 +8720,40 @@
             "byte64 (ECollisionEnabled) 'CollisionEnabled'": 162,
             "name 'CollisionProfileName'": "Custom",
             "struct CollisionResponse 750 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 709,
-                "InnerType": "StructProperty",
-                "MaybeInnerTag": {
-                  "Name": "ResponseArray",
-                  "Type": "StructProperty",
-                  "Size": 656,
-                  "StructName": "ResponseChannel"
+              "struct[] Size(709) MaybeInnerTag(ResponseChannel 656  ) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "WorldStatic",
+                  "byte64 (ECollisionResponse) 'Response'": 167
                 },
-                "Value": [
-                  {
-                    "name 'Channel'": "WorldStatic",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "WorldDynamic",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Pawn",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "PhysicsBody",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Vehicle",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  },
-                  {
-                    "name 'Channel'": "Destructible",
-                    "byte64 (ECollisionResponse) 'Response'": 167
-                  }
-                ]
-              }
+                {
+                  "name 'Channel'": "WorldDynamic",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Pawn",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "PhysicsBody",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Vehicle",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                },
+                {
+                  "name 'Channel'": "Destructible",
+                  "byte64 (ECollisionResponse) 'Response'": 167
+                }
+              ]
             },
             "bool 'bAutoWeld'": false
           },

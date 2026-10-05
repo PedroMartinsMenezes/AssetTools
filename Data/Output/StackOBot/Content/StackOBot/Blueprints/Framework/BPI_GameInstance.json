@@ -969,25 +969,16 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -5,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 15,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 15,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "14 5 12 10 6 11 8 4 13 7 9",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'CategorySorting'": [
+            "None"
+          ],
           "obj 'ThumbnailInfo'": 39,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "4448fb1c-42f1-826a-8e7a-6a9b0fdc0dea"
+          "guid native 'BlueprintGuid'": "4448fb1c-42f1-826a-8e7a-6a9b0fdc0dea"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1072,7 +1063,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "26",
-          "guid 'GraphGuid'": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
+          "guid native 'GraphGuid'": "6d3336ec-4f8c-6421-7848-8e98304c41d1"
         }
       }
     },
@@ -1088,7 +1079,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "27 37",
-          "guid 'GraphGuid'": "267593ef-4195-249d-48f7-a7a079912e58"
+          "guid native 'GraphGuid'": "267593ef-4195-249d-48f7-a7a079912e58"
         }
       }
     },
@@ -1104,7 +1095,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "28",
-          "guid 'GraphGuid'": "9743e068-403b-38a3-c00c-1dad96ff2c64"
+          "guid native 'GraphGuid'": "9743e068-403b-38a3-c00c-1dad96ff2c64"
         }
       }
     },
@@ -1120,7 +1111,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "29",
-          "guid 'GraphGuid'": "a6064e7b-487c-3284-9eae-e4b289ed715f"
+          "guid native 'GraphGuid'": "a6064e7b-487c-3284-9eae-e4b289ed715f"
         }
       }
     },
@@ -1136,7 +1127,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "30",
-          "guid 'GraphGuid'": "b9c52097-48c6-2747-b10e-03bd6a129b7b"
+          "guid native 'GraphGuid'": "b9c52097-48c6-2747-b10e-03bd6a129b7b"
         }
       }
     },
@@ -1152,7 +1143,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "31",
-          "guid 'GraphGuid'": "b01cad6c-4120-19e7-f112-c695254de4aa"
+          "guid native 'GraphGuid'": "b01cad6c-4120-19e7-f112-c695254de4aa"
         }
       }
     },
@@ -1168,7 +1159,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "32",
-          "guid 'GraphGuid'": "de24d892-447e-5293-92ff-5e8558e9e783"
+          "guid native 'GraphGuid'": "de24d892-447e-5293-92ff-5e8558e9e783"
         }
       }
     },
@@ -1184,7 +1175,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "33 38",
-          "guid 'GraphGuid'": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
+          "guid native 'GraphGuid'": "5e520045-4a5e-8fae-4da7-9b81aa63a23b"
         }
       }
     },
@@ -1200,7 +1191,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "34",
-          "guid 'GraphGuid'": "9567958f-4558-5718-2796-d79c2ca48f07"
+          "guid native 'GraphGuid'": "9567958f-4558-5718-2796-d79c2ca48f07"
         }
       }
     },
@@ -1216,7 +1207,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "35",
-          "guid 'GraphGuid'": "a2522242-4080-90e7-a311-0bbb227eb06b"
+          "guid native 'GraphGuid'": "a2522242-4080-90e7-a311-0bbb227eb06b"
         }
       }
     },
@@ -1232,7 +1223,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "36",
-          "guid 'GraphGuid'": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
+          "guid native 'GraphGuid'": "0cb26c9d-4edb-8ca3-9684-048c22a5a15e"
         }
       }
     },
@@ -1528,7 +1519,7 @@
             "name 'MemberName'": "AsyncSave"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "2db7de6a-4ce4-682f-e30a-4e969cc4eaf7"
+          "guid native 'NodeGuid'": "2db7de6a-4ce4-682f-e30a-4e969cc4eaf7"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1551,7 +1542,7 @@
             "name 'MemberName'": "Get Coins"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "79ba3f2e-4a4b-e226-0d00-2a9a3cbef6d7"
+          "guid native 'NodeGuid'": "79ba3f2e-4a4b-e226-0d00-2a9a3cbef6d7"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1574,7 +1565,7 @@
             "name 'MemberName'": "InitSaveGame"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "40534669-41e6-0a78-cac1-f3bc585d3769"
+          "guid native 'NodeGuid'": "40534669-41e6-0a78-cac1-f3bc585d3769"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1597,7 +1588,7 @@
             "name 'MemberName'": "OpenLevel"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "d15d0535-4aed-e4a1-9f6e-1a84bbddb892"
+          "guid native 'NodeGuid'": "d15d0535-4aed-e4a1-9f6e-1a84bbddb892"
         },
         "SerializedItems": [
           {
@@ -1630,7 +1621,7 @@
             "name 'MemberName'": "PlayMusic"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "5f79208c-4c4b-714a-a3be-8096546ac1fd"
+          "guid native 'NodeGuid'": "5f79208c-4c4b-714a-a3be-8096546ac1fd"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1653,7 +1644,7 @@
             "name 'MemberName'": "Quit"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "b05a0934-4d46-bb41-cf61-f689fe1fc378"
+          "guid native 'NodeGuid'": "b05a0934-4d46-bb41-cf61-f689fe1fc378"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1676,7 +1667,7 @@
             "name 'MemberName'": "RemoveCollectableFromSaveGame"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "9c18cd2e-4c87-a30b-cbb8-ceb0562d0909"
+          "guid native 'NodeGuid'": "9c18cd2e-4c87-a30b-cbb8-ceb0562d0909"
         },
         "SerializedItems": [
           {
@@ -1709,7 +1700,7 @@
             "name 'MemberName'": "ResetSaveGame"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "0f9faf91-47ed-5bbb-07ac-77a43c910f64"
+          "guid native 'NodeGuid'": "0f9faf91-47ed-5bbb-07ac-77a43c910f64"
         },
         "SerializedItems": [
           {
@@ -1742,7 +1733,7 @@
             "name 'MemberName'": "SaveGame"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "af1cf53c-41c2-de8b-66f1-aa8e8a14e475"
+          "guid native 'NodeGuid'": "af1cf53c-41c2-de8b-66f1-aa8e8a14e475"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1765,7 +1756,7 @@
             "name 'MemberName'": "ToggleLoadingScreen"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "72c18346-4900-33b6-794f-aabccc3207f9"
+          "guid native 'NodeGuid'": "72c18346-4900-33b6-794f-aabccc3207f9"
         },
         "SerializedItems": [
           {
@@ -1798,7 +1789,7 @@
             "name 'MemberName'": "UpdateCoins"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "9bc69514-412c-a8d1-799d-d98cb37b0e68"
+          "guid native 'NodeGuid'": "9bc69514-412c-a8d1-799d-d98cb37b0e68"
         },
         "SerializedItems": [
           {
@@ -1831,7 +1822,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid'": "83e3a8d7-474d-d971-b252-3ab4b6c4a05c"
+          "guid native 'NodeGuid'": "83e3a8d7-474d-d971-b252-3ab4b6c4a05c"
         },
         "SerializedItems": [
           {
@@ -1865,7 +1856,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid'": "940f62fc-4b62-1d53-639c-aab3e8c76bc4"
+          "guid native 'NodeGuid'": "940f62fc-4b62-1d53-639c-aab3e8c76bc4"
         },
         "SerializedItems": [
           {

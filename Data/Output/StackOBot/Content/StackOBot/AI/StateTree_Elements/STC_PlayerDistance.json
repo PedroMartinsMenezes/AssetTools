@@ -829,11 +829,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -858,199 +867,145 @@
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "3",
           "obj[] 'FunctionGraphs'": "5 4",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 2081,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Player Number",
-                "guid 'VarGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
-                "class EdGraphPinType 69 'VarType'": "int",
-                "string 'FriendlyName'": "Player Number",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`2B74BD6B474FF396A7B206995C0E4B64` Namespace=`\\0` SourceString=`Params`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(2081) 'NewVariables'": [
+            {
+              "name 'VarName'": "Player Number",
+              "guid native 'VarGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
+              "class EdGraphPinType 69 'VarType'": "int",
+              "string 'FriendlyName'": "Player Number",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`2B74BD6B474FF396A7B206995C0E4B64` Namespace=`\\0` SourceString=`Params`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Trigger Distance",
-                "guid 'VarGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Trigger Distance",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`D3C3C93C4FA248AD50EE9D96F0D6BF01` Namespace=`\\0` SourceString=`Params`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 384,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "ForceUnits",
-                      "string 'DataValue'": "Centimeters"
-                    },
-                    {
-                      "name 'DataKey'": "UIMin",
-                      "string 'DataValue'": "0"
-                    },
-                    {
-                      "name 'DataKey'": "ClampMin",
-                      "string 'DataValue'": "0"
-                    },
-                    {
-                      "name 'DataKey'": "UIMax",
-                      "string 'DataValue'": "100000"
-                    },
-                    {
-                      "name 'DataKey'": "ClampMax",
-                      "string 'DataValue'": "100000"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Trigger Distance",
+              "guid native 'VarGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Trigger Distance",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`D3C3C93C4FA248AD50EE9D96F0D6BF01` Namespace=`\\0` SourceString=`Params`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Actor",
-                "guid 'VarGuid'": "44b521f8-46ba-189a-3984-cc99b0463137",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-12`)",
-                "string 'FriendlyName'": "Actor",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`C099D396458ECA6D77E07886B214183A` Namespace=`\\0` SourceString=`Context`",
-                  "TypeName": "TextProperty 0"
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(384) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "ForceUnits",
+                  "string 'DataValue'": "Centimeters"
                 },
-                "ulong 'PropertyFlags'": 2053,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+                {
+                  "name 'DataKey'": "UIMin",
+                  "string 'DataValue'": "0"
                 },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Inputs",
-              "Context",
-              "Params"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
-                    "AssetName": "STC_PlayerDistance"
-                  },
-                  "SaveNum": 0
+                {
+                  "name 'DataKey'": "ClampMin",
+                  "string 'DataValue'": "0"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
+                {
+                  "name 'DataKey'": "UIMax",
+                  "string 'DataValue'": "100000"
                 },
-                "float 'SavedZoomAmount'": 1
+                {
+                  "name 'DataKey'": "ClampMax",
+                  "string 'DataValue'": "100000"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Actor",
+              "guid native 'VarGuid'": "44b521f8-46ba-189a-3984-cc99b0463137",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-12`)",
+              "string 'FriendlyName'": "Actor",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`C099D396458ECA6D77E07886B214183A` Namespace=`\\0` SourceString=`Context`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
-                    "AssetName": "STC_PlayerDistance"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 2053,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 45,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "None",
+            "Inputs",
+            "Context",
+            "Params"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
+                  "AssetName": "STC_PlayerDistance"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 48.342396,
-                  "Y": -398.48203
-                },
-                "float 'SavedZoomAmount'": 0.675
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
-                    "AssetName": "STC_PlayerDistance"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
+                  "AssetName": "STC_PlayerDistance"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -165.0312,
-                  "Y": -573.3393
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 48.342396,
+                "Y": -398.48203
+              },
+              "float 'SavedZoomAmount'": 0.675
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_PlayerDistance",
+                  "AssetName": "STC_PlayerDistance"
                 },
-                "float 'SavedZoomAmount'": 0.675
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -165.0312,
+                "Y": -573.3393
+              },
+              "float 'SavedZoomAmount'": 0.675
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "0b05cfe5-405b-1a52-3512-20b0bd587af6"
+          "guid native 'BlueprintGuid'": "0b05cfe5-405b-1a52-3512-20b0bd587af6"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1139,7 +1094,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "3f616c44-43f6-97d1-8beb-22827443cd04"
+          "guid native 'GraphGuid'": "3f616c44-43f6-97d1-8beb-22827443cd04"
         }
       }
     },
@@ -1155,7 +1110,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "16 18 15 23 24",
-          "guid 'GraphGuid'": "3a1769b1-4913-93f0-e2ff-059c1d22f355"
+          "guid native 'GraphGuid'": "3a1769b1-4913-93f0-e2ff-059c1d22f355"
         }
       }
     },
@@ -1171,7 +1126,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "17 20 10 25 21 11 12 26 13 6 22 27 14 19 7",
-          "guid 'GraphGuid'": "0e43a7eb-49ac-225c-b6fc-dbb3ea01aa19"
+          "guid native 'GraphGuid'": "0e43a7eb-49ac-225c-b6fc-dbb3ea01aa19"
         }
       }
     },
@@ -1185,7 +1140,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 837,
           "int 'NodePosY'": 644,
@@ -1194,7 +1149,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "If the player pawn is not valid, assume True",
-          "guid 'NodeGuid'": "f7a7525f-4fd5-a389-052b-f88109d727cd"
+          "guid native 'NodeGuid'": "f7a7525f-4fd5-a389-052b-f88109d727cd"
         },
         "Pins": []
       }
@@ -1209,7 +1164,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 883,
           "int 'NodePosY'": 9,
@@ -1218,7 +1173,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "If the pawn is valid, check how far away it is, and return true if it's far enough.",
-          "guid 'NodeGuid'": "782859de-429e-6a2e-f628-2ba82e0c6ea0"
+          "guid native 'NodeGuid'": "782859de-429e-6a2e-f628-2ba82e0c6ea0"
         },
         "Pins": []
       }
@@ -1311,7 +1266,7 @@
           },
           "int 'NodePosX'": 80,
           "int 'NodePosY'": 144,
-          "guid 'NodeGuid'": "2e07dfc1-447e-cd5f-4c4d-de97dc659d59"
+          "guid native 'NodeGuid'": "2e07dfc1-447e-cd5f-4c4d-de97dc659d59"
         },
         "Pins": [
           "input-pin Type«`object obj(`-16`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`10 59008ddc-4479-e77b-ba38-5ca0dd098b96`» BitField«`1`» DefaultObject«`ImportIndex[-36] Default__GameplayStatics`» SourceIndex«`-1`» ",
@@ -1338,7 +1293,7 @@
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 112,
-          "guid 'NodeGuid'": "baa391c2-414e-31f4-e216-239b6e423015"
+          "guid native 'NodeGuid'": "baa391c2-414e-31f4-e216-239b6e423015"
         },
         "Pins": [
           "input-pin Type«`object obj(`-12`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`11 fde2a912-475f-ed4a-78e7-e991c4b6f824`» LinkedTo«`10 21c553f6-4e34-c949-fe18-84868dac2ce4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1363,7 +1318,7 @@
           },
           "int 'NodePosX'": 1216,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid'": "87b578ed-448e-067e-d0d1-b99325f3925d"
+          "guid native 'NodeGuid'": "87b578ed-448e-067e-d0d1-b99325f3925d"
         },
         "Pins": [
           "input-pin Type«`object obj(`-17`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`12 d062ac73-470f-02a8-e24c-4593f6a443b8`» BitField«`1`» DefaultObject«`ImportIndex[-37] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1390,7 +1345,7 @@
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 240,
-          "guid 'NodeGuid'": "d6e01a40-4a15-b5c2-0d85-8aa667338619"
+          "guid native 'NodeGuid'": "d6e01a40-4a15-b5c2-0d85-8aa667338619"
         },
         "Pins": [
           "input-pin Type«`object obj(`-12`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`13 fe648454-4425-8763-4bea-b7825d2b4e7e`» LinkedTo«`26 3453387a-4d10-7f47-a2dd-1ab57c018f03`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1415,7 +1370,7 @@
           },
           "int 'NodePosX'": 1296,
           "int 'NodePosY'": 416,
-          "guid 'NodeGuid'": "cccef257-4af4-1691-cdda-edab1221f59d"
+          "guid native 'NodeGuid'": "cccef257-4af4-1691-cdda-edab1221f59d"
         },
         "Pins": [
           "input-pin Type«`object obj(`-17`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`14 4b4cfb53-46ba-8e65-8249-ea86b2a8b718`» BitField«`1`» DefaultObject«`ImportIndex[-37] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1434,22 +1389,13 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "PinNames": {
-            "Name": "PinNames",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "playernum",
-              "dist"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'PinNames'": [
+            "playernum",
+            "dist"
+          ],
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 96,
-          "guid 'NodeGuid'": "b739a6d6-4560-475e-dd40-a58ee88e0678"
+          "guid native 'NodeGuid'": "b739a6d6-4560-475e-dd40-a58ee88e0678"
         },
         "Pins": [
           "input-pin Type«`text`» Name«`Format`» Id«`15 ecff6420-4709-80d3-f2db-a7a7aba8f03b`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» DefaultTextValue«`text-base header=`None` Key=`D08FC1CE4E1D4AE6E0A11EA0FA813952` Namespace=`[DA480ED7E6BF221F0333EE13CF7116D7]` SourceString=`Player Pawn {playernum} is further than {dist} cm away.``» ",
@@ -1474,7 +1420,7 @@
             "obj 'MemberParent'": -22,
             "name 'MemberName'": "ReceiveGetDescription"
           },
-          "guid 'NodeGuid'": "d68d8249-418e-c8e0-ca5f-7fa1ba1d69fd"
+          "guid native 'NodeGuid'": "d68d8249-418e-c8e0-ca5f-7fa1ba1d69fd"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1498,7 +1444,7 @@
             "obj 'MemberParent'": -21,
             "name 'MemberName'": "ReceiveTestCondition"
           },
-          "guid 'NodeGuid'": "6de3663e-47f4-d027-7d69-1ba6198a72a9"
+          "guid native 'NodeGuid'": "6de3663e-47f4-d027-7d69-1ba6198a72a9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1521,7 +1467,7 @@
             "name 'MemberName'": "ReceiveGetDescription"
           },
           "int 'NodePosX'": 1200,
-          "guid 'NodeGuid'": "cd2c32a1-4828-be7b-86a6-9e8ca5b39f49"
+          "guid native 'NodeGuid'": "cd2c32a1-4828-be7b-86a6-9e8ca5b39f49"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1545,7 +1491,7 @@
             "name 'MemberName'": "ReceiveTestCondition"
           },
           "int 'NodePosX'": 1792,
-          "guid 'NodeGuid'": "a063e036-4186-842a-5dc3-98a32d3c1d92"
+          "guid native 'NodeGuid'": "a063e036-4186-842a-5dc3-98a32d3c1d92"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1570,7 +1516,7 @@
           },
           "int 'NodePosX'": 896,
           "int 'NodePosY'": 768,
-          "guid 'NodeGuid'": "c4ece991-4f0c-c7c1-6e9c-a38866594cbc"
+          "guid native 'NodeGuid'": "c4ece991-4f0c-c7c1-6e9c-a38866594cbc"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1592,10 +1538,10 @@
           "struct GraphReference 131 'MacroGraphReference'": {
             "obj 'MacroGraph'": -24,
             "obj 'GraphBlueprint'": -1,
-            "guid 'GraphGuid'": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
+            "guid native 'GraphGuid'": "64422bcd-4307-03ff-5cae-a8b79a32aa65"
           },
           "int 'NodePosX'": 416,
-          "guid 'NodeGuid'": "97bab832-4b7c-704f-9d22-00b24adbebdd"
+          "guid native 'NodeGuid'": "97bab832-4b7c-704f-9d22-00b24adbebdd"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1624,7 +1570,7 @@
           },
           "int 'NodePosX'": 1552,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid'": "61bf6d28-4503-e206-f767-7596af1ecdfc"
+          "guid native 'NodeGuid'": "61bf6d28-4503-e206-f767-7596af1ecdfc"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`22 25ddc410-4ff6-b947-5e36-ebb1eeecef38`» LinkedTo«`12 c6645996-4956-c3f1-65e2-58bb68a954be`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1646,12 +1592,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Player Number",
-            "guid 'MemberGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
+            "guid native 'MemberGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 192,
-          "guid 'NodeGuid'": "7c49fb60-4b88-59ce-3166-7c9daffa481b"
+          "guid native 'NodeGuid'": "7c49fb60-4b88-59ce-3166-7c9daffa481b"
         },
         "Pins": [
           "output-pin Type«`int`» Name«`Player Number`» Id«`23 3b2839d9-411f-1ee2-750e-7a81fd9229c1`» LinkedTo«`15 dec37ab4-460e-8835-07b1-6fa5221f2b4f`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1671,12 +1617,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Trigger Distance",
-            "guid 'MemberGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
+            "guid native 'MemberGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 448,
           "int 'NodePosY'": 256,
-          "guid 'NodeGuid'": "36fde424-4836-60da-ba7b-62b9365b1928"
+          "guid native 'NodeGuid'": "36fde424-4836-60da-ba7b-62b9365b1928"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`Trigger Distance`» Id«`24 e03d047d-4c73-def4-e382-e4969ac04a42`» LinkedTo«`15 646ecacc-4d5d-77d4-59a1-f58683ade9b9`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1696,12 +1642,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Player Number",
-            "guid 'MemberGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
+            "guid native 'MemberGuid'": "b0941e4f-43dc-0332-38ef-a19934c7021b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -112,
           "int 'NodePosY'": 167,
-          "guid 'NodeGuid'": "c3428438-4625-e73c-be5f-c1b1bbf84ccc"
+          "guid native 'NodeGuid'": "c3428438-4625-e73c-be5f-c1b1bbf84ccc"
         },
         "Pins": [
           "output-pin Type«`int`» Name«`Player Number`» Id«`25 f0fecc68-451d-5620-63a3-98acaa63dbc4`» LinkedTo«`10 b258f5b2-4f1d-0669-9343-6c992c136c23`» DefaultValue«`0`» AutogeneratedDefaultValue«`0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1721,12 +1667,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Actor",
-            "guid 'MemberGuid'": "44b521f8-46ba-189a-3984-cc99b0463137",
+            "guid native 'MemberGuid'": "44b521f8-46ba-189a-3984-cc99b0463137",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 336,
-          "guid 'NodeGuid'": "54150b48-4f58-e4a7-fe51-42b3419eb0eb"
+          "guid native 'NodeGuid'": "54150b48-4f58-e4a7-fe51-42b3419eb0eb"
         },
         "Pins": [
           "output-pin Type«`object obj(`-12`)`» Name«`Actor`» Id«`26 3453387a-4d10-7f47-a2dd-1ab57c018f03`» LinkedTo«`13 fe648454-4425-8763-4bea-b7825d2b4e7e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1746,12 +1692,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Trigger Distance",
-            "guid 'MemberGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
+            "guid native 'MemberGuid'": "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1120,
           "int 'NodePosY'": 416,
-          "guid 'NodeGuid'": "e63e88a1-4cb0-5fc9-6e51-e587e14620c2"
+          "guid native 'NodeGuid'": "e63e88a1-4cb0-5fc9-6e51-e587e14620c2"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`Trigger Distance`» Id«`27 7ac36395-47bf-63c6-1795-03a4e3ae4f68`» LinkedTo«`14 56f27b01-4e7b-9f6f-63db-f28aadd19022`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1769,7 +1715,7 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "double 'Trigger Distance' {4dfd6a6b-45b3-2aae-ee0e-75a660bf5047}": 5000
+          "double {4dfd6a6b-45b3-2aae-ee0e-75a660bf5047} 'Trigger Distance'": 5000
         },
         "SparseClassDataStruct": {
           "Index": ""

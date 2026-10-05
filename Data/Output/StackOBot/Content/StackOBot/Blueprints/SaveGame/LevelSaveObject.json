@@ -447,134 +447,92 @@
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5 6 3",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 694,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "NewVariables",
-              "Type": "StructProperty",
-              "Size": 641,
-              "StructName": "BPVariableDescription"
+          "struct[] Size(694) MaybeInnerTag(BPVariableDescription 641  ) 'NewVariables'": [
+            {
+              "name 'VarName'": "CollectablePickups",
+              "guid 'VarGuid'": "22ad8c26-4699-5107-7853-898679e91849",
+              "struct EdGraphPinType 69 'VarType'": "struct obj(`-26`) container(`Array`)",
+              "string 'FriendlyName'": "Collectable Pickups",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 28,
+              "struct[] Size(128) MaybeInnerTag(BPVariableMetaDataEntry 75  ) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None"
+          ],
+          "struct[] Size(802) MaybeInnerTag(EditedDocumentInfo 749  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 41 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "SubPathString": "GetCollectablesOnMap",
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                  "AssetName": "LevelSaveObject"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-350.884033203125 -200.84249877929688",
+              "float 'SavedZoomAmount'": 1
             },
-            "Value": [
-              {
-                "name 'VarName'": "CollectablePickups",
-                "guid 'VarGuid'": "22ad8c26-4699-5107-7853-898679e91849",
-                "struct EdGraphPinType 69 'VarType'": "struct obj(`-26`) container(`Array`)",
-                "string 'FriendlyName'": "Collectable Pickups",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+            {
+              "struct SoftObjectPath 38 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "SubPathString": "RemoveCollectable",
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                  "AssetName": "LevelSaveObject"
                 },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 28,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 128,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 75,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ]
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 802,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 749,
-              "StructName": "EditedDocumentInfo"
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-221.5999755859375 -286.0249938964844",
+              "float 'SavedZoomAmount'": 1
             },
-            "Value": [
-              {
-                "struct SoftObjectPath 41 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "SubPathString": "GetCollectablesOnMap",
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
-                    "AssetName": "LevelSaveObject"
-                  },
-                  "SaveNum": 0
+            {
+              "struct SoftObjectPath 35 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "SubPathString": "AddCollectable",
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                  "AssetName": "LevelSaveObject"
                 },
-                "Vector2D 'SavedViewOffset'": "-350.884033203125 -200.84249877929688",
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "struct SoftObjectPath 38 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "SubPathString": "RemoveCollectable",
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
-                    "AssetName": "LevelSaveObject"
-                  },
-                  "SaveNum": 0
+              "Vector2D 'SavedViewOffset'": "-465.0001220703125 -473.1499938964844",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "struct SoftObjectPath 31 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
+                  "AssetName": "LevelSaveObject"
                 },
-                "Vector2D 'SavedViewOffset'": "-221.5999755859375 -286.0249938964844",
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "struct SoftObjectPath 35 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "SubPathString": "AddCollectable",
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
-                    "AssetName": "LevelSaveObject"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "-465.0001220703125 -473.1499938964844",
-                "float 'SavedZoomAmount'": 1
-              },
-              {
-                "struct SoftObjectPath 31 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/LevelSaveObject",
-                    "AssetName": "LevelSaveObject"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "89 -5",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+              "Vector2D 'SavedViewOffset'": "89 -5",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 26,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

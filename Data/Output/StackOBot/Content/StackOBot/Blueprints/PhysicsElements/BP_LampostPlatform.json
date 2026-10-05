@@ -937,6 +937,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
       },
@@ -997,66 +1000,48 @@
           "obj 'SimpleConstructionScript'": 23,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_LampostPlatform",
-                    "AssetName": "BP_LampostPlatform"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_LampostPlatform",
+                  "AssetName": "BP_LampostPlatform"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -114.223404,
-                  "Y": -529.3637
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_LampostPlatform",
-                    "AssetName": "BP_LampostPlatform"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -114.223404,
+                "Y": -529.3637
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_LampostPlatform",
+                  "AssetName": "BP_LampostPlatform"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -346.76678,
-                  "Y": 44.72766
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -346.76678,
+                "Y": 44.72766
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "1a1c211d-4f1b-acfd-5334-199986c8e142"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "1a1c211d-4f1b-acfd-5334-199986c8e142"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1134,7 +1119,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "8 9 10",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "ea5904b3-45ae-4122-4dd0-259901ce0647"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "ea5904b3-45ae-4122-4dd0-259901ce0647"
         }
       }
     },
@@ -1151,7 +1136,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "11 7 12 13",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "dbfb6590-4a95-8eff-f0b8-a6a98d58eac3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "dbfb6590-4a95-8eff-f0b8-a6a98d58eac3"
         }
       }
     },
@@ -1197,7 +1182,7 @@
           "int 'NodePosX'": 320,
           "int 'NodePosY'": -16,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "a2b3abee-4793-1f6f-219e-3abcce81c0f6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a2b3abee-4793-1f6f-219e-3abcce81c0f6"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`7 bd5437df-4664-703f-7432-509167bacba9`» LinkedTo«`11 afefda68-4007-0d9f-c390-56bea5ef0228`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1225,11 +1210,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 88,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 88,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "2496030d-4323-bea6-cc08-06a92cd13c33"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2496030d-4323-bea6-cc08-06a92cd13c33"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1254,11 +1239,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 88,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 88,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "74304c3f-4151-2baf-106f-1482d369bf3d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "74304c3f-4151-2baf-106f-1482d369bf3d"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1284,11 +1269,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 88,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 88,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "20c3d842-470c-2720-74d6-d2ae46187e8f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "20c3d842-470c-2720-74d6-d2ae46187e8f"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1312,7 +1297,7 @@
             "obj 'MemberParent'": -9,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "eb7a27f9-4fda-da8c-9939-cdb49f925d7d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "eb7a27f9-4fda-da8c-9939-cdb49f925d7d"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1336,7 +1321,7 @@
           },
           "int 'NodePosX'": 128,
           "int 'NodePosY'": 48,
-          "guid 'NodeGuid' /Script/CoreUObject": "d25f208e-4158-f9fc-95a8-05a291e7c28f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d25f208e-4158-f9fc-95a8-05a291e7c28f"
         },
         "Pins": [
           "output-pin Type«`object obj(`-13`)`» Name«`PhysicsConstraint`» Id«`12 a9bd46e6-4cb3-6af2-7db6-0c971c657541`» LinkedTo«`7 ce46ee8c-4e5a-390d-c24f-3ca235b6647e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1360,7 +1345,7 @@
           },
           "int 'NodePosX'": 144,
           "int 'NodePosY'": 160,
-          "guid 'NodeGuid' /Script/CoreUObject": "957882ca-478c-6d29-a6e1-aa85f641e812"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "957882ca-478c-6d29-a6e1-aa85f641e812"
         },
         "Pins": [
           "output-pin Type«`object obj(`-19`)`» Name«`LampostPlatform`» Id«`13 2fd83f2d-426e-d00c-7bd2-84a06bc59962`» LinkedTo«`7 693732f6-48cd-7707-af03-1cbeb0daf657`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1380,9 +1365,9 @@
         "Members": {
           "obj 'Asset'": -24,
           "struct NiagaraUserRedirectionParameterStore 8 'OverrideParameters'": {},
-          "Vector 'RelativeLocation' /Script/CoreUObject": "0 -3.0086597657685843E-08 -13.699684584293429",
-          "Rotator 'RelativeRotation' /Script/CoreUObject": "0 0 179.99999860565413",
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "0.69800101593136787 0.69800101593136787 1.1445421306416392"
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "0 -3.0086597657685843E-08 -13.699684584293429",
+          "Rotator native TypeNamespace(/Script/CoreUObject) 'RelativeRotation'": "0 0 179.99999860565413",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "0.69800101593136787 0.69800101593136787 1.1445421306416392"
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []
@@ -1404,18 +1389,18 @@
               "float 'ContactTransferScale'": 1,
               "struct LinearConstraint 262 'LinearLimit'": {
                 "float 'Limit'": 50,
-                "byte64 (ELinearConstraintMotion) 'XMotion' /Script/PhysicsCore": 109,
-                "byte64 (ELinearConstraintMotion) 'YMotion' /Script/PhysicsCore": 109,
-                "byte64 (ELinearConstraintMotion) 'ZMotion' /Script/PhysicsCore": 109,
+                "byte64 (ELinearConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'XMotion'": 109,
+                "byte64 (ELinearConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'YMotion'": 109,
+                "byte64 (ELinearConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'ZMotion'": 109,
                 "float 'Damping'": 0.01,
                 "bool 'bSoftConstraint'": true
               },
               "struct ConeConstraint 122 'ConeLimit'": {
-                "byte64 (EAngularConstraintMotion) 'Swing1Motion' /Script/PhysicsCore": 10,
-                "byte64 (EAngularConstraintMotion) 'Swing2Motion' /Script/PhysicsCore": 10
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'Swing1Motion'": 10,
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'Swing2Motion'": 10
               },
               "struct TwistConstraint 65 'TwistLimit'": {
-                "byte64 (EAngularConstraintMotion) 'TwistMotion' /Script/PhysicsCore": 10
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'TwistMotion'": 10
               },
               "struct LinearDriveConstraint 254 'LinearDrive'": {
                 "struct ConstraintDrive 33 'XDrive'": {
@@ -1442,7 +1427,7 @@
               }
             }
           },
-          "Vector 'RelativeLocation' /Script/CoreUObject": "0 0 660",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "0 0 660",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1487,7 +1472,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "6c15558d-4fcd-7cfc-68f6-64849211806c",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "6c15558d-4fcd-7cfc-68f6-64849211806c",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1512,7 +1497,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "457349d5-4717-0730-c48f-54b237bd3e60",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "457349d5-4717-0730-c48f-54b237bd3e60",
           "name 'InternalVariableName'": "Niagara"
         }
       }
@@ -1538,7 +1523,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "20 22",
-          "guid 'VariableGuid' /Script/CoreUObject": "e0b15e41-4acb-1483-a691-f6a69fe3ccfb",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "e0b15e41-4acb-1483-a691-f6a69fe3ccfb",
           "name 'InternalVariableName'": "LamppostBase"
         }
       }
@@ -1564,7 +1549,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "21 18",
-          "guid 'VariableGuid' /Script/CoreUObject": "4bc63f89-4e03-4dcf-f2db-1e9364675477",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "4bc63f89-4e03-4dcf-f2db-1e9364675477",
           "name 'InternalVariableName'": "LampostPlatform"
         }
       }
@@ -1589,7 +1574,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "07b04c00-4fc0-4d3e-6c2b-32875ffdd644",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "07b04c00-4fc0-4d3e-6c2b-32875ffdd644",
           "name 'InternalVariableName'": "SpotLight"
         }
       }
@@ -1614,7 +1599,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "539fc311-42d9-83ca-ca02-aaa5e618e633",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "539fc311-42d9-83ca-ca02-aaa5e618e633",
           "name 'InternalVariableName'": "PhysicsConstraint"
         }
       }
@@ -1655,8 +1640,8 @@
           "float 'Intensity'": 20,
           "class Color 4 'LightColor'": "255 203 124 255",
           "bool 'CastShadows'": false,
-          "Vector 'RelativeLocation' /Script/CoreUObject": "-1.2878587085651818E-13 0 -10",
-          "Rotator 'RelativeRotation' /Script/CoreUObject": "-89.999999999999986 180 180",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "-1.2878587085651818E-13 0 -10",
+          "Rotator native TypeNamespace(/Script/CoreUObject) 'RelativeRotation'": "-89.999999999999986 180 180",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1678,7 +1663,7 @@
           "obj 'StaticMesh'": -34,
           "bool 'bUseAsOccluder'": false,
           "struct BodyInstance 256 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 77,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 77,
             "bool 'bLockXRotation'": true,
             "bool 'bLockYRotation'": true,
             "bool 'bLockZRotation'": true,
@@ -1687,7 +1672,7 @@
             "float 'AngularDamping'": 0.5,
             "bool 'bSimulatePhysics'": true
           },
-          "Vector 'RelativeLocation' /Script/CoreUObject": "0 0 650",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "0 0 650",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           },
@@ -1712,10 +1697,10 @@
           "obj 'StaticMesh'": -33,
           "bool 'bUseAsOccluder'": false,
           "struct BodyInstance 98 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 78,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 78,
             "name 'CollisionProfileName'": "BlockAll"
           },
-          "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 81,
+          "byte64 (EComponentMobility) TypeNamespace(/Script/Engine) 'Mobility'": 81,
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }

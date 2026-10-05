@@ -384,6 +384,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty FOscillator": {
         "TypeName": "StructProperty 1 | FOscillator 1 | /Script/EngineCameras 0"
       },
@@ -406,36 +409,27 @@
           "obj 'ParentClass'": -6,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "4",
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 151,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_CamShake",
-                    "AssetName": "BP_CamShake"
-                  },
-                  "SaveNum": 0
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(151) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BP_CamShake",
+                  "AssetName": "BP_CamShake"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -2484.7778,
-                  "Y": -697.96423
-                },
-                "float 'SavedZoomAmount'": 0.5
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -2484.7778,
+                "Y": -697.96423
+              },
+              "float 'SavedZoomAmount'": 0.5
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "d66888e7-4876-1925-f927-41a3d3086931"
+          "guid native 'BlueprintGuid'": "d66888e7-4876-1925-f927-41a3d3086931"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -505,7 +499,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "477ce44a-45c6-50f8-f8e6-caaf39e70a53"
+          "guid native 'GraphGuid'": "477ce44a-45c6-50f8-f8e6-caaf39e70a53"
         }
       }
     },

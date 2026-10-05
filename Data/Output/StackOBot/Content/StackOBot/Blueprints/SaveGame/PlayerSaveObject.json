@@ -359,91 +359,49 @@
           "obj 'ParentClass'": -8,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "3",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 679,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "NewVariables",
-              "Type": "StructProperty",
-              "Size": 626,
-              "StructName": "BPVariableDescription"
-            },
-            "Value": [
-              {
-                "name 'VarName'": "Orbs",
-                "guid 'VarGuid'": "411a17c3-41df-753b-f76c-239e91a5ee74",
-                "struct EdGraphPinType 69 'VarType'": "int",
-                "string 'FriendlyName'": "Orbs",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+          "struct[] Size(679) MaybeInnerTag(BPVariableDescription 626  ) 'NewVariables'": [
+            {
+              "name 'VarName'": "Orbs",
+              "guid 'VarGuid'": "411a17c3-41df-753b-f76c-239e91a5ee74",
+              "struct EdGraphPinType 69 'VarType'": "int",
+              "string 'FriendlyName'": "Orbs",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 17,
+              "struct[] Size(128) MaybeInnerTag(BPVariableMetaDataEntry 75  ) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default"
+          ],
+          "struct[] Size(235) MaybeInnerTag(EditedDocumentInfo 182  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 31 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/SaveGame/PlayerSaveObject",
+                  "AssetName": "PlayerSaveObject"
                 },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 17,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 128,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 75,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ]
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 235,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 182,
-              "StructName": "EditedDocumentInfo"
-            },
-            "Value": [
-              {
-                "struct SoftObjectPath 31 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/SaveGame/PlayerSaveObject",
-                    "AssetName": "PlayerSaveObject"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "165 50",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "165 50",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 8,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

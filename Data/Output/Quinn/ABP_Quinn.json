@@ -574,28 +574,16 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'TargetSkeleton'": -48,
-          "ParentAssetOverrides": {
-            "Name": "ParentAssetOverrides",
-            "Type": "ArrayProperty",
-            "Size": 257,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ParentAssetOverrides",
-              "Type": "StructProperty",
-              "Size": 204,
-              "StructName": "AnimParentNodeAssetOverride"
+          "struct[] Size(257) MaybeInnerTag(AnimParentNodeAssetOverride 204  ) 'ParentAssetOverrides'": [
+            {
+              "obj 'NewAsset'": -3,
+              "guid 'ParentNodeGuid'": "25720556-43b6-abf5-16ac-93b4ca32b0ed"
             },
-            "Value": [
-              {
-                "obj 'NewAsset'": -3,
-                "guid 'ParentNodeGuid'": "25720556-43b6-abf5-16ac-93b4ca32b0ed"
-              },
-              {
-                "obj 'NewAsset'": -4,
-                "guid 'ParentNodeGuid'": "88fe114c-4f6b-c8d8-adaf-dda163ab6f12"
-              }
-            ]
-          },
+            {
+              "obj 'NewAsset'": -4,
+              "guid 'ParentNodeGuid'": "88fe114c-4f6b-c8d8-adaf-dda163ab6f12"
+            }
+          ],
           "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
             "Type": "SoftObjectProperty",
@@ -613,43 +601,25 @@
           "obj 'ParentClass'": -2,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "4",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Event Graph"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 227,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 174,
-              "StructName": "EditedDocumentInfo"
-            },
-            "Value": [
-              {
-                "struct SoftObjectPath 23 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn",
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Event Graph"
+          ],
+          "struct[] Size(227) MaybeInnerTag(EditedDocumentInfo 174  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 23 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn",
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/Characters/Mannequins/Animations/ABP_Quinn.ABP_Quinn"
                 },
-                "Vector2D 'SavedViewOffset'": "-198.08771118929928 -231.8163413266539",
-                "float 'SavedZoomAmount'": 0.875
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-198.08771118929928 -231.8163413266539",
+              "float 'SavedZoomAmount'": 0.875
+            }
+          ],
           "obj 'ThumbnailInfo'": 11,
           "obj 'GeneratedClass'": 3,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -670,1102 +640,628 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "obj 'TargetSkeleton'": -48,
-          "SyncGroupNames": {
-            "Name": "SyncGroupNames",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Locomotion",
-              "Sprint"
-            ]
-          },
-          "AnimNodeData": {
-            "Name": "AnimNodeData",
-            "Type": "ArrayProperty",
-            "Size": 5125,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "AnimNodeData",
-              "Type": "StructProperty",
-              "Size": 5072,
-              "StructName": "AnimNodeData"
+          "name[] 'SyncGroupNames'": [
+            "Locomotion",
+            "Sprint"
+          ],
+          "struct[] Size(5125) MaybeInnerTag(AnimNodeData 5072  ) 'AnimNodeData'": [
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
+              },
+              "uint[] 'Entries'": "25 25 25 4294967295 0 22",
+              "int 'NodeIndex'": 0,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
             },
-            "Value": [
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 28,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    0,
-                    22
-                  ]
-                },
-                "int 'NodeIndex'": 0,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 1,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 1,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 2,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 2,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 80,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    22,
-                    19,
-                    18,
-                    17,
-                    2147483648,
-                    8,
-                    15,
-                    12,
-                    12,
-                    8,
-                    1,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 3,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 22 19 18 17 2147483648 8 15 12 12 8 1 4294967295",
+              "int 'NodeIndex'": 3,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    2,
-                    22,
-                    21
-                  ]
-                },
-                "int 'NodeIndex'": 4,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 2 22 21",
+              "int 'NodeIndex'": 4,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 84,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    22,
-                    19,
-                    18,
-                    17,
-                    3,
-                    15,
-                    15,
-                    14,
-                    4294967295,
-                    8,
-                    12,
-                    17
-                  ]
-                },
-                "int 'NodeIndex'": 5,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 22 19 18 17 3 15 15 14 4294967295 8 12 17",
+              "int 'NodeIndex'": 5,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4,
-                    22,
-                    24
-                  ]
-                },
-                "int 'NodeIndex'": 6,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4 22 24",
+              "int 'NodeIndex'": 6,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 40,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 7,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295",
+              "int 'NodeIndex'": 7,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 24,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 8,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295",
+              "int 'NodeIndex'": 8,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 9,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 9,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 10,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 10,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 11,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 11,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 12,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 12,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 13,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 13,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 20,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 14,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295",
+              "int 'NodeIndex'": 14,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 56,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 15,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295",
+              "int 'NodeIndex'": 15,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 24,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 16,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295",
+              "int 'NodeIndex'": 16,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 84,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    22,
-                    19,
-                    18,
-                    17,
-                    5,
-                    15,
-                    15,
-                    14,
-                    4294967295,
-                    8,
-                    12,
-                    17
-                  ]
-                },
-                "int 'NodeIndex'": 17,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 22 19 18 17 5 15 15 14 4294967295 8 12 17",
+              "int 'NodeIndex'": 17,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    6,
-                    22,
-                    7
-                  ]
-                },
-                "int 'NodeIndex'": 18,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 6 22 7",
+              "int 'NodeIndex'": 18,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 84,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    22,
-                    19,
-                    18,
-                    17,
-                    9,
-                    15,
-                    15,
-                    14,
-                    4294967295,
-                    8,
-                    12,
-                    17
-                  ]
-                },
-                "int 'NodeIndex'": 19,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 22 19 18 17 9 15 15 14 4294967295 8 12 17",
+              "int 'NodeIndex'": 19,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    10,
-                    22,
-                    11
-                  ]
-                },
-                "int 'NodeIndex'": 20,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 10 22 11",
+              "int 'NodeIndex'": 20,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 84,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    22,
-                    19,
-                    18,
-                    17,
-                    16,
-                    15,
-                    15,
-                    14,
-                    4294967295,
-                    13,
-                    12,
-                    17
-                  ]
-                },
-                "int 'NodeIndex'": 21,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 22 19 18 17 16 15 15 14 4294967295 13 12 17",
+              "int 'NodeIndex'": 21,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    20,
-                    22,
-                    21
-                  ]
-                },
-                "int 'NodeIndex'": 22,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 20 22 21",
+              "int 'NodeIndex'": 22,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 24,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 23,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295",
+              "int 'NodeIndex'": 23,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 32,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    23,
-                    22,
-                    24
-                  ]
-                },
-                "int 'NodeIndex'": 24,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 23 22 24",
+              "int 'NodeIndex'": 24,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 40,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 25,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295",
+              "int 'NodeIndex'": 25,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 28,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 26,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295",
+              "int 'NodeIndex'": 26,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            },
+            {
+              "AnimClassInterface": {
+                "Name": "AnimClassInterface",
+                "Type": "InterfaceProperty",
+                "Size": 4,
+                "Value": {
+                  "TypeName": "InterfaceProperty",
+                  "Value": 3,
+                  "ArrayDim": 0,
+                  "ElementSize": 0,
+                  "PropertyFlags": "CPF_None",
+                  "RepIndex": 0,
+                  "BlueprintReplicationCondition": 0,
+                  "FlagsPrivate": "RF_NoFlags",
+                  "HasMetaData": false,
+                  "MetaDataMap": {}
+                }
               },
-              {
-                "AnimClassInterface": {
-                  "Name": "AnimClassInterface",
-                  "Type": "InterfaceProperty",
-                  "Size": 4,
-                  "Value": {
-                    "TypeName": "InterfaceProperty",
-                    "Value": 3,
-                    "ArrayDim": 0,
-                    "ElementSize": 0,
-                    "PropertyFlags": "CPF_None",
-                    "RepIndex": 0,
-                    "BlueprintReplicationCondition": 0,
-                    "FlagsPrivate": "RF_NoFlags",
-                    "HasMetaData": false,
-                    "MetaDataMap": {}
-                  }
-                },
-                "Entries": {
-                  "Name": "Entries",
-                  "Type": "ArrayProperty",
-                  "Size": 120,
-                  "InnerType": "UInt32Property",
-                  "Value": [
-                    25,
-                    25,
-                    25,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295,
-                    4294967295
-                  ]
-                },
-                "int 'NodeIndex'": 27,
-                "enum64 (EAnimNodeDataFlags) 'Flags'": 66
-              }
-            ]
-          },
+              "uint[] 'Entries'": "25 25 25 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295 4294967295",
+              "int 'NodeIndex'": 27,
+              "enum64 (EAnimNodeDataFlags) 'Flags'": 66
+            }
+          ],
           "NodeTypeMap": {
             "Name": "NodeTypeMap",
             "Type": "MapProperty",

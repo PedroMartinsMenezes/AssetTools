@@ -923,11 +923,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
@@ -980,105 +989,69 @@
           "obj 'SimpleConstructionScript'": 25,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 559,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "In Mass Scale",
-                "guid 'VarGuid' /Script/CoreUObject": "dd7522a2-4985-3e31-0735-ecade2d63052",
-                "class EdGraphPinType 69 'VarType'": "real-float",
-                "string 'FriendlyName'": "In Mass Scale",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 51,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Balance",
-                    "AssetName": "BP_Balance"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -312,
-                  "Y": -105
-                },
-                "float 'SavedZoomAmount'": 1
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(559) 'NewVariables'": [
+            {
+              "name 'VarName'": "In Mass Scale",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "dd7522a2-4985-3e31-0735-ecade2d63052",
+              "class EdGraphPinType 69 'VarType'": "real-float",
+              "string 'FriendlyName'": "In Mass Scale",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Balance",
-                    "AssetName": "BP_Balance"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 51,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Balance",
+                  "AssetName": "BP_Balance"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -480.46817,
-                  "Y": -42.48053
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -312,
+                "Y": -105
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PhysicsElements/BP_Balance",
+                  "AssetName": "BP_Balance"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -480.46817,
+                "Y": -42.48053
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "bc03856c-48ac-4dae-c1d5-d883d0bafd73"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "bc03856c-48ac-4dae-c1d5-d883d0bafd73"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1172,7 +1145,7 @@
             "RawPointer": 117,
             "UberGraphFunctionKey": 0
           },
-          "float 'In Mass Scale' {dd7522a2-4985-3e31-0735-ecade2d63052}": 1,
+          "float {dd7522a2-4985-3e31-0735-ecade2d63052} 'In Mass Scale'": 1,
           "struct ActorTickFunction 33 'PrimaryActorTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1195,7 +1168,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "11 12 13 15 9 16",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "c0ea3c6f-4206-a2e6-a102-fe88160e830c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "c0ea3c6f-4206-a2e6-a102-fe88160e830c"
         }
       }
     },
@@ -1212,7 +1185,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "14 17 10 18",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "4ecf8ff4-4a1b-017c-ed1e-4a92489e0862"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "4ecf8ff4-4a1b-017c-ed1e-4a92489e0862"
         }
       }
     },
@@ -1308,7 +1281,7 @@
           },
           "int 'NodePosX'": 576,
           "int 'NodePosY'": -224,
-          "guid 'NodeGuid' /Script/CoreUObject": "0263ce51-447a-8221-0878-7ea519b66987"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0263ce51-447a-8221-0878-7ea519b66987"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`9 5808d0f3-44fd-a2ca-bd51-529ec606f36f`» LinkedTo«`11 5482bf48-43f3-9ae4-e270-239454d8e340`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1334,7 +1307,7 @@
             "name 'MemberName'": "SetConstrainedComponents"
           },
           "int 'NodePosX'": 240,
-          "guid 'NodeGuid' /Script/CoreUObject": "1ba14758-40a5-8b07-15f6-4d8e7f0b70dd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1ba14758-40a5-8b07-15f6-4d8e7f0b70dd"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`10 bd5437df-4664-703f-7432-509167bacba9`» LinkedTo«`14 e3a7e70d-48d7-2ef8-8202-098d16915e04`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1365,7 +1338,7 @@
           "int 'NodePosX'": 384,
           "int 'NodePosY'": -208,
           "bool 'bCommentBubblePinned'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "af666343-4722-5a33-08c2-8d9771565777"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "af666343-4722-5a33-08c2-8d9771565777"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1390,11 +1363,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 80,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 80,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "896d4d8c-4aed-3141-e536-d7b22c695ab9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "896d4d8c-4aed-3141-e536-d7b22c695ab9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1420,11 +1393,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 80,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 80,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid' /Script/CoreUObject": "bf7c5359-4d74-9a25-27b4-6899bf405263"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "bf7c5359-4d74-9a25-27b4-6899bf405263"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1448,7 +1421,7 @@
             "obj 'MemberParent'": -9,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid' /Script/CoreUObject": "4ed6b361-4593-a637-4d34-ba9ce9e8ac7c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "4ed6b361-4593-a637-4d34-ba9ce9e8ac7c"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1472,7 +1445,7 @@
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": -32,
-          "guid 'NodeGuid' /Script/CoreUObject": "ba8cc4f5-4c80-6df0-2e3e-2986f3c6f335"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ba8cc4f5-4c80-6df0-2e3e-2986f3c6f335"
         },
         "Pins": [
           "output-pin Type«`object obj(`-18`)`» Name«`Cube`» Id«`15 7b6df833-4eff-3bd2-34eb-5ca2bd4daf17`» LinkedTo«`9 d2a16158-4ab0-5979-dd63-5696c57ca6ba`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1492,12 +1465,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "In Mass Scale",
-            "guid 'MemberGuid' /Script/CoreUObject": "dd7522a2-4985-3e31-0735-ecade2d63052",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "dd7522a2-4985-3e31-0735-ecade2d63052",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 560,
           "int 'NodePosY'": 16,
-          "guid 'NodeGuid' /Script/CoreUObject": "51b85a1f-43e3-99e8-4c3d-ba93c448df79"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "51b85a1f-43e3-99e8-4c3d-ba93c448df79"
         },
         "Pins": [
           "output-pin Type«`real-float`» Name«`In Mass Scale`» Id«`16 a9536f3c-46b4-d16a-3643-21b2e3095dbd`» LinkedTo«`9 9d0f3dd6-4847-0f46-a324-5fb28e0e6467`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1521,7 +1494,7 @@
           },
           "int 'NodePosX'": 16,
           "int 'NodePosY'": 70,
-          "guid 'NodeGuid' /Script/CoreUObject": "18acd728-4997-1b80-2119-8c8e78554ffd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "18acd728-4997-1b80-2119-8c8e78554ffd"
         },
         "Pins": [
           "output-pin Type«`object obj(`-13`)`» Name«`PhysicsConstraint`» Id«`17 5fb70073-449f-cce6-6477-64bca5de5d63`» LinkedTo«`10 ce46ee8c-4e5a-390d-c24f-3ca235b6647e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1546,7 +1519,7 @@
           "int 'NodePosX'": 48,
           "int 'NodePosY'": 165,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "07223858-45c6-bf07-61ff-01ad73c3c305"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "07223858-45c6-bf07-61ff-01ad73c3c305"
         },
         "Pins": [
           "output-pin Type«`object obj(`-18`)`» Name«`Cube`» Id«`18 fc09ba17-4007-4354-d795-13a850c14e36`» LinkedTo«`10 693732f6-48cd-7707-af03-1cbeb0daf657`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1568,13 +1541,13 @@
             "struct ConstraintProfileProperties 777 'ProfileInstance'": {
               "struct ConeConstraint 209 'ConeLimit'": {
                 "float 'Swing2LimitDegrees'": 25,
-                "byte64 (EAngularConstraintMotion) 'Swing1Motion' /Script/PhysicsCore": 9,
-                "byte64 (EAngularConstraintMotion) 'Swing2Motion' /Script/PhysicsCore": 8,
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'Swing1Motion'": 9,
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'Swing2Motion'": 8,
                 "float 'Damping'": 0.85976,
                 "float 'Restitution'": 0.4
               },
               "struct TwistConstraint 65 'TwistLimit'": {
-                "byte64 (EAngularConstraintMotion) 'TwistMotion' /Script/PhysicsCore": 9
+                "byte64 (EAngularConstraintMotion) TypeNamespace(/Script/PhysicsCore) 'TwistMotion'": 9
               },
               "struct AngularDriveConstraint 348 'AngularDrive'": {
                 "struct ConstraintDrive 37 'TwistDrive'": {
@@ -1587,7 +1560,7 @@
                 "struct ConstraintDrive 37 'SlerpDrive'": {
                   "float 'Stiffness'": 1
                 },
-                "byte64 (EAngularDriveMode) 'AngularDriveMode' /Script/Engine": 70
+                "byte64 (EAngularDriveMode) TypeNamespace(/Script/Engine) 'AngularDriveMode'": 70
               }
             }
           },
@@ -1639,7 +1612,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "22 23 24",
-          "guid 'VariableGuid' /Script/CoreUObject": "dd1dbb33-4726-f517-9f49-a48c3eeaa9ae",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "dd1dbb33-4726-f517-9f49-a48c3eeaa9ae",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1664,7 +1637,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "5795fb3c-41e2-9f82-3f0b-f784bfb8c70d",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "5795fb3c-41e2-9f82-3f0b-f784bfb8c70d",
           "name 'InternalVariableName'": "Cube"
         }
       }
@@ -1689,7 +1662,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "312e4e02-4967-4d4d-9beb-12b17ad1e51d",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "312e4e02-4967-4d4d-9beb-12b17ad1e51d",
           "name 'InternalVariableName'": "PhysicsConstraint"
         }
       }
@@ -1714,7 +1687,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid' /Script/CoreUObject": "2bc45712-43e7-19d9-0695-20ab97326388",
+          "guid native TypeNamespace(/Script/CoreUObject) 'VariableGuid'": "2bc45712-43e7-19d9-0695-20ab97326388",
           "name 'InternalVariableName'": "SM_HBeam"
         }
       }
@@ -1748,12 +1721,12 @@
           "obj 'StaticMesh'": -31,
           "obj[] 'OverrideMaterials'": "-22",
           "struct BodyInstance 123 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 71,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 71,
             "name 'CollisionProfileName'": "PhysicsActor",
             "bool 'bSimulatePhysics'": true
           },
-          "Rotator 'RelativeRotation' /Script/CoreUObject": "0 2.3625545964023331E-13 0",
-          "Vector 'RelativeScale3D' /Script/CoreUObject": "1 0.85682245157659054 1",
+          "Rotator native TypeNamespace(/Script/CoreUObject) 'RelativeRotation'": "0 2.3625545964023331E-13 0",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeScale3D'": "1 0.85682245157659054 1",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }
@@ -1775,8 +1748,8 @@
         "__type": "UStaticMeshComponent",
         "Members": {
           "obj 'StaticMesh'": -30,
-          "Vector 'RelativeLocation' /Script/CoreUObject": "-1.5062242937347037E-06 8.855099501847433E-13 -104.31418630886139",
-          "Rotator 'RelativeRotation' /Script/CoreUObject": "0 -89.999999302826723 0",
+          "Vector native TypeNamespace(/Script/CoreUObject) 'RelativeLocation'": "-1.5062242937347037E-06 8.855099501847433E-13 -104.31418630886139",
+          "Rotator native TypeNamespace(/Script/CoreUObject) 'RelativeRotation'": "0 -89.999999302826723 0",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }

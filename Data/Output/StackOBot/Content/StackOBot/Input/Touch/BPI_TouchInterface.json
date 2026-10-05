@@ -825,6 +825,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty KismetUserDeclaredFunctionMetadata": {
         "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
       },
@@ -845,84 +848,66 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -4,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 17,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 17,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "6 7 10 9 5 4 8",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "Touch"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                    "AssetName": "BPI_TouchInterface"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None",
+            "Touch"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                  "AssetName": "BPI_TouchInterface"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -1033.2941,
-                  "Y": -454.60498
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                    "AssetName": "BPI_TouchInterface"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -1004.79407,
-                  "Y": -439.60498
-                },
-                "float 'SavedZoomAmount'": 1
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -1033.2941,
+                "Y": -454.60498
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
-                    "AssetName": "BPI_TouchInterface"
-                  },
-                  "SaveNum": 0
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                  "AssetName": "BPI_TouchInterface"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -957.7648,
-                  "Y": -569.625
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -1004.79407,
+                "Y": -439.60498
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Input/Touch/BPI_TouchInterface",
+                  "AssetName": "BPI_TouchInterface"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -957.7648,
+                "Y": -569.625
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "c640deb2-413f-09c0-a9a8-0caa80e87a37"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "c640deb2-413f-09c0-a9a8-0caa80e87a37"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -999,7 +984,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "18",
-          "guid 'GraphGuid' /Script/CoreUObject": "2e27c925-4663-7ff8-5f80-779c6118b7f7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "2e27c925-4663-7ff8-5f80-779c6118b7f7"
         }
       }
     },
@@ -1015,7 +1000,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "19",
-          "guid 'GraphGuid' /Script/CoreUObject": "2736b3a4-4f42-b416-6c16-6f95b52c12b4"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "2736b3a4-4f42-b416-6c16-6f95b52c12b4"
         }
       }
     },
@@ -1031,7 +1016,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "20",
-          "guid 'GraphGuid' /Script/CoreUObject": "97fb41a2-4edf-9ffd-7d92-1d9a90178379"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "97fb41a2-4edf-9ffd-7d92-1d9a90178379"
         }
       }
     },
@@ -1047,7 +1032,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "21",
-          "guid 'GraphGuid' /Script/CoreUObject": "6bc79735-42e4-60f7-0c9d-4a9a249f785f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "6bc79735-42e4-60f7-0c9d-4a9a249f785f"
         }
       }
     },
@@ -1063,7 +1048,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "22",
-          "guid 'GraphGuid' /Script/CoreUObject": "82838879-451c-5bcb-a07a-fc8181796ecf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "82838879-451c-5bcb-a07a-fc8181796ecf"
         }
       }
     },
@@ -1079,7 +1064,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "23",
-          "guid 'GraphGuid' /Script/CoreUObject": "90135fa4-484e-dcf9-c148-a8b7a97a5bc7"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "90135fa4-484e-dcf9-c148-a8b7a97a5bc7"
         }
       }
     },
@@ -1095,7 +1080,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "24",
-          "guid 'GraphGuid' /Script/CoreUObject": "d8eaaefd-46fa-0208-6635-ecb842a5ac9f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "d8eaaefd-46fa-0208-6635-ecb842a5ac9f"
         }
       }
     },
@@ -1298,7 +1283,7 @@
             "name 'MemberName'": "Interact"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "58c2f024-42b0-1023-691d-939337022beb"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "58c2f024-42b0-1023-691d-939337022beb"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1331,7 +1316,7 @@
             "name 'MemberName'": "Pause"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "05d5096b-49e6-928e-809a-8796ddf29442"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "05d5096b-49e6-928e-809a-8796ddf29442"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1364,7 +1349,7 @@
             "name 'MemberName'": "Primary Thumbstick"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "2d720c2a-4cee-b758-abaa-7a8af1e4d0a5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2d720c2a-4cee-b758-abaa-7a8af1e4d0a5"
         },
         "SerializedItems": [
           {
@@ -1407,7 +1392,7 @@
             "name 'MemberName'": "Secondary Thumbstick"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "04f86364-46d2-f054-2da0-dab8b712c3ab"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "04f86364-46d2-f054-2da0-dab8b712c3ab"
         },
         "SerializedItems": [
           {
@@ -1450,7 +1435,7 @@
             "name 'MemberName'": "ThirdPersonActive"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "6dc94763-46bb-a817-5a86-02b1cb9f5f76"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6dc94763-46bb-a817-5a86-02b1cb9f5f76"
         },
         "SerializedItems": [
           {
@@ -1493,7 +1478,7 @@
             "name 'MemberName'": "Touch Jump End"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "aa244730-4a69-0210-168a-d4afd76eb5d9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "aa244730-4a69-0210-168a-d4afd76eb5d9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1526,7 +1511,7 @@
             "name 'MemberName'": "Touch Jump Start"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "b3812c13-4e22-ec71-ad5d-bf815e82c2c6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b3812c13-4e22-ec71-ad5d-bf815e82c2c6"
         },
         "SerializedItems": [],
         "Pins": [

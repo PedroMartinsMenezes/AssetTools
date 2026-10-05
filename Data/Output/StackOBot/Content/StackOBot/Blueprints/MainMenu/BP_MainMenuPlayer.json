@@ -704,6 +704,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       }
@@ -725,66 +728,48 @@
           "obj 'SimpleConstructionScript'": 14,
           "obj[] 'UbergraphPages'": "5",
           "obj[] 'FunctionGraphs'": "6",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/MainMenu/BP_MainMenuPlayer",
-                    "AssetName": "BP_MainMenuPlayer"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/MainMenu/BP_MainMenuPlayer",
+                  "AssetName": "BP_MainMenuPlayer"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/MainMenu/BP_MainMenuPlayer",
-                    "AssetName": "BP_MainMenuPlayer"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/MainMenu/BP_MainMenuPlayer",
+                  "AssetName": "BP_MainMenuPlayer"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -516,
-                  "Y": -81
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -516,
+                "Y": -81
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "ad4a71ce-4db5-f22f-3f3b-e2b973bfd881"
+          "guid native 'BlueprintGuid'": "ad4a71ce-4db5-f22f-3f3b-e2b973bfd881"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -865,7 +850,7 @@
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "7 8 9",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "f4b7303a-4247-96c0-aa15-5794f9af9e1c"
+          "guid native 'GraphGuid'": "f4b7303a-4247-96c0-aa15-5794f9af9e1c"
         }
       }
     },
@@ -882,7 +867,7 @@
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "10",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "97e5bcc1-453e-a75f-4319-da9b05964d9f"
+          "guid native 'GraphGuid'": "97e5bcc1-453e-a75f-4319-da9b05964d9f"
         }
       }
     },
@@ -901,11 +886,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 40,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 40,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "78fe5e4b-478e-a53b-e76d-609182f33049"
+          "guid native 'NodeGuid'": "78fe5e4b-478e-a53b-e76d-609182f33049"
         },
         "SerializedItems": [],
         "Pins": [
@@ -930,11 +915,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 40,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 40,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "c0bc8ced-4b49-4ec0-cfbe-9eb1f93a4c6e"
+          "guid native 'NodeGuid'": "c0bc8ced-4b49-4ec0-cfbe-9eb1f93a4c6e"
         },
         "SerializedItems": [],
         "Pins": [
@@ -960,11 +945,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 40,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 40,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "5cd2d5b6-4ab7-407e-cc4d-8eb7488cd882"
+          "guid native 'NodeGuid'": "5cd2d5b6-4ab7-407e-cc4d-8eb7488cd882"
         },
         "SerializedItems": [],
         "Pins": [
@@ -988,7 +973,7 @@
             "obj 'MemberParent'": -5,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "60ddb87e-4f72-55c3-64b4-2780469c3fd3"
+          "guid native 'NodeGuid'": "60ddb87e-4f72-55c3-64b4-2780469c3fd3"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1033,7 +1018,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "13",
-          "guid 'VariableGuid'": "53a08cab-427d-ee7a-8f47-1981654303af",
+          "guid native 'VariableGuid'": "53a08cab-427d-ee7a-8f47-1981654303af",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1058,7 +1043,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "8592545d-43b6-b4c2-c9a4-c69168c45de7",
+          "guid native 'VariableGuid'": "8592545d-43b6-b4c2-c9a4-c69168c45de7",
           "name 'InternalVariableName'": "Camera"
         }
       }

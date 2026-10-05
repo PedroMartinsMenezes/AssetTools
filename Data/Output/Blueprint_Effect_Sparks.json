@@ -442,60 +442,42 @@
           "obj 'SimpleConstructionScript'": 17,
           "obj[] 'UbergraphPages'": "6",
           "obj[] 'FunctionGraphs'": "7",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "Audio",
-              "None"
-            ]
-          },
+          "name[] 'CategorySorting'": [
+            "Default",
+            "Audio",
+            "None"
+          ],
           "int 'BlueprintSystemVersion'": 2,
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 397,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 344,
-              "StructName": "EditedDocumentInfo"
-            },
-            "Value": [
-              {
-                "struct SoftObjectPath 35 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                  "SubPathString": "UserConstructionScript",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                  },
-                  "SaveNum": 0
+          "struct[] Size(397) MaybeInnerTag(EditedDocumentInfo 344  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 35 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                "SubPathString": "UserConstructionScript",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
                 },
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "struct SoftObjectPath 23 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
-                  },
-                  "SaveNum": 0
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "struct SoftObjectPath 23 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks",
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/StarterContent/Blueprints/Blueprint_Effect_Sparks.Blueprint_Effect_Sparks"
                 },
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 13,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

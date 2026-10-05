@@ -808,11 +808,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -834,206 +843,143 @@
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "3",
           "obj[] 'FunctionGraphs'": "5 4",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 2261,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Actor",
-                "guid 'VarGuid'": "afdaee83-4004-e227-ecf8-b9b73eebfb7e",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-11`)",
-                "string 'FriendlyName'": "Actor",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 59,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`BC516095467204D2DE8071BBD9889623` Namespace=`\\0` SourceString=`Context`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 2053,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(2261) 'NewVariables'": [
+            {
+              "name 'VarName'": "Actor",
+              "guid native 'VarGuid'": "afdaee83-4004-e227-ecf8-b9b73eebfb7e",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-11`)",
+              "string 'FriendlyName'": "Actor",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 59,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`BC516095467204D2DE8071BBD9889623` Namespace=`\\0` SourceString=`Context`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Target Location",
-                "guid 'VarGuid'": "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-37`)",
-                "string 'FriendlyName'": "Target Location",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`65193F124D304154780A01BECDA10C52` Namespace=`\\0` SourceString=`Inputs`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 2053,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Target Location",
+              "guid native 'VarGuid'": "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-37`)",
+              "string 'FriendlyName'": "Target Location",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`65193F124D304154780A01BECDA10C52` Namespace=`\\0` SourceString=`Inputs`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Distance",
-                "guid 'VarGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Distance",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`6D2BE6D142C7A2490EF550AAB9F42FF6` Namespace=`\\0` SourceString=`Inputs`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Distance",
+              "guid native 'VarGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Distance",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`6D2BE6D142C7A2490EF550AAB9F42FF6` Namespace=`\\0` SourceString=`Inputs`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Farther Away",
-                "guid 'VarGuid'": "411f6877-473f-628a-d2e2-55854316c954",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Farther Away",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 58,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`CF6856D04F53815921C6E188E4DDDA68` Namespace=`\\0` SourceString=`Params`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Context",
-              "Inputs",
-              "None",
-              "Params"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
-                    "AssetName": "STC_TargetDistance"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Farther Away",
+              "guid native 'VarGuid'": "411f6877-473f-628a-d2e2-55854316c954",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Farther Away",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 58,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`CF6856D04F53815921C6E188E4DDDA68` Namespace=`\\0` SourceString=`Params`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
-                    "AssetName": "STC_TargetDistance"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 44,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Context",
+            "Inputs",
+            "None",
+            "Params"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
+                  "AssetName": "STC_TargetDistance"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -51.235817,
-                  "Y": -566.02295
-                },
-                "float 'SavedZoomAmount'": 0.675
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
-                    "AssetName": "STC_TargetDistance"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
+                  "AssetName": "STC_TargetDistance"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -188.56628,
-                  "Y": -835.9719
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -51.235817,
+                "Y": -566.02295
+              },
+              "float 'SavedZoomAmount'": 0.675
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/AI/StateTree_Elements/STC_TargetDistance",
+                  "AssetName": "STC_TargetDistance"
                 },
-                "float 'SavedZoomAmount'": 0.675
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -188.56628,
+                "Y": -835.9719
+              },
+              "float 'SavedZoomAmount'": 0.675
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "37b8457a-4ab7-fde0-0899-1d930ca59edc"
+          "guid native 'BlueprintGuid'": "37b8457a-4ab7-fde0-0899-1d930ca59edc"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1125,7 +1071,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "10133a18-492b-7a7e-0f5e-3392a7e12033"
+          "guid native 'GraphGuid'": "10133a18-492b-7a7e-0f5e-3392a7e12033"
         }
       }
     },
@@ -1141,7 +1087,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "19 21 18 26 27 12 17",
-          "guid 'GraphGuid'": "dbc4fcb0-4331-a4d2-708f-d89f36b92ef5"
+          "guid native 'GraphGuid'": "dbc4fcb0-4331-a4d2-708f-d89f36b92ef5"
         }
       }
     },
@@ -1157,7 +1103,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "20 22 28 13 29 23 14 24 30 6 7 15 9 31 25 16 8",
-          "guid 'GraphGuid'": "54996deb-43bf-4d83-e0f0-9a9429b095a8"
+          "guid native 'GraphGuid'": "54996deb-43bf-4d83-e0f0-9a9429b095a8"
         }
       }
     },
@@ -1171,7 +1117,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 67,
           "int 'NodePosY'": 90,
@@ -1180,7 +1126,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Find the flat distance between the actor and the target location.",
-          "guid 'NodeGuid'": "400ad2f2-4594-4845-cc61-6eb410f2f483"
+          "guid native 'NodeGuid'": "400ad2f2-4594-4845-cc61-6eb410f2f483"
         },
         "Pins": []
       }
@@ -1195,7 +1141,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 1059,
           "int 'NodePosY'": 266,
@@ -1204,7 +1150,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Has the max distance been exceeded?",
-          "guid 'NodeGuid'": "8417ec8c-4c33-a6ec-8d79-30ba3a819581"
+          "guid native 'NodeGuid'": "8417ec8c-4c33-a6ec-8d79-30ba3a819581"
         },
         "Pins": []
       }
@@ -1219,7 +1165,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 1589,
           "int 'NodePosY'": 186,
@@ -1228,7 +1174,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "Choose whether we want to succeed the condition if the actor is further away or closer than the distance.",
-          "guid 'NodeGuid'": "7ee3044d-418a-3539-eb43-dabdff99152f"
+          "guid native 'NodeGuid'": "7ee3044d-418a-3539-eb43-dabdff99152f"
         },
         "Pins": []
       }
@@ -1243,14 +1189,14 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.15 0.15 0.15 0.5",
+          "LinearColor native 'CommentColor'": "0.15 0.15 0.15 0.5",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosY'": -384,
           "int 'NodeHeight'": 144,
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "A simple StateTree condition that returns true when the owning actor's current location is further away than the specified distance.",
-          "guid 'NodeGuid'": "07a4a72c-42bf-6056-2752-2888bd1258b5"
+          "guid native 'NodeGuid'": "07a4a72c-42bf-6056-2752-2888bd1258b5"
         },
         "Pins": []
       }
@@ -1350,7 +1296,7 @@
           },
           "int 'NodePosX'": 816,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid'": "11126ddd-4964-8f79-b7e8-4e9e6b51d488"
+          "guid native 'NodeGuid'": "11126ddd-4964-8f79-b7e8-4e9e6b51d488"
         },
         "Pins": [
           "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`12 b6fc2c58-4cdc-d655-437c-45ad57ab79d0`» BitField«`1`» DefaultObject«`ImportIndex[-31] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1378,7 +1324,7 @@
           },
           "int 'NodePosX'": 304,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid'": "ca9e143c-4bb0-430b-cbcc-48b02538d210"
+          "guid native 'NodeGuid'": "ca9e143c-4bb0-430b-cbcc-48b02538d210"
         },
         "Pins": [
           "input-pin Type«`object obj(`-11`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`13 82081d07-40d5-43d4-4282-d9b357ccdf26`» LinkedTo«`28 e4d6c56b-41d3-83cc-7fa0-1fbdbedc64ff`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1403,7 +1349,7 @@
           },
           "int 'NodePosX'": 752,
           "int 'NodePosY'": 240,
-          "guid 'NodeGuid'": "8b90011c-4cb2-05db-91ce-31bec586a7e0"
+          "guid native 'NodeGuid'": "8b90011c-4cb2-05db-91ce-31bec586a7e0"
         },
         "Pins": [
           "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`14 bd2728bc-423d-b12b-0f37-709838b7ecb9`» BitField«`1`» DefaultObject«`ImportIndex[-31] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1429,7 +1375,7 @@
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 464,
-          "guid 'NodeGuid'": "7e541041-4bd9-d482-c198-23acad1e7a3d"
+          "guid native 'NodeGuid'": "7e541041-4bd9-d482-c198-23acad1e7a3d"
         },
         "Pins": [
           "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`15 a9f3f1f5-4f34-4d49-1ffc-eea9335bca33`» BitField«`1`» DefaultObject«`ImportIndex[-31] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1455,7 +1401,7 @@
           },
           "int 'NodePosX'": 1648,
           "int 'NodePosY'": 336,
-          "guid 'NodeGuid'": "37590377-4aa7-cf41-fc18-4d9e34798350"
+          "guid native 'NodeGuid'": "37590377-4aa7-cf41-fc18-4d9e34798350"
         },
         "Pins": [
           "input-pin Type«`object obj(`-15`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`16 81d7c2a3-45a0-4bdb-1193-1f93fdb30de3`» BitField«`1`» DefaultObject«`ImportIndex[-31] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -1474,21 +1420,12 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "PinNames": {
-            "Name": "PinNames",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "dist"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'PinNames'": [
+            "dist"
+          ],
           "int 'NodePosX'": 256,
           "int 'NodePosY'": 256,
-          "guid 'NodeGuid'": "3c2b8a34-443e-bc72-0879-f2a67c3e6d36"
+          "guid native 'NodeGuid'": "3c2b8a34-443e-bc72-0879-f2a67c3e6d36"
         },
         "Pins": [
           "input-pin Type«`text`» Name«`Format`» Id«`17 7b18800a-4719-e024-e7ae-e292ec314a12`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» DefaultTextValue«`text-base header=`None` Key=`2492409E4EBB1D8A0EF5BE80701D9C1A` Namespace=`[90E289797A0EF2ACA90B2FCAFFD53B03]` SourceString=`Actor is closer than {dist} cm from target location.``» ",
@@ -1507,21 +1444,12 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "PinNames": {
-            "Name": "PinNames",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "dist"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'PinNames'": [
+            "dist"
+          ],
           "int 'NodePosX'": 256,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "13231cd5-4c4b-659d-f139-82b02a4ac413"
+          "guid native 'NodeGuid'": "13231cd5-4c4b-659d-f139-82b02a4ac413"
         },
         "Pins": [
           "input-pin Type«`text`» Name«`Format`» Id«`18 7b18800a-4719-e024-e7ae-e292ec314a12`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» DefaultTextValue«`text-base header=`None` Key=`A5BD79FE421BA993F98B0CA4CBD7EE60` Namespace=`[90E289797A0EF2ACA90B2FCAFFD53B03]` SourceString=`Actor is farther away than {dist} cm from target location.``» ",
@@ -1545,7 +1473,7 @@
             "obj 'MemberParent'": -18,
             "name 'MemberName'": "ReceiveGetDescription"
           },
-          "guid 'NodeGuid'": "6f62c0ca-48c9-a140-c5d5-9289675b716a"
+          "guid native 'NodeGuid'": "6f62c0ca-48c9-a140-c5d5-9289675b716a"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1569,7 +1497,7 @@
             "obj 'MemberParent'": -17,
             "name 'MemberName'": "ReceiveTestCondition"
           },
-          "guid 'NodeGuid'": "2f47fa4e-4f38-5a27-0213-44870f59fb29"
+          "guid native 'NodeGuid'": "2f47fa4e-4f38-5a27-0213-44870f59fb29"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1592,7 +1520,7 @@
             "name 'MemberName'": "ReceiveGetDescription"
           },
           "int 'NodePosX'": 1152,
-          "guid 'NodeGuid'": "e3dd19bf-4d2c-174a-d1fc-f69fe67c86e7"
+          "guid native 'NodeGuid'": "e3dd19bf-4d2c-174a-d1fc-f69fe67c86e7"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1616,7 +1544,7 @@
             "name 'MemberName'": "ReceiveTestCondition"
           },
           "int 'NodePosX'": 2304,
-          "guid 'NodeGuid'": "234874bf-41a1-ebb1-e5b2-77822070b0e1"
+          "guid native 'NodeGuid'": "234874bf-41a1-ebb1-e5b2-77822070b0e1"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1643,7 +1571,7 @@
           },
           "int 'NodePosX'": 544,
           "int 'NodePosY'": 240,
-          "guid 'NodeGuid'": "f901be61-467e-e2dd-3690-9e84a3bdc41f"
+          "guid native 'NodeGuid'": "f901be61-467e-e2dd-3690-9e84a3bdc41f"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-37`)`» Name«`A`» Id«`23 24b198d0-44af-6635-5dcc-c5ab5a80ab69`» LinkedTo«`13 e2426321-4029-fd77-405c-69820a966513`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1670,7 +1598,7 @@
           },
           "int 'NodePosX'": 1296,
           "int 'NodePosY'": 384,
-          "guid 'NodeGuid'": "35be8c97-4fd0-aeb2-0298-1eaae981e505"
+          "guid native 'NodeGuid'": "35be8c97-4fd0-aeb2-0298-1eaae981e505"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`24 be11c979-4548-cade-989a-cdb1b3f48c3a`» LinkedTo«`14 b0275905-4aec-cca2-786f-21a25129e5fd`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1693,7 +1621,7 @@
           "class EdGraphPinType 69 'IndexPinType'": "bool",
           "int 'NodePosX'": 1856,
           "int 'NodePosY'": 352,
-          "guid 'NodeGuid'": "4784fb20-4619-00a8-dbdf-1f9ea0541bad"
+          "guid native 'NodeGuid'": "4784fb20-4619-00a8-dbdf-1f9ea0541bad"
         },
         "Pins": [
           "input-pin Type«`bool`» Name«`Option 0`» PinFriendlyName«`text-base header=`Immutable` Key=`False` Namespace=`Core` SourceString=`False``» Id«`25 dd84ca6a-48ae-9b19-baef-258e21b5cd87`» LinkedTo«`16 8df33237-4fd7-be3a-6a7a-19ab43d621ca`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1715,11 +1643,11 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Distance",
-            "guid 'MemberGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
+            "guid native 'MemberGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosY'": 256,
-          "guid 'NodeGuid'": "a0d14087-4c94-c4a7-a2c9-48be020c5271"
+          "guid native 'NodeGuid'": "a0d14087-4c94-c4a7-a2c9-48be020c5271"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`Distance`» Id«`26 865d3be3-4dab-cd0a-7553-c1b45d991911`» LinkedTo«`18 1c6997db-41c0-d227-bfc0-8facc2907f12 | 17 1c6997db-41c0-d227-bfc0-8facc2907f12`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1739,12 +1667,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Farther Away",
-            "guid 'MemberGuid'": "411f6877-473f-628a-d2e2-55854316c954",
+            "guid native 'MemberGuid'": "411f6877-473f-628a-d2e2-55854316c954",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 592,
           "int 'NodePosY'": 400,
-          "guid 'NodeGuid'": "cf38d8bb-4c39-b82c-1a42-5987de89d515"
+          "guid native 'NodeGuid'": "cf38d8bb-4c39-b82c-1a42-5987de89d515"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Farther Away`» Id«`27 f18a643b-4a99-3f99-bced-9bb1a072c378`» LinkedTo«`12 1974e496-432e-b661-6110-7cab9e43c30c`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1764,12 +1692,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Actor",
-            "guid 'MemberGuid'": "afdaee83-4004-e227-ecf8-b9b73eebfb7e",
+            "guid native 'MemberGuid'": "afdaee83-4004-e227-ecf8-b9b73eebfb7e",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 128,
           "int 'NodePosY'": 214,
-          "guid 'NodeGuid'": "0b3e7a4b-44eb-1a83-6ad0-abaec36d012c"
+          "guid native 'NodeGuid'": "0b3e7a4b-44eb-1a83-6ad0-abaec36d012c"
         },
         "Pins": [
           "output-pin Type«`object obj(`-11`)`» Name«`Actor`» Id«`28 e4d6c56b-41d3-83cc-7fa0-1fbdbedc64ff`» LinkedTo«`13 82081d07-40d5-43d4-4282-d9b357ccdf26`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1789,12 +1717,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Target Location",
-            "guid 'MemberGuid'": "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
+            "guid native 'MemberGuid'": "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": 304,
-          "guid 'NodeGuid'": "fdb975a6-4dac-335f-517f-93b2f2d69635"
+          "guid native 'NodeGuid'": "fdb975a6-4dac-335f-517f-93b2f2d69635"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-37`)`» Name«`Target Location`» Id«`29 9a685fc7-40aa-5b07-0654-d8b4c88eb4f5`» LinkedTo«`23 eb19c345-4af5-8c43-fbe4-1fbf71d2e7e1`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1814,12 +1742,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Distance",
-            "guid 'MemberGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
+            "guid native 'MemberGuid'": "144feb8a-4c33-5bb4-a85e-49b613f610c3",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1088,
           "int 'NodePosY'": 416,
-          "guid 'NodeGuid'": "52080d61-4999-4a25-a8a7-c2bac953b9ad"
+          "guid native 'NodeGuid'": "52080d61-4999-4a25-a8a7-c2bac953b9ad"
         },
         "Pins": [
           "output-pin Type«`real-double`» Name«`Distance`» Id«`30 15a9c25b-41c6-6c74-64cf-6ba526370940`» LinkedTo«`15 6c983f40-4de6-6898-9a98-82b69922fdc7`» DefaultValue«`0.0`» AutogeneratedDefaultValue«`0.0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1839,12 +1767,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Farther Away",
-            "guid 'MemberGuid'": "411f6877-473f-628a-d2e2-55854316c954",
+            "guid native 'MemberGuid'": "411f6877-473f-628a-d2e2-55854316c954",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1680,
           "int 'NodePosY'": 448,
-          "guid 'NodeGuid'": "d573d205-4920-ad36-27a3-5ab73a47eb8c"
+          "guid native 'NodeGuid'": "d573d205-4920-ad36-27a3-5ab73a47eb8c"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Farther Away`» Id«`31 88e78f2f-4fcf-c20d-dd9c-ebaf32a8ecb7`» LinkedTo«`25 1d959fe3-4417-6f69-549a-36a0e210cd62`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1862,9 +1790,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "Vector 'Target Location' {a93f0e98-4d8e-9788-7a1b-d787ae05204b}": "0 0 0",
-          "double 'Distance' {144feb8a-4c33-5bb4-a85e-49b613f610c3}": 1000,
-          "bool 'Farther Away' {411f6877-473f-628a-d2e2-55854316c954}": true
+          "Vector native {a93f0e98-4d8e-9788-7a1b-d787ae05204b} 'Target Location'": "0 0 0",
+          "double {144feb8a-4c33-5bb4-a85e-49b613f610c3} 'Distance'": 1000,
+          "bool {411f6877-473f-628a-d2e2-55854316c954} 'Farther Away'": true
         },
         "SparseClassDataStruct": {
           "Index": ""

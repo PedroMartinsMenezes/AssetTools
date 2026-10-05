@@ -190,27 +190,21 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "Rules": {
-            "Name": "Rules",
-            "Type": "ArrayProperty",
-            "Size": 240,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'StartCap'": 0,
-                "obj[] 'Body'": "-4",
-                "obj 'EndCap'": 0,
-                "float 'MinimumAngle'": 0,
-                "float 'MaximumAngle'": 360,
-                "Description": {
-                  "Name": "Description",
-                  "Type": "TextProperty",
-                  "Size": 52,
-                  "Value": "text-base header=`None` Key=`TerrainDefaultRuleDesc` Namespace=`Paper2D` SourceString=`Top`"
-                }
+          "struct[] Size(240) 'Rules'": [
+            {
+              "obj 'StartCap'": 0,
+              "obj[] 'Body'": "-4",
+              "obj 'EndCap'": 0,
+              "float 'MinimumAngle'": 0,
+              "float 'MaximumAngle'": 360,
+              "Description": {
+                "Name": "Description",
+                "Type": "TextProperty",
+                "Size": 52,
+                "Value": "text-base header=`None` Key=`TerrainDefaultRuleDesc` Namespace=`Paper2D` SourceString=`Top`"
               }
-            ]
-          }
+            }
+          ]
         }
       }
     }

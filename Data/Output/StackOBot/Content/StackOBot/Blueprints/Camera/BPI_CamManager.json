@@ -751,6 +751,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       },
@@ -771,100 +774,82 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -5,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 16,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 16,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "8 4 6 5 7 9",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 592,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                    "AssetName": "BPI_CamManager"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(592) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                  "AssetName": "BPI_CamManager"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -851.5981,
-                  "Y": -573.4584
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                    "AssetName": "BPI_CamManager"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -746.7655,
-                  "Y": -578.4584
-                },
-                "float 'SavedZoomAmount'": 1
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -851.5981,
+                "Y": -573.4584
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                    "AssetName": "BPI_CamManager"
-                  },
-                  "SaveNum": 0
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                  "AssetName": "BPI_CamManager"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -977.5981,
-                  "Y": -608.4584
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 3,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
-                    "AssetName": "BPI_CamManager"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -746.7655,
+                "Y": -578.4584
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                  "AssetName": "BPI_CamManager"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -967.7648,
-                  "Y": -593.625
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -977.5981,
+                "Y": -608.4584
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 3,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/Camera/BPI_CamManager",
+                  "AssetName": "BPI_CamManager"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -967.7648,
+                "Y": -593.625
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 25,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "ffe99ca7-4cc3-7d15-6eaf-3ab9ca8686f9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "ffe99ca7-4cc3-7d15-6eaf-3ab9ca8686f9"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -939,7 +924,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "16 22",
-          "guid 'GraphGuid' /Script/CoreUObject": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "c76ff93b-4cdc-3b63-e8b7-b0974b42f46d"
         }
       }
     },
@@ -955,7 +940,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "17 23",
-          "guid 'GraphGuid' /Script/CoreUObject": "0525ca22-4411-4751-829b-9a833a9050df"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "0525ca22-4411-4751-829b-9a833a9050df"
         }
       }
     },
@@ -971,7 +956,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "18 24",
-          "guid 'GraphGuid' /Script/CoreUObject": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "9a285dcf-415b-67e6-7bee-8cb19095a9bf"
         }
       }
     },
@@ -987,7 +972,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "19",
-          "guid 'GraphGuid' /Script/CoreUObject": "07edc5a9-4340-9b75-955f-bf883f89dd08"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "07edc5a9-4340-9b75-955f-bf883f89dd08"
         }
       }
     },
@@ -1003,7 +988,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "20",
-          "guid 'GraphGuid' /Script/CoreUObject": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "be9d2899-4b90-1eac-9007-8dbf53ddacf8"
         }
       }
     },
@@ -1019,7 +1004,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "21",
-          "guid 'GraphGuid' /Script/CoreUObject": "10e7bd66-4f01-6a97-9f52-f5b91b9cd0d9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "10e7bd66-4f01-6a97-9f52-f5b91b9cd0d9"
         }
       }
     },
@@ -1197,7 +1182,7 @@
             "name 'MemberName'": "GetCameraState"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "de3c8918-4a7b-fc42-8347-92a02b4063c6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "de3c8918-4a7b-fc42-8347-92a02b4063c6"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1230,7 +1215,7 @@
             "name 'MemberName'": "GetLockedCamera"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "e2196aa2-43bb-5c20-2141-88aa5069631e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e2196aa2-43bb-5c20-2141-88aa5069631e"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1253,7 +1238,7 @@
             "name 'MemberName'": "GetPlayerCamera"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "b4b92dd0-46b8-374f-e2db-40bf83288f55"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b4b92dd0-46b8-374f-e2db-40bf83288f55"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1276,7 +1261,7 @@
             "name 'MemberName'": "ResetCamera"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "b0a2f923-4293-d02c-eedf-9ea0b6e796f5"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b0a2f923-4293-d02c-eedf-9ea0b6e796f5"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1309,7 +1294,7 @@
             "name 'MemberName'": "SetCameraState"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "3c434cc3-4fdb-f136-258c-eab656a4fa5f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3c434cc3-4fdb-f136-258c-eab656a4fa5f"
         },
         "SerializedItems": [
           {
@@ -1343,7 +1328,7 @@
             "name 'MemberName'": "UsePresetAngle"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "508c45cd-4f0f-c6d4-8bb2-7bb055149eef"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "508c45cd-4f0f-c6d4-8bb2-7bb055149eef"
         },
         "SerializedItems": [
           {
@@ -1394,7 +1379,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "5acf4303-4918-19e0-df68-4aa983d7a0cf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5acf4303-4918-19e0-df68-4aa983d7a0cf"
         },
         "SerializedItems": [
           {
@@ -1428,7 +1413,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "03f957eb-42fe-fae9-ce97-85b00bcfb2c6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "03f957eb-42fe-fae9-ce97-85b00bcfb2c6"
         },
         "SerializedItems": [
           {
@@ -1482,7 +1467,7 @@
           },
           "bool 'bIsEditable'": true,
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid' /Script/CoreUObject": "a97a9902-4cab-02f1-2f11-458c309ef640"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a97a9902-4cab-02f1-2f11-458c309ef640"
         },
         "SerializedItems": [
           {

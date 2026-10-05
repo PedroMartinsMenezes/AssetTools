@@ -803,11 +803,20 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
@@ -843,140 +852,95 @@
           "obj[] 'UbergraphPages'": "5",
           "obj[] 'FunctionGraphs'": "8 7 4",
           "obj[] 'DelegateSignatureGraphs'": "6",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 1190,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Distance",
-                "guid 'VarGuid'": "c57d21d7-482f-e4e6-bf9f-cb84ed35438e",
-                "class EdGraphPinType 69 'VarType'": "real-double",
-                "string 'FriendlyName'": "Distance",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 55,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`493BAA8F458DED57E5A347ADBD01D902` Namespace=`\\0` SourceString=`PCG`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 37,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 79,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "ExposeOnSpawn",
-                      "string 'DataValue'": "true"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(1190) 'NewVariables'": [
+            {
+              "name 'VarName'": "Distance",
+              "guid native 'VarGuid'": "c57d21d7-482f-e4e6-bf9f-cb84ed35438e",
+              "class EdGraphPinType 69 'VarType'": "real-double",
+              "string 'FriendlyName'": "Distance",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 55,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`493BAA8F458DED57E5A347ADBD01D902` Namespace=`\\0` SourceString=`PCG`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Show Coins",
-                "guid 'VarGuid'": "480f233f-4284-3a6f-101e-be9462bbb343",
-                "class EdGraphPinType 69 'VarType'": "mcdelegate",
-                "string 'FriendlyName'": "Show Coins",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 17592454545413,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 37,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 44,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph",
-              "PCG",
-              "Pickups"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_PickupSpline",
-                    "AssetName": "BP_PickupSpline"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -764.13586,
-                  "Y": -2536.7236
-                },
-                "float 'SavedZoomAmount'": 0.875
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 37,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(79) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "ExposeOnSpawn",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Show Coins",
+              "guid native 'VarGuid'": "480f233f-4284-3a6f-101e-be9462bbb343",
+              "class EdGraphPinType 69 'VarType'": "mcdelegate",
+              "string 'FriendlyName'": "Show Coins",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_PickupSpline",
-                    "AssetName": "BP_PickupSpline"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 17592454545413,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 37,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph",
+            "PCG",
+            "Pickups"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_PickupSpline",
+                  "AssetName": "BP_PickupSpline"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -309.8499,
-                  "Y": -339.405
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -764.13586,
+                "Y": -2536.7236
+              },
+              "float 'SavedZoomAmount'": 0.875
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_PickupSpline",
+                  "AssetName": "BP_PickupSpline"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -309.8499,
+                "Y": -339.405
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "23c93873-4d39-7b76-3449-edbd193eb4ae"
+          "guid native 'BlueprintGuid'": "23c93873-4d39-7b76-3449-edbd193eb4ae"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1066,7 +1030,7 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "double 'Distance' {c57d21d7-482f-e4e6-bf9f-cb84ed35438e}": 500,
+          "double {c57d21d7-482f-e4e6-bf9f-cb84ed35438e} 'Distance'": 500,
           "Show Coins": {
             "Name": "Show Coins",
             "Type": "MulticastInlineDelegateProperty",
@@ -1111,7 +1075,7 @@
         "Members": {
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "15 13",
-          "guid 'GraphGuid'": "df3509b1-4df0-5541-42a9-f5b254969229"
+          "guid native 'GraphGuid'": "df3509b1-4df0-5541-42a9-f5b254969229"
         }
       }
     },
@@ -1127,7 +1091,7 @@
         "Members": {
           "obj 'Schema'": -3,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "6e97dd06-4418-d081-6c1b-6c94f755047a"
+          "guid native 'GraphGuid'": "6e97dd06-4418-d081-6c1b-6c94f755047a"
         }
       }
     },
@@ -1144,7 +1108,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "16",
           "bool 'bEditable'": false,
-          "guid 'GraphGuid'": "8139b914-4110-e26f-31fb-0da73140aa08"
+          "guid native 'GraphGuid'": "8139b914-4110-e26f-31fb-0da73140aa08"
         }
       }
     },
@@ -1160,7 +1124,7 @@
         "Members": {
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "17 12 14",
-          "guid 'GraphGuid'": "653cab4a-499a-a1bc-d88a-5d9599beee09"
+          "guid native 'GraphGuid'": "653cab4a-499a-a1bc-d88a-5d9599beee09"
         }
       }
     },
@@ -1177,7 +1141,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "18",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "aaf2316e-4cc6-37aa-8df9-27b53b66c300"
+          "guid native 'GraphGuid'": "aaf2316e-4cc6-37aa-8df9-27b53b66c300"
         }
       }
     },
@@ -1273,7 +1237,7 @@
             "name 'MemberName'": "OnDestroyed"
           },
           "int 'NodePosX'": 208,
-          "guid 'NodeGuid'": "bfeb8ea0-4236-100d-19eb-eaa2e655d478"
+          "guid native 'NodeGuid'": "bfeb8ea0-4236-100d-19eb-eaa2e655d478"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`12 8b0e2a18-4743-12f9-3a9c-cda06deafac9`» LinkedTo«`17 4296744f-4117-ec02-64ad-69a15b0e4612`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1295,11 +1259,11 @@
         "Members": {
           "struct MemberReference 131 'DelegateReference'": {
             "name 'MemberName'": "Show Coins",
-            "guid 'MemberGuid'": "480f233f-4284-3a6f-101e-be9462bbb343",
+            "guid native 'MemberGuid'": "480f233f-4284-3a6f-101e-be9462bbb343",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 256,
-          "guid 'NodeGuid'": "a83d2f94-4295-fca5-ef66-b4bc1e8eca26"
+          "guid native 'NodeGuid'": "a83d2f94-4295-fca5-ef66-b4bc1e8eca26"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`13 b4a4ae0c-4e28-cc14-e281-a79f2bd4c14e`» LinkedTo«`15 f942e14b-4cca-f8c4-259b-e5a814790a48`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1319,10 +1283,10 @@
         "__type": "UEdGraphNode",
         "Members": {
           "name 'SelectedFunctionName'": "Call Show Coins",
-          "guid 'SelectedFunctionGuid'": "df3509b1-4df0-5541-42a9-f5b254969229",
+          "guid native 'SelectedFunctionGuid'": "df3509b1-4df0-5541-42a9-f5b254969229",
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 144,
-          "guid 'NodeGuid'": "87b3cc2c-46bf-a196-f5c8-b0bdccc1f36f"
+          "guid native 'NodeGuid'": "87b3cc2c-46bf-a196-f5c8-b0bdccc1f36f"
         },
         "Pins": [
           "input-pin Type«`object obj(`-9`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`CreateDelegate_ObjectInputName` Namespace=`K2Node` SourceString=`Object``» Id«`14 4d8a7a56-4ceb-ac5f-4b30-ea9f64fe2c56`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1345,7 +1309,7 @@
             "name 'MemberName'": "Call Show Coins"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "18a39f8a-48ba-b478-b5ca-a5a2208d4335"
+          "guid native 'NodeGuid'": "18a39f8a-48ba-b478-b5ca-a5a2208d4335"
         },
         "SerializedItems": [
           {
@@ -1378,7 +1342,7 @@
             "name 'MemberName'": "Show Coins"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "4bb30a4c-4c9b-2ef2-a141-2ca88fc279c2"
+          "guid native 'NodeGuid'": "4bb30a4c-4c9b-2ef2-a141-2ca88fc279c2"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1401,7 +1365,7 @@
             "name 'MemberName'": "Update Primary Coin"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "4914207f-40fa-20a0-8d7a-f1a868d0fa9d"
+          "guid native 'NodeGuid'": "4914207f-40fa-20a0-8d7a-f1a868d0fa9d"
         },
         "SerializedItems": [
           {
@@ -1433,7 +1397,7 @@
             "obj 'MemberParent'": -10,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "20631183-4070-0994-bbf3-2ba8b18d650d"
+          "guid native 'NodeGuid'": "20631183-4070-0994-bbf3-2ba8b18d650d"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1526,7 +1490,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "23",
-          "guid 'VariableGuid'": "6e96dabf-4415-446d-26ed-42be85b4d7a9",
+          "guid native 'VariableGuid'": "6e96dabf-4415-446d-26ed-42be85b4d7a9",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1551,7 +1515,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "02407caf-491a-364b-9d73-959c42859ddd",
+          "guid native 'VariableGuid'": "02407caf-491a-364b-9d73-959c42859ddd",
           "name 'InternalVariableName'": "Spline"
         }
       }
@@ -1576,7 +1540,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "6714609f-461e-809e-ee33-0ab3336f74ce",
+          "guid native 'VariableGuid'": "6714609f-461e-809e-ee33-0ab3336f74ce",
           "name 'InternalVariableName'": "PCG"
         }
       }
@@ -1607,8 +1571,8 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "LinearColor 'EditorUnselectedSplineSegmentColor'": "0.000842 0.004585 1 1",
-          "LinearColor 'EditorSelectedSplineSegmentColor'": "0.828 0.364 0.003 1",
+          "LinearColor native 'EditorUnselectedSplineSegmentColor'": "0.000842 0.004585 1 1",
+          "LinearColor native 'EditorSelectedSplineSegmentColor'": "0.828 0.364 0.003 1",
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
           }

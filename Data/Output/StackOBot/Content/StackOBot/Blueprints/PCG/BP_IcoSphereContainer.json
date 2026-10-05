@@ -779,11 +779,23 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
+      },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty Vector": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | Vector 1 | /Script/CoreUObject 0"
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
@@ -793,6 +805,9 @@
       },
       "StructProperty PCGOverrideInstancedPropertyBag": {
         "TypeName": "StructProperty 1 | PCGOverrideInstancedPropertyBag 1 | /Script/PCG 0"
+      },
+      "ArrayProperty StructProperty ResponseChannel": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
       "StructProperty CollisionResponse": {
         "TypeName": "StructProperty 1 | CollisionResponse 1 | /Script/Engine 0"
@@ -818,110 +833,74 @@
           "obj 'SimpleConstructionScript'": 16,
           "obj[] 'UbergraphPages'": "4",
           "obj[] 'FunctionGraphs'": "5",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 632,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "ExitPoints",
-                "guid 'VarGuid'": "417b4f00-4625-98b6-c9df-01ab651d1f7a",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-27`) container(`Array`)",
-                "string 'FriendlyName'": "Exit Points",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 38,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 79,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MakeEditWidget",
-                      "string 'DataValue'": "true"
-                    }
-                  ],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/BP_IcoSphereContainer",
-                    "AssetName": "BP_IcoSphereContainer"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(632) 'NewVariables'": [
+            {
+              "name 'VarName'": "ExitPoints",
+              "guid native 'VarGuid'": "417b4f00-4625-98b6-c9df-01ab651d1f7a",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-27`) container(`Array`)",
+              "string 'FriendlyName'": "Exit Points",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/BP_IcoSphereContainer",
-                    "AssetName": "BP_IcoSphereContainer"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 38,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(79) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MakeEditWidget",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/BP_IcoSphereContainer",
+                  "AssetName": "BP_IcoSphereContainer"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -292,
-                  "Y": -260
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/BP_IcoSphereContainer",
+                  "AssetName": "BP_IcoSphereContainer"
                 },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -292,
+                "Y": -260
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "31b12d70-4415-fcdd-72e5-38bcc4c391d3"
+          "guid native 'BlueprintGuid'": "31b12d70-4415-fcdd-72e5-38bcc4c391d3"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1003,21 +982,9 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "ExitPoints": {
-            "Name": "ExitPoints",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "HasPropertyGuid": 1,
-            "PropertyGuid": "417b4f00-4625-98b6-c9df-01ab651d1f7a",
-            "StructName": "Vector",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              "0 0 0"
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | Vector 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasPropertyGuid, HasBinaryOrNativeSerialize"
-          }
+          "struct[] native {417b4f00-4625-98b6-c9df-01ab651d1f7a} StructName(Vector) Size(28) PropertyTagFlags(HasPropertyGuid, HasBinaryOrNativeSerialize) 'ExitPoints'": [
+            "0 0 0"
+          ]
         },
         "SparseClassDataStruct": {
           "Index": ""
@@ -1037,7 +1004,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "6 7 8",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "bfc83bc2-4b59-858b-b327-179fb2671795"
+          "guid native 'GraphGuid'": "bfc83bc2-4b59-858b-b327-179fb2671795"
         }
       }
     },
@@ -1054,7 +1021,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "9",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "d898d040-43fb-fa52-80e7-92966f211cbe"
+          "guid native 'GraphGuid'": "d898d040-43fb-fa52-80e7-92966f211cbe"
         }
       }
     },
@@ -1073,11 +1040,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 66,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 66,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "6f85792d-400a-4923-887f-38b8174ca81c"
+          "guid native 'NodeGuid'": "6f85792d-400a-4923-887f-38b8174ca81c"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1102,11 +1069,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 66,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 66,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\r\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "5ec56762-4200-ab4d-aa9e-da9ddd9fee1c"
+          "guid native 'NodeGuid'": "5ec56762-4200-ab4d-aa9e-da9ddd9fee1c"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1132,11 +1099,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 66,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 66,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "8bc43811-4166-0d44-6e8b-9c9898684983"
+          "guid native 'NodeGuid'": "8bc43811-4166-0d44-6e8b-9c9898684983"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1160,7 +1127,7 @@
             "obj 'MemberParent'": -6,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "e203e725-441c-53d8-9000-c98fdd3216e9"
+          "guid native 'NodeGuid'": "e203e725-441c-53d8-9000-c98fdd3216e9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1219,17 +1186,7 @@
               "SerialSize": 73,
               "BagStruct": {
                 "Members": {
-                  "ExitPoints": {
-                    "Name": "ExitPoints",
-                    "Type": "ArrayProperty",
-                    "Size": 4,
-                    "StructName": "Vector",
-                    "BoolVal": 0,
-                    "InnerType": "StructProperty",
-                    "Value": [],
-                    "TypeName": "ArrayProperty 1 | StructProperty 1 | Vector 1 | /Script/CoreUObject 0",
-                    "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-                  }
+                  "struct[] native StructName(Vector) Size(4) PropertyTagFlags(HasBinaryOrNativeSerialize) 'ExitPoints'": []
                 }
               }
             }
@@ -1273,7 +1230,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "67e83bf4-4728-fce5-c448-3d9d6d7e65c0",
+          "guid native 'VariableGuid'": "67e83bf4-4728-fce5-c448-3d9d6d7e65c0",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1298,7 +1255,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "0d8dc667-4d47-3226-47b1-b2a039ecabea",
+          "guid native 'VariableGuid'": "0d8dc667-4d47-3226-47b1-b2a039ecabea",
           "name 'InternalVariableName'": "PCG"
         }
       }
@@ -1323,7 +1280,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "5b78643c-4b1d-3e55-20b6-fb928f611b94",
+          "guid native 'VariableGuid'": "5b78643c-4b1d-3e55-20b6-fb928f611b94",
           "name 'InternalVariableName'": "Cube"
         }
       }
@@ -1357,33 +1314,24 @@
           "obj 'StaticMesh'": -28,
           "obj[] 'OverrideMaterials'": "-16",
           "struct BodyInstance 473 'BodyInstance'": {
-            "byte64 (ECollisionChannel) 'ObjectType' /Script/Engine": 51,
-            "byte64 (ECollisionEnabled) 'CollisionEnabled' /Script/Engine": 54,
+            "byte64 (ECollisionChannel) TypeNamespace(/Script/Engine) 'ObjectType'": 51,
+            "byte64 (ECollisionEnabled) TypeNamespace(/Script/Engine) 'CollisionEnabled'": 54,
             "name 'CollisionProfileName'": "NoCollision",
             "struct CollisionResponse 269 'CollisionResponses'": {
-              "ResponseArray": {
-                "Name": "ResponseArray",
-                "Type": "ArrayProperty",
-                "Size": 200,
-                "StructName": "ResponseChannel",
-                "BoolVal": 0,
-                "InnerType": "StructProperty",
-                "Value": [
-                  {
-                    "name 'Channel'": "Visibility",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 58
-                  },
-                  {
-                    "name 'Channel'": "Camera",
-                    "byte64 (ECollisionResponse) 'Response' /Script/Engine": 58
-                  }
-                ],
-                "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
-              }
+              "struct[] TypeNamespace(/Script/Engine) StructName(ResponseChannel) Size(200) 'ResponseArray'": [
+                {
+                  "name 'Channel'": "Visibility",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 58
+                },
+                {
+                  "name 'Channel'": "Camera",
+                  "byte64 (ECollisionResponse) TypeNamespace(/Script/Engine) 'Response'": 58
+                }
+              ]
             }
           },
           "bool 'bVisible'": false,
-          "byte64 (EComponentMobility) 'Mobility' /Script/Engine": 57
+          "byte64 (EComponentMobility) TypeNamespace(/Script/Engine) 'Mobility'": 57
         },
         "LODData": [],
         "bSerializeAsCookedData": false,

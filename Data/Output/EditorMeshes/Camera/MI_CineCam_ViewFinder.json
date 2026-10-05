@@ -252,83 +252,59 @@
         "__type": "UMaterialInstance",
         "Members": {
           "obj 'Parent'": -4,
-          "ScalarParameterValues": {
-            "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
-            "Size": 472,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ScalarParameterValues",
-              "Type": "StructProperty",
-              "Size": 419,
-              "StructName": "ScalarParameterValue"
-            },
-            "Value": [
-              {
-                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
-                  "bool 'bIsUsedAsAtlasPosition'": false,
-                  "Curve": {
-                    "Name": "Curve",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
-                  },
-                  "Atlas": {
-                    "Name": "Atlas",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
+          "struct[] Size(472) MaybeInnerTag(ScalarParameterValue 419  ) 'ScalarParameterValues'": [
+            {
+              "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                "bool 'bIsUsedAsAtlasPosition'": false,
+                "Curve": {
+                  "Name": "Curve",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
                   }
                 },
-                "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                  "name 'Name'": "RefractionDepthBias",
-                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                  "int 'Index'": -1
-                },
-                "float 'ParameterValue'": 0,
-                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-              }
-            ]
-          },
-          "VectorParameterValues": {
-            "Name": "VectorParameterValues",
-            "Type": "ArrayProperty",
-            "Size": 351,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "VectorParameterValues",
-              "Type": "StructProperty",
-              "Size": 298,
-              "StructName": "VectorParameterValue"
-            },
-            "Value": [
-              {
-                "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                  "name 'Name'": "Color",
-                  "byte64 (EMaterialParameterAssociation) 'Association'": 13,
-                  "int 'Index'": -1
-                },
-                "LinearColor 'ParameterValue'": "0 0 0 1",
-                "guid 'ExpressionGUID'": "5e26e355-44ef-b707-df57-eaade4b425e8"
-              }
-            ]
-          },
+                "Atlas": {
+                  "Name": "Atlas",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
+                  }
+                }
+              },
+              "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                "name 'Name'": "RefractionDepthBias",
+                "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                "int 'Index'": -1
+              },
+              "float 'ParameterValue'": 0,
+              "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
+          "struct[] Size(351) MaybeInnerTag(VectorParameterValue 298  ) 'VectorParameterValues'": [
+            {
+              "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                "name 'Name'": "Color",
+                "byte64 (EMaterialParameterAssociation) 'Association'": 13,
+                "int 'Index'": -1
+              },
+              "LinearColor 'ParameterValue'": "0 0 0 1",
+              "guid 'ExpressionGUID'": "5e26e355-44ef-b707-df57-eaade4b425e8"
+            }
+          ],
           "struct MaterialInstanceBasePropertyOverrides 37 'BasePropertyOverrides'": {
             "float 'OpacityMaskClipValue'": 0.3333
           },

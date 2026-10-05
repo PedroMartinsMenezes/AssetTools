@@ -839,175 +839,109 @@
           "obj 'SimpleConstructionScript'": 67,
           "obj[] 'UbergraphPages'": "7",
           "obj[] 'FunctionGraphs'": "8",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 1916,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "NewVariables",
-              "Type": "StructProperty",
-              "Size": 1863,
-              "StructName": "BPVariableDescription"
+          "struct[] Size(1916) MaybeInnerTag(BPVariableDescription 1863  ) 'NewVariables'": [
+            {
+              "name 'VarName'": "Width",
+              "guid 'VarGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
+              "struct EdGraphPinType 61 'VarType'": "float",
+              "string 'FriendlyName'": "Width",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
+              },
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
+              "struct[] Size(128) MaybeInnerTag(BPVariableMetaDataEntry 75  ) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
             },
-            "Value": [
-              {
-                "name 'VarName'": "Width",
-                "guid 'VarGuid'": "74e5d18a-41d8-2895-7f50-10a7c2813d8a",
-                "struct EdGraphPinType 61 'VarType'": "float",
-                "string 'FriendlyName'": "Width",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 128,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 75,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ]
-                },
-                "string 'DefaultValue'": ""
+            {
+              "name 'VarName'": "Height",
+              "guid 'VarGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
+              "struct EdGraphPinType 61 'VarType'": "float",
+              "string 'FriendlyName'": "Height",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
               },
-              {
-                "name 'VarName'": "Height",
-                "guid 'VarGuid'": "69a99f70-491d-5f1e-b80d-3b88e2602572",
-                "struct EdGraphPinType 61 'VarType'": "float",
-                "string 'FriendlyName'": "Height",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 128,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 75,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ]
-                },
-                "string 'DefaultValue'": ""
-              },
-              {
-                "name 'VarName'": "ConeActor",
-                "guid 'VarGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
-                "struct EdGraphPinType 61 'VarType'": "object obj(`-10`)",
-                "string 'FriendlyName'": "Cone Actor",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
-                },
-                "ulong 'PropertyFlags'": 67589,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 128,
-                  "InnerType": "StructProperty",
-                  "MaybeInnerTag": {
-                    "Name": "MetaDataArray",
-                    "Type": "StructProperty",
-                    "Size": 75,
-                    "StructName": "BPVariableMetaDataEntry"
-                  },
-                  "Value": [
-                    {
-                      "name 'DataKey'": "MultiLine",
-                      "string 'DataValue'": "true"
-                    }
-                  ]
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ]
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 397,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "LastEditedDocuments",
-              "Type": "StructProperty",
-              "Size": 344,
-              "StructName": "EditedDocumentInfo"
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
+              "struct[] Size(128) MaybeInnerTag(BPVariableMetaDataEntry 75  ) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
             },
-            "Value": [
-              {
-                "struct SoftObjectPath 35 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                  "SubPathString": "UserConstructionScript",
-                  "AssetPath": {
-                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                  },
-                  "SaveNum": 0
-                },
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
+            {
+              "name 'VarName'": "ConeActor",
+              "guid 'VarGuid'": "5caf0ad6-4508-a18c-a95d-e8a2a731e844",
+              "struct EdGraphPinType 61 'VarType'": "object obj(`-10`)",
+              "string 'FriendlyName'": "Cone Actor",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`"
               },
-              {
-                "struct SoftObjectPath 23 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
-                  "SubPathString": "EventGraph",
-                  "AssetPath": {
-                    "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 67589,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 75,
+              "struct[] Size(128) MaybeInnerTag(BPVariableMetaDataEntry 75  ) 'MetaDataArray'": [
+                {
+                  "name 'DataKey'": "MultiLine",
+                  "string 'DataValue'": "true"
+                }
+              ],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] Size(397) MaybeInnerTag(EditedDocumentInfo 344  ) 'LastEditedDocuments'": [
+            {
+              "struct SoftObjectPath 35 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                "SubPathString": "UserConstructionScript",
+                "AssetPath": {
+                  "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
                 },
-                "Vector2D 'SavedViewOffset'": "-305.8768310546875 -47.706207275390625",
-                "float 'SavedZoomAmount'": 0.675
-              }
-            ]
-          },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "struct SoftObjectPath 23 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPathName": "/Game/Blueprints/BP_TestActor.BP_TestActor",
+                "SubPathString": "EventGraph",
+                "AssetPath": {
+                  "PackageName": "/Game/Blueprints/BP_TestActor.BP_TestActor"
+                },
+                "SaveNum": 0
+              },
+              "Vector2D 'SavedViewOffset'": "-305.8768310546875 -47.706207275390625",
+              "float 'SavedZoomAmount'": 0.675
+            }
+          ],
           "obj 'ThumbnailInfo'": 65,
           "obj 'GeneratedClass'": 4,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

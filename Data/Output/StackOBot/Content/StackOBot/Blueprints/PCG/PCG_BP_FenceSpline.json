@@ -722,6 +722,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       },
@@ -749,66 +752,48 @@
           "obj 'SimpleConstructionScript'": 16,
           "obj[] 'UbergraphPages'": "3",
           "obj[] 'FunctionGraphs'": "4",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
-                    "AssetName": "PCG_BP_FenceSpline"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                  "AssetName": "PCG_BP_FenceSpline"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
-                    "AssetName": "PCG_BP_FenceSpline"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_BP_FenceSpline",
+                  "AssetName": "PCG_BP_FenceSpline"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "b5de7f8b-4455-475e-6944-ebbd64f29775"
+          "guid native 'BlueprintGuid'": "b5de7f8b-4455-475e-6944-ebbd64f29775"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -860,7 +845,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "5 6 7",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "bc6230d6-4956-29e0-3f62-7cba3e77d331"
+          "guid native 'GraphGuid'": "bc6230d6-4956-29e0-3f62-7cba3e77d331"
         }
       }
     },
@@ -877,7 +862,7 @@
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "8",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "fda537f5-491c-4c18-09d8-bbb4bc4ca8da"
+          "guid native 'GraphGuid'": "fda537f5-491c-4c18-09d8-bbb4bc4ca8da"
         }
       }
     },
@@ -896,11 +881,11 @@
             "name 'MemberName'": "ReceiveBeginPlay"
           },
           "bool 'bOverrideFunction'": true,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 44,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "c0166a81-453d-5ec4-dcb3-f39f8816ed6f"
+          "guid native 'NodeGuid'": "c0166a81-453d-5ec4-dcb3-f39f8816ed6f"
         },
         "SerializedItems": [],
         "Pins": [
@@ -925,11 +910,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 208,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 44,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "41da603c-4e8c-f985-e185-44bf5e82ecd7"
+          "guid native 'NodeGuid'": "41da603c-4e8c-f985-e185-44bf5e82ecd7"
         },
         "SerializedItems": [],
         "Pins": [
@@ -955,11 +940,11 @@
           },
           "bool 'bOverrideFunction'": true,
           "int 'NodePosY'": 416,
-          "enum64 (ENodeEnabledState) 'EnabledState' ByteProperty /Script/Engine": 44,
+          "enum64 (ENodeEnabledState) EnumInnerType(ByteProperty) TypeNamespace(/Script/Engine) 'EnabledState'": 44,
           "bool 'bCommentBubblePinned'": true,
           "bool 'bCommentBubbleVisible'": true,
           "string 'NodeComment'": "This node is disabled and will not be called.\nDrag off pins to build functionality.",
-          "guid 'NodeGuid'": "ece5b255-45c4-5d59-dde0-a394fbe461c3"
+          "guid native 'NodeGuid'": "ece5b255-45c4-5d59-dde0-a394fbe461c3"
         },
         "SerializedItems": [],
         "Pins": [
@@ -983,7 +968,7 @@
             "obj 'MemberParent'": -6,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "1d97f3d9-42d5-ae2f-8943-ad8824b86861"
+          "guid native 'NodeGuid'": "1d97f3d9-42d5-ae2f-8943-ad8824b86861"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1178,7 +1163,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "30890f52-4073-6c87-aba6-678dfe0ff694",
+          "guid native 'VariableGuid'": "30890f52-4073-6c87-aba6-678dfe0ff694",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -1203,7 +1188,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "2bcb9f24-4368-d2ec-e40b-94aaf38d67f1",
+          "guid native 'VariableGuid'": "2bcb9f24-4368-d2ec-e40b-94aaf38d67f1",
           "name 'InternalVariableName'": "FenceSpline"
         }
       }
@@ -1228,7 +1213,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "95b5fcf0-44c3-72f4-c16f-54849c71dae2",
+          "guid native 'VariableGuid'": "95b5fcf0-44c3-72f4-c16f-54849c71dae2",
           "name 'InternalVariableName'": "PCG"
         }
       }
@@ -1259,7 +1244,7 @@
       "Obj": {
         "__type": "USceneComponent",
         "Members": {
-          "LinearColor 'EditorSelectedSplineSegmentColor'": "0.828 0.364 0.003 1"
+          "LinearColor native 'EditorSelectedSplineSegmentColor'": "0.828 0.364 0.003 1"
         },
         "bIsCooked": false,
         "UCSModifiedProperties": []

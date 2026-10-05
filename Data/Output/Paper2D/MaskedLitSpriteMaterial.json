@@ -261,82 +261,58 @@
         "__type": "UMaterialInstance",
         "Members": {
           "obj 'Parent'": -4,
-          "ScalarParameterValues": {
-            "Name": "ScalarParameterValues",
-            "Type": "ArrayProperty",
-            "Size": 472,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ScalarParameterValues",
-              "Type": "StructProperty",
-              "Size": 419,
-              "StructName": "ScalarParameterValue"
-            },
-            "Value": [
-              {
-                "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
-                  "bool 'bIsUsedAsAtlasPosition'": false,
-                  "Curve": {
-                    "Name": "Curve",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
-                  },
-                  "Atlas": {
-                    "Name": "Atlas",
-                    "Type": "SoftObjectProperty",
-                    "Size": 12,
-                    "Value": {
-                      "bSerializeInternals": false,
-                      "SoftObjectPathIndex": 0,
-                      "AssetPathName": "None",
-                      "AssetPath": {
-                        "PackageName": "None"
-                      },
-                      "SaveNum": 0
-                    }
+          "struct[] Size(472) MaybeInnerTag(ScalarParameterValue 419  ) 'ScalarParameterValues'": [
+            {
+              "struct ScalarParameterAtlasInstanceData 108 'AtlasData'": {
+                "bool 'bIsUsedAsAtlasPosition'": false,
+                "Curve": {
+                  "Name": "Curve",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
                   }
                 },
-                "struct MaterialParameterInfo 111 'ParameterInfo'": {
-                  "name 'Name'": "RefractionDepthBias",
-                  "byte64 (EMaterialParameterAssociation) 'Association'": 18,
-                  "int 'Index'": -1
-                },
-                "float 'ParameterValue'": 0,
-                "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
-              }
-            ]
-          },
+                "Atlas": {
+                  "Name": "Atlas",
+                  "Type": "SoftObjectProperty",
+                  "Size": 12,
+                  "Value": {
+                    "bSerializeInternals": false,
+                    "SoftObjectPathIndex": 0,
+                    "AssetPathName": "None",
+                    "AssetPath": {
+                      "PackageName": "None"
+                    },
+                    "SaveNum": 0
+                  }
+                }
+              },
+              "struct MaterialParameterInfo 111 'ParameterInfo'": {
+                "name 'Name'": "RefractionDepthBias",
+                "byte64 (EMaterialParameterAssociation) 'Association'": 18,
+                "int 'Index'": -1
+              },
+              "float 'ParameterValue'": 0,
+              "guid 'ExpressionGUID'": "00000000-0000-0000-0000-000000000000"
+            }
+          ],
           "struct MaterialInstanceBasePropertyOverrides 130 'BasePropertyOverrides'": {
             "bool 'bOverride_BlendMode'": true,
             "bool 'TwoSided'": true,
             "byte64 (EBlendMode) 'BlendMode'": 6,
             "float 'OpacityMaskClipValue'": 0.3333
           },
-          "ReferencedTextureGuids": {
-            "Name": "ReferencedTextureGuids",
-            "Type": "ArrayProperty",
-            "Size": 85,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "ReferencedTextureGuids",
-              "Type": "StructProperty",
-              "Size": 32,
-              "StructName": "Guid"
-            },
-            "Value": [
-              "33eaaba1-459c-1080-dde0-76bef5b108c2",
-              "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
-            ]
-          },
+          "struct[] Size(85) MaybeInnerTag(Guid 32  ) 'ReferencedTextureGuids'": [
+            "33eaaba1-459c-1080-dde0-76bef5b108c2",
+            "aaaa6161-4b18-f969-5b27-b5ae6379cd47"
+          ],
           "obj 'ThumbnailInfo'": 3,
           "guid 'LightingGuid'": "bb4e2c4e-43fe-c62a-786e-e195adbbc7a0"
         },

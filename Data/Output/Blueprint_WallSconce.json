@@ -914,131 +914,89 @@
           "obj 'SimpleConstructionScript'": 60,
           "obj[] 'UbergraphPages'": "12",
           "obj[] 'FunctionGraphs'": "13",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 1856,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Brightness",
-                "guid 'VarGuid'": "ba0410f2-46f3-71a0-58cd-72ab86d957bd",
-                "struct EdGraphPinType 62 'VarType'": "float",
-                "string 'FriendlyName'": "Brightness",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`B18C39B0499594C5482307A6E8D5E966` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+          "struct[] Size(1856) 'NewVariables'": [
+            {
+              "name 'VarName'": "Brightness",
+              "guid 'VarGuid'": "ba0410f2-46f3-71a0-58cd-72ab86d957bd",
+              "struct EdGraphPinType 62 'VarType'": "float",
+              "string 'FriendlyName'": "Brightness",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`B18C39B0499594C5482307A6E8D5E966` Namespace=`` SourceString=`Light`"
               },
-              {
-                "name 'VarName'": "Color",
-                "guid 'VarGuid'": "aaec3e9c-476a-2187-972d-de8d142a814b",
-                "struct EdGraphPinType 63 'VarType'": "struct obj(`-34`)",
-                "string 'FriendlyName'": "Color",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`7B182C8344901C3F2CBFAA81744DCE2A` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Color",
+              "guid 'VarGuid'": "aaec3e9c-476a-2187-972d-de8d142a814b",
+              "struct EdGraphPinType 63 'VarType'": "struct obj(`-34`)",
+              "string 'FriendlyName'": "Color",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`7B182C8344901C3F2CBFAA81744DCE2A` Namespace=`` SourceString=`Light`"
               },
-              {
-                "name 'VarName'": "Inner Cone Angle",
-                "guid 'VarGuid'": "89450a00-436c-2332-1534-d7af2f9b70fb",
-                "struct EdGraphPinType 62 'VarType'": "float",
-                "string 'FriendlyName'": "Inner Cone Angle",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`123C808E4E73B16F6BB69A9CA782A751` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Inner Cone Angle",
+              "guid 'VarGuid'": "89450a00-436c-2332-1534-d7af2f9b70fb",
+              "struct EdGraphPinType 62 'VarType'": "float",
+              "string 'FriendlyName'": "Inner Cone Angle",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`123C808E4E73B16F6BB69A9CA782A751` Namespace=`` SourceString=`Light`"
               },
-              {
-                "name 'VarName'": "Outer Cone Angle",
-                "guid 'VarGuid'": "f7a3e720-4d4a-41fd-52f9-e0be45776108",
-                "struct EdGraphPinType 62 'VarType'": "float",
-                "string 'FriendlyName'": "Outer Cone Angle",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 56,
-                  "Value": "text-base header=`InitializedFromString` Key=`D93DF4154CBA718F7CCAAFBAF86C268E` Namespace=`` SourceString=`Light`"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "InnerType": "StructProperty",
-                  "Value": []
-                },
-                "string 'DefaultValue'": ""
-              }
-            ]
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 20,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "Light"
-            ]
-          },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Outer Cone Angle",
+              "guid 'VarGuid'": "f7a3e720-4d4a-41fd-52f9-e0be45776108",
+              "struct EdGraphPinType 62 'VarType'": "float",
+              "string 'FriendlyName'": "Outer Cone Angle",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 56,
+                "Value": "text-base header=`InitializedFromString` Key=`D93DF4154CBA718F7CCAAFBAF86C268E` Namespace=`` SourceString=`Light`"
+              },
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "struct[] Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "Light"
+          ],
           "int 'BlueprintSystemVersion'": 2,
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 244,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'EditedObject'": 12,
-                "Vector2D 'SavedViewOffset'": "0 0",
-                "float 'SavedZoomAmount'": 1
-              },
-              {
-                "obj 'EditedObject'": 13,
-                "Vector2D 'SavedViewOffset'": "175 -86",
-                "float 'SavedZoomAmount'": 1
-              }
-            ]
-          },
+          "struct[] Size(244) 'LastEditedDocuments'": [
+            {
+              "obj 'EditedObject'": 12,
+              "Vector2D 'SavedViewOffset'": "0 0",
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "obj 'EditedObject'": 13,
+              "Vector2D 'SavedViewOffset'": "175 -86",
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 55,
           "obj 'GeneratedClass'": 9,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

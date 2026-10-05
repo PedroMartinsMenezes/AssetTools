@@ -931,17 +931,32 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BlueprintComponentDelegateBinding": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty RichCurveKey": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0"
       },
       "StructProperty RichCurve": {
         "TypeName": "StructProperty 1 | RichCurve 1 | /Script/Engine 0"
@@ -951,6 +966,12 @@
       },
       "StructProperty ActorComponentTickFunction": {
         "TypeName": "StructProperty 1 | ActorComponentTickFunction 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTFloatTrack": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty TTTrackId": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
       }
     }
   },
@@ -971,123 +992,87 @@
           "obj[] 'UbergraphPages'": "7",
           "obj[] 'FunctionGraphs'": "8",
           "obj[] 'Timelines'": "50",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 562,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Default State On",
-                "guid 'VarGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Default State On",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition'": 60,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "Default",
-              "None",
-              "Event Graph",
-              "BP Lamp"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 445,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
-                    "AssetName": "BP_Lamp"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -132.53021,
-                  "Y": -440.1527
-                },
-                "float 'SavedZoomAmount'": 1
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(562) 'NewVariables'": [
+            {
+              "name 'VarName'": "Default State On",
+              "guid native 'VarGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Default State On",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
-                    "AssetName": "BP_Lamp_C"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) 'ReplicationCondition'": 60,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "Default",
+            "None",
+            "Event Graph",
+            "BP Lamp"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(445) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                  "AssetName": "BP_Lamp"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 0,
-                  "Y": 0
-                },
-                "float 'SavedZoomAmount'": -1
+                "SaveNum": 0
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 2,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
-                    "AssetName": "BP_Lamp"
-                  },
-                  "SaveNum": 0
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -132.53021,
+                "Y": -440.1527
+              },
+              "float 'SavedZoomAmount'": 1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                  "AssetName": "BP_Lamp_C"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -529.7186,
-                  "Y": -314.50507
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 0,
+                "Y": 0
+              },
+              "float 'SavedZoomAmount'": -1
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 2,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/GameElements/BP_Lamp",
+                  "AssetName": "BP_Lamp"
                 },
-                "float 'SavedZoomAmount'": 0.5
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -529.7186,
+                "Y": -314.50507
+              },
+              "float 'SavedZoomAmount'": 0.5
+            }
+          ],
           "obj 'ThumbnailInfo'": 42,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "24d0d61b-4a75-aa56-57a1-df9a32a38b1a"
+          "guid native 'BlueprintGuid'": "24d0d61b-4a75-aa56-57a1-df9a32a38b1a"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1229,27 +1214,18 @@
       "Obj": {
         "__type": "UObject",
         "Members": {
-          "ComponentDelegateBindings": {
-            "Name": "ComponentDelegateBindings",
-            "Type": "ArrayProperty",
-            "Size": 218,
-            "StructName": "BlueprintComponentDelegateBinding",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'ComponentPropertyName'": "BPC_InteractionHandler",
-                "name 'DelegatePropertyName'": "Trigger Reverse",
-                "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature"
-              },
-              {
-                "name 'ComponentPropertyName'": "BPC_InteractionHandler",
-                "name 'DelegatePropertyName'": "Trigger Complete",
-                "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature"
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BlueprintComponentDelegateBinding 1 | /Script/Engine 0"
-          }
+          "struct[] TypeNamespace(/Script/Engine) StructName(BlueprintComponentDelegateBinding) Size(218) 'ComponentDelegateBindings'": [
+            {
+              "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+              "name 'DelegatePropertyName'": "Trigger Reverse",
+              "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature"
+            },
+            {
+              "name 'ComponentPropertyName'": "BPC_InteractionHandler",
+              "name 'DelegatePropertyName'": "Trigger Complete",
+              "name 'FunctionNameToBind'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature"
+            }
+          ]
         }
       }
     },
@@ -1264,172 +1240,162 @@
         "__type": "UCurveFloat",
         "Members": {
           "struct RichCurve 451 'FloatCurve'": {
-            "Keys": {
-              "Name": "Keys",
-              "Type": "ArrayProperty",
-              "Size": 382,
-              "StructName": "RichCurveKey",
-              "BoolVal": 0,
-              "InnerType": "StructProperty",
-              "Value": [
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.0016908646,
-                  "Value": 0,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.08818251,
-                  "Value": 0.23681378,
-                  "ArriveTangent": -2.5233145,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -2.5233145,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.20094037,
-                  "Value": 0.005973935,
-                  "ArriveTangent": 1.8606259,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 1.8606259,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.29880565,
-                  "Value": 0.62870467,
-                  "ArriveTangent": -4.4858875,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -4.4858875,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.4732613,
-                  "Value": 0.04892087,
-                  "ArriveTangent": 0.96126217,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0.96126217,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.52219397,
-                  "Value": 0.8434394,
-                  "ArriveTangent": -11.8595915,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -11.8595915,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.63069683,
-                  "Value": 0.005973935,
-                  "ArriveTangent": 0.20645289,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0.20645289,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_User",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.7562197,
-                  "Value": 0.8917547,
-                  "ArriveTangent": -6.0078964,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": -6.0078926,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.93280274,
-                  "Value": -0.015499473,
-                  "ArriveTangent": 0.2777959,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0.2777959,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 0.988118,
-                  "Value": 0.9561751,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 1.1881037,
-                  "Value": 0.9722802,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Cubic",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 1.2476737,
-                  "Value": 0.011342287,
-                  "ArriveTangent": 0.04170767,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0.04170767,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 1.7029603,
-                  "Value": 0.9937537,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                },
-                {
-                  "InterpMode": "RCIM_Linear",
-                  "TangentMode": "RCTM_Auto",
-                  "TangentWeightMode": "RCTWM_WeightedNone",
-                  "Time": 2.002602,
-                  "Value": 1,
-                  "ArriveTangent": 0,
-                  "ArriveTangentWeight": 0,
-                  "LeaveTangent": 0,
-                  "LeaveTangentWeight": 0
-                }
-              ],
-              "TypeName": "ArrayProperty 1 | StructProperty 1 | RichCurveKey 1 | /Script/Engine 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
-            }
+            "struct[] native TypeNamespace(/Script/Engine) StructName(RichCurveKey) Size(382) PropertyTagFlags(HasBinaryOrNativeSerialize) 'Keys'": [
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.0016908646,
+                "Value": 0,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.08818251,
+                "Value": 0.23681378,
+                "ArriveTangent": -2.5233145,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -2.5233145,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.20094037,
+                "Value": 0.005973935,
+                "ArriveTangent": 1.8606259,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 1.8606259,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.29880565,
+                "Value": 0.62870467,
+                "ArriveTangent": -4.4858875,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -4.4858875,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.4732613,
+                "Value": 0.04892087,
+                "ArriveTangent": 0.96126217,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0.96126217,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.52219397,
+                "Value": 0.8434394,
+                "ArriveTangent": -11.8595915,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -11.8595915,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.63069683,
+                "Value": 0.005973935,
+                "ArriveTangent": 0.20645289,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0.20645289,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_User",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.7562197,
+                "Value": 0.8917547,
+                "ArriveTangent": -6.0078964,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": -6.0078926,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.93280274,
+                "Value": -0.015499473,
+                "ArriveTangent": 0.2777959,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0.2777959,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 0.988118,
+                "Value": 0.9561751,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.1881037,
+                "Value": 0.9722802,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Cubic",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.2476737,
+                "Value": 0.011342287,
+                "ArriveTangent": 0.04170767,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0.04170767,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 1.7029603,
+                "Value": 0.9937537,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              },
+              {
+                "InterpMode": "RCIM_Linear",
+                "TangentMode": "RCTM_Auto",
+                "TangentWeightMode": "RCTWM_WeightedNone",
+                "Time": 2.002602,
+                "Value": 1,
+                "ArriveTangent": 0,
+                "ArriveTangentWeight": 0,
+                "LeaveTangent": 0,
+                "LeaveTangentWeight": 0
+              }
+            ]
           }
         }
       }
@@ -1447,7 +1413,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "31 29 30 23 26 10 11 9 35 34 36 22 27 28 39 33 25 40 24 38 21 37 20",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "9ce2a274-4a7e-4ac3-8d55-1691e4134c1e"
+          "guid native 'GraphGuid'": "9ce2a274-4a7e-4ac3-8d55-1691e4134c1e"
         }
       }
     },
@@ -1464,7 +1430,7 @@
           "obj 'Schema'": -3,
           "obj[] 'Nodes'": "32",
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid'": "960f8f9a-4b7e-1c1a-c1c7-fa9d206d2ff8"
+          "guid native 'GraphGuid'": "960f8f9a-4b7e-1c1a-c1c7-fa9d206d2ff8"
         }
       }
     },
@@ -1478,7 +1444,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0 0 0 1",
+          "LinearColor native 'CommentColor'": "0 0 0 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -208,
           "int 'NodePosY'": -432,
@@ -1487,7 +1453,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "A lamp can have several triggers and are used as feedback for the player. For example for a door, when more than one trigger is needed to indicate that a needed trigger like a pressure plate is active.\r\nIf no tigger is set, the lamp is always switched on. ",
-          "guid 'NodeGuid'": "1fc64d87-4b83-13e0-fd16-2c9035827b81"
+          "guid native 'NodeGuid'": "1fc64d87-4b83-13e0-fd16-2c9035827b81"
         },
         "Pins": []
       }
@@ -1502,7 +1468,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.863979 0.388986 1 1",
+          "LinearColor native 'CommentColor'": "0.863979 0.388986 1 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": 216,
           "int 'NodePosY'": -100,
@@ -1511,7 +1477,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "If the level designer did not add any triggers to the array, the lamp will be switched on.",
-          "guid 'NodeGuid'": "9a167165-4bc7-d047-e40b-9c8ef5491101"
+          "guid native 'NodeGuid'": "9a167165-4bc7-d047-e40b-9c8ef5491101"
         },
         "Pins": []
       }
@@ -1526,7 +1492,7 @@
       "Obj": {
         "__type": "UEdGraphNode",
         "Members": {
-          "LinearColor 'CommentColor'": "0.520087 1 0.778621 1",
+          "LinearColor native 'CommentColor'": "0.520087 1 0.778621 1",
           "bool 'bCommentBubbleVisible_InDetailsPanel'": false,
           "int 'NodePosX'": -16,
           "int 'NodePosY'": 288,
@@ -1535,7 +1501,7 @@
           "bool 'bCommentBubblePinned'": false,
           "bool 'bCommentBubbleVisible'": false,
           "string 'NodeComment'": "The Dynamic Material reference for the lamp was saved in the construction script. The emmissive parameter is changed when it is switched on or off. ",
-          "guid 'NodeGuid'": "2ad8307c-4bd2-069a-1d1f-0b88234fdb77"
+          "guid native 'NodeGuid'": "2ad8307c-4bd2-069a-1d1f-0b88234fdb77"
         },
         "Pins": []
       }
@@ -1754,7 +1720,7 @@
           },
           "int 'NodePosX'": 192,
           "int 'NodePosY'": 736,
-          "guid 'NodeGuid'": "532b84cc-4fa8-04ed-9157-79aabbbf4029"
+          "guid native 'NodeGuid'": "532b84cc-4fa8-04ed-9157-79aabbbf4029"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`20 08c83b21-48d2-d01d-8f91-55995174753f`» LinkedTo«`30 f593c702-48d1-1eec-aeec-4983d77dc41a`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1781,7 +1747,7 @@
           },
           "int 'NodePosX'": 208,
           "int 'NodePosY'": 480,
-          "guid 'NodeGuid'": "af31eece-4ce3-559a-c625-02a682e53610"
+          "guid native 'NodeGuid'": "af31eece-4ce3-559a-c625-02a682e53610"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`21 08c83b21-48d2-d01d-8f91-55995174753f`» LinkedTo«`29 48157e9b-482f-6ab7-4090-45ae7a8272c8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1808,7 +1774,7 @@
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 528,
-          "guid 'NodeGuid'": "86e01e02-4b3a-2d49-0f3b-eaacf62fd00d"
+          "guid native 'NodeGuid'": "86e01e02-4b3a-2d49-0f3b-eaacf62fd00d"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`22 72743945-41d0-206d-000d-00b5de05a562`» LinkedTo«`35 b6f4f363-41f5-9d60-7cc5-2690c07fddb7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1831,12 +1797,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "SwitchOn",
-            "guid 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
+            "guid native 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1552,
           "int 'NodePosY'": -32,
-          "guid 'NodeGuid'": "92110366-4e8a-516d-0c67-169d567cad02"
+          "guid native 'NodeGuid'": "92110366-4e8a-516d-0c67-169d567cad02"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`23 8f485df0-4881-5ba3-4fbc-44938c37021c`» LinkedTo«`27 ad4cd55f-4eb4-2103-3fff-3aa9a83bf9ed`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1861,7 +1827,7 @@
           },
           "int 'NodePosX'": 1200,
           "int 'NodePosY'": 528,
-          "guid 'NodeGuid'": "cc0f75c5-4411-bd1e-f726-169d5010d609"
+          "guid native 'NodeGuid'": "cc0f75c5-4411-bd1e-f726-169d5010d609"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`24 14805712-4458-0fed-1d66-bea4922d3d24`» LinkedTo«`22 565e9f1c-4df5-6aa8-64c3-a9af4faffbdb`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1884,12 +1850,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "SwitchOn",
-            "guid 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
+            "guid native 'MemberGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 704,
           "int 'NodePosY'": 1,
-          "guid 'NodeGuid'": "f6adf40c-4fba-49fc-d86d-488d3ab1804c"
+          "guid native 'NodeGuid'": "f6adf40c-4fba-49fc-d86d-488d3ab1804c"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`25 8f485df0-4881-5ba3-4fbc-44938c37021c`» LinkedTo«`33 ddb0c252-4402-37a1-a0f2-a7bec7cad7ef`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1910,12 +1876,12 @@
         "Members": {
           "struct MemberReference 131 'FunctionReference'": {
             "name 'MemberName'": "SwitchOff",
-            "guid 'MemberGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3",
+            "guid native 'MemberGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1552,
           "int 'NodePosY'": 112,
-          "guid 'NodeGuid'": "0a31a378-47e5-966e-e711-51975c312b43"
+          "guid native 'NodeGuid'": "0a31a378-47e5-966e-e711-51975c312b43"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`26 826a8e7a-4a51-c91b-2c19-97b98b0e30f5`» LinkedTo«`28 9cdb0ee4-48d2-d4a1-ebe8-2f98a02e1f94`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1940,13 +1906,13 @@
           "struct MemberReference 135 'EventReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "Trigger Complete__DelegateSignature",
-            "guid 'MemberGuid'": "dbc800d5-4d0e-d0b3-82e7-3eb982a791fb"
+            "guid native 'MemberGuid'": "dbc800d5-4d0e-d0b3-82e7-3eb982a791fb"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_0_Trigger Complete__DelegateSignature",
           "int 'NodePosX'": 1200,
           "int 'NodePosY'": -16,
-          "guid 'NodeGuid'": "e8cd43e4-4e6e-c483-637d-2aa762e70a3f"
+          "guid native 'NodeGuid'": "e8cd43e4-4e6e-c483-637d-2aa762e70a3f"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1971,13 +1937,13 @@
           "struct MemberReference 135 'EventReference'": {
             "obj 'MemberParent'": -2,
             "name 'MemberName'": "Trigger Reverse__DelegateSignature",
-            "guid 'MemberGuid'": "3a055fb6-4afe-60a9-6294-159112e3b8a5"
+            "guid native 'MemberGuid'": "3a055fb6-4afe-60a9-6294-159112e3b8a5"
           },
           "bool 'bInternalEvent'": true,
           "name 'CustomFunctionName'": "BndEvt__BP_Lamp_BPC_InteractionHandler_K2Node_ComponentBoundEvent_1_Trigger Reverse__DelegateSignature",
           "int 'NodePosX'": 1200,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "52b25733-460e-acd1-f5d7-79ad9149dada"
+          "guid native 'NodeGuid'": "52b25733-460e-acd1-f5d7-79ad9149dada"
         },
         "SerializedItems": [],
         "Pins": [
@@ -1999,7 +1965,7 @@
           "name 'CustomFunctionName'": "SwitchOn",
           "int 'NodePosX'": 16,
           "int 'NodePosY'": 480,
-          "guid 'NodeGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252"
+          "guid native 'NodeGuid'": "103bc096-4d32-58a9-34ff-7298be6bf252"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2021,7 +1987,7 @@
           "name 'CustomFunctionName'": "SwitchOff",
           "int 'NodePosX'": 16,
           "int 'NodePosY'": 736,
-          "guid 'NodeGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3"
+          "guid native 'NodeGuid'": "50cd920c-45e7-02bb-341a-0bb3f2b4b4c3"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2048,7 +2014,7 @@
           "int 'NodePosX'": 272,
           "int 'NodePosY'": 16,
           "bool 'bCommentBubblePinned'": true,
-          "guid 'NodeGuid'": "17479302-4394-3846-8052-14818dcbf532"
+          "guid native 'NodeGuid'": "17479302-4394-3846-8052-14818dcbf532"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2071,7 +2037,7 @@
             "obj 'MemberParent'": -15,
             "name 'MemberName'": "UserConstructionScript"
           },
-          "guid 'NodeGuid'": "ac1131ed-4777-b7a0-8ea6-ad9c059ed24b"
+          "guid native 'NodeGuid'": "ac1131ed-4777-b7a0-8ea6-ad9c059ed24b"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2091,7 +2057,7 @@
         "Members": {
           "int 'NodePosX'": 480,
           "int 'NodePosY'": 16,
-          "guid 'NodeGuid'": "c3e53f59-481c-a3b1-a654-ccabca38fa95"
+          "guid native 'NodeGuid'": "c3e53f59-481c-a3b1-a654-ccabca38fa95"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`33 cfa8450b-4e3b-0aee-caca-10bb413c6610`» LinkedTo«`31 6debaeaa-4bc0-2945-0dea-d3bda86c4773`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2119,7 +2085,7 @@
           },
           "int 'NodePosX'": 864,
           "int 'NodePosY'": 800,
-          "guid 'NodeGuid'": "cdc5bfa0-44d9-5258-fd58-01a362af9d99"
+          "guid native 'NodeGuid'": "cdc5bfa0-44d9-5258-fd58-01a362af9d99"
         },
         "Pins": [
           "input-pin Type«`real-double`» Name«`A`» Id«`34 6ef92c4b-4f8a-d8a7-ea42-22ae63c1b2c5`» LinkedTo«`35 3d153da1-4136-12dd-6033-d6bdcc48b2b8`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2142,7 +2108,7 @@
           "int 'NodePosX'": 528,
           "int 'NodePosY'": 544,
           "bool 'bCanRenameNode'": true,
-          "guid 'NodeGuid'": "ee2a4fd7-40ab-860a-3bee-a1bd23247597"
+          "guid native 'NodeGuid'": "ee2a4fd7-40ab-860a-3bee-a1bd23247597"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`Play`» Id«`35 60b41a06-45af-adb1-d631-2fa7ab9e5349`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2175,7 +2141,7 @@
           },
           "int 'NodePosX'": 848,
           "int 'NodePosY'": 704,
-          "guid 'NodeGuid'": "4c037ff1-47ef-97dc-4451-6aa892835078"
+          "guid native 'NodeGuid'": "4c037ff1-47ef-97dc-4451-6aa892835078"
         },
         "Pins": [
           "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`36 3bc1b44b-4fcf-cc7c-f27d-9eabaffdd897`» LinkedTo«`22 d116726f-4d29-3b9c-f755-f99a5d45a022`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2199,7 +2165,7 @@
           },
           "int 'NodePosX'": 160,
           "int 'NodePosY'": 928,
-          "guid 'NodeGuid'": "8a0bcbb0-4cac-998d-49c5-018c36a63a1c"
+          "guid native 'NodeGuid'": "8a0bcbb0-4cac-998d-49c5-018c36a63a1c"
         },
         "Pins": [
           "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`37 6df5d513-4012-857a-1c4a-9aa14d78dc96`» LinkedTo«`20 31ab27b0-4855-bc67-a455-759e365c2912`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2223,7 +2189,7 @@
           },
           "int 'NodePosX'": 160,
           "int 'NodePosY'": 672,
-          "guid 'NodeGuid'": "f59e2f41-4645-93b7-3031-b3b349af7afd"
+          "guid native 'NodeGuid'": "f59e2f41-4645-93b7-3031-b3b349af7afd"
         },
         "Pins": [
           "output-pin Type«`object obj(`-26`)`» Name«`StaticMesh`» Id«`38 6df5d513-4012-857a-1c4a-9aa14d78dc96`» LinkedTo«`21 31ab27b0-4855-bc67-a455-759e365c2912`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2243,12 +2209,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Default State On",
-            "guid 'MemberGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
+            "guid native 'MemberGuid'": "3c55cace-4641-3e45-3889-30aff1296c5b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 464,
           "int 'NodePosY'": 128,
-          "guid 'NodeGuid'": "b758232e-40f9-00d8-41e2-59b151dde55f"
+          "guid native 'NodeGuid'": "b758232e-40f9-00d8-41e2-59b151dde55f"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Default State On`» Id«`39 8d559082-41d3-c1bf-adbe-7d8589e4dfcd`» LinkedTo«`33 bb25310c-4308-bf0a-4c13-01bf4d4bc7c5`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2272,7 +2238,7 @@
           },
           "int 'NodePosX'": 1200,
           "int 'NodePosY'": 720,
-          "guid 'NodeGuid'": "c5508555-4453-b5ff-48de-18ae00639432"
+          "guid native 'NodeGuid'": "c5508555-4453-b5ff-48de-18ae00639432"
         },
         "Pins": [
           "output-pin Type«`object obj(`-26`)`» Name«`LampMesh`» Id«`40 7c061816-4c3e-0db2-e5fa-72b617f19dba`» LinkedTo«`24 9f192d8d-43fc-912a-85c2-e7ae79cb52e4`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2328,7 +2294,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "842e23cb-47ca-b65d-7d8e-3cb3480269f5",
+          "guid native 'VariableGuid'": "842e23cb-47ca-b65d-7d8e-3cb3480269f5",
           "name 'InternalVariableName'": "DefaultSceneRoot"
         }
       }
@@ -2354,7 +2320,7 @@
             "TypeName": "TextProperty 0"
           },
           "obj[] 'ChildNodes'": "45",
-          "guid 'VariableGuid'": "c124a449-43a2-6ab3-d35f-01ab11af5908",
+          "guid native 'VariableGuid'": "c124a449-43a2-6ab3-d35f-01ab11af5908",
           "name 'InternalVariableName'": "LampMesh"
         }
       }
@@ -2379,7 +2345,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "67032d90-427e-abbb-57b4-6fa05744be51",
+          "guid native 'VariableGuid'": "67032d90-427e-abbb-57b4-6fa05744be51",
           "name 'InternalVariableName'": "StaticMesh"
         }
       }
@@ -2404,7 +2370,7 @@
             "Value": "text-base header=`Immutable` Key=`Default` Namespace=`SCS` SourceString=`Default`",
             "TypeName": "TextProperty 0"
           },
-          "guid 'VariableGuid'": "f813bcc4-4843-e4f2-31af-97b79fa1bbe4",
+          "guid native 'VariableGuid'": "f813bcc4-4843-e4f2-31af-97b79fa1bbe4",
           "name 'InternalVariableName'": "BPC_InteractionHandler"
         }
       }
@@ -2461,8 +2427,8 @@
           "obj 'StaticMesh'": -47,
           "bool 'bUseAsOccluder'": false,
           "bool 'CastShadow'": false,
-          "Vector 'RelativeLocation'": "2.2713408401966433 0 51.217938573765821",
-          "Vector 'RelativeScale3D'": "0.77982468227855861 0.77982468227855861 1",
+          "Vector native 'RelativeLocation'": "2.2713408401966433 0 51.217938573765821",
+          "Vector native 'RelativeScale3D'": "0.77982468227855861 0.77982468227855861 1",
           "bool 'bHiddenInGame'": true,
           "struct ActorComponentTickFunction 33 'PrimaryComponentTick'": {
             "bool 'bStartWithTickEnabled'": false
@@ -2486,45 +2452,27 @@
         "__type": "UObject",
         "Members": {
           "float 'TimelineLength'": 2,
-          "FloatTracks": {
-            "Name": "FloatTracks",
-            "Type": "ArrayProperty",
-            "Size": 182,
-            "StructName": "TTFloatTrack",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "obj 'CurveFloat'": 6,
-                "name 'PropertyName'": "Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB",
-                "name 'TrackName'": "NewTrack\"0",
-                "bool 'bIsExternalCurve'": false,
-                "bool 'bIsExpanded'": true,
-                "bool 'bIsCurveViewSynchronized'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTFloatTrack 1 | /Script/Engine 0"
-          },
-          "guid 'TimelineGuid'": "6fcad7b5-48ad-7003-c31d-4191220e2bab",
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTFloatTrack) Size(182) 'FloatTracks'": [
+            {
+              "obj 'CurveFloat'": 6,
+              "name 'PropertyName'": "Timeline_NewTrack_0_6FCAD7B548AD7003C31D4191220E2BAB",
+              "name 'TrackName'": "NewTrack\"0",
+              "bool 'bIsExternalCurve'": false,
+              "bool 'bIsExpanded'": true,
+              "bool 'bIsCurveViewSynchronized'": true
+            }
+          ],
+          "guid native 'TimelineGuid'": "6fcad7b5-48ad-7003-c31d-4191220e2bab",
           "name 'VariableName'": "Timeline",
           "name 'DirectionPropertyName'": "Timeline__Direction_6FCAD7B548AD7003C31D4191220E2BAB",
           "name 'UpdateFunctionName'": "Timeline__UpdateFunc",
           "name 'FinishedFunctionName'": "Timeline__FinishedFunc",
-          "TrackDisplayOrder": {
-            "Name": "TrackDisplayOrder",
-            "Type": "ArrayProperty",
-            "Size": 70,
-            "StructName": "TTTrackId",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "int 'TrackType'": 1,
-                "int 'TrackIndex'": 0
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | TTTrackId 1 | /Script/Engine 0"
-          }
+          "struct[] TypeNamespace(/Script/Engine) StructName(TTTrackId) Size(70) 'TrackDisplayOrder'": [
+            {
+              "int 'TrackType'": 1,
+              "int 'TrackIndex'": 0
+            }
+          ]
         }
       }
     }

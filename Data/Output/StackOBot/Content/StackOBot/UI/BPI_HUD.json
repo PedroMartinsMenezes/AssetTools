@@ -651,6 +651,9 @@
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
       "StructProperty KismetUserDeclaredFunctionMetadata": {
         "TypeName": "StructProperty 1 | KismetUserDeclaredFunctionMetadata 1 | /Script/BlueprintGraph 0"
       },
@@ -671,52 +674,34 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -4,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 15,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 15,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "4 5 6",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 151,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/UI/BPI_HUD",
-                    "AssetName": "BPI_HUD"
-                  },
-                  "SaveNum": 0
+          "name[] 'CategorySorting'": [
+            "None"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(151) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/UI/BPI_HUD",
+                  "AssetName": "BPI_HUD"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -1049.2354,
-                  "Y": -629.9
-                },
-                "float 'SavedZoomAmount'": 1
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -1049.2354,
+                "Y": -629.9
+              },
+              "float 'SavedZoomAmount'": 1
+            }
+          ],
           "obj 'ThumbnailInfo'": 13,
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "9df27711-47f7-b374-0842-c890f29387dc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "9df27711-47f7-b374-0842-c890f29387dc"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -785,7 +770,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "10",
-          "guid 'GraphGuid' /Script/CoreUObject": "f36b2f39-4571-82d3-cde8-97b2f2e8b78d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "f36b2f39-4571-82d3-cde8-97b2f2e8b78d"
         }
       }
     },
@@ -801,7 +786,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "11",
-          "guid 'GraphGuid' /Script/CoreUObject": "11eee847-4a08-1466-36c7-7aaf39ff17df"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "11eee847-4a08-1466-36c7-7aaf39ff17df"
         }
       }
     },
@@ -817,7 +802,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "12",
-          "guid 'GraphGuid' /Script/CoreUObject": "9dafaff4-4cf6-0321-657a-f0bd40cd78ea"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "9dafaff4-4cf6-0321-657a-f0bd40cd78ea"
         }
       }
     },
@@ -923,7 +908,7 @@
             "name 'MemberName'": "SetPaused"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "6ad0072c-4180-e65a-91e1-acb0ee337cca"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6ad0072c-4180-e65a-91e1-acb0ee337cca"
         },
         "SerializedItems": [
           {
@@ -956,7 +941,7 @@
             "name 'MemberName'": "Show UI"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "309f7d90-40e8-3bdc-5baa-1ca8c93ed337"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "309f7d90-40e8-3bdc-5baa-1ca8c93ed337"
         },
         "SerializedItems": [],
         "Pins": [
@@ -979,7 +964,7 @@
             "name 'MemberName'": "Update Objective UI"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid' /Script/CoreUObject": "0cac9a54-425d-2287-81b6-a288007a5100"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0cac9a54-425d-2287-81b6-a288007a5100"
         },
         "SerializedItems": [
           {

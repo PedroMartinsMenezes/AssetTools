@@ -231,23 +231,11 @@
       "Obj": {
         "__type": "USkeleton",
         "Members": {
-          "BoneTree": {
-            "Name": "BoneTree",
-            "Type": "ArrayProperty",
-            "Size": 102,
-            "InnerType": "StructProperty",
-            "MaybeInnerTag": {
-              "Name": "BoneTree",
-              "Type": "StructProperty",
-              "Size": 49,
-              "StructName": "BoneNode"
-            },
-            "Value": [
-              {
-                "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
-              }
-            ]
-          },
+          "struct[] Size(102) MaybeInnerTag(BoneNode 49  ) 'BoneTree'": [
+            {
+              "byte64 (EBoneTranslationRetargetingMode) 'TranslationRetargetingMode'": 7
+            }
+          ],
           "PreviewSkeletalMesh": {
             "Name": "PreviewSkeletalMesh",
             "Type": "SoftObjectProperty",

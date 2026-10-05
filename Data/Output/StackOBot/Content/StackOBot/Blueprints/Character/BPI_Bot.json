@@ -470,24 +470,15 @@
         "__type": "UBlueprintCore",
         "Members": {
           "obj 'ParentClass'": -4,
-          "byte64 (EBlueprintType) 'BlueprintType' /Script/Engine": 13,
+          "byte64 (EBlueprintType) TypeNamespace(/Script/Engine) 'BlueprintType'": 13,
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'FunctionGraphs'": "4 5",
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 12,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'CategorySorting'": [
+            "None"
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid'": "a007952d-4bb2-35d8-3f28-81ac7474c58f"
+          "guid native 'BlueprintGuid'": "a007952d-4bb2-35d8-3f28-81ac7474c58f"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -554,7 +545,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "8",
-          "guid 'GraphGuid'": "8c529092-4dee-8b55-d647-ed9fe181d06f"
+          "guid native 'GraphGuid'": "8c529092-4dee-8b55-d647-ed9fe181d06f"
         }
       }
     },
@@ -570,7 +561,7 @@
         "Members": {
           "obj 'Schema'": -1,
           "obj[] 'Nodes'": "9",
-          "guid 'GraphGuid'": "a40fbf70-4a5a-7206-77b8-fc87b2138976"
+          "guid native 'GraphGuid'": "a40fbf70-4a5a-7206-77b8-fc87b2138976"
         }
       }
     },
@@ -641,7 +632,7 @@
             "name 'MemberName'": "RecieveDamage"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "cf1b7195-4718-5949-af9f-618f63f2bd0b"
+          "guid native 'NodeGuid'": "cf1b7195-4718-5949-af9f-618f63f2bd0b"
         },
         "SerializedItems": [
           {
@@ -694,7 +685,7 @@
             "name 'MemberName'": "ResetJetpack"
           },
           "bool 'bIsEditable'": true,
-          "guid 'NodeGuid'": "77896fd0-4901-f90a-0630-bea654deeb3b"
+          "guid native 'NodeGuid'": "77896fd0-4901-f90a-0630-bea654deeb3b"
         },
         "SerializedItems": [],
         "Pins": [

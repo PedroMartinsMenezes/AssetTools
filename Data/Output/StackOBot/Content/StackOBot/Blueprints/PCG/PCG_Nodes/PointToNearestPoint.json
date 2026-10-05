@@ -941,14 +941,29 @@
       "StructProperty EdGraphPinType": {
         "TypeName": "StructProperty 1 | EdGraphPinType 1 | /Script/Engine 0"
       },
+      "ArrayProperty StructProperty BPVariableMetaDataEntry": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty BPVariableDescription": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
+      },
       "StructProperty SoftObjectPath": {
         "TypeName": "StructProperty 1 | SoftObjectPath 1 | /Script/CoreUObject 0"
       },
       "StructProperty DeprecateSlateVector2D": {
         "TypeName": "StructProperty 1 | DeprecateSlateVector2D 1 | /Script/SlateCore 0"
       },
+      "ArrayProperty StructProperty EditedDocumentInfo": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty OptionalPinFromProperty": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "ArrayProperty StructProperty PCGPinProperties": {
+        "TypeName": "ArrayProperty 1 | StructProperty 1 | PCGPinProperties 1 | /Script/PCG 0"
       }
     }
   },
@@ -967,245 +982,164 @@
           "int 'BlueprintSystemVersion'": 2,
           "obj[] 'UbergraphPages'": "3",
           "obj[] 'FunctionGraphs'": "4 5",
-          "NewVariables": {
-            "Name": "NewVariables",
-            "Type": "ArrayProperty",
-            "Size": 3334,
-            "StructName": "BPVariableDescription",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'VarName'": "Orientation Targets",
-                "guid 'VarGuid' /Script/CoreUObject": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-31`)",
-                "string 'FriendlyName'": "Orientation Targets",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+          "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableDescription) Size(3334) 'NewVariables'": [
+            {
+              "name 'VarName'": "Orientation Targets",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-31`)",
+              "string 'FriendlyName'": "Orientation Targets",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Points",
-                "guid 'VarGuid' /Script/CoreUObject": "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
-                "class EdGraphPinType 69 'VarType'": "object obj(`-31`)",
-                "string 'FriendlyName'": "Points",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 65541,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Points",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
+              "class EdGraphPinType 69 'VarType'": "object obj(`-31`)",
+              "string 'FriendlyName'": "Points",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Pole Vector",
-                "guid 'VarGuid' /Script/CoreUObject": "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
-                "class EdGraphPinType 69 'VarType'": "struct obj(`-64`)",
-                "string 'FriendlyName'": "Pole Vector",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 65541,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Pole Vector",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
+              "class EdGraphPinType 69 'VarType'": "struct obj(`-64`)",
+              "string 'FriendlyName'": "Pole Vector",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Look At Axis",
-                "guid 'VarGuid' /Script/CoreUObject": "8d95b063-4a77-87ce-3782-a5aba773fad8",
-                "class EdGraphPinType 69 'VarType'": "byte obj(`-32`)",
-                "string 'FriendlyName'": "Look at Axis",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Look At Axis",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "8d95b063-4a77-87ce-3782-a5aba773fad8",
+              "class EdGraphPinType 69 'VarType'": "byte obj(`-32`)",
+              "string 'FriendlyName'": "Look at Axis",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Pole World Space",
-                "guid 'VarGuid' /Script/CoreUObject": "141d8104-445c-52a8-1b07-c08c165c6257",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Pole World Space",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Pole World Space",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "141d8104-445c-52a8-1b07-c08c165c6257",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Pole World Space",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'VarName'": "Invert Look At",
-                "guid 'VarGuid' /Script/CoreUObject": "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
-                "class EdGraphPinType 69 'VarType'": "bool",
-                "string 'FriendlyName'": "Invert Look At",
-                "Category": {
-                  "Name": "Category",
-                  "Type": "TextProperty",
-                  "Size": 46,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
-                  "TypeName": "TextProperty 0"
-                },
-                "ulong 'PropertyFlags'": 5,
-                "name 'RepNotifyFunc'": "None",
-                "byte64 (ELifetimeCondition) 'ReplicationCondition' /Script/CoreUObject": 80,
-                "MetaDataArray": {
-                  "Name": "MetaDataArray",
-                  "Type": "ArrayProperty",
-                  "Size": 4,
-                  "StructName": "BPVariableMetaDataEntry",
-                  "BoolVal": 0,
-                  "InnerType": "StructProperty",
-                  "Value": [],
-                  "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableMetaDataEntry 1 | /Script/Engine 0"
-                },
-                "string 'DefaultValue'": ""
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | BPVariableDescription 1 | /Script/Engine 0"
-          },
-          "CategorySorting": {
-            "Name": "CategorySorting",
-            "Type": "ArrayProperty",
-            "Size": 28,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "PCG",
-              "Default",
-              "None"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
-          "LastEditedDocuments": {
-            "Name": "LastEditedDocuments",
-            "Type": "ArrayProperty",
-            "Size": 298,
-            "StructName": "EditedDocumentInfo",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 0,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_Nodes/PointToNearestPoint",
-                    "AssetName": "PointToNearestPoint"
-                  },
-                  "SaveNum": 0
-                },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": -1684.2423,
-                  "Y": -2173.25
-                },
-                "float 'SavedZoomAmount'": 0.5
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            },
+            {
+              "name 'VarName'": "Invert Look At",
+              "guid native TypeNamespace(/Script/CoreUObject) 'VarGuid'": "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
+              "class EdGraphPinType 69 'VarType'": "bool",
+              "string 'FriendlyName'": "Invert Look At",
+              "Category": {
+                "Name": "Category",
+                "Type": "TextProperty",
+                "Size": 46,
+                "BoolVal": 0,
+                "Value": "text-base header=`Immutable` Key=`Default` Namespace=`KismetSchema` SourceString=`Default`",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "class SoftObjectPath 4 'EditedObjectPath'": {
-                  "bSerializeInternals": false,
-                  "SoftObjectPathIndex": 1,
-                  "AssetPath": {
-                    "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_Nodes/PointToNearestPoint",
-                    "AssetName": "PointToNearestPoint"
-                  },
-                  "SaveNum": 0
+              "ulong 'PropertyFlags'": 5,
+              "name 'RepNotifyFunc'": "None",
+              "byte64 (ELifetimeCondition) TypeNamespace(/Script/CoreUObject) 'ReplicationCondition'": 80,
+              "struct[] TypeNamespace(/Script/Engine) StructName(BPVariableMetaDataEntry) Size(4) 'MetaDataArray'": [],
+              "string 'DefaultValue'": ""
+            }
+          ],
+          "name[] 'CategorySorting'": [
+            "PCG",
+            "Default",
+            "None"
+          ],
+          "struct[] TypeNamespace(/Script/Engine) StructName(EditedDocumentInfo) Size(298) 'LastEditedDocuments'": [
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 0,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_Nodes/PointToNearestPoint",
+                  "AssetName": "PointToNearestPoint"
                 },
-                "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
-                  "X": 111.0342,
-                  "Y": -282.50473
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": -1684.2423,
+                "Y": -2173.25
+              },
+              "float 'SavedZoomAmount'": 0.5
+            },
+            {
+              "class SoftObjectPath 4 'EditedObjectPath'": {
+                "bSerializeInternals": false,
+                "SoftObjectPathIndex": 1,
+                "AssetPath": {
+                  "PackageName": "/Game/StackOBot/Blueprints/PCG/PCG_Nodes/PointToNearestPoint",
+                  "AssetName": "PointToNearestPoint"
                 },
-                "float 'SavedZoomAmount'": 0.875
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
-          },
+                "SaveNum": 0
+              },
+              "class DeprecateSlateVector2D 8 'SavedViewOffset'": {
+                "X": 111.0342,
+                "Y": -282.50473
+              },
+              "float 'SavedZoomAmount'": 0.875
+            }
+          ],
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
-          "guid 'BlueprintGuid' /Script/CoreUObject": "e7d342e7-4015-3a84-8c75-80bca4622b8a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'BlueprintGuid'": "e7d342e7-4015-3a84-8c75-80bca4622b8a"
         },
         "bLegacyGeneratedClassIsAuthoritative": false
       }
@@ -1303,7 +1237,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "bool 'bAllowDeletion'": false,
-          "guid 'GraphGuid' /Script/CoreUObject": "bbffa293-4a2f-d653-6e33-988e32fdd92f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "bbffa293-4a2f-d653-6e33-988e32fdd92f"
         }
       }
     },
@@ -1319,7 +1253,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "35 37 48 17 39 40 12 11 16 41 42 15 33 58 32 59 44 14 43 13 50 51 52 34",
-          "guid 'GraphGuid' /Script/CoreUObject": "45d5cc71-441a-cbfa-214b-abaac18b80d6"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "45d5cc71-441a-cbfa-214b-abaac18b80d6"
         }
       }
     },
@@ -1335,7 +1269,7 @@
         "Members": {
           "obj 'Schema'": -2,
           "obj[] 'Nodes'": "36 38 53 27 18 8 9 28 49 30 54 19 31 20 21 47 56 22 57 25 26 23 24 45 55 46 29 10",
-          "guid 'GraphGuid' /Script/CoreUObject": "ee4a2727-434c-e6fe-7430-a682e3f1ad66"
+          "guid native TypeNamespace(/Script/CoreUObject) 'GraphGuid'": "ee4a2727-434c-e6fe-7430-a682e3f1ad66"
         }
       }
     },
@@ -1494,190 +1428,181 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 2776,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "Transform",
-                "string 'PropertyFriendlyName'": "Transform",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(2776) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "Transform",
+              "string 'PropertyFriendlyName'": "Transform",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Density",
-                "string 'PropertyFriendlyName'": "Density",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Density",
+              "string 'PropertyFriendlyName'": "Density",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMin",
-                "string 'PropertyFriendlyName'": "Bounds Min",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMin",
+              "string 'PropertyFriendlyName'": "Bounds Min",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMax",
-                "string 'PropertyFriendlyName'": "Bounds Max",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMax",
+              "string 'PropertyFriendlyName'": "Bounds Max",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Color",
-                "string 'PropertyFriendlyName'": "Color",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Color",
+              "string 'PropertyFriendlyName'": "Color",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Steepness",
-                "string 'PropertyFriendlyName'": "Steepness",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Steepness",
+              "string 'PropertyFriendlyName'": "Steepness",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Seed",
-                "string 'PropertyFriendlyName'": "Seed",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Seed",
+              "string 'PropertyFriendlyName'": "Seed",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "MetadataEntry",
-                "string 'PropertyFriendlyName'": "Metadata Entry",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties|Metadata",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "MetadataEntry",
+              "string 'PropertyFriendlyName'": "Metadata Entry",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Properties|Metadata",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -68,
           "int 'NodePosX'": 32,
           "int 'NodePosY'": 224,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 100,
-          "guid 'NodeGuid' /Script/CoreUObject": "b1660e1d-4b7d-bc82-b0a2-2294971ed53b"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 100,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b1660e1d-4b7d-bc82-b0a2-2294971ed53b"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-68`) isReference isConst`» Name«`PCGPoint`» Id«`8 8ab3ae79-415b-eadd-5d6f-11a03199d218`» LinkedTo«`36 93bdd8b4-4cde-3d3f-3988-e3b30ceb92a5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1706,190 +1631,181 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 2776,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "Transform",
-                "string 'PropertyFriendlyName'": "Transform",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(2776) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "Transform",
+              "string 'PropertyFriendlyName'": "Transform",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Density",
-                "string 'PropertyFriendlyName'": "Density",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Density",
+              "string 'PropertyFriendlyName'": "Density",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMin",
-                "string 'PropertyFriendlyName'": "Bounds Min",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMin",
+              "string 'PropertyFriendlyName'": "Bounds Min",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMax",
-                "string 'PropertyFriendlyName'": "Bounds Max",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMax",
+              "string 'PropertyFriendlyName'": "Bounds Max",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Color",
-                "string 'PropertyFriendlyName'": "Color",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Color",
+              "string 'PropertyFriendlyName'": "Color",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Steepness",
-                "string 'PropertyFriendlyName'": "Steepness",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Steepness",
+              "string 'PropertyFriendlyName'": "Steepness",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Seed",
-                "string 'PropertyFriendlyName'": "Seed",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Seed",
+              "string 'PropertyFriendlyName'": "Seed",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "MetadataEntry",
-                "string 'PropertyFriendlyName'": "Metadata Entry",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties|Metadata",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "MetadataEntry",
+              "string 'PropertyFriendlyName'": "Metadata Entry",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Properties|Metadata",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -68,
           "int 'NodePosX'": 384,
           "int 'NodePosY'": 112,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 100,
-          "guid 'NodeGuid' /Script/CoreUObject": "1c25454b-40f2-e4be-b4c4-35b9ec5917e1"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 100,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1c25454b-40f2-e4be-b4c4-35b9ec5917e1"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-68`) isReference isConst`» Name«`PCGPoint`» Id«`9 e02ae7c8-454b-5db1-6f80-b1852406b2b5`» LinkedTo«`18 17b33e10-4241-9cea-26ea-60812e6aa3c5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -1918,190 +1834,181 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 2776,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "Transform",
-                "string 'PropertyFriendlyName'": "Transform",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(2776) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "Transform",
+              "string 'PropertyFriendlyName'": "Transform",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Density",
-                "string 'PropertyFriendlyName'": "Density",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Density",
+              "string 'PropertyFriendlyName'": "Density",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMin",
-                "string 'PropertyFriendlyName'": "Bounds Min",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMin",
+              "string 'PropertyFriendlyName'": "Bounds Min",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMax",
-                "string 'PropertyFriendlyName'": "Bounds Max",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMax",
+              "string 'PropertyFriendlyName'": "Bounds Max",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Color",
-                "string 'PropertyFriendlyName'": "Color",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Color",
+              "string 'PropertyFriendlyName'": "Color",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Steepness",
-                "string 'PropertyFriendlyName'": "Steepness",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Steepness",
+              "string 'PropertyFriendlyName'": "Steepness",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Seed",
-                "string 'PropertyFriendlyName'": "Seed",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Seed",
+              "string 'PropertyFriendlyName'": "Seed",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "MetadataEntry",
-                "string 'PropertyFriendlyName'": "Metadata Entry",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties|Metadata",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "MetadataEntry",
+              "string 'PropertyFriendlyName'": "Metadata Entry",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Properties|Metadata",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -68,
           "int 'NodePosX'": 48,
           "int 'NodePosY'": 416,
-          "byte64 (ENodeAdvancedPins) 'AdvancedPinDisplay' /Script/Engine": 100,
-          "guid 'NodeGuid' /Script/CoreUObject": "ac4f42c4-4923-6230-2560-1cb31d6bcc65"
+          "byte64 (ENodeAdvancedPins) TypeNamespace(/Script/Engine) 'AdvancedPinDisplay'": 100,
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "ac4f42c4-4923-6230-2560-1cb31d6bcc65"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-68`) isReference isConst`» Name«`PCGPoint`» Id«`10 72197665-498e-0dd2-928b-4396897bf672`» LinkedTo«`36 93bdd8b4-4cde-3d3f-3988-e3b30ceb92a5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2133,7 +2040,7 @@
           },
           "int 'NodePosX'": -1184,
           "int 'NodePosY'": -768,
-          "guid 'NodeGuid' /Script/CoreUObject": "e1c2520f-4bca-797b-4bc0-078405cccec0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "e1c2520f-4bca-797b-4bc0-078405cccec0"
         },
         "Pins": [
           "input-pin Type«`object obj(`-25`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`11 805fcef1-4cc1-993a-e0bb-909b4057484e`» LinkedTo«`48 6ab05060-4bf8-5a4d-85db-b3b62631c136`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2158,7 +2065,7 @@
           "int 'NodePosX'": -224,
           "int 'NodePosY'": -1168,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "58a5ea80-4ba6-1c22-7d28-538325ce1165"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "58a5ea80-4ba6-1c22-7d28-538325ce1165"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`12 437003ae-4c8e-eb6c-3578-469a03e4325e`» LinkedTo«`34 791f6703-413b-67f4-b347-c48e57655e5d`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2188,7 +2095,7 @@
           "int 'NodePosX'": 496,
           "int 'NodePosY'": -752,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "a3d27c40-4156-07ca-11c6-e1ace9b5b8f1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a3d27c40-4156-07ca-11c6-e1ace9b5b8f1"
         },
         "Pins": [
           "input-pin Type«`object obj(`-31`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`13 961efdc7-489e-cb1f-00d0-87888ee92a87`» LinkedTo«`59 551c1ef7-41ee-dc3c-6992-2b8c25e2e5ea`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2214,7 +2121,7 @@
           },
           "int 'NodePosX'": 1056,
           "int 'NodePosY'": -800,
-          "guid 'NodeGuid' /Script/CoreUObject": "8e3e3b8a-4ab3-5374-a50a-a292ba9ff327"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "8e3e3b8a-4ab3-5374-a50a-a292ba9ff327"
         },
         "Pins": [
           "input-pin Type«`object obj(`-27`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`14 1546e31c-4650-8957-4905-7f894fd6af77`» BitField«`1`» DefaultObject«`ImportIndex[-60] Default__PCGDataFunctionLibrary`» SourceIndex«`-1`» ",
@@ -2241,7 +2148,7 @@
           },
           "int 'NodePosX'": 720,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "25b688ff-4f36-ab2a-4434-9f8ad0c10c80"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "25b688ff-4f36-ab2a-4434-9f8ad0c10c80"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`15 80986a21-4166-5527-75d7-75bc595374df`» LinkedTo«`59 a233c68e-43ba-8589-e7f3-67b377212d95`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2271,7 +2178,7 @@
           "int 'NodePosX'": -224,
           "int 'NodePosY'": -880,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "1071e80e-4175-e16e-a1c6-c9a43e351ed1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1071e80e-4175-e16e-a1c6-c9a43e351ed1"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`16 437003ae-4c8e-eb6c-3578-469a03e4325e`» LinkedTo«`34 d58ea3e9-4caf-43f8-57fd-d5a37756bcd0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2299,7 +2206,7 @@
           },
           "int 'NodePosX'": -1136,
           "int 'NodePosY'": -864,
-          "guid 'NodeGuid' /Script/CoreUObject": "f8a82331-495e-e015-76a7-02953f77495f"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f8a82331-495e-e015-76a7-02953f77495f"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`17 c993bee3-4e70-c9c5-ac49-8488e3e860da`» LinkedTo«`35 6a1ad745-4ca2-f1ee-054e-aeac2ad59728`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2325,7 +2232,7 @@
             "name 'MemberName'": "GetClosestPoint"
           },
           "int 'NodePosX'": 32,
-          "guid 'NodeGuid' /Script/CoreUObject": "682c186d-4161-268b-f40b-cf9037c57ef0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "682c186d-4161-268b-f40b-cf9037c57ef0"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`18 9bab38ce-4e8d-cd51-00ee-f097927aa4c5`» LinkedTo«`36 37889c4c-4422-f423-8d78-f28538016549`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2357,7 +2264,7 @@
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid' /Script/CoreUObject": "d9210589-4a33-ef67-e7ca-5fa18b84f255"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d9210589-4a33-ef67-e7ca-5fa18b84f255"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`19 b53ad937-4c31-78af-edbb-0591e9413f9d`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2383,7 +2290,7 @@
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 368,
-          "guid 'NodeGuid' /Script/CoreUObject": "d67364a3-44de-4f2e-fad3-288d4fbe44a0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d67364a3-44de-4f2e-fad3-288d4fbe44a0"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`20 e48976f1-4e42-68a0-8991-14a7f1f829b7`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2409,7 +2316,7 @@
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 464,
-          "guid 'NodeGuid' /Script/CoreUObject": "0040c932-4453-7dfd-a87e-c5aa09d426b0"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0040c932-4453-7dfd-a87e-c5aa09d426b0"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`21 16acdf22-4324-0173-288e-5e950e39c18f`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2435,7 +2342,7 @@
           },
           "int 'NodePosX'": 1248,
           "int 'NodePosY'": 656,
-          "guid 'NodeGuid' /Script/CoreUObject": "a01fc07d-4e3f-fe28-afac-c58bcdbb057e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a01fc07d-4e3f-fe28-afac-c58bcdbb057e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`22 ba351d4c-49fd-62a2-ee5e-308ec1da2989`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2463,7 +2370,7 @@
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 624,
-          "guid 'NodeGuid' /Script/CoreUObject": "cecb2305-4b6d-db67-ff3d-30b985a15021"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "cecb2305-4b6d-db67-ff3d-30b985a15021"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`23 9b76e643-447c-4c21-79bf-af8f33a0959c`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2490,7 +2397,7 @@
           },
           "int 'NodePosX'": 896,
           "int 'NodePosY'": 624,
-          "guid 'NodeGuid' /Script/CoreUObject": "bed0498a-42b4-53b5-04db-15954a907472"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "bed0498a-42b4-53b5-04db-15954a907472"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`24 96f25d6b-443c-13e8-ca08-0cb797d1c5f2`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2516,7 +2423,7 @@
           },
           "int 'NodePosX'": 640,
           "int 'NodePosY'": 736,
-          "guid 'NodeGuid' /Script/CoreUObject": "5c6ec6bb-4e92-0cfc-414e-60a0abad44b3"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5c6ec6bb-4e92-0cfc-414e-60a0abad44b3"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`25 9b76e643-447c-4c21-79bf-af8f33a0959c`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2543,7 +2450,7 @@
           },
           "int 'NodePosX'": 896,
           "int 'NodePosY'": 720,
-          "guid 'NodeGuid' /Script/CoreUObject": "cd8f2b94-4e10-c47d-6ef5-f6bfe5b0cdb8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "cd8f2b94-4e10-c47d-6ef5-f6bfe5b0cdb8"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`26 96f25d6b-443c-13e8-ca08-0cb797d1c5f2`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2570,7 +2477,7 @@
           "int 'NodePosX'": -240,
           "int 'NodePosY'": 272,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "3e1afc52-4d91-8e6e-99c5-78aea9b887ed"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "3e1afc52-4d91-8e6e-99c5-78aea9b887ed"
         },
         "Pins": [
           "input-pin Type«`object obj(`-31`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`27 961efdc7-489e-cb1f-00d0-87888ee92a87`» LinkedTo«`53 d0a6bfed-4881-b087-ce47-6a92091183b7`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2596,7 +2503,7 @@
           },
           "int 'NodePosX'": 672,
           "int 'NodePosY'": 144,
-          "guid 'NodeGuid' /Script/CoreUObject": "bf0f9c57-4b3d-cd4a-f5cc-f99d2f596ad8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "bf0f9c57-4b3d-cd4a-f5cc-f99d2f596ad8"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`28 59bf9a97-412a-65ee-4a6c-2b82b7349805`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2623,7 +2530,7 @@
           },
           "int 'NodePosX'": 628,
           "int 'NodePosY'": 848,
-          "guid 'NodeGuid' /Script/CoreUObject": "19a8c194-4732-d419-a305-0aa59cb8717a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "19a8c194-4732-d419-a305-0aa59cb8717a"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`29 8bacf923-4a81-3437-9e06-958ba692bc25`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2650,7 +2557,7 @@
           },
           "int 'NodePosX'": 1024,
           "int 'NodePosY'": 176,
-          "guid 'NodeGuid' /Script/CoreUObject": "a153d228-4204-c60d-c16c-d796e2c21bf1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "a153d228-4204-c60d-c16c-d796e2c21bf1"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`30 4399cefa-420a-05ef-6f54-e1944a1425d6`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2679,7 +2586,7 @@
           "int 'NodePosX'": 1808,
           "int 'NodePosY'": 480,
           "int 'ErrorType'": 1,
-          "guid 'NodeGuid' /Script/CoreUObject": "9e26961b-4da9-a342-6ae7-a68e98ba520e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9e26961b-4da9-a342-6ae7-a68e98ba520e"
         },
         "Pins": [
           "input-pin Type«`object obj(`-24`)`» Name«`self`» PinFriendlyName«`text-base header=`Immutable` Key=`Target` Namespace=`K2Node` SourceString=`Target``» Id«`31 2dd75b85-4eeb-9d10-0e15-5cad980bddf8`» BitField«`1`» DefaultObject«`ImportIndex[-54] Default__KismetMathLibrary`» SourceIndex«`-1`» ",
@@ -2703,7 +2610,7 @@
           "int 'NodePosX'": 64,
           "int 'NodePosY'": -880,
           "int 'ErrorType'": 3,
-          "guid 'NodeGuid' /Script/CoreUObject": "c53df731-4276-6ea9-161d-e291a5e0e1de"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c53df731-4276-6ea9-161d-e291a5e0e1de"
         },
         "PureState": "Impure",
         "Pins": [
@@ -2730,7 +2637,7 @@
           "int 'NodePosX'": 80,
           "int 'NodePosY'": -1168,
           "int 'ErrorType'": 3,
-          "guid 'NodeGuid' /Script/CoreUObject": "c832e598-40b6-fe7b-ee2a-5abc610e78b4"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "c832e598-40b6-fe7b-ee2a-5abc610e78b4"
         },
         "PureState": "Impure",
         "Pins": [
@@ -2755,7 +2662,7 @@
         "Members": {
           "int 'NodePosX'": -624,
           "int 'NodePosY'": -1072,
-          "guid 'NodeGuid' /Script/CoreUObject": "f28e50d2-4de0-f23b-75f7-2aa5dd2a4a54"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f28e50d2-4de0-f23b-75f7-2aa5dd2a4a54"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`34 61d4fc7a-477d-e44d-99ea-fca612aac248`» LinkedTo«`17 e75adb1e-42b1-f822-5132-b28e1b85f665`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2780,7 +2687,7 @@
           },
           "int 'NodePosX'": -1536,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "28063687-43d5-6ced-d4bd-8097c8dc5c55"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "28063687-43d5-6ced-d4bd-8097c8dc5c55"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2806,7 +2713,7 @@
             "name 'MemberName'": "PointLoopBody"
           },
           "int 'NodePosX'": -560,
-          "guid 'NodeGuid' /Script/CoreUObject": "6b0a47c6-4d3e-95e2-17c9-958c756cfeb9"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "6b0a47c6-4d3e-95e2-17c9-958c756cfeb9"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2835,7 +2742,7 @@
           },
           "int 'NodePosX'": 1904,
           "int 'NodePosY'": -880,
-          "guid 'NodeGuid' /Script/CoreUObject": "509d129b-49d8-8f39-7b2f-edaaf4b231d1"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "509d129b-49d8-8f39-7b2f-edaaf4b231d1"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2859,7 +2766,7 @@
             "name 'MemberName'": "PointLoopBody"
           },
           "int 'NodePosX'": 1296,
-          "guid 'NodeGuid' /Script/CoreUObject": "b11fd8fa-4654-d63d-fc3b-96932efb6336"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "b11fd8fa-4654-d63d-fc3b-96932efb6336"
         },
         "SerializedItems": [],
         "Pins": [
@@ -2881,7 +2788,7 @@
         "Members": {
           "int 'NodePosX'": -768,
           "int 'NodePosY'": -704,
-          "guid 'NodeGuid' /Script/CoreUObject": "051fca36-4462-95b8-6bd5-9d8ccd57302d"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "051fca36-4462-95b8-6bd5-9d8ccd57302d"
         },
         "Pins": [
           "input-pin Type«`name container(`Array`)`» Name«`Array`» Id«`39 424ddbf1-4a31-326c-bca1-0eaaca36fedf`» LinkedTo«`17 814e89f3-4214-bd8d-307d-6b9e355d63d5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2902,7 +2809,7 @@
         "Members": {
           "int 'NodePosX'": -768,
           "int 'NodePosY'": -800,
-          "guid 'NodeGuid' /Script/CoreUObject": "11f6ff76-4bbf-eb87-2ce8-d1b67082573b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "11f6ff76-4bbf-eb87-2ce8-d1b67082573b"
         },
         "Pins": [
           "input-pin Type«`name container(`Array`)`» Name«`Array`» Id«`40 22866565-43f6-e3be-b067-079491564c34`» LinkedTo«`17 814e89f3-4214-bd8d-307d-6b9e355d63d5`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2923,7 +2830,7 @@
         "Members": {
           "int 'NodePosX'": -224,
           "int 'NodePosY'": -752,
-          "guid 'NodeGuid' /Script/CoreUObject": "17fe3164-476a-9e9b-2fa6-5191915740bc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "17fe3164-476a-9e9b-2fa6-5191915740bc"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-69`) container(`Array`)`» Name«`Array`» Id«`41 2228d287-4903-b93a-8e8e-49918f31bd6e`» LinkedTo«`16 f9388ff1-4a24-a924-2fc4-ccb85e3940a9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2948,7 +2855,7 @@
         "Members": {
           "int 'NodePosX'": -224,
           "int 'NodePosY'": -1040,
-          "guid 'NodeGuid' /Script/CoreUObject": "0f726c13-409a-d454-0a2d-d9a60d311cbd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "0f726c13-409a-d454-0a2d-d9a60d311cbd"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-69`) container(`Array`)`» Name«`Array`» Id«`42 3e5f888d-4789-9205-4825-d584b3877805`» LinkedTo«`12 f9388ff1-4a24-a924-2fc4-ccb85e3940a9`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2973,7 +2880,7 @@
         "Members": {
           "int 'NodePosX'": 1312,
           "int 'NodePosY'": -800,
-          "guid 'NodeGuid' /Script/CoreUObject": "377e6667-484c-d7f0-e3a4-e5bef738586a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "377e6667-484c-d7f0-e3a4-e5bef738586a"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-69`) container(`Array`)`» Name«`Array`» Id«`43 d8fa3a2f-456e-36cf-f5c5-07aec6ee306c`» LinkedTo«`44 f6c36e83-4d85-de65-07ed-efbf35365eac`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -2992,63 +2899,54 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 818,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "TaggedData",
-                "string 'PropertyFriendlyName'": "Tagged Data",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Data",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(818) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "TaggedData",
+              "string 'PropertyFriendlyName'": "Tagged Data",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "bCancelExecutionOnEmpty",
-                "string 'PropertyFriendlyName'": "Cancel Execution on Empty",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 111,
-                  "BoolVal": 0,
-                  "Value": "text-base header=`None` Key=`PCGDataCollection:bCancelExecutionOnEmpty` Namespace=`UObjectToolTips` SourceString=`Deprecated - Will be removed in 5.4`",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Data",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Data",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "bCancelExecutionOnEmpty",
+              "string 'PropertyFriendlyName'": "Cancel Execution on Empty",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 111,
+                "BoolVal": 0,
+                "Value": "text-base header=`None` Key=`PCGDataCollection:bCancelExecutionOnEmpty` Namespace=`UObjectToolTips` SourceString=`Deprecated - Will be removed in 5.4`",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Data",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -67,
           "int 'NodePosX'": 1504,
           "int 'NodePosY'": -800,
-          "guid 'NodeGuid' /Script/CoreUObject": "786d80d9-42ff-1ef3-f4ac-f2a23340318c"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "786d80d9-42ff-1ef3-f4ac-f2a23340318c"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-67`)`» Name«`PCGDataCollection`» Id«`44 7649a7f6-4f41-8be6-c431-1a85a81cbc04`» LinkedTo«`37 25754172-485a-b5f5-3b37-609d12d5b542`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3075,7 +2973,7 @@
           },
           "int 'NodePosX'": 1280,
           "int 'NodePosY'": 368,
-          "guid 'NodeGuid' /Script/CoreUObject": "5994f48c-4f66-4d35-3dc4-63a595b891dc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5994f48c-4f66-4d35-3dc4-63a595b891dc"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-64`)`» Name«`A`» Id«`45 4b2257ae-43b2-a0a9-92f7-f68d46539236`» LinkedTo«`47 9c860836-4147-cf1d-f938-a9bb0e5cad34`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3097,7 +2995,7 @@
           "class EdGraphPinType 69 'IndexPinType'": "bool",
           "int 'NodePosX'": 1584,
           "int 'NodePosY'": 320,
-          "guid 'NodeGuid' /Script/CoreUObject": "47cb8445-4aec-bd8a-ca83-d292b2a10a5e"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "47cb8445-4aec-bd8a-ca83-d292b2a10a5e"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-64`)`» Name«`Option 0`» PinFriendlyName«`text-base header=`Immutable` Key=`False` Namespace=`Core` SourceString=`False``» Id«`46 6598d841-45e3-eae6-7f39-8f87ed642225`» LinkedTo«`47 9c860836-4147-cf1d-f938-a9bb0e5cad34`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3120,24 +3018,15 @@
           "int 'NumOptionPins'": 4,
           "class EdGraphPinType 69 'IndexPinType'": "byte obj(`-32`)",
           "obj 'Enum'": -32,
-          "EnumEntries": {
-            "Name": "EnumEntries",
-            "Type": "ArrayProperty",
-            "Size": 36,
-            "StructName": "NameProperty",
-            "BoolVal": 0,
-            "InnerType": "NameProperty",
-            "Value": [
-              "None",
-              "X",
-              "Y",
-              "Z"
-            ],
-            "TypeName": "ArrayProperty 1 | NameProperty 0"
-          },
+          "name[] 'EnumEntries'": [
+            "None",
+            "X",
+            "Y",
+            "Z"
+          ],
           "int 'NodePosX'": 944,
           "int 'NodePosY'": 304,
-          "guid 'NodeGuid' /Script/CoreUObject": "9a54d37d-4738-7d7a-60ae-f7951292c6bd"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "9a54d37d-4738-7d7a-60ae-f7951292c6bd"
         },
         "Pins": [
           "input-pin Type«`struct obj(`-64`)`» PinFriendlyName«`text-base header=`Immutable` Key=`EAxis.None` Namespace=`UObjectDisplayNames` SourceString=`None``» Id«`47 09f7b5b1-40db-72e3-0ae8-d98c00c8f409`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3161,7 +3050,7 @@
         "Members": {
           "int 'NodePosX'": -1376,
           "int 'NodePosY'": -730,
-          "guid 'NodeGuid' /Script/CoreUObject": "5d596816-4b09-d1e0-a3c1-d4bd579a5d57"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5d596816-4b09-d1e0-a3c1-d4bd579a5d57"
         },
         "Pins": [
           "output-pin Type«`object-self`» Name«`self`» Id«`48 6ab05060-4bf8-5a4d-85db-b3b62631c136`» LinkedTo«`11 805fcef1-4cc1-993a-e0bb-909b4057484e`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -3179,167 +3068,158 @@
         "__type": "UEdGraphNode",
         "Members": {
           "bool 'bMadeAfterOverridePinRemoval'": true,
-          "ShowPinForProperties": {
-            "Name": "ShowPinForProperties",
-            "Type": "ArrayProperty",
-            "Size": 2424,
-            "StructName": "OptionalPinFromProperty",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'PropertyName'": "Transform",
-                "string 'PropertyFriendlyName'": "Transform",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": true,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+          "struct[] StructName(OptionalPinFromProperty) Size(2424) 'ShowPinForProperties'": [
+            {
+              "name 'PropertyName'": "Transform",
+              "string 'PropertyFriendlyName'": "Transform",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Density",
-                "string 'PropertyFriendlyName'": "Density",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": true,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Density",
+              "string 'PropertyFriendlyName'": "Density",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMin",
-                "string 'PropertyFriendlyName'": "Bounds Min",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMin",
+              "string 'PropertyFriendlyName'": "Bounds Min",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "BoundsMax",
-                "string 'PropertyFriendlyName'": "Bounds Max",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "BoundsMax",
+              "string 'PropertyFriendlyName'": "Bounds Max",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Color",
-                "string 'PropertyFriendlyName'": "Color",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Color",
+              "string 'PropertyFriendlyName'": "Color",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Steepness",
-                "string 'PropertyFriendlyName'": "Steepness",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Steepness",
+              "string 'PropertyFriendlyName'": "Steepness",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'PropertyName'": "Seed",
-                "string 'PropertyFriendlyName'": "Seed",
-                "PropertyTooltip": {
-                  "Name": "PropertyTooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "name 'CategoryName'": "Properties",
-                "bool 'bShowPin'": false,
-                "bool 'bCanToggleVisibility'": true,
-                "bool 'bPropertyIsCustomized'": false,
-                "bool 'bHasOverridePin'": false,
-                "bool 'bIsMarkedForAdvancedDisplay'": false,
-                "bool 'bIsOverrideEnabled'": true,
-                "bool 'bIsSetValuePinVisible'": true,
-                "bool 'bIsOverridePinVisible'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
-          },
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            },
+            {
+              "name 'PropertyName'": "Seed",
+              "string 'PropertyFriendlyName'": "Seed",
+              "PropertyTooltip": {
+                "Name": "PropertyTooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
+              },
+              "name 'CategoryName'": "Properties",
+              "bool 'bShowPin'": false,
+              "bool 'bCanToggleVisibility'": true,
+              "bool 'bPropertyIsCustomized'": false,
+              "bool 'bHasOverridePin'": false,
+              "bool 'bIsMarkedForAdvancedDisplay'": false,
+              "bool 'bIsOverrideEnabled'": true,
+              "bool 'bIsSetValuePinVisible'": true,
+              "bool 'bIsOverridePinVisible'": true
+            }
+          ],
           "obj 'StructType'": -68,
           "int 'NodePosX'": 960,
-          "guid 'NodeGuid' /Script/CoreUObject": "5db93b0d-43f7-ce75-a582-fa86202aff54"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5db93b0d-43f7-ce75-a582-fa86202aff54"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`49 def92ed9-40d2-8571-e981-e0b302fc0f19`» LinkedTo«`18 5456659e-4e8e-2478-b94b-eaa7559d13ac`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3366,7 +3246,7 @@
           },
           "int 'NodePosX'": 352,
           "int 'NodePosY'": -688,
-          "guid 'NodeGuid' /Script/CoreUObject": "88051ed2-46db-f401-3d77-0f8cb2e03de8"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "88051ed2-46db-f401-3d77-0f8cb2e03de8"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-66`) isReference`» Name«`InContext`» Id«`50 b0cfbf26-4051-dfa0-181f-428b938714f3`» LinkedTo«`15 1f30b119-4102-c4cc-1ec4-0e944cf56b46 | 13 446d3c13-48f0-7967-714d-bebd15b60637`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -3389,7 +3269,7 @@
           },
           "int 'NodePosX'": -368,
           "int 'NodePosY'": -800,
-          "guid 'NodeGuid' /Script/CoreUObject": "f10a84b4-4561-8c13-92ce-7ba46fdb17cc"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "f10a84b4-4561-8c13-92ce-7ba46fdb17cc"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-67`) isReference isConst`» Name«`Input`» Id«`51 27194c0e-4e4f-b1e2-4386-788ad547d622`» LinkedTo«`16 7ef9e32b-42f7-3a22-a196-bea1a2492369`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -3412,7 +3292,7 @@
           },
           "int 'NodePosX'": -704,
           "int 'NodePosY'": -832,
-          "guid 'NodeGuid' /Script/CoreUObject": "d217e55b-4dcc-4ae6-1a01-4c9ac9edb7df"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "d217e55b-4dcc-4ae6-1a01-4c9ac9edb7df"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-67`) isReference isConst`» Name«`Input`» Id«`52 4b21e350-413a-ce16-339c-f7b95c3b4c72`» LinkedTo«`12 7ef9e32b-42f7-3a22-a196-bea1a2492369`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» "
@@ -3431,12 +3311,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Orientation Targets",
-            "guid 'MemberGuid' /Script/CoreUObject": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": -464,
           "int 'NodePosY'": 288,
-          "guid 'NodeGuid' /Script/CoreUObject": "80c87f5f-409f-6eac-e198-ffa93b537f07"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "80c87f5f-409f-6eac-e198-ffa93b537f07"
         },
         "Pins": [
           "output-pin Type«`object obj(`-31`)`» Name«`Orientation Targets`» Id«`53 d0a6bfed-4881-b087-ce47-6a92091183b7`» LinkedTo«`27 961efdc7-489e-cb1f-00d0-87888ee92a87`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3456,12 +3336,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Pole Vector",
-            "guid 'MemberGuid' /Script/CoreUObject": "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 272,
           "int 'NodePosY'": 800,
-          "guid 'NodeGuid' /Script/CoreUObject": "1a7155dd-4ef5-d76a-01e6-b181b2ddceaf"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "1a7155dd-4ef5-d76a-01e6-b181b2ddceaf"
         },
         "Pins": [
           "output-pin Type«`struct obj(`-64`)`» Name«`Pole Vector`» Id«`54 c0c195e3-4fb2-5bc9-d1cd-f0b7319a1c64`» LinkedTo«`23 55b2d92e-41f5-dff5-f750-d7a9b61275d3 | 29 0795aba5-409f-a650-b6d4-d4acba5a5c85`» DefaultValue«`0, 0, 0`» AutogeneratedDefaultValue«`0, 0, 0`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3481,12 +3361,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Invert Look At",
-            "guid 'MemberGuid' /Script/CoreUObject": "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1408,
           "int 'NodePosY'": 496,
-          "guid 'NodeGuid' /Script/CoreUObject": "36661db0-44f9-b986-849e-63a4b806bc8b"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "36661db0-44f9-b986-849e-63a4b806bc8b"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Invert Look At`» Id«`55 1908c30f-418e-309a-2c4e-3b80da52ce4e`» LinkedTo«`46 a79ce958-4b32-c18b-7bbf-48b9c83a5f87`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3506,12 +3386,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Look At Axis",
-            "guid 'MemberGuid' /Script/CoreUObject": "8d95b063-4a77-87ce-3782-a5aba773fad8",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "8d95b063-4a77-87ce-3782-a5aba773fad8",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 864,
           "int 'NodePosY'": 528,
-          "guid 'NodeGuid' /Script/CoreUObject": "dd8d89a8-4801-e98d-32bb-e2b21ef2b774"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "dd8d89a8-4801-e98d-32bb-e2b21ef2b774"
         },
         "Pins": [
           "output-pin Type«`byte obj(`-32`)`» Name«`Look At Axis`» Id«`56 0a9c0281-43f5-67e1-23ed-e49cf99248f6`» LinkedTo«`47 ba97e1f9-4f2e-ad45-bb8d-d68b7aaca16f`» DefaultValue«`None`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3531,12 +3411,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Pole World Space",
-            "guid 'MemberGuid' /Script/CoreUObject": "141d8104-445c-52a8-1b07-c08c165c6257",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "141d8104-445c-52a8-1b07-c08c165c6257",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 1264,
           "int 'NodePosY'": 784,
-          "guid 'NodeGuid' /Script/CoreUObject": "5d7f3e48-476f-1e8d-6c97-c792bc40880a"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "5d7f3e48-476f-1e8d-6c97-c792bc40880a"
         },
         "Pins": [
           "output-pin Type«`bool`» Name«`Pole World Space`» Id«`57 c0806243-40c5-3df4-b796-b2be0d5c4a5d`» LinkedTo«`22 70e6f6a7-4888-4c17-6b81-068bce18eaad`» DefaultValue«`false`» AutogeneratedDefaultValue«`false`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3556,12 +3436,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Orientation Targets",
-            "guid 'MemberGuid' /Script/CoreUObject": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "62ab296f-415c-2d75-4290-5bb2e4e0a493",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": -1152,
-          "guid 'NodeGuid' /Script/CoreUObject": "04879816-42be-daf0-412e-5d92dc323650"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "04879816-42be-daf0-412e-5d92dc323650"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`58 9f2daa19-46fa-e6ee-d2cc-03bc757208db`» LinkedTo«`33 eb22db35-4930-2baa-e197-849e88efe4df`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3584,12 +3464,12 @@
         "Members": {
           "struct MemberReference 131 'VariableReference'": {
             "name 'MemberName'": "Points",
-            "guid 'MemberGuid' /Script/CoreUObject": "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
+            "guid native TypeNamespace(/Script/CoreUObject) 'MemberGuid'": "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
             "bool 'bSelfContext'": true
           },
           "int 'NodePosX'": 368,
           "int 'NodePosY'": -864,
-          "guid 'NodeGuid' /Script/CoreUObject": "2aa1a631-403d-f25c-6043-a9a14a3b3e61"
+          "guid native TypeNamespace(/Script/CoreUObject) 'NodeGuid'": "2aa1a631-403d-f25c-6043-a9a14a3b3e61"
         },
         "Pins": [
           "input-pin Type«`exec`» Name«`execute`» Id«`59 59017244-4815-7931-fbcd-8cb6729eee84`» LinkedTo«`32 eb22db35-4930-2baa-e197-849e88efe4df`» DefaultObject«`ImportIndex[0] `» SourceIndex«`-1`» ",
@@ -3610,57 +3490,48 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "Vector 'Pole Vector' {b72ff221-48ec-6e1a-ecc2-0b8cb9273f86} /Script/CoreUObject": "0 0 0",
-          "byte64 (EAxis) 'Look At Axis' {8d95b063-4a77-87ce-3782-a5aba773fad8} /Script/CoreUObject": 93,
-          "CustomInputPins": {
-            "Name": "CustomInputPins",
-            "Type": "ArrayProperty",
-            "Size": 818,
-            "StructName": "PCGPinProperties",
-            "BoolVal": 0,
-            "InnerType": "StructProperty",
-            "Value": [
-              {
-                "name 'Label'": "Look At Points",
-                "enum64 (EPCGPinUsage) 'Usage' ByteProperty /Script/PCG": 110,
-                "enum64 (EPCGDataType) 'AllowedTypes' UInt32Property /Script/PCG": 106,
-                "bool 'bAllowMultipleData'": true,
-                "enum64 (EPCGPinStatus) 'PinStatus' ByteProperty /Script/PCG": 108,
-                "bool 'bInvisiblePin'": false,
-                "Tooltip": {
-                  "Name": "Tooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "bool 'bAllowEditMultipleData'": true,
-                "bool 'bAllowEditMultipleConnections'": true,
-                "bool 'bAllowMultipleConnections'": true
+          "Vector native {b72ff221-48ec-6e1a-ecc2-0b8cb9273f86} TypeNamespace(/Script/CoreUObject) 'Pole Vector'": "0 0 0",
+          "byte64 (EAxis) {8d95b063-4a77-87ce-3782-a5aba773fad8} TypeNamespace(/Script/CoreUObject) 'Look At Axis'": 93,
+          "struct[] TypeNamespace(/Script/PCG) StructName(PCGPinProperties) Size(818) 'CustomInputPins'": [
+            {
+              "name 'Label'": "Look At Points",
+              "enum64 (EPCGPinUsage) EnumInnerType(ByteProperty) TypeNamespace(/Script/PCG) 'Usage'": 110,
+              "enum64 (EPCGDataType) EnumInnerType(UInt32Property) TypeNamespace(/Script/PCG) 'AllowedTypes'": 106,
+              "bool 'bAllowMultipleData'": true,
+              "enum64 (EPCGPinStatus) EnumInnerType(ByteProperty) TypeNamespace(/Script/PCG) 'PinStatus'": 108,
+              "bool 'bInvisiblePin'": false,
+              "Tooltip": {
+                "Name": "Tooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
               },
-              {
-                "name 'Label'": "Points To Orient",
-                "enum64 (EPCGPinUsage) 'Usage' ByteProperty /Script/PCG": 110,
-                "enum64 (EPCGDataType) 'AllowedTypes' UInt32Property /Script/PCG": 105,
-                "bool 'bAllowMultipleData'": true,
-                "enum64 (EPCGPinStatus) 'PinStatus' ByteProperty /Script/PCG": 108,
-                "bool 'bInvisiblePin'": false,
-                "Tooltip": {
-                  "Name": "Tooltip",
-                  "Type": "TextProperty",
-                  "Size": 9,
-                  "BoolVal": 0,
-                  "Value": "text header=`None` ",
-                  "TypeName": "TextProperty 0"
-                },
-                "bool 'bAllowEditMultipleData'": true,
-                "bool 'bAllowEditMultipleConnections'": true,
-                "bool 'bAllowMultipleConnections'": true
-              }
-            ],
-            "TypeName": "ArrayProperty 1 | StructProperty 1 | PCGPinProperties 1 | /Script/PCG 0"
-          },
+              "bool 'bAllowEditMultipleData'": true,
+              "bool 'bAllowEditMultipleConnections'": true,
+              "bool 'bAllowMultipleConnections'": true
+            },
+            {
+              "name 'Label'": "Points To Orient",
+              "enum64 (EPCGPinUsage) EnumInnerType(ByteProperty) TypeNamespace(/Script/PCG) 'Usage'": 110,
+              "enum64 (EPCGDataType) EnumInnerType(UInt32Property) TypeNamespace(/Script/PCG) 'AllowedTypes'": 105,
+              "bool 'bAllowMultipleData'": true,
+              "enum64 (EPCGPinStatus) EnumInnerType(ByteProperty) TypeNamespace(/Script/PCG) 'PinStatus'": 108,
+              "bool 'bInvisiblePin'": false,
+              "Tooltip": {
+                "Name": "Tooltip",
+                "Type": "TextProperty",
+                "Size": 9,
+                "BoolVal": 0,
+                "Value": "text header=`None` ",
+                "TypeName": "TextProperty 0"
+              },
+              "bool 'bAllowEditMultipleData'": true,
+              "bool 'bAllowEditMultipleConnections'": true,
+              "bool 'bAllowMultipleConnections'": true
+            }
+          ],
           "bool 'bHasDefaultInPin'": false
         },
         "SparseClassDataStruct": {
