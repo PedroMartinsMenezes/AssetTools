@@ -61,9 +61,6 @@
         PACKAGE_SAVED_HASH,
         OS_SUB_OBJECT_SHADOW_SERIALIZATION,
         IMPORT_TYPE_HIERARCHIES,
-
-        AUTOMATIC_VERSION_PLUS_ONE,
-        AUTOMATIC_VERSION = AUTOMATIC_VERSION_PLUS_ONE - 1
     }
 
     [Location("https://github.com/EpicGames/UnrealEngine/blob/release/Engine/Source/Runtime/Core/Public/UObject/ObjectVersion.h")]
