@@ -34,7 +34,7 @@ namespace AssetTool
 
         #region JsonIgnore
         [JsonIgnore]
-        public FName KeyType => TypeName?.KeyType ?? InnerType;
+        public string KeyType => TypeName?.KeyType ?? InnerType?.Value;
 
         [JsonIgnore]
         public FName EnumInnerType;
@@ -83,10 +83,10 @@ namespace AssetTool
             Type = TypeName.Type;
             FPropertyTagExt.CheckTagType(transfer, Type);
 
-            EnumName = TypeName.EnumName;
-            StructName = TypeName.StructName;
-            InnerType = TypeName.InnerType;
-            ValueType = TypeName.ValueType;
+            EnumName ??= TypeName.EnumName;
+            StructName ??= TypeName.StructName;
+            InnerType ??= TypeName.InnerType;
+            ValueType ??= new FName(TypeName.ValueType);
 
             transfer.Move(ref Size);
 
@@ -358,6 +358,7 @@ namespace AssetTool
             //struct types
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value != Consts.Guid) return new FStructPropertyJson().FromNative(tag, transfer);
             else if (tag.Type.Value == FSetProperty.TYPE_NAME) return new FSetPropertyJson().FromNative(tag, transfer);
+            else if (tag.Type.Value == FMapProperty.TYPE_NAME) return new FMapPropertyJson().FromNative(tag, transfer);
 
             //scalar types
             else if (tag.Type.Value == FStructProperty.TYPE_NAME && tag.StructName?.Value == Consts.Guid) return new FGuidPropertyJson().FromNative(tag);
@@ -431,6 +432,7 @@ namespace AssetTool
                 //struct types
                 else if (type == "struct" || type == "class") return new FStructPropertyJson().ToNative(transfer, key, value);
                 else if (type == "set") return new FSetPropertyJson().ToNative(transfer, key, value);
+                else if (type == "map") return new FMapPropertyJson().ToNative(transfer, key, value);
 
                 //scalar types
                 else if (type == "guid") return new FGuidPropertyJson().ToNative(transfer, key, value.ToObject<Guid>(transfer));
@@ -503,7 +505,7 @@ namespace AssetTool
         public static object MoveMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (long startOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
-            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.KeyType?.Value, tag.ValueType?.Value, tag.Size);
+            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.KeyType, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoRead(tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");

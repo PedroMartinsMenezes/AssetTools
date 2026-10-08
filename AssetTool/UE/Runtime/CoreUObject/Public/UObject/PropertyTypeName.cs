@@ -4,10 +4,12 @@ using System.Text.Json.Serialization;
 
 namespace AssetTool
 {
-    [DebuggerDisplay("{Type} {EnumName} {StructName}")]
+    [DebuggerDisplay("{NodesString}")]
     public class FPropertyTypeName : ITransferable
     {
         public List<FPropertyTypeNameNode> Nodes = [];
+
+        [JsonIgnore] string NodesString => string.Join(" | ", Nodes.Select(x => $"{x.Name} {x.InnerCount}"));
 
         public FName Type => Nodes[0].Name;
 
@@ -53,33 +55,32 @@ namespace AssetTool
             }
         }
 
-        public FName KeyType
+        public string KeyType
         {
             get
             {
+                string result = null;
                 if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
                 {
-                    if (Nodes.Count == 3) return Nodes[1].Name;
-                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[2].Name;
-                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[1].Name;
-                    else return Nodes[1].Name;
+                    int i = Nodes.FindIndex(x => x.InnerCount == 0);
+                    if (i > 0)
+                        result = string.Join(' ', Nodes.Where((x, index) => index > 0 && index <= i && x.Name.Value[0] != '/').Select(x => x.Name.Value));
                 }
-                return default;
+                return result;
             }
         }
-
-        public FName ValueType
+        public string ValueType
         {
             get
             {
+                string result = null;
                 if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
                 {
-                    if (Nodes.Count == 3) return Nodes[2].Name;
-                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[4].Name;
-                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[5].Name;
-                    else return Nodes[2].Name;
+                    int i = Nodes.FindIndex(x => x.InnerCount == 0);
+                    if (i > 0)
+                        result = string.Join(' ', Nodes.Where((x, index) => index > i && x.Name.Value[0] != '/').Select(x => x.Name.Value));
                 }
-                return default;
+                return result;
             }
         }
 

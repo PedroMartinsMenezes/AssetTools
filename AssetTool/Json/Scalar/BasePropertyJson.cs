@@ -10,18 +10,21 @@
         public virtual string InnerType { get; set; }
         public virtual object FromNativeValue(object value) => value;
         public virtual string FromNativeFields(FPropertyTag tag) => string.Empty;
-        public virtual string BuildTypeNameKey(FPropertyTag tag) => string.Empty;
+        public virtual string BuildTypeNameKey(FPropertyTag tag) => tag.TypeNameString();
         public virtual object ToNativeValue(Transfer transfer, object value) => value;
-        public virtual string RebuildTypeNameKey(string key) => string.Empty;
+        public virtual string RebuildTypeNameKey(string key) => null;
 
         public BasePropertyJson() { }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            string globalKey = BuildTypeNameKey(tag);
-            if (globalKey.Length > 0 && transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && !transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+            if (transfer is { } && transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
             {
-                transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
+                string globalKey = BuildTypeNameKey(tag);
+                if (!transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+                {
+                    transfer.GlobalObjects.GlobalTypeNames[globalKey] = new GlobalTypeName { TypeName = tag.TypeName };
+                }
             }
             string key = BuildKey(Name, tag, FromNativeFields);
             object value = TypeName == FBoolProperty.TYPE_NAME ? tag.BoolVal == 1 : FromNativeValue(tag.Value);
@@ -41,12 +44,24 @@
             ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
-            FPropertyTypeName typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, InnerType, default, name, enumInnerType, typeNamespace);
             EPropertyTagFlags? propertyTagFlags = ExtractPropertyTagFlags(boolVal, hasPropertyGuid, arrayIndex, native);
 
             if ((TypeName == FByteProperty.TYPE_NAME || TypeName == FEnumProperty.TYPE_NAME) && enumName is null)
             {
                 enumName = "None";
+            }
+
+            FPropertyTypeName typeName = null;
+            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && RebuildTypeNameKey(key) is string globalKey)
+            {
+                if (transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
+                {
+                    typeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
+                }
+            }
+            if (typeName is null)
+            {
+                typeName = ExtractTypeName(transfer, TypeName, enumName, StructName, InnerType, default, name, enumInnerType, typeNamespace);
             }
 
             FPropertyTag tag = new()
@@ -65,12 +80,6 @@
                 PropertyTagFlags = propertyTagFlags,
                 InnerType = InnerType is { } ? new FName(InnerType, transfer) : default,
             };
-
-            string globalKey = RebuildTypeNameKey(key);
-            if (transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME && transfer.GlobalObjects.GlobalTypeNames.ContainsKey(globalKey))
-            {
-                tag.TypeName = transfer.GlobalObjects.GlobalTypeNames[globalKey].TypeName;
-            }
 
             return tag;
         }

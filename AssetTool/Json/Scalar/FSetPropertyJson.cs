@@ -10,8 +10,6 @@ namespace AssetTool
         public override string Name => "set";
         public override string TypeName => FSetProperty.TYPE_NAME;
 
-        public override string BuildTypeNameKey(FPropertyTag tag) => tag.TypeNameString();
-
         public override string RebuildTypeNameKey(string key)
         {
             string a = $"{FSetProperty.TYPE_NAME} ";
@@ -22,8 +20,6 @@ namespace AssetTool
 
         public override object FromNative(FPropertyTag tag, Transfer transfer = null)
         {
-            // File.AppendAllLines("C:/Temp/Before.json", [tag.ToJson()]);//@@@
-
             return base.FromNative(tag, transfer);
         }
 
@@ -57,9 +53,6 @@ namespace AssetTool
             InnerType = key.GetNonNull("InnerType({0})", x => x);
             StructName = key.GetNonNull("StructName({0})", x => x);
             var tag = base.ToNative(transfer, key, value);
-
-            //File.AppendAllLines("C:/Temp/After.json", [tag.ToJson()]);//@@@
-
             return tag;
         }
 
