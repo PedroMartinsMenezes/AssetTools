@@ -541,7 +541,7 @@ namespace AssetTool
         public static object MoveMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (long startOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
-            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.MapKeyType, tag.ValueType?.Value, tag.Size);
+            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.MapKeyType, tag.MapValueType, tag.Size);
             int inc = Log.InfoRead(tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
