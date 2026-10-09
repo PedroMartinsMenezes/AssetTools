@@ -64,7 +64,7 @@ namespace AssetTool
             }
 
             string name, native, enumName, index, guid, enumInnerType, typeNamespace;
-            string prefix = BasePropertyJson.ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+            string prefix = BasePropertyJson.ExtractKey(transfer, null, key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
 
             int size = prefix.GetNonNull("Size({0})", x => int.Parse(x));
             string propertyTagFlags = prefix.GetNonNull("PropertyTagFlags({0})", x => x);

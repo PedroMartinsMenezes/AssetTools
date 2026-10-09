@@ -45,7 +45,7 @@ namespace AssetTool
         public virtual FPropertyTag ToNative(Transfer transfer, string key, object val)
         {
             string name, native, enumName, index, guid, enumInnerType, typeNamespace;
-            BasePropertyJson.ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+            BasePropertyJson.ExtractKey(transfer, null, key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
             byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
             int arrayIndex = index is { } ? int.Parse(index) : 0;
             FPropertyTypeName typeName = BasePropertyJson.ExtractTypeName(transfer, FArrayProperty.TYPE_NAME, enumName, StructName, InnerTypeName, default, name, enumInnerType, typeNamespace);

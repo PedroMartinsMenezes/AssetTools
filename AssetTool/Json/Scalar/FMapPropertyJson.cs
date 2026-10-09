@@ -10,9 +10,9 @@ namespace AssetTool
         public override string Name => "map";
         public override string TypeName => FMapProperty.TYPE_NAME;
 
-        public override string BuildTypeNameKey(FPropertyTag tag)
+        public override string BuildTypeNameKey(FPropertyTag tag, Transfer transfer = null)
         {
-            return $"{FMapProperty.TYPE_NAME} {tag.KeyType} : {tag.ValueType}";
+            return $"{FMapProperty.TYPE_NAME} {tag.MapKeyType} : {tag.MapValueType}";
         }
 
         public override string RebuildTypeNameKey(string key)
@@ -30,13 +30,10 @@ namespace AssetTool
 
         public override string FromNativeFields(FPropertyTag tag)
         {
-            FMapProperty prop = (FMapProperty)tag.Value;
             string a = $"Size({tag.Size}) ";
-            string b = tag.InnerType is { } ? $"InnerType({tag.InnerType}) " : string.Empty;
-            string c = tag.ValueType is { } ? $"ValueType({tag.ValueType}) " : string.Empty;
-            string d = tag.KeyType is { } ? $"KeyType({tag.KeyType}) " : string.Empty;
-            string e = prop.NumKeysToRemove > 0 ? $"NumKeysToRemove({prop.NumKeysToRemove}) " : string.Empty;
-            return $"{a}{b}{c}{d}{e}";
+            string b = tag.MapKeyType is { } ? $"KeyType({tag.MapKeyType}) " : string.Empty;
+            string c = tag.MapValueType is { } ? $"ValueType({tag.MapValueType}) " : string.Empty;
+            return $"{a}{b}{c}";
         }
 
         public override object FromNativeValue(object value)
@@ -44,8 +41,8 @@ namespace AssetTool
             FMapProperty prop = (FMapProperty)value;
             Dictionary<string, object> dict = new()
             {
-                ["KeyProp"] = prop.KeyProp,
-                ["ValueProp"] = prop.ValueProp
+                ["Keys"] = prop.KeyProp,
+                ["Values"] = prop.ValueProp
             };
             if (prop.NumKeysToRemove > 0)
             {
@@ -57,7 +54,13 @@ namespace AssetTool
         public override FPropertyTag ToNative(Transfer transfer, string key, object value)
         {
             Size = key.GetNonNull("Size({0})", x => int.Parse(x));
-            InnerType = key.GetNonNull("InnerType({0})", x => x);
+
+            if (!transfer.Supports.PROPERTY_TAG_COMPLETE_TYPE_NAME)
+            {
+                InnerType = key.GetNonNull("KeyType({0})", x => x);
+                ValueType = key.GetNonNull("ValueType({0})", x => x);
+            }
+
             var tag = base.ToNative(transfer, key, value);
             return tag;
         }
@@ -66,8 +69,8 @@ namespace AssetTool
         {
             FMapProperty prop = new();
             Dictionary<string, object> dict = value.ToObject<Dictionary<string, object>>(transfer);
-            prop.KeyProp = dict["KeyProp"].ToObject<List<object>>(transfer);
-            prop.ValueProp = dict["ValueProp"].ToObject<List<object>>(transfer);
+            prop.KeyProp = dict["Keys"].ToObject<List<object>>(transfer);
+            prop.ValueProp = dict["Values"].ToObject<List<object>>(transfer);
             prop.NumEntries = prop.KeyProp.Count;
             prop.KeysToRemove = dict.ContainsKey("KeysToRemove") ? dict["KeysToRemove"].ToObject<List<object>>(transfer) : null;
             prop.NumKeysToRemove = prop.KeysToRemove?.Count ?? 0;

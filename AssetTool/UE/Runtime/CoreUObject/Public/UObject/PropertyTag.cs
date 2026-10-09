@@ -34,7 +34,44 @@ namespace AssetTool
 
         #region JsonIgnore
         [JsonIgnore]
-        public string KeyType => TypeName?.KeyType ?? InnerType?.Value;
+        public string MapKeyType
+        {
+            get
+            {
+                if (Type is null || Type.Value != FMapProperty.TYPE_NAME)
+                {
+                    return null;
+                }
+                else if (TypeName is null)
+                {
+                    return InnerType?.Value;
+                }
+                else
+                {
+                    return TypeName.MapKeyType;
+                }
+            }
+        }
+
+        [JsonIgnore]
+        public string MapValueType
+        {
+            get
+            {
+                if (Type is null || Type.Value != FMapProperty.TYPE_NAME)
+                {
+                    return null;
+                }
+                else if (TypeName is null)
+                {
+                    return ValueType?.Value;
+                }
+                else
+                {
+                    return TypeName.MapValueType;
+                }
+            }
+        }
 
         [JsonIgnore]
         public FName EnumInnerType;
@@ -86,7 +123,6 @@ namespace AssetTool
             EnumName ??= TypeName.EnumName;
             StructName ??= TypeName.StructName;
             InnerType ??= TypeName.InnerType;
-            ValueType ??= new FName(TypeName.ValueType);
 
             transfer.Move(ref Size);
 
@@ -505,7 +541,7 @@ namespace AssetTool
         public static object MoveMember(this Transfer transfer, FPropertyTag tag, int indent, long baseOffset, UObject obj)
         {
             (long startOffset, long endOffset) = (transfer.Position, transfer.Position + tag.Size);
-            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.KeyType, tag.ValueType?.Value, tag.Size);
+            (string name, string structName, string type, string innerType, string keyType, string valueType, int size) = (tag.Name?.Value, tag.StructName?.Value, tag.Type.Value, tag.InnerType?.Value, tag.MapKeyType, tag.ValueType?.Value, tag.Size);
             int inc = Log.InfoRead(tag);
 
             if (type == default) throw new InvalidOperationException($"Invalid Tag Type: '{type}'");
@@ -758,7 +794,7 @@ namespace AssetTool
                     NativeConstructors.Add(t.Item2.TypeName, (Func<Transfer, string, object, FPropertyTag>)((transfer, key, value) =>
                     {
                         string name, native, enumName, index, guid, enumInnerType, typeNamespace;
-                        BasePropertyJson.ExtractKey(key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
+                        BasePropertyJson.ExtractKey(transfer, t.Item2.TypeName, key, out name, out native, out enumName, out index, out guid, out enumInnerType, out typeNamespace);
                         string structName = t.Item2.TypeName;
                         byte hasPropertyGuid = (byte)(guid is { } ? 1 : 0);
                         int arrayIndex = index is { } ? int.Parse(index) : 0;

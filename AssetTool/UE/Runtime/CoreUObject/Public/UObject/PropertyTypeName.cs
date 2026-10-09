@@ -55,7 +55,7 @@ namespace AssetTool
             }
         }
 
-        public string KeyType
+        public string MapKeyType
         {
             get
             {
@@ -69,7 +69,7 @@ namespace AssetTool
                 return result;
             }
         }
-        public string ValueType
+        public string MapValueType
         {
             get
             {
