@@ -397,24 +397,12 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "struct ItemAudioInfo 247 'AudioInfo'": {
-            "Switches": {
-              "Name": "Switches",
-              "Type": "ArrayProperty",
-              "Size": 153,
-              "InnerType": "StructProperty",
-              "MaybeInnerTag": {
-                "Name": "Switches",
-                "Type": "StructProperty",
-                "Size": 100,
-                "StructName": "ItemAudioSwitch"
-              },
-              "Value": [
-                {
-                  "string 'Group'": "switch_wpn_model",
-                  "string 'Value'": "smg_45_m1928_ww2"
-                }
-              ]
-            },
+            "struct[] Size(153) MaybeInnerTag(ItemAudioSwitch 100  ) 'Switches'": [
+              {
+                "string 'Group'": "switch_wpn_model",
+                "string 'Value'": "smg_45_m1928_ww2"
+              }
+            ],
             "obj[] 'Banks'": "-22 -25 -23 -24"
           },
           "struct RangedWeaponResource 9205 'Resource'": {
@@ -691,16 +679,10 @@
               "bool 'ModAction'": true,
               "bool 'ModMagazine'": true
             },
-            "Mods": {
-              "Name": "Mods",
-              "Type": "ArrayProperty",
-              "Size": 20,
-              "InnerType": "NameProperty",
-              "Value": [
-                "/Game/Items/Mods/Thompson_Mod_Mag_Drum.Thompson_Mod_Mag_Drum_C",
-                "/Game/Items/Mods/Pro_Suppressor.Pro_Suppressor_C"
-              ]
-            },
+            "name[] 'Mods'": [
+              "/Game/Items/Mods/Thompson_Mod_Mag_Drum.Thompson_Mod_Mag_Drum_C",
+              "/Game/Items/Mods/Pro_Suppressor.Pro_Suppressor_C"
+            ],
             "struct TransformFloat 49 'LaunchedObjectVelocity'": {
               "byte64 (ETransformTypeEnum) 'TransformType'": 80
             }
