@@ -110,6 +110,9 @@ namespace AssetTool.Test
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
             });
             w.Stop();
+            IndividualLog += $"  Scenario     : NonRepeated.txt ({name})\n";
+            IndividualLog += $"  File Count   : {files.Length}\n";
+            IndividualLog += $"  Total Seconds: {w.Elapsed.TotalSeconds:0.00}\n";
         }
 
         protected void Test_UE_Files_NonRepeated_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)

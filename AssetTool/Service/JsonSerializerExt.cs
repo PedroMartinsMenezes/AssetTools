@@ -165,7 +165,10 @@ namespace AssetTool
         // parent document instead of each one cloning its own copy of the JSON bytes.
         private static Dictionary<string, object> ToDictionary(JsonElement element)
         {
-            Dictionary<string, object> dict = [];
+            int count = 0;
+            foreach (JsonProperty _ in element.EnumerateObject())
+                count++;
+            Dictionary<string, object> dict = new(count);
             foreach (JsonProperty property in element.EnumerateObject())
             {
                 dict[property.Name] = property.Value.ValueKind == JsonValueKind.Null ? null : property.Value;

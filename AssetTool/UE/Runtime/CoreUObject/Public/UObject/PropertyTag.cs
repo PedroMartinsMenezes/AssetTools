@@ -347,8 +347,8 @@ namespace AssetTool
                         var item = tag.Name.IsFilled() && indent >= 0 ? FromNative(transfer, tag) : tag;
                         if (item is Dictionary<string, object> dict)
                         {
-                            string suffix = members.ContainsKey(dict.Keys.First()) ? $"{FName.DOUBLE_SEPARATOR}{tag.ValueOffset.ToString()}" : string.Empty;
-                            members[$"{dict.Keys.First()}{suffix}"] = dict.Values.First();
+                            (string key, object value) = FirstEntry(dict);
+                            members[members.ContainsKey(key) ? $"{key}{FName.DOUBLE_SEPARATOR}{tag.ValueOffset}" : key] = value;
                         }
                         else if (item is FPropertyTag member2)
                         {
@@ -369,6 +369,19 @@ namespace AssetTool
             return members;
         }
         #endregion
+
+        private static KeyValuePair<string, object> FirstEntry(Dictionary<string, object> dict)
+        {
+            foreach (KeyValuePair<string, object> entry in dict)
+                return entry;
+            throw new InvalidOperationException("Sequence contains no elements");
+        }
+
+        private static string FirstWord(string key)
+        {
+            int space = key.IndexOf(' ');
+            return space < 0 ? key : key[..space];
+        }
 
         #region FromNative and ToNative
         private static object FromNative(Transfer transfer, FPropertyTag tag)
@@ -450,7 +463,7 @@ namespace AssetTool
             {
                 string key = pair.Key;
                 object value = pair.Value;
-                string type = pair.Key.Split(' ')[0];
+                string type = FirstWord(pair.Key);
 
                 if (NativeConstructors.TryGetValue(type, out var func)) return func(transfer, key, value);
 
@@ -513,9 +526,8 @@ namespace AssetTool
             }
             else if (pair.Value is Dictionary<string, object> dict)
             {
-                string key = dict.Keys.First();
-                object value = dict.Values.First();
-                string type = key.Split(' ')[0];
+                (string key, object value) = FirstEntry(dict);
+                string type = FirstWord(key);
                 if (NativeConstructors.TryGetValue(type, out var func))
                 {
                     return func(transfer, key, value);
@@ -543,7 +555,10 @@ namespace AssetTool
                 tag.Value = TagMovers[type](transfer, size, tag.Value, name, innerType, keyType, valueType, indent + inc, obj);
 
             if (transfer.IsReading && startOffset != endOffset && size > 0 && indent == 0)
-                new FPropertyTagValue(tag, indent, baseOffset, tag.Value, obj).AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", transfer.Stream, [startOffset, endOffset]);
+            {
+                if (transfer.AppConfig.DebugCheckMember)
+                    new FPropertyTagValue(tag, indent, baseOffset, tag.Value, obj).AutoCheck(transfer, $"Name({tag.Name}) Type({tag.Type}) StructName({tag.StructName}) Size({tag.Size})", transfer.Stream, [startOffset, endOffset]);
+            }
             else if (indent == 0 && tag.Size == 0)
                 Log.InfoWrite(tag, true);
 
@@ -819,7 +834,7 @@ namespace AssetTool
                         {
                             foreach (var pair in dict)
                             {
-                                string type = pair.Key.Split(' ')[0];
+                                string type = FirstWord(pair.Key);
                                 object tag = NativeConstructors[type](transfer, pair.Key, pair.Value);
                                 dict[pair.Key] = tag;
                                 size += ((FPropertyTag)tag).HeaderSize(transfer) + ((FPropertyTag)tag).Size;
