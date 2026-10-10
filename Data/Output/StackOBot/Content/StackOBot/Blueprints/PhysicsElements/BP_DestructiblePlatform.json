@@ -1536,6 +1536,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "ArrayProperty StructProperty ResponseChannel": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
@@ -1769,38 +1775,19 @@
               "float 'SavedZoomAmount'": 0.875
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                "GeometryCollectionComponent",
-                "RadialFalloff",
-                "RandomVector",
-                "UniformVector"
-              ],
-              "ValueProp": [
-                1,
-                2,
-                1,
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(56) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "GeometryCollectionComponent",
+              "RadialFalloff",
+              "RandomVector",
+              "UniformVector"
+            ],
+            "Values": [
+              1,
+              2,
+              1,
+              1
+            ]
           },
           "obj 'ThumbnailInfo'": 86,
           "obj 'GeneratedClass'": 3,
@@ -1823,43 +1810,23 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 92,
           "obj 'UberGraphFunction'": 11,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 152,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 6,
-              "KeyProp": [
-                "PreBreakDuration",
-                "RespawnTime",
-                "ActivePlatform",
-                "Relative Transform",
-                "GC",
-                "PreShatterTime"
-              ],
-              "ValueProp": [
-                "1fc5007c-4ef4-2110-44a6-7f83ed74a5a4",
-                "29430486-4c50-8d43-781b-38a1a076bbc4",
-                "3a715e60-4849-daae-00df-8894a4865b28",
-                "efef5812-4920-3de4-dda3-8c862cdf8599",
-                "f973ea02-4a21-8a02-8b76-8d980c2727eb",
-                "8580ce13-4364-d5c1-3c4b-cfa85d00b567"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(152) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "PreBreakDuration",
+              "RespawnTime",
+              "ActivePlatform",
+              "Relative Transform",
+              "GC",
+              "PreShatterTime"
+            ],
+            "Values": [
+              "1fc5007c-4ef4-2110-44a6-7f83ed74a5a4",
+              "29430486-4c50-8d43-781b-38a1a076bbc4",
+              "3a715e60-4849-daae-00df-8894a4865b28",
+              "efef5812-4920-3de4-dda3-8c862cdf8599",
+              "f973ea02-4a21-8a02-8b76-8d980c2727eb",
+              "8580ce13-4364-d5c1-3c4b-cfa85d00b567"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-21] Actor",

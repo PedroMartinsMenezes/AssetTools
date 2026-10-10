@@ -1133,6 +1133,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1334,41 +1337,21 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 60,
           "obj 'UberGraphFunction'": 15,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 128,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 5,
-              "KeyProp": [
-                "Min Leash Distance From Spawn Point To Resume Roaming",
-                "Max Leash Distance From Spawn Point",
-                "Respawn Cooldown",
-                "Spawned Bug",
-                "Bug Class"
-              ],
-              "ValueProp": [
-                "fa4c04dc-4ab9-cbfb-bf6c-b8a09251bb73",
-                "a324c0bd-4640-3b38-49b4-8280ac78e4ca",
-                "ad90c38e-43ab-c465-295c-fbb54dbf412f",
-                "8477295e-4e4c-73f6-3540-9985088a1a0c",
-                "bb1b6e67-402e-8cc3-1442-2da274de1fff"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(128) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Min Leash Distance From Spawn Point To Resume Roaming",
+              "Max Leash Distance From Spawn Point",
+              "Respawn Cooldown",
+              "Spawned Bug",
+              "Bug Class"
+            ],
+            "Values": [
+              "fa4c04dc-4ab9-cbfb-bf6c-b8a09251bb73",
+              "a324c0bd-4640-3b38-49b4-8280ac78e4ca",
+              "ad90c38e-43ab-c465-295c-fbb54dbf412f",
+              "8477295e-4e4c-73f6-3540-9985088a1a0c",
+              "bb1b6e67-402e-8cc3-1442-2da274de1fff"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-22] Actor",

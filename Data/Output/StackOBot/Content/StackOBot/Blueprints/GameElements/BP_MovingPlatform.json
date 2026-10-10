@@ -1425,6 +1425,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1436,6 +1439,9 @@
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "MapProperty NiagaraVariable : NiagaraVariable": {
+        "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0"
       },
       "ArrayProperty StructProperty NiagaraVariableWithOffset": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0"
@@ -1677,43 +1683,23 @@
           "obj[] 'DynamicBindingObjects'": "5",
           "obj 'SimpleConstructionScript'": 111,
           "obj 'UberGraphFunction'": 16,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 152,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 6,
-              "KeyProp": [
-                "Pausing",
-                "Pause",
-                "Position",
-                "Speed",
-                "Activate On Touch",
-                "Active"
-              ],
-              "ValueProp": [
-                "272363ee-4c9d-4512-8bc2-9fb87df67a74",
-                "58e6ad24-4e50-52d4-e196-69abdaa35135",
-                "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
-                "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
-                "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
-                "a16eff24-4b70-2e0c-d899-2ebb182fb9b6"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(152) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Pausing",
+              "Pause",
+              "Position",
+              "Speed",
+              "Activate On Touch",
+              "Active"
+            ],
+            "Values": [
+              "272363ee-4c9d-4512-8bc2-9fb87df67a74",
+              "58e6ad24-4e50-52d4-e196-69abdaa35135",
+              "4a58ebf8-44ac-753c-2cd2-7ebdbbd81443",
+              "af7bd664-4ef2-fe91-62b1-c788af3ea0d9",
+              "c950a42c-45c9-ff00-0ed7-a1a9cd8e36e9",
+              "a16eff24-4b70-2e0c-d899-2ebb182fb9b6"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-17] Actor",
@@ -4161,65 +4147,45 @@
         "Members": {
           "obj 'Asset'": -60,
           "struct NiagaraUserRedirectionParameterStore 529 'OverrideParameters'": {
-            "UserParameterRedirects": {
-              "Name": "UserParameterRedirects",
-              "Type": "MapProperty",
-              "Size": 212,
-              "BoolVal": 0,
-              "ValueType": "StructProperty",
-              "Value": {
-                "TypeName": "MapProperty",
-                "NumKeysToRemove": 0,
-                "NumEntries": 1,
-                "KeyProp": [
-                  {
-                    "VarData": "",
-                    "Name": "Spline",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -35,
-                            "ushort 'UnderlyingType'": 1,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+            "map native Size(212) KeyType(NiagaraVariable) ValueType(NiagaraVariable) 'UserParameterRedirects'": {
+              "Keys": [
+                {
+                  "VarData": "",
+                  "Name": "Spline",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -35,
+                          "ushort 'UnderlyingType'": 1,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ValueProp": [
-                  {
-                    "VarData": "",
-                    "Name": "User.Spline",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -35,
-                            "ushort 'UnderlyingType'": 1,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+                }
+              ],
+              "Values": [
+                {
+                  "VarData": "",
+                  "Name": "User.Spline",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -35,
+                          "ushort 'UnderlyingType'": 1,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ArrayDim": 0,
-                "ElementSize": 0,
-                "PropertyFlags": "CPF_None",
-                "RepIndex": 0,
-                "BlueprintReplicationCondition": 0,
-                "FlagsPrivate": "RF_NoFlags",
-                "HasMetaData": false,
-                "MetaDataMap": {}
-              },
-              "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+                }
+              ]
             },
             "struct[] native TypeNamespace(/Script/Niagara) StructName(NiagaraVariableWithOffset) Size(106) PropertyTagFlags(HasBinaryOrNativeSerialize) 'SortedParameterOffsets'": [
               {

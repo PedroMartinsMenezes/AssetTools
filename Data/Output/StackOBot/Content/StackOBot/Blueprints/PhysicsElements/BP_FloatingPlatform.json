@@ -993,6 +993,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1124,32 +1130,13 @@
               "float 'SavedZoomAmount'": 0.675
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 20,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 1,
-              "KeyProp": [
-                "StaticMeshComponent"
-              ],
-              "ValueProp": [
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(20) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "StaticMeshComponent"
+            ],
+            "Values": [
+              1
+            ]
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1171,33 +1158,13 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 41,
           "obj 'UberGraphFunction'": 6,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 32,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 1,
-              "KeyProp": [
-                "Attach Point"
-              ],
-              "ValueProp": [
-                "ace12bf6-431f-c3d7-59c9-e7b74b528ce3"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(32) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Attach Point"
+            ],
+            "Values": [
+              "ace12bf6-431f-c3d7-59c9-e7b74b528ce3"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-12] Actor",

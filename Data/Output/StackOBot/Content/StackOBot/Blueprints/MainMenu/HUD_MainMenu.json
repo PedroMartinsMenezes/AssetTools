@@ -1109,6 +1109,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1280,37 +1283,17 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 38,
           "obj 'UberGraphFunction'": 7,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Start Level",
-                "MyLoadingWidget",
-                "MyMainMenu"
-              ],
-              "ValueProp": [
-                "c04d2b9f-4ab9-9689-e84d-87878bd18283",
-                "915445e8-4d1f-05cd-f5b9-66a9cf6ffd2c",
-                "d098c691-4ff7-d888-84ca-bba9f3e42359"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Start Level",
+              "MyLoadingWidget",
+              "MyMainMenu"
+            ],
+            "Values": [
+              "c04d2b9f-4ab9-9689-e84d-87878bd18283",
+              "915445e8-4d1f-05cd-f5b9-66a9cf6ffd2c",
+              "d098c691-4ff7-d888-84ca-bba9f3e42359"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-22] HUD",

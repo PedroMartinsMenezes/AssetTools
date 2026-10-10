@@ -1870,6 +1870,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -2051,39 +2054,19 @@
           "obj[] 'DynamicBindingObjects'": "13",
           "obj 'SimpleConstructionScript'": 93,
           "obj 'UberGraphFunction'": 14,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 104,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                "PlayerRef",
-                "DroneRef",
-                "CameraTransitionActive",
-                "IsUsingGamepad"
-              ],
-              "ValueProp": [
-                "ea564f8c-4a28-054c-afbc-789142c03569",
-                "ef6428e2-450e-326d-ca4f-f8a680653c1e",
-                "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
-                "df213d31-4172-30e5-af13-a580e9027107"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(104) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "PlayerRef",
+              "DroneRef",
+              "CameraTransitionActive",
+              "IsUsingGamepad"
+            ],
+            "Values": [
+              "ea564f8c-4a28-054c-afbc-789142c03569",
+              "ef6428e2-450e-326d-ca4f-f8a680653c1e",
+              "9da42b2a-4a4a-4552-8d06-0da92fa3bed6",
+              "df213d31-4172-30e5-af13-a580e9027107"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-40] PlayerController",

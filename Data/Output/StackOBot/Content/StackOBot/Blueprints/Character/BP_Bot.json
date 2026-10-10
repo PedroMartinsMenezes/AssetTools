@@ -4718,6 +4718,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -4750,6 +4753,9 @@
       },
       "ArrayProperty StructProperty OptionalPinFromProperty": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
+      },
+      "MapProperty NiagaraVariable : NiagaraVariable": {
+        "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0"
       },
       "ArrayProperty StructProperty NiagaraVariableWithOffset": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0"
@@ -5347,71 +5353,51 @@
           "obj[] 'DynamicBindingObjects'": "58",
           "obj 'SimpleConstructionScript'": 464,
           "obj 'UberGraphFunction'": 61,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 488,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 20,
-              "KeyProp": [
-                "Touch_ThirdPersonActive",
-                "GrabAudio",
-                "HitDamageTimer",
-                "Standing On Actor",
-                "TeleMoveHandle",
-                "Project In Front",
-                "DMI_FuelDisplay",
-                "Grab Check",
-                "Potential Interact",
-                "CachedVelocityDampening",
-                "CachedVelocity",
-                "FX_Grab",
-                "Tele_Target",
-                "InteractionWorldLocation",
-                "IsInactive",
-                "Materials",
-                "ThrusterMaxTime",
-                "ThrusterTime",
-                "JetpackBoostCurve",
-                "JetpackActive"
-              ],
-              "ValueProp": [
-                "52309fef-4b05-ba7c-6088-f9ab6670fc1e",
-                "54051337-4b0f-18b9-fd18-50ae8d4ceb91",
-                "4f2963bc-4768-0410-a1a4-c99aec4c89e6",
-                "6b6bff82-4cd0-8e1a-42a5-4382cff763bc",
-                "761d1e84-4f24-4f9a-76f7-f3a8cbf9a821",
-                "5543f66b-4f2f-8a07-d516-0fa705ae4dde",
-                "02b879f7-4564-aa93-5a24-4b8159ca1cc2",
-                "0e7efcce-4a0c-c913-77c8-30ab47b031d8",
-                "0835b2c8-4ca9-4750-710b-fba4d6c5f985",
-                "926d00fa-4b22-062e-005b-e69861d075e6",
-                "37af6124-4274-8c2d-ea62-08a9d63350c2",
-                "3a901b0e-4ef8-ee48-82a8-128c8033872f",
-                "503fafef-42cf-19ef-5fed-cdbb73d94b96",
-                "958895c3-4bb1-b608-0d6e-42886b304acf",
-                "0b9dbf58-4562-546e-f675-6cbacbf8421e",
-                "3401e92c-4de4-65a3-bccd-cb8b58a7b49d",
-                "618491e2-40ad-cb5f-d666-b084703ec436",
-                "5da62485-4382-68e0-68a3-4c8e6af5fdaa",
-                "ca36d7c3-43bc-92fe-0911-efb26f28f968",
-                "961e4cd5-4d2f-1f8a-f27a-3cbfa80ceb6c"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(488) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Touch_ThirdPersonActive",
+              "GrabAudio",
+              "HitDamageTimer",
+              "Standing On Actor",
+              "TeleMoveHandle",
+              "Project In Front",
+              "DMI_FuelDisplay",
+              "Grab Check",
+              "Potential Interact",
+              "CachedVelocityDampening",
+              "CachedVelocity",
+              "FX_Grab",
+              "Tele_Target",
+              "InteractionWorldLocation",
+              "IsInactive",
+              "Materials",
+              "ThrusterMaxTime",
+              "ThrusterTime",
+              "JetpackBoostCurve",
+              "JetpackActive"
+            ],
+            "Values": [
+              "52309fef-4b05-ba7c-6088-f9ab6670fc1e",
+              "54051337-4b0f-18b9-fd18-50ae8d4ceb91",
+              "4f2963bc-4768-0410-a1a4-c99aec4c89e6",
+              "6b6bff82-4cd0-8e1a-42a5-4382cff763bc",
+              "761d1e84-4f24-4f9a-76f7-f3a8cbf9a821",
+              "5543f66b-4f2f-8a07-d516-0fa705ae4dde",
+              "02b879f7-4564-aa93-5a24-4b8159ca1cc2",
+              "0e7efcce-4a0c-c913-77c8-30ab47b031d8",
+              "0835b2c8-4ca9-4750-710b-fba4d6c5f985",
+              "926d00fa-4b22-062e-005b-e69861d075e6",
+              "37af6124-4274-8c2d-ea62-08a9d63350c2",
+              "3a901b0e-4ef8-ee48-82a8-128c8033872f",
+              "503fafef-42cf-19ef-5fed-cdbb73d94b96",
+              "958895c3-4bb1-b608-0d6e-42886b304acf",
+              "0b9dbf58-4562-546e-f675-6cbacbf8421e",
+              "3401e92c-4de4-65a3-bccd-cb8b58a7b49d",
+              "618491e2-40ad-cb5f-d666-b084703ec436",
+              "5da62485-4382-68e0-68a3-4c8e6af5fdaa",
+              "ca36d7c3-43bc-92fe-0911-efb26f28f968",
+              "961e4cd5-4d2f-1f8a-f27a-3cbfa80ceb6c"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-45] Character",
@@ -17557,65 +17543,45 @@
         "Members": {
           "obj 'Asset'": -191,
           "struct NiagaraUserRedirectionParameterStore 529 'OverrideParameters'": {
-            "UserParameterRedirects": {
-              "Name": "UserParameterRedirects",
-              "Type": "MapProperty",
-              "Size": 212,
-              "BoolVal": 0,
-              "ValueType": "StructProperty",
-              "Value": {
-                "TypeName": "MapProperty",
-                "NumKeysToRemove": 0,
-                "NumEntries": 1,
-                "KeyProp": [
-                  {
-                    "VarData": "",
-                    "Name": "ThrusterStrength",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -240,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+            "map native Size(212) KeyType(NiagaraVariable) ValueType(NiagaraVariable) 'UserParameterRedirects'": {
+              "Keys": [
+                {
+                  "VarData": "",
+                  "Name": "ThrusterStrength",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -240,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ValueProp": [
-                  {
-                    "VarData": "",
-                    "Name": "User.ThrusterStrength",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -240,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+                }
+              ],
+              "Values": [
+                {
+                  "VarData": "",
+                  "Name": "User.ThrusterStrength",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -240,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ArrayDim": 0,
-                "ElementSize": 0,
-                "PropertyFlags": "CPF_None",
-                "RepIndex": 0,
-                "BlueprintReplicationCondition": 0,
-                "FlagsPrivate": "RF_NoFlags",
-                "HasMetaData": false,
-                "MetaDataMap": {}
-              },
-              "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+                }
+              ]
             },
             "struct[] native TypeNamespace(/Script/Niagara) StructName(NiagaraVariableWithOffset) Size(106) PropertyTagFlags(HasBinaryOrNativeSerialize) 'SortedParameterOffsets'": [
               {

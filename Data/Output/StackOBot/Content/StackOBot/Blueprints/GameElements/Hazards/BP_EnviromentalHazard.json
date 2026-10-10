@@ -767,6 +767,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -778,6 +781,9 @@
       },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
+      },
+      "MapProperty NiagaraVariable : NiagaraVariable": {
+        "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0"
       },
       "ArrayProperty StructProperty NiagaraVariableWithOffset": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | NiagaraVariableWithOffset 1 | /Script/Niagara 0"
@@ -906,35 +912,15 @@
           "obj[] 'DynamicBindingObjects'": "4",
           "obj 'SimpleConstructionScript'": 26,
           "obj 'UberGraphFunction'": 9,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 2,
-              "KeyProp": [
-                "Inv Frames Time",
-                "Knockback Strength"
-              ],
-              "ValueProp": [
-                "55f8e08d-40c4-1a10-8617-b2b607619809",
-                "2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(56) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Inv Frames Time",
+              "Knockback Strength"
+            ],
+            "Values": [
+              "55f8e08d-40c4-1a10-8617-b2b607619809",
+              "2c33bfe8-4d6f-70e7-32d4-f28ec2b0bba6"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-13] Actor",
@@ -1413,167 +1399,147 @@
         "Members": {
           "obj 'Asset'": -35,
           "struct NiagaraUserRedirectionParameterStore 1491 'OverrideParameters'": {
-            "UserParameterRedirects": {
-              "Name": "UserParameterRedirects",
-              "Type": "MapProperty",
-              "Size": 824,
-              "BoolVal": 0,
-              "ValueType": "StructProperty",
-              "Value": {
-                "TypeName": "MapProperty",
-                "NumKeysToRemove": 0,
-                "NumEntries": 4,
-                "KeyProp": [
-                  {
-                    "VarData": "",
-                    "Name": "Color",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -45,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "Gravity",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -48,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "Hue Shift Range",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -47,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "Scale RGB",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -48,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+            "map native Size(824) KeyType(NiagaraVariable) ValueType(NiagaraVariable) 'UserParameterRedirects'": {
+              "Keys": [
+                {
+                  "VarData": "",
+                  "Name": "Color",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -45,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ValueProp": [
-                  {
-                    "VarData": "",
-                    "Name": "User.Color",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -45,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "User.Gravity",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -48,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "User.Hue Shift Range",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -47,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
-                    }
-                  },
-                  {
-                    "VarData": "",
-                    "Name": "User.Scale RGB",
-                    "TypeDefHandle": {
-                      "TypeDef": {
-                        "scriptStruct": {
-                          "Members": {
-                            "obj 'ClassStructOrEnum'": -48,
-                            "ushort 'UnderlyingType'": 2,
-                            "byte 'Flags'": 0
-                          }
-                        },
-                        "ClassStructOrEnum": 0,
-                        "UnderlyingType": 0
-                      }
+                },
+                {
+                  "VarData": "",
+                  "Name": "Gravity",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
                     }
                   }
-                ],
-                "ArrayDim": 0,
-                "ElementSize": 0,
-                "PropertyFlags": "CPF_None",
-                "RepIndex": 0,
-                "BlueprintReplicationCondition": 0,
-                "FlagsPrivate": "RF_NoFlags",
-                "HasMetaData": false,
-                "MetaDataMap": {}
-              },
-              "TypeName": "MapProperty 2 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0 | StructProperty 1 | NiagaraVariable 1 | /Script/Niagara 0",
-              "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+                },
+                {
+                  "VarData": "",
+                  "Name": "Hue Shift Range",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -47,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "VarData": "",
+                  "Name": "Scale RGB",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                }
+              ],
+              "Values": [
+                {
+                  "VarData": "",
+                  "Name": "User.Color",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -45,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "VarData": "",
+                  "Name": "User.Gravity",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "VarData": "",
+                  "Name": "User.Hue Shift Range",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -47,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                },
+                {
+                  "VarData": "",
+                  "Name": "User.Scale RGB",
+                  "TypeDefHandle": {
+                    "TypeDef": {
+                      "scriptStruct": {
+                        "Members": {
+                          "obj 'ClassStructOrEnum'": -48,
+                          "ushort 'UnderlyingType'": 2,
+                          "byte 'Flags'": 0
+                        }
+                      },
+                      "ClassStructOrEnum": 0,
+                      "UnderlyingType": 0
+                    }
+                  }
+                }
+              ]
             },
             "struct[] native TypeNamespace(/Script/Niagara) StructName(NiagaraVariableWithOffset) Size(412) PropertyTagFlags(HasBinaryOrNativeSerialize) 'SortedParameterOffsets'": [
               {

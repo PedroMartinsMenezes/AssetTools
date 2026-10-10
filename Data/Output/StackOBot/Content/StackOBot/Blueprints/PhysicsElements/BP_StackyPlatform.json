@@ -787,6 +787,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -865,32 +868,13 @@
               "float 'SavedZoomAmount'": 0.5
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 20,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 1,
-              "KeyProp": [
-                "StaticMeshComponent"
-              ],
-              "ValueProp": [
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(20) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "StaticMeshComponent"
+            ],
+            "Values": [
+              1
+            ]
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,

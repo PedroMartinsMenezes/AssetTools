@@ -2028,6 +2028,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -2302,43 +2305,23 @@
           "obj[] 'Timelines'": "172 173 171",
           "obj 'SimpleConstructionScript'": 164,
           "obj 'UberGraphFunction'": 33,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 152,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 6,
-              "KeyProp": [
-                "Set Active",
-                "Active",
-                "DMI_Holo",
-                "DMI_GlowPlate",
-                "IsStartSpawnPad",
-                "Material"
-              ],
-              "ValueProp": [
-                "525651f6-4d13-fcd3-848b-76934ababc10",
-                "5b888079-40e2-75fb-0cc7-c09ec5eddc97",
-                "3c05dc7f-4ff0-f812-f64e-47bdd9cc6825",
-                "79c07fc3-427c-c8f8-72dc-08af163c32ce",
-                "d68f1c80-4012-0bc5-8d89-cfae945554c5",
-                "756c6ef9-429a-6319-af52-3a916d08a69c"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(152) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Set Active",
+              "Active",
+              "DMI_Holo",
+              "DMI_GlowPlate",
+              "IsStartSpawnPad",
+              "Material"
+            ],
+            "Values": [
+              "525651f6-4d13-fcd3-848b-76934ababc10",
+              "5b888079-40e2-75fb-0cc7-c09ec5eddc97",
+              "3c05dc7f-4ff0-f812-f64e-47bdd9cc6825",
+              "79c07fc3-427c-c8f8-72dc-08af163c32ce",
+              "d68f1c80-4012-0bc5-8d89-cfae945554c5",
+              "756c6ef9-429a-6319-af52-3a916d08a69c"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-28] Actor",

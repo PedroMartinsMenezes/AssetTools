@@ -1046,6 +1046,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1209,35 +1212,15 @@
           "obj[] 'Timelines'": "35",
           "obj 'SimpleConstructionScript'": 32,
           "obj 'UberGraphFunction'": 7,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 2,
-              "KeyProp": [
-                "As Pawn",
-                "Commentary Text"
-              ],
-              "ValueProp": [
-                "316afef8-4e85-5606-4c10-0b955a1df966",
-                "3f833077-4e28-30bc-6c3b-aeb1cdef3b81"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(56) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "As Pawn",
+              "Commentary Text"
+            ],
+            "Values": [
+              "316afef8-4e85-5606-4c10-0b955a1df966",
+              "3f833077-4e28-30bc-6c3b-aeb1cdef3b81"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-12] Actor",

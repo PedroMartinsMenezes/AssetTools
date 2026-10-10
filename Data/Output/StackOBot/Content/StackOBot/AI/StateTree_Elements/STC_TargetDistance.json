@@ -823,6 +823,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       }
@@ -995,39 +998,19 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 104,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                "Farther Away",
-                "Distance",
-                "Target Location",
-                "Actor"
-              ],
-              "ValueProp": [
-                "411f6877-473f-628a-d2e2-55854316c954",
-                "144feb8a-4c33-5bb4-a85e-49b613f610c3",
-                "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
-                "afdaee83-4004-e227-ecf8-b9b73eebfb7e"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(104) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Farther Away",
+              "Distance",
+              "Target Location",
+              "Actor"
+            ],
+            "Values": [
+              "411f6877-473f-628a-d2e2-55854316c954",
+              "144feb8a-4c33-5bb4-a85e-49b613f610c3",
+              "a93f0e98-4d8e-9788-7a1b-d787ae05204b",
+              "afdaee83-4004-e227-ecf8-b9b73eebfb7e"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-17] StateTreeConditionBlueprintBase",

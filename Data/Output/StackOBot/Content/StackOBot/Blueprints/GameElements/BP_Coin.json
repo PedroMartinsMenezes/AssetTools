@@ -1483,6 +1483,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1669,32 +1675,13 @@
               "float 'SavedZoomAmount'": 0.25
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 20,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 1,
-              "KeyProp": [
-                "AudioComponent"
-              ],
-              "ValueProp": [
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(20) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "AudioComponent"
+            ],
+            "Values": [
+              1
+            ]
           },
           "obj 'ThumbnailInfo'": 100,
           "obj 'GeneratedClass'": 2,
@@ -1718,41 +1705,21 @@
           "obj[] 'Timelines'": "107 108",
           "obj 'SimpleConstructionScript'": 104,
           "obj 'UberGraphFunction'": 19,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 128,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 5,
-              "KeyProp": [
-                "CoinOwner",
-                "CoinIndex",
-                "HiddenLocation",
-                "ActorTransform",
-                "PlayerCharacter"
-              ],
-              "ValueProp": [
-                "1502782f-4d21-d0db-20c9-9ca91728a2ad",
-                "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
-                "90b44563-4801-b5de-a7ae-4e8891254eff",
-                "78e70d02-41c7-b06c-8d99-ec8c49e2f5e5",
-                "77084af4-423b-a220-22e4-b899540073c2"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(128) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "CoinOwner",
+              "CoinIndex",
+              "HiddenLocation",
+              "ActorTransform",
+              "PlayerCharacter"
+            ],
+            "Values": [
+              "1502782f-4d21-d0db-20c9-9ca91728a2ad",
+              "d6ace7d0-43cf-3d17-526e-f8b2ae66ee5c",
+              "90b44563-4801-b5de-a7ae-4e8891254eff",
+              "78e70d02-41c7-b06c-8d99-ec8c49e2f5e5",
+              "77084af4-423b-a220-22e4-b899540073c2"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-21] Actor",

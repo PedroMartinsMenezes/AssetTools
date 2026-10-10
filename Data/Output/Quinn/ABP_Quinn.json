@@ -1262,803 +1262,497 @@
               "enum64 (EAnimNodeDataFlags) 'Flags'": 66
             }
           ],
-          "NodeTypeMap": {
-            "Name": "NodeTypeMap",
-            "Type": "MapProperty",
-            "Size": 3404,
-            "InnerType": "ObjectProperty",
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 16,
-              "KeyProp": [
-                -35,
-                -36,
-                -39,
-                -38,
-                -33,
-                -44,
-                -34,
-                -40,
-                -46,
-                -42,
-                -43,
-                -37,
-                -31,
-                -45,
-                -41,
-                -32
-              ],
-              "ValueProp": [
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 356,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 29,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "SourcePropertyNames",
-                        "DestPropertyNames",
-                        "TargetInstance",
-                        "Source",
-                        "bResetInputPoseToInitial",
-                        "bTransferInputPose",
-                        "bTransferInputCurves",
-                        "bTransferPoseInGlobalSpace",
-                        "InputBonesToTransfer",
-                        "NodeMappingContainer",
-                        "InputSettings",
-                        "OutputSettings",
-                        "bExecute",
-                        "ControlRigClass",
-                        "ControlRig",
-                        "Alpha",
-                        "AlphaInputType",
-                        "bSetRefPoseFromSkeleton",
-                        "bAlphaBoolEnabled",
-                        "AlphaScaleBias",
-                        "AlphaBoolBlend",
-                        "AlphaCurveName",
-                        "AlphaScaleBiasClamp",
-                        "InputMapping",
-                        "OutputMapping",
-                        "LODThreshold"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16,
-                        17,
-                        18,
-                        19,
-                        20,
-                        21,
-                        22,
-                        23,
-                        24,
-                        25,
-                        26,
-                        27,
-                        28
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 29
+          "map Size(3404) KeyType(ObjectProperty) ValueType(StructProperty) 'NodeTypeMap'": {
+            "Keys": [
+              -35,
+              -36,
+              -39,
+              -38,
+              -33,
+              -44,
+              -34,
+              -40,
+              -46,
+              -42,
+              -43,
+              -37,
+              -31,
+              -45,
+              -41,
+              -32
+            ],
+            "Values": [
+              {
+                "map Size(356) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "SourcePropertyNames",
+                    "DestPropertyNames",
+                    "TargetInstance",
+                    "Source",
+                    "bResetInputPoseToInitial",
+                    "bTransferInputPose",
+                    "bTransferInputCurves",
+                    "bTransferPoseInGlobalSpace",
+                    "InputBonesToTransfer",
+                    "NodeMappingContainer",
+                    "InputSettings",
+                    "OutputSettings",
+                    "bExecute",
+                    "ControlRigClass",
+                    "ControlRig",
+                    "Alpha",
+                    "AlphaInputType",
+                    "bSetRefPoseFromSkeleton",
+                    "bAlphaBoolEnabled",
+                    "AlphaScaleBias",
+                    "AlphaBoolBlend",
+                    "AlphaCurveName",
+                    "AlphaScaleBiasClamp",
+                    "InputMapping",
+                    "OutputMapping",
+                    "LODThreshold"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 200,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 16,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "SourcePropertyNames",
-                        "DestPropertyNames",
-                        "TargetInstance",
-                        "Source",
-                        "bResetInputPoseToInitial",
-                        "bTransferInputPose",
-                        "bTransferInputCurves",
-                        "bTransferPoseInGlobalSpace",
-                        "InputBonesToTransfer",
-                        "NodeMappingContainer",
-                        "InputSettings",
-                        "OutputSettings",
-                        "bExecute"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 16
+                "int 'NumProperties'": 29
+              },
+              {
+                "map Size(200) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "SourcePropertyNames",
+                    "DestPropertyNames",
+                    "TargetInstance",
+                    "Source",
+                    "bResetInputPoseToInitial",
+                    "bTransferInputPose",
+                    "bTransferInputCurves",
+                    "bTransferPoseInGlobalSpace",
+                    "InputBonesToTransfer",
+                    "NodeMappingContainer",
+                    "InputSettings",
+                    "OutputSettings",
+                    "bExecute"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 80,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 6,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "SourcePropertyNames",
-                        "DestPropertyNames",
-                        "TargetInstance"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 6
+                "int 'NumProperties'": 16
+              },
+              {
+                "map Size(80) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "SourcePropertyNames",
+                    "DestPropertyNames",
+                    "TargetInstance"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 44,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 3,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 3
+                "int 'NumProperties'": 6
+              },
+              {
+                "map Size(44) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 80,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 6,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "Source",
-                        "SlotName",
-                        "bAlwaysUpdateSourcePose"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 6
+                "int 'NumProperties'": 3
+              },
+              {
+                "map Size(80) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "Source",
+                    "SlotName",
+                    "bAlwaysUpdateSourcePose"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 116,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 9,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "StateMachineIndexInClass",
-                        "MaxTransitionsPerFrame",
-                        "bSkipFirstUpdateTransition",
-                        "bReinitializeOnBecomingRelevant",
-                        "bCreateNotifyMetaData",
-                        "bAllowConduitEntryStates"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 9
+                "int 'NumProperties'": 6
+              },
+              {
+                "map Size(116) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "StateMachineIndexInClass",
+                    "MaxTransitionsPerFrame",
+                    "bSkipFirstUpdateTransition",
+                    "bReinitializeOnBecomingRelevant",
+                    "bCreateNotifyMetaData",
+                    "bAllowConduitEntryStates"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 92,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 7,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "Result",
-                        "Name",
-                        "Group",
-                        "StateIndex"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 7
+                "int 'NumProperties'": 9
+              },
+              {
+                "map Size(92) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "Result",
+                    "Name",
+                    "Group",
+                    "StateIndex"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 80,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 6,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "Result",
-                        "Name",
-                        "Group"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 6
+                "int 'NumProperties'": 7
+              },
+              {
+                "map Size(80) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "Result",
+                    "Name",
+                    "Group"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 68,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 5,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "LinkToCachingNode",
-                        "CachePoseName"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 5
+                "int 'NumProperties'": 6
+              },
+              {
+                "map Size(68) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "LinkToCachingNode",
+                    "CachePoseName"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 248,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 20,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "GroupIndex",
-                        "GroupScope",
-                        "BlendWeight",
-                        "InternalTimeAccumulator",
-                        "PlayRateScaleBiasClampState",
-                        "GroupName",
-                        "GroupRole",
-                        "Method",
-                        "bIgnoreForRelevancyTest",
-                        "Sequence",
-                        "PlayRateBasis",
-                        "PlayRate",
-                        "PlayRateScaleBiasClampConstants",
-                        "PlayRateScaleBiasClamp",
-                        "StartPosition",
-                        "bLoopAnimation",
-                        "bStartFromMatchingPose"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16,
-                        17,
-                        18,
-                        19
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 20
+                "int 'NumProperties'": 5
+              },
+              {
+                "map Size(248) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "GroupIndex",
+                    "GroupScope",
+                    "BlendWeight",
+                    "InternalTimeAccumulator",
+                    "PlayRateScaleBiasClampState",
+                    "GroupName",
+                    "GroupRole",
+                    "Method",
+                    "bIgnoreForRelevancyTest",
+                    "Sequence",
+                    "PlayRateBasis",
+                    "PlayRate",
+                    "PlayRateScaleBiasClampConstants",
+                    "PlayRateScaleBiasClamp",
+                    "StartPosition",
+                    "bLoopAnimation",
+                    "bStartFromMatchingPose"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 104,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 8,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "GroupIndex",
-                        "GroupScope",
-                        "BlendWeight",
-                        "InternalTimeAccumulator",
-                        "PlayRateScaleBiasClampState"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 8
+                "int 'NumProperties'": 20
+              },
+              {
+                "map Size(104) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "GroupIndex",
+                    "GroupScope",
+                    "BlendWeight",
+                    "InternalTimeAccumulator",
+                    "PlayRateScaleBiasClampState"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 92,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 7,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "GroupIndex",
-                        "GroupScope",
-                        "BlendWeight",
-                        "InternalTimeAccumulator"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 7
+                "int 'NumProperties'": 8
+              },
+              {
+                "map Size(92) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "GroupIndex",
+                    "GroupScope",
+                    "BlendWeight",
+                    "InternalTimeAccumulator"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 164,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 13,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "Base",
-                        "Additive",
-                        "Alpha",
-                        "AlphaScaleBias",
-                        "LODThreshold",
-                        "AlphaBoolBlend",
-                        "AlphaCurveName",
-                        "AlphaScaleBiasClamp",
-                        "AlphaInputType",
-                        "bAlphaBoolEnabled"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 13
+                "int 'NumProperties'": 7
+              },
+              {
+                "map Size(164) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "Base",
+                    "Additive",
+                    "Alpha",
+                    "AlphaScaleBias",
+                    "LODThreshold",
+                    "AlphaBoolBlend",
+                    "AlphaCurveName",
+                    "AlphaScaleBiasClamp",
+                    "AlphaInputType",
+                    "bAlphaBoolEnabled"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 56,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 4,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "bCanEnterTransition"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 4
+                "int 'NumProperties'": 13
+              },
+              {
+                "map Size(56) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "bCanEnterTransition"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 68,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 5,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "Pose",
-                        "CachePoseName"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 5
+                "int 'NumProperties'": 4
+              },
+              {
+                "map Size(68) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "Pose",
+                    "CachePoseName"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                  ]
                 },
-                {
-                  "NameToIndexMap": {
-                    "Name": "NameToIndexMap",
-                    "Type": "MapProperty",
-                    "Size": 236,
-                    "InnerType": "NameProperty",
-                    "ValueType": "IntProperty",
-                    "Value": {
-                      "TypeName": "MapProperty",
-                      "NumKeysToRemove": 0,
-                      "NumEntries": 19,
-                      "KeyProp": [
-                        "InitialUpdateFunction",
-                        "BecomeRelevantFunction",
-                        "UpdateFunction",
-                        "GroupIndex",
-                        "GroupScope",
-                        "BlendWeight",
-                        "InternalTimeAccumulator",
-                        "GroupName",
-                        "GroupRole",
-                        "Method",
-                        "bIgnoreForRelevancyTest",
-                        "X",
-                        "Y",
-                        "PlayRate",
-                        "bLoop",
-                        "bResetPlayTimeWhenBlendSpaceChanges",
-                        "StartPosition",
-                        "BlendSpace",
-                        "PreviousBlendSpace"
-                      ],
-                      "ValueProp": [
-                        0,
-                        1,
-                        2,
-                        3,
-                        4,
-                        5,
-                        6,
-                        7,
-                        8,
-                        9,
-                        10,
-                        11,
-                        12,
-                        13,
-                        14,
-                        15,
-                        16,
-                        17,
-                        18
-                      ],
-                      "ArrayDim": 0,
-                      "ElementSize": 0,
-                      "PropertyFlags": "CPF_None",
-                      "RepIndex": 0,
-                      "BlueprintReplicationCondition": 0,
-                      "FlagsPrivate": "RF_NoFlags",
-                      "HasMetaData": false,
-                      "MetaDataMap": {}
-                    }
-                  },
-                  "int 'NumProperties'": 19
-                }
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            }
+                "int 'NumProperties'": 5
+              },
+              {
+                "map Size(236) KeyType(NameProperty) ValueType(IntProperty) 'NameToIndexMap'": {
+                  "Keys": [
+                    "InitialUpdateFunction",
+                    "BecomeRelevantFunction",
+                    "UpdateFunction",
+                    "GroupIndex",
+                    "GroupScope",
+                    "BlendWeight",
+                    "InternalTimeAccumulator",
+                    "GroupName",
+                    "GroupRole",
+                    "Method",
+                    "bIgnoreForRelevancyTest",
+                    "X",
+                    "Y",
+                    "PlayRate",
+                    "bLoop",
+                    "bResetPlayTimeWhenBlendSpaceChanges",
+                    "StartPosition",
+                    "BlendSpace",
+                    "PreviousBlendSpace"
+                  ],
+                  "Values": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18
+                  ]
+                },
+                "int 'NumProperties'": 19
+              }
+            ]
           },
           "bool 'bIsSparseClassDataSerializable'": true,
           "obj 'UberGraphFunction'": 6

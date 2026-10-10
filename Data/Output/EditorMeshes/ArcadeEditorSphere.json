@@ -582,71 +582,35 @@
             "obj 'StaticMeshDescriptionBulkData'": 7
           },
           "struct MeshSectionInfoMap 202 'SectionInfoMap'": {
-            "Map": {
-              "Name": "Map",
-              "Type": "MapProperty",
-              "Size": 153,
-              "InnerType": "UInt32Property",
-              "ValueType": "StructProperty",
-              "Value": {
-                "TypeName": "MapProperty",
-                "NumKeysToRemove": 0,
-                "NumEntries": 1,
-                "KeyProp": [
-                  0
-                ],
-                "ValueProp": [
-                  {
-                    "int 'MaterialIndex'": 0,
-                    "bool 'bEnableCollision'": true,
-                    "bool 'bCastShadow'": true,
-                    "bool 'bVisibleInRayTracing'": true,
-                    "bool 'bForceOpaque'": false
-                  }
-                ],
-                "ArrayDim": 0,
-                "ElementSize": 0,
-                "PropertyFlags": "CPF_None",
-                "RepIndex": 0,
-                "BlueprintReplicationCondition": 0,
-                "FlagsPrivate": "RF_NoFlags",
-                "HasMetaData": false,
-                "MetaDataMap": {}
-              }
+            "map Size(153) KeyType(UInt32Property) ValueType(StructProperty) 'Map'": {
+              "Keys": [
+                0
+              ],
+              "Values": [
+                {
+                  "int 'MaterialIndex'": 0,
+                  "bool 'bEnableCollision'": true,
+                  "bool 'bCastShadow'": true,
+                  "bool 'bVisibleInRayTracing'": true,
+                  "bool 'bForceOpaque'": false
+                }
+              ]
             }
           },
           "struct MeshSectionInfoMap 202 'OriginalSectionInfoMap'": {
-            "Map": {
-              "Name": "Map",
-              "Type": "MapProperty",
-              "Size": 153,
-              "InnerType": "UInt32Property",
-              "ValueType": "StructProperty",
-              "Value": {
-                "TypeName": "MapProperty",
-                "NumKeysToRemove": 0,
-                "NumEntries": 1,
-                "KeyProp": [
-                  0
-                ],
-                "ValueProp": [
-                  {
-                    "int 'MaterialIndex'": 0,
-                    "bool 'bEnableCollision'": true,
-                    "bool 'bCastShadow'": true,
-                    "bool 'bVisibleInRayTracing'": true,
-                    "bool 'bForceOpaque'": false
-                  }
-                ],
-                "ArrayDim": 0,
-                "ElementSize": 0,
-                "PropertyFlags": "CPF_None",
-                "RepIndex": 0,
-                "BlueprintReplicationCondition": 0,
-                "FlagsPrivate": "RF_NoFlags",
-                "HasMetaData": false,
-                "MetaDataMap": {}
-              }
+            "map Size(153) KeyType(UInt32Property) ValueType(StructProperty) 'Map'": {
+              "Keys": [
+                0
+              ],
+              "Values": [
+                {
+                  "int 'MaterialIndex'": 0,
+                  "bool 'bEnableCollision'": true,
+                  "bool 'bCastShadow'": true,
+                  "bool 'bVisibleInRayTracing'": true,
+                  "bool 'bForceOpaque'": false
+                }
+              ]
             }
           },
           "struct[] Size(381) MaybeInnerTag(StaticMaterial 328  ) 'StaticMaterials'": [

@@ -838,6 +838,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -976,38 +982,19 @@
               "float 'SavedZoomAmount'": 0.75
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                "GeometryCollectionComponent",
-                "RadialFalloff",
-                "RandomVector",
-                "UniformVector"
-              ],
-              "ValueProp": [
-                1,
-                2,
-                1,
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(56) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "GeometryCollectionComponent",
+              "RadialFalloff",
+              "RandomVector",
+              "UniformVector"
+            ],
+            "Values": [
+              1,
+              2,
+              1,
+              1
+            ]
           },
           "obj 'ThumbnailInfo'": 18,
           "obj 'GeneratedClass'": 2,
@@ -1031,37 +1018,17 @@
           "obj[] 'Timelines'": "27",
           "obj 'SimpleConstructionScript'": 23,
           "obj 'UberGraphFunction'": 7,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Relative Transform",
-                "GC",
-                "PreShatterTime"
-              ],
-              "ValueProp": [
-                "593e0b00-40d7-abbc-00a6-c798bc4d9e10",
-                "bc2a29b9-44b8-e17e-16fc-26a5b8b46597",
-                "78776044-437c-2b2d-7fd1-85a818126d95"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Relative Transform",
+              "GC",
+              "PreShatterTime"
+            ],
+            "Values": [
+              "593e0b00-40d7-abbc-00a6-c798bc4d9e10",
+              "bc2a29b9-44b8-e17e-16fc-26a5b8b46597",
+              "78776044-437c-2b2d-7fd1-85a818126d95"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-10] Actor",

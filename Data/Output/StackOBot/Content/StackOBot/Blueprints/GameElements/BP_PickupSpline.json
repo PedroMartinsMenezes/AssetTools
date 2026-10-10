@@ -818,6 +818,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty ActorTickFunction": {
         "TypeName": "StructProperty 1 | ActorTickFunction 1 | /Script/Engine 0"
       },
@@ -957,35 +960,15 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "obj 'SimpleConstructionScript'": 25,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 2,
-              "KeyProp": [
-                "Show Coins",
-                "Distance"
-              ],
-              "ValueProp": [
-                "480f233f-4284-3a6f-101e-be9462bbb343",
-                "c57d21d7-482f-e4e6-bf9f-cb84ed35438e"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(56) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Show Coins",
+              "Distance"
+            ],
+            "Values": [
+              "480f233f-4284-3a6f-101e-be9462bbb343",
+              "c57d21d7-482f-e4e6-bf9f-cb84ed35438e"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-10] Actor",

@@ -1372,6 +1372,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1586,37 +1589,17 @@
           "obj[] 'DynamicBindingObjects'": "7",
           "obj 'SimpleConstructionScript'": 68,
           "obj 'UberGraphFunction'": 18,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Min Leash Distance from Spawn Point to Resume Roaming",
-                "Max Leash Distance from Spawn Point",
-                "Dying"
-              ],
-              "ValueProp": [
-                "4349118e-4c09-c4e7-6e47-a585141e3c87",
-                "0f788abc-4097-f94a-8ba9-6c8300893d83",
-                "11a3d4d0-4056-2e86-b7e1-c8af95033cd1"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Min Leash Distance from Spawn Point to Resume Roaming",
+              "Max Leash Distance from Spawn Point",
+              "Dying"
+            ],
+            "Values": [
+              "4349118e-4c09-c4e7-6e47-a585141e3c87",
+              "0f788abc-4097-f94a-8ba9-6c8300893d83",
+              "11a3d4d0-4056-2e86-b7e1-c8af95033cd1"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-35] Character",

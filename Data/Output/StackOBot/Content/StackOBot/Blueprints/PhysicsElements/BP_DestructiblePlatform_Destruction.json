@@ -935,6 +935,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1059,38 +1065,19 @@
               "float 'SavedZoomAmount'": 0.375
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 56,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                "GeometryCollectionComponent",
-                "RadialFalloff",
-                "RandomVector",
-                "UniformVector"
-              ],
-              "ValueProp": [
-                1,
-                2,
-                1,
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(56) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "GeometryCollectionComponent",
+              "RadialFalloff",
+              "RandomVector",
+              "UniformVector"
+            ],
+            "Values": [
+              1,
+              2,
+              1,
+              1
+            ]
           },
           "obj 'ThumbnailInfo'": 28,
           "obj 'GeneratedClass'": 2,
@@ -1113,37 +1100,17 @@
         "Members": {
           "obj 'SimpleConstructionScript'": 34,
           "obj 'UberGraphFunction'": 8,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Relative Transform",
-                "GC",
-                "PreShatterTime"
-              ],
-              "ValueProp": [
-                "671dffda-4830-3930-f90e-24b00f528ad4",
-                "c1b9382f-49eb-0b2b-5dce-1a8fe89e768d",
-                "ca535b54-4ad6-ca7a-8c0b-bfaccd6ab7ce"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Relative Transform",
+              "GC",
+              "PreShatterTime"
+            ],
+            "Values": [
+              "671dffda-4830-3930-f90e-24b00f528ad4",
+              "c1b9382f-49eb-0b2b-5dce-1a8fe89e768d",
+              "ca535b54-4ad6-ca7a-8c0b-bfaccd6ab7ce"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-13] Actor",

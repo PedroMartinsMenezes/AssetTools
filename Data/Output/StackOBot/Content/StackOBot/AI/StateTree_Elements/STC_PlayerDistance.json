@@ -844,6 +844,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty MemberReference": {
         "TypeName": "StructProperty 1 | MemberReference 1 | /Script/Engine 0"
       },
@@ -1021,37 +1024,17 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Actor",
-                "Trigger Distance",
-                "Player Number"
-              ],
-              "ValueProp": [
-                "44b521f8-46ba-189a-3984-cc99b0463137",
-                "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
-                "b0941e4f-43dc-0332-38ef-a19934c7021b"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Actor",
+              "Trigger Distance",
+              "Player Number"
+            ],
+            "Values": [
+              "44b521f8-46ba-189a-3984-cc99b0463137",
+              "4dfd6a6b-45b3-2aae-ee0e-75a660bf5047",
+              "b0941e4f-43dc-0332-38ef-a19934c7021b"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-21] StateTreeConditionBlueprintBase",

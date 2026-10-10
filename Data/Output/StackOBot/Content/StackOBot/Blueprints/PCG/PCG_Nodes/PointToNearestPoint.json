@@ -956,6 +956,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "ArrayProperty StructProperty OptionalPinFromProperty": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
       },
@@ -1155,43 +1158,23 @@
       "Obj": {
         "__type": "UBlueprintGeneratedClass",
         "Members": {
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 152,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 6,
-              "KeyProp": [
-                "Invert Look At",
-                "Pole World Space",
-                "Look At Axis",
-                "Pole Vector",
-                "Points",
-                "Orientation Targets"
-              ],
-              "ValueProp": [
-                "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
-                "141d8104-445c-52a8-1b07-c08c165c6257",
-                "8d95b063-4a77-87ce-3782-a5aba773fad8",
-                "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
-                "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
-                "62ab296f-415c-2d75-4290-5bb2e4e0a493"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(152) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Invert Look At",
+              "Pole World Space",
+              "Look At Axis",
+              "Pole Vector",
+              "Points",
+              "Orientation Targets"
+            ],
+            "Values": [
+              "1653a15e-45e1-5689-a9f0-4a816bf6eb07",
+              "141d8104-445c-52a8-1b07-c08c165c6257",
+              "8d95b063-4a77-87ce-3782-a5aba773fad8",
+              "b72ff221-48ec-6e1a-ecc2-0b8cb9273f86",
+              "7a80df96-4e36-3ab6-c6da-de8a7790f18b",
+              "62ab296f-415c-2d75-4290-5bb2e4e0a493"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-25] PCGBlueprintElement",

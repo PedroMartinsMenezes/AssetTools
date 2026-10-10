@@ -1535,6 +1535,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1724,37 +1727,17 @@
           "obj[] 'Timelines'": "120",
           "obj 'SimpleConstructionScript'": 113,
           "obj 'UberGraphFunction'": 23,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 80,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 3,
-              "KeyProp": [
-                "Affect Distance",
-                "Active",
-                "Timer"
-              ],
-              "ValueProp": [
-                "38e3ec7f-46d5-c968-a3f5-6d819d911362",
-                "3fa9cde1-4f75-67ff-7d9e-f98fa0fcc680",
-                "232518be-4295-ad87-6de4-138d520b5585"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(80) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Affect Distance",
+              "Active",
+              "Timer"
+            ],
+            "Values": [
+              "38e3ec7f-46d5-c968-a3f5-6d819d911362",
+              "3fa9cde1-4f75-67ff-7d9e-f98fa0fcc680",
+              "232518be-4295-ad87-6de4-138d520b5585"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-20] Actor",

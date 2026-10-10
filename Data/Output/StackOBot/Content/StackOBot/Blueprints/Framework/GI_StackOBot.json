@@ -2058,6 +2058,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -2311,47 +2314,27 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "obj 'UberGraphFunction'": 33,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 200,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 8,
-              "KeyProp": [
-                "LoadingWidget",
-                "Audio",
-                "Music Playing",
-                "OnObjectiveCompleted",
-                "Music",
-                "PlayerInventorySaveGame",
-                "SaveGameSlotName",
-                "OnCoinsUpdated"
-              ],
-              "ValueProp": [
-                "23c213c7-48d4-e16a-4731-53a8e8c6f805",
-                "245993a5-4bb4-0bec-767e-bcbfcb9f55b7",
-                "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
-                "08e7b6eb-42ca-1519-0814-2595635e77e9",
-                "3e500351-4ead-9818-6075-9986d65274dc",
-                "d792f946-410c-42c5-1dfe-e78fab496a31",
-                "58ddf95e-44d1-eaac-3884-95a6c11f1719",
-                "ecc99496-4d92-2031-2561-66a0670d1029"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(200) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "LoadingWidget",
+              "Audio",
+              "Music Playing",
+              "OnObjectiveCompleted",
+              "Music",
+              "PlayerInventorySaveGame",
+              "SaveGameSlotName",
+              "OnCoinsUpdated"
+            ],
+            "Values": [
+              "23c213c7-48d4-e16a-4731-53a8e8c6f805",
+              "245993a5-4bb4-0bec-767e-bcbfcb9f55b7",
+              "884591fa-4af0-03fe-1cb3-d0b39f6611d6",
+              "08e7b6eb-42ca-1519-0814-2595635e77e9",
+              "3e500351-4ead-9818-6075-9986d65274dc",
+              "d792f946-410c-42c5-1dfe-e78fab496a31",
+              "58ddf95e-44d1-eaac-3884-95a6c11f1719",
+              "ecc99496-4d92-2031-2561-66a0670d1029"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-32] GameInstance",

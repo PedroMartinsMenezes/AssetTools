@@ -2599,177 +2599,159 @@
           "struct FrameRate 37 'TargetFrameRate'": {
             "int 'Numerator'": 30
           },
-          "AttributeCurves": {
-            "Name": "AttributeCurves",
-            "Type": "MapProperty",
-            "Size": 364,
-            "InnerType": "StructProperty",
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 4,
-              "KeyProp": [
-                {
-                  "Name": "TCHour",
-                  "BoneName": "pelvis",
-                  "BoneIndex": 1,
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  }
-                },
-                {
-                  "Name": "TCMinute",
-                  "BoneName": "pelvis",
-                  "BoneIndex": 1,
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  }
-                },
-                {
-                  "Name": "TCSecond",
-                  "BoneName": "pelvis",
-                  "BoneIndex": 1,
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  }
-                },
-                {
-                  "Name": "TCFrame",
-                  "BoneName": "pelvis",
-                  "BoneIndex": 1,
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  }
+          "map Size(364) KeyType(StructProperty) ValueType(StructProperty) 'AttributeCurves'": {
+            "Keys": [
+              {
+                "Name": "TCHour",
+                "BoneName": "pelvis",
+                "BoneIndex": 1,
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
                 }
-              ],
-              "ValueProp": [
-                {
-                  "Keys": [
-                    {
-                      "Time": 0
-                    }
-                  ],
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
+              },
+              {
+                "Name": "TCMinute",
+                "BoneName": "pelvis",
+                "BoneIndex": 1,
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
                   },
-                  "ScriptStruct": [
-                    {
-                      "Members": {
-                        "int 'Value'": 14
-                      }
-                    }
-                  ]
-                },
-                {
-                  "Keys": [
-                    {
-                      "Time": 0
-                    }
-                  ],
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  },
-                  "ScriptStruct": [
-                    {
-                      "Members": {
-                        "int 'Value'": 14
-                      }
-                    }
-                  ]
-                },
-                {
-                  "Keys": [
-                    {
-                      "Time": 0
-                    }
-                  ],
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  },
-                  "ScriptStruct": [
-                    {
-                      "Members": {
-                        "int 'Value'": 14
-                      }
-                    }
-                  ]
-                },
-                {
-                  "Keys": [
-                    {
-                      "Time": 0
-                    }
-                  ],
-                  "ScriptStructPath": {
-                    "bSerializeInternals": false,
-                    "SoftObjectPathIndex": 0,
-                    "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
-                    "AssetPath": {
-                      "PackageName": "/Script/Engine.IntegerAnimationAttribute"
-                    },
-                    "SaveNum": 0
-                  },
-                  "ScriptStruct": [
-                    {
-                      "Members": {
-                        "int 'Value'": 19
-                      }
-                    }
-                  ]
+                  "SaveNum": 0
                 }
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            }
+              },
+              {
+                "Name": "TCSecond",
+                "BoneName": "pelvis",
+                "BoneIndex": 1,
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                }
+              },
+              {
+                "Name": "TCFrame",
+                "BoneName": "pelvis",
+                "BoneIndex": 1,
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                }
+              }
+            ],
+            "Values": [
+              {
+                "Keys": [
+                  {
+                    "Time": 0
+                  }
+                ],
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                },
+                "ScriptStruct": [
+                  {
+                    "Members": {
+                      "int 'Value'": 14
+                    }
+                  }
+                ]
+              },
+              {
+                "Keys": [
+                  {
+                    "Time": 0
+                  }
+                ],
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                },
+                "ScriptStruct": [
+                  {
+                    "Members": {
+                      "int 'Value'": 14
+                    }
+                  }
+                ]
+              },
+              {
+                "Keys": [
+                  {
+                    "Time": 0
+                  }
+                ],
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                },
+                "ScriptStruct": [
+                  {
+                    "Members": {
+                      "int 'Value'": 14
+                    }
+                  }
+                ]
+              },
+              {
+                "Keys": [
+                  {
+                    "Time": 0
+                  }
+                ],
+                "ScriptStructPath": {
+                  "bSerializeInternals": false,
+                  "SoftObjectPathIndex": 0,
+                  "AssetPathName": "/Script/Engine.IntegerAnimationAttribute",
+                  "AssetPath": {
+                    "PackageName": "/Script/Engine.IntegerAnimationAttribute"
+                  },
+                  "SaveNum": 0
+                },
+                "ScriptStruct": [
+                  {
+                    "Members": {
+                      "int 'Value'": 19
+                    }
+                  }
+                ]
+              }
+            ]
           },
           "float 'SequenceLength'": 0.8666667,
           "struct[] Size(159) MaybeInnerTag(AnimNotifyTrack 106  ) 'AnimNotifyTracks'": [

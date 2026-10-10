@@ -882,6 +882,9 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "ArrayProperty StructProperty OptionalPinFromProperty": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | OptionalPinFromProperty 1 | /Script/BlueprintGraph 0"
       },
@@ -1140,49 +1143,29 @@
         "__type": "UBlueprintGeneratedClass",
         "Members": {
           "obj 'UberGraphFunction'": 10,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 224,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 9,
-              "KeyProp": [
-                "Acceleration On Exit",
-                "Acceleration While Active",
-                "Ground Friction On Exit",
-                "Ground Friction While Active",
-                "Rotation Rate On Exit",
-                "Rotation Rate While Active",
-                "Walk Speed On Exit",
-                "Walk Speed While Active",
-                "Pawn"
-              ],
-              "ValueProp": [
-                "019efb0a-467f-f217-77f4-a8b782027ce6",
-                "340a1913-464c-dfd4-beb1-2681429fa59c",
-                "7b9dbbb3-421b-e65d-a788-c5a0ae01ebd8",
-                "1d027279-461d-ff51-ef48-25b65ef94eb2",
-                "f8756ca3-4585-2c0d-2f42-8b98871cb24a",
-                "213b0d3e-4f3e-6425-2764-1d94a8678826",
-                "bdc412a0-4ece-2d41-907e-a7824c293b62",
-                "4917bc01-4b41-4838-a524-b1985414aba1",
-                "a098eee1-4d2a-67bf-848b-0e907afe2dcc"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(224) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Acceleration On Exit",
+              "Acceleration While Active",
+              "Ground Friction On Exit",
+              "Ground Friction While Active",
+              "Rotation Rate On Exit",
+              "Rotation Rate While Active",
+              "Walk Speed On Exit",
+              "Walk Speed While Active",
+              "Pawn"
+            ],
+            "Values": [
+              "019efb0a-467f-f217-77f4-a8b782027ce6",
+              "340a1913-464c-dfd4-beb1-2681429fa59c",
+              "7b9dbbb3-421b-e65d-a788-c5a0ae01ebd8",
+              "1d027279-461d-ff51-ef48-25b65ef94eb2",
+              "f8756ca3-4585-2c0d-2f42-8b98871cb24a",
+              "213b0d3e-4f3e-6425-2764-1d94a8678826",
+              "bdc412a0-4ece-2d41-907e-a7824c293b62",
+              "4917bc01-4b41-4838-a524-b1985414aba1",
+              "a098eee1-4d2a-67bf-848b-0e907afe2dcc"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-20] StateTreeTaskBlueprintBase",

@@ -1345,6 +1345,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "ArrayProperty StructProperty ResponseChannel": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | ResponseChannel 1 | /Script/Engine 0"
       },
@@ -1550,32 +1556,13 @@
               "float 'SavedZoomAmount'": 0.375
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 20,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 1,
-              "KeyProp": [
-                "WidgetComponent"
-              ],
-              "ValueProp": [
-                1
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(20) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "WidgetComponent"
+            ],
+            "Values": [
+              1
+            ]
           },
           "obj 'ThumbnailInfo'": 73,
           "obj 'GeneratedClass'": 2,
@@ -1599,43 +1586,23 @@
           "obj[] 'Timelines'": "81",
           "obj 'SimpleConstructionScript'": 78,
           "obj 'UberGraphFunction'": 20,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 152,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 6,
-              "KeyProp": [
-                "Player Only Trigger",
-                "Triggerables",
-                "Widget",
-                "OneShot",
-                "Mobile",
-                "Mat"
-              ],
-              "ValueProp": [
-                "7433074a-427c-1c63-be70-3795c09b6051",
-                "3f7fdd43-4be9-464e-ea08-b297132c0105",
-                "eae3e312-429d-de91-217b-02afc17b8337",
-                "9233ec15-4393-3845-e477-ad89594aa7ed",
-                "40e59778-404c-cb66-4d4c-de9030aafd29",
-                "fc96e15d-4dbb-393c-df14-0aaba021aa5c"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(152) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Player Only Trigger",
+              "Triggerables",
+              "Widget",
+              "OneShot",
+              "Mobile",
+              "Mat"
+            ],
+            "Values": [
+              "7433074a-427c-1c63-be70-3795c09b6051",
+              "3f7fdd43-4be9-464e-ea08-b297132c0105",
+              "eae3e312-429d-de91-217b-02afc17b8337",
+              "9233ec15-4393-3845-e477-ad89594aa7ed",
+              "40e59778-404c-cb66-4d4c-de9030aafd29",
+              "fc96e15d-4dbb-393c-df14-0aaba021aa5c"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-23] Actor",

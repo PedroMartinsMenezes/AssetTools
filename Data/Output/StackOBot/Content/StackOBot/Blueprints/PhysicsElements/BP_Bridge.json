@@ -1350,6 +1350,12 @@
       "ArrayProperty StructProperty EditedDocumentInfo": {
         "TypeName": "ArrayProperty 1 | StructProperty 1 | EditedDocumentInfo 1 | /Script/Engine 0"
       },
+      "MapProperty NameProperty : IntProperty": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+      },
+      "MapProperty NameProperty : Guid": {
+        "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0"
+      },
       "StructProperty PointerToUberGraphFrame": {
         "TypeName": "StructProperty 1 | PointerToUberGraphFrame 1 | /Script/Engine 0"
       },
@@ -1655,34 +1661,15 @@
               "float 'SavedZoomAmount'": 0.875
             }
           ],
-          "ComponentTemplateNameIndex": {
-            "Name": "ComponentTemplateNameIndex",
-            "Type": "MapProperty",
-            "Size": 32,
-            "BoolVal": 0,
-            "ValueType": "IntProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 2,
-              "KeyProp": [
-                "StaticMeshComponent",
-                "PhysicsConstraintComponent"
-              ],
-              "ValueProp": [
-                4,
-                2
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | IntProperty 0"
+          "map Size(32) KeyType(NameProperty) ValueType(IntProperty) 'ComponentTemplateNameIndex'": {
+            "Keys": [
+              "StaticMeshComponent",
+              "PhysicsConstraintComponent"
+            ],
+            "Values": [
+              4,
+              2
+            ]
           },
           "obj 'GeneratedClass'": 2,
           "bool 'bLegacyNeedToPurgeSkelRefs'": false,
@@ -1705,51 +1692,31 @@
           "obj[] 'ComponentTemplates'": "114 109 115 116 110",
           "obj 'SimpleConstructionScript'": 113,
           "obj 'UberGraphFunction'": 16,
-          "PropertyGuids": {
-            "Name": "PropertyGuids",
-            "Type": "MapProperty",
-            "Size": 248,
-            "BoolVal": 0,
-            "ValueType": "StructProperty",
-            "Value": {
-              "TypeName": "MapProperty",
-              "NumKeysToRemove": 0,
-              "NumEntries": 10,
-              "KeyProp": [
-                "Loose Constraint",
-                "Attach Point Rotation",
-                "Attach Point Offset",
-                "Rotation Increment",
-                "Attach End",
-                "Spacing",
-                "End Mesh",
-                "Mesh References",
-                "Mesh",
-                "Panels"
-              ],
-              "ValueProp": [
-                "17faee84-46de-c597-6f5c-5eb1fe0a858e",
-                "5c92fdff-44bb-8e5b-6c9b-33893483767d",
-                "8c8318a1-4b5d-8e22-7d59-a39197a7da0d",
-                "38001279-4b4c-d811-518d-dba02bbf53d5",
-                "776b8f75-4e46-6070-ab99-e9bc3589d95b",
-                "e5c339d6-434b-48b5-9ec6-1ebecbbe55da",
-                "bec29f14-434c-33e4-fa8b-3c96b25d2ae7",
-                "756f0306-4ab9-3b5b-565f-a785097af6cb",
-                "968e6d0a-4e70-4378-3c10-c79ab7d891fd",
-                "57b1e4fc-4d90-f514-fa72-c784e448cd22"
-              ],
-              "ArrayDim": 0,
-              "ElementSize": 0,
-              "PropertyFlags": "CPF_None",
-              "RepIndex": 0,
-              "BlueprintReplicationCondition": 0,
-              "FlagsPrivate": "RF_NoFlags",
-              "HasMetaData": false,
-              "MetaDataMap": {}
-            },
-            "TypeName": "MapProperty 2 | NameProperty 0 | StructProperty 1 | Guid 1 | /Script/CoreUObject 0",
-            "PropertyTagFlags": "HasBinaryOrNativeSerialize"
+          "map native Size(248) KeyType(NameProperty) ValueType(Guid) 'PropertyGuids'": {
+            "Keys": [
+              "Loose Constraint",
+              "Attach Point Rotation",
+              "Attach Point Offset",
+              "Rotation Increment",
+              "Attach End",
+              "Spacing",
+              "End Mesh",
+              "Mesh References",
+              "Mesh",
+              "Panels"
+            ],
+            "Values": [
+              "17faee84-46de-c597-6f5c-5eb1fe0a858e",
+              "5c92fdff-44bb-8e5b-6c9b-33893483767d",
+              "8c8318a1-4b5d-8e22-7d59-a39197a7da0d",
+              "38001279-4b4c-d811-518d-dba02bbf53d5",
+              "776b8f75-4e46-6070-ab99-e9bc3589d95b",
+              "e5c339d6-434b-48b5-9ec6-1ebecbbe55da",
+              "bec29f14-434c-33e4-fa8b-3c96b25d2ae7",
+              "756f0306-4ab9-3b5b-565f-a785097af6cb",
+              "968e6d0a-4e70-4378-3c10-c79ab7d891fd",
+              "57b1e4fc-4d90-f514-fa72-c784e448cd22"
+            ]
           }
         },
         "AccessTrackedObjectPtr": "ImportIndex[-21] Actor",
