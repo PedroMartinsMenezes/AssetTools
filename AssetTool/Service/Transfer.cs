@@ -10,6 +10,10 @@
         public Supports Supports { get; set; }
         public SupportsAfter SupportsAfter { get; set; }
         public AppConfig AppConfig { get; set; } = new();
+
+        // Structs made only of floats whose Move() just reads/writes their fields in order,
+        // so a whole list can be copied as raw bytes instead of element by element.
+        protected static bool IsBlittable<T>() => typeof(T) == typeof(FVector3f) || typeof(T) == typeof(FQuat4f);
         private bool _disposed;
 
         public void Initialize(Transfer other)

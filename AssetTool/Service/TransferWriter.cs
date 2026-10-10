@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 namespace AssetTool
 {
@@ -240,7 +241,7 @@ namespace AssetTool
         public override void Move<T>(ref List<T> value)
         {
             writer.Write(value.Count);
-            value.ForEach(item => item.Move(this));
+            MoveItems(value);
         }
         public override void Move<T, T1, T2>(ref List<T> value, T1 a, T2 b)
         {
@@ -258,7 +259,21 @@ namespace AssetTool
         }
         public override void Move<T>(ref List<T> value, int count)
         {
-            value.ForEach(item => item.Move(this));
+            MoveItems(value);
+        }
+
+        private void MoveItems<T>(List<T> value) where T : ITransferable, new()
+        {
+            if (IsBlittable<T>())
+            {
+                Span<T> items = CollectionsMarshal.AsSpan(value);
+                writer.Write(MemoryMarshal.CreateReadOnlySpan(ref Unsafe.As<T, byte>(ref MemoryMarshal.GetReference(items)), items.Length * Unsafe.SizeOf<T>()));
+                return;
+            }
+            foreach (T item in value)
+            {
+                item.Move(this);
+            }
         }
         public override void Move<T>(ref T[] value)
         {

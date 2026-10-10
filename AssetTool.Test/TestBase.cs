@@ -1,4 +1,4 @@
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
@@ -78,7 +78,7 @@ namespace AssetTool.Test
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\{name}.txt");
             w.Start();
-            Parallel.ForEach(files, file =>
+            Parallel.ForEach(LargestFirst(files), file =>
             {
                 bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
                 if (!AppConfig.ContinueAfterError)
@@ -100,7 +100,7 @@ namespace AssetTool.Test
             Stopwatch w = new Stopwatch();
             var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\NonRepeated.txt").Where(x => x.Contains($"\\{name}\\")).ToArray();
             w.Start();
-            Parallel.ForEach(files, file =>
+            Parallel.ForEach(LargestFirst(files), file =>
             {
                 bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
                 if (!AppConfig.ContinueAfterError)
@@ -163,6 +163,13 @@ namespace AssetTool.Test
                 SaveFiles(name, files, failedFiles, succeededFiles);
             }
             Assert.That(failedFiles.Count == 0);
+        }
+
+        // Largest files first, handed out one at a time, so a big asset never starts last and stalls the run.
+        private static OrderablePartitioner<string> LargestFirst(string[] files)
+        {
+            string[] ordered = files.OrderByDescending(f => File.Exists(f) ? new FileInfo(f).Length : 0).ToArray();
+            return Partitioner.Create(ordered, EnumerablePartitionerOptions.NoBuffering);
         }
 
         private void UpdateFailedFiles(bool success, string file, ConcurrentBag<string> failedFiles, ConcurrentBag<string> succeededFiles)

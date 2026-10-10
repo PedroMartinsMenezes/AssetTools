@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace AssetTool
@@ -252,6 +253,11 @@ namespace AssetTool
         {
             value ??= new();
             int count = reader.ReadInt32();
+            if (IsBlittable<T>())
+            {
+                ReadBlittable(value, count);
+                return;
+            }
             for (int i = 0; i < count; i++)
             {
                 T item = (T)new T().Move(this);
@@ -302,6 +308,11 @@ namespace AssetTool
         public override void Move<T>(ref List<T> value, int count)
         {
             value ??= new();
+            if (IsBlittable<T>())
+            {
+                ReadBlittable(value, count);
+                return;
+            }
             for (int i = 0; i < count; i++)
             {
                 T item = (T)new T().Move(this);
@@ -561,6 +572,19 @@ namespace AssetTool
             }
         }
         #endregion
+
+        private void ReadBlittable<T>(List<T> value, int count)
+        {
+            if (count <= 0)
+                return;
+            long byteCount = (long)count * Unsafe.SizeOf<T>();
+            if (byteCount > Length - Position)
+                throw new EndOfStreamException();
+            int start = value.Count;
+            CollectionsMarshal.SetCount(value, start + count);
+            Span<T> items = CollectionsMarshal.AsSpan(value)[start..];
+            reader.BaseStream.ReadExactly(MemoryMarshal.CreateSpan(ref Unsafe.As<T, byte>(ref MemoryMarshal.GetReference(items)), (int)byteCount));
+        }
 
         public override void Resize<T>(ref List<T> value, bool withNull = false)
         {

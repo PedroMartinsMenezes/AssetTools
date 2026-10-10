@@ -1,4 +1,6 @@
-﻿using System.Text;
+﻿using System.Buffers;
+using System.Globalization;
+using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
@@ -472,59 +474,118 @@ namespace AssetTool
                     increaseNormalPrecision = header.Contains("IncreaseNormalPrecision=true");
 
                 }
-                while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
+                char[] buffer = ArrayPool<char>.Shared.Rent(1024);
+                try
                 {
-                    FSoftSkinVertex item = new();
-                    string s = reader.GetString();
-
-                    (int a, int b) = (s.IndexOf('(') + 1, s.IndexOf(')'));
-                    float[] v = s.Substring(a, b - a).ToFloatArray();
-                    item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    if (increaseNormalPrecision)
+                    while (reader.Read() && reader.TokenType != JsonTokenType.EndArray)
                     {
-                        v = s.Substring(a, b - a).ToFloatArray();
-                        item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).ToFloatArray();
-                        item.TangentY = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
-                        (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                        v = s.Substring(a, b - a).ToFloatArray();
-                        item.TangentZ = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+                        int maxLength = reader.HasValueSequence ? checked((int)reader.ValueSequence.Length) : reader.ValueSpan.Length;
+                        if (maxLength > buffer.Length)
+                        {
+                            ArrayPool<char>.Shared.Return(buffer);
+                            buffer = ArrayPool<char>.Shared.Rent(maxLength);
+                        }
+                        ReadOnlySpan<char> s = buffer.AsSpan(0, reader.CopyString(buffer));
+                        list.Add(ParseVertex(s, increaseNormalPrecision));
                     }
-                    else
-                    {
-                        string[] xyz = s.Substring(a, b - a).Split(' ');
-                        item.TempTangentX = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[0]) };
-                        item.TempTangentY = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[1]) };
-                        item.TempTangentZ = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(xyz[2]) };
-                    }
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    v = s.Substring(a, b - a).Replace(" | ", " ").ToFloatArray();
-                    item.UVs[0] = new FVector2f { X = v[0], Y = v[1] };
-                    item.UVs[1] = new FVector2f { X = v[2], Y = v[3] };
-                    item.UVs[2] = new FVector2f { X = v[4], Y = v[5] };
-                    item.UVs[3] = new FVector2f { X = v[6], Y = v[7] };
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    byte[] bytes = s.Substring(a, b - a).ToByteArray();
-                    item.Color = new FColor { R = bytes[0], G = bytes[1], B = bytes[2], A = bytes[3] };
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    item.InfluenceBones = s.Substring(a, b - a).ToUInt16Array();
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    item.InfluenceWeights = s.Substring(a, b - a).ToUInt16Array();
-
-                    (a, b) = (s.IndexOf('(', b + 1) + 1, s.IndexOf(')', b + 1));
-                    item.OldInfluence = s.Substring(a, b - a).Split(' ').Select(x => new TUInt8 { Value = byte.Parse(x) }).ToArray();
-
-                    list.Add(item);
+                }
+                finally
+                {
+                    ArrayPool<char>.Shared.Return(buffer);
                 }
             }
             return list;
+        }
+
+        private static FSoftSkinVertex ParseVertex(ReadOnlySpan<char> s, bool increaseNormalPrecision)
+        {
+            FSoftSkinVertex item = new();
+            Span<float> v = stackalloc float[8];
+
+            ParseFloats(NextGroup(ref s), v);
+            item.Position = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+
+            if (increaseNormalPrecision)
+            {
+                ParseFloats(NextGroup(ref s), v);
+                item.TangentX = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                ParseFloats(NextGroup(ref s), v);
+                item.TangentY = new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+                ParseFloats(NextGroup(ref s), v);
+                item.TangentZ = new FVector4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            }
+            else
+            {
+                ReadOnlySpan<char> xyz = NextGroup(ref s);
+                item.TempTangentX = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(NextToken(ref xyz)) };
+                item.TempTangentY = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(NextToken(ref xyz)) };
+                item.TempTangentZ = new FDeprecatedSerializedPackedNormal { Packed = uint.Parse(NextToken(ref xyz)) };
+            }
+
+            ParseFloats(NextGroup(ref s), v);
+            item.UVs[0] = new FVector2f { X = v[0], Y = v[1] };
+            item.UVs[1] = new FVector2f { X = v[2], Y = v[3] };
+            item.UVs[2] = new FVector2f { X = v[4], Y = v[5] };
+            item.UVs[3] = new FVector2f { X = v[6], Y = v[7] };
+
+            ReadOnlySpan<char> color = NextGroup(ref s);
+            item.Color = new FColor
+            {
+                R = byte.Parse(NextToken(ref color), CultureInfo.InvariantCulture),
+                G = byte.Parse(NextToken(ref color), CultureInfo.InvariantCulture),
+                B = byte.Parse(NextToken(ref color), CultureInfo.InvariantCulture),
+                A = byte.Parse(NextToken(ref color), CultureInfo.InvariantCulture),
+            };
+
+            item.InfluenceBones = ParseUInt16s(NextGroup(ref s));
+            item.InfluenceWeights = ParseUInt16s(NextGroup(ref s));
+
+            ReadOnlySpan<char> old = NextGroup(ref s);
+            TUInt8[] oldInfluence = new TUInt8[CountTokens(old)];
+            for (int i = 0; i < oldInfluence.Length; i++)
+                oldInfluence[i] = new TUInt8 { Value = byte.Parse(NextToken(ref old)) };
+            item.OldInfluence = oldInfluence;
+
+            return item;
+        }
+
+        /// <summary>Returns the text between the next '(' and ')' and advances past it.</summary>
+        private static ReadOnlySpan<char> NextGroup(ref ReadOnlySpan<char> s)
+        {
+            int a = s.IndexOf('(') + 1;
+            int b = a + s[a..].IndexOf(')');
+            ReadOnlySpan<char> group = s[a..b];
+            s = s[(b + 1)..];
+            return group;
+        }
+
+        /// <summary>Returns the next space-separated token, skipping the " | " separators used by the UVs.</summary>
+        private static ReadOnlySpan<char> NextToken(ref ReadOnlySpan<char> s)
+        {
+            while (true)
+            {
+                int space = s.IndexOf(' ');
+                ReadOnlySpan<char> token = space < 0 ? s : s[..space];
+                s = space < 0 ? [] : s[(space + 1)..];
+                if (token is not "|")
+                    return token;
+            }
+        }
+
+        private static int CountTokens(ReadOnlySpan<char> s) => s.Length == 0 ? 0 : s.Count(' ') + 1;
+
+        private static void ParseFloats(ReadOnlySpan<char> s, Span<float> values)
+        {
+            for (int i = 0; !s.IsEmpty && i < values.Length; i++)
+                values[i] = NextToken(ref s).ToFloat();
+        }
+
+        private static UInt16[] ParseUInt16s(ReadOnlySpan<char> s)
+        {
+            UInt16[] values = new UInt16[CountTokens(s)];
+            for (int i = 0; i < values.Length; i++)
+                values[i] = UInt16.Parse(NextToken(ref s), CultureInfo.InvariantCulture);
+            return values;
         }
 
         public override void Write(Utf8JsonWriter writer, List<FSoftSkinVertex> value, JsonSerializerOptions options)
@@ -540,29 +601,99 @@ namespace AssetTool
             {
                 writer.WriteStringValue("(Position) (TempTangentX TempTangentY TempTangentZ) (UVs) (Color) (InfluenceBones) (InfluenceWeights) (OldInfluence) IncreaseNormalPrecision=false");
             }
-            foreach (var v in value)
+            char[] buffer = ArrayPool<char>.Shared.Rent(2048);
+            try
             {
-                StringBuilder s = new StringBuilder();
-                s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
-                if (v.IncreaseNormalPrecision)
+                foreach (var v in value)
                 {
-                    s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
-                    s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");
-                    s.Append($"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W}) ");
+                    if (TryFormatVertex(v, buffer, out int length))
+                        writer.WriteStringValue(buffer.AsSpan(0, length));
+                    else
+                        writer.WriteStringValue(FormatVertex(v));
                 }
-                else
-                {
-                    s.Append($"({v.TempTangentX.Packed} {v.TempTangentY.Packed} {v.TempTangentZ.Packed}) ");
-                }
-                s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ");
-                s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) ");
-                s.Append($"({string.Join(' ', v.InfluenceBones)}) ");
-                s.Append($"({string.Join(' ', v.InfluenceWeights)}) ");
-                s.Append($"({string.Join(' ', v.OldInfluence)})");
-                writer.WriteStringValue(s.ToString());
+            }
+            finally
+            {
+                ArrayPool<char>.Shared.Return(buffer);
             }
 
             writer.WriteEndArray();
+        }
+
+        // Formats the vertex straight into the buffer; same text as FormatVertex, without the per-vertex StringBuilder and string.
+        private static bool TryFormatVertex(FSoftSkinVertex v, Span<char> buffer, out int length)
+        {
+            IFormatProvider p = CultureInfo.InvariantCulture;
+            length = 0;
+            if (!buffer.TryWrite(p, $"({v.Position.X} {v.Position.Y} {v.Position.Z}) ", out int n)) return false;
+            length += n;
+            if (v.IncreaseNormalPrecision)
+            {
+                if (!buffer[length..].TryWrite(p, $"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ", out n)) return false;
+                length += n;
+                if (!buffer[length..].TryWrite(p, $"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ", out n)) return false;
+                length += n;
+                if (!buffer[length..].TryWrite(p, $"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W}) ", out n)) return false;
+                length += n;
+            }
+            else
+            {
+                if (!buffer[length..].TryWrite(p, $"({v.TempTangentX.Packed} {v.TempTangentY.Packed} {v.TempTangentZ.Packed}) ", out n)) return false;
+                length += n;
+            }
+            if (!buffer[length..].TryWrite(p, $"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ", out n)) return false;
+            length += n;
+            if (!buffer[length..].TryWrite(p, $"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) (", out n)) return false;
+            length += n;
+            if (!TryJoin(v.InfluenceBones, buffer, ref length) || !TryAppend(") (", buffer, ref length)) return false;
+            if (!TryJoin(v.InfluenceWeights, buffer, ref length) || !TryAppend(") (", buffer, ref length)) return false;
+            for (int i = 0; i < v.OldInfluence.Length; i++)
+            {
+                if (i > 0 && !TryAppend(" ", buffer, ref length)) return false;
+                if (!v.OldInfluence[i].Value.TryFormat(buffer[length..], out n, default, p)) return false;
+                length += n;
+            }
+            return TryAppend(")", buffer, ref length);
+        }
+
+        private static bool TryJoin(UInt16[] values, Span<char> buffer, ref int length)
+        {
+            for (int i = 0; i < values.Length; i++)
+            {
+                if (i > 0 && !TryAppend(" ", buffer, ref length)) return false;
+                if (!values[i].TryFormat(buffer[length..], out int n, default, CultureInfo.InvariantCulture)) return false;
+                length += n;
+            }
+            return true;
+        }
+
+        private static bool TryAppend(string text, Span<char> buffer, ref int length)
+        {
+            if (!text.AsSpan().TryCopyTo(buffer[length..])) return false;
+            length += text.Length;
+            return true;
+        }
+
+        private static string FormatVertex(FSoftSkinVertex v)
+        {
+            StringBuilder s = new StringBuilder();
+            s.Append($"({v.Position.X} {v.Position.Y} {v.Position.Z}) ");
+            if (v.IncreaseNormalPrecision)
+            {
+                s.Append($"({v.TangentX.X} {v.TangentX.Y} {v.TangentX.Z}) ");
+                s.Append($"({v.TangentY.X} {v.TangentY.Y} {v.TangentY.Z}) ");
+                s.Append($"({v.TangentZ.X} {v.TangentZ.Y} {v.TangentZ.Z} {v.TangentZ.W}) ");
+            }
+            else
+            {
+                s.Append($"({v.TempTangentX.Packed} {v.TempTangentY.Packed} {v.TempTangentZ.Packed}) ");
+            }
+            s.Append($"({v.UVs[0].X} {v.UVs[0].Y} | {v.UVs[1].X} {v.UVs[1].Y} | {v.UVs[2].X} {v.UVs[2].Y} | {v.UVs[3].X} {v.UVs[3].Y}) ");
+            s.Append($"({v.Color.R} {v.Color.G} {v.Color.B} {v.Color.A}) ");
+            s.Append($"({string.Join(' ', v.InfluenceBones)}) ");
+            s.Append($"({string.Join(' ', v.InfluenceWeights)}) ");
+            s.Append($"({string.Join(' ', v.OldInfluence)})");
+            return s.ToString();
         }
     }
 
