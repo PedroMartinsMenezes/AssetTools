@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Text;
 
 namespace AssetTool
 {
@@ -12,6 +13,9 @@ namespace AssetTool
         public virtual string Separator => " ";
         public virtual string ItemToString(object item) => item.ToString();
         public virtual object StringToItem(string str) => Convert.ChangeType(str, typeof(object), CultureInfo.InvariantCulture);
+        // Overridden by item types that can be formatted/parsed without an intermediate string per item.
+        public virtual void AppendItem(StringBuilder builder, object item) => builder.Append(ItemToString(item));
+        public virtual object SpanToItem(ReadOnlySpan<char> str) => StringToItem(str.ToString());
         public virtual string FromNativeFields(FPropertyTag tag) => string.Empty;
         public virtual void ToNativeFields(FPropertyTag tag, string key) { }
 
@@ -20,10 +24,14 @@ namespace AssetTool
         public virtual object FromNativeValue(FPropertyTag tag)
         {
             List<object> list = tag.Value as List<object>;
-            string[] items = new string[list.Count];
-            for (int i = 0; i < items.Length; i++)
-                items[i] = ItemToString(list[i]);
-            return string.Join(Separator, items);
+            StringBuilder builder = new();
+            for (int i = 0; i < list.Count; i++)
+            {
+                if (i > 0)
+                    builder.Append(Separator);
+                AppendItem(builder, list[i]);
+            }
+            return builder.ToString();
         }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
@@ -44,11 +52,22 @@ namespace AssetTool
             string value = val.ToString();
             if (value.Length == 0)
                 return [];
-            string[] items = value.Split(Separator);
-            List<object> values = new(items.Length);
-            foreach (string item in items)
-                values.Add(StringToItem(item));
-            return values;
+            string separator = Separator;
+            if (separator.Length == 0)
+                return [StringToItem(value)];
+            ReadOnlySpan<char> rest = value;
+            List<object> values = new(rest.Count(separator) + 1);
+            while (true)
+            {
+                int index = rest.IndexOf(separator);
+                if (index < 0)
+                {
+                    values.Add(SpanToItem(rest));
+                    return values;
+                }
+                values.Add(SpanToItem(rest[..index]));
+                rest = rest[(index + separator.Length)..];
+            }
         }
 
         public virtual FPropertyTag ToNative(Transfer transfer, string key, object val)

@@ -142,6 +142,14 @@ namespace AssetTool
             {
                 return json.Deserialize<T>(JsonSerializerExt.DefaultOptions);
             }
+            else if (obj is JsonElement jdict && jdict.ValueKind == JsonValueKind.Object && typeof(T) == typeof(Dictionary<string, object>))
+            {
+                return (T)(object)ToDictionary(jdict);
+            }
+            else if (obj is JsonElement jlist && jlist.ValueKind == JsonValueKind.Array && typeof(T) == typeof(List<object>))
+            {
+                return (T)(object)ToList(jlist);
+            }
             else if (obj is JsonElement jobj)
             {
                 return jobj.Deserialize<T>(JsonSerializerExt.DefaultOptions);
@@ -150,6 +158,29 @@ namespace AssetTool
             {
                 return JsonSerializer.Deserialize<T>(obj.ToString(), DefaultOptions);
             }
+        }
+
+        // Same result as Deserialize<Dictionary<string, object>> / Deserialize<List<object>> (values typed as object
+        // become JsonElement, JSON null becomes null, last duplicate key wins), but the values keep pointing into the
+        // parent document instead of each one cloning its own copy of the JSON bytes.
+        private static Dictionary<string, object> ToDictionary(JsonElement element)
+        {
+            Dictionary<string, object> dict = [];
+            foreach (JsonProperty property in element.EnumerateObject())
+            {
+                dict[property.Name] = property.Value.ValueKind == JsonValueKind.Null ? null : property.Value;
+            }
+            return dict;
+        }
+
+        private static List<object> ToList(JsonElement element)
+        {
+            List<object> list = new(element.GetArrayLength());
+            foreach (JsonElement item in element.EnumerateArray())
+            {
+                list.Add(item.ValueKind == JsonValueKind.Null ? null : item);
+            }
+            return list;
         }
 
         public static T ToObject<T>(this object obj, Type type, Transfer transfer = null) where T : new()

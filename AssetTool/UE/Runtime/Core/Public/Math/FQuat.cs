@@ -101,9 +101,10 @@ namespace AssetTool
 
         public static string GetString(List<FQuat4f> v) => string.Join(" ", v.Select(x => x.GetString()));
 
-        public static FQuat4f FromString(string str)
+        public static FQuat4f FromString(string str) => FromString(str.AsSpan());
+
+        public static FQuat4f FromString(ReadOnlySpan<char> s)
         {
-            ReadOnlySpan<char> s = str;
             Span<Range> r = stackalloc Range[4];
             s.Split(r, ',');
             return new FQuat4f { X = float.Parse(s[r[0]]), Y = float.Parse(s[r[1]]), Z = float.Parse(s[r[2]]), W = float.Parse(s[r[3]]) };

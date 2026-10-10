@@ -95,9 +95,10 @@ namespace AssetTool
 
         public static string GetString(List<FVector3f> v) => string.Join(" ", v.Select(x => x.GetString()));
 
-        public static FVector3f FromString(string str)
+        public static FVector3f FromString(string str) => FromString(str.AsSpan());
+
+        public static FVector3f FromString(ReadOnlySpan<char> s)
         {
-            ReadOnlySpan<char> s = str;
             Span<Range> r = stackalloc Range[3];
             s.Split(r, ',');
             return new FVector3f { X = float.Parse(s[r[0]], CultureInfo.InvariantCulture), Y = float.Parse(s[r[1]], CultureInfo.InvariantCulture), Z = float.Parse(s[r[2]], CultureInfo.InvariantCulture) };

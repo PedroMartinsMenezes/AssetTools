@@ -101,7 +101,7 @@ namespace AssetTool
                 #endregion
 
                 #region Write Output
-                using MemoryStream outputStream = new();
+                using MemoryStream outputStream = new((int)fileLength);
                 using BinaryWriter writer2 = new BinaryWriter(outputStream);
                 using TransferWriter transferWriter2 = new TransferWriter(writer2, transferReader, true);
                 success = asset.ToJsonThenToObjectThenMoveAsync(transferWriter2, "Writing").GetAwaiter().GetResult();

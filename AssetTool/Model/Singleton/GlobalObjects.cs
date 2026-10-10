@@ -76,7 +76,13 @@
 
         public int CustomVer(Guid guid)
         {
-            return PackageFileSummary.CustomVersionContainer.Versions.Find(x => x.Key.Value == guid) is FCustomVersion x ? x.Version : -1;
+            // Plain loop instead of List.Find: this is called for every version check and the lambda allocated each time.
+            foreach (FCustomVersion x in PackageFileSummary.CustomVersionContainer.Versions)
+            {
+                if (x is { } && x.Key.Value == guid)
+                    return x.Version;
+            }
+            return -1;
         }
 
         public string ExportDiaplayValue(uint i)
