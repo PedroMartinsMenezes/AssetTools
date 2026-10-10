@@ -570,6 +570,7 @@ namespace AssetTool
                 return;
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+            value.EnsureCapacity(value.Count + count);
             for (int i = 0; i < count; i++)
             {
                 value.Add(withNull ? default : new());
@@ -583,6 +584,7 @@ namespace AssetTool
                 return;
             if (count > AppConfig.MaxArraySize)
                 throw new InvalidOperationException($"Array MaxSize Exceeded: {count}");
+            value.EnsureCapacity(value.Count + count);
             for (int i = 0; i < count; i++)
             {
                 value.Add(withNull ? default : new());

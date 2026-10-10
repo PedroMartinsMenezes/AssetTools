@@ -103,8 +103,10 @@ namespace AssetTool
 
         public static FQuat4f FromString(string str)
         {
-            var v = str.Split(',').Select(x => float.Parse(x)).ToArray();
-            return new FQuat4f { X = v[0], Y = v[1], Z = v[2], W = v[3] };
+            ReadOnlySpan<char> s = str;
+            Span<Range> r = stackalloc Range[4];
+            s.Split(r, ',');
+            return new FQuat4f { X = float.Parse(s[r[0]]), Y = float.Parse(s[r[1]]), Z = float.Parse(s[r[2]]), W = float.Parse(s[r[3]]) };
         }
     }
     public class FQuat4fJsonConverter : JsonConverter<FQuat4f>

@@ -318,9 +318,10 @@ namespace AssetTool
             }
 
             (bool quit, int i) = (false, 0);
+            Dictionary<string, object>.Enumerator entries = members.GetEnumerator();
             while (!quit)
             {
-                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : ToNative(members.ElementAt(i), transfer);
+                FPropertyTag tag = transfer.IsReading ? new FPropertyTag() : ToNative(entries.MoveNext() ? entries.Current : throw new InvalidOperationException(), transfer);
                 tag.ParentTag = ParentTag;
                 tag.HeaderOffset = transfer.Position;
                 tag.Move(transfer);

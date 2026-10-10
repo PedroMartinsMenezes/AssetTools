@@ -74,22 +74,40 @@ namespace AssetTool
             }
         }
 
+        #region Pooled Json Stream
+        // Reusing the round-trip buffers avoids regrowing (and copying) a new MemoryStream for every asset,
+        // which was the largest source of allocations and GC pauses.
+        private const int MaxPooledStreamCapacity = 256 * 1024 * 1024;
+        private static readonly System.Collections.Concurrent.ConcurrentBag<MemoryStream> StreamPool = [];
+
+        private static MemoryStream RentStream() => StreamPool.TryTake(out MemoryStream ms) ? ms : new MemoryStream();
+
+        private static void ReturnStream(MemoryStream ms)
+        {
+            if (ms.Capacity > MaxPooledStreamCapacity)
+                return;
+            ms.SetLength(0);
+            StreamPool.Add(ms);
+        }
+        #endregion
+
         public static T ToStreamThenToObject<T>(T self)
         {
-            using var ms = new MemoryStream();
-            JsonSerializer.Serialize(ms, self, DefaultOptions);
-            ms.Position = 0;
-            T obj = JsonSerializer.Deserialize<T>(ms, DefaultOptions);
-            return obj;
+            MemoryStream ms = RentStream();
+            try
+            {
+                JsonSerializer.Serialize(ms, self, DefaultOptions);
+                return JsonSerializer.Deserialize<T>(new ReadOnlySpan<byte>(ms.GetBuffer(), 0, (int)ms.Length), DefaultOptions);
+            }
+            finally
+            {
+                ReturnStream(ms);
+            }
         }
 
-        public static async Task<T> ToStreamThenToObjectAsync<T>(T self)
+        public static Task<T> ToStreamThenToObjectAsync<T>(T self)
         {
-            using var ms = new MemoryStream();
-            await JsonSerializer.SerializeAsync(ms, self, DefaultOptions);
-            ms.Position = 0;
-            T obj = await JsonSerializer.DeserializeAsync<T>(ms, DefaultOptions);
-            return obj;
+            return Task.FromResult(ToStreamThenToObject(self));
         }
 
         public static string SaveToJson(this object self, string path, Transfer transfer = null)

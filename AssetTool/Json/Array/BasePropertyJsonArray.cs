@@ -19,7 +19,11 @@ namespace AssetTool
 
         public virtual object FromNativeValue(FPropertyTag tag)
         {
-            return string.Join(Separator, (tag.Value as List<object>).Select(x => ItemToString(x)));
+            List<object> list = tag.Value as List<object>;
+            string[] items = new string[list.Count];
+            for (int i = 0; i < items.Length; i++)
+                items[i] = ItemToString(list[i]);
+            return string.Join(Separator, items);
         }
 
         public virtual object FromNative(FPropertyTag tag, Transfer transfer = null)
@@ -38,7 +42,12 @@ namespace AssetTool
         public virtual List<object> ToNativeValue(object val)
         {
             string value = val.ToString();
-            List<object> values = value.Length == 0 ? [] : value.Split(Separator).Select(x => StringToItem(x)).ToList();
+            if (value.Length == 0)
+                return [];
+            string[] items = value.Split(Separator);
+            List<object> values = new(items.Length);
+            foreach (string item in items)
+                values.Add(StringToItem(item));
             return values;
         }
 

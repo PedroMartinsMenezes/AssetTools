@@ -97,8 +97,10 @@ namespace AssetTool
 
         public static FVector3f FromString(string str)
         {
-            var v = str.Split(',').Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
-            return new FVector3f { X = v[0], Y = v[1], Z = v[2] };
+            ReadOnlySpan<char> s = str;
+            Span<Range> r = stackalloc Range[3];
+            s.Split(r, ',');
+            return new FVector3f { X = float.Parse(s[r[0]], CultureInfo.InvariantCulture), Y = float.Parse(s[r[1]], CultureInfo.InvariantCulture), Z = float.Parse(s[r[2]], CultureInfo.InvariantCulture) };
         }
     }
     public class FVector3fJsonConverter : JsonConverter<FVector3f>
