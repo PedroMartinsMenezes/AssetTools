@@ -112,6 +112,26 @@ namespace AssetTool.Test
             w.Stop();
         }
 
+        protected void Test_UE_Files_NonRepeated_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)
+        {
+            ConcurrentBag<string> failedFiles = new();
+            ConcurrentBag<string> succeededFiles = new();
+            Stopwatch w = new Stopwatch();
+            var files = File.ReadAllLines($"AssetTool.Test\\InputFiles\\NonRepeated.txt").Where(x => x.Contains($"\\{name}\\")).ToArray();
+            w.Start();
+            for (int i = 0; i < files.Length; i++)
+            {
+                string file = files[i];
+                bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
+                if (!AppConfig.ContinueAfterError)
+                {
+                    Assert.That(success, file);
+                }
+                UpdateFailedFiles(success, file, failedFiles, succeededFiles);
+            }
+            w.Stop();
+        }
+
         protected void Test_UE_Files_Sequential(string name, FileVersion fileVersion = null, bool saveFiles = false)
         {
             Action<string> updateFile = (string msg) =>

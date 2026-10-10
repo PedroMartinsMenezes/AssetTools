@@ -55,32 +55,86 @@ namespace AssetTool
             }
         }
 
+        public FName KeyTypeOld
+        {
+            get
+            {
+                if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 3) return Nodes[1].Name;
+                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[2].Name;
+                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[1].Name;
+                    else return Nodes[1].Name;
+                }
+                return default;
+            }
+        }
+
+        public FName ValueTypeOld
+        {
+            get
+            {
+                if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
+                {
+                    if (Nodes.Count == 3) return Nodes[2].Name;
+                    else if (Nodes[1].Name.Value is FStructProperty.TYPE_NAME) return Nodes[4].Name;
+                    else if (Nodes[1].Name.Value is FEnumProperty.TYPE_NAME) return Nodes[5].Name;
+                    else return Nodes[2].Name;
+                }
+                return default;
+            }
+        }
+
         public string MapKeyType
         {
             get
             {
-                string result = null;
                 if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
                 {
-                    int i = Nodes.FindIndex(x => x.InnerCount == 0);
-                    if (i > 0)
-                        result = string.Join(' ', Nodes.Where((x, index) => index > 0 && index <= i && x.Name.Value[0] != '/').Select(x => x.Name.Value));
+                    for (int i = 1; i < Nodes.Count; i++)
+                    {
+                        if (Nodes[i].Name.Value == "ByteProperty")
+                            return Nodes[i].Name.Value;
+                        else if (Nodes[i].Name.Value == "EnumProperty")
+                            return Nodes[i].Name.Value;
+                        else if (Nodes[i].Name.Value == "StructProperty")
+                            return Nodes[i + 1].Name.Value;
+                        else if (Nodes[i].InnerCount == 0)
+                            return Nodes[i].Name.Value;
+                        else
+                            throw new InvalidOperationException(NodesString);
+                    }
                 }
-                return result;
+                return null;
             }
         }
         public string MapValueType
         {
             get
             {
-                string result = null;
                 if (Nodes[0].Name.Value == FMapProperty.TYPE_NAME)
                 {
-                    int i = Nodes.FindIndex(x => x.InnerCount == 0);
-                    if (i > 0)
-                        result = string.Join(' ', Nodes.Where((x, index) => index > i && x.Name.Value[0] != '/').Select(x => x.Name.Value));
+                    int i = 0, skipCount = 0;
+                    for (i = 1; i < Nodes.Count && skipCount >= 0; i++)
+                    {
+                        skipCount += Nodes[i].InnerCount;
+                        skipCount--;
+                    }
+                    while (i < Nodes.Count)
+                    {
+                        if (Nodes[i].Name.Value == "ByteProperty")
+                            return Nodes[i].Name.Value;
+                        else if (Nodes[i].Name.Value == "EnumProperty")
+                            return Nodes[i].Name.Value;
+                        else if (Nodes[i].Name.Value == "StructProperty")
+                            return Nodes[i + 1].Name.Value;
+                        else if (Nodes[i].InnerCount == 0)
+                            return Nodes[i].Name.Value;
+                        else
+                            throw new InvalidOperationException(NodesString);
+                    }
                 }
-                return result;
+                return null;
             }
         }
 

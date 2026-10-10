@@ -39,17 +39,11 @@ namespace AssetTool
             get
             {
                 if (Type is null || Type.Value != FMapProperty.TYPE_NAME)
-                {
                     return null;
-                }
                 else if (TypeName is null)
-                {
                     return InnerType?.Value;
-                }
                 else
-                {
                     return TypeName.MapKeyType;
-                }
             }
         }
 
@@ -59,17 +53,11 @@ namespace AssetTool
             get
             {
                 if (Type is null || Type.Value != FMapProperty.TYPE_NAME)
-                {
                     return null;
-                }
                 else if (TypeName is null)
-                {
                     return ValueType?.Value;
-                }
                 else
-                {
                     return TypeName.MapValueType;
-                }
             }
         }
 

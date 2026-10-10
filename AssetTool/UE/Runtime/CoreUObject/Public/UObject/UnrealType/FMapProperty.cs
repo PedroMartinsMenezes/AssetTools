@@ -147,30 +147,45 @@ namespace AssetTool
         static FMapProperty()
         {
             #region keyTypeMovers and valueTypeMovers
-            AddTypeKeyMover<FName>("EFaceTextureType");
-            AddTypeKeyMover<FName>("EDMMaterialPropertyType");
-            AddTypeValueMover<TUInt32>("EVRToolType");
-            AddTypeValueMover<TUInt32>("EDMMaterialPropertyType");
+            //Guid
             AddTypeKeyMover<FGuid>(FGuid.TYPE_NAME);
-            AddTypeKeyMover<FGuid>("StructProperty Guid");
+            AddTypeKeyMover<FGuid>("StructProperty Guid"); //@@@ remove this
+
+            //Bool
             AddTypeMover<TUInt8, TUInt8>(FBoolProperty.TYPE_NAME);
+
+            //Name
+            AddTypeMover<FName, FName>(FNameProperty.TYPE_NAME);
             AddTypeMover<FName, FName>(FByteProperty.TYPE_NAME);
-            AddTypeMover<TDouble, TDouble>(FDoubleProperty.TYPE_NAME);
+            AddTypeMover<FName, FName>(FEnumProperty.TYPE_NAME);
+
+            //Float
             AddTypeMover<TFloat, TFloat>(FFloatProperty.TYPE_NAME);
+            AddTypeMover<TDouble, TDouble>(FDoubleProperty.TYPE_NAME);
+
+            //Integer
+            AddTypeMover<TInt8, TInt8>(FInt8Property.TYPE_NAME);
             AddTypeMover<TInt16, TInt16>(FInt16Property.TYPE_NAME);
             AddTypeMover<TUInt16, TUInt16>(FUInt16Property.TYPE_NAME);
-            AddTypeMover<TInt64, TInt64>(FInt64Property.TYPE_NAME);
-            AddTypeMover<TUInt64, TUInt64>(FUInt64Property.TYPE_NAME);
-            AddTypeMover<TInt8, TInt8>(FInt8Property.TYPE_NAME);
             AddTypeMover<TInt32, TInt32>(FIntProperty.TYPE_NAME);
             AddTypeMover<TUInt32, TUInt32>(FUInt32Property.TYPE_NAME);
-            AddTypeMover<FName, FName>(FNameProperty.TYPE_NAME);
-            AddTypeMover<FString, FString>(FStrProperty.TYPE_NAME);
-            AddTypeMover<FText, FText>(FTextProperty.TYPE_NAME);
+            AddTypeMover<TInt64, TInt64>(FInt64Property.TYPE_NAME);
+            AddTypeMover<TUInt64, TUInt64>(FUInt64Property.TYPE_NAME);
+
+            //Object
             AddTypeMover<TInt32, TInt32>(FObjectPropertyBase.TYPE_NAME);
             AddTypeMover<TInt32, TInt32>(FObjectProperty.TYPE_NAME);
-            AddTypeMover<FName, FName>(FEnumProperty.TYPE_NAME);
             AddTypeMover<FSoftObjectPtr, FSoftObjectPtr>(FSoftObjectProperty.TYPE_NAME);
+
+            //String and Text
+            AddTypeMover<FString, FString>(FStrProperty.TYPE_NAME);
+            AddTypeMover<FText, FText>(FTextProperty.TYPE_NAME);
+
+            //Workaround
+            AddTypeKeyMover<FName>("EFaceTextureType"); //@@@ probabily declared as EnumProperty
+            AddTypeKeyMover<FName>("EDMMaterialPropertyType"); //probabily declared as EnumProperty
+            AddTypeValueMover<TUInt32>("EVRToolType"); //probabily declared as EnumProperty
+            AddTypeValueMover<TUInt32>("EDMMaterialPropertyType"); //probabily declared as EnumProperty
             #endregion
 
             #region keyNameMovers and valueNameMovers
