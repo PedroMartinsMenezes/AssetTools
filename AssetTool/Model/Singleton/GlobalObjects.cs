@@ -74,6 +74,20 @@
 
         #endregion
 
+        /// <summary>
+        /// Copy used by an export processed in parallel: shares the package data (header, maps, versions),
+        /// but has its own current object and the given per-export caches.
+        /// </summary>
+        public GlobalObjects CloneForWorker(Dictionary<string, GlobalTypeName> globalTypeNames, HashSet<string> unicodeStrings)
+        {
+            GlobalObjects copy = (GlobalObjects)MemberwiseClone();
+            copy.CurrentObject = null;
+            copy.GlobalTypeNames = globalTypeNames;
+            copy.UnicodeStrings = unicodeStrings;
+            copy.MemberSizes = [];
+            return copy;
+        }
+
         public int CustomVer(Guid guid)
         {
             // Plain loop instead of List.Find: this is called for every version check and the lambda allocated each time.

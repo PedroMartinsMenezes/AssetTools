@@ -10,6 +10,15 @@ namespace AssetTool
 
         public Dictionary<string, (uint, uint)> NameToIndexMap { get; set; } = new();
 
+        // Exports can be processed in parallel, so the map is only written through this method
+        public void SetNameIndex(string displayValue, uint index, uint number)
+        {
+            lock (NameToIndexMap)
+            {
+                NameToIndexMap[displayValue] = (index, number);
+            }
+        }
+
         public bool IsFilled(FNameEntryId x) => x.Value < (uint)IndexToName.Count && x.Value != None.ComparisonIndex.Value;
 
         public bool IsValid(FNameEntryId x) => x.Value < (uint)IndexToName.Count;

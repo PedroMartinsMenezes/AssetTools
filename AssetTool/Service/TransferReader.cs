@@ -472,7 +472,7 @@ namespace AssetTool
             value.Value = GlobalNames.Get(value.ComparisonIndex);
 
             if (value.Number > 0)
-                GlobalNames.NameToIndexMap[value.DisplayValue] = (value.ComparisonIndex.Value, value.Number);
+                GlobalNames.SetNameIndex(value.DisplayValue, value.ComparisonIndex.Value, value.Number);
 
             return value;
         }
@@ -490,7 +490,7 @@ namespace AssetTool
             value.Value = GlobalNames.Get(value.ComparisonIndex);
 
             if (value.Number > 0)
-                GlobalNames.NameToIndexMap[value.DisplayValue] = (value.ComparisonIndex.Value, value.Number);
+                GlobalNames.SetNameIndex(value.DisplayValue, value.ComparisonIndex.Value, value.Number);
         }
         public override FString Move(FString value)
         {

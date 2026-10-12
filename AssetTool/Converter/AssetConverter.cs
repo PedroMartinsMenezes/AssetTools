@@ -74,7 +74,8 @@ namespace AssetTool
                 Directory.CreateDirectory(Path.Combine(outDir, "data", subDir));
             }
 
-            using MemoryStream inputStream = new MemoryStream(File.ReadAllBytes(InAssetPath), false);
+            byte[] inputBytes = File.ReadAllBytes(InAssetPath);
+            using MemoryStream inputStream = new MemoryStream(inputBytes, 0, inputBytes.Length, false, true);
             using BinaryReader reader = new BinaryReader(inputStream);
             using Transfer transferReader = new TransferReader(reader, AppConfig);
             transferReader.GlobalObjects.FileName = InAssetPath;

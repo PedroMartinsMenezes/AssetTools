@@ -25,6 +25,19 @@
             AppConfig = other?.AppConfig ?? AppConfig;
         }
 
+        /// <summary>
+        /// Sets up a transfer that moves a single export in parallel with the others:
+        /// it shares the package names and config, but uses its own GlobalObjects copy.
+        /// </summary>
+        public void InitializeWorker(Transfer main, GlobalObjects globalObjects)
+        {
+            GlobalNames = main.GlobalNames;
+            GlobalObjects = globalObjects;
+            AppConfig = main.AppConfig;
+            Supports = new Supports(this);
+            SupportsAfter = new SupportsAfter(this);
+        }
+
         public abstract bool IsReading { get; }
         public abstract bool IsWriting { get; }
         public abstract bool FromJson { get; init; }
@@ -159,7 +172,7 @@
         {
             if (name.Number > 0)
             {
-                GlobalNames.NameToIndexMap[name.DisplayValue] = (name.ComparisonIndex.Value, name.Number);
+                GlobalNames.SetNameIndex(name.DisplayValue, name.ComparisonIndex.Value, name.Number);
             }
         }
 

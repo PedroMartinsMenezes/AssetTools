@@ -145,11 +145,20 @@ namespace AssetTool
             }
         }
 
+        // Only large packages are split: smaller ones already run in parallel with other files, and splitting
+        // them just adds overhead (measured on Test_UE56_Assets: 1 MB was slower, 16 MB kept the same total time)
+        private const int ParallelExportsMinFileSize = 16 * 1024 * 1024;
+
         [Location("void FLinkerLoad::LoadAllObjects(bool bForcePreload)")]
         private void LoadAllObjects(Transfer transfer, string context, List<bool> status)
         {
             Log.WriteFileNumber = 1;
             Log.Info($"\n{context} Objects: {Objects.Count}\n");
+            if (CanMoveExportsInParallel(transfer))
+            {
+                MoveExportsInParallel(transfer, status);
+                return;
+            }
             for (int i = 0; i < Objects.Count; i++)
             {
                 try
@@ -181,6 +190,111 @@ namespace AssetTool
                 }
             }
             transfer.GlobalObjects.CurrentObject = default;
+        }
+
+        private bool CanMoveExportsInParallel(Transfer transfer)
+        {
+            AppConfig config = transfer.AppConfig;
+            if (Objects.Count < 2 || transfer.GlobalObjects.FileSize < ParallelExportsMinFileSize)
+                return false;
+            if (config.DebugCheckMember || config.DebugSaveMember || config.AutoCheckBinaryWriter)
+                return false;
+            return transfer.IsReading
+                ? transfer.Stream is MemoryStream input && input.TryGetBuffer(out _)
+                : transfer.Stream is MemoryStream;
+        }
+
+        /// <summary>
+        /// Exports are independent and their offsets/sizes come from the header, so each one is moved by its own
+        /// transfer: reading from its own view of the input bytes, or writing to its own buffer that is copied
+        /// into the output at the export offset afterwards. Per-export caches are merged in export order, which
+        /// gives the same result as moving the exports one after the other.
+        /// </summary>
+        private void MoveExportsInParallel(Transfer transfer, List<bool> status)
+        {
+            int count = Objects.Count;
+            Transfer[] workers = new Transfer[count];
+            bool[] results = new bool[count];
+            Dictionary<string, GlobalTypeName>[] typeNames = new Dictionary<string, GlobalTypeName>[count];
+            HashSet<string>[] unicodeStrings = new HashSet<string>[count];
+            transfer.writer?.Flush();
+            ArraySegment<byte> input = default;
+            if (transfer.IsReading)
+                ((MemoryStream)transfer.Stream).TryGetBuffer(out input);
+
+            try
+            {
+                Parallel.For(0, count, i =>
+                {
+                    AssetObject obj = Objects[i];
+                    GlobalObjects globals = transfer.IsReading
+                        ? transfer.GlobalObjects.CloneForWorker(typeNames[i] = [], unicodeStrings[i] = [])
+                        : transfer.GlobalObjects.CloneForWorker(transfer.GlobalObjects.GlobalTypeNames, transfer.GlobalObjects.UnicodeStrings);
+                    Transfer worker = transfer.IsReading
+                        ? new TransferReader(new BinaryReader(new MemoryStream(input.Array, input.Offset, input.Count, false, true)), transfer.AppConfig)
+                        : new TransferWriter(new BinaryWriter(new OffsetStream(obj.Offset)), transfer, transfer.FromJson, transfer.FromAutoCheck);
+                    worker.InitializeWorker(transfer, globals);
+                    workers[i] = worker;
+                    try
+                    {
+                        globals.CurrentObject = obj;
+                        string baseType = GlobalObjects.GetRecognizedBaseClass(obj.ClassName);
+                        Log.Info($"[{i + 1,3}] {obj.Offset,7} - {obj.NextOffset,7} ({obj.Size,7}): {obj.ClassName} '{obj.ObjectName}' {baseType}");
+                        worker.Position = obj.Offset;
+                        obj.Move(worker);
+                        results[i] = CheckSize(worker, obj) && obj.AutoCheck(worker, obj.ClassName, worker.Stream, [obj.Offset, obj.NextOffset]);
+                    }
+                    catch
+                    {
+                        if (!transfer.AppConfig.ContinueAfterError)
+                            throw;
+                        results[i] = false;
+                    }
+                });
+
+                if (transfer.IsReading)
+                {
+                    MergeWorkerCaches(transfer.GlobalObjects, typeNames, unicodeStrings);
+                    transfer.Position = workers[^1].Position;
+                }
+                else
+                {
+                    CopyWorkerOutputs(transfer, workers);
+                }
+                status.AddRange(results);
+            }
+            finally
+            {
+                foreach (Transfer worker in workers)
+                    worker?.Dispose();
+                transfer.GlobalObjects.CurrentObject = default;
+            }
+        }
+
+        private static void MergeWorkerCaches(GlobalObjects globals, Dictionary<string, GlobalTypeName>[] typeNames, HashSet<string>[] unicodeStrings)
+        {
+            // Export order + first one wins: the same entries, values and insertion order as a sequential move
+            for (int i = 0; i < typeNames.Length; i++)
+            {
+                if (typeNames[i] is null)
+                    continue;
+                foreach (KeyValuePair<string, GlobalTypeName> entry in typeNames[i])
+                    globals.GlobalTypeNames.TryAdd(entry.Key, entry.Value);
+                globals.UnicodeStrings.UnionWith(unicodeStrings[i]);
+            }
+        }
+
+        private void CopyWorkerOutputs(Transfer transfer, Transfer[] workers)
+        {
+            Stream output = transfer.Stream;
+            for (int i = 0; i < workers.Length; i++)
+            {
+                workers[i].writer.Flush();
+                OffsetStream exportStream = (OffsetStream)workers[i].Stream;
+                output.Position = exportStream.BaseOffset;
+                output.Write(exportStream.WrittenBytes);
+            }
+            transfer.Position = workers[^1].Position;
         }
 
         private static bool CheckSize(Transfer transfer, AssetObject obj)
