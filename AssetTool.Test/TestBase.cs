@@ -42,10 +42,9 @@ namespace AssetTool.Test
             AssetConverter.AppConfig = AppConfig = JsonSerializer.Deserialize<AppConfig>(File.ReadAllText("AppConfig.json"));
         }
 
-        protected bool IsVs2026()
+        protected bool FixDoublePrecision()
         {
-            string vsEnv = Environment.GetEnvironmentVariable("VisualStudioVersion");
-            return !string.IsNullOrEmpty(vsEnv) && vsEnv.Contains("18");
+            return System.Environment.Version.Major >= 9;
         }
 
         [TearDown]

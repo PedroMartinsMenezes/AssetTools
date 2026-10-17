@@ -13,7 +13,8 @@ namespace AssetTool.Test.InfraTest
 
             double reconstructed = double.Parse(text);
 
-            if (IsVs2026())
+            // From .NET 9 the default double formatting no longer round-trips this value (G17 still does)
+            if (FixDoublePrecision() || System.Environment.Version.Major >= 9)
                 Assert.That(reconstructed, Is.Not.EqualTo(original));
             else
                 Assert.That(reconstructed, Is.EqualTo(original));
