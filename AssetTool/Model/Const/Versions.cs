@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\UE5ReleaseStreamObjectVersion.h")]
     public static class FUE5ReleaseStreamObjectVersion
     {
         public static readonly Guid Guid = new Guid("D89B5E42-24BD-4D46-8412-ACA8DF641779");
@@ -59,6 +60,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\CoreObjectVersion.h")]
     public static class FCoreObjectVersion
     {
         public static readonly Guid Guid = new Guid("375EC13C-06E4-48FB-B500-84F0262A717E");
@@ -75,6 +77,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\FrameworkObjectVersion.h")]
     public static class FFrameworkObjectVersion
     {
         public static readonly Guid Guid = new Guid("CFFC743F-43B0-4480-9391-14DF171D2073");
@@ -124,6 +127,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\ReleaseObjectVersion.h")]
     public static class FReleaseObjectVersion
     {
         public static readonly Guid Guid = new Guid("9C54D522-A826-4FBE-9421-074661B482D0");
@@ -180,6 +184,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\FortniteReleaseBranchCustomObjectVersion.h")]
     public static class FFortniteReleaseBranchCustomObjectVersion
     {
         public static readonly Guid Guid = new Guid("E7086368-6B23-4C58-8439-1B7016265E91");
@@ -207,6 +212,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\UE5MainStreamObjectVersion.h")]
     public static class FUE5MainStreamObjectVersion
     {
         public static readonly Guid Guid = new Guid("697DD581-E64f-41AB-AA4A-51ECBEB7B628");
@@ -337,6 +343,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\BlueprintsObjectVersion.h")]
     public static class FBlueprintsObjectVersion
     {
         public static readonly Guid Guid = new Guid("B0D832E4-1F89-4F0D-ACCF-7EB736FD4AA2");
@@ -359,6 +366,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\EditorObjectVersion.h")]
     public static class FEditorObjectVersion
     {
         public static readonly Guid Guid = new Guid("E4B068ED-F494-42E9-A231-DA0B2E46BB41");
@@ -411,6 +419,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\RenderingObjectVersion.h")]
     public static class FRenderingObjectVersion
     {
         public static readonly Guid Guid = new Guid("12F88B9F-8875-4AFC-A67C-D90C383ABD29");
@@ -470,6 +479,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\FortniteMainBranchObjectVersion.h")]
     public static class FFortniteMainBranchObjectVersion
     {
         public static readonly Guid Guid = new Guid("601D1886-AC64-4F84-AA16-D3DE0DEAC7D6");
@@ -689,6 +699,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Engine\\Public\\SkeletalMeshLegacyCustomVersions.h")]
     public static class FSkeletalMeshCustomVersion
     {
         public static readonly Guid Guid = new Guid("D78A4A00-E858-4697-BAA8-19B5487D46B4");
@@ -717,6 +728,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Engine\\Public\\SkeletalMeshLegacyCustomVersions.h")]
     public static class FRecomputeTangentCustomVersion
     {
         public static readonly Guid Guid = new Guid("5579F886-933A-4C1F-83BA-087B6361B92F");
@@ -729,6 +741,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\NiagaraObjectVersion.h")]
     public static class FNiagaraObjectVersion
     {
         public static readonly Guid Guid = new Guid("F2AED0AC-9AFE-416F-8664-AA7FFA26D6FC");
@@ -740,6 +753,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\AnimObjectVersion.h")]
     public static class FAnimObjectVersion
     {
         public static readonly Guid Guid = new Guid("AF43A65D-7FD3-4947-9873-3E8ED9C1BB05");
@@ -765,6 +779,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Engine\\Public\\SkeletalMeshLegacyCustomVersions.h")]
     public static class FOverlappingVerticesCustomVersion
     {
         public static readonly Guid Guid = new Guid("612FBE52-DA53-400B-910D-4F919FB1857C");
@@ -776,6 +791,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\AnimPhysObjectVersion.h")]
     public static class FAnimPhysObjectVersion
     {
         public static readonly Guid Guid = new Guid("29E575DD-E0A3-4627-9D10-D276232CDCEA");
@@ -803,6 +819,7 @@
         }
     }
 
+    [Location("Plugins\\FX\\Niagara\\Source\\NiagaraCore\\Public\\NiagaraCustomVersion.h")]
     public static class FNiagaraCustomVersion
     {
         public static readonly Guid Guid = new Guid("FCF57AFA-5076-4283-B9A9-E658FFA02D32");
@@ -905,6 +922,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\MobileObjectVersion.h")]
     public static class FMobileObjectVersion
     {
         public static readonly Guid Guid = new Guid("B02B49B5-BB20-44E9-A304-32B752E40360");
@@ -918,6 +936,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\ReflectionCaptureObjectVersion.h")]
     public static class FReflectionCaptureObjectVersion
     {
         public static readonly Guid Guid = new Guid("6B266CEC-1EC7-4B8F-A30B-E4D90942FC07");
@@ -929,6 +948,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\SequencerObjectVersion.h")]
     public static class FSequencerObjectVersion
     {
         public static readonly Guid Guid = new Guid("7B5AE74C-D270-4C10-A958-57980B212A5A");
@@ -952,6 +972,7 @@
         }
     }
 
+    [Location("Plugins\\Animation\\ControlRig\\Source\\ControlRig\\Public\\ControlRigObjectVersion.h")]
     public static class FControlRigObjectVersion
     {
         public static readonly Guid Guid = new Guid("A7820CFB-20A7-4359-8C54-2C149623CF50");
@@ -1000,6 +1021,7 @@
         }
     }
 
+    [Location("Plugins\\Runtime\\RigVM\\Source\\RigVM\\Public\\RigVMObjectVersion.h")]
     public static class FRigVMObjectVersion
     {
         public static readonly Guid Guid = new Guid("DC49959B-53C0-4DE7-9156-EA885E7C5D39");
@@ -1025,9 +1047,13 @@
             RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray,
             VMBytecodeStorePublicContextPathAsTopLevelAssetPath,
             ByteCodeCleanup,
+            LocalizedRegistry,
+            VersionPlusOne,
+            LatestVersion = VersionPlusOne - 1
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\MediaFrameWorkObjectVersion.h")]
     public static class FMediaFrameworkObjectVersion
     {
         public static readonly Guid Guid = new Guid("6f0ed827-a609-4895-9c91-998d90180ea4");
@@ -1040,6 +1066,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Interchange\\Core\\Public\\InterchangeCustomVersion.h")]
     public static class FInterchangeCustomVersion
     {
         public static readonly Guid Guid = new Guid("92738C43-2988-4D9C-9A3D-9BBE6EFF9FC0");
@@ -1051,6 +1078,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Landscape\\Private\\LandscapeVersion.h")]
     public static class FLandscapeCustomVersion
     {
         public static readonly Guid Guid = new Guid("23AFE18E-4CE1-4E58-8D61-C252B953BEB7");
@@ -1072,6 +1100,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\UE5PrivateFrostyStreamObjectVersion.h")]
     public static class FUE5PrivateFrostyStreamObjectVersion
     {
         public static readonly Guid Guid = new Guid("59DA5D52-1232-4948-B878-597870B8E98B");
@@ -1090,6 +1119,7 @@
         }
     }
 
+    [Location("Plugins\\Runtime\\ComputeFramework\\Source\\ComputeFramework\\Public\\ComputeFramework\\ComputeFrameworkObjectVersion.h")]
     public static class FComputeFrameworkObjectVersion
     {
         public static readonly Guid Guid = new Guid("6304a3e7-0059-4f59-8cfc-21bd7721fd4e");
@@ -1100,6 +1130,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\CoreUObject\\Public\\StructUtils\\PropertyBag.h")]
     public static class FPropertyBagCustomVersion
     {
         public static readonly Guid Guid = new Guid("134A157E-D5E2-49A3-8D4E-843C98FE9E31");
@@ -1113,6 +1144,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\EnterpriseObjectVersion.h")]
     public static class FEnterpriseObjectVersion
     {
         public static readonly Guid Guid = new Guid("9DFFBCD6-494F-0158-E221-12823C92A888");
@@ -1133,6 +1165,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\DestructionObjectVersion.h")]
     public static class FDestructionObjectVersion
     {
         public static readonly Guid Guid = new Guid("174F1F0B-B4C6-45A5-B13F-2EE8D0FB917D");
@@ -1153,6 +1186,7 @@
         }
     }
 
+    [Location("Plugins\\Animation\\DeformerGraph\\Source\\OptimusCore\\Public\\OptimusObjectVersion.h")]
     public static class FOptimusObjectVersion
     {
         public static readonly Guid Guid = new Guid("93ede1aa-10ca-7375-4df9-8a2849b157a0");
@@ -1175,6 +1209,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\CoreUObject\\Private\\StructUtils\\InstancedStruct.cpp")]
     public static class FInstancedStructCustomVersion
     {
         public static readonly Guid Guid = new Guid("E21E1CAA-AF47-425E-89BF-6AD44C44A8BB");
@@ -1185,6 +1220,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\ExternalPhysicsCustomObjectVersion.h")]
     public static class FExternalPhysicsCustomObjectVersion
     {
         public static readonly Guid Guid = new Guid("35F94A83-E258-406C-A318-09F59610247C");
@@ -1236,6 +1272,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\FortniteSeasonBranchObjectVersion.h")]
     public static class FFortniteSeasonBranchObjectVersion
     {
         public static readonly Guid Guid = new Guid("5B4C06B7-2463-4AF8-805B-BF70CDF5D0DD");
@@ -1261,6 +1298,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Core\\Public\\UObject\\PhysicsObjectVersion.h")]
     public static class FPhysicsObjectVersion
     {
         public static readonly Guid Guid = new Guid("78F01B33-EBEA-4F98-B9B4-84EACCB95AA2");
@@ -1291,6 +1329,7 @@
         }
     }
 
+    [Location("Plugins\\PCG\\Source\\PCG\\Public\\PCGCustomVersion.h")]
     public static class FPCGCustomVersion
     {
         public static readonly Guid Guid = new Guid("2763920D-0F78-4B39-986E-4BB3A88D666D");
@@ -1326,6 +1365,7 @@
         }
     }
 
+    [Location("Plugins\\Runtime\\Harmonix\\Source\\HarmonixDsp\\Private\\HarmonixDsp\\FusionSampler\\FusionPatchCustomVersion.h")]
     public static class FFusionPatchCustomVersion
     {
         public static readonly Guid Guid = new Guid("4588AE1F-FC5B-4510-8703-A79221038375");
@@ -1342,6 +1382,7 @@
         }
     }
 
+    [Location("Plugins\\Enterprise\\VariantManagerContent\\Source\\VariantManagerContent\\Private\\VariantManagerObjectVersion.h")]
     public static class FVariantManagerObjectVersion
     {
         public static readonly Guid Guid = new Guid("24BB7AF3-5646-4F83-1F2F-2DC249AD96FF");
@@ -1357,6 +1398,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Foliage\\Public\\InstancedFoliageCustomVersion.h")]
     public static class FFoliageCustomVersion
     {
         public static readonly Guid Guid = new Guid("430C4D19-7154-4970-8769-9B69DF90B0E5");
@@ -1382,6 +1424,7 @@
         }
     }
 
+    [Location("Plugins\\Runtime\\WorldConditions\\Source\\WorldConditions\\Private\\WorldConditionQuery.cpp")]
     public static class FWorldConditionCustomVersion
     {
         public static readonly Guid Guid = new Guid("2C28AC22-15CF-46FE-BD19-F011652A3C05");
@@ -1395,6 +1438,7 @@
         }
     }
 
+    [Location("Source\\Runtime\\Landscape\\Private\\LandscapeEdgeFixup.cpp")]
     public static class FHeightmapTextureEdgeSnapshotCustomVersion
     {
         public static readonly Guid Guid = new Guid("12345678-1234-5678-1234-567812345678");
@@ -1410,6 +1454,7 @@
         }
     }
 
+    [Location("Plugins\\TextureGraph\\Source\\TextureGraph\\Public\\TG_CustomVersion.h")]
     public static class FTG_CustomVersion
     {
         public static readonly Guid Guid = new Guid("84F72F2E-4181-C255-2672-1CB537DFB222");

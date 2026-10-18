@@ -17,6 +17,8 @@ namespace AssetTool
         public FRigVMMemoryStorageStruct LiteralMemoryStorage;
         public FRigVMMemoryStorageStruct DefaultWorkMemoryStorage;
         public FRigVMMemoryStorageStruct DefaultDebugMemoryStorage;
+        public bool bStoredLocalizedRegistry;
+        public int64 ArchivePosAfterSerializedRegistry;
 
         [Location("void URigVM::Load(FArchive& Ar)")]
         public override ITransferable Move(Transfer transfer)
@@ -98,6 +100,41 @@ namespace AssetTool
                 transfer.Move(ref DefaultWorkMemoryStorage);
                 transfer.Move(ref DefaultDebugMemoryStorage);
             }
+            if (transfer.Supports.LocalizedRegistry)
+            {
+                transfer.Move(ref bStoredLocalizedRegistry);
+                if (bStoredLocalizedRegistry)
+                {
+                    transfer.Move(ref ArchivePosAfterSerializedRegistry);
+
+                    throw new NotImplementedException();
+                    //            LocalizedRegistry = FRigVMRegistry_NoLock::CreateLocalizedRegistry();
+                    //            LocalizedRegistry->Serialize_NoLock(Ar);
+                }
+            }
+
+            //if (Ar.CustomVer(FRigVMObjectVersion::GUID) >= FRigVMObjectVersion::LocalizedRegistry)
+            //{
+            //    bool bStoredLocalizedRegistry = false;
+            //    Ar << bStoredLocalizedRegistry;
+
+            //    LocalizedRegistry.Reset();
+            //    if (bStoredLocalizedRegistry)
+            //    {
+            //        int64 ArchivePosAfterSerializedRegistry = 0;
+            //        Ar << ArchivePosAfterSerializedRegistry;
+
+            //        if (CVarRigVMEnableLocalizedRegistry.GetValueOnAnyThread() == false)
+            //        {
+            //            Ar.Seek(ArchivePosAfterSerializedRegistry);
+            //        }
+            //        else
+            //        {
+            //            LocalizedRegistry = FRigVMRegistry_NoLock::CreateLocalizedRegistry();
+            //            LocalizedRegistry->Serialize_NoLock(Ar);
+            //        }
+            //    }
+            //}
 
             return this;
         }

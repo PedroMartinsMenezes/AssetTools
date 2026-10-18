@@ -1059,6 +1059,7 @@
         public bool RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray => CustomVer(FRigVMObjectVersion.Enums.RigVMSaveSerializedGraphInGraphFunctionDataAsByteArray);
         public bool VMBytecodeStorePublicContextPathAsTopLevelAssetPath => CustomVer(FRigVMObjectVersion.Enums.VMBytecodeStorePublicContextPathAsTopLevelAssetPath);
         public bool ByteCodeCleanup => CustomVer(FRigVMObjectVersion.Enums.ByteCodeCleanup);
+        public bool LocalizedRegistry => CustomVer(FRigVMObjectVersion.Enums.LocalizedRegistry);
         #endregion
         #region FReleaseObjectVersion
         public bool StaticMeshExtendedBoundsFix => CustomVer(FReleaseObjectVersion.Enums.StaticMeshExtendedBoundsFix);
