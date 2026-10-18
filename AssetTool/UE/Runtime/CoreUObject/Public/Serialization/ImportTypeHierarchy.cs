@@ -20,14 +20,12 @@
 
     public class FImportTypeHierarchy : ITransferable
     {
-        public int SuperTypeCount;
         public List<FTypeResource> SuperTypes;
 
         [Location("void operator<<(FStructuredArchive::FSlot Slot, FImportTypeHierarchy& I)")]
         public ITransferable Move(Transfer transfer)
         {
-            transfer.Move(ref SuperTypeCount);
-            transfer.Move(ref SuperTypes, SuperTypeCount);
+            transfer.Move(ref SuperTypes);
             return this;
         }
     }
