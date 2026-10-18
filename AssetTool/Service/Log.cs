@@ -19,15 +19,12 @@ namespace AssetTool
 
         public static string Error(string msg)
         {
-            if (Enabled)
-            {
-                var currentColor = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(msg);
-                Console.ForegroundColor = currentColor;
+            var currentColor = Console.ForegroundColor;
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine(msg);
+            Console.ForegroundColor = currentColor;
 
-                Debug.WriteLine(msg);
-            }
+            Debug.WriteLine(msg);
             return msg;
         }
 
