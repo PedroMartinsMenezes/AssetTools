@@ -4,7 +4,6 @@ namespace AssetTool
     {
         public List<FPackageIndex> AllowedClasses;
         // types
-        public int NumTypes;
         public List<FTypeInfo> Types;
         // factories
         public List<RigVMFactory> Factories;
@@ -16,8 +15,7 @@ namespace AssetTool
         {
             transfer.Move(ref AllowedClasses);
             //types
-            transfer.Move(ref NumTypes);
-            transfer.Move(ref Types, NumTypes * 3);
+            transfer.Move(ref Types);
             // factories
             transfer.Move(ref Factories);
             // functions
