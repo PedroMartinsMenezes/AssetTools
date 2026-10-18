@@ -254,7 +254,7 @@ namespace AssetTool
             LogInfo(14, offsets, "ImportTypeHierarchies");
             ImportTypeHierarchiesMap ??= new ImportTypeHierarchiesMap(PackageFileSummary.ImportTypeHierarchiesCount);
             transfer.Move(ref ImportTypeHierarchiesMap);
-            DataResourceMap.AutoCheck(transfer, "ImportTypeHierarchies", transfer.Stream, offsets);
+            ImportTypeHierarchiesMap.AutoCheck(transfer, "ImportTypeHierarchies", transfer.Stream, offsets);
         }
         #endregion
 
