@@ -88,6 +88,24 @@
         }
     }
 
+    public class FStaticShadowDepthMapData : ITransferable
+    {
+        public FMatrix WorldToLight;
+        public Int32 ShadowMapSizeX;
+        public Int32 ShadowMapSizeY;
+        public UInt16[] DepthSamples;
+
+        [Location("FArchive& operator<<(FArchive& Ar, FStaticShadowDepthMapData& ShadowMapData)")]
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref WorldToLight);
+            transfer.Move(ref ShadowMapSizeX);
+            transfer.Move(ref ShadowMapSizeY);
+            transfer.Move(ref DepthSamples);
+            return this;
+        }
+    }
+
     public class FLightComponentMapBuildData : ITransferable
     {
         public Int32 ShadowMapChannel;

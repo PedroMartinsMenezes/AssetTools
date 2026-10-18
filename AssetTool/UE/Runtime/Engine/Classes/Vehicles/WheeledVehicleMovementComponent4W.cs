@@ -1,5 +1,6 @@
 ﻿namespace AssetTool
 {
+    [Removed]
     [JsonAsset("WheeledVehicleMovementComponent4W")]
     public class UWheeledVehicleMovementComponent4W : UObject
     {

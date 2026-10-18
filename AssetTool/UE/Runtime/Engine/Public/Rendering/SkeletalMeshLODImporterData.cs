@@ -52,4 +52,30 @@
             return this;
         }
     }
+
+    public class FReductionBaseSkeletalMeshBulkData : ITransferable
+    {
+        public FByteBulkData BulkData;
+
+        [Location("void FReductionBaseSkeletalMeshBulkData::Serialize(FArchive& Ar, TArray<FReductionBaseSkeletalMeshBulkData*>& ReductionBaseSkeletalMeshDatas, UObject* Owner)")]
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref BulkData);
+            return this;
+        }
+    }
+
+    public class FInlineReductionCacheData : ITransferable
+    {
+        public UInt32 CacheLODVertexCount;
+        public UInt32 CacheLODTriCount;
+
+        [Location("FORCEINLINE FArchive& operator<<(FArchive& Ar, FInlineReductionCacheData& InlineReductionCacheData)")]
+        public ITransferable Move(Transfer transfer)
+        {
+            transfer.Move(ref CacheLODVertexCount);
+            transfer.Move(ref CacheLODTriCount);
+            return this;
+        }
+    }
 }

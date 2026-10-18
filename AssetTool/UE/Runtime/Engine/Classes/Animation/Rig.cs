@@ -1,5 +1,6 @@
 namespace AssetTool
 {
+    [Removed]
     [JsonAsset("Rig")]
     public class URig : UObject
     {

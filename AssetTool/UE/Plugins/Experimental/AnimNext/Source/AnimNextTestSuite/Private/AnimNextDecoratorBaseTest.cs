@@ -1,5 +1,6 @@
 namespace AssetTool
 {
+    [Removed]
     [TransferableStruct("DecoratorNativeSerialization_AddSharedData")]
     public class FDecoratorNativeSerialization_AddSharedData : FAnimNextDecoratorSharedData, ITransferable
     {

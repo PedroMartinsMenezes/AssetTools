@@ -1,4 +1,4 @@
-namespace AssetTool
+﻿namespace AssetTool
 {
     [JsonAsset("AssetImportData")]
     public class UAssetImportData : UObject
@@ -15,5 +15,18 @@ namespace AssetTool
             base.Move(transfer);
             return this;
         }
+    }
+
+    public class FAssetImportInfo
+    {
+        public List<FSourceFile> SourceFiles;
+
+        public struct FSourceFile
+        {
+            public FString RelativeFilename;
+            public FDateTime Timestamp;
+            public FMD5Hash FileHash;
+            public FString DisplayLabelName;
+        };
     }
 }
