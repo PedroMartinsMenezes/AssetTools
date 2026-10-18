@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("uint16 prop: {NamePrivate}")]
     public class FUInt16Property : FNumericProperty
     {
         public new const string TYPE_NAME = "UInt16Property";

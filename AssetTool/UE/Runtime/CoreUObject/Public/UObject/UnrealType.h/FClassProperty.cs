@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("class prop: {NamePrivate}")]
     public class FClassProperty : FObjectProperty
     {
         public new const string TYPE_NAME = "ClassProperty";

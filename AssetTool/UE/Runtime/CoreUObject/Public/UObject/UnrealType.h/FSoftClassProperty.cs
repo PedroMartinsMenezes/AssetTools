@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("softclass prop: {NamePrivate}")]
     public class FSoftClassProperty : FSoftObjectProperty
     {
         public new const string TYPE_NAME = "SoftClassProperty";

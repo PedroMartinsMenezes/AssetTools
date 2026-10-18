@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("lazyobject prop: {NamePrivate}")]
     public class FLazyObjectProperty : FProperty
     {
         public new const string TYPE_NAME = "LazyObjectProperty";

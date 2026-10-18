@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("bool prop: {NamePrivate}")]
     public class FBoolProperty : FProperty
     {
         public new const string TYPE_NAME = "BoolProperty";

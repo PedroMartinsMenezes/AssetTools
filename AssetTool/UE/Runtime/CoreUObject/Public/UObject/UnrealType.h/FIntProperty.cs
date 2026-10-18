@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("int prop: {NamePrivate}")]
     public class FIntProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "IntProperty";

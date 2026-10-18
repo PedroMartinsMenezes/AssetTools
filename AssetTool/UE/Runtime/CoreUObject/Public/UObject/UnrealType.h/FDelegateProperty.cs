@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("delegate prop: {NamePrivate}")]
     public class FDelegateProperty : FProperty
     {
         public new const string TYPE_NAME = "DelegateProperty";

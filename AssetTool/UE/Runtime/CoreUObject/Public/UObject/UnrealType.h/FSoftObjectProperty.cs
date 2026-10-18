@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("softobject prop: {NamePrivate}")]
     [BaseEngineIni("+ClassRedirects=(OldName=\"AssetObjectProperty\",NewName=\"/Script/CoreUObject.SoftObjectProperty\")")]
     public class FSoftObjectProperty : FProperty
     {

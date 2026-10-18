@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("numeric prop: {NamePrivate}")]
     public class FNumericProperty : FProperty
     {
         public new const string TYPE_NAME = "NumericProperty";

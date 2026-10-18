@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("interface prop: {NamePrivate}")]
     public class FInterfaceProperty : FProperty
     {
         public new const string TYPE_NAME = "InterfaceProperty";

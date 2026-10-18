@@ -1,7 +1,9 @@
-﻿using System.Text.Json;
+﻿using System.Diagnostics;
+using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("struct prop: {NamePrivate}")]
     public class FStructProperty : FProperty
     {
         public new const string TYPE_NAME = "StructProperty";

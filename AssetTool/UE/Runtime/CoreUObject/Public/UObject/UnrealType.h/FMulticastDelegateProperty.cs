@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("multicast-delegate prop: {NamePrivate}")]
     public class FMulticastDelegateProperty : FProperty
     {
         public new const string TYPE_NAME = "MulticastDelegateProperty";

@@ -1,8 +1,10 @@
 using System.ComponentModel;
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("object-prop-base: {NamePrivate}")]
     public class FObjectPropertyBase : FProperty
     {
         public new const string TYPE_NAME = "ObjectPropertyBase";

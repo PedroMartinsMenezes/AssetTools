@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("uint64 prop: {NamePrivate}")]
     public class FUInt64Property : FNumericProperty
     {
         public new const string TYPE_NAME = "UInt64Property";

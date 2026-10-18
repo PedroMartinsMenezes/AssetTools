@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("weakobject prop: {NamePrivate}")]
     public class FWeakObjectProperty : FProperty
     {
         public new const string TYPE_NAME = "WeakObjectProperty";

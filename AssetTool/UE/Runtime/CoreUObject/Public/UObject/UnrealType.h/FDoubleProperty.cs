@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("double prop: {NamePrivate}")]
     public class FDoubleProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "DoubleProperty";

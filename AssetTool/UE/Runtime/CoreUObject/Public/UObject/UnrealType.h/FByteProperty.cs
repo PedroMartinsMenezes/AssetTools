@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("byte prop: {NamePrivate}")]
     public class FByteProperty : FNumericProperty
     {
         public new const string TYPE_NAME = "ByteProperty";

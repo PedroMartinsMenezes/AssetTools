@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("int8 prop: {NamePrivate}")]
     public class FInt8Property : FNumericProperty
     {
         public new const string TYPE_NAME = "Int8Property";

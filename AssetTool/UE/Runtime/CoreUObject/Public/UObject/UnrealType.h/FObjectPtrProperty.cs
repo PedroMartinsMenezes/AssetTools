@@ -1,7 +1,9 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
+    [DebuggerDisplay("object-ptr prop: {NamePrivate}")]
     public class FObjectPtrProperty : FProperty
     {
         public new const string TYPE_NAME = "ObjectPtrProperty";

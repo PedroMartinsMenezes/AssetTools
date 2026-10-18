@@ -1,9 +1,11 @@
+using System.Diagnostics;
 using System.Text.Json;
 
 namespace AssetTool
 {
     using FMulticastScriptDelegate = TMulticastScriptDelegate;
 
+    [DebuggerDisplay("multicast-sparse-delegate prop: {NamePrivate}")]
     public class FMulticastSparseDelegateProperty : FProperty
     {
         public new const string TYPE_NAME = "MulticastSparseDelegateProperty";
