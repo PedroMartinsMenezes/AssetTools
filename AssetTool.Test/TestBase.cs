@@ -127,6 +127,7 @@ namespace AssetTool.Test
                 bool success = AssetConverter.RebuildAssetFast(file, fileVersion: fileVersion, callback: null);
                 if (!AppConfig.ContinueAfterError)
                 {
+                    if (!success) TestContext.WriteLine($"[{i}] {file}");
                     Assert.That(success, file);
                 }
                 UpdateFailedFiles(success, file, failedFiles, succeededFiles);
