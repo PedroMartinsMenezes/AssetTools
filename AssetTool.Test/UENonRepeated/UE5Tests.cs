@@ -30,4 +30,8 @@ namespace AssetTool.Test.UENonRepeated
     {
         [Test] public void Test_UE56_Assets() => Test_UE_Files_NonRepeated("UE56");
     }
+    public class UE57AssetTests : TestBase
+    {
+        [Test] public void Test_UE57_Assets() => Test_UE_Files_NonRepeated("UE57");
+    }
 }
