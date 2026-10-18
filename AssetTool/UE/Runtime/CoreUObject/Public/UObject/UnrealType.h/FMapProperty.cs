@@ -91,6 +91,8 @@ namespace AssetTool
                         valueProp = valueNameMovers[name](transfer, valueProp);
                     else if (valueTypeMovers.ContainsKey(valueType))
                         valueProp = valueTypeMovers[valueType](transfer, valueProp);
+                    else if (FPropertyTagExt.StructMovers.ContainsKey(valueType))
+                        valueProp = FPropertyTagExt.StructMovers[valueType](transfer, indent, valueProp, null);
                     else
                         valueProp = transfer.MoveTags(valueProp.ToObject<Dictionary<string, object>>(transfer), indent);
 
