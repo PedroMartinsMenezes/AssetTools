@@ -55,6 +55,7 @@ namespace AssetTool
             SerializeDependsMap(transfer);
             SerializeSoftPackageReferenceList(transfer);
             SerializeSearchableNamesMap(transfer);
+            SerializeImportTypeHierarchies(transfer);
             SerializeThumbnails(transfer);
             LoadThumbnailsFromPackage(transfer);
             ReadAssetRegistryData(transfer);
@@ -62,7 +63,7 @@ namespace AssetTool
 
             //Cooked Data
             SerializeDataResourceMap(transfer);
-            SerializeImportTypeHierarchies(transfer);
+
 
             //Byte Array Data
             MovePadData(transfer);
@@ -252,7 +253,7 @@ namespace AssetTool
             long[] offsets = ImportTypeHierarchiesOffsets(transfer);
             transfer.Position = offsets[0];
             LogInfo(14, offsets, "ImportTypeHierarchies");
-            ImportTypeHierarchiesMap ??= new ImportTypeHierarchiesMap(PackageFileSummary.ImportTypeHierarchiesCount);
+            ImportTypeHierarchiesMap ??= new ImportTypeHierarchiesMap(PackageFileSummary.ImportTypeHierarchiesOffset);
             transfer.Move(ref ImportTypeHierarchiesMap);
             ImportTypeHierarchiesMap.AutoCheck(transfer, "ImportTypeHierarchies", transfer.Stream, offsets);
         }
@@ -411,6 +412,8 @@ namespace AssetTool
         public long[] ImportTypeHierarchiesOffsets(Transfer transfer)
         {
             if (PackageFileSummary.ImportTypeHierarchiesOffset == 0)
+                return [transfer.Position, transfer.Position];
+            else if (PackageFileSummary.ImportTypeHierarchiesCount == 0)
                 return [transfer.Position, transfer.Position];
             else
                 return [PackageFileSummary.ImportTypeHierarchiesOffset, PackageFileSummary.TotalHeaderSize];
