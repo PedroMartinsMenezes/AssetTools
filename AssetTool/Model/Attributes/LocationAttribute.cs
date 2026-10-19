@@ -6,5 +6,7 @@ namespace AssetTool
     public class LocationAttribute : DescriptionAttribute
     {
         public LocationAttribute(string value) : base(value) { }
+
+        public LocationAttribute(int line, string value) : base(value) { }
     }
 }

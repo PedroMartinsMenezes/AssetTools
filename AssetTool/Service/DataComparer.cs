@@ -175,7 +175,7 @@ namespace AssetTool
                 ///File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
                 ///File.WriteAllText("C:/Temp/Before.json", self.ToJson());
                 ///File.WriteAllText("C:/Temp/After.json", copy.ToJson());
-
+                Log.Error(transfer.GlobalObjects.CurrentObject.ClassName);
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
                 throw new InvalidOperationException(msg);

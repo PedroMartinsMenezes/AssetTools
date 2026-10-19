@@ -122,10 +122,11 @@ namespace AssetTool
 
             if (msg.Length > 0)
             {
-                File.WriteAllText("C:/Temp/Before.json", this.ToJson());
-                File.WriteAllText("C:/Temp/After.json", copy.ToJson());
-                File.WriteAllText("C:/Temp/Before.raw.json", this.ToRawJson());
-                File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                ///File.WriteAllText("C:/Temp/Before.json", this.ToJson());
+                ///File.WriteAllText("C:/Temp/After.json", copy.ToJson());
+                ///File.WriteAllText("C:/Temp/Before.raw.json", this.ToRawJson());
+                ///File.WriteAllText("C:/Temp/After.raw.json", copy.ToRawJson());
+                Log.Error(transfer.GlobalObjects.CurrentObject.ClassName);
                 Log.Error(msg);
                 Log.Error($"    Counter: {transfer.Counter}");
                 throw new InvalidOperationException(msg);
