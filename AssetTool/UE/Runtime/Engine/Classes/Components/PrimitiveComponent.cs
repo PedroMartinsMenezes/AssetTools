@@ -1,0 +1,13 @@
+namespace AssetTool
+{
+    [JsonAsset("PrimitiveComponent")]
+    public class UPrimitiveComponent : USceneComponent
+    {
+        [Location("void UPrimitiveComponent::Serialize(FArchive& Ar)")]
+        public override ITransferable Move(Transfer transfer)
+        {
+            base.Move(transfer);
+            return this;
+        }
+    }
+}
